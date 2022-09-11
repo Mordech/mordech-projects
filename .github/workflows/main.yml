@@ -27,7 +27,7 @@ jobs:
         run: npx nx affected --target=build --parallel=3
 
       - name: Build component library
-        run: yarn nx build @mordech/components
+        run: npx nx build @mordech/components
 
 
   test:
