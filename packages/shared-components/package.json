@@ -20,7 +20,8 @@
     "start": "storybook",
     "build": "build-storybook -s public",
     "storybook": "start-storybook -p 6006 -s public",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll=false",
+    "test:watch": "react-scripts test --coverage",
     "test:visual": "build-storybook && loki test --reactUri file:./storybook-static",
     "eject": "react-scripts eject"
   },
