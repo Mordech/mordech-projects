@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
-import { fontFamilies, fontSizes, fontWeights } from '../../abstracts';
+import { colors, fontFamilies, fontSizes, fontWeights } from '../../abstracts';
 import { defaultTypographyProps, variantDefaults } from './props';
 import { TypographyProps, TypographyType } from './types';
 

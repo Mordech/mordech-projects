@@ -27,7 +27,7 @@ const SubParagraphContainer = styled(ParagraphContainer)`
 
 export default {
   component: Typography,
-  title: 'Atoms/Typography',
+  title: 'Components/Typography',
   argTypes: {
     size: {
       table: { defaultValue: { summary: defaultTypographyProps.size } },
