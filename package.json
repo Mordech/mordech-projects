@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "start": "yarn workspace @mordech/portfolio gatsby develop",
+    "storybook": "yarn workspace @mordech/components storybook"
+  }
+}

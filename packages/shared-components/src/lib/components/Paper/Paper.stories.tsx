@@ -1,0 +1,39 @@
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
+import { Paper } from './Paper';
+import { Typography } from '../Typography';
+import styled from 'styled-components';
+import { PaperProps } from './types';
+
+export default {
+  component: Paper,
+  title: 'Atoms/Paper',
+} as Meta;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 18rem;
+  gap: 0.5rem;
+  padding: 1rem;
+`;
+
+const Template: Story<PaperProps> = (args) => (
+  <Paper {...args}>
+    <Container>
+      <Typography variant="headline" size={3} as="h1">
+        I'm a Paper component!
+      </Typography>
+      <Typography as="p">
+        Paper is a component that provides a simple way to create surfaces that
+        contain a set of related components.
+      </Typography>
+      <Typography as="p">
+        It can be used to create cards, dialogs, and more.
+      </Typography>
+    </Container>
+  </Paper>
+);
+
+export const Primary = Template.bind({});
+Primary.args = { as: 'div' };

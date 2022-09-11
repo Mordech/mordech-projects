@@ -1,0 +1,89 @@
+{
+  "name": "@mordech/components",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.58",
+    "@types/react": "^18.0.19",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.8.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "storybook",
+    "build": "build-storybook -s public",
+    "storybook": "start-storybook -p 6006 -s public",
+    "test": "react-scripts test",
+    "test:visual": "build-storybook && loki test --reactUri file:./storybook-static",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/addons": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/node-logger": "^6.5.10",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/theming": "^6.5.10",
+    "@types/jest-axe": "^3.5.4",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint": "8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-storybook": "^0.6.4",
+    "jest-axe": "^6.0.0",
+    "jest-styled-components": "^7.1.1",
+    "loki": "^0.30.3",
+    "prettier": "^2.7.1",
+    "prop-types": "^15.8.1",
+    "react-markdown": "^6.0.0",
+    "typescript": "*",
+    "webpack": "^5.74.0"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
+  }
+}
