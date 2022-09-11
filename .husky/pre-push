@@ -1,3 +1,3 @@
-yarn test
-yarn lint
+yarn nx affected --target=lint --uncommitted 
+yarn nx affected --target=test --uncommitted
 yarn workspace @mordech/components test:visual
