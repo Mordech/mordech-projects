@@ -6,10 +6,8 @@
   ],
   "scripts": {
     "start": "yarn workspace @mordech/portfolio gatsby develop",
-    "test": "jest --coverage",
     "storybook": "yarn workspace @mordech/components storybook",
-    "prepare": "husky install",
-    "lint": "nx affected --base=main --target=lint"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@jscutlery/semver": "^2.27.0",
