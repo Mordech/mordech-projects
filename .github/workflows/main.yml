@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build affected
+  status-checks:
+    name: Build & test affected
     runs-on: ubuntu-latest
 
     steps:
@@ -29,18 +29,6 @@ jobs:
       - name: Build affected
         run: npx nx affected:build --base=origin/main --head=HEAD
 
-  test:
-    name: Test affected
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
       - name: Test affected
         run: npx nx affected:test --base=origin/main --head=HEAD
 
@@ -50,7 +38,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
@@ -58,6 +46,8 @@ jobs:
         run: npx nx build @mordech/components
 
   visual-tests:
+    name: Run visual tests
+
     needs: [build-component-lib]
     runs-on: ubuntu-latest
 
@@ -66,12 +56,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: storybook
-          path: storybook-static
 
       - name: visually test
         run: yarn workspace @mordech/components test:visual
