@@ -43,8 +43,8 @@ jobs:
         run: yarn nx affected:test
 
   visual-tests:
+    needs: [build, test]
     runs-on: ubuntu-latest
-      needs: [build, test]
 
     steps:
       - uses: actions/checkout@v3
