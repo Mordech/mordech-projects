@@ -10,6 +10,8 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@jscutlery/semver": "^2.27.0",
     "@nrwl/jest": "^14.7.3",
     "@nrwl/react": "^14.7.3",
@@ -25,6 +27,8 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "^0.6.4",
     "husky": "^8.0.0",
+    "lerna": "^5.5.1",
     "nx": "14.7.3"
-  }
+  },
+  "name": "mordech-projects"
 }
