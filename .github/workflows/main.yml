@@ -23,8 +23,12 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-     - name: Build storybook
-        run: nx affected:build
+      - name: Build affected
+        run: yarn nx affected:build
+
+      - name: Build component library
+        run: yarn nx build @mordech/components
+
 
   test:
     runs-on: ubuntu-latest
@@ -35,5 +39,24 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-     - name: Build storybook
-        run: nx affected:test
+      - name: Test affected
+        run: yarn nx affected:test
+
+  visual-tests:
+    runs-on: ubuntu-latest
+      needs: [build, test]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: storybook
+          path: storybook-static
+
+      - name: visually test
+        run: yarn test:visual --requireReference
