@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { colors } from '../../abstracts';
 import {
   BodyTextType,
   CodeType,
