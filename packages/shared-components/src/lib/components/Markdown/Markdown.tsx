@@ -15,8 +15,13 @@ export const Markdown: FC<MarkdownType> = ({
   <ReactMarkdown
     components={{
       p: ({ children }) =>
-        // eslint-disable-next-line react/jsx-no-useless-fragment
-        asFragment ? <>{children}</> : <Paragraph>{children}</Paragraph>,
+        asFragment ? (
+          // needed for functionality
+          // eslint-disable-next-line react/jsx-no-useless-fragment
+          <>{children}</>
+        ) : (
+          <Paragraph size="inherit">{children}</Paragraph>
+        ),
       em: ({ children }) => <Highlight>{children}</Highlight>,
       strong: ({ children }) => <Strong>{children}</Strong>,
       h1: ({ children }) => (
