@@ -19,12 +19,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
       - name: Build affected
-        run: npx nx affected --target=build --parallel=3
+        run: npx nx affected:build --base=origin/main --head=HEAD
 
       - name: Build component library
         run: npx nx build @mordech/components
@@ -40,7 +42,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Test affected
-        run: npx nx affected --target=test --parallel=3 --ci --code-coverage
+        run: npx nx affected:test --base=origin/main --head=HEAD
 
   visual-tests:
     needs: [build, test]
@@ -59,4 +61,4 @@ jobs:
           path: storybook-static
 
       - name: visually test
-        run: yarn test:visual --requireReference
+        run: yarn workspace @mordech/components test:visual
