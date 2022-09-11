@@ -4,4 +4,3 @@ export { Paper } from './Paper';
 export * from './Markdown';
 export * from './Typography';
 export * from './ArticleSpotlight';
-export * from './Main';
