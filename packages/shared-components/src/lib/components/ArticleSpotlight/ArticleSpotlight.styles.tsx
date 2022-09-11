@@ -1,18 +1,14 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../abstracts';
+import { breakpoints, Section } from '../../abstracts';
 
-export const Container = styled.article`
-  display: flex;
-  flex: 1;
-  width: fit-content;
+export const Container = styled(Section)`
   flex-direction: column;
+  width: fit-content;
   gap: 0.5rem;
-  justify-content: stretch;
 
   ${breakpoints.smMin} {
     gap: 3rem;
     justify-content: flex-end;
-    flex-wrap: nowrap;
     flex-direction: row;
 
     &:nth-child(even) {

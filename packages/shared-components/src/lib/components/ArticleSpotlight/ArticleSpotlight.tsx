@@ -26,7 +26,7 @@ export const ArticleSpotlight: FC<ArticleSpotlightProps> = ({
   description,
   thumbnailSrc,
 }) => (
-  <Container>
+  <Container as="article">
     <ThumbnailAnchor href={href}>
       <Paper variant="outlined">
         <Thumbnail alt="" src={thumbnailSrc} />
