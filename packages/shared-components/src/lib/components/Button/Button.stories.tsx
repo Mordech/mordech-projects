@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 export default {
   component: Button,
-  title: 'Atoms/Button',
+  title: 'Components/Button',
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => (
