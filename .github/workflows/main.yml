@@ -47,4 +47,4 @@ jobs:
         run: npx nx build @mordech/components
 
       - name: visually test
-        run: yarn workspace @mordech/components test:visual
+        run: yarn workspace @mordech/components test:visual --requireReference
