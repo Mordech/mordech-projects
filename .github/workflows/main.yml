@@ -50,6 +50,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Build component library
         run: npx nx build @mordech/components
