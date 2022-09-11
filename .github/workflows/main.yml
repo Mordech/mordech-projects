@@ -24,7 +24,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build affected
-        run: yarn nx affected:build
+        run: npx nx affected --target=build --parallel=3
 
       - name: Build component library
         run: yarn nx build @mordech/components
@@ -40,7 +40,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Test affected
-        run: yarn nx affected:test
+        run: npx nx affected --target=test --parallel=3 --ci --code-coverage
 
   visual-tests:
     needs: [build, test]
