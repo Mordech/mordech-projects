@@ -1,6 +1,6 @@
 {
   "name": "@mordech/portfolio",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "My portfolio website",
   "author": "Elad Mordechai Mizrahi",
@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@mordech/components": "^0.1.0",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^4.22.1",
     "gatsby-plugin-image": "^2.22.0",
@@ -27,8 +28,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-markdown": "^8.0.3",
-    "styled-components": "^5.3.5",
-    "@mordech/components": "*"
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/node": "^17.0.45",
