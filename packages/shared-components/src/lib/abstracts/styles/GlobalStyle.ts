@@ -24,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     margin: auto;
     height: 100%;
+    max-width: 128rem;
   }
 
   body {

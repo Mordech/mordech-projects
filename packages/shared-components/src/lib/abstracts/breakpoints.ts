@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 export const breakpoints = {
   xsMax: '@media screen and (max-width: 599px)',
   smMax: '@media screen and (max-width: 904px)',
@@ -8,3 +10,15 @@ export const breakpoints = {
   mdMin: '@media screen and (min-width: 1240px)',
   lgMin: '@media screen and (min-width: 1440px)',
 };
+
+export const pagePadding = css`
+  padding-inline: 1rem;
+
+  ${breakpoints.xsMin} {
+    padding-inline: 2rem;
+  }
+
+  ${breakpoints.mdMin} {
+    padding-inline: 5.25rem;
+  }
+`;
