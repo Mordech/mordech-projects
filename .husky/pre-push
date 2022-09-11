@@ -1,0 +1,3 @@
+yarn test
+yarn lint
+yarn workspace @mordech/components test:visual

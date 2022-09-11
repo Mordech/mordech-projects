@@ -6,6 +6,27 @@
   ],
   "scripts": {
     "start": "yarn workspace @mordech/portfolio gatsby develop",
-    "storybook": "yarn workspace @mordech/components storybook"
+    "test": "jest --coverage",
+    "storybook": "yarn workspace @mordech/components storybook",
+    "prepare": "husky install",
+    "lint": "nx affected --base=main --target=lint"
+  },
+  "devDependencies": {
+    "@jscutlery/semver": "^2.27.0",
+    "@nrwl/jest": "^14.7.3",
+    "@nrwl/react": "^14.7.3",
+    "@nrwl/storybook": "^14.7.3",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-storybook": "^0.6.4",
+    "husky": "^8.0.0",
+    "nx": "14.7.3"
   }
 }

@@ -27,7 +27,8 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-markdown": "^8.0.3",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "@mordech/components": "*"
   },
   "devDependencies": {
     "@types/node": "^17.0.45",
