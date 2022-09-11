@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import type { HeadFC } from 'gatsby';
-import { Home } from './index/';
 import { GlobalStyle } from '@mordech/components';
+
+import { Home } from '../components/home';
 
 export const IndexPage: FC = () => (
   <>
