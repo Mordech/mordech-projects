@@ -33,7 +33,7 @@ jobs:
       - shell: pwsh
         id: check_file_changed
         run: |
-          $diff = git diff --name-only HEAD^ HEAD
+          $diff = git diff HEAD^ HEAD packages/shared-components/src
 
           $SourceDiff = $diff | Where-Object { $_ -match '^docs/' -or $_ -match '.md$' }
           $HasDiff = $SourceDiff.Length -gt 0
