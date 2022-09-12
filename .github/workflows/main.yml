@@ -21,11 +21,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
       - name: Lint
-        run: npx nx affected --target=lint --parallel=4
+        run: yarn nx affected --target=lint --base=origin/main --head=HEAD --parallel=4
       - name: Test
-      - run: npx nx affected --target=test --parallel=4 --ci --code-coverage
+        run: yarn nx affected --target=test --base=origin/main --head=HEAD --parallel=4
       - name: Build
-      - run: npx nx affected --target=build --parallel=4
+        run: yarn nx affected --target=build --base=origin/main --head=HEAD --parallel=4
       - name: Visual Tests
-      - run: npx nx affected --target=visual --parallel=4
+        run: yarn nx affected --target=visual --base=origin/main --head=HEAD --parallel=4
+
