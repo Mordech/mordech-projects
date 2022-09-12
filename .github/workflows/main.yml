@@ -29,9 +29,13 @@ jobs:
           yarn nx affected:build --base=origin/main --head=HEAD
           yarn nx affected:test --base=origin/main --head=HEAD
           yarn nx affected:lint --base=origin/main --head=HEAD
-
-      - name: Build component library
-        run: yarn nx build @mordech/components
+      
+      - name: Checking if shared components changed
+        id: check_file_changed
+        run: Write-Host "::set-output name=diff::${{git diff HEAD^ HEAD packages/shared-components/src}}"
 
       - name: visually test
-        run: yarn nx visual @mordech/components --requireReference
+        if: steps.check_file_changed.outputs.diff != ''
+        run: |
+          yarn nx build @mordech/components
+          yarn nx visual @mordech/components --requireReference
