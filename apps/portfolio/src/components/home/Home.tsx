@@ -4,10 +4,8 @@ import {
   Headline,
   Main,
   Markdown,
-  Section,
 } from '@mordech/components';
 import React, { FC } from 'react';
-import NotFoundPage from '../../pages/404';
 import { articleSpotlightData } from './data';
 import { WelcomeVideo } from './WelcomeVideo';
 import { HeroHeader, ParagraphContainer } from './home.styles';
