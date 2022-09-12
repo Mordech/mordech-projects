@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/Mordech/mordech-projects/compare/v0.2.0...v0.2.1) (2022-09-12)
+
+
+### Features
+
+* make lint cachable ([2b27c76](https://github.com/Mordech/mordech-projects/commit/2b27c76fbcd80979b0926df733ec4bd2de17bf78))
+
+
+
+
+
 # [0.2.0](https://github.com/Mordech/mordech-projects/compare/v0.1.3...v0.2.0) (2022-09-12)
 
 
