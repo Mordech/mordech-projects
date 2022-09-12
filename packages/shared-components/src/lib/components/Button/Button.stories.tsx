@@ -28,7 +28,7 @@ const ButtonRow: Story<ButtonProps> = (args) => (
     <StyledUl aria-label="button examples">
       <li>
         <Button tabIndex={1} title="primary" {...args}>
-          Test CI
+          primary
         </Button>
       </li>
       <li>
