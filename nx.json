@@ -11,7 +11,7 @@
           "typecheck",
           "storybook",
           "test",
-          "test:visual",
+          "visual",
           "eject"
         ]
       }
@@ -19,9 +19,7 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     }
   },
   "affected": {
