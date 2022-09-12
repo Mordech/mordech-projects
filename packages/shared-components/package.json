@@ -22,7 +22,7 @@
     "build": "build-storybook -s public",
     "storybook": "start-storybook -p 6006 -s public",
     "test": "react-scripts test --coverage --watchAll=false",
-    "visual": "yarn build && loki test --reactUri file:./storybook-static",
+    "visual": "loki test --reactUri file:./storybook-static",
     "test:watch": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint src"
