@@ -1,5 +1,6 @@
 import { create } from '@storybook/theming';
 import { colors, fontFamilies } from '../src/lib/abstracts';
+import logo from './assets/logo.png';
 
 export default create({
   base: 'light',
@@ -28,6 +29,6 @@ export default create({
 
   brandTitle: 'My custom storybook',
   brandUrl: 'https://elad.mizrahi.cc',
-  brandImage: require('./assets/logo.png'),
+  brandImage: logo,
   brandTarget: '_blank',
 });
