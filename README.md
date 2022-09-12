@@ -1,7 +1,7 @@
 # Mordech Projects
 Side projects and things I don in my free time. Use it at you own risk 😅
 
-This project uses `yarn workspaces` and `NX`
+This project uses `yarn workspaces`, `Lerna`, and `NX`
 
 ## Getting started
 
