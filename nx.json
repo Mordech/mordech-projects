@@ -6,6 +6,7 @@
       "options": {
         "cacheableOperations": [
           "develop",
+          "lint",
           "build",
           "clean",
           "typecheck",
