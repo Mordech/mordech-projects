@@ -30,7 +30,7 @@ jobs:
           yarn nx affected:test --base=origin/main --head=HEAD
           yarn nx affected:lint --base=origin/main --head=HEAD
       
-      - name: Check file changed
+      - shell: pwsh
         id: check_file_changed
         run: |
           $diff = git diff --name-only HEAD^ HEAD
