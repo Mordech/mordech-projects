@@ -22,4 +22,4 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Bump version
-        run: npx lerna version --conventional-commits
+        run: npx lerna version --conventional-commits --yes
