@@ -1,8 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Bump version
 
 on:
+  push:
+    branches: [ "main" ]
+    
   workflow_dispatch:
 
 jobs:
@@ -17,6 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        
+
       - name: Bump version
         run: npx lerna version --conventional-commits
