@@ -30,12 +30,12 @@ jobs:
           yarn nx affected:test --base=origin/main --head=HEAD
           yarn nx affected:lint --base=origin/main --head=HEAD
       
-      - name: Get diff
+      - name: Get shared components diff
         id: check_file_changed
         run: |
           echo "::set-output name=diff::$(git diff origin/main HEAD packages/shared-components/src)"
 
-      - name: visually test
+      - name: Visually test
         if: steps.check_file_changed.outputs.diff != ''
         run: |
           yarn nx build @mordech/components
