@@ -1,5 +1,5 @@
 # Mordech Projects
-Side projects and things I don in my free time. Use it at you own risk 😅
+Side projects and things I do in my free time. Use it at you own risk 😅
 
 This project uses `yarn workspaces`, `Lerna`, and `NX`
 
