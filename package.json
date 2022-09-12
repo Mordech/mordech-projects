@@ -7,8 +7,7 @@
   ],
   "scripts": {
     "start": "yarn workspace @mordech/portfolio gatsby develop",
-    "storybook": "yarn workspace @mordech/components storybook",
-    "prepare": "husky install"
+    "storybook": "yarn workspace @mordech/components storybook"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",

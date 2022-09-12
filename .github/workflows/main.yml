@@ -24,19 +24,12 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Run checks
-        run: |
-          yarn nx affected:build --base=origin/main --head=HEAD
-          yarn nx affected:test --base=origin/main --head=HEAD
-          yarn nx affected:lint --base=origin/main --head=HEAD
-      
-      - name: Get shared components diff
-        id: check_file_changed
-        run: |
-          echo "::set-output name=diff::$(git diff origin/main HEAD packages/shared-components/src)"
+      - name: Lint
+        run: yarn nx affected --target=lint --base=origin/main --head=HEAD
+      - name: Test
+        run: yarn nx affected --target=test --base=origin/main --head=HEAD
+      - name: Build
+        run: yarn nx affected --target=build --base=origin/main --head=HEAD
+      - name: Visual Tests
+        run: yarn nx affected --target=visual --base=origin/main --head=HEAD
 
-      - name: Visually test
-        if: steps.check_file_changed.outputs.diff != ''
-        run: |
-          yarn nx build @mordech/components
-          yarn nx visual @mordech/components --requireReference
