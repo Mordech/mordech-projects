@@ -26,5 +26,5 @@ jobs:
 
       - name: Build project and run visual tests
         run: |
-          npx nx build @mordech/components
-          npx nx test:visual @mordech/components --requireReference
+          yarn nx build @mordech/components
+          yarn nx visual @mordech/components --requireReference

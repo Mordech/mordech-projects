@@ -12,7 +12,7 @@
           "typecheck",
           "storybook",
           "test",
-          "test:visual",
+          "visual",
           "eject"
         ],
         "accessToken": "MWFlZmZjNTUtZDQ5MC00NDRjLTk4ZGYtZmViNDZhMThiOTVifHJlYWQtd3JpdGU="
