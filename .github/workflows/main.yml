@@ -24,8 +24,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build component library
-        run: npx nx build @mordech/components
-
-      - name: visually test
-        run: npx nx test:visual @mordech/components --requireReference
+      - name: Build project and run visual tests
+        run: |
+          npx nx build @mordech/components
+          npx nx test:visual @mordech/components --requireReference
