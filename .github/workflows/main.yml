@@ -25,7 +25,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build component library
-        run: yarn nx build @mordech/components
+        run: npx nx build @mordech/components
 
       - name: visually test
         run: yarn workspace @mordech/components test:visual --requireReference
