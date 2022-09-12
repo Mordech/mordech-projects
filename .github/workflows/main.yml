@@ -30,12 +30,18 @@ jobs:
           yarn nx affected:test --base=origin/main --head=HEAD
           yarn nx affected:lint --base=origin/main --head=HEAD
       
-      - name: Checking if shared components changed
+      - shell: pwsh
         id: check_file_changed
-        run: Write-Host "::set-output name=diff::${{git diff HEAD^ HEAD packages/shared-components/src}}"
+        run: |
+          $diff = git diff --name-only HEAD^ HEAD
+
+          $SourceDiff = $diff | Where-Object { $_ -match '^docs/' -or $_ -match '.md$' }
+          $HasDiff = $SourceDiff.Length -gt 0
+
+          Write-Host "::set-output name=docs_changed::$HasDiff"
 
       - name: visually test
-        if: steps.check_file_changed.outputs.diff != ''
+        if: steps.check_file_changed.outputs.docs_changed == 'True'
         run: |
           yarn nx build @mordech/components
           yarn nx visual @mordech/components --requireReference
