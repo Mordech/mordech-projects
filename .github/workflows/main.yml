@@ -1,0 +1,50 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  status-checks:
+    name: Build & test affected
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build affected
+        run: npx nx affected:build --base=origin/main --head=HEAD
+
+      - name: Test affected
+        run: npx nx affected:test --base=origin/main --head=HEAD
+
+  visual-tests:
+    name: Run visual tests
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build component library
+        run: npx nx build @mordech/components
+
+      - name: visually test
+        run: yarn workspace @mordech/components test:visual --requireReference

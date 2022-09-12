@@ -20,5 +20,6 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'react/no-unescaped-entities': 0,
+    'no-unused-vars': 'error',
   },
 };
