@@ -1,6 +1,6 @@
 {
   "name": "@mordech/portfolio",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "private": true,
   "description": "My portfolio website",
   "author": "Elad Mordechai Mizrahi",
@@ -17,7 +17,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@mordech/components": "^0.1.3",
+    "@mordech/components": "^0.2.0",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^4.22.1",
     "gatsby-plugin-image": "^2.22.0",
@@ -36,7 +36,6 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",
-    "typescript": "^4.8.2",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "eslint": "8.15.0",
@@ -45,6 +44,7 @@
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
-    "eslint-plugin-react-hooks": "4.6.0"
+    "eslint-plugin-react-hooks": "4.6.0",
+    "typescript": "^4.8.2"
   }
 }
