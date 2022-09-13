@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/Mordech/mordech-projects/compare/v0.2.2...v0.3.0) (2022-09-13)
+
+
+### Bug Fixes
+
+* article spotlight styling ([7552d3f](https://github.com/Mordech/mordech-projects/commit/7552d3f0cc0f07e4f8de63ef16ee47d2ed6cb0c7))
+
+
+### Features
+
+* change as to asElement ([aa1bb74](https://github.com/Mordech/mordech-projects/commit/aa1bb74241b62f1485a87e47b933fc96d7155a44))
+* new markdown sub components and story ([0ea6dc1](https://github.com/Mordech/mordech-projects/commit/0ea6dc1d5fba1612bf391ba36a23b7f4fc8d7800))
+
+
+
+
+
 ## [0.2.2](https://github.com/Mordech/mordech-projects/compare/v0.2.1...v0.2.2) (2022-09-12)
 
 **Note:** Version bump only for package @mordech/components
