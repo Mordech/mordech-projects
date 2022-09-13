@@ -14,11 +14,12 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src"
+    "lint": "eslint src/"
   },
   "dependencies": {
     "@mordech/components": "^0.2.2",
     "babel-plugin-styled-components": "^2.0.7",
+    "eslint": "8.15.0",
     "gatsby": "^4.22.1",
     "gatsby-plugin-image": "^2.22.0",
     "gatsby-plugin-manifest": "^4.22.0",
