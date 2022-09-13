@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/Mordech/mordech-projects/compare/v0.3.1...v0.3.2) (2022-09-13)
+
+
+### Bug Fixes
+
+* header tags ([#24](https://github.com/Mordech/mordech-projects/issues/24)) ([fc324a8](https://github.com/Mordech/mordech-projects/commit/fc324a883983dd7cb68ed3d2d9836221551a8f59))
+
+
+
+
+
 ## [0.3.1](https://github.com/Mordech/mordech-projects/compare/v0.3.0...v0.3.1) (2022-09-13)
 
 **Note:** Version bump only for package @mordech/components
