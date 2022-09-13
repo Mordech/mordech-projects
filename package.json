@@ -12,6 +12,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@nrwl/react": "^14.7.5",
+    "@nrwl/storybook": "^14.7.5",
     "@nrwl/workspace": "^14.7.5",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",

@@ -1,6 +1,14 @@
 import React, { FC } from 'react';
 import ReactMarkdown, { ReactMarkdownOptions } from 'react-markdown';
-import { Headline, Highlight, Paragraph, Strong } from '../Typography';
+import { Highlight, InlineCode, Strong } from '../Typography';
+import {
+  MarkdownH1,
+  MarkdownH2,
+  MarkdownH3,
+  MarkdownH4,
+  MarkdownParagraph,
+  Pre,
+} from './Markdown.styles';
 
 type MarkdownType = ReactMarkdownOptions & {
   children: string;
@@ -20,30 +28,16 @@ export const Markdown: FC<MarkdownType> = ({
           // eslint-disable-next-line react/jsx-no-useless-fragment
           <>{children}</>
         ) : (
-          <Paragraph size="inherit">{children}</Paragraph>
+          <MarkdownParagraph>{children}</MarkdownParagraph>
         ),
       em: ({ children }) => <Highlight>{children}</Highlight>,
       strong: ({ children }) => <Strong>{children}</Strong>,
-      h1: ({ children }) => (
-        <Headline as="h1" size={4}>
-          {children}
-        </Headline>
-      ),
-      h2: ({ children }) => (
-        <Headline as="h2" size={4}>
-          {children}
-        </Headline>
-      ),
-      h3: ({ children }) => (
-        <Headline as="h3" size={3}>
-          {children}
-        </Headline>
-      ),
-      h4: ({ children }) => (
-        <Headline as="h4" size={2}>
-          {children}
-        </Headline>
-      ),
+      h1: ({ children }) => <MarkdownH1>{children}</MarkdownH1>,
+      h2: ({ children }) => <MarkdownH2>{children}</MarkdownH2>,
+      h3: ({ children }) => <MarkdownH3>{children}</MarkdownH3>,
+      h4: ({ children }) => <MarkdownH4>{children}</MarkdownH4>,
+      code: InlineCode,
+      pre: Pre,
     }}
     {...rest}
   >
