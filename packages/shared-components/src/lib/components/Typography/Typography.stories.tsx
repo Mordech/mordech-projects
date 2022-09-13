@@ -75,7 +75,7 @@ export default {
 } as Meta;
 
 const Template: Story<TypographyProps> = (args) => (
-  <Typography as="span" {...args}>
+  <Typography asElement="span" {...args}>
     I'm a text component!
   </Typography>
 );
@@ -83,7 +83,7 @@ const Template: Story<TypographyProps> = (args) => (
 const ParagraphTemplate: Story<TypographyProps> = (args) => (
   <ParagraphContainer>
     <SubParagraphContainer>
-      <Headline size={4} as="h1" {...args}>
+      <Headline size={4} asElement="h1" {...args}>
         Hey{' '}
         <span role="img" aria-label="Hand waving emoji">
           👋
@@ -109,7 +109,7 @@ const ParagraphTemplate: Story<TypographyProps> = (args) => (
     </SubParagraphContainer>
 
     <SubParagraphContainer>
-      <Headline as="h2" size={3} {...args}>
+      <Headline asElement="h2" size={3} {...args}>
         I can be a headline too
       </Headline>
       <Paragraph {...args}>

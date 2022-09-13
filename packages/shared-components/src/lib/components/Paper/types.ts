@@ -5,7 +5,14 @@ export type PaperVariants = 'elevation' | 'outlined' | 'fill';
 
 export type PaperProps = HTMLAttributes<HTMLDivElement> & {
   children?: React.ReactNode;
-  as?: 'div' | 'section' | 'article' | 'header' | 'nav' | 'aside' | 'summary';
+  asElement?:
+    | 'div'
+    | 'section'
+    | 'article'
+    | 'header'
+    | 'nav'
+    | 'aside'
+    | 'summary';
   variant?: PaperVariants;
 };
 

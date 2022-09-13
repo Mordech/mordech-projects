@@ -21,14 +21,14 @@ const Container = styled.div`
 const Template: Story<PaperProps> = (args) => (
   <Paper {...args}>
     <Container>
-      <Typography variant="headline" size={3} as="h1">
+      <Typography variant="headline" size={3} asElement="h1">
         I'm a Paper component!
       </Typography>
-      <Typography as="p">
+      <Typography asElement="p">
         Paper is a component that provides a simple way to create surfaces that
         contain a set of related components.
       </Typography>
-      <Typography as="p">
+      <Typography asElement="p">
         It can be used to create cards, dialogs, and more.
       </Typography>
     </Container>
@@ -36,4 +36,4 @@ const Template: Story<PaperProps> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = { as: 'div' };
+Primary.args = { asElement: 'div' };
