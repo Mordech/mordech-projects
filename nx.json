@@ -2,7 +2,7 @@
   "extends": "nx/presets/npm.json",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": [
           "develop",
@@ -14,13 +14,23 @@
           "lint",
           "visual",
           "eject"
-        ]
+        ],
+        "accessToken": "ZWJiZTdjOGEtZmFkYS00YjNhLWIwNTYtOTdkOGRjNTRhMTg4fHJlYWQtd3JpdGU="
       }
     }
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": [
+        "{projectRoot}/dist",
+        "{projectRoot}/build",
+        "{projectRoot}/public/build",
+        "{projectRoot}/storybook-static"
+      ]
+    },
+    "visual": {
+      "dependsOn": ["build"]
     }
   },
   "affected": {
