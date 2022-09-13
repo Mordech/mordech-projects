@@ -1,6 +1,6 @@
 {
   "name": "@mordech/portfolio",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "description": "My portfolio website",
   "author": "Elad Mordechai Mizrahi",
@@ -17,7 +17,7 @@
     "lint": "eslint src/"
   },
   "dependencies": {
-    "@mordech/components": "^0.3.0",
+    "@mordech/components": "^0.3.1",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.15.0",
     "gatsby": "^4.22.1",
