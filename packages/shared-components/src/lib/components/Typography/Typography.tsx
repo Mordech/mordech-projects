@@ -42,9 +42,11 @@ export const StyledTypography = styled.span<Required<TypographyProps>>`
 
 export const Typography: FC<TypographyType> = ({
   variant = 'body',
+  asElement,
   ...rest
 }) => (
   <StyledTypography
+    as={asElement ?? variantDefaults[variant].asElement}
     {...defaultTypographyProps}
     {...variantDefaults[variant]}
     {...rest}

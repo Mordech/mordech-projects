@@ -19,27 +19,27 @@ export type CommonTypographyType = HTMLAttributes<HTMLHtmlElement> &
 
 export type BodyTextType = CommonTypographyType & {
   variant?: 'body' | 'subheading';
-  as?: 'p' | 'span' | 'strong' | 'em';
+  asElement?: 'p' | 'span' | 'strong' | 'em';
 };
 
 export type HeadlineType = CommonTypographyType & {
   variant?: 'headline';
-  as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  asElement: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 };
 
 export type ParagraphType = CommonTypographyType & {
   variant?: 'paragraph' | 'body';
-  as?: 'p';
+  asElement?: 'p';
 };
 
 export type SpanType = CommonTypographyType & {
   variant?: 'span' | 'strong' | 'highlight';
-  as?: 'span' | 'strong' | 'em';
+  asElement?: 'span' | 'strong' | 'em';
 };
 
 export type CodeType = CommonTypographyType & {
   variant?: 'code' | 'inlineCode';
-  as?: 'code';
+  asElement?: 'code';
 };
 
 export type TypographyType =

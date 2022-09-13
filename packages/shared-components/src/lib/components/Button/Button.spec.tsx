@@ -19,7 +19,11 @@ describe('Button', () => {
 
     rerender(
       <nav>
-        <Button as="a" href="https://www.google.com" title="Go to google">
+        <Button
+          asElement="a"
+          href="https://www.google.com"
+          title="Go to google"
+        >
           Go to google
         </Button>
       </nav>

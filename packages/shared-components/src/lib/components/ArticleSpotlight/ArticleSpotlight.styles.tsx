@@ -52,7 +52,6 @@ export const Content = styled.div`
 export const Description = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 `;
 
 export const ThumbnailAnchor = styled.a`

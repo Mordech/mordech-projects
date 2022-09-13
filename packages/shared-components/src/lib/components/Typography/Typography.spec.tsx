@@ -15,14 +15,14 @@ import { colors, fontFamilies } from '../../abstracts';
 
 describe('Typography', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Typography as="span" />);
+    const { baseElement } = render(<Typography asElement="span" />);
     expect(baseElement).toBeTruthy();
   });
 
   it('should render visible for sr only', async () => {
     const { baseElement, getByTestId } = render(
       <main>
-        <Typography data-testid="styled-text" srOnly as="em">
+        <Typography data-testid="styled-text" srOnly asElement="em">
           Visible only to screen readers
         </Typography>
       </main>
@@ -33,7 +33,7 @@ describe('Typography', () => {
   it('should render styles correctly', async () => {
     const { baseElement, getByText } = render(
       <main>
-        <Headline as="h1" size={3}>
+        <Headline asElement="h1" size={3}>
           I have different preset sizes
         </Headline>
         <Subheading>And subheadings</Subheading>
@@ -41,7 +41,7 @@ describe('Typography', () => {
         <Paragraph>
           and I can be a paragraph <InlineCode>or inline code</InlineCode> too,
           and you{' '}
-          <Span as="em" weight="bold">
+          <Span asElement="em" weight="bold">
             emphasize{' '}
           </Span>
           parts of me.
@@ -71,11 +71,11 @@ describe('Typography', () => {
     const { baseElement, getByLabelText } = render(
       <main>
         <section title="Hello World">
-          <Headline size={4} aria-label="Hello World" as={'h1'}></Headline>
+          <Headline size={4} aria-label="Hello World" asElement="h1"></Headline>
           Hello World
         </section>
         <section title="Secondary Headline">
-          <Headline size={4} aria-label="Secondary Headline" as={'h2'}>
+          <Headline size={4} aria-label="Secondary Headline" asElement="h2">
             Secondary Headline
           </Headline>
           <Headline
@@ -83,7 +83,7 @@ describe('Typography', () => {
             weight="bold"
             aria-label="Sub Headline"
             fontFamily="sans"
-            as={'h3'}
+            asElement="h3"
           >
             Sub Headline
           </Headline>

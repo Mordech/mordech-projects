@@ -12,7 +12,7 @@ import variantStyles from './variantStyles';
 
 export type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   ButtonHTMLAttributes<HTMLButtonElement> & {
-    as?: 'button' | 'a';
+    asElement?: 'button' | 'a';
     variant?: ButtonVariants;
     children?: ReactNode;
     icon?: {
@@ -96,7 +96,7 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
 
 export const Button: FC<ButtonProps> = ({
   variant = 'primary',
-  as = 'button',
+  asElement = 'button',
   children,
   icon,
   ...rest
@@ -106,7 +106,7 @@ export const Button: FC<ButtonProps> = ({
     icon?.component ?? (icon?.iconName && <Icon iconName={icon?.iconName} />);
 
   return (
-    <StyledButton as={as} $variant={variant} {...rest}>
+    <StyledButton as={asElement} $variant={variant} {...rest}>
       {iconPosition === 'left' && iconComponent}
       {children}
       {iconPosition === 'right' && iconComponent}

@@ -24,7 +24,7 @@ export const Home: FC = () => (
   <>
     <HeroHeader>
       <ParagraphContainer>
-        <Headline size={5} as={'h1'}>
+        <Headline size={5} asElement={'h1'}>
           <Markdown asFragment>{WELCOME_MESSAGE}</Markdown>
         </Headline>
         <Markdown>{ABOUT_ME}</Markdown>

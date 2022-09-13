@@ -18,6 +18,8 @@ const StyledPaper = styled.div<StyledPaperProps>`
   border-radius: 0.75rem;
 `;
 
-export const Paper: FC<PaperProps> = ({ variant = 'elevation', ...rest }) => (
-  <StyledPaper {...paperVariantProps[variant]} {...rest} />
-);
+export const Paper: FC<PaperProps> = ({
+  variant = 'elevation',
+  asElement,
+  ...rest
+}) => <StyledPaper as={asElement} {...paperVariantProps[variant]} {...rest} />;

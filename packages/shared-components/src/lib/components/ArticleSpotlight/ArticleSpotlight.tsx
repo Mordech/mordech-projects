@@ -34,12 +34,12 @@ export const ArticleSpotlight: FC<ArticleSpotlightProps> = ({
     </ThumbnailAnchor>
     <Content>
       <Description>
-        <Headline as="h2" size={3}>
+        <Headline asElement="h2" size={3}>
           <Markdown asFragment>{headline}</Markdown>
         </Headline>
         <Markdown>{description}</Markdown>
       </Description>
-      <Button href={href} variant="flat" as="a">
+      <Button href={href} variant="flat" asElement="a">
         {callToAction}
       </Button>
     </Content>
