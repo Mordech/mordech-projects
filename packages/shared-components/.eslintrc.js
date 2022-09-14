@@ -21,5 +21,6 @@ module.exports = {
   rules: {
     'react/no-unescaped-entities': 0,
     'no-unused-vars': 'error',
+    'storybook/no-uninstalled-addons': 0,
   },
 };
