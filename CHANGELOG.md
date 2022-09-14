@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.3](https://github.com/Mordech/mordech-projects/compare/v0.3.2...v0.3.3) (2022-09-14)
+
+
+### Bug Fixes
+
+* favicon rel in header ([#25](https://github.com/Mordech/mordech-projects/issues/25)) ([02d104e](https://github.com/Mordech/mordech-projects/commit/02d104edc53a614152b2d7741278006777b1f23f))
+
+
+
+
+
 ## [0.3.2](https://github.com/Mordech/mordech-projects/compare/v0.3.1...v0.3.2) (2022-09-13)
 
 
