@@ -16,7 +16,7 @@ Creating a personal component library frees me to work fast, make quick iteratio
 
 I'm trying to develop [my portfolio](https://elad.mizrahi.cc) myself, and in the process creating my personal component library and style guide.
 
-### Make it work
+## Getting started
 
 Run
 ```bash
