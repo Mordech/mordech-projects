@@ -37,13 +37,7 @@ const ButtonRow: Story<ButtonProps> = (args) => (
         </Button>
       </li>
       <li>
-        <Button
-          tabIndex={3}
-          startIcon="download"
-          variant="flat"
-          title="flat"
-          {...args}
-        >
+        <Button tabIndex={3} variant="flat" title="flat" {...args}>
           flat
         </Button>
       </li>
