@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof ArticleSpotlight> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   href: '#',
-  headline: '**Lorem Ipsum dollor:** Fusce at dolor sed nunc',
+  headline: '**Lorem Ipsum dollor:** Fusce dolor sed nunc',
   description: `Quas explicabo a ad. Ut commodi est *iusto eaque et reiciendis* ullam fugiat. Ex inventore fuga.
 
   Neque porro quisquam est qui dolorem **ipsum quia dolor** sit amet, consectetur, adipisci velit.`,
