@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <Icon iconName={'linkedin'} {...args} />;
+const Template: Story = (args) => <Icon icon={'linkedin'} {...args} />;
 
 export const Default = Template.bind({});
 Default.args = { iconName: 'linkedin', size: '2rem' };

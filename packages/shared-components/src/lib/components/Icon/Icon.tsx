@@ -2,14 +2,13 @@ import React, { FC } from 'react';
 import styled, { CSSProperties } from 'styled-components';
 import { Icons } from '../../abstracts';
 
-/* eslint-disable-next-line */
 export interface IconProps {
-  iconName: Icons;
+  icon: Icons;
   size?: CSSProperties['fontSize'];
   iconColor?: CSSProperties['color'];
 }
 
-const StyledIcon = styled.em<{
+const StyledIcon = styled.span<{
   $fontSize: CSSProperties['fontSize'];
   $iconColor: CSSProperties['color'];
 }>`
@@ -18,15 +17,37 @@ const StyledIcon = styled.em<{
   color: ${({ $iconColor }) => $iconColor};
 `;
 
+export const IconElementWrapper = styled.div<{
+  $size: CSSProperties['fontSize'];
+  $iconColor: CSSProperties['color'];
+}>`
+  width: ${({ $size }) => $size};
+  min-width: ${({ $size }) => $size};
+  color: ${({ $iconColor }) => $iconColor};
+
+  & > * {
+    width: 100%;
+  }
+
+  svg {
+    fill: ${({ $iconColor }) => $iconColor};
+  }
+`;
+
 export const Icon: FC<IconProps> = ({
-  iconName,
+  icon,
   size = 'inherit',
   iconColor = 'inherit',
-}) => (
-  <StyledIcon
-    aria-hidden="true"
-    $fontSize={size}
-    $iconColor={iconColor}
-    className={`icon-${iconName}`}
-  />
-);
+}) =>
+  typeof icon === 'string' ? (
+    <StyledIcon
+      aria-hidden="true"
+      $fontSize={size}
+      $iconColor={iconColor}
+      className={`icon-${icon}`}
+    />
+  ) : (
+    <IconElementWrapper $size={size} $iconColor={iconColor}>
+      {icon}
+    </IconElementWrapper>
+  );
