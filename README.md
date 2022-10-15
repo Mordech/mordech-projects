@@ -1,4 +1,4 @@
-# Hey! 👋 it seems you found yourself in my personal project repo 
+# Hey! 👋 it seems you found yourself in my personal projects repo 
 
 This repository is a hub for my projects and things I do in my free time. You can use it at your own risk 😅
 
@@ -7,12 +7,12 @@ This project uses `yarn workspaces`, `Lerna`, and `NX` + `NX Cloud`
 ## What can I find here?
 
 ### My component library
-[readme](/packages/shared-components/README.md)
+[link](/packages/shared-components/)
 
 Creating a personal component library frees me to work fast, make quick iterations, and experiment with ideas that I usually can't do at work.
 
 ### Portfolio
-[folder](/apps/portfolio/) (working on a readme 😊)
+[link](/apps/portfolio/) (working on a readme 😊)
 
 I'm trying to develop [my portfolio](https://elad.mizrahi.cc) myself, and in the process creating my personal component library and style guide.
 
@@ -20,7 +20,7 @@ I'm trying to develop [my portfolio](https://elad.mizrahi.cc) myself, and in the
 
 Run
 ```bash
-yarn
+yarn && yarn husky install
 ```
 
 Then you can navigate to a folder and follow the instructions you can also run the components' library storybook using
