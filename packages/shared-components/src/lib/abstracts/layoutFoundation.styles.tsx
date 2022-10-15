@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { pagePadding } from './breakpoints';
-import { gapSizes, GapSizes } from './typography';
+import { pagePadding } from '.';
+import { gapSizes, GapSizes } from '.';
 
 export const Section = styled.section`
   display: flex;

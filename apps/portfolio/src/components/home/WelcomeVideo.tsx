@@ -20,7 +20,7 @@ export const WelcomeVideo: FC = () => (
     loop
     poster={welcomeVideoPoster}
   >
-    <source src={welcomeVideoWebM} type="video/webm" />
+    <source src={welcomeVideoWebM} type="video/webm;codecs=hvc1" />
     <source src={welcomeVideoMp4} type="video/mp4" />
   </Video>
 );

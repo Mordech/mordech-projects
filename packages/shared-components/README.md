@@ -23,4 +23,11 @@ Before creating a pull request please run visual tests on the project.
 ```bash
 yarn nx visual
 ```
-and follow the steps required to pass
+and follow the steps required to pass.
+
+If changes have been made to existing components please approve them.
+
+After approving the changes run:
+```bash
+yarn loki approve
+```

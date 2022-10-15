@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { Paper } from './Paper';
+import Footer from './Footer';
 // TODO write tests
-
-describe('Paper', () => {
+describe('Footer', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Paper />);
+    const { baseElement } = render(
+      <Footer>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</Footer>
+    );
     expect(baseElement).toBeTruthy();
   });
 });

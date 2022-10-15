@@ -19,6 +19,14 @@
       }
     }
   },
+  "generators": {
+    "@nrwl/react:component": {
+      "style": "styled-components",
+      "export": true,
+      "pascalCaseDirectory": true,
+      "pascalCaseFiles": true
+    }
+  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],

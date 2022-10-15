@@ -5,6 +5,7 @@ export const Container = styled(Section)`
   flex-direction: column;
   width: fit-content;
   gap: 0.5rem;
+  margin-inline: auto;
 
   ${breakpoints.smMin} {
     gap: 3rem;

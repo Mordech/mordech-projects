@@ -1,6 +1,7 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
+
 import { Button } from './Button';
 
 afterEach(() => cleanup());
@@ -31,11 +32,14 @@ describe('Button', () => {
 
     rerender(
       <nav>
-        <Button
-          title="Go to google"
-          icon={{ iconName: 'download', position: 'right' }}
-        >
-          Go to google
+        <Button title="download" startIcon="download">
+          download
+        </Button>
+        <Button variant="outline" title="search">
+          search
+        </Button>
+        <Button variant="flat" title="flat button">
+          I'm flat!
         </Button>
       </nav>
     );

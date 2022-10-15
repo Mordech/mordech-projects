@@ -7,7 +7,7 @@ import { Home } from '../components/home';
 export const IndexPage: FC = () => (
   <>
     <GlobalStyle />
-    <Home />;
+    <Home />
   </>
 );
 

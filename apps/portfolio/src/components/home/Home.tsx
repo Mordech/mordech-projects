@@ -1,14 +1,18 @@
 import {
   ArticleSpotlight,
+  colors,
   Column,
+  Footer,
   Headline,
   Main,
   Markdown,
+  Typography,
 } from '@mordech/components';
 import React, { FC } from 'react';
-import { articleSpotlightData } from './data';
+import { articleData } from '../../data';
 import { WelcomeVideo } from './WelcomeVideo';
 import { HeroHeader, ParagraphContainer } from './home.styles';
+import { links } from '../../data/links';
 
 const WELCOME_MESSAGE = `Welcome!  \nI'm **Elad Mizrahi**`;
 const ABOUT_ME = `a passionate **Product Designer & UX engineer**.
@@ -34,9 +38,14 @@ export const Home: FC = () => (
       </Column>
     </HeroHeader>
     <Main>
-      {articleSpotlightData.map((articleProps) => (
+      {articleData.map((articleProps) => (
         <ArticleSpotlight key={articleProps.headline} {...articleProps} />
       ))}
     </Main>
+    <Footer links={links}>
+      <Typography color={colors.lightest}>
+        Designed and developed with ❤️ by Elad Mizrahi
+      </Typography>
+    </Footer>
   </>
 );

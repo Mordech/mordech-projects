@@ -11,7 +11,7 @@ import {
   Span,
   Subheading,
 } from './shorthands';
-import { colors, fontFamilies } from '../../abstracts';
+import { colors, fontFamilies, GlobalStyle } from '../../abstracts';
 
 describe('Typography', () => {
   it('should render successfully', () => {
@@ -32,21 +32,24 @@ describe('Typography', () => {
   });
   it('should render styles correctly', async () => {
     const { baseElement, getByText } = render(
-      <main>
-        <Headline asElement="h1" size={3}>
-          I have different preset sizes
-        </Headline>
-        <Subheading>And subheadings</Subheading>
-        <Code>Code is a variant</Code>
-        <Paragraph>
-          and I can be a paragraph <InlineCode>or inline code</InlineCode> too,
-          and you{' '}
-          <Span asElement="em" weight="bold">
-            emphasize{' '}
-          </Span>
-          parts of me.
-        </Paragraph>
-      </main>
+      <>
+        <GlobalStyle />
+        <main>
+          <Headline asElement="h1" size={3}>
+            I have different preset sizes
+          </Headline>
+          <Subheading>And subheadings</Subheading>
+          <Code>Code is a variant</Code>
+          <Paragraph>
+            and I can be a paragraph <InlineCode>or inline code</InlineCode>{' '}
+            too, and you{' '}
+            <Span asElement="em" weight="bold">
+              emphasize{' '}
+            </Span>
+            parts of me.
+          </Paragraph>
+        </main>
+      </>
     );
     expect(await axe(baseElement)).toHaveNoViolations();
     expect(await getByText(/.*I have different preset sizes*./)).toHaveStyle(

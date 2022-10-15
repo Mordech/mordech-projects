@@ -18,19 +18,15 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${fontFamilies['sans']};
   }
 
-  html,
   body {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    height: 100%;
-    max-width: 128rem;
-  }
-
-  body {
+    margin-inline: auto;
+    min-height: 100%;
+    width: 100%;
     background: ${colors['lightest']};
     color: ${colors['dark']};
-    
+    max-width: 128rem;
   }
   
   code {

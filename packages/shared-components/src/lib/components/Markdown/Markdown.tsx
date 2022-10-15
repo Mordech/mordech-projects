@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import ReactMarkdown, { ReactMarkdownOptions } from 'react-markdown';
+import ReactMarkdown, { Options } from 'react-markdown';
 import { Highlight, InlineCode, Strong } from '../Typography';
 import {
   MarkdownH1,
@@ -10,7 +10,7 @@ import {
   Pre,
 } from './Markdown.styles';
 
-type MarkdownType = ReactMarkdownOptions & {
+type MarkdownType = Options & {
   children: string;
   asFragment?: boolean;
 };
@@ -36,8 +36,8 @@ export const Markdown: FC<MarkdownType> = ({
       h2: ({ children }) => <MarkdownH2>{children}</MarkdownH2>,
       h3: ({ children }) => <MarkdownH3>{children}</MarkdownH3>,
       h4: ({ children }) => <MarkdownH4>{children}</MarkdownH4>,
-      code: InlineCode,
-      pre: Pre,
+      code: ({ children }) => <InlineCode>{children}</InlineCode>,
+      pre: ({ children }) => <Pre>{children}</Pre>,
     }}
     {...rest}
   >

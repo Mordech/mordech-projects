@@ -15,11 +15,8 @@ export type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> &
     asElement?: 'button' | 'a';
     variant?: ButtonVariants;
     children?: ReactNode;
-    icon?: {
-      iconName?: Icons;
-      component?: ReactNode;
-      position?: 'left' | 'right';
-    };
+    startIcon?: Icons;
+    endIcon?: Icons;
   };
 
 const StyledButton = styled.button<{ $variant: ButtonVariants }>`
@@ -98,18 +95,15 @@ export const Button: FC<ButtonProps> = ({
   variant = 'primary',
   asElement = 'button',
   children,
-  icon,
+  startIcon,
+  endIcon,
   ...rest
 }) => {
-  const iconPosition = icon?.position ?? 'left';
-  const iconComponent =
-    icon?.component ?? (icon?.iconName && <Icon iconName={icon?.iconName} />);
-
   return (
     <StyledButton as={asElement} $variant={variant} {...rest}>
-      {iconPosition === 'left' && iconComponent}
+      {startIcon && <Icon icon={startIcon} />}
       {children}
-      {iconPosition === 'right' && iconComponent}
+      {endIcon && <Icon icon={endIcon} />}
     </StyledButton>
   );
 };
