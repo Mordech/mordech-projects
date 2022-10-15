@@ -8,7 +8,7 @@
   "scripts": {
     "start": "nx run @mordech/portfolio:start",
     "storybook": "nx run @mordech/components:start",
-    "postinstall": "husky install"
+    "postinstall": "yarn husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
