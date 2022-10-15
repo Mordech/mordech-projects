@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/Mordech/mordech-projects/compare/v0.3.4...v0.4.0) (2022-10-15)
+
+
+### Features
+
+* Footer component ([#29](https://github.com/Mordech/mordech-projects/issues/29)) ([5475dcf](https://github.com/Mordech/mordech-projects/commit/5475dcf72ff7281ddbb1a0ef52575d059b21d82a))
+
+
+
+
+
 ## [0.3.4](https://github.com/Mordech/mordech-projects/compare/v0.3.3...v0.3.4) (2022-09-14)
 
 **Note:** Version bump only for package mordech-projects
