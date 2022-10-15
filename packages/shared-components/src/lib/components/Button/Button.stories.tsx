@@ -39,7 +39,7 @@ const ButtonRow: Story<ButtonProps> = (args) => (
       <li>
         <Button
           tabIndex={3}
-          icon={{ iconName: 'download', position: 'right' }}
+          startIcon="download"
           variant="flat"
           title="flat"
           {...args}
@@ -55,10 +55,8 @@ export const Icon = Template.bind({});
 Icon.args = {
   variant: 'primary',
   disabled: false,
-  icon: {
-    position: 'left',
-    iconName: 'download',
-  },
+  startIcon: 'download',
+  endIcon: undefined,
 };
 
 export const Outline = Template.bind({});
