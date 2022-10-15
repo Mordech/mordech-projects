@@ -1,10 +1,11 @@
 import { ArticleSpotlightProps } from '@mordech/components';
-import voluImage from '../../../images/thumbnails/volu.png';
-import moneynetImage from '../../../images/thumbnails/moneynet.png';
-import jingaImage from '../../../images/thumbnails/jinga.png';
-import comicsappImage from '../../../images/thumbnails/comicsapp.png';
 
-export const articleSpotlightData: ArticleSpotlightProps[] = [
+import voluImage from '../images/thumbnails/volu.png';
+import moneynetImage from '../images/thumbnails/moneynet.png';
+import jingaImage from '../images/thumbnails/jinga.png';
+import comicsappImage from '../images/thumbnails/comicsapp.png';
+
+export const articleData: ArticleSpotlightProps[] = [
   {
     href: '/volu',
     headline: '**Volu:** Mobile App & OS Design',
