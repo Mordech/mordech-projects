@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import ReactMarkdown, { Options } from 'react-markdown';
+
 import { Highlight, InlineCode, Strong } from '../Typography';
+
 import {
   MarkdownH1,
   MarkdownH2,

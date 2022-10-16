@@ -1,8 +1,9 @@
+import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
-import React from 'react';
 
 import { colors } from '../../abstracts';
+
 import { Button } from './Button';
 
 afterEach(() => cleanup());

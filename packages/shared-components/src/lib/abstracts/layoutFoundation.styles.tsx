@@ -1,4 +1,5 @@
 import styled, { CSSProperties } from 'styled-components';
+
 import { pagePadding } from '.';
 
 export const Section = styled.section`

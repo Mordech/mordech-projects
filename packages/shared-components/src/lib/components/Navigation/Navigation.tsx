@@ -1,5 +1,7 @@
 import React, { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
+
 import { Icon } from '../Icon';
+
 import { LinksList, LogoLink, StyledNavigation } from './Navigation.styles';
 
 export interface NavigationProps {

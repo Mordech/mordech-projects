@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled, { CSSProperties } from 'styled-components';
+
 import { Icons } from '../../abstracts';
 
 export interface IconProps {

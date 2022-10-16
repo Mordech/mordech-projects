@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import welcomeVideoWebM from '../../videos/welcomeVideo.webm';
-import welcomeVideoMp4 from '../../videos/welcomeVideo.mp4';
-import welcomeVideoPoster from '../../images/welcomeVideo.png';
 import styled from 'styled-components';
+
+import welcomeVideoPoster from '../../images/welcomeVideo.png';
+import welcomeVideoMp4 from '../../videos/welcomeVideo.mp4';
+import welcomeVideoWebM from '../../videos/welcomeVideo.webm';
 
 export const Video = styled.video`
   align-self: center;

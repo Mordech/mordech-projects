@@ -1,4 +1,5 @@
 import { colors } from '../../abstracts';
+
 import { TypographyProps, TypographyType } from './types';
 
 export const defaultTypographyProps: Required<TypographyProps> = {

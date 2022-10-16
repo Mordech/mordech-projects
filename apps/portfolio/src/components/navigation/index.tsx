@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { Button, Navigation as NavigationComponent } from '@mordech/components';
+
 import resume from '../../images/resume/elad-mizrahi-cv-c.pdf';
+
 const Logo = () => (
   <svg
     width="100%"

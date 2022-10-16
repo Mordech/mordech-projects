@@ -1,3 +1,4 @@
+import React, { FC } from 'react';
 import {
   ArticleSpotlight,
   Column,
@@ -5,10 +6,11 @@ import {
   Main,
   Markdown,
 } from '@mordech/components';
-import React, { FC } from 'react';
+
 import { articleData } from '../../data';
 import { Footer } from '../footer';
 import { Navigation } from '../navigation';
+
 import { HeroHeader, ParagraphContainer } from './home.styles';
 import { WelcomeVideo } from './WelcomeVideo';
 

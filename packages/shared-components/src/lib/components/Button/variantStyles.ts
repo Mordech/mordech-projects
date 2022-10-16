@@ -1,5 +1,7 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
+
 import { colors } from '../../abstracts';
+
 import { ButtonVariants } from './types';
 
 export const variantStyles: Record<ButtonVariants, FlattenSimpleInterpolation> =
