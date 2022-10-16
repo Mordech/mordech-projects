@@ -30,7 +30,7 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  gap: 8px;
+  gap: 0.5rem;
 
   background-color: var(--background-color);
   color: var(--color);

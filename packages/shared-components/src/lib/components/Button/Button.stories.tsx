@@ -18,7 +18,7 @@ const Template: Story<ButtonProps> = (args) => (
 
 const StyledUl = styled.ul`
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: center;
 `;

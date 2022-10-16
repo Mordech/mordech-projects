@@ -4,9 +4,6 @@ import { axe } from 'jest-axe';
 import { Icon } from './Icon';
 import { colors } from '../../abstracts';
 
-// TODO test icon with react element
-// TODO test style outputs
-
 afterEach(() => cleanup());
 
 describe('Icon', () => {
@@ -20,5 +17,40 @@ describe('Icon', () => {
       <Icon iconColor={colors.blue} size="3rem" icon={'linkedin'} />
     );
     expect(await axe(baseElement)).toHaveNoViolations();
+  });
+  it('should work with a react element as an icon', () => {
+    const { getByTestId } = render(
+      <Icon icon={<div data-testid="test-icon">test</div>} />
+    );
+    expect(getByTestId('test-icon')).toBeTruthy();
+  });
+
+  it('should pass color and size props correctly', () => {
+    const { getByTestId, rerender } = render(
+      <Icon size="1.5rem" iconColor={colors.dark} icon="linkedin" />
+    );
+    expect(getByTestId('icon-font')).toHaveStyle(`
+      color: ${colors.dark};
+      font-size: 1.5rem;
+      `);
+    rerender(<Icon size="2rem" iconColor={colors.blue} icon="linkedin" />);
+    expect(getByTestId('icon-font')).toHaveStyle(`
+      color: ${colors.blue};
+      font-size: 2rem;
+      `);
+    rerender(
+      <Icon
+        iconColor={colors.dark}
+        size="2rem"
+        icon={<div data-testid="test-icon">test</div>}
+      />
+    );
+    expect(getByTestId('test-icon')).toHaveStyle(`
+      width: 100%;
+      `);
+    expect(getByTestId('icon-element')).toHaveStyle(`
+      min-width: 2rem;
+      width: 2rem;
+      `);
   });
 });

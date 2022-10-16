@@ -25,11 +25,11 @@ export const IconElementWrapper = styled.div<{
   min-width: ${({ $size }) => $size};
   color: ${({ $iconColor }) => $iconColor};
 
-  & > * {
+  &&& > * {
     width: 100%;
   }
 
-  svg {
+  &&& svg path {
     fill: ${({ $iconColor }) => $iconColor};
   }
 `;
@@ -45,9 +45,14 @@ export const Icon: FC<IconProps> = ({
       $fontSize={size}
       $iconColor={iconColor}
       className={`icon-${icon}`}
+      data-testid="icon-font"
     />
   ) : (
-    <IconElementWrapper $size={size} $iconColor={iconColor}>
+    <IconElementWrapper
+      $size={size}
+      $iconColor={iconColor}
+      data-testid="icon-element"
+    >
       {icon}
     </IconElementWrapper>
   );
