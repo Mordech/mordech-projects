@@ -1,20 +1,24 @@
-import React, { FC, ReactElement, ReactNode } from 'react';
-import styled from 'styled-components';
-import { Row } from '../../abstracts';
+import React, { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
+import { Icon } from '../Icon';
+import { LinksList, LogoLink, StyledNavigation } from './Navigation.styles';
 
 export interface NavigationProps {
   logo: ReactElement;
   children?: ReactNode;
 }
 
-const StyledNavigation = styled(Row).attrs({ as: 'nav' })`
-  color: pink;
-`;
+export const Navigation: FC<NavigationProps> = ({ logo, children }) => {
+  const navigationLinks = useMemo(
+    () => Children.map(children, (child) => <li>{child}</li>),
+    [children]
+  );
 
-export const Navigation: FC<NavigationProps> = () => {
   return (
     <StyledNavigation>
-      <h1>Welcome to Navigation!</h1>
+      <LogoLink title="Go to home page" href="/">
+        <Icon size="2.25rem" icon={logo}></Icon>
+      </LogoLink>
+      <LinksList>{navigationLinks}</LinksList>
     </StyledNavigation>
   );
 };
