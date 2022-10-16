@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/Mordech/mordech-projects/compare/v0.4.0...v0.5.0) (2022-10-16)
+
+
+### Features
+
+* navigation component ([#31](https://github.com/Mordech/mordech-projects/issues/31)) ([1166649](https://github.com/Mordech/mordech-projects/commit/11666496c345fa4d603f032b541cad8fb9208097))
+
+
+
+
+
 # [0.4.0](https://github.com/Mordech/mordech-projects/compare/v0.3.4...v0.4.0) (2022-10-15)
 
 
