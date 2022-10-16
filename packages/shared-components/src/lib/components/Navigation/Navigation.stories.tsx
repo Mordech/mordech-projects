@@ -3,17 +3,15 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Navigation } from './Navigation';
 import styled from 'styled-components';
 import { Button } from '../Button';
+import {
+  Container,
+  PlaceholderContent,
+} from '../Footer/story/story/story.styles';
 
 export default {
   component: Navigation,
   title: 'Layouts/Navigation',
 } as ComponentMeta<typeof Navigation>;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: calc(100vw - 2rem);
-`;
 
 const Template: ComponentStory<typeof Navigation> = (args) => (
   <Container>
@@ -22,6 +20,8 @@ const Template: ComponentStory<typeof Navigation> = (args) => (
         resume
       </Button>
     </Navigation>
+    <PlaceholderContent />
+    <PlaceholderContent />
   </Container>
 );
 const Logo = () => (
