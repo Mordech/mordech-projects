@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { breakpoints, colors, pagePadding, Row } from '../../abstracts/';
 
 export const StickyNav = styled.nav.attrs({ 'aria-label': 'Social links' })`
+  &:empty {
+    display: none;
+  }
+
   ${breakpoints.mdMin} {
     position: sticky;
     bottom: 0;
@@ -43,6 +47,10 @@ export const IconLink = styled.a`
 export const LinksContainer = styled(Row).attrs({
   as: 'ul',
 })`
+  &:empty {
+    display: none;
+  }
+
   margin-block-start: 2rem;
   padding-inline: 2rem;
   padding-block: 2.5rem 0.5rem;

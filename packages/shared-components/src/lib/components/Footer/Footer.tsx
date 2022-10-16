@@ -23,7 +23,7 @@ export interface FooterProps {
 
 export const Footer: FC<FooterProps> = ({ links, children }) => (
   <>
-    <StickyNav>
+    <StickyNav data-testid="social-links">
       <LinksContainer>
         {links?.map((link) => (
           <li key={link.href}>
@@ -39,7 +39,7 @@ export const Footer: FC<FooterProps> = ({ links, children }) => (
         ))}
       </LinksContainer>
     </StickyNav>
-    <StyledFooter>{children}</StyledFooter>
+    <StyledFooter data-testid="footer">{children}</StyledFooter>
   </>
 );
 
