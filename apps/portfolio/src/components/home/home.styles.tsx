@@ -7,7 +7,7 @@ export const HeroHeader = styled(Section).attrs({ as: 'header' })`
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
   margin-block-end: 8rem;
 
   ${pagePadding}
