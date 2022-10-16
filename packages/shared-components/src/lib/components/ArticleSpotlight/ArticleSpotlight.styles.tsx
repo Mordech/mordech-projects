@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+
 import { breakpoints, Section } from '../../abstracts';
+import { Paper } from '../Paper';
 
 export const Container = styled(Section)`
   flex-direction: column;
@@ -18,16 +20,18 @@ export const Container = styled(Section)`
   }
 `;
 
-export const Thumbnail = styled.img`
-  display: flex;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0% 0%;
+export const ThumbnailContainer = styled(Paper)`
+  img {
+    display: flex;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 0%;
 
-  ${breakpoints.smMin} {
-    max-height: 35rem;
-    min-width: 21rem;
-    min-height: 21rem;
+    ${breakpoints.smMin} {
+      max-height: 35rem;
+      min-width: 21rem;
+      min-height: 21rem;
+    }
   }
 `;
 

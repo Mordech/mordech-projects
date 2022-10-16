@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 import { ReactElement } from 'react-markdown/lib/react-markdown';
+
 import { Button } from '../Button';
 import { Markdown } from '../Markdown';
-import { Paper } from '../Paper';
 import { Headline } from '../Typography';
+
 import {
   Container,
   Content,
   Description,
-  Thumbnail,
   ThumbnailAnchor,
+  ThumbnailContainer,
 } from './ArticleSpotlight.styles';
 
 export interface ArticleSpotlightProps {
@@ -29,13 +30,13 @@ export const ArticleSpotlight: FC<ArticleSpotlightProps> = ({
 }) => (
   <Container as="article">
     <ThumbnailAnchor href={href}>
-      <Paper variant="outlined">
+      <ThumbnailContainer variant="outlined">
         {typeof thumbnailSrc === 'string' ? (
-          <Thumbnail loading="lazy" alt="" src={thumbnailSrc} />
+          <img loading="lazy" alt="" src={thumbnailSrc} />
         ) : (
           thumbnailSrc
         )}
-      </Paper>
+      </ThumbnailContainer>
     </ThumbnailAnchor>
     <Content>
       <Description>
