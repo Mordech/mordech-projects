@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import { breakpoints, colors, pagePadding, Row } from '../../abstracts/';
 
 export const StickyNav = styled.nav.attrs({ 'aria-label': 'Social links' })`
-  position: sticky;
-  bottom: 0;
-  left: 0;
+  ${breakpoints.mdMin} {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+  }
 `;
 
 export const IconLink = styled.a`
