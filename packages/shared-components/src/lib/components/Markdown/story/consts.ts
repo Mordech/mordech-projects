@@ -17,8 +17,8 @@ export const explanationText = `
     const foo = (bar) => bar + 1;
   \`\`\`
 
-  ### Todos
-  - Custom link
-  - Custom UL
-  - Create tests
+  ### List
+  - I'm a list item
+  - Another list item
+  - And another one
 `;

@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 import { breakpoints, colors, pagePadding, Row } from '../../abstracts/';
 
-export const Link = styled.a`
+export const StickyNav = styled.nav.attrs({ 'aria-label': 'Social links' })`
+  position: sticky;
+  bottom: 0;
+  left: 0;
+`;
+
+export const IconLink = styled.a`
   outline-width: 2px;
   opacity: 0.5;
   transition: opacity 250ms ease-in-out;
@@ -33,15 +39,11 @@ export const Link = styled.a`
 
 export const LinksContainer = styled(Row).attrs({
   as: 'ul',
-  role: 'navigation',
-  'aria-label': 'Social links',
 })`
   margin-block-start: 2rem;
   padding-inline: 2rem;
   padding-block: 2.5rem 0.5rem;
   gap: 3rem;
-  bottom: 0;
-  left: 0;
   min-width: 5.25rem;
   max-width: unset;
   align-items: center;
@@ -64,7 +66,6 @@ export const LinksContainer = styled(Row).attrs({
       gap: 0.75rem;
     }
 
-    position: sticky;
     background-color: unset;
     flex-direction: column;
     max-width: min-content;

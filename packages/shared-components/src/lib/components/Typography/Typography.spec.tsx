@@ -74,8 +74,9 @@ describe('Typography', () => {
     const { baseElement, getByLabelText } = render(
       <main>
         <section title="Hello World">
-          <Headline size={4} aria-label="Hello World" asElement="h1"></Headline>
-          Hello World
+          <Headline size={4} aria-label="Hello World" asElement="h1">
+            Hello World
+          </Headline>
         </section>
         <section title="Secondary Headline">
           <Headline size={4} aria-label="Secondary Headline" asElement="h2">

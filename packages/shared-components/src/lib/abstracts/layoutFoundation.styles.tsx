@@ -1,6 +1,5 @@
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 import { pagePadding } from '.';
-import { gapSizes, GapSizes } from '.';
 
 export const Section = styled.section`
   display: flex;
@@ -20,12 +19,12 @@ export const Main = styled.main`
 `;
 
 interface RowProps {
-  gap?: GapSizes;
+  gap?: CSSProperties['gap'];
 }
 
 export const Row = styled.div<RowProps>`
   display: flex;
-  gap: ${({ gap }) => gapSizes[gap ?? 0]};
+  gap: ${({ gap }) => gap || '0.5rem'};
 `;
 
 export const Column = styled(Row)`
