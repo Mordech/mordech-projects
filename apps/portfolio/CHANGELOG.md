@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/Mordech/mordech-projects/compare/v0.5.0...v0.6.0) (2022-10-22)
+
+
+### Features
+
+* add navigation and use image plugin ([b0d76fc](https://github.com/Mordech/mordech-projects/commit/b0d76fccd7868372b037dcd1d42ee6c24da8740d))
+* **portfolio:** navigation and scroll arrow ([f0d6b88](https://github.com/Mordech/mordech-projects/commit/f0d6b8883b5d8a4b5143b9604374ec5e38bf355b))
+
+
+
+
+
 # [0.5.0](https://github.com/Mordech/mordech-projects/compare/v0.4.0...v0.5.0) (2022-10-16)
 
 **Note:** Version bump only for package @mordech/portfolio

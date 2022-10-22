@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/Mordech/mordech-projects/compare/v0.5.0...v0.6.0) (2022-10-22)
+
+
+### Bug Fixes
+
+* **shared-components:** add max width to article spotlight ([8721561](https://github.com/Mordech/mordech-projects/commit/8721561a875ce956c75fb7ca5ad894a252bbff22))
+* **shared-components:** footer sticky only on desktop ([8da6a2d](https://github.com/Mordech/mordech-projects/commit/8da6a2d80576889a11237770d1111617b17a67da))
+* **shared-components:** make image component and src to behave the same ([7a69dde](https://github.com/Mordech/mordech-projects/commit/7a69dde16c8cda9776e6443d04703b85ce1466ee))
+* **shared-components:** make pointer available next to footer links ([2502bc6](https://github.com/Mordech/mordech-projects/commit/2502bc68ad634299b260c75d8eea819e5c72f0d6))
+
+
+### Features
+
+* **shared-components:** change main gap ([ee2ecb1](https://github.com/Mordech/mordech-projects/commit/ee2ecb10548b4b273219826703323a713f61223f))
+* **shared-components:** make navigation icon primary color ([e1fad32](https://github.com/Mordech/mordech-projects/commit/e1fad326ea8fff5575712a16083224bb12dfc042))
+
+
+### BREAKING CHANGES
+
+* **shared-components:** gap on main has changes to all components
+
+
+
+
+
 # [0.5.0](https://github.com/Mordech/mordech-projects/compare/v0.4.0...v0.5.0) (2022-10-16)
 
 
