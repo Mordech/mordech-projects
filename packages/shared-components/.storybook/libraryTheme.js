@@ -1,5 +1,7 @@
 import { create } from '@storybook/theming';
+
 import { colors, fontFamilies } from '../src/lib/abstracts';
+
 import logo from './assets/logo.png';
 
 export default create({
