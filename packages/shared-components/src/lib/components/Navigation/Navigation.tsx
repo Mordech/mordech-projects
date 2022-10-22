@@ -1,5 +1,6 @@
 import React, { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
 
+import { colors } from '../../abstracts';
 import { Icon } from '../Icon';
 
 import { LinksList, LogoLink, StyledNavigation } from './Navigation.styles';
@@ -18,7 +19,7 @@ export const Navigation: FC<NavigationProps> = ({ logo, children }) => {
   return (
     <StyledNavigation>
       <LogoLink title="Go to home page" href="/">
-        <Icon size="2.25rem" icon={logo}></Icon>
+        <Icon iconColor={colors.dark} size="2.25rem" icon={logo}></Icon>
       </LogoLink>
       <LinksList>{navigationLinks}</LinksList>
     </StyledNavigation>
