@@ -1,8 +1,10 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
-import { Icon } from './Icon';
+
 import { colors } from '../../abstracts';
+
+import { Icon } from './Icon';
 
 afterEach(() => cleanup());
 

@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { Typography } from './Typography';
+import { colors, fontFamilies, GlobalStyle } from '../../abstracts';
+
 import {
   Code,
   Headline,
@@ -11,7 +12,7 @@ import {
   Span,
   Subheading,
 } from './shorthands';
-import { colors, fontFamilies, GlobalStyle } from '../../abstracts';
+import { Typography } from './Typography';
 
 describe('Typography', () => {
   it('should render successfully', () => {

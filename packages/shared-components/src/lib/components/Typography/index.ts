@@ -1,2 +1,2 @@
-export * from './Typography';
 export * from './shorthands';
+export * from './Typography';

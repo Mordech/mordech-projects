@@ -1,5 +1,6 @@
 import { HTMLAttributes, ReactNode } from 'react';
 import { CSSProperties } from 'styled-components';
+
 import { FontFamily, FontSizes, FontWeights } from '../../abstracts';
 
 export interface TypographyProps {

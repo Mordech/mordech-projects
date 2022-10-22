@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { Headline, Paragraph } from '../Typography';
 
 export const Pre = styled.pre`

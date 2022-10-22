@@ -5,8 +5,10 @@ import React, {
   ReactNode,
 } from 'react';
 import styled from 'styled-components';
+
 import { colors, fontSizes, Icons } from '../../abstracts';
 import { Icon } from '../Icon';
+
 import { ButtonVariants } from './types';
 import variantStyles from './variantStyles';
 

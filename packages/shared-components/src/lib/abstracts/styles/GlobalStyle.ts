@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
+
+import { breakpoints } from '../breakpoints';
 import { colors } from '../colors';
 import { fontFamilies, fontSizes, fontWeights } from '../typography';
 
@@ -11,7 +13,16 @@ export const GlobalStyle = createGlobalStyle`
     --bounce-transition: 250ms cubic-bezier(0.65, -1.63, 0.28, 2.72);
     font-size: ${fontSizes[1]};
     font-weight: ${fontWeights['regular']};
-    line-height: 1.25;  
+    line-height: 1.25;
+    scroll-behavior: smooth;
+
+    --default-padding: 1rem;
+    ${breakpoints.xsMin} {
+      --default-padding: 2rem;
+    }
+    ${breakpoints.mdMin} {
+      --default-padding: 5.25rem;
+    }
   }
 
   * {
@@ -28,9 +39,21 @@ export const GlobalStyle = createGlobalStyle`
     color: ${colors['dark']};
     max-width: 128rem;
   }
-  
+
   code {
     font-family: ${fontFamilies['code']};
+  }
+
+  a,
+  link,
+  button {
+    &:focus-visible {
+      outline-style: solid;
+      outline-color: ${colors['dark']};
+      outline-width: 2px;
+
+      outline-offset: 4px;
+    }
   }
 `;
 

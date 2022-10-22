@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
 import { ArticleSpotlight } from './ArticleSpotlight';
-import { axe } from 'jest-axe';
 
 const sampleDescription = `Quas explicabo a ad. Ut commodi est *iusto eaque et reiciendis* ullam fugiat. Ex inventore fuga.
     

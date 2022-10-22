@@ -1,4 +1,5 @@
 import { colors, elevation } from '../../abstracts';
+
 import { PaperVariants, StyledPaperProps } from './types';
 
 export const paperVariantProps: Record<PaperVariants, StyledPaperProps> = {

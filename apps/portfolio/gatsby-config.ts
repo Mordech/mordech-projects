@@ -10,16 +10,44 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    'gatsby-plugin-netlify',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
+    'gatsby-plugin-catch-links',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-layout',
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images\/.*\.svg/,
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.svg',
+        name: `Elad Mizrahi's Portfolio`,
+        short_name: `Elad Mizrahi`,
+        start_url: `/`,
+        background_color: '#F9F9F9',
+        theme_color: '#F9F9F9',
+        display: `standalone`,
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          formats: ['auto', 'webp'],
+          placeholder: 'blurred',
+          quality: 100,
+          breakpoints: [450, 750, 1080, 1366, 1920],
+          backgroundColor: 'transparent',
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
