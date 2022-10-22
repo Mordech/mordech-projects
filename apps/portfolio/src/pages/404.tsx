@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { HeadFC, Link } from 'gatsby';
+
 // TODO create a custom 404 page
 
 const pageStyles = {

@@ -1,14 +1,14 @@
 import { breakpoints, Column, pagePadding, Section } from '@mordech/components';
 import styled from 'styled-components';
 
-export const HeroHeader = styled(Section).attrs({ as: 'header' })`
+export const HeroContainer = styled(Section).attrs({ as: 'header' })`
+  position: relative;
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--default-padding));
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 3rem;
-  margin-block-end: 8rem;
+  gap: 0.75rem;
 
   ${pagePadding}
 `;
@@ -17,6 +17,7 @@ export const ParagraphContainer = styled(Column)`
   align-self: flex-start;
   max-width: 27rem;
   margin-inline: 1rem auto;
+  padding-block-start: 1rem;
 
   ${breakpoints.mdMin} {
     margin-inline: unset;

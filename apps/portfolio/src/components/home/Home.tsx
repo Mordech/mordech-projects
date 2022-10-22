@@ -1,48 +1,23 @@
 import React, { FC } from 'react';
-import {
-  ArticleSpotlight,
-  Column,
-  Headline,
-  Main,
-  Markdown,
-} from '@mordech/components';
+import { ArticleSpotlight, Main } from '@mordech/components';
+import styled from 'styled-components';
 
 import { articleData } from '../../data';
-import { Footer } from '../footer';
-import { Navigation } from '../navigation';
 
-import { HeroHeader, ParagraphContainer } from './home.styles';
-import { WelcomeVideo } from './WelcomeVideo';
+import { HeroHeader } from './HeroHeader';
 
-const WELCOME_MESSAGE = `Welcome!  \nI'm **Elad Mizrahi**`;
-const ABOUT_ME = `a passionate **Product Designer & UX engineer**.
-
-I combine my experience and knowledge in product design and front-end 
-development to design and develop clever components that make designers 
-and developers work better together.
-
-I'm part of the **open-source guild**, **UX research** initiatives, 
-and the **growth team** at Soluto.`;
+export const HomeMain = styled(Main)`
+  // Buffer for the header
+  padding-block-start: 8rem;
+`;
 
 export const Home: FC = () => (
   <>
-    <Navigation />
-    <HeroHeader>
-      <ParagraphContainer>
-        <Headline size={5} asElement={'h1'}>
-          <Markdown asFragment>{WELCOME_MESSAGE}</Markdown>
-        </Headline>
-        <Markdown>{ABOUT_ME}</Markdown>
-      </ParagraphContainer>
-      <Column>
-        <WelcomeVideo />
-      </Column>
-    </HeroHeader>
-    <Main>
+    <HeroHeader />
+    <HomeMain id="main-content">
       {articleData.map((articleProps) => (
         <ArticleSpotlight key={articleProps.headline} {...articleProps} />
       ))}
-    </Main>
-    <Footer />
+    </HomeMain>
   </>
 );
