@@ -8,6 +8,7 @@ export const Container = styled(Section)`
   width: fit-content;
   gap: 0.5rem;
   margin-inline: auto;
+  max-width: 89rem;
 
   ${breakpoints.smMin} {
     gap: 3rem;
@@ -26,6 +27,7 @@ export const ThumbnailContainer = styled(Paper)`
     height: 100%;
     object-fit: cover;
     object-position: 0% 0%;
+    z-index: -1;
 
     ${breakpoints.smMin} {
       max-height: 35rem;

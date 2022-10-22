@@ -29,7 +29,7 @@ export const ArticleSpotlight: FC<ArticleSpotlightProps> = ({
   thumbnailSrc,
 }) => (
   <Container as="article">
-    <ThumbnailAnchor href={href}>
+    <ThumbnailAnchor aria-label={`read more about ${headline}`} href={href}>
       <ThumbnailContainer variant="outlined">
         {typeof thumbnailSrc === 'string' ? (
           <img loading="lazy" alt="" src={thumbnailSrc} />
@@ -45,7 +45,12 @@ export const ArticleSpotlight: FC<ArticleSpotlightProps> = ({
         </Headline>
         <Markdown>{description}</Markdown>
       </Description>
-      <Button href={href} variant="flat" asElement="a">
+      <Button
+        aria-label={`read more about ${headline}`}
+        href={href}
+        variant="flat"
+        asElement="a"
+      >
         {callToAction}
       </Button>
     </Content>
