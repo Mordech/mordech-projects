@@ -12,13 +12,5 @@ export const breakpoints = {
 };
 
 export const pagePadding = css`
-  padding-inline: 1rem;
-
-  ${breakpoints.xsMin} {
-    padding-inline: 2rem;
-  }
-
-  ${breakpoints.mdMin} {
-    padding-inline: 5.25rem;
-  }
+  padding-inline: var(--default-padding);
 `;

@@ -1,8 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { Paper } from './Paper';
 import { colors, elevation } from '../../abstracts';
+
+import { Paper } from './Paper';
 
 describe('Paper', () => {
   it('should render successfully', () => {

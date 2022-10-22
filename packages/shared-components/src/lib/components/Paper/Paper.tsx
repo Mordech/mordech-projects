@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+
 import { paperVariantProps } from './props';
 import { PaperProps, StyledPaperProps } from './types';
 
