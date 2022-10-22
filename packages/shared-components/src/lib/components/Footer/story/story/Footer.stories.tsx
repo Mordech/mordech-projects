@@ -30,7 +30,27 @@ const Template: ComponentStory<typeof Footer> = (args) => (
   </Container>
 );
 
-export const Primary = Template.bind({});
+const TemplateWithoutPlaceholder: ComponentStory<typeof Footer> = (args) => (
+  <Container>
+    <Footer {...args}>
+      <Typography color={colors.lightest}>
+        Designed and developed with ❤️ by Elad Mizrahi
+      </Typography>
+    </Footer>
+  </Container>
+);
+
+export const Primary = TemplateWithoutPlaceholder.bind({});
 Primary.args = {
   links: links,
+};
+
+export const InContext = Template.bind({});
+InContext.args = {
+  links: links,
+};
+
+export const WithoutLinks = Template.bind({});
+WithoutLinks.args = {
+  links: [],
 };

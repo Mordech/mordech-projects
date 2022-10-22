@@ -6,8 +6,8 @@ export const PlaceholderContent = styled.main`
   box-sizing: border-box;
   background-color: ${colors.light};
   min-height: 400px;
-  margin-inline: 5.25rem;
   margin-block-end: 1rem;
+  margin-inline: var(--default-padding);
 `;
 
 export const Container = styled.div`
