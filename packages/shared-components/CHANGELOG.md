@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/Mordech/mordech-projects/compare/v0.5.0...v0.6.0) (2022-10-22)
+
+
+### Features
+
+* **portfolio:** Home page ([#33](https://github.com/Mordech/mordech-projects/issues/33)) ([26fd1b3](https://github.com/Mordech/mordech-projects/commit/26fd1b3bec76f492e2229a02f1759c21d4ffdf5c))
+
+
+### BREAKING CHANGES
+
+* **portfolio:** gap on main has changes to all components
+
+* fix(shared-components): add max width to article spotlight
+
+* fix(shared-components): make pointer available next to footer links
+
+* docs(shared-components): update footer story
+
+* feat(shared-components): make navigation icon primary color
+
+* test(shared-components): update visual tests
+
+* chore: update yarn lock
+
+* chore(shared-components): fix sort import
+
+* chore: add dependency simple-import-sort
+
+
+
+
+
 # [0.5.0](https://github.com/Mordech/mordech-projects/compare/v0.4.0...v0.5.0) (2022-10-16)
 
 
