@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/Mordech/mordech-projects/compare/v0.7.0...v0.8.0) (2022-10-23)
+
+
+### Features
+
+* **portfolio:** change logo to svg ([#36](https://github.com/Mordech/mordech-projects/issues/36)) ([6d3cf82](https://github.com/Mordech/mordech-projects/commit/6d3cf821ab13d0b189b6d234c48444fc9b2326dd))
+
+
+
+
+
 # [0.7.0](https://github.com/Mordech/mordech-projects/compare/v0.5.0...v0.7.0) (2022-10-22)
 
 
