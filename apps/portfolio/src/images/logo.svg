@@ -2,17 +2,17 @@
 	<style>
 		@keyframes reveal {
 			0% {
-				r: 0;
+				transform: scale(0);
 			}
 
 			2%,
 			95% {
-				r: 200%;
+				transform: scale(1);
 			}
 
 			97%,
 			100% {
-				r: 0;
+				transform: scale(0);
 			}
 		}
 
@@ -32,13 +32,15 @@
 	</style>
 	<defs>
 		<clipPath id="logo-clip-top">
-			<circle cx=" 0" cy="0" r="0" />
+			<circle cx="0" cy="0" r="200%" transform="scale(0)" />
 		</clipPath>
+
 		<clipPath id="logo-clip-middle">
-			<circle cx=" 0" cy="0" r="0" />
+			<circle cx="0" cy="0" r="200%" transform="scale(0)" />
 		</clipPath>
+
 		<clipPath id="logo-clip-bottom">
-			<circle cx=" 0" cy="0" r="0" />
+			<circle cx="0" cy="0" r="200%" transform="scale(0)" />
 		</clipPath>
 	</defs>
 	<path clip-path="url(#logo-clip-top)"
