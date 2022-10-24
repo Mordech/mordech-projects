@@ -16,8 +16,7 @@ export const HeroContainer = styled(Section).attrs({ as: 'header' })`
 export const ParagraphContainer = styled(Column)`
   align-self: flex-start;
   max-width: 27rem;
-  margin-inline: 1rem auto;
-  padding-block-start: 1rem;
+  margin-inline-end: auto;
 
   ${breakpoints.mdMin} {
     margin-inline: unset;

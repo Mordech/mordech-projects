@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.25;
     scroll-behavior: smooth;
 
-    --default-padding: 1rem;
+    --default-padding: 1.5rem;
     ${breakpoints.xsMin} {
       --default-padding: 2rem;
     }

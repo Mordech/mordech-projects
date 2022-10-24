@@ -10,6 +10,7 @@ import {
   InlineCode,
   Paragraph,
   Span,
+  Strong,
   Subheading,
 } from './shorthands';
 import { Typography } from './Typography';
@@ -100,5 +101,44 @@ describe('Typography', () => {
     expect(getByLabelText('Secondary Headline')).toHaveStyle('font-size: 3rem');
     expect(getByLabelText('Sub Headline')).toHaveStyle('font-size: 1.5rem');
     expect(getByLabelText('Sub Headline')).toHaveStyle('font-weight: 700');
+  });
+  it('should inherit line-height from parent', async () => {
+    const { baseElement, getByText } = render(
+      <main>
+        <Headline asElement="h1" size={3}>
+          I have <Strong>different</Strong> preset sizes
+        </Headline>
+        <Subheading>And subheadings</Subheading>
+        <Code>Code is a variant</Code>
+        <Paragraph>
+          and I can be a paragraph <InlineCode>or inline code</InlineCode> too,
+          and you{' '}
+          <Span asElement="em" weight="bold">
+            emphasize{' '}
+          </Span>
+          parts of me.
+        </Paragraph>
+      </main>
+    );
+    expect(await axe(baseElement)).toHaveNoViolations();
+    expect(await getByText(/.*preset sizes*./)).toHaveStyle(
+      'line-height: 1.15;'
+    );
+    expect(await getByText('different')).toHaveStyle('line-height: inherit;');
+    expect(await getByText(/.*Code is a variant*./)).toHaveStyle(
+      'line-height: 1.5;'
+    );
+    expect(await getByText(/.*And subheadings*./)).toHaveStyle(
+      'line-height: 1.25;'
+    );
+    expect(await getByText(/.*or inline code.*/)).toHaveStyle(
+      'line-height: inherit;'
+    );
+    expect(
+      await getByText(/.*and I can be a paragraph too, and you*./)
+    ).toHaveStyle('line-height: 1.5;');
+    expect(await getByText(/.*emphasize*./)).toHaveStyle(
+      'line-height: inherit;'
+    );
   });
 });
