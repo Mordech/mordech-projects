@@ -6,7 +6,7 @@ import { Paper } from '../Paper';
 export const Container = styled(Section)`
   flex-direction: column;
   width: fit-content;
-  gap: 0.5rem;
+  gap: 1.5rem;
   margin-inline: auto;
   max-width: 89rem;
 
@@ -38,17 +38,19 @@ export const ThumbnailContainer = styled(Paper)`
 `;
 
 export const Content = styled.div`
-  --padding-inline: 1rem;
   --width: 23rem;
-  --total-width: calc(var(--width) + var(--padding-inline));
+  --total-width: calc(var(--width) + var(--padding-inline, 0rem));
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-block: 1rem;
   padding-inline: var(--padding-inline);
   max-width: var(--total-width);
   gap: 2rem;
+
+  ${breakpoints.smMin} {
+    --padding-inline: 2rem;
+  }
 
   ${breakpoints.mdMin} {
     --padding-inline: 3rem;
