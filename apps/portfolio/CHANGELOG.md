@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/Mordech/mordech-projects/compare/v0.8.0...v0.8.1) (2022-10-23)
+
+
+### Bug Fixes
+
+* **portfolio:** logo svg safari support ([#37](https://github.com/Mordech/mordech-projects/issues/37)) ([213a312](https://github.com/Mordech/mordech-projects/commit/213a3128d67ee1da6f2258ae4db8e865f3843b5d))
+
+
+
+
+
 # [0.8.0](https://github.com/Mordech/mordech-projects/compare/v0.7.0...v0.8.0) (2022-10-23)
 
 
