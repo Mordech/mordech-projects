@@ -10,7 +10,7 @@ export const Container = styled(Section)`
   margin-inline: auto;
   max-width: 89rem;
 
-  ${breakpoints.smMin} {
+  ${breakpoints.md} {
     gap: 3rem;
     justify-content: flex-end;
     flex-direction: row;
@@ -29,7 +29,7 @@ export const ThumbnailContainer = styled(Paper)`
     object-position: 0% 0%;
     z-index: -1;
 
-    ${breakpoints.smMin} {
+    ${breakpoints.md} {
       max-height: 35rem;
       min-width: 21rem;
       min-height: 21rem;
@@ -48,11 +48,11 @@ export const Content = styled.div`
   max-width: var(--total-width);
   gap: 2rem;
 
-  ${breakpoints.smMin} {
+  ${breakpoints.md} {
     --padding-inline: 2rem;
   }
 
-  ${breakpoints.mdMin} {
+  ${breakpoints.lg} {
     --padding-inline: 3rem;
     min-width: var(--total-width);
   }

@@ -17,7 +17,7 @@ export const StyledNavigation = styled.nav`
   box-shadow: 0 0 0 100vmax ${colors.lightest};
   clip-path: inset(-1px -100vmax);
 
-  ${breakpoints.xsMin} {
+  ${breakpoints.sm} {
     position: sticky;
     top: 0;
   }

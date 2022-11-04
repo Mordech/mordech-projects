@@ -18,10 +18,10 @@ export const ParagraphContainer = styled(Column)`
   max-width: 27rem;
   margin-inline-end: auto;
 
-  ${breakpoints.mdMin} {
+  ${breakpoints.lg} {
     margin-inline: unset;
   }
-  ${breakpoints.smMin} {
+  ${breakpoints.md} {
     padding-block: clamp(2rem, 15vh, 14rem);
   }
 `;

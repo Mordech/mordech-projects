@@ -71,7 +71,7 @@ export const ScrollDownContainer = styled.div`
   visibility: hidden;
   opacity: 0;
 
-  ${breakpoints.mdMin} {
+  ${breakpoints.lg} {
     visibility: visible;
     opacity: 1;
   }
