@@ -11,7 +11,7 @@ import { Container, PlaceholderContent } from './story.styles';
 
 export default {
   component: Footer,
-  title: 'Layouts/Footer',
+  title: 'Organisms/Footer',
   parameters: {
     layout: 'centered',
   },

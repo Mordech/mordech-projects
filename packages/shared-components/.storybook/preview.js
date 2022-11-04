@@ -12,8 +12,22 @@ export const parameters = {
       date: /Date$/,
     },
   },
-
   layout: 'centered',
+  options: {
+    storySort: {
+      order: [
+        'Introduction',
+        ['Getting Started'],
+        'Abstracts',
+        'Atoms',
+        ['Typography', 'Markdown', 'Button', 'Icon', 'Link', 'List'],
+        'Molecules',
+        'Organisms',
+        'Templates',
+        'Pages',
+      ],
+    },
+  },
 };
 
 addDecorator((story) => (

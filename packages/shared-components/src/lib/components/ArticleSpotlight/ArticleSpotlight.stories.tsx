@@ -5,7 +5,7 @@ import { Main } from '../../abstracts';
 
 export default {
   component: ArticleSpotlight,
-  title: 'Layouts/ArticleSpotlight',
+  title: 'Organisms/ArticleSpotlight',
 } as ComponentMeta<typeof ArticleSpotlight>;
 
 const Template: ComponentStory<typeof ArticleSpotlight> = (args) => (

@@ -10,7 +10,7 @@ import {
 
 export default {
   component: Navigation,
-  title: 'Layouts/Navigation',
+  title: 'Organisms/Navigation',
 } as ComponentMeta<typeof Navigation>;
 
 const Template: ComponentStory<typeof Navigation> = (args) => (

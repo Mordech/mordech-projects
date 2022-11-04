@@ -7,7 +7,7 @@ import { PaperProps } from './types';
 
 export default {
   component: Paper,
-  title: 'Components/Paper',
+  title: 'Atoms/Paper',
 } as Meta;
 
 const Container = styled.div`
