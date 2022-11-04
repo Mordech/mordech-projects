@@ -9,25 +9,32 @@ If you have any questions please contact me 😇
 workspace name `@mordech/components`
 
 ## Run
+
 ```bash
 yarn storybook
 ```
+
 ## Build
 
 ```bash
 yarn nx build
 ```
+
 ## Visual regression testing
+
 I use [Loki](https://loki.js.org/) for visual regression tests.
 Before creating a pull request please run visual tests on the project.
+
 ```bash
 yarn nx visual
 ```
+
 and follow the steps required to pass.
 
 If changes have been made to existing components please approve them.
 
 After approving the changes run:
+
 ```bash
 yarn loki approve
 ```
