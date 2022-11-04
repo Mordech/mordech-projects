@@ -1,14 +1,22 @@
 import { css } from 'styled-components';
 
-export const breakpoints = {
-  xsMax: '@media screen and (max-width: 599px)',
-  smMax: '@media screen and (max-width: 904px)',
-  mdMax: '@media screen and (max-width: 1239px)',
-  lgMax: '@media screen and (max-width: 1439px)',
-  xsMin: '@media screen and (min-width: 600px)',
-  smMin: '@media screen and (min-width: 905px)',
-  mdMin: '@media screen and (min-width: 1240px)',
-  lgMin: '@media screen and (min-width: 1440px)',
+export type Breakpoint = 'sm' | 'md' | 'lg' | 'xl';
+
+/**
+ * Breakpoint screen sizes in pixels
+ */
+export const screenSizes: Record<Breakpoint, number> = {
+  sm: 600,
+  md: 905,
+  lg: 1240,
+  xl: 1440,
+};
+
+export const breakpoints: Record<Breakpoint, string> = {
+  sm: `@media screen and (min-width: ${screenSizes.sm}px)`,
+  md: `@media screen and (min-width: ${screenSizes.md}px)`,
+  lg: `@media screen and (min-width: ${screenSizes.lg}px)`,
+  xl: `@media screen and (min-width: ${screenSizes.xl}px)`,
 };
 
 export const pagePadding = css`
