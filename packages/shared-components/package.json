@@ -1,6 +1,6 @@
 {
   "name": "@mordech/components",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -23,8 +23,10 @@
     "build": "build-storybook",
     "storybook": "start-storybook -p 4200",
     "test": "vitest --coverage --run",
+    "test:watch": "vitest",
     "visual": "loki test --reactUri file:./storybook-static",
-    "test:watch": "react-scripts test --coverage",
+    "visual:approve": "loki approve",
+    "visual:ci": "loki test --requireReference --reactUri file:./storybook-static",
     "eject": "react-scripts eject",
     "lint": "eslint src",
     "generate:component": "nx generate @nrwl/react:component --project=@mordech/components --directory=src/lib/components && nx generate @nrwl/react:component-story --project=@mordech/components"

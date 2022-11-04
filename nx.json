@@ -7,13 +7,17 @@
         "cacheableOperations": [
           "develop",
           "build",
+          "serve",
+          "start",
+          "test:watch",
           "clean",
+          "generate:component",
           "typecheck",
           "storybook",
           "test",
           "lint",
           "visual",
-          "eject"
+          "visual:ci"
         ],
         "accessToken": "ZWJiZTdjOGEtZmFkYS00YjNhLWIwNTYtOTdkOGRjNTRhMTg4fHJlYWQtd3JpdGU="
       }
@@ -25,6 +29,22 @@
       "export": true,
       "pascalCaseDirectory": true,
       "pascalCaseFiles": true
+    },
+    "@nrwl/react": {
+      "application": {
+        "style": "styled-components",
+        "linter": "eslint",
+        "babel": true,
+        "skipDefaultProject": true,
+        "unitTestRunner": "none"
+      },
+      "component": {
+        "style": "styled-components"
+      },
+      "library": {
+        "style": "styled-components",
+        "linter": "eslint"
+      }
     }
   },
   "targetDefaults": {
@@ -39,9 +59,17 @@
     },
     "visual": {
       "dependsOn": ["build"]
+    },
+    "visual:ci": {
+      "dependsOn": ["build"]
     }
   },
   "affected": {
     "defaultBase": "main"
-  }
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
+  "defaultProject": "@mordech/portfolio"
 }
