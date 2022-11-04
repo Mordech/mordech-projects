@@ -1,0 +1,209 @@
+import { Canvas, Meta } from '@storybook/addon-docs';
+
+import { Typography, Column } from '../components';
+import { fontSizes, fontWeights, fontFamilies } from '../abstracts/typography';
+
+<Meta title={'Abstracts/Typography'} component={Typography} />
+
+# Typography
+
+## accessibility
+
+When using the typography,
+you should always use the correct HTML element for the content you are trying to display.
+For example, if you are trying to display a heading, you should use the `<Typography asElement="h1">` element.
+If you are trying to display a paragraph, you should use the `<Typography asElement="p">` element. This will ensure that the content is accessible to all users.
+
+## Tokens
+
+### Using typography tokens in your project
+
+I have created a set of tokens for the typography.
+You can use the typography tokens in your project by importing them from the `@mordech/components` package.
+
+```jsx
+import { fontSizes, fontWeights, fontFamilies } from '@mordech/components';
+
+const Heading = styled.h1`
+  font-size: ${fontSizes[4]};
+  font-weight: ${fontWeights.bold};
+  font-family: ${fontFamilies.sans};
+`;
+```
+
+### Font Families
+
+Font family are the typefaces used in your project.
+You can use the font families in your project by importing them from the
+`@mordech/components` package.
+
+We use `Serif` and `Sans-serif`, and `Monospace` fonts in our project.
+
+You should use the font family that is most appropriate for the content you are trying to display.
+For example, if you are trying to display a heading, you should use the `Serif` font family.
+If you are trying to display a paragraph, you should use the `Sans Serif` font family.
+
+The Serif font is recommended for headings and titles `fontSizes[3]` and above.
+The Sans Serif font is recommended for body copy and headings `fontSizes[2]` and below.
+
+> If you are unsure which font family to use, you should ask your designer.
+
+| fontFamilies | Value                       |
+| ------------ | --------------------------- |
+| sans         | 'DM Sans', sans-serif       |
+| serif        | 'Eczar', serif              |
+| code         | 'JetBrains Mono', monospace |
+| inherit      | inherit                     |
+
+#### Usage
+
+```jsx
+import { fontFamilies } from '@mordech/components';
+
+const Heading = styled.h1`
+  font-family: ${fontFamilies.sans};
+`;
+```
+
+```jsx
+import { fontFamilies } from '@mordech/components';
+
+const Content = () => (
+  <Typography asElement="p" fontFamily="serif">
+    This is a paragraph
+  </Typography>
+);
+```
+
+<Typography asElement="p" fontFamily="sans" size={2}>
+  DM Sans font family
+</Typography>
+<br />
+<Typography asElement="p" fontFamily="serif" size={2}>
+  Eczar font family
+</Typography>
+<br />
+<Typography asElement="p" fontFamily="code" size={2}>
+  JetBrains Mono font family
+</Typography>
+
+### Font sizes
+
+Font sizes are not bind to lineHeight of the font family.
+Also font sizes are not bind to semantic elements.
+
+| fontSizes | Value    | In px   |
+| --------- | -------- | ------- |
+| 0         | 0.875rem | 14px    |
+| 1         | 1rem     | 16px    |
+| 2         | 1.5rem   | 24px    |
+| 3         | 2.25     | 36px    |
+| 4         | 3rem     | 48px    |
+| 5         | 3.375rem | 54px    |
+| inherit   | inherit  | inherit |
+
+#### Examples:
+
+<Typography asElement="p" size={5} lineHeight="125%" fontFamily="serif">
+  font size 5 — Eczar 54px
+</Typography>
+
+<Typography asElement="p" size={4} lineHeight="125%" fontFamily="serif">
+  font size 4 — Eczar 48px
+</Typography>
+
+<Typography asElement="p" size={3} lineHeight="150%" fontFamily="serif">
+  font size 3 — Eczar 36px
+</Typography>
+
+<Typography asElement="p" size={2} lineHeight="150%" fontFamily="sans">
+  font size 2 — DM Sans 24px
+</Typography>
+
+<Typography asElement="p" size={1} lineHeight="200%" fontFamily="sans">
+  font size 1 — DM Sans 16px
+</Typography>
+
+<Typography asElement="p" size={0} lineHeight="200%" fontFamily="sans">
+  font size 0 — DM Sans 14px
+</Typography>
+
+#### Usage
+
+```jsx
+import { fontSizes } from '@mordech/components';
+
+const Heading = styled.h1`
+  font-size: ${fontSizes[4]};
+`;
+```
+
+```jsx
+import { fontSizes } from '@mordech/components';
+
+const Content = () => (
+  <Typography asElement="p" fontSize={1}>
+    This is a paragraph
+  </Typography>
+);
+```
+
+### Font Weights
+
+| fontWeights | Value |
+| ----------- | ----- |
+| regualr     | 400   |
+| medium      | 500   |
+| bold        | 600   |
+
+#### Usage
+
+```jsx
+import { fontWeights } from '@mordech/components';
+
+const Heading = styled.h1`
+  font-weight: ${fontWeights.bold};
+`;
+```
+
+```jsx
+import { fontWeights } from '@mordech/components';
+
+const Content = () => (
+  <Typography asElement="p" weight="bold">
+    This is a paragraph
+  </Typography>
+);
+```
+
+#### Examples:
+
+<Typography weight="regular">DM sans regular weight</Typography>
+<br />
+<Typography weight="medium">DM sans medium weight</Typography>
+<br />
+<Typography weight="bold">DM sans bold weight</Typography>
+<br />
+<Typography weight="regular" fontFamily="serif">
+  Eczar regular weight
+</Typography>
+<br />
+<Typography weight="medium" fontFamily="serif">
+  Eczar medium weight
+</Typography>
+<br />
+<Typography weight="bold" fontFamily="serif">
+  Eczar bold weight
+</Typography>
+<br />
+<Typography weight="regular" fontFamily="code">
+  JetBrains Mono regular weight
+</Typography>
+<br />
+<Typography weight="medium" fontFamily="code">
+  JetBrains Mono medium weight
+</Typography>
+<br />
+<Typography weight="bold" fontFamily="code">
+  JetBrains Mono bold weight
+</Typography>

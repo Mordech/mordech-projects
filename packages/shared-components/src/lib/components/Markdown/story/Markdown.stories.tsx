@@ -7,7 +7,7 @@ import { explanationText } from './consts';
 
 export default {
   component: Markdown,
-  title: 'Components/Markdown',
+  title: 'Atoms/Markdown',
 } as ComponentMeta<typeof Markdown>;
 
 const StyledPaper = styled(Paper).attrs({ variant: 'outlined' })`

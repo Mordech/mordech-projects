@@ -5,7 +5,7 @@ import { colors } from '../../abstracts';
 
 export default {
   component: Icon,
-  title: 'Components/Icon',
+  title: 'Atoms/Icon',
   argTypes: {
     iconColor: {
       control: {
