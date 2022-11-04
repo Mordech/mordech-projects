@@ -8,7 +8,7 @@ export const StickyNav = styled.nav.attrs({ 'aria-label': 'Social links' })`
   }
   pointer-events: none;
 
-  ${breakpoints.mdMin} {
+  ${breakpoints.lg} {
     position: sticky;
     bottom: 0;
     left: 0;
@@ -71,7 +71,7 @@ export const LinksContainer = styled(Row).attrs({
     color: ${colors.lightest};
   }
 
-  ${breakpoints.mdMin} {
+  ${breakpoints.lg} {
     gap: 0.5rem;
     padding: 1.5rem 2rem;
 

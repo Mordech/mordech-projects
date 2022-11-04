@@ -17,10 +17,10 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
 
     --default-padding: 1.5rem;
-    ${breakpoints.xsMin} {
+    ${breakpoints.sm} {
       --default-padding: 2rem;
     }
-    ${breakpoints.mdMin} {
+    ${breakpoints.lg} {
       --default-padding: 5.25rem;
     }
   }

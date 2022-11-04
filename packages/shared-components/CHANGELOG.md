@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/Mordech/mordech-projects/compare/v0.9.2...v0.10.0) (2022-11-04)
+
+
+### Features
+
+* breakpoints changes ([#41](https://github.com/Mordech/mordech-projects/issues/41)) ([79d4e00](https://github.com/Mordech/mordech-projects/commit/79d4e0048bacf7c84a42dc0e9be3a5f8c5aaf6f3))
+
+
+
+
+
 ## [0.9.2](https://github.com/Mordech/mordech-projects/compare/v0.9.1...v0.9.2) (2022-11-04)
 
 **Note:** Version bump only for package @mordech/components
