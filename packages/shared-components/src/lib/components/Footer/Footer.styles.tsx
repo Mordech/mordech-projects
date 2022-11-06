@@ -19,7 +19,6 @@ export const IconLink = styled.a`
   pointer-events: auto;
   outline-width: 2px;
   opacity: 0.5;
-  transition: opacity 250ms ease-in-out;
 
   &:hover {
     opacity: 1;

@@ -1,0 +1,4 @@
+{
+  "extends": ["../../.stylelintrc.json"],
+  "files": "**/*.tsx, **/*.ts, **/*.jsx, **/*.js, **/*.css"
+}

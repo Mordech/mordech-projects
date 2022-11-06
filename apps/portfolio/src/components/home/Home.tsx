@@ -7,7 +7,7 @@ import { articleData } from '../../data';
 import { HeroHeader } from './HeroHeader';
 
 export const HomeMain = styled(Main)`
-  // Buffer for the header
+  /* Buffer for the header */
   padding-block-start: 8rem;
 `;
 
