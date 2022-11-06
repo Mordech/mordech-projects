@@ -29,6 +29,7 @@
     "visual:ci": "loki test --requireReference --reactUri file:./storybook-static",
     "eject": "react-scripts eject",
     "lint": "eslint src",
+    "lint:css": "stylelint './src/**/*.tsx'",
     "generate:component": "nx generate @nrwl/react:component --project=@mordech/components --directory=src/lib/components && nx generate @nrwl/react:component-story --project=@mordech/components"
   },
   "browserslist": {
@@ -84,6 +85,10 @@
     "react-markdown": "^8.0.3",
     "require-from-string": "^2.0.2",
     "styled-components": "^5.3.5",
+    "stylelint": "^14.14.1",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "*",
     "vite": "^3.1.6",
     "vitest": "^0.24.1",
