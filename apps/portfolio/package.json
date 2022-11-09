@@ -1,6 +1,6 @@
 {
   "name": "@mordech/portfolio",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "private": true,
   "description": "My portfolio website",
   "author": "Elad Mordechai Mizrahi",
@@ -14,11 +14,12 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "lint:css": "stylelint './src/**/*.tsx'"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.4.7",
-    "@mordech/components": "^0.10.0",
+    "@mordech/components": "^0.10.1",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.15.0",
     "gatsby": "^4.22.1",
@@ -55,6 +56,10 @@
     "gatsby-plugin-layout": "^3.24.0",
     "gatsby-plugin-react-svg": "^3.1.0",
     "prettier": "^2.7.1",
+    "stylelint": "^14.14.1",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^4.8.2"
   }
 }

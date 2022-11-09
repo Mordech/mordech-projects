@@ -30,7 +30,6 @@ export const LinksList = styled.ul`
 
 export const LogoLink = styled.a`
   outline-width: 2px;
-  transition: opacity 250ms ease-in-out;
 
   &:hover {
     opacity: 0.8;

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/Mordech/mordech-projects/compare/v0.10.0...v0.10.1) (2022-11-06)
+
+**Note:** Version bump only for package @mordech/components
+
+
+
+
+
 # [0.10.0](https://github.com/Mordech/mordech-projects/compare/v0.9.2...v0.10.0) (2022-11-04)
 
 
