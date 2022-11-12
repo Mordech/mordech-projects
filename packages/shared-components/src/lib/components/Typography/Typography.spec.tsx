@@ -64,7 +64,7 @@ describe('Typography', () => {
       'line-height: 1.25;'
     );
     expect(await getByText(/.*or inline code.*/)).toHaveStyle(
-      `background-color: ${colors['light']};`
+      `background-color: ${colors.background.base};`
     );
     expect(
       await getByText(/.*and I can be a paragraph too, and you*./)

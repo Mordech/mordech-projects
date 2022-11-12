@@ -38,7 +38,7 @@ describe('Paper', () => {
       background-color: transparent; 
       border-style: solid;
       border-width: 1px;
-      border-color: ${colors.light};
+      border-color: ${colors.background.surface};
       `);
   });
   it('should render with background color when passing "fill" variant', () => {
@@ -46,7 +46,7 @@ describe('Paper', () => {
       <Paper variant="fill" data-testid="paper" />
     );
     expect(getByTestId('paper')).toHaveStyle(`
-      background-color: ${colors.light};
+      background-color: ${colors.background.base};
       border-color: transparent;
       `);
   });

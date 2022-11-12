@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { breakpoints } from '../breakpoints';
-import { colors } from '../colors';
+import { colors, cssColorVariables } from '../colors';
 import { fontFamilies, fontSizes, fontWeights } from '../typography';
 
 import '../icons/style.css';
@@ -10,6 +10,8 @@ import './reset.css';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
+    ${cssColorVariables}
+
     --bounce-transition: 250ms cubic-bezier(0.65, -1.63, 0.28, 2.72);
     font-size: ${fontSizes[1]};
     font-weight: ${fontWeights['regular']};
@@ -35,8 +37,8 @@ export const GlobalStyle = createGlobalStyle`
     margin-inline: auto;
     min-height: 100%;
     width: 100%;
-    background: ${colors['lightest']};
-    color: ${colors['dark']};
+    background: ${colors.background.base};
+    color: ${colors.background.on};
     max-width: 128rem;
   }
 
@@ -49,7 +51,7 @@ export const GlobalStyle = createGlobalStyle`
   button {
     &:focus-visible {
       outline-style: solid;
-      outline-color: ${colors['dark']};
+      outline-color: ${colors.primary.base};
       outline-width: 2px;
 
       outline-offset: 4px;

@@ -1,12 +1,13 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Navigation } from './Navigation';
-import styled from 'styled-components';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { Button } from '../Button';
 import {
   Container,
   PlaceholderContent,
 } from '../Footer/story/story/story.styles';
+
+import { Navigation } from './Navigation';
 
 export default {
   component: Navigation,

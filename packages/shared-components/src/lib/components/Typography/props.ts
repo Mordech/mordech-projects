@@ -6,7 +6,7 @@ export const defaultTypographyProps: Required<TypographyProps> = {
   srOnly: false,
   size: 1,
   weight: 'regular',
-  color: colors.dark,
+  color: colors.primary.base,
   lineHeight: '1.5',
   fontFamily: 'sans',
   align: 'inherit',
@@ -32,7 +32,7 @@ export const variantDefaults: Record<
     asElement: 'code',
     lineHeight: 'inherit',
     fontFamily: 'code',
-    highlight: colors.light,
+    highlight: colors.highlight.neutral,
   },
   strong: {
     asElement: 'strong',
@@ -44,7 +44,7 @@ export const variantDefaults: Record<
   highlight: {
     asElement: 'em',
     lineHeight: 'inherit',
-    highlight: colors.highlightYellow,
+    highlight: colors.highlight.yellow,
     fontFamily: 'inherit',
     size: 'inherit',
   },

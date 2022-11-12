@@ -39,7 +39,7 @@ export const IconLink = styled.a`
     opacity: 1;
 
     outline-style: solid;
-    outline-color: ${colors.dark};
+    outline-color: ${colors.primary.base};
     outline-offset: 4px;
     outline-width: 2px;
   }
@@ -60,14 +60,14 @@ export const LinksContainer = styled(Row).attrs({
   max-width: unset;
   align-items: center;
   justify-content: center;
-  background-color: ${colors.dark};
+  background-color: ${colors.background.on};
 
   /* Creates a full bleed background */
-  box-shadow: 0 0 0 100vmax ${colors.dark};
+  box-shadow: 0 0 0 100vmax ${colors.background.on};
   clip-path: inset(-1px -100vmax);
 
   & > * {
-    color: ${colors.lightest};
+    color: ${colors.primary.on};
   }
 
   ${breakpoints.lg} {
@@ -83,7 +83,7 @@ export const LinksContainer = styled(Row).attrs({
     max-width: min-content;
 
     & > * {
-      color: ${colors.dark};
+      color: ${colors.primary.base};
     }
 
     /* Disables full bleed background in desktop */
@@ -98,12 +98,12 @@ export const StyledFooter = styled.footer`
   align-items: center;
   justify-content: center;
   padding-block: 1rem;
-  background-color: ${colors.dark};
+  background-color: ${colors.background.on};
   min-height: var(--default-padding);
   text-align: center;
 
   ${pagePadding}
   /* Creates a full bleed background */
-  box-shadow: 0 0 0 100vmax ${colors.dark};
+  box-shadow: 0 0 0 100vmax ${colors.background.on};
   clip-path: inset(-1px -100vmax -100vmax);
 `;
