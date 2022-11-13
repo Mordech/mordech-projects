@@ -1,8 +1,10 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import styled from 'styled-components';
+
 import { Paper } from '../../Paper';
 import { Markdown } from '../Markdown';
+
 import { explanationText } from './consts';
 
 export default {

@@ -3,6 +3,7 @@ import { cleanup, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { colors } from '../../abstracts';
+import { removeWhiteSpace } from '../../utils';
 
 import { Icon } from './Icon';
 
@@ -16,7 +17,7 @@ describe('Icon', () => {
 
   it('should have no violations', async () => {
     const { baseElement } = render(
-      <Icon iconColor={colors.blue} size="3rem" icon={'linkedin'} />
+      <Icon iconColor={colors.secondary.base} size="3rem" icon={'linkedin'} />
     );
     expect(await axe(baseElement)).toHaveNoViolations();
   });
@@ -29,30 +30,36 @@ describe('Icon', () => {
 
   it('should pass color and size props correctly', () => {
     const { getByTestId, rerender } = render(
-      <Icon size="1.5rem" iconColor={colors.dark} icon="linkedin" />
+      <Icon size="1.5rem" iconColor={colors.primary.base} icon="linkedin" />
     );
     expect(getByTestId('icon-font')).toHaveStyle(`
-      color: ${colors.dark};
+      color: ${removeWhiteSpace(colors.primary.base)};
       font-size: 1.5rem;
       `);
-    rerender(<Icon size="2rem" iconColor={colors.blue} icon="linkedin" />);
+    rerender(
+      <Icon
+        size="2rem"
+        iconColor={removeWhiteSpace(colors.secondary.base)}
+        icon="linkedin"
+      />
+    );
     expect(getByTestId('icon-font')).toHaveStyle(`
-      color: ${colors.blue};
+      color: ${removeWhiteSpace(colors.secondary.base)};
       font-size: 2rem;
       `);
     rerender(
       <Icon
-        iconColor={colors.dark}
+        iconColor={colors.primary.base}
         size="2rem"
         icon={<div data-testid="test-icon">test</div>}
       />
     );
     expect(getByTestId('test-icon')).toHaveStyle(`
-      width: 100%;
+      height: 100%;
       `);
     expect(getByTestId('icon-element')).toHaveStyle(`
-      min-width: 2rem;
-      width: 2rem;
+      min-height: 2rem;
+      height: 2rem;
       `);
   });
 });

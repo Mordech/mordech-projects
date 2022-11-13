@@ -1,8 +1,10 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { Paper } from './Paper';
-import { Typography } from '../Typography';
+import { Meta, Story } from '@storybook/react';
 import styled from 'styled-components';
+
+import { Typography } from '../Typography';
+
+import { Paper } from './Paper';
 import { PaperProps } from './types';
 
 export default {

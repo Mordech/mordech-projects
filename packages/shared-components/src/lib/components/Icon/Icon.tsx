@@ -22,12 +22,12 @@ export const IconElementWrapper = styled.div<{
   $size: CSSProperties['fontSize'];
   $iconColor: CSSProperties['color'];
 }>`
-  width: ${({ $size }) => $size};
-  min-width: ${({ $size }) => $size};
+  height: ${({ $size }) => $size};
+  min-height: ${({ $size }) => $size};
   color: ${({ $iconColor }) => $iconColor};
 
   &&& > * {
-    width: 100%;
+    height: 100%;
   }
 
   &&& svg path {

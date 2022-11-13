@@ -1,7 +1,9 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleSpotlight } from './ArticleSpotlight';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { Main } from '../../abstracts';
+
+import { ArticleSpotlight } from './ArticleSpotlight';
 
 export default {
   component: ArticleSpotlight,

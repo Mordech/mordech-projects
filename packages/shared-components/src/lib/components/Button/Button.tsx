@@ -23,10 +23,12 @@ export type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> &
 
 const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   --border-size: 1.5px;
-  --background-color: ${colors.dark};
-  --color: ${colors.lightest};
+  --background-color: ${colors.primary.base};
+  --color: ${colors.primary.on};
   --outline-offset: calc(var(--border-size) * -1);
   --border-color: var(--background-color);
+
+  user-select: none;
 
   display: inline-flex;
   justify-content: center;
@@ -60,34 +62,48 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
 
   &:focus-visible {
     outline-style: solid;
-    outline-color: ${colors.dark};
+    outline-color: ${colors.primary.base};
     outline-offset: 4px;
     outline-width: 2px;
   }
 
   &:hover {
-    --background-color: ${colors.deepest};
+    --background-color: ${colors.background.on};
     --border-color: var(--background-color);
-    --color: ${colors.lightest};
+    --color: ${colors.background.base};
+
+    filter: brightness(1.35);
+
+    [data-theme='support-dark'] {
+      @media (prefers-color-scheme: dark) {
+        filter: brightness(0.9);
+      }
+    }
   }
 
   &:active {
-    --background-color: ${colors.black};
-    --color: ${colors.lightest};
+    --background-color: ${colors.primary.base};
+    --color: ${colors.primary.on};
     --border-color: var(--background-color);
 
     outline-color: transparent;
     outline-width: var(--border-size);
     outline-offset: var(--outline-offset);
+
+    filter: brightness(1);
   }
 
   &:disabled {
-    --background-color: ${colors.light};
-    --color: ${colors.deep};
+    --background-color: ${colors.disabled.container};
+    --color: ${colors.disabled.onContainer};
 
     outline: unset;
     border-color: transparent;
     cursor: not-allowed;
+
+    &:hover {
+      filter: unset;
+    }
   }
 
   ${({ $variant }) => variantStyles[$variant]}

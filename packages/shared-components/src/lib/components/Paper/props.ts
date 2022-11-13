@@ -6,16 +6,16 @@ export const paperVariantProps: Record<PaperVariants, StyledPaperProps> = {
   elevation: {
     borderColor: 'transparent',
     boxShadow: elevation[0],
-    backgroundColor: colors.lightest,
+    backgroundColor: colors.background.base,
   },
   outlined: {
-    borderColor: colors.light,
+    borderColor: colors.background.surface,
     boxShadow: 'none',
     backgroundColor: 'transparent',
   },
   fill: {
     borderColor: 'transparent',
     boxShadow: 'none',
-    backgroundColor: colors.light,
+    backgroundColor: colors.background.surface,
   },
 };
