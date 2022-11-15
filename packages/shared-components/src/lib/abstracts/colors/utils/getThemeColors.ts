@@ -1,16 +1,11 @@
-import { css } from 'styled-components';
-
 import { ColorTheme, Theme } from '../types';
 
-import { getCssVarNames, getCssVarValues } from './';
-
 export const getThemeColors = (colorTheme: ColorTheme, theme: Theme) => {
-  const cssVarNames = getCssVarNames(colorTheme);
-  const cssVarValues = getCssVarValues(colorTheme, theme);
-
-  return css`
-    ${cssVarNames.map((name, index) => {
-      return `${name}: ${cssVarValues[index]};`;
-    })}
-  `;
+  return Object.keys(colorTheme[theme])
+    .map((color) => {
+      return Object.keys(colorTheme[theme][color]).map((shade) => {
+        return `--color-${color}-${shade}: ${colorTheme[theme][color][shade]};`;
+      });
+    })
+    .flat();
 };
