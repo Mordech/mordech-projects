@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/Mordech/mordech-projects/compare/v0.10.1...v0.11.0) (2022-11-13)
+
+
+### Features
+
+* new color architecture ([#43](https://github.com/Mordech/mordech-projects/issues/43)) ([8b63a9d](https://github.com/Mordech/mordech-projects/commit/8b63a9d11978c57fd23834151fd9f718683ac4a1))
+
+
+
+
+
 ## [0.10.1](https://github.com/Mordech/mordech-projects/compare/v0.10.0...v0.10.1) (2022-11-06)
 
 **Note:** Version bump only for package @mordech/portfolio

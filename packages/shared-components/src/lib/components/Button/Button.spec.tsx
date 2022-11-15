@@ -3,6 +3,7 @@ import { cleanup, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { colors } from '../../abstracts';
+import { removeWhiteSpace } from '../../utils';
 
 import { Button } from './Button';
 
@@ -50,8 +51,8 @@ describe('Button', () => {
   it('should have a default style', () => {
     const { getByText } = render(<Button>Test Button</Button>);
     expect(getByText('Test Button')).toHaveStyle(`
-      --background-color: ${colors.dark};
-      --color: ${colors.lightest};
+      --background-color: ${removeWhiteSpace(colors.primary.base)};
+      --color: ${removeWhiteSpace(colors.primary.on)};
       --border-color: var(--background-color);
       
       background-color: ButtonFace;
@@ -62,8 +63,8 @@ describe('Button', () => {
   it('should have a flat style', () => {
     const { getByText } = render(<Button variant="flat">Test Button</Button>);
     expect(getByText('Test Button')).toHaveStyle(`
-      --background-color: ${colors.light};
-      --color: ${colors.dark};
+      --background-color: ${removeWhiteSpace(colors.background.surface)};
+      --color: ${removeWhiteSpace(colors.background.onSurface)};
       --border-color: var(--background-color);
 
       background-color: ButtonFace;
@@ -77,12 +78,11 @@ describe('Button', () => {
     );
     expect(getByText('Test Button')).toHaveStyle(`
       --background-color: transparent;
-      --color: ${colors.dark};
+      --color: ${removeWhiteSpace(colors.primary.base)};
       --border-color: var(--color);
 
       background-color: ButtonFace;
       border: 2px outset buttonface;
-      color: ButtonText;
     `);
   });
 });

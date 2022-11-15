@@ -1,18 +1,19 @@
 import { create } from '@storybook/theming';
 
-import { colors, fontFamilies } from '../src/lib/abstracts';
+import { fontFamilies } from '../src/lib/abstracts';
+import { colorTheme } from '../src/lib/abstracts/colors';
 
 import logo from './assets/logo.png';
 
 export default create({
   base: 'light',
 
-  colorPrimary: colors.dark,
-  colorSecondary: colors.dark,
+  colorPrimary: colorTheme.light.primary.base,
+  colorSecondary: colorTheme.light.primary.base,
 
   // UI
-  appBg: colors.lightest,
-  appContentBg: colors.lightest,
+  appBg: colorTheme.light.background.base,
+  appContentBg: colorTheme.light.background.base,
   appBorderRadius: 8,
 
   // Typography
@@ -20,14 +21,14 @@ export default create({
   fontCode: fontFamilies['code'],
 
   // Text colors
-  textColor: colors.dark,
-  textInverseColor: colors.lightest,
-  textMutedColor: colors.deeper,
+  textColor: colorTheme.light.background.on,
+  textInverseColor: colorTheme.light.background.onSurface,
+  textMutedColor: colorTheme.light.disabled.base,
 
   // Toolbar default and active colors
-  barTextColor: colors.deeper,
-  barSelectedColor: colors.dark,
-  barBg: colors.lightest,
+  barTextColor: colorTheme.light.background.on,
+  barSelectedColor: colorTheme.light.background.on,
+  barBg: colorTheme.light.background.base,
 
   brandTitle: 'My custom storybook',
   brandUrl: 'https://elad.mizrahi.cc',

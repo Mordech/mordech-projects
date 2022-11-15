@@ -1,5 +1,5 @@
 export * from './breakpoints';
-export * from './colors';
+export { colors } from './colors';
 export * from './elevation';
 export * from './icons';
 export * from './layoutFoundation.styles';

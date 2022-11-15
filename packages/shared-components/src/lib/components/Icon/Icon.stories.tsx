@@ -1,7 +1,9 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { Icon } from './Icon';
+import { Meta, Story } from '@storybook/react';
+
 import { colors } from '../../abstracts';
+
+import { Icon } from './Icon';
 
 export default {
   component: Icon,

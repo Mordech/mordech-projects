@@ -19,7 +19,7 @@ export const Navigation: FC<NavigationProps> = ({ logo, children }) => {
   return (
     <StyledNavigation>
       <LogoLink title="Go to home page" href="/">
-        <Icon iconColor={colors.dark} size="2.25rem" icon={logo}></Icon>
+        <Icon iconColor={colors.primary.base} size="2.25rem" icon={logo}></Icon>
       </LogoLink>
       <LinksList>{navigationLinks}</LinksList>
     </StyledNavigation>

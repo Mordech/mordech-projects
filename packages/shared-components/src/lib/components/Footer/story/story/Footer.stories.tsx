@@ -1,12 +1,11 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Footer } from '../../Footer';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { colors } from '../../../../abstracts';
 import { Typography } from '../../../Typography';
-import { colors, pagePadding } from '../../../../abstracts';
-import styled from 'styled-components';
+import { Footer } from '../../Footer';
 import { links } from '../data/links';
-import ArticleSpotlightStories from '../../../ArticleSpotlight/ArticleSpotlight.stories';
-import { ArticleSpotlight } from '../../../ArticleSpotlight';
+
 import { Container, PlaceholderContent } from './story.styles';
 
 export default {
@@ -23,7 +22,7 @@ const Template: ComponentStory<typeof Footer> = (args) => (
     <PlaceholderContent />
 
     <Footer {...args}>
-      <Typography color={colors.lightest}>
+      <Typography color={colors.primary.on}>
         Designed and developed with ❤️ by Elad Mizrahi
       </Typography>
     </Footer>
@@ -33,7 +32,7 @@ const Template: ComponentStory<typeof Footer> = (args) => (
 const TemplateWithoutPlaceholder: ComponentStory<typeof Footer> = (args) => (
   <Container>
     <Footer {...args}>
-      <Typography color={colors.lightest}>
+      <Typography color={colors.primary.on}>
         Designed and developed with ❤️ by Elad Mizrahi
       </Typography>
     </Footer>
