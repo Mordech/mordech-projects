@@ -1,12 +1,16 @@
 import { css } from 'styled-components';
 
+import { getThemeColors } from './utils/getThemeColors';
 import { colorTheme } from './colorTheme';
-import { getThemeColors } from './utils';
 
 export const cssColorVariables = css`
-  ${getThemeColors(colorTheme, 'light')}
+  [data-theme='light'],
+  & {
+    ${getThemeColors(colorTheme, 'light')}
+  }
 
-  [data-theme='support-dark'] {
+  [data-theme='dark'],
+  [data-theme='prefers'] {
     @media (prefers-color-scheme: dark) {
       ${getThemeColors(colorTheme, 'dark')}
     }
