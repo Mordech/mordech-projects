@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.4.7",
-    "@mordech/components": "^0.11.1",
+    "@mordech/components": "*",
+    "@mordech/tokens": "*",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.15.0",
     "gatsby": "^4.22.1",

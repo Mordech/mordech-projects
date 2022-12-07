@@ -3,6 +3,7 @@
   "version": "0.11.1",
   "private": true,
   "dependencies": {
+    "@mordech/tokens": "*",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -48,7 +49,7 @@
     "@babel/core": "^7.0.0-0",
     "@babel/plugin-syntax-flow": "^7.18.6",
     "@babel/plugin-transform-react-jsx": "^7.19.0",
-    "@nrwl/eslint-plugin-nx": "^15.0.10",
+    "@nrwl/eslint-plugin-nx": "15.2.4",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",

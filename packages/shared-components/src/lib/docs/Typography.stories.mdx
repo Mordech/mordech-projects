@@ -23,13 +23,16 @@ If you are trying to display a paragraph, you should use the `<Typography asElem
 
 ## Tokens
 
+> ⚠️ _Note:_ These tokens moved to the `@mordech/tokens` package. You can import them from there.
+> Using the `@mordech/components` package for tokens is deprecated.
+
 ### Using typography tokens in your project
 
 I have created a set of tokens for the typography.
-You can use the typography tokens in your project by importing them from the `@mordech/components` package.
+You can use the typography tokens in your project by importing them from the `@mordech/tokens` package.
 
 ```jsx
-import { fontSizes, fontWeights, fontFamilies } from '@mordech/components';
+import { fontSizes, fontWeights, fontFamilies } from '@mordech/tokens';
 
 const Heading = styled.h1`
   font-size: ${fontSizes[4]};
@@ -42,7 +45,7 @@ const Heading = styled.h1`
 
 Font families are the typefaces used in your project.
 You can use the font families in your project by importing them from the
-`@mordech/components` package.
+`@mordech/tokens` package.
 
 We use `Serif` and `Sans-serif`, and `Monospace` fonts in our project.
 
@@ -65,7 +68,7 @@ The Sans Serif font is recommended for body copy and headings `fontSizes[2]` and
 #### Usage
 
 ```jsx
-import { fontFamilies } from '@mordech/components';
+import { fontFamilies } from '@mordech/tokens';
 
 const Heading = styled.h1`
   font-family: ${fontFamilies.sans};
@@ -73,7 +76,7 @@ const Heading = styled.h1`
 ```
 
 ```jsx
-import { fontFamilies } from '@mordech/components';
+import { fontFamilies } from '@mordech/tokens';
 
 const Content = () => (
   <Typography asElement="p" fontFamily="serif">
@@ -144,7 +147,7 @@ Also, font sizes are not bound to semantic elements.
 #### Usage
 
 ```jsx
-import { fontSizes } from '@mordech/components';
+import { fontSizes } from '@mordech/tokens';
 
 const Heading = styled.h1`
   font-size: ${fontSizes[4]};
@@ -152,7 +155,7 @@ const Heading = styled.h1`
 ```
 
 ```jsx
-import { fontSizes } from '@mordech/components';
+import { fontSizes } from '@mordech/tokens';
 
 const Content = () => (
   <Typography asElement="p" fontSize={1}>
@@ -172,7 +175,7 @@ const Content = () => (
 #### Usage
 
 ```jsx
-import { fontWeights } from '@mordech/components';
+import { fontWeights } from '@mordech/tokens';
 
 const Heading = styled.h1`
   font-weight: ${fontWeights.bold};
@@ -180,7 +183,7 @@ const Heading = styled.h1`
 ```
 
 ```jsx
-import { fontWeights } from '@mordech/components';
+import { fontWeights } from '@mordech/tokens';
 
 const Content = () => (
   <Typography asElement="p" weight="bold">

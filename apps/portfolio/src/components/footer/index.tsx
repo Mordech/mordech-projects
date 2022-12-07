@@ -1,9 +1,6 @@
 import React, { FC } from 'react';
-import {
-  colors,
-  Footer as FooterComponent,
-  Typography,
-} from '@mordech/components';
+import { Footer as FooterComponent, Typography } from '@mordech/components';
+import { colors } from '@mordech/tokens';
 
 import { links } from '../../data/links';
 

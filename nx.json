@@ -7,6 +7,7 @@
         "cacheableOperations": [
           "develop",
           "build",
+          "build:assets",
           "serve",
           "start",
           "test:watch",
@@ -49,8 +50,20 @@
     }
   },
   "targetDefaults": {
+    "test": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "start": {
+      "dependsOn": [
+        "^build:lib"
+      ]
+    },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "outputs": [
         "{projectRoot}/dist",
         "{projectRoot}/build",
@@ -59,10 +72,14 @@
       ]
     },
     "visual": {
-      "dependsOn": ["build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "visual:ci": {
-      "dependsOn": ["build"]
+      "dependsOn": [
+        "^build"
+      ]
     }
   },
   "affected": {

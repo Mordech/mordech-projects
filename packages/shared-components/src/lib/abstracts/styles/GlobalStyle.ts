@@ -1,17 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { breakpoints } from '../breakpoints';
-import { colors, cssColorVariables } from '../colors';
+import { colors } from '../colors';
 import { fontFamilies, fontSizes, fontWeights } from '../typography';
 
+import '@mordech/tokens/css';
 import '../icons/style.css';
-import './fonts.css';
-import './reset.css';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    ${cssColorVariables}
-
     --bounce-transition: 250ms cubic-bezier(0.65, -1.63, 0.28, 2.72);
     font-size: ${fontSizes[1]};
     font-weight: ${fontWeights['regular']};
