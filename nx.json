@@ -50,22 +50,19 @@
     }
   },
   "targetDefaults": {
+    "test": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
     "start": {
       "dependsOn": [
-        {
-          "projects": "dependencies",
-          "target": "build:lib",
-          "params": "forward"
-        }
+        "^build:lib"
       ]
     },
     "build": {
       "dependsOn": [
-        {
-          "projects": "dependencies",
-          "target": "build",
-          "params": "forward"
-        }
+        "^build"
       ],
       "outputs": [
         "{projectRoot}/dist",
@@ -76,12 +73,12 @@
     },
     "visual": {
       "dependsOn": [
-        "build"
+        "^build"
       ]
     },
     "visual:ci": {
       "dependsOn": [
-        "build"
+        "^build"
       ]
     }
   },
