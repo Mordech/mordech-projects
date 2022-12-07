@@ -18,6 +18,9 @@ They are in a mobile-first approach. Meaning that they use `min-width` to define
 
 ## Tokens
 
+> ⚠️ _Note:_ These tokens moved to the `@mordech/tokens` package. You can import them from there.
+> Using the `@mordech/components` package for tokens is deprecated.
+
 | Name | Value              | Description         | Raw value                             |
 | ---- | ------------------ | ------------------- | ------------------------------------- |
 | sm   | Larger than 600px  | Small screens       | @media screen and (min-width: 600px)  |
@@ -28,7 +31,7 @@ They are in a mobile-first approach. Meaning that they use `min-width` to define
 ## Usage
 
 ```jsx
-import { breakpoints } from '@mordech/components;
+import { breakpoints } from '@mordech/tokens';
 
 const StyledDiv = styled.div`
   background-color: blue;
@@ -59,7 +62,7 @@ JavaScript or use only the screen size.
 ### Usage
 
 ```jsx
-import { screenSizes } from '@mordech/components';
+import { screenSizes } from '@mordech/tokens';
 
 const StyledDiv = styled.div`
   background-color: blue;
@@ -77,7 +80,7 @@ const StyledDiv = styled.div`
 `screenSizes` can be used in JavaScript functions.
 
 ```jsx
-import { screenSizes } from '@mordech/components';
+import { screenSizes } from '@mordech/tokens';
 
 const windowWidth = window.innerWidth;
 
