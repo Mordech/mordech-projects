@@ -1,1 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Eczar:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('../assets/fonts/Mona-Sans.woff2')
+      format('woff2 supports variations'),
+    url('../assets/fonts/Mona-Sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}

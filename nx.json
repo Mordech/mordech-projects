@@ -11,6 +11,7 @@
           "serve",
           "start",
           "test:watch",
+          "build:watch",
           "clean",
           "generate:component",
           "typecheck",
@@ -57,7 +58,7 @@
     },
     "start": {
       "dependsOn": [
-        "^build:lib"
+        "^build:watch"
       ]
     },
     "build": {

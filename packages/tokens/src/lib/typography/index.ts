@@ -4,7 +4,7 @@ export type FontSizes = 0 | 1 | 2 | 3 | 4 | 5 | 'inherit';
 
 export type FontWeights = 'regular' | 'medium' | 'bold';
 
-export type FontFamily = 'sans' | 'serif' | 'code' | 'inherit';
+export type FontFamily = 'sans' | 'serif' | 'code' | 'ui' | 'inherit';
 
 export const fontSizes: Record<
   FontSizes,
@@ -35,5 +35,6 @@ export const fontFamilies: Record<
   sans: `'DM Sans',sans-serif`,
   serif: `'Eczar',serif`,
   code: `'JetBrains Mono',monospace`,
+  ui: `'Mona Sans',sans-serif`,
   inherit: 'inherit',
 };

@@ -1,8 +1,8 @@
 import React from 'react';
+import { colors } from '@mordech/tokens';
 import { cleanup, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { colors } from '../../abstracts';
 import { removeWhiteSpace } from '../../utils';
 
 import { Button } from './Button';

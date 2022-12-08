@@ -1,11 +1,15 @@
 import fs from 'fs';
 import path from 'path';
 
-import { colorTheme } from '../src/lib/colors';
-import { elevation } from '../src/lib/elevation';
-import { fontFamilies, fontSizes, fontWeights } from '../src/lib/typography';
+import {
+  colorTheme,
+  defaultPaddingDeclaration,
+  elevation,
+  fontFamilies,
+  fontSizes,
+  fontWeights,
+} from '../src/lib';
 import { Token, tokensToCssVars } from '../src/lib/utils/tokensToCssVars';
-
 const cssOutputDir = './src/lib/styles/';
 const cssOutputPath = path.join(cssOutputDir, 'tokens.css');
 
@@ -18,7 +22,9 @@ export async function toStyleSheet() {
       ${tokensToCssVars(fontSizes, 'font-size')}
       ${tokensToCssVars(fontWeights, 'font-weight')}
       ${tokensToCssVars(elevation, 'elevation')}
+
     }
+    ${defaultPaddingDeclaration.join('')}
 
     @media (prefers-color-scheme: dark) {
       [data-theme='prefers'] {
