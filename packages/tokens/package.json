@@ -1,0 +1,33 @@
+{
+  "name": "@mordech/tokens",
+  "version": "0.12.0",
+  "prepare": "yarn run build",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./css": "./dist/css/index.css"
+  },
+  "scripts": {
+    "build:ts": "tsc -b",
+    "build:assets": "ts-node scripts/index.ts && prettier --write src/**/*",
+    "build:css": "esbuild --bundle --minify --outfile=dist/css/index.css src/lib/styles/index.css",
+    "build:lib": "yarn build:ts && yarn build:assets && yarn build:css",
+    "build": "yarn build:lib",
+    "test": "echo 'implement test'",
+    "postinstall": "yarn build:assets",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  },
+  "nx": {}
+}
