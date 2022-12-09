@@ -1,7 +1,7 @@
 import React from 'react';
+import { colors } from '@mordech/tokens';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { colors } from '../../../../abstracts';
 import { Typography } from '../../../Typography';
 import { Footer } from '../../Footer';
 import { links } from '../data/links';

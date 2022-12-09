@@ -1,6 +1,5 @@
+import { colors } from '@mordech/tokens';
 import { css, FlattenSimpleInterpolation } from 'styled-components';
-
-import { colors } from '../../abstracts';
 
 import { ButtonVariants } from './types';
 

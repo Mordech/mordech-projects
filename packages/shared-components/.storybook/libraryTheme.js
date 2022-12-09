@@ -1,7 +1,5 @@
+import { colorTheme, fontFamilies } from '@mordech/tokens';
 import { create } from '@storybook/theming';
-
-import { fontFamilies } from '../src/lib/abstracts';
-import { colorTheme } from '../src/lib/abstracts/colors';
 
 import logo from './assets/logo.png';
 

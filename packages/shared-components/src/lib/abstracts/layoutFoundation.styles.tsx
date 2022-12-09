@@ -1,6 +1,5 @@
+import { pagePadding } from '@mordech/tokens';
 import styled, { CSSProperties } from 'styled-components';
-
-import { pagePadding } from '.';
 
 export const Section = styled.section`
   display: flex;

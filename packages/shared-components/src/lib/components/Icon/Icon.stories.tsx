@@ -1,7 +1,6 @@
 import React from 'react';
+import { colors } from '@mordech/tokens';
 import { Meta, Story } from '@storybook/react';
-
-import { colors } from '../../abstracts';
 
 import { Icon } from './Icon';
 

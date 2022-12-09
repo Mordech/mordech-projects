@@ -1,8 +1,9 @@
 import React from 'react';
+import { colors, fontFamilies } from '@mordech/tokens';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { colors, fontFamilies, GlobalStyle } from '../../abstracts';
+import { GlobalStyle } from '../../abstracts';
 
 import {
   Code,

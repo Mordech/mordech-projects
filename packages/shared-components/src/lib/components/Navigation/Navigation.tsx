@@ -1,6 +1,6 @@
 import React, { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
+import { colors } from '@mordech/tokens';
 
-import { colors } from '../../abstracts';
 import { Icon } from '../Icon';
 
 import { LinksList, LogoLink, StyledNavigation } from './Navigation.styles';

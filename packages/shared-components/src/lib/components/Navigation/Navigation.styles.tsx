@@ -1,6 +1,5 @@
+import { breakpoints, colors } from '@mordech/tokens';
 import styled from 'styled-components';
-
-import { breakpoints, colors } from '../../abstracts';
 
 export const StyledNavigation = styled.nav`
   z-index: 1;

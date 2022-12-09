@@ -18,16 +18,20 @@
   },
   "scripts": {
     "build:ts": "tsc -b",
-    "build:assets": "ts-node scripts/index.ts && prettier --write src/**/*",
-    "build:css": "esbuild --bundle --minify --outfile=dist/css/index.css src/lib/styles/index.css",
-    "build:lib": "yarn build:ts && yarn build:assets && yarn build:css",
-    "build": "yarn build:lib",
+    "build:assets": "ts-node scripts/index.ts && prettier --write src/**/*.css",
+    "build:css": "esbuild --bundle --minify --outfile=dist/css/index.css src/lib/styles/index.css --loader:.woff2=file",
+    "build": "yarn run-s build:*",
+    "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
     "test": "echo 'implement test'",
     "postinstall": "yarn build:assets",
     "lint": "eslint src"
   },
   "devDependencies": {
-    "ts-node": "^10.9.1"
+    "add": "^2.0.6",
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.1",
+    "yarn": "^1.22.19"
   },
   "nx": {}
 }
