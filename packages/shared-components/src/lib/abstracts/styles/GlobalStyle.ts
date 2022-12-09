@@ -1,12 +1,10 @@
+import { colors, fontFamilies, fontSizes, fontWeights } from '@mordech/tokens';
 import { createGlobalStyle } from 'styled-components';
-
-import { breakpoints } from '../breakpoints';
-import { colors } from '../colors';
-import { fontFamilies, fontSizes, fontWeights } from '../typography';
 
 import '@mordech/tokens/css';
 import '../icons/style.css';
 
+// TODO: create a generic global style css file in @mordech/tokens
 export const GlobalStyle = createGlobalStyle`
   :root {
     --bounce-transition: 250ms cubic-bezier(0.65, -1.63, 0.28, 2.72);
@@ -14,14 +12,6 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: ${fontWeights['regular']};
     line-height: 1.25;
     scroll-behavior: smooth;
-
-    --default-padding: 1.5rem;
-    ${breakpoints.sm} {
-      --default-padding: 2rem;
-    }
-    ${breakpoints.lg} {
-      --default-padding: 5.25rem;
-    }
   }
 
   * {

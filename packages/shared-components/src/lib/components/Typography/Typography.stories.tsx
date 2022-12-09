@@ -1,8 +1,7 @@
 import React from 'react';
+import { colors } from '@mordech/tokens';
 import { Meta, Story } from '@storybook/react';
 import styled from 'styled-components';
-
-import { colors } from '../../abstracts';
 
 import { defaultTypographyProps } from './props';
 import {

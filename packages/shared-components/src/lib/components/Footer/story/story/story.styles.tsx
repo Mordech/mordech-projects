@@ -1,6 +1,5 @@
+import { colors } from '@mordech/tokens';
 import styled from 'styled-components';
-
-import { colors } from '../../../../abstracts';
 
 export const PlaceholderContent = styled.main`
   box-sizing: border-box;

@@ -1,7 +1,6 @@
 import { HTMLAttributes, ReactNode } from 'react';
+import { FontFamily, FontSizes, FontWeights } from '@mordech/tokens';
 import { CSSProperties } from 'styled-components';
-
-import { FontFamily, FontSizes, FontWeights } from '../../abstracts';
 
 export interface TypographyProps {
   srOnly?: boolean;

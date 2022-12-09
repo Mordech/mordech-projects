@@ -1,4 +1,4 @@
-import { colors } from '../../abstracts';
+import { colors } from '@mordech/tokens';
 
 import { TypographyProps, TypographyType } from './types';
 

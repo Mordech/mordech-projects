@@ -8,9 +8,11 @@
           "develop",
           "build",
           "build:assets",
+          "build:css",
           "serve",
           "start",
           "test:watch",
+          "watch:lib",
           "clean",
           "generate:component",
           "typecheck",
@@ -57,7 +59,7 @@
     },
     "start": {
       "dependsOn": [
-        "^build:lib"
+        "^watch:lib"
       ]
     },
     "build": {
