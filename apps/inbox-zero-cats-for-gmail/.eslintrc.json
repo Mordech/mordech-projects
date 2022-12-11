@@ -1,0 +1,11 @@
+// eslintrc for a web extension
+{
+  "extends": "../../.eslintrc.json",
+  "env": {
+    "es2015": true,
+    "webextensions": true
+  },
+  "rules": {
+    "no-undef": "off",
+  }
+}

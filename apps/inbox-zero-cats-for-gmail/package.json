@@ -1,0 +1,28 @@
+{
+  "name": "@mordech/zero-inbox-cats-for-gmail",
+  "version": "0.17.0",
+  "description": "Adds a random cat to the empty state of Gmail inbox",
+  "private": true,
+  "main": "./src/manifest.json",
+  "author": "mordech",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@types/webextension-polyfill": "^0.9.2",
+    "dotenv": "^16.0.3",
+    "esbuild": "^0.16.3",
+    "node": "^19.2.0",
+    "nodemon": "^2.0.20",
+    "web-ext": "^7.4.0",
+    "webextension-polyfill": "^0.10.0"
+  },
+  "scripts": {
+    "bundle": "node ./scripts/bundle.js",
+    "build": "yarn bundle && yarn node ./scripts/build.js",
+    "start": "yarn bundle && nodemon --watch src --ext js,css,html --exec \"yarn bundle\"",
+    "lint:extension": "web-ext lint -s dist/"
+  },
+  "dependencies": {
+    "@mordech/tokens": "*",
+    "lit-html": "^2.5.0"
+  }
+}
