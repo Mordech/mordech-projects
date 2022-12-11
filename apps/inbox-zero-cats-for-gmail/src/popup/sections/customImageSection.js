@@ -1,11 +1,12 @@
 // TODO Manage uploading large images
+import { html } from 'lit-html';
+import browser from 'webextension-polyfill';
+
 import { uploadIcon } from '../assets/uploadIcon.js';
 import { imageList } from '../components/index.js';
 import { summary } from '../components/summary.js';
 import { defaultCatImages } from '../data/defaultCatImages.js';
-import { html } from 'lit-html';
 import { getAndAddValue } from '../utils/index.js';
-import browser from 'webextension-polyfill';
 
 export const addImage = async () => {
   const images = document.getElementById('upload-image');

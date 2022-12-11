@@ -1,6 +1,7 @@
+import browser from 'webextension-polyfill';
+
 import { defaultCatImages } from '../data/index.js';
 import { renderContent } from '../index.js';
-import browser from 'webextension-polyfill';
 
 export const resetImages = async () =>
   browser.storage.local

@@ -1,6 +1,7 @@
+import { html } from 'lit-html';
+
 import { logo } from '../assets/logo.js';
 import { resetIcon } from '../assets/resetIcon.js';
-import { html } from 'lit-html';
 import { resetImages, resetTitles } from '../utils/index.js';
 
 export const footer = html` <button

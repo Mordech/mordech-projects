@@ -1,5 +1,6 @@
-import { expandMoreIcon } from '../assets/expandMoreIcon.js';
 import { html } from 'lit-html';
+
+import { expandMoreIcon } from '../assets/expandMoreIcon.js';
 
 /**
  * Summary element for <details>

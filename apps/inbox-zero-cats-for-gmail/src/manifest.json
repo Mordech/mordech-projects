@@ -13,9 +13,7 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://mail.google.com/*"
-      ],
+      "matches": ["*://mail.google.com/*"],
       "js": [
         "polyfills/browser-polyfill.js",
         "data/defaults.js",
@@ -26,16 +24,11 @@
         "utils/findAndReplaceEmptyState.js",
         "index.js"
       ],
-      "css": [
-        "styles.css"
-      ],
+      "css": ["styles.css"],
       "run_at": "document_end"
     }
   ],
-  "permissions": [
-    "storage",
-    "unlimitedStorage"
-  ],
+  "permissions": ["storage", "unlimitedStorage"],
   "action": {
     "default_icon": {
       "16": "images/icon_16.png",

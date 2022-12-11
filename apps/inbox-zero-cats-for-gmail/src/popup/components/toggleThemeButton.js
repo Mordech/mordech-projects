@@ -1,7 +1,8 @@
-import { toggleThemeIcon } from '../assets/toggleThemeIcon.js';
-import { renderContent } from '../index.js';
 import { html } from 'lit-html';
 import browser from 'webextension-polyfill';
+
+import { toggleThemeIcon } from '../assets/toggleThemeIcon.js';
+import { renderContent } from '../index.js';
 
 /**
  * @param {import('../@types/index.js').Data['theme']} theme

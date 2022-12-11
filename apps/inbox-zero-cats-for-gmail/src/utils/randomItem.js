@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * @param {string[]} array
  * @returns {string}

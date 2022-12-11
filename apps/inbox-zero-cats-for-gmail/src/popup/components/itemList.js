@@ -1,5 +1,6 @@
-import { deleteForeverIcon } from '../assets/deleteForeverIcon.js';
 import { html } from 'lit-html';
+
+import { deleteForeverIcon } from '../assets/deleteForeverIcon.js';
 import { removeItem } from '../utils/removeItem.js';
 
 /**

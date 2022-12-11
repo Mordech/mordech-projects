@@ -1,5 +1,6 @@
-import { renderContent } from '../index.js';
 import browser from 'webextension-polyfill';
+
+import { renderContent } from '../index.js';
 
 /**
  * @typedef {import('../@types/index.js').Data} Data

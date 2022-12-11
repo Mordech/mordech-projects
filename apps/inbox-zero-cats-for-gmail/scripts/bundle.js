@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { build } = require('esbuild');
 const { readFileSync, copyFileSync, mkdirSync } = require('fs');
-const { FsTree } = require('nx/src/generators/tree');
 const { join } = require('path');
 
 const root = process.cwd();

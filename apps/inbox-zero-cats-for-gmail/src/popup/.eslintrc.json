@@ -1,6 +1,8 @@
 {
-  "extends": "../.eslintrc.json",
+  "extends": "../../.eslintrc.json",
   "rules": {
-    "no-undef": "error"
+    "no-undef": "error",
+    "no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": "error"
   }
 }
