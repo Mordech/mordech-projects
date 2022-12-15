@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "license": "MIT",
   "exports": {
@@ -24,7 +24,8 @@
     "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
     "test": "echo 'implement test'",
     "postinstall": "yarn build:assets",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "prepare": "yarn build"
   },
   "devDependencies": {
     "add": "^2.0.6",
