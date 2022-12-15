@@ -10,7 +10,7 @@ function getSimpleRandom(array) {
  * @param {string[]} array
  * @returns {string}
  */
-function randomItem(array) {
+export function randomItem(array) {
   // random are considered one item
   const random = array.filter(
     (item) => item.endsWith('mrd-random') || item.endsWith('mrd-spotlight')

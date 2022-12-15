@@ -14,16 +14,7 @@
   "content_scripts": [
     {
       "matches": ["*://mail.google.com/*"],
-      "js": [
-        "polyfills/browser-polyfill.js",
-        "data/defaults.js",
-        "utils/randomItem.js",
-        "utils/setCatTitle.js",
-        "utils/setCatImage.js",
-        "components/createCatEmptyState.js",
-        "utils/findAndReplaceEmptyState.js",
-        "index.js"
-      ],
+      "js": ["index.js"],
       "css": ["styles.css"],
       "run_at": "document_end"
     }

@@ -1,7 +1,13 @@
+import browser from 'webextension-polyfill';
+
+import { defaultCatTitles } from '../data';
+
+import { randomItem } from './randomItem';
+
 /**
  * @param {HTMLHeadingElement} catTitle
  */
-async function setCatTitle(catTitle) {
+export async function setCatTitle(catTitle) {
   return browser.storage.local
     .get('catTitles')
     .then(({ catTitles }) => {

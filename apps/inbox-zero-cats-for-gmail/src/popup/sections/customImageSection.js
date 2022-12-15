@@ -2,10 +2,10 @@
 import { html } from 'lit-html';
 import browser from 'webextension-polyfill';
 
+import { defaultCatImages } from '../../data/index.js';
 import { uploadIcon } from '../assets/uploadIcon.js';
 import { imageList } from '../components/index.js';
 import { summary } from '../components/summary.js';
-import { defaultCatImages } from '../data/defaultCatImages.js';
 import { getAndAddValue } from '../utils/index.js';
 
 export const addImage = async () => {

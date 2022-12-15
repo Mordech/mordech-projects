@@ -7,7 +7,7 @@
   "author": "mordech",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@types/firefox-webext-browser": "^94.0.1",
+    "@types/node": "^18.11.14",
     "@types/webextension-polyfill": "^0.9.2",
     "dotenv": "^16.0.3",
     "esbuild": "^0.16.3",
@@ -18,8 +18,8 @@
     "webextension-polyfill": "^0.10.0"
   },
   "scripts": {
-    "bundle": "node ./scripts/bundle.js",
-    "build": "yarn bundle && yarn node ./scripts/build.js",
+    "bundle": "ts-node --esm ./scripts/bundle.ts",
+    "build": "yarn bundle && yarn ts-node --esm ./scripts/build.ts",
     "start": "yarn bundle && nodemon --watch src --ext js,css,html --exec \"yarn bundle\"",
     "lint": "eslint src/",
     "lint:extension": "web-ext lint -s dist/"

@@ -1,8 +1,8 @@
 import { html } from 'lit-html';
 
+import { defaultCatTitles } from '../../data/index.js';
 import { itemList } from '../components/index.js';
 import { summary } from '../components/summary.js';
-import { defaultCatTitles } from '../data/defaultCatTitles.js';
 import { getAndAddValue } from '../utils/index.js';
 
 const addTitle = async () => {

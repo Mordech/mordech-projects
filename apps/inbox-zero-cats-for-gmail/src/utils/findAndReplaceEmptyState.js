@@ -1,8 +1,10 @@
+import { createCatEmptyState } from '../components/createCatEmptyState';
+
 /**
  * @param {string} selector
  * @param {string} text
  */
-const findAndReplaceEmptyState = (selector, text) => {
+export const findAndReplaceEmptyState = (selector, text) => {
   document.querySelectorAll(selector).forEach((element) => {
     if (
       (element.firstElementChild?.textContent?.includes(text) &&

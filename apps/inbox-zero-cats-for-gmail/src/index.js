@@ -1,3 +1,5 @@
+import { findAndReplaceEmptyState } from './utils/findAndReplaceEmptyState';
+
 (function () {
   'use strict';
 

@@ -1,17 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-require('dotenv').config();
+import { updateJson } from '@nrwl/devkit';
+import { execSync } from 'child_process';
+import { config } from 'dotenv';
+import { readdir, writeFileSync } from 'fs';
+import { FsTree } from 'nx/src/generators/tree';
 
-const { updateJson } = require('@nrwl/devkit');
-const { execSync } = require('child_process');
-const { writeFileSync, readdir } = require('fs');
-const { FsTree } = require('nx/src/generators/tree');
+config();
 
-const tree = new FsTree(process.cwd());
+const tree = new FsTree(process.cwd(), true);
 
 (async function () {
   console.log('🦊  Building Firefox extension...');
   console.log('\x1b[2m');
-  await updateJson(tree, 'src/manifest.json', (manifest) => {
+  updateJson(tree, 'src/manifest.json', (manifest) => {
     const geckoId = process.env.GECKO_ID;
     if (!geckoId)
       throw new Error(
@@ -48,7 +49,7 @@ const tree = new FsTree(process.cwd());
     return manifest;
   });
 })();
-console.log(`\x1b[0m\x1b[33m
+console.log(`\x1b[36m
     /\\_/\\
    ( o.o )
     > ^ <

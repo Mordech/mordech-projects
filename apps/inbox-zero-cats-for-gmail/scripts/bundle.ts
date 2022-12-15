@@ -1,36 +1,27 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { build } = require('esbuild');
-const { readFileSync, copyFileSync, mkdirSync } = require('fs');
-const { join } = require('path');
+import { build, BuildOptions } from 'esbuild';
+import { copyFileSync, mkdirSync, readFileSync } from 'fs';
+import { join } from 'path';
 
 const root = process.cwd();
 const manifestPath = `${root}/src/manifest.json`;
 
 const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+
 const scripts = manifest.content_scripts[0].js;
 
-/**
- * @param {string} path
- * @param {'outDir' | 'entryPoint'} direction
- */
-const path = (direction, path) =>
+const path = (direction: 'outDir' | 'entryPoint', path: string) =>
   join(root, direction === 'outDir' ? 'dist' : 'src', path);
 
-scripts.forEach(
-  (/** @type {any} */ script, /** @type {string | number} */ index) => {
-    scripts[index] = path('entryPoint', script);
-  }
-);
+scripts.forEach((script: string, index: string | number) => {
+  scripts[index] = path('entryPoint', script);
+});
 
 const cssFiles = manifest.content_scripts[0].css;
-cssFiles.forEach(
-  (/** @type {any} */ cssFile, /** @type {string | number} */ index) => {
-    cssFiles[index] = path('entryPoint', cssFile);
-  }
-);
+cssFiles.forEach((cssFile: string, index: string | number) => {
+  cssFiles[index] = path('entryPoint', cssFile);
+});
 
-/**@type {(import('esbuild').BuildOptions['loader'])} */
-const loaders = {
+const loaders: BuildOptions['loader'] = {
   '.woff2': 'file',
   '.css': 'css',
   '.html': 'copy',
@@ -45,9 +36,9 @@ async function bundleExtension() {
   // build all extension scripts and css
   const main = build({
     entryPoints: [...scripts, ...cssFiles],
-    bundle: false,
-    minify: false,
-    sourcemap: false,
+    bundle: true,
+    minify: true,
+    sourcemap: true,
     format: 'cjs',
     outdir: join(root, 'dist'),
     loader: loaders,
@@ -97,8 +88,11 @@ async function bundleExtension() {
 
     mkdirSync(path('outDir', 'images'), { recursive: true });
 
-    images.forEach((image) => {
-      copyFileSync(path('entryPoint', image), path('outDir', image));
+    images.forEach((image: unknown) => {
+      copyFileSync(
+        path('entryPoint', image as string),
+        path('outDir', image as string)
+      );
     });
     copyFileSync(manifestPath, path('outDir', 'manifest.json'));
   })().then(() => {
@@ -107,9 +101,14 @@ async function bundleExtension() {
   return Promise.all([main, popup, options]);
 }
 
-bundleExtension().finally(() => {
-  // make green
-  console.log('\x1b[32m');
-  console.log('🎉  Extension built successfully');
-  console.log('\x1b[0m');
-});
+bundleExtension()
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  })
+  .finally(() => {
+    // make green
+    console.log('\x1b[32m');
+    console.log('🎉  Extension built successfully');
+    console.log('\x1b[0m');
+  });
