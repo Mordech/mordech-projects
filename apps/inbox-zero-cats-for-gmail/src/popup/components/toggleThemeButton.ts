@@ -1,16 +1,11 @@
 import { html } from 'lit-html';
 import browser from 'webextension-polyfill';
 
-import { toggleThemeIcon } from '../assets/toggleThemeIcon.js';
-import { renderContent } from '../index.js';
+import { Data } from '../@types';
+import { toggleThemeIcon } from '../assets/toggleThemeIcon';
+import { renderContent } from '../index';
 
-/**
- * @param {import('../@types/index.js').Data['theme']} theme
- */
-export const toggleThemeButton = (theme) => {
-  /**
-   * @type {string}
-   */
+export const toggleThemeButton = (theme: Data['theme']) => {
   const dataTheme =
     document.body.attributes.getNamedItem('data-theme')?.value || 'light';
   const currentTheme = theme || dataTheme;

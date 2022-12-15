@@ -1,17 +1,13 @@
 import browser from 'webextension-polyfill';
 
-import { renderContent } from '../index.js';
+import { Data } from '../@types/index';
+import { renderContent } from '../index';
 
-/**
- * @typedef {import('../@types/index.js').Data} Data
- */
-
-/**
- * @param {keyof Data} category
- * @param {string} item
- * @param {string[]} itemList
- */
-export const removeItem = (category, itemList, item) => {
+export const removeItem = (
+  category: keyof Data,
+  itemList: string[],
+  item: string
+) => {
   const values = itemList;
   if (values.length !== 1) {
     // remove all instances of random image
@@ -31,10 +27,7 @@ export const removeItem = (category, itemList, item) => {
       });
   }
 
-  /**
-   * @param {string} currentItem
-   */
-  function removeFromArray(currentItem) {
+  function removeFromArray(currentItem: string) {
     const index = values.indexOf(currentItem);
     if (index > -1) {
       values.splice(index, 1);

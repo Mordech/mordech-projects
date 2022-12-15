@@ -21,7 +21,7 @@
     "bundle": "ts-node --esm ./scripts/bundle.ts",
     "build": "yarn bundle && yarn ts-node --esm ./scripts/build.ts",
     "start": "yarn bundle && nodemon --watch src --ext js,css,html --exec \"yarn bundle\"",
-    "lint": "eslint src/",
+    "lint": "eslint src",
     "lint:extension": "web-ext lint -s dist/"
   },
   "dependencies": {

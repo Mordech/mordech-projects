@@ -1,5 +1,3 @@
-// @ts-check
-
 import { svg } from 'lit-html';
 
 export const deleteForeverIcon = svg`

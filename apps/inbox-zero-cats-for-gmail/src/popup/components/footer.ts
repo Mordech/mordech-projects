@@ -1,8 +1,8 @@
 import { html } from 'lit-html';
 
-import { logo } from '../assets/logo.js';
-import { resetIcon } from '../assets/resetIcon.js';
-import { resetImages, resetTitles } from '../utils/index.js';
+import { logo } from '../assets/logo';
+import { resetIcon } from '../assets/resetIcon';
+import { resetImages, resetTitles } from '../utils/index';
 
 export const footer = html` <button
     @click=${async () => resetImages().then(() => resetTitles())}

@@ -4,10 +4,7 @@ import { defaultCatTitles } from '../data';
 
 import { randomItem } from './randomItem';
 
-/**
- * @param {HTMLHeadingElement} catTitle
- */
-export async function setCatTitle(catTitle) {
+export async function setCatTitle(catTitle: HTMLHeadingElement) {
   return browser.storage.local
     .get('catTitles')
     .then(({ catTitles }) => {

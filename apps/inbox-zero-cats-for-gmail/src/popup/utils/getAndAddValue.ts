@@ -1,12 +1,9 @@
 import browser from 'webextension-polyfill';
 
-import { renderContent } from '../index.js';
+import { DataKeys } from '../@types/index';
+import { renderContent } from '../index';
 
-/**
- * @param {import('../@types/index.js').DataKeys} category
- * @param {string} value
- */
-export const getAndAddValue = (category, value) =>
+export const getAndAddValue = (category: DataKeys, value: string) =>
   browser.storage.local
     .get(category)
     .then((result) => {

@@ -1,5 +1,3 @@
-// @ts-check
-
 import { svg } from 'lit-html';
 
 export const toggleThemeIcon = svg`<svg alt="toggle theme icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -14,7 +14,7 @@
   "content_scripts": [
     {
       "matches": ["*://mail.google.com/*"],
-      "js": ["index.js"],
+      "js": ["index.ts"],
       "css": ["styles.css"],
       "run_at": "document_end"
     }

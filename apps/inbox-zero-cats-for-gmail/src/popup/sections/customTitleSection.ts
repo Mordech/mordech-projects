@@ -1,9 +1,10 @@
 import { html } from 'lit-html';
 
-import { defaultCatTitles } from '../../data/index.js';
-import { itemList } from '../components/index.js';
-import { summary } from '../components/summary.js';
-import { getAndAddValue } from '../utils/index.js';
+import { defaultCatTitles } from '../../data/index';
+import { Data } from '../@types/index';
+import { itemList } from '../components/index';
+import { summary } from '../components/summary';
+import { getAndAddValue } from '../utils/index';
 
 const addTitle = async () => {
   const title = document.getElementById('custom-title');
@@ -13,15 +14,15 @@ const addTitle = async () => {
   }
 };
 
-const addTitleKeyupCallback = () => (/** @type {KeyboardEvent} */ e) => {
+const addTitleKeyupCallback = () => (e: KeyboardEvent) => {
   if (e.key === 'Enter') {
     addTitle();
   }
 };
-/**
- * @param {import('../@types/index.js').Data['catTitles']} catTitles
- */
-export const customTitleSection = (catTitles) => html`<details open>
+
+export const customTitleSection = (
+  catTitles: Data['catTitles']
+) => html`<details open>
   ${summary('Customize titles')}
   <div class="custom-category-list">
     <div class="custom-category-list content">

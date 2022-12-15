@@ -1,9 +1,6 @@
-// @ts-check
+import { Data } from '../@types';
 
-/**
- * @param {import("../@types").Data['theme']} theme
- */
-export const initTheme = (theme) => {
+export const initTheme = (theme: Data['theme']) => {
   const dataTheme = document.createAttribute('data-theme');
   document.body.attributes.setNamedItem(dataTheme);
   if (theme) dataTheme.value = theme;

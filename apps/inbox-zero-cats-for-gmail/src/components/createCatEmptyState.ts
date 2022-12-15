@@ -1,10 +1,7 @@
 import { setCatImage } from '../utils/setCatImage';
 import { setCatTitle } from '../utils/setCatTitle';
 
-/**
- * @param {Element} emptyState
- */
-export const createCatEmptyState = (emptyState) => {
+export const createCatEmptyState = (emptyState: Element) => {
   emptyState.textContent = '';
 
   const catContainer = document.createElement('div');

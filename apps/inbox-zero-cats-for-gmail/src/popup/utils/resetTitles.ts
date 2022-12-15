@@ -1,7 +1,7 @@
 import browser from 'webextension-polyfill';
 
-import { defaultCatTitles } from '../../data/defaultCatTitles.js';
-import { renderContent } from '../index.js';
+import { defaultCatTitles } from '../../data/defaultCatTitles';
+import { renderContent } from '../index';
 
 export const resetTitles = async () =>
   browser.storage.local

@@ -2,11 +2,12 @@
 import { html } from 'lit-html';
 import browser from 'webextension-polyfill';
 
-import { defaultCatImages } from '../../data/index.js';
-import { uploadIcon } from '../assets/uploadIcon.js';
-import { imageList } from '../components/index.js';
-import { summary } from '../components/summary.js';
-import { getAndAddValue } from '../utils/index.js';
+import { defaultCatImages } from '../../data/index';
+import { Data } from '../@types/index';
+import { uploadIcon } from '../assets/uploadIcon';
+import { imageList } from '../components/index';
+import { summary } from '../components/summary';
+import { getAndAddValue } from '../utils/index';
 
 export const addImage = async () => {
   const images = document.getElementById('upload-image');
@@ -27,10 +28,9 @@ export const addImage = async () => {
   }
 };
 
-/**
- * @param {import('../@types/index.js').Data['catImageUrls']} catImageUrls
- */
-export const customImageSection = (catImageUrls) => html`<details open>
+export const customImageSection = (
+  catImageUrls: Data['catImageUrls']
+) => html`<details open>
   ${summary('Custom Images')}
   <div class="custom-category-list">
     <div class="custom-category-list content">

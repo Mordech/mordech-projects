@@ -1,13 +1,10 @@
 import { html } from 'lit-html';
 
-import { deleteForeverIcon } from '../assets/deleteForeverIcon.js';
-import { removeItem } from '../utils/removeItem.js';
+import { DataKeys } from '../@types';
+import { deleteForeverIcon } from '../assets/deleteForeverIcon';
+import { removeItem } from '../utils/removeItem';
 
-/**
- * @param {import('../@types/index.js').DataKeys} category
- * @param {string[]} items
- */
-export const itemList = (category, items) =>
+export const itemList = (category: DataKeys, items: string[]) =>
   items.map(
     (item) => html`<li dir="auto" class="text-item">
       ${item}

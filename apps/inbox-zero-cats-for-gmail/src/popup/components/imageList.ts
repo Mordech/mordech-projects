@@ -1,13 +1,10 @@
 import { html } from 'lit-html';
 
-import { deleteForeverIcon } from '../assets/deleteForeverIcon.js';
-import { removeItem } from '../utils/removeItem.js';
+import { DataKeys } from '../@types';
+import { deleteForeverIcon } from '../assets/deleteForeverIcon';
+import { removeItem } from '../utils/removeItem';
 
-/**
- * @param {import('../@types/index.js').DataKeys} category
- * @param {string[]} items
- */
-export const imageList = (category, items) => {
+export const imageList = (category: DataKeys, items: string[]) => {
   const filteredItems = items.filter((image) => !image.endsWith('mrd-random'));
   return filteredItems.map((item, index) => {
     const imageNumber = filteredItems.length - index - 1;
