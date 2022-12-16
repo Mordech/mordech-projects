@@ -1,10 +1,10 @@
 {
   "name": "@mordech/zero-inbox-cats-for-gmail",
-  "version": "0.18.1",
+  "version": "0.19.0",
   "description": "Adds a random cat to the empty state of Gmail inbox",
   "private": true,
   "main": "./src/manifest.json",
-  "author": "mordech",
+  "author": "Elad Mordechai Mizrahi",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@types/node": "^18.11.14",
