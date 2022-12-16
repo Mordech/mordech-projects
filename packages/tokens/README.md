@@ -8,7 +8,7 @@ I have a few projects going on, and I want to have one source of truth for desig
 
 ## How
 
-I'm using [NX](https://nx.dev/) and [NX](https://nx.app/) Cloud](https://nx.app/).
+I'm using [NX](https://nx.dev/) and [NX Cloud](https://nx.app/).
 
 ## How to use
 
