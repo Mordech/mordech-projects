@@ -1,0 +1,81 @@
+.aRu {
+  padding: 1.5rem !important;
+  text-align: center !important;
+}
+
+.cat-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.cat-title {
+  font-size: clamp(1.25rem, var(--relative-font-size, 2.75vh), 2rem) !important;
+  max-width: 12em;
+  line-height: 1.25;
+  font-weight: 700;
+  text-align: center;
+  margin: unset;
+  padding: unset;
+  z-index: 1;
+  white-space: pre-line;
+  border: unset !important;
+}
+
+tr .cat-title {
+  --relative-font-size: 3vh;
+}
+
+.cat-image-container {
+  position: relative;
+}
+
+tr .cat-image-container {
+  --relative-image-size: 38vh;
+}
+
+.cat-image,
+.cat-backdrop {
+  --cat-image-size: clamp(12rem, var(--relative-image-size, 26vh), 20rem);
+  height: var(--cat-image-size);
+  width: var(--cat-image-size);
+  object-fit: cover;
+  object-position: center;
+}
+
+.cat-image {
+  position: relative;
+  border-radius: var(--cat-image-size);
+  z-index: 1;
+}
+
+.cat-backdrop {
+  position: absolute;
+  inset: 0;
+  filter: blur(60px) opacity(0.7) saturate(2);
+  z-index: 0;
+  animation: cat-idle-animation 10s infinite alternate;
+}
+
+@keyframes cat-idle-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.cat-text {
+  font-size: 1rem !important;
+  font-weight: 400;
+  text-align: center;
+  z-index: 1;
+}

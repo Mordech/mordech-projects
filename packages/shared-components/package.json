@@ -1,9 +1,9 @@
 {
   "name": "@mordech/components",
-  "version": "0.12.1",
+  "version": "0.18.0",
   "private": true,
   "dependencies": {
-    "@mordech/tokens": "^0.12.1",
+    "@mordech/tokens": "^0.18.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
