@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.6](https://github.com/Mordech/mordech-projects/compare/v0.18.4...v0.18.6) (2022-12-16)
+
+**Note:** Version bump only for package @mordech/zero-inbox-cats-for-gmail
+
+
+
+
+
 ## [0.18.1](https://github.com/Mordech/mordech-projects/compare/v0.18.0...v0.18.1) (2022-12-16)
 
 **Note:** Version bump only for package @mordech/zero-inbox-cats-for-gmail
