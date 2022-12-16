@@ -1,5 +1,3 @@
-import { css } from 'styled-components';
-
 export type Breakpoint = 'sm' | 'md' | 'lg' | 'xl';
 
 /**
@@ -21,19 +19,21 @@ export const breakpoints: Record<Breakpoint, string> = {
   xl: `@media screen and (min-width: ${screenSizes.xl}px)`,
 };
 
-export const pagePadding = css`
+export const pagePadding = `
   padding-inline: var(--default-padding);
 `;
 
-export const defaultPaddingDeclaration = css`
+export const defaultPaddingDeclaration = `
   :root {
     --default-padding: 1.5rem;
   }
+
   ${breakpoints.sm} {
     :root {
       --default-padding: 2rem;
     }
   }
+  
   ${breakpoints.lg} {
     :root {
       --default-padding: 5.25rem;

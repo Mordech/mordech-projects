@@ -1,9 +1,14 @@
 {
   "name": "@mordech/tokens",
-  "version": "0.18.0",
+  "author": "Elad Mizrahi",
+  "version": "0.18.1",
   "prepare": "yarn run build",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mordech/mordech-projects.git"
+  },
   "files": [
     "dist/**/*"
   ],
