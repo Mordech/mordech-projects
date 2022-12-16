@@ -1,6 +1,7 @@
+import { breakpoints, colors, pagePadding } from '@mordech/tokens';
 import styled from 'styled-components';
 
-import { breakpoints, colors, pagePadding, Row } from '../../abstracts/';
+import { Row } from '../../abstracts/';
 
 export const StickyNav = styled.nav.attrs({ 'aria-label': 'Social links' })`
   &:empty {
@@ -32,7 +33,7 @@ export const IconLink = styled.a`
   outline-style: solid;
   border-radius: 2px;
 
-  transition: all 250ms ease, outline-offset var(--bounce-transition);
+  transition: all 250ms ease, outline-offset var(--mrd-bounce-transition);
   transition-delay: outline-color 10ms;
 
   &:focus-visible {
@@ -56,7 +57,7 @@ export const LinksContainer = styled(Row).attrs({
   padding-inline: 2rem;
   padding-block: 2.5rem 0.5rem;
   gap: 3rem;
-  min-width: var(--default-padding);
+  min-width: var(--mrd-default-padding);
   max-width: unset;
   align-items: center;
   justify-content: center;
@@ -99,7 +100,7 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   padding-block: 1rem;
   background-color: ${colors.background.on};
-  min-height: var(--default-padding);
+  min-height: var(--mrd-default-padding);
   text-align: center;
 
   ${pagePadding}

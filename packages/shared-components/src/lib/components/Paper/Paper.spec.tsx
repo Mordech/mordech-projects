@@ -1,7 +1,6 @@
 import React from 'react';
+import { colors, elevation } from '@mordech/tokens';
 import { render } from '@testing-library/react';
-
-import { colors, elevation } from '../../abstracts';
 
 import { Paper } from './Paper';
 

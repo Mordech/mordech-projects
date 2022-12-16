@@ -6,7 +6,7 @@ export const PlaceholderContent = styled.main`
   background-color: ${colors.background.surface};
   min-height: 400px;
   margin-block-end: 1rem;
-  margin-inline: var(--default-padding);
+  margin-inline: var(--mrd-default-padding);
 `;
 
 export const Container = styled.div`

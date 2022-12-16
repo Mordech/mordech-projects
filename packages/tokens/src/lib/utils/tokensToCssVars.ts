@@ -1,4 +1,4 @@
-export type Token = { [key: string]: Token | string | number };
+import { Token } from './';
 
 export const tokensToCssVars = (obj: Token, prefix: string): string => {
   return Object.keys(obj)
@@ -7,7 +7,7 @@ export const tokensToCssVars = (obj: Token, prefix: string): string => {
       if (typeof currentValue === 'object') {
         return tokensToCssVars(currentValue, `${prefix}-${key}`);
       }
-      return `--${prefix}-${key}: ${obj[key]};`;
+      return `--mrd-${prefix}-${key}: ${obj[key]};`;
     })
     .join('');
 };

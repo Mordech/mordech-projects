@@ -1,10 +1,11 @@
-import { breakpoints, Column, pagePadding, Section } from '@mordech/components';
+import { Column, Section } from '@mordech/components';
+import { breakpoints, pagePadding } from '@mordech/tokens';
 import styled from 'styled-components';
 
 export const HeroContainer = styled(Section).attrs({ as: 'header' })`
   position: relative;
   display: flex;
-  min-height: calc(100vh - var(--default-padding));
+  min-height: calc(100vh - var(--mrd-default-padding));
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;

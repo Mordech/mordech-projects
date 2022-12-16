@@ -1,6 +1,7 @@
+import { breakpoints } from '@mordech/tokens';
 import styled from 'styled-components';
 
-import { breakpoints, Section } from '../../abstracts';
+import { Section } from '../../abstracts';
 import { Paper } from '../Paper';
 
 export const Container = styled(Section)`
@@ -38,23 +39,23 @@ export const ThumbnailContainer = styled(Paper)`
 `;
 
 export const Content = styled.div`
-  --width: 23rem;
-  --total-width: calc(var(--width) + var(--padding-inline, 0rem));
+  --mrd-width: 23rem;
+  --mrd-total-width: calc(var(--mrd-width) + var(--mrd-padding-inline, 0rem));
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-inline: var(--padding-inline);
-  max-width: var(--total-width);
+  padding-inline: var(--mrd-padding-inline);
+  max-width: var(--mrd-total-width);
   gap: 2rem;
 
   ${breakpoints.md} {
-    --padding-inline: 2rem;
+    --mrd-padding-inline: 2rem;
   }
 
   ${breakpoints.lg} {
-    --padding-inline: 3rem;
-    min-width: var(--total-width);
+    --mrd-padding-inline: 3rem;
+    min-width: var(--mrd-total-width);
   }
 `;
 

@@ -4,9 +4,10 @@ import React, {
   FC,
   ReactNode,
 } from 'react';
+import { colors, fontSizes } from '@mordech/tokens';
 import styled from 'styled-components';
 
-import { colors, fontSizes, Icons } from '../../abstracts';
+import { Icons } from '../../abstracts';
 import { Icon } from '../Icon';
 
 import { ButtonVariants } from './types';
@@ -22,11 +23,11 @@ export type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   };
 
 const StyledButton = styled.button<{ $variant: ButtonVariants }>`
-  --border-size: 1.5px;
-  --background-color: ${colors.primary.base};
-  --color: ${colors.primary.on};
-  --outline-offset: calc(var(--border-size) * -1);
-  --border-color: var(--background-color);
+  --mrd-btn-border-size: 1.5px;
+  --mrd-btn-background-color: ${colors.primary.base};
+  --mrd-btn-color: ${colors.primary.on};
+  --mrd-btn-outline-offset: calc(var(--mrd-btn-border-size) * -1);
+  --mrd-btn-border-color: var(--mrd-btn-background-color);
 
   user-select: none;
 
@@ -36,28 +37,28 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   box-sizing: border-box;
   gap: 0.5rem;
 
-  background-color: var(--background-color);
-  color: var(--color);
+  background-color: var(--mrd-btn-background-color);
+  color: var(--mrd-btn-color);
 
   cursor: pointer;
 
   padding: 0.65rem 1rem;
   min-width: 7rem;
 
-  border-color: var(--border-color);
-  border-width: var(--border-size);
+  border-color: var(--mrd-btn-border-color);
+  border-width: var(--mrd-btn-border-size);
   border-radius: 99rem;
   border-style: solid;
 
   font-size: ${fontSizes[1]};
   font-weight: inherit;
 
-  outline-offset: var(--outline-offset);
-  outline-width: var(--border-size);
+  outline-offset: var(--mrd-btn-outline-offset);
+  outline-width: var(--mrd-btn-border-size);
   outline-color: transparent;
   outline-style: solid;
 
-  transition: all 250ms ease, outline-offset var(--bounce-transition);
+  transition: all 250ms ease, outline-offset var(--mrd-bounce-transition);
   transition-delay: outline-color 10ms;
 
   &:focus-visible {
@@ -68,9 +69,9 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   }
 
   &:hover {
-    --background-color: ${colors.background.on};
-    --border-color: var(--background-color);
-    --color: ${colors.background.base};
+    --mrd-btn-background-color: ${colors.background.on};
+    --mrd-btn-border-color: var(--mrd-btn-background-color);
+    --mrd-btn-color: ${colors.background.base};
 
     filter: brightness(1.35);
 
@@ -82,20 +83,20 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   }
 
   &:active {
-    --background-color: ${colors.primary.base};
-    --color: ${colors.primary.on};
-    --border-color: var(--background-color);
+    --mrd-btn-background-color: ${colors.primary.base};
+    --mrd-btn-color: ${colors.primary.on};
+    --mrd-btn-border-color: var(--mrd-btn-background-color);
 
     outline-color: transparent;
-    outline-width: var(--border-size);
-    outline-offset: var(--outline-offset);
+    outline-width: var(--mrd-btn-border-size);
+    outline-offset: var(--mrd-btn-outline-offset);
 
     filter: brightness(1);
   }
 
   &:disabled {
-    --background-color: ${colors.disabled.container};
-    --color: ${colors.disabled.onContainer};
+    --mrd-btn-background-color: ${colors.disabled.container};
+    --mrd-btn-color: ${colors.disabled.onContainer};
 
     outline: unset;
     border-color: transparent;

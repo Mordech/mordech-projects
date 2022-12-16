@@ -1,4 +1,4 @@
-import { colors, elevation } from '../../abstracts';
+import { colors, elevation } from '@mordech/tokens';
 
 import { PaperVariants, StyledPaperProps } from './types';
 

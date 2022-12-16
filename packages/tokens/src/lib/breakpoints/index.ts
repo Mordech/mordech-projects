@@ -1,3 +1,11 @@
+import { baseFontSize } from '../typography';
+import {
+  createTokenObject,
+  css,
+  ManipulateValueFunction,
+  pxToRem,
+} from '../utils';
+
 export type Breakpoint = 'sm' | 'md' | 'lg' | 'xl';
 
 /**
@@ -10,7 +18,16 @@ export const screenSizes: Record<Breakpoint, number> = {
   xl: 1440,
 };
 
-// TODO map number to string in rem for breakpoints
+const screenSizesToRem: ManipulateValueFunction = (value) => {
+  if (typeof value !== 'number') return value;
+  return pxToRem({ px: value, baseFontSize: baseFontSize });
+};
+
+export const screenSizesRem: typeof screenSizes = createTokenObject(
+  screenSizes,
+  'screen-size',
+  { manipulateValue: screenSizesToRem, declaration: true }
+) as typeof screenSizes;
 
 export const breakpoints: Record<Breakpoint, string> = {
   sm: `@media screen and (min-width: ${screenSizes.sm}px)`,
@@ -19,24 +36,25 @@ export const breakpoints: Record<Breakpoint, string> = {
   xl: `@media screen and (min-width: ${screenSizes.xl}px)`,
 };
 
-export const pagePadding = `
-  padding-inline: var(--default-padding);
+export const pagePadding = css`
+  padding-inline-start: var(--mrd-default-padding);
+  padding-inline-end: var(--mrd-default-padding);
 `;
 
-export const defaultPaddingDeclaration = `
+export const defaultPaddingDeclaration = css`
   :root {
-    --default-padding: 1.5rem;
+    --mrd-default-padding: 1.5rem;
   }
 
   ${breakpoints.sm} {
     :root {
-      --default-padding: 2rem;
+      --mrd-default-padding: 2rem;
     }
   }
-  
+
   ${breakpoints.lg} {
     :root {
-      --default-padding: 5.25rem;
+      --mrd-default-padding: 5.25rem;
     }
   }
 `;
