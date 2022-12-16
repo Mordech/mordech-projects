@@ -24,7 +24,7 @@ export async function toStyleSheet() {
       ${tokensToCssVars(elevation, 'elevation')}
 
     }
-    ${defaultPaddingDeclaration.join('')}
+    ${defaultPaddingDeclaration}
 
     @media (prefers-color-scheme: dark) {
       [data-theme='prefers'] {

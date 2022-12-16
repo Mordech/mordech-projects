@@ -1,7 +1,5 @@
-import { CSSProperties } from 'styled-components';
-
 export type Palette = {
-  [key: string]: Record<string, NonNullable<CSSProperties['color']>>;
+  [key: string]: Record<string, string>;
 };
 
 export type Theme = 'light' | 'dark';
