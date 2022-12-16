@@ -30,7 +30,7 @@
     "visual:ci": "loki test --requireReference --reactUri file:./storybook-static",
     "eject": "react-scripts eject",
     "lint": "eslint src",
-    "lint:css": "stylelint src/**/*.tsx",
+    "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'",
     "generate:component": "nx generate @nrwl/react:component --project=@mordech/components --directory=src/lib/components && nx generate @nrwl/react:component-story --project=@mordech/components"
   },
   "browserslist": {

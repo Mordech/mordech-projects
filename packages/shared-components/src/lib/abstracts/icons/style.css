@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'mordech-icons';
-  src:  url('fonts/mordech-icons.eot?zc7ujn');
-  src:  url('fonts/mordech-icons.eot?zc7ujn#iefix') format('embedded-opentype'),
+  src: url('fonts/mordech-icons.eot?zc7ujn');
+  src: url('fonts/mordech-icons.eot?zc7ujn#iefix') format('embedded-opentype'),
     url('fonts/mordech-icons.ttf?zc7ujn') format('truetype'),
     url('fonts/mordech-icons.woff?zc7ujn') format('woff'),
     url('fonts/mordech-icons.svg?zc7ujn#mordech-icons') format('svg');
@@ -10,8 +10,10 @@
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
   font-family: 'mordech-icons' !important;
   font-style: normal;
   font-weight: normal;
@@ -25,17 +27,17 @@
 }
 
 .icon-linkedin:before {
-  content: "\e900";
+  content: '\e900';
 }
 .icon-mail:before {
-  content: "\e901";
+  content: '\e901';
 }
 .icon-github:before {
-  content: "\e902";
+  content: '\e902';
 }
 .icon-instagram:before {
-  content: "\e903";
+  content: '\e903';
 }
 .icon-download:before {
-  content: "\2b07";
+  content: '\2b07';
 }

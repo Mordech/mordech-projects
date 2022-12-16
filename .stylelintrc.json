@@ -9,12 +9,17 @@
   "exclude": ["node_modules", "tmp"],
   "overrides": [
     {
+      "files": ["**/*.tsx", "**/*.ts"],
       "processors": ["stylelint-processor-styled-components"],
       "extends": [
         "stylelint-config-recommended",
         "stylelint-config-styled-components"
       ],
-      "files": ["**/*.tsx", "**/*.ts", "**/*.js", "**/*.jsx"]
+      "rules": {
+        "no-descending-specificity": null,
+        "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+        "custom-property-pattern": "mrd-.+"
+      }
     }
   ]
 }

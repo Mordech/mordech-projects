@@ -1,3 +1,4 @@
+/* stylelint-disable-next-line selector-class-pattern */
 .aRu {
   padding: 1.5rem !important;
   text-align: center !important;
@@ -14,7 +15,11 @@
 }
 
 .cat-title {
-  font-size: clamp(1.25rem, var(--relative-font-size, 2.75vh), 2rem) !important;
+  font-size: clamp(
+    1.25rem,
+    var(--mrd-relative-font-size, 2.75vh),
+    2rem
+  ) !important;
   max-width: 12em;
   line-height: 1.25;
   font-weight: 700;
@@ -27,7 +32,7 @@
 }
 
 tr .cat-title {
-  --relative-font-size: 3vh;
+  --mrd-relative-font-size: 3vh;
 }
 
 .cat-image-container {
@@ -35,21 +40,25 @@ tr .cat-title {
 }
 
 tr .cat-image-container {
-  --relative-image-size: 38vh;
+  --mrd-relative-image-size: 38vh;
 }
 
 .cat-image,
 .cat-backdrop {
-  --cat-image-size: clamp(12rem, var(--relative-image-size, 26vh), 20rem);
-  height: var(--cat-image-size);
-  width: var(--cat-image-size);
+  --mrd-cat-image-size: clamp(
+    12rem,
+    var(--mrd-relative-image-size, 26vh),
+    20rem
+  );
+  height: var(--mrd-cat-image-size);
+  width: var(--mrd-cat-image-size);
   object-fit: cover;
   object-position: center;
 }
 
 .cat-image {
   position: relative;
-  border-radius: var(--cat-image-size);
+  border-radius: var(--mrd-cat-image-size);
   z-index: 1;
 }
 

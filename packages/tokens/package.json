@@ -29,7 +29,7 @@
     "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
     "test": "echo 'implement test'",
     "lint": "eslint src",
-    "lint:css": "stylelint src/**/*.{ts,css}",
+    "lint:css": "stylelint 'src/**/*.{ts,css}'",
     "prepare": "yarn build"
   },
   "devDependencies": {

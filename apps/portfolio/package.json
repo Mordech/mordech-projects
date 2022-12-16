@@ -15,7 +15,7 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
-    "lint:css": "stylelint src/**/*.tsx"
+    "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.4.7",
