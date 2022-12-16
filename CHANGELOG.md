@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.6](https://github.com/Mordech/mordech-projects/compare/v0.18.4...v0.18.6) (2022-12-16)
+
+
+### Bug Fixes
+
+* remove postinstall from tokens ([#55](https://github.com/Mordech/mordech-projects/issues/55)) ([9703a6d](https://github.com/Mordech/mordech-projects/commit/9703a6d74701a3e23f9ef0b9d2780c7b344cbc0b))
+
+
+
+
+
 ## [0.18.5](https://github.com/Mordech/mordech-projects/compare/v0.18.4...v0.18.5) (2022-12-16)
 
 
