@@ -18,7 +18,23 @@ I'm using [NX](https://nx.dev/) and [NX Cloud](https://nx.app/).
 yarn add @mordech/tokens
 ```
 
-### Import
+#### Javascript
+
+```js
+import '@mordech/tokens/css';
+```
+
+#### CSS
+
+```css
+@import '@mordech/tokens/css';
+```
+
+All CSS var tokens have fallback values so the code should run without. except for fonts.
+
+> ⚠️ Future version might have font as a separate import. Check docs if it changes
+
+### Importing tokens
 
 ```js
 import { colors } from '@mordech/tokens';
