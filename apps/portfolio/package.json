@@ -15,7 +15,7 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
-    "lint:css": "stylelint './src/**/*.tsx'"
+    "lint:css": "stylelint src/**/*.tsx"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.4.7",
@@ -62,5 +62,14 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^4.8.2"
+  },
+  "stylelint": {
+    "processors": [
+      "stylelint-processor-styled-components"
+    ],
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-config-styled-components"
+    ]
   }
 }

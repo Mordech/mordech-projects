@@ -1,5 +1,0 @@
-{
-  "processors": ["stylelint-processor-styled-components"],
-  "extends": ["../.stylelintrc.json", "stylelint-config-styled-components"],
-  "files": "**/*.tsx, **/*.ts, **/*.jsx, **/*.js"
-}

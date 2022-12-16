@@ -6,5 +6,15 @@
     "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
     "custom-property-pattern": "mrd-.+"
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "overrides": [
+    {
+      "processors": ["stylelint-processor-styled-components"],
+      "extends": [
+        "stylelint-config-recommended",
+        "stylelint-config-styled-components"
+      ],
+      "files": ["**/*.tsx", "**/*.ts", "**/*.js", "**/*.jsx"]
+    }
+  ]
 }
