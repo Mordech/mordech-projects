@@ -1,4 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Eczar:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../assets/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../assets/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'Eczar';
+  src: url('../assets/fonts/Eczar-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'Eczar';
+  src: url('../assets/fonts/Eczar-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'Eczar';
+  src: url('../assets/fonts/Eczar-SemiBold.woff2') format('woff2');
+  font-weight: 700;
+  font-stretch: 100%;
+}
+
 @font-face {
   font-family: 'Mona Sans';
   src: url('../assets/fonts/Mona-Sans.woff2')

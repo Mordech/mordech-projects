@@ -1,5 +1,5 @@
 import React from 'react';
-import { breakpoints } from '@mordech/components';
+import { breakpoints } from '@mordech/tokens';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
@@ -46,7 +46,7 @@ export const ScrollDownContainer = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
-  padding-inline: var(--default-padding);
+  padding-inline: var(--mrd-default-padding);
   padding-block: 4rem;
 
   transition: opacity 300ms ease-in-out;

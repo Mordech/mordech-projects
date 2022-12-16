@@ -1,13 +1,13 @@
 @import url(@mordech/tokens/css);
 
 :root {
-  --border-radius: 0.5rem;
+  --mrd-border-radius: 0.5rem;
   scroll-behavior: smooth;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--color-background-on);
-  font-weight: var(--font-weight-regular);
-  font-family: var(--font-family-ui);
+  color: var(--mrd-color-background-on);
+  font-weight: var(--mrd-font-weight-regular);
+  font-family: var(--mrd-font-family-ui);
 }
 
 html {
@@ -25,11 +25,11 @@ li {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--color-background-surface);
+  background-color: var(--mrd-color-background-surface);
   justify-content: space-between;
   padding: 0.5rem;
   padding-inline-start: 1rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--mrd-border-radius);
 }
 
 li button {
@@ -44,7 +44,7 @@ li:hover button {
 body {
   touch-action: manipulation;
   min-width: 20rem;
-  fill: var(--color-primary-base);
+  fill: var(--mrd-color-primary-base);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -54,9 +54,9 @@ body {
   min-height: 100%;
   min-height: 38rem;
   padding: 1.5rem;
-  background-color: var(--color-background-base);
-  color: var(--color-background-on);
-  font-size: var(--font-size-1);
+  background-color: var(--mrd-color-background-base);
+  color: var(--mrd-color-background-on);
+  font-size: var(--mrd-font-size-1);
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -68,7 +68,7 @@ body {
 }
 
 h1 {
-  font-size: var(--font-size-3);
+  font-size: var(--mrd-font-size-3);
   line-height: 1.15;
   max-width: 15ch;
 }
@@ -80,8 +80,8 @@ details > summary {
   align-items: center;
   justify-content: space-between;
 
-  font-size: var(--font-size-2);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--mrd-font-size-2);
+  font-weight: var(--mrd-font-weight-medium);
   line-height: 1;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -91,29 +91,17 @@ details > summary {
   cursor: pointer;
   position: sticky;
   top: 0;
-  background-color: var(--color-background-base);
+  background-color: var(--mrd-color-background-base);
   z-index: 1;
 }
 
-input[type='file'] {
-  display: block;
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
 details > summary:focus-visible {
-  outline: 2px solid var(--color-primary-base);
+  outline: 2px solid var(--mrd-color-primary-base);
 }
 
 details {
-  border: 2px solid var(--color-background-surface);
-  border-radius: var(--border-radius);
+  border: 2px solid var(--mrd-color-background-surface);
+  border-radius: var(--mrd-border-radius);
   padding: 0.5rem;
 }
 .input-text-row {
@@ -130,16 +118,16 @@ details {
 input {
   display: inline-flex;
   width: 100%;
-  border: 2px solid var(--color-background-surface);
-  border-radius: var(--border-radius);
+  border: 2px solid var(--mrd-color-background-surface);
+  border-radius: var(--mrd-border-radius);
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: var(--color-background-base);
-  color: var(--color-background-on);
+  background-color: var(--mrd-color-background-base);
+  color: var(--mrd-color-background-on);
 }
 
 input:focus-visible {
-  outline: 2px solid var(--color-primary-base);
+  outline: 2px solid var(--mrd-color-primary-base);
   outline-offset: -2px;
 }
 
@@ -156,7 +144,7 @@ input[type='file'] {
 }
 
 input[type='file']:focus-visible + label {
-  outline: 2px solid var(--color-primary-base);
+  outline: 2px solid var(--mrd-color-primary-base);
   outline-offset: 0.25rem;
 }
 
@@ -164,7 +152,7 @@ button,
 .btn {
   display: inline-flex;
   border: unset;
-  border-radius: var(--border-radius);
+  border-radius: var(--mrd-border-radius);
   padding: 0.5rem 1rem;
   min-width: 5rem;
   font-size: 1rem;
@@ -177,31 +165,31 @@ button,
 
 button.primary,
 .btn.primary {
-  background-color: var(--color-primary-base);
+  background-color: var(--mrd-color-primary-base);
   border: 2px solid;
-  border-color: var(--color-primary-base);
-  color: var(--color-primary-on);
-  fill: var(--color-primary-on);
+  border-color: var(--mrd-color-primary-base);
+  color: var(--mrd-color-primary-on);
+  fill: var(--mrd-color-primary-on);
 }
 
 button.small,
 .btn.small {
   padding: 0.5rem 0.75rem;
-  font-size: var(--font-size-0);
+  font-size: var(--mrd-font-size-0);
 }
 
 button:focus-visible,
 .btn:focus-visible {
-  outline: 2px solid var(--color-primary-base);
+  outline: 2px solid var(--mrd-color-primary-base);
   opacity: 1;
   outline-offset: 0.25rem;
 }
 
 button:disabled,
 .btn:disabled {
-  background-color: var(--color-disabled-container);
-  color: var(--color-disabled-onContainer);
-  fill: var(--color-disabled-onContainer);
+  background-color: var(--mrd-color-disabled-container);
+  color: var(--mrd-color-disabled-onContainer);
+  fill: var(--mrd-color-disabled-onContainer);
   cursor: not-allowed;
 }
 
@@ -211,16 +199,16 @@ button:disabled,
 
 button.destructive,
 .btn.destructive {
-  background-color: var(--color-background-base);
-  color: var(--color-error-base);
-  fill: var(--color-error-base);
+  background-color: var(--mrd-color-background-base);
+  color: var(--mrd-color-error-base);
+  fill: var(--mrd-color-error-base);
 }
 
 button.destructive:hover,
 .btn.destructive:hover {
-  background-color: var(--color-error-container);
-  color: var(--color-error-onContainer);
-  fill: var(--color-error-onContainer);
+  background-color: var(--mrd-color-error-container);
+  color: var(--mrd-color-error-onContainer);
+  fill: var(--mrd-color-error-onContainer);
   opacity: 1;
 }
 
@@ -231,20 +219,20 @@ button.destructive:hover,
 
 a,
 link {
-  color: var(--color-secondary-base);
+  color: var(--mrd-color-secondary-base);
   text-decoration: none;
   transition: color 250ms ease;
 }
 
 a:hover,
 link:hover {
-  color: var(--color-secondary-onContainer);
+  color: var(--mrd-color-secondary-onContainer);
   text-decoration: underline;
 }
 
 a:focus-visible,
 link:focus-visible {
-  outline: 2px solid var(--color-primary-base);
+  outline: 2px solid var(--mrd-color-primary-base);
   outline-offset: 0.25rem;
 }
 
@@ -255,7 +243,7 @@ footer {
   gap: 1.5rem;
   margin-top: auto;
   padding-block-start: 0.5rem;
-  border-top: 2px solid var(--color-background-surface);
+  border-top: 2px solid var(--mrd-color-background-surface);
 }
 
 footer .lockup {
@@ -274,7 +262,7 @@ header {
 }
 
 button.icon.destructive {
-  --color-background-base: var(--color-background-surface);
+  --mrd-color-background-base: var(--mrd-color-background-surface);
 }
 button.icon {
   min-width: unset;
@@ -286,18 +274,18 @@ button.icon {
 
 .toggle-theme {
   opacity: 0.8;
-  background-color: var(--color-background-base);
-  color: var(--color-primary-base);
-  fill: var(--color-primary-base);
+  background-color: var(--mrd-color-background-base);
+  color: var(--mrd-color-primary-base);
+  fill: var(--mrd-color-primary-base);
 }
 
 .toggle-theme:hover {
-  background-color: var(--color-background-surface);
+  background-color: var(--mrd-color-background-surface);
   opacity: 1;
 }
 
 button.icon:focus-visible {
-  outline: 2px solid var(--color-primary-base);
+  outline: 2px solid var(--mrd-color-primary-base);
   outline-offset: 0.25rem;
 }
 
@@ -311,8 +299,8 @@ ul.image-grid {
   grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
   gap: 1.5rem 1rem;
   padding: 1rem;
-  background-color: var(--color-background-surface);
-  border-radius: var(--border-radius);
+  background-color: var(--mrd-color-background-surface);
+  border-radius: var(--mrd-border-radius);
 }
 
 li.image {
@@ -337,7 +325,7 @@ li.image > img {
 }
 
 li.random > img {
-  outline: 4px solid var(--color-secondary-container);
+  outline: 4px solid var(--mrd-color-secondary-container);
   outline-offset: -3.9px;
 }
 
@@ -350,13 +338,13 @@ li.random::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-secondary-container);
-  color: var(--color-secondary-onContainer);
-  font-size: var(--font-size-0);
+  background-color: var(--mrd-color-secondary-container);
+  color: var(--mrd-color-secondary-onContainer);
+  font-size: var(--mrd-font-size-0);
   border-radius: 4px;
   padding: 0.25rem;
 }
 
 strong {
-  font-variation-settings: 'wght' var(--font-weight-bold), 'wdth' 100;
+  font-variation-settings: 'wght' var(--mrd-font-weight-bold), 'wdth' 100;
 }

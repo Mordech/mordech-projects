@@ -3,7 +3,7 @@ import { svg } from 'lit-html';
 export const logo = svg`<svg alt="Elad Mizrahi's logo" class="logo" height="42px" viewBox="0 0 240 262" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
   .logo path {
-    fill: var(--color-primary-base, #000);
+    fill: var(--mrd-color-primary-base, #000);
     will-change: transform;
   }
 

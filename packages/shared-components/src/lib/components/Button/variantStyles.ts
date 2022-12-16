@@ -6,17 +6,17 @@ import { ButtonVariants } from './types';
 export const variantStyles: Record<ButtonVariants, FlattenSimpleInterpolation> =
   {
     primary: css`
-      --background-color: ${colors.primary.base};
-      --color: ${colors.primary.on};
+      --mrd-btn-background-color: ${colors.primary.base};
+      --mrd-btn-color: ${colors.primary.on};
     `,
     outline: css`
-      --background-color: transparent;
-      --color: ${colors.primary.base};
-      --border-color: var(--color);
+      --mrd-btn-background-color: transparent;
+      --mrd-btn-color: ${colors.primary.base};
+      --mrd-btn-border-color: var(--mrd-btn-color);
     `,
     flat: css`
-      --background-color: ${colors.background.surface};
-      --color: ${colors.background.onSurface};
+      --mrd-btn-background-color: ${colors.background.surface};
+      --mrd-btn-color: ${colors.background.onSurface};
     `,
   };
 

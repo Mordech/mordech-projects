@@ -46,7 +46,7 @@ export const LogoLink = styled.a`
   outline-style: solid;
   border-radius: 2px;
 
-  transition: all 250ms ease, outline-offset var(--bounce-transition);
+  transition: all 250ms ease, outline-offset var(--mrd-bounce-transition);
   transition-delay: outline-color 10ms;
 
   &:focus-visible {

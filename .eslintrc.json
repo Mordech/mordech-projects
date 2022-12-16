@@ -22,13 +22,9 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "@nrwl/nx",
-    "react",
-    "@typescript-eslint",
-    "simple-import-sort"
-  ],
+  "plugins": ["@nrwl/nx", "react", "@typescript-eslint", "simple-import-sort"],
   "rules": {
+    "no-console": "warn",
     "storybook/no-uninstalled-addons": "off",
     "react/no-unescaped-entities": 0,
     "no-unused-vars": "error",
@@ -36,28 +32,12 @@
       "error",
       {
         "groups": [
-          [
-            "^react",
-            "^@?\\w"
-          ],
-          [
-            "^(@|components)(/.*|$)"
-          ],
-          [
-            "^\\u0000"
-          ],
-          [
-            "^\\.\\.(?!/?$)",
-            "^\\.\\./?$"
-          ],
-          [
-            "^\\./(?=.*/)(?!/?$)",
-            "^\\.(?!/?$)",
-            "^\\./?$"
-          ],
-          [
-            "^.+\\.?(css)$"
-          ]
+          ["^react", "^@?\\w"],
+          ["^(@|components)(/.*|$)"],
+          ["^\\u0000"],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          ["^.+\\.?(css)$"]
         ]
       }
     ],
