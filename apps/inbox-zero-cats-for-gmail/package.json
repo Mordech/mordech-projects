@@ -25,7 +25,7 @@
     "lint:extension": "web-ext lint -s dist/"
   },
   "dependencies": {
-    "@mordech/tokens": "^0.18.1",
+    "@mordech/tokens": "*",
     "lit-html": "^2.5.0"
   }
 }
