@@ -3,9 +3,6 @@
 name: Bump version
 
 on:
-  push:
-    branches: [ "main" ]
-    
   workflow_dispatch:
 
 jobs:
