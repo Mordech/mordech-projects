@@ -12,11 +12,23 @@ This project uses `yarn workspaces`, `Lerna`, and `NX` + `NX Cloud`
 
 Creating a personal component library frees me to work fast, make quick iterations, and experiment with ideas that I usually can't do at work.
 
+### My tokens library
+
+[link](/packages/tokens/)
+
+This is a library for sharing design tokens (colors, typography, breakpoints, etc.) between projects.
+
 ### Portfolio
 
 [link](/apps/portfolio/) (working on a readme 😊)
 
 I'm trying to develop [my portfolio](https://elad.mizrahi.cc) myself, and in the process creating my personal component library and style guide.
+
+### Inbox Zero Cats for Gmail
+
+[link](/apps/inbox-zero-cats-for-gmail/)
+
+This is a web extension for Gmail that displays a cat image instead of the inbox count. The cat image is from [Unsplash](https://unsplash.com/).
 
 ## Getting started
 

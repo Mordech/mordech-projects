@@ -18,7 +18,7 @@ export const colorTheme = {
       base: palette['success']['30'],
       on: palette['success']['99'],
       container: palette['success']['90'],
-      onContainer: palette['success']['10'],
+      onContainer: palette['success']['20'],
     },
     error: {
       base: palette['error']['40'],
@@ -66,7 +66,7 @@ export const colorTheme = {
       onContainer: palette['success']['90'],
     },
     error: {
-      base: palette['error']['80'],
+      base: palette['error']['70'],
       on: palette['error']['20'],
       container: palette['error']['30'],
       onContainer: palette['error']['90'],
