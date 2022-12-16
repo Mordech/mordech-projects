@@ -51,9 +51,9 @@ describe('Button', () => {
   it('should have a default style', () => {
     const { getByText } = render(<Button>Test Button</Button>);
     expect(getByText('Test Button')).toHaveStyle(`
-      --background-color: ${removeWhiteSpace(colors.primary.base)};
-      --color: ${removeWhiteSpace(colors.primary.on)};
-      --border-color: var(--background-color);
+      --mrd-btn-background-color: ${removeWhiteSpace(colors.primary.base)};
+      --mrd-btn-color: ${removeWhiteSpace(colors.primary.on)};
+      --mrd-btn-border-color: var(--mrd-btn-background-color);
       
       background-color: ButtonFace;
       border: 2px outset buttonface;
@@ -63,9 +63,11 @@ describe('Button', () => {
   it('should have a flat style', () => {
     const { getByText } = render(<Button variant="flat">Test Button</Button>);
     expect(getByText('Test Button')).toHaveStyle(`
-      --background-color: ${removeWhiteSpace(colors.background.surface)};
-      --color: ${removeWhiteSpace(colors.background.onSurface)};
-      --border-color: var(--background-color);
+      --mrd-btn-background-color: ${removeWhiteSpace(
+        colors.background.surface
+      )};
+      --mrd-btn-color: ${removeWhiteSpace(colors.background.onSurface)};
+      --mrd-btn-border-color: var(--mrd-btn-background-color);
 
       background-color: ButtonFace;
       border: 2px outset buttonface;
@@ -77,9 +79,9 @@ describe('Button', () => {
       <Button variant="outline">Test Button</Button>
     );
     expect(getByText('Test Button')).toHaveStyle(`
-      --background-color: transparent;
-      --color: ${removeWhiteSpace(colors.primary.base)};
-      --border-color: var(--color);
+      --mrd-btn-background-color: transparent;
+      --mrd-btn-color: ${removeWhiteSpace(colors.primary.base)};
+      --mrd-btn-border-color: var(--mrd-btn-color);
 
       background-color: ButtonFace;
       border: 2px outset buttonface;
