@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
   "files": [],
   "include": [],
