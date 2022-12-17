@@ -1,4 +1,4 @@
-import { breakpoints, colors } from '@mordech/tokens';
+import { breakpoints, colors, transitions } from '@mordech/tokens';
 import styled from 'styled-components';
 
 export const StyledNavigation = styled.nav`
@@ -46,7 +46,7 @@ export const LogoLink = styled.a`
   outline-style: solid;
   border-radius: 2px;
 
-  transition: all 250ms ease, outline-offset var(--mrd-bounce-transition);
+  transition: all 250ms ease, outline-offset ${transitions.bounce};
   transition-delay: outline-color 10ms;
 
   &:focus-visible {

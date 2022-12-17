@@ -5,6 +5,7 @@
     "styled-components.vscode-styled-components",
     "stylelint.vscode-stylelint",
     "esbenp.prettier-vscode",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "phoenisx.cssvar"
   ]
 }
