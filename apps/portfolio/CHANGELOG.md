@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/Mordech/mordech-projects/compare/v0.18.6...v0.20.0) (2022-12-17)
+
+
+### Features
+
+* new token prefix ([#56](https://github.com/Mordech/mordech-projects/issues/56)) ([4a8ba73](https://github.com/Mordech/mordech-projects/commit/4a8ba737dd3234c3c798d1033b7da665b8b6dab1))
+
+
+
+
+
 # [0.19.0](https://github.com/Mordech/mordech-projects/compare/v0.18.6...v0.19.0) (2022-12-16)
 
 
