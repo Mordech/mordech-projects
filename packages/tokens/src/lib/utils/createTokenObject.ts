@@ -7,7 +7,7 @@ export type ManipulateValueFunction = (
 
 export interface CreateCssVarObjectOptions {
   manipulateValue?: ManipulateValueFunction;
-  declaration?: boolean;
+  type?: 'base' | 'variable' | 'declaration';
 }
 
 export const createTokenObject = (
@@ -32,22 +32,23 @@ export const createTokenObject = (
         currentValue = options.manipulateValue(currentValue);
       }
 
-      options?.declaration
-        ? (acc[key] = currentValue)
-        : (acc[key] = `var(--mrd-${prefix}-${key}, ${currentValue});`);
+      switch (options?.type) {
+        case 'base':
+          return {
+            ...acc,
+            [currentKey]: currentValue,
+          };
+        case 'declaration':
+          return {
+            ...acc,
+            [currentKey]: `--mrd-${prefix}-${key}: ${currentValue};`,
+          };
+        default:
+          return {
+            ...acc,
+            [currentKey]: `var(--mrd-${prefix}-${key}, ${currentValue})`,
+          };
+      }
     }
-    return acc;
   }, {} as Token);
 };
-
-// export const colors: typeof colorTheme.light = Object.keys(
-//   colorThemeLight
-// ).reduce((acc: Palette, color: string) => {
-//   acc[color] = Object.keys(colorThemeLight[color]).reduce((acc, shade) => {
-//     acc[
-//       shade
-//     ] = `var(--color-${color}-${shade}, ${colorThemeLight[color][shade]})`;
-//     return acc;
-//   }, {} as Palette[typeof color]);
-//   return acc as typeof colorTheme.light;
-// }, {} as typeof colorTheme.light);
