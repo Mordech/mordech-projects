@@ -18,7 +18,7 @@ export const screenSizes: Record<Breakpoint, number> = {
   xl: 1440,
 };
 
-const screenSizesToRem: ManipulateValueFunction = (value) => {
+export const screenSizesToRem: ManipulateValueFunction = (value) => {
   if (typeof value !== 'number') return value;
   return pxToRem({ px: value, baseFontSize: baseFontSize });
 };
@@ -26,7 +26,7 @@ const screenSizesToRem: ManipulateValueFunction = (value) => {
 export const screenSizesRem: typeof screenSizes = createTokenObject(
   screenSizes,
   'screen-size',
-  { manipulateValue: screenSizesToRem, declaration: true }
+  { manipulateValue: screenSizesToRem, type: 'base' }
 ) as typeof screenSizes;
 
 export const breakpoints: Record<Breakpoint, string> = {
@@ -36,25 +36,47 @@ export const breakpoints: Record<Breakpoint, string> = {
   xl: `@media screen and (min-width: ${screenSizes.xl}px)`,
 };
 
+/**
+ * Page paddings in rem
+ * @example
+ * .page {
+ *   padding-inline-start: ${pagePaddings.sm};
+ *   padding-inline-end: ${pagePaddings.sm};
+ * }
+ */
+export const pagePaddings = {
+  sm: '1.5rem',
+  md: '2rem',
+  lg: '5.25rem',
+};
+
+/**
+ * Page padding declaration
+ * Returns a responsive padding declaration for the page
+ * @example
+ * .page {
+ *   ${pagePadding}
+ * }
+ */
 export const pagePadding = css`
-  padding-inline-start: var(--mrd-default-padding);
-  padding-inline-end: var(--mrd-default-padding);
+  padding-inline-start: var(--mrd-default-padding, ${pagePaddings.sm});
+  padding-inline-end: var(--mrd-default-padding, ${pagePaddings.sm});
 `;
 
 export const defaultPaddingDeclaration = css`
   :root {
-    --mrd-default-padding: 1.5rem;
+    --mrd-default-padding: ${pagePaddings.sm};
   }
 
   ${breakpoints.sm} {
     :root {
-      --mrd-default-padding: 2rem;
+      --mrd-default-padding: ${pagePaddings.md};
     }
   }
 
   ${breakpoints.lg} {
     :root {
-      --mrd-default-padding: 5.25rem;
+      --mrd-default-padding: ${pagePaddings.lg};
     }
   }
 `;
