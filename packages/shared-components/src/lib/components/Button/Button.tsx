@@ -4,7 +4,7 @@ import React, {
   FC,
   ReactNode,
 } from 'react';
-import { colors, fontSizes } from '@mordech/tokens';
+import { colors, fontSizes, transitions } from '@mordech/tokens';
 import styled from 'styled-components';
 
 import { Icons } from '../../abstracts';
@@ -58,7 +58,7 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   outline-color: transparent;
   outline-style: solid;
 
-  transition: all 250ms ease, outline-offset var(--mrd-bounce-transition);
+  transition: all 250ms ease, outline-offset ${transitions.bounce};
   transition-delay: outline-color 10ms;
 
   &:focus-visible {

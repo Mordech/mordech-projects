@@ -1,4 +1,4 @@
-import { breakpoints, colors, pagePadding } from '@mordech/tokens';
+import { breakpoints, colors, pagePadding, transitions } from '@mordech/tokens';
 import styled from 'styled-components';
 
 import { Row } from '../../abstracts/';
@@ -33,7 +33,7 @@ export const IconLink = styled.a`
   outline-style: solid;
   border-radius: 2px;
 
-  transition: all 250ms ease, outline-offset var(--mrd-bounce-transition);
+  transition: all 250ms ease, outline-offset ${transitions.bounce};
   transition-delay: outline-color 10ms;
 
   &:focus-visible {

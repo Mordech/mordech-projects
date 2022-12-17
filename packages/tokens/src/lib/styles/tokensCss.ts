@@ -7,6 +7,7 @@ import {
   fontWeights,
   screenSizesRem,
 } from '../../';
+import { transitions } from '../transitions';
 import { css, Token, tokensToCssVars } from '../utils';
 
 export const tokensCss = css`
@@ -18,6 +19,7 @@ export const tokensCss = css`
     ${tokensToCssVars(fontWeights, 'font-weight')}
     ${tokensToCssVars(elevation, 'elevation')}
     ${tokensToCssVars(screenSizesRem, 'screen-size')}
+    ${tokensToCssVars(transitions, 'transition')}
   }
 
   ${defaultPaddingDeclaration}

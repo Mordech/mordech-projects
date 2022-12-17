@@ -19,12 +19,13 @@
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./css": "./dist/css/index.css"
+    "./css": "./dist/css/index.css",
+    "./css/*": "./dist/css/*"
   },
   "scripts": {
     "build:ts": "tsc -b",
-    "build:assets": "ts-node scripts/index.ts && prettier --write src/**/*.css",
-    "build:css": "esbuild --bundle --minify --outfile=dist/css/index.css src/lib/styles/index.css --loader:.woff2=file",
+    "build:assets": "ts-node --esm scripts/index.ts && prettier --write src/**/*.css",
+    "build:css": "ts-node --esm scripts/bundleCss.ts",
     "build": "yarn run-s build:*",
     "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
     "test": "echo 'implement test'",
