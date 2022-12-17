@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/Mordech/mordech-projects/compare/v0.20.0...v0.20.1) (2022-12-17)
+
+
+### Bug Fixes
+
+* remove ts helpers & add unit tests ([#59](https://github.com/Mordech/mordech-projects/issues/59)) ([414e017](https://github.com/Mordech/mordech-projects/commit/414e017c59057ba6b01462c8f47857c3fce1cdff))
+
+
+
+
+
 # [0.20.0](https://github.com/Mordech/mordech-projects/compare/v0.18.6...v0.20.0) (2022-12-17)
 
 
