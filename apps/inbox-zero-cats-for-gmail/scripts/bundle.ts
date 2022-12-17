@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { build, BuildOptions } from 'esbuild';
 import { copyFileSync, mkdirSync, readFileSync } from 'fs';
 import { join } from 'path';

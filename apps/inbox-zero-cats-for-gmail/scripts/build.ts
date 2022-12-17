@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { updateJson } from '@nrwl/devkit';
 import { execSync } from 'child_process';
