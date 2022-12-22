@@ -1,5 +1,7 @@
 # Hey! 👋 it seems you found yourself in my personal projects repo
 
+[![Build Status](https://github.com/Mordech/mordech-projects/actions/workflows/main.yml/badge.svg)](https://github.com/Mordech/mordech-projects/actions/workflows/main.yml)
+
 This repository is a hub for my projects and things I do in my free time. You can use it at your own risk 😅
 
 This project uses `yarn workspaces`, `Lerna`, and `NX` + `NX Cloud`
