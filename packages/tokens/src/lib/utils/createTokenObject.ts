@@ -10,6 +10,59 @@ export interface CreateCssVarObjectOptions {
   type?: 'base' | 'variable' | 'declaration';
 }
 
+/**
+ * createTokenObject
+ *
+ * This function takes an object, and creates a new object that has the same keys and values.
+ * The difference is that the values are manipulated in some way. It can also create CSS declaration strings.
+ *
+ * @param obj - The object to manipulate.
+ * @param prefix - The prefix to use for the CSS variable name.
+ * @param options - An object with options.
+ * @param options.type - The type of manipulation to perform on the values.
+ * @param options.manipulateValue - A function that will be used to manipulate the values.
+ * @returns An object with the same keys and values, but with the values manipulated in some way.
+ * @example
+ * const tokens = {
+ * color: {
+ *    primary: 'red',
+ *    secondary: 'blue',
+ *  },
+ * };
+ * createTokenObject(tokens, 'color');
+ * // {
+ * //  color: {
+ * //    primary: 'var(--mrd-color-primary, red)',
+ * //    secondary: 'var(--mrd-color-secondary, blue)',
+ * //  },
+ * // }
+ * @example
+ * createTokenObject(tokens, 'color', { type: 'declaration' });
+ * // {
+ * //  color: {
+ * //    primary: '--mrd-color-primary: red;',
+ * //    secondary: '--mrd-color-secondary: blue;',
+ * //  },
+ * // }
+ * @example
+ * createTokenObject(tokens, 'color', { type: 'base' });
+ * // {
+ * //  color: {
+ * //    primary: 'red',
+ * //    secondary: 'blue',
+ * //  },
+ * // }
+ * @example
+ * createTokenObject(tokens, 'color', {
+ *   manipulateValue: (value) => value.toUpperCase(),
+ * });
+ * // {
+ * //  color: {
+ * //    primary: 'var(--mrd-color-primary, RED)',
+ * //    secondary: 'var(--mrd-color-secondary, BLUE)',
+ * //  },
+ * // }
+ */
 export const createTokenObject = (
   obj: Token,
   prefix: string,

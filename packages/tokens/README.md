@@ -1,5 +1,7 @@
 # @mordech/tokens
 
+[![Published on npm](https://img.shields.io/npm/v/@mordech/tokens.svg?logo=npm)](https://www.npmjs.com/package/@mordech/tokens)
+
 This is a library for sharing design tokens (colors, typography, breakpoints, etc.) between projects.
 
 ## Why

@@ -1,4 +1,3 @@
-// tests for pxToRem function
 import { pxToRem } from './pxToRem';
 
 describe('pxToRem', () => {

@@ -56,7 +56,7 @@
       "dependsOn": ["^build"]
     },
     "start": {
-      "dependsOn": ["^watch:lib"]
+      "dependsOn": ["^build"]
     },
     "build": {
       "dependsOn": ["^build"],

@@ -1,5 +1,19 @@
 import { palette } from './palette';
 
+/**
+ * Color theme
+ * @description
+ * The color theme is a set of colors that are used to create a consistent
+ * look and feel across the application.
+ *
+ * Use this object to declare a static color.
+ * To declare a dynamic colors that can change base on theme use `colors`.
+ *
+ * @example
+ * import { colorTheme } from '@mrd/tokens';
+ * colorTheme.light.primary.base;
+ * // '#272931'
+ */
 export const colorTheme = {
   light: {
     primary: {

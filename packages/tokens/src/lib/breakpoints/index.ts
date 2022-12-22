@@ -23,12 +23,22 @@ export const screenSizesToRem: ManipulateValueFunction = (value) => {
   return pxToRem({ px: value, baseFontSize: baseFontSize });
 };
 
+/**
+ * Breakpoint screen sizes in rem
+ */
 export const screenSizesRem: typeof screenSizes = createTokenObject(
   screenSizes,
   'screen-size',
   { manipulateValue: screenSizesToRem, type: 'base' }
 ) as typeof screenSizes;
 
+/**
+ * Breakpoint media queries in CSS
+ * @example
+ * ${breakpoints.sm} {
+ *  // Styles for screens larger than 600px
+ * }
+ */
 export const breakpoints: Record<Breakpoint, string> = {
   sm: `@media screen and (min-width: ${screenSizes.sm}px)`,
   md: `@media screen and (min-width: ${screenSizes.md}px)`,
