@@ -25,8 +25,12 @@ const ColorGridContainer = styled.div`
 
 const ColorGroup = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 1rem 1.5rem;
+
+  & & {
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  }
 `;
 
 const ColorGroupName = styled.div`
