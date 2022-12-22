@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/Mordech/mordech-projects/compare/v0.20.1...v0.21.0) (2022-12-22)
+
+
+### Features
+
+* Javascript token declarations ([#61](https://github.com/Mordech/mordech-projects/issues/61)) ([2a8d3c7](https://github.com/Mordech/mordech-projects/commit/2a8d3c7b6a124a83cd3bb85482219205f891f8ca))
+
+
+
+
+
 ## [0.20.1](https://github.com/Mordech/mordech-projects/compare/v0.20.0...v0.20.1) (2022-12-17)
 
 **Note:** Version bump only for package @mordech/components
