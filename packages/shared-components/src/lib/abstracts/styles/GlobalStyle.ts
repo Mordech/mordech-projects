@@ -1,13 +1,14 @@
 import { colors, fontFamilies, fontSizes, fontWeights } from '@mordech/tokens';
+import { variables } from '@mordech/tokens/declarations';
 import { createGlobalStyle } from 'styled-components';
 
 import '@mordech/tokens/css/reset.css';
-import '@mordech/tokens/css';
+import '@mordech/tokens/css/fonts.css';
 import '../icons/style.css';
-
 // TODO: create a generic global style css file in @mordech/tokens
 export const GlobalStyle = createGlobalStyle`
   :root {
+    ${variables}
     font-size: ${fontSizes[1]};
     font-weight: ${fontWeights['regular']};
     line-height: 1.25;

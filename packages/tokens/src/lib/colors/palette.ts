@@ -1,3 +1,10 @@
+/**
+ * Palette
+ * @description
+ * The palette is a collection of colors that are used throughout the design system.
+ * Please use the palette to create new colors.
+ * Do not use this colors directly.
+ */
 export const palette = {
   primary: {
     '00': '#0A0B0D',

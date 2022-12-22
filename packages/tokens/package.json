@@ -13,19 +13,31 @@
     "dist/**/*"
   ],
   "license": "MIT",
+  "typesVersions": {
+    "*": {
+      "declarations": [
+        "./dist/lib/declarations/index.d.ts"
+      ],
+      "utils": [
+        "./dist/lib/utils/index.d.ts"
+      ]
+    }
+  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
+    "./declarations": "./dist/lib/declarations/index.js",
+    "./utils": "./dist/lib/utils/index.js",
     "./css": "./dist/css/index.css",
     "./css/*": "./dist/css/*"
   },
   "scripts": {
-    "build:ts": "tsc -b",
-    "build:assets": "ts-node --esm scripts/index.ts && prettier --write src/**/*.css",
+    "build:assets": "ts-node --esm scripts/index.ts",
     "build:css": "ts-node --esm scripts/bundleCss.ts",
+    "build:ts": "tsc -b",
     "build": "yarn run-s build:*",
     "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
     "test": "vitest --coverage --run",

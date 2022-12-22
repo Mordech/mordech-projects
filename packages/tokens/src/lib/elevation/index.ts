@@ -2,6 +2,14 @@ import { CSSProperties } from 'styled-components';
 
 export type ElevationLevels = 0;
 
+/**
+ * Elevation levels
+ *
+ * @example
+ * .elevated {
+ *   box-shadow: ${elevation[0]};
+ * }
+ */
 export const elevation: Record<
   ElevationLevels,
   NonNullable<CSSProperties['boxShadow']>
