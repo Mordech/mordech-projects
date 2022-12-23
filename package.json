@@ -11,17 +11,17 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@nrwl/devkit": "15.2.4",
-    "@nrwl/esbuild": "15.2.4",
-    "@nrwl/eslint-plugin-nx": "15.2.4",
-    "@nrwl/jest": "15.2.4",
-    "@nrwl/js": "15.2.4",
-    "@nrwl/node": "^15.3.0",
-    "@nrwl/nx-plugin": "15.2.4",
-    "@nrwl/react": "15.2.4",
-    "@nrwl/rollup": "15.2.4",
-    "@nrwl/storybook": "15.2.4",
-    "@nrwl/workspace": "15.2.4",
+    "@nrwl/devkit": "15.4.0",
+    "@nrwl/esbuild": "15.4.0",
+    "@nrwl/eslint-plugin-nx": "15.4.0",
+    "@nrwl/jest": "15.4.0",
+    "@nrwl/js": "15.4.0",
+    "@nrwl/node": "15.4.0",
+    "@nrwl/nx-plugin": "15.4.0",
+    "@nrwl/react": "15.4.0",
+    "@nrwl/rollup": "15.4.0",
+    "@nrwl/storybook": "15.4.0",
+    "@nrwl/workspace": "15.4.0",
     "@swc-node/register": "^1.4.2",
     "@swc/cli": "~0.1.55",
     "@swc/core": "^1.2.173",
@@ -44,7 +44,7 @@
     "husky": "^8.0.0",
     "jsonc-eslint-parser": "^2.1.0",
     "lerna": "^5.5.1",
-    "nx": "15.2.4",
+    "nx": "15.4.0",
     "prettier": "^2.7.1",
     "stylelint": "^14.14.1",
     "stylelint-config-recommended": "^9.0.0",
@@ -60,3 +60,4 @@
     "styled-components": "5.3.5"
   }
 }
+
