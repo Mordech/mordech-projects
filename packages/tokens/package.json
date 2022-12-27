@@ -4,40 +4,51 @@
   "version": "0.21.0",
   "prepare": "yarn run build",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "types/index.d.ts",
+  "module": "dist/index.mjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mordech/mordech-projects.git"
   },
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "types/**/*"
   ],
   "license": "MIT",
   "typesVersions": {
     "*": {
       "declarations": [
-        "./dist/lib/declarations/index.d.ts"
+        "./types/lib/declarations/index.d.ts"
       ],
       "utils": [
-        "./dist/lib/utils/index.d.ts"
+        "./types/lib/utils/index.d.ts"
       ]
     }
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
       "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.mjs",
+      "types": "./types/index.d.ts"
     },
-    "./declarations": "./dist/lib/declarations/index.js",
-    "./utils": "./dist/lib/utils/index.js",
+    "./declarations": {
+      "require": "./dist/declarations/index.js",
+      "import": "./dist/declarations/index.mjs",
+      "types": "./types/lib/declarations/index.d.ts"
+    },
+    "./utils": {
+      "require": "./dist/utils/index.js",
+      "import": "./dist/utils/index.mjs",
+      "types": "./types/lib/utils/index.d.ts"
+    },
     "./css": "./dist/css/index.css",
     "./css/*": "./dist/css/*"
   },
   "scripts": {
     "build:assets": "ts-node --esm scripts/index.ts",
     "build:css": "ts-node --esm scripts/bundleCss.ts",
-    "build:ts": "tsc -b",
+    "build:ts": "ts-node --esm scripts/build.ts",
+    "build:types": "tsc",
     "build": "yarn run-s build:*",
     "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
     "test": "vitest --coverage --run",

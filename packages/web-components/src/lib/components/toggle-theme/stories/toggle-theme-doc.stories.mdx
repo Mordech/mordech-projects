@@ -1,0 +1,53 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+
+<Meta
+  title={'Components/mrd-toggle-theme'}
+  parameters={{ previewTabs: { canvas: { hidden: true } } }}
+/>
+
+# Toggle Theme
+
+Toggle the theme between light and dark.
+
+## Demo
+
+<Canvas>
+  <mrd-toggle-theme></mrd-toggle-theme>
+</Canvas>
+
+```html
+<mrd-toggle-theme></mrd-toggle-theme>
+```
+
+## API
+
+### Properties
+
+| Property        | Attribute         | Type      | Default | Description                                                                                              |
+| --------------- | ----------------- | --------- | ------- | -------------------------------------------------------------------------------------------------------- |
+| `saveToStorage` | `save-to-storage` | `boolean` | `true`  | If true, the theme will be stored in local storage. If false, it will be stored in a cookie.             |
+| `_theme`        | `_theme`          | `string`  | `light` | The current theme. Can be either `light` or `dark`. This is used for the `data-theme` attribute on body. |
+
+### Methods
+
+| Method        | Type       | Description                                                                                                                                                 |
+| ------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `toggleTheme` | `() => {}` | Toggles the theme between light and dark. Dispatches a `toggle-theme` event with the new theme as detail.                                                   |
+| `initTheme`   | `() => {}` | Initializes the theme. If a theme is stored in local storage, it will be set as the theme. Otherwise, if the user prefers dark mode, dark mode will be set. |
+| `store`       | `() => {}` | Stores the theme in local storage.                                                                                                                          |
+
+### Events
+
+| Event          | Description                                                                                  |
+| -------------- | -------------------------------------------------------------------------------------------- |
+| `toggle-theme` | Dispatched when the theme is toggled. The detail contains the new theme as `theme` property. |
+
+## CSS Custom Properties
+
+| Property                         | Description                     |
+| -------------------------------- | ------------------------------- |
+| `--mrd-border-radius`            | Border radius.                  |
+| `--mrd-button-color`             | Button text color.              |
+| `--mrd-button-background`        | Button background color.        |
+| `--mrd-button-hover-background`  | Button hover background color.  |
+| `--mrd-button-active-background` | Button active background color. |

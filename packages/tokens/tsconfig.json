@@ -3,6 +3,9 @@
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "types",
     "module": "CommonJS",
     "esModuleInterop": true,
     "moduleResolution": "node",

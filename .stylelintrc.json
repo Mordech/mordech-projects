@@ -9,7 +9,7 @@
   "exclude": ["node_modules", "tmp"],
   "overrides": [
     {
-      "files": ["**/*.tsx", "**/*.ts"],
+      "files": ["**/*.{ts,tsx,js,jsx}"],
       "processors": ["stylelint-processor-styled-components"],
       "extends": [
         "stylelint-config-recommended",

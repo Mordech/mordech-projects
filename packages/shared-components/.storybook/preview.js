@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToggleTheme } from '@mordech/web-components';
 import { addDecorator } from '@storybook/react';
 
 import { GlobalStyle } from '../src/lib/abstracts';
@@ -11,6 +12,15 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  backgrounds: {
+    default: 'background',
+    values: [
+      {
+        name: 'background',
+        value: 'var(--mrd-color-background-base)',
+      },
+    ],
   },
   layout: 'centered',
   options: {
@@ -29,6 +39,9 @@ export const parameters = {
     },
   },
 };
+
+const theme = new ToggleTheme();
+theme.initTheme();
 
 addDecorator((story) => (
   <>

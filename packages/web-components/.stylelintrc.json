@@ -1,0 +1,9 @@
+{
+  "extends": ["stylelint-config-recommended"],
+  "files": "**/*.{css,js,ts}",
+  "customSyntax": "postcss-lit",
+  "rules": {
+    "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+    "custom-property-pattern": "mrd-.+"
+  }
+}
