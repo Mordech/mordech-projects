@@ -20,7 +20,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "storybook": "start-storybook -p 6006",
+    "test": "vitest --coverage --run",
+    "storybook": "export NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -28,8 +29,8 @@
     "lit": "^2.4.1"
   },
   "devDependencies": {
-    "@mordech/storybook-toggle-theme-addon": "*",
     "@babel/core": "^7.20.7",
+    "@mordech/storybook-toggle-theme-addon": "*",
     "@mordech/tokens": "*",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
@@ -37,9 +38,11 @@
     "@storybook/builder-vite": "^0.2.6",
     "@storybook/web-components": "^6.5.15",
     "babel-loader": "^8.3.0",
+    "jsdom": "^20.0.3",
     "lit-html": "^2.5.0",
     "postcss-lit": "^1.0.1",
     "typescript": "^4.9.3",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "vitest": "^0.26.2"
   }
 }

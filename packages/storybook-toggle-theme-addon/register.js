@@ -8,9 +8,14 @@ import '@mordech/web-components';
 const ADDON_ID = 'toggleTheme';
 
 const ToggleThemeContainer = styled(IconButton)`
-  padding: unset;
-  --mrd-icon-size: 1.25rem;
-  --mrd-button-color: currentColor;
+  mrd-toggle-theme {
+    --mrd-icon-size: 1rem;
+    --mrd-button-color: currentColor;
+    --mrd-button-background: transparent;
+    --mrd-button-hover-background: transparent;
+    --mrd-button-active-background: transparent;
+    --mrd-button-padding: 0.5rem 0;
+  }
 `;
 
 export const ToggleThemeAddon = () => {
@@ -30,7 +35,7 @@ export const ToggleThemeAddon = () => {
 
   return (
     <>
-      <ToggleThemeContainer>
+      <ToggleThemeContainer title="Toggle theme">
         <mrd-toggle-theme />
       </ToggleThemeContainer>
     </>

@@ -1,16 +1,17 @@
-import { css } from 'lit';
+import { colors } from '@mordech/tokens';
+import { css, unsafeCSS } from 'lit';
 
 export const buttonBase = css`
+  :host {
+    --mrd-button-color: ${unsafeCSS(colors.primary.on)};
+    --mrd-button-background: ${unsafeCSS(colors.primary.base)};
+    --mrd-button-hover-background: ${unsafeCSS(colors.primary.base)};
+    --mrd-button-active-background: ${unsafeCSS(colors.primary.base)};
+  }
   .btn {
-    --mrd-border-radius: 0.5rem;
-    --mrd-button-color: var(--mrd-color-primary-on);
-    --mrd-button-background: var(--mrd-color-primary-base);
-    --mrd-button-hover-background: var(--mrd-color-primary-base);
-    --mrd-button-active-background: var(--mrd-color-primary-base);
-
     display: inline-flex;
     border: unset;
-    padding: 0.5rem 1rem;
+    padding: var(--mrd-button-padding, 0.5rem 1rem);
     min-width: 5rem;
     font-size: 1rem;
     cursor: pointer;
@@ -19,7 +20,7 @@ export const buttonBase = css`
     justify-content: center;
     gap: 0.25rem;
 
-    border-radius: var(--mrd-border-radius);
+    border-radius: var(--mrd-border-radius, 0.5rem);
     color: var(--mrd-button-color);
     background-color: var(--mrd-button-background);
   }

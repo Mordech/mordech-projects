@@ -1,15 +1,18 @@
-import { css } from 'lit';
+import { colors } from '@mordech/tokens';
+import { css, unsafeCSS } from 'lit';
 
 export const toggleThemeBase = css`
-  .btn {
+  :host {
     --mrd-border-radius: 99px;
-    --mrd-button-color: var(--mrd-color-background-on);
-    --mrd-button-background: var(--mrd-color-background-base);
-    --mrd-button-hover-background: var(--mrd-color-background-surface);
-    --mrd-button-active-background: var(--mrd-color-background-surface);
+    --mrd-button-color: ${unsafeCSS(colors.background.on)};
+    --mrd-button-background: ${unsafeCSS(colors.background.base)};
+    --mrd-button-hover-background: ${unsafeCSS(colors.background.surface)};
+    --mrd-button-active-background: ${unsafeCSS(colors.background.surface)};
+    --mrd-button-padding: 0.5rem;
+  }
 
+  .btn {
     min-width: unset;
-    padding: 8px;
   }
   .btn:hover {
     filter: unset;

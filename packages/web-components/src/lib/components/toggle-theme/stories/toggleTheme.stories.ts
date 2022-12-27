@@ -1,14 +1,20 @@
-//  create storybook web-components
-
-import { html } from 'lit';
+import { html } from 'lit-html';
 
 import '../toggle-theme';
 
 import { ToggleTheme } from '../toggle-theme';
 
 export default {
-  title: 'Components/mrd-toggle-theme',
+  title: 'Atoms/mrd-toggle-theme',
   component: 'mrd-toggle-theme',
+  parameters: {
+    controls: { expanded: true },
+    docs: {
+      description: {
+        component: 'Toggle theme between light and dark mode',
+      },
+    },
+  },
   argTypes: {
     saveToStorage: {
       control: 'boolean',
@@ -22,5 +28,7 @@ export default {
 };
 
 const Template = ({ saveToStorage }: ToggleTheme) =>
-  html`<mrd-toggle-theme .saveToStorage=${saveToStorage}></mrd-toggle-theme>`;
-export const Default = Template.bind({});
+  html`<mrd-toggle-theme .saveToStorage=${saveToStorage} />`;
+export const Default = Template.bind({
+  saveToStorage: false,
+});

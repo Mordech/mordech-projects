@@ -1,11 +1,14 @@
-import { html } from 'lit';
-
-import './decorator-story';
+import '@mordech/tokens/css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
-  layout: 'centered',
-
+  controls: {
+    expanded: true,
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
   backgrounds: {
     default: 'background',
     values: [
@@ -15,14 +18,20 @@ export const parameters = {
       },
     ],
   },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
+  layout: 'centered',
+  options: {
+    storySort: {
+      order: [
+        'Introduction',
+        ['Getting Started'],
+        'Abstracts',
+        'Atoms',
+        ['Typography', 'Markdown', 'Button', 'Icon', 'Link', 'List'],
+        'Molecules',
+        'Organisms',
+        'Templates',
+        'Pages',
+      ],
     },
   },
 };
-
-export const decorators = [
-  (story) => html`<decorator-story> ${story()} </decorator-story>`,
-];

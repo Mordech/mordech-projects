@@ -7,7 +7,7 @@ import { toggleThemeBase, toggleThemeIcon } from './toggle-theme.styles';
 
 @customElement('mrd-toggle-theme')
 export class ToggleTheme extends LitElement {
-  @property({ type: String }) _theme = 'light';
+  @property({ type: String }) theme = 'light';
   @property({ type: Boolean }) saveToStorage = true;
 
   static override styles = [buttonBase, toggleThemeBase, toggleThemeIcon];
@@ -16,7 +16,7 @@ export class ToggleTheme extends LitElement {
     return html`
       <button class="btn" @click=${this.toggleTheme}>
         <svg
-          class=${this._theme}
+          class=${this.theme}
           alt="toggle theme icon"
           viewBox="0 0 24 24"
           fill="none"
@@ -76,33 +76,33 @@ export class ToggleTheme extends LitElement {
   }
 
   toggleTheme() {
-    this._theme = this._theme === 'light' ? 'dark' : 'light';
-    document.body.setAttribute('data-theme', this._theme);
+    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    document.body.setAttribute('data-theme', this.theme);
     this.dispatchEvent(
       new CustomEvent('toggle-theme', {
-        detail: { theme: this._theme },
+        detail: { theme: this.theme },
         bubbles: true,
         composed: true,
       })
     );
-    return this._theme;
+    return this.theme;
   }
 
   initTheme() {
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme) {
-      this._theme = storedTheme;
+      this.theme = storedTheme;
       document.body.setAttribute('data-theme', storedTheme);
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       if (!document.body.getAttribute('data-theme')) return;
-      this._theme = 'dark';
+      this.theme = 'dark';
     }
-    return this._theme;
+    return this.theme;
   }
 
   store() {
     if (!this.saveToStorage) return;
-    localStorage.setItem('theme', this._theme);
+    localStorage.setItem('theme', this.theme);
   }
 }
 
