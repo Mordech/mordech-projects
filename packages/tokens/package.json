@@ -3,6 +3,7 @@
   "author": "Elad Mordechai Mizrahi",
   "version": "0.21.0",
   "prepare": "yarn run build",
+  "type": "commonjs",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "module": "dist/index.mjs",
@@ -17,6 +18,9 @@
   "license": "MIT",
   "typesVersions": {
     "*": {
+      ".": [
+        "./types/index.d.ts"
+      ],
       "declarations": [
         "./types/lib/declarations/index.d.ts"
       ],
