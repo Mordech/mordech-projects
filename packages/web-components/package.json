@@ -26,13 +26,13 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@mordech/tokens": "*",
     "haunted": "^5.0.0",
     "lit": "^2.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@mordech/storybook-toggle-theme-addon": "*",
-    "@mordech/tokens": "*",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-links": "^6.5.15",
