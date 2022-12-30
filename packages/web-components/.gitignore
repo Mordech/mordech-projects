@@ -1,6 +1,3 @@
-# nx
-migrations.json
-
 # Logs
 logs
 *.log
@@ -12,12 +9,9 @@ lerna-debug.log*
 
 node_modules
 dist
-build
+types
 dist-ssr
 *.local
-.cache
-
-storybook-static/
 
 # Editor directories and files
 .vscode/*
@@ -29,6 +23,3 @@ storybook-static/
 *.njsproj
 *.sln
 *.sw?
-
-# Test coverage
-coverage

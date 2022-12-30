@@ -1,0 +1,50 @@
+{
+  "name": "@mordech/web-components",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "license": "MIT",
+  "author": "Elad Mordechai Mizrahi",
+  "private": true,
+  "module": "dist/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./types/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "vitest --coverage --run",
+    "storybook": "export NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@mordech/tokens": "*",
+    "lit": "^2.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "@mordech/storybook-toggle-theme-addon": "*",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-vite": "^0.2.6",
+    "@storybook/web-components": "^6.5.15",
+    "babel-loader": "^8.3.0",
+    "jsdom": "^20.0.3",
+    "lit-html": "^2.5.0",
+    "postcss-lit": "^1.0.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vitest": "^0.26.2"
+  }
+}

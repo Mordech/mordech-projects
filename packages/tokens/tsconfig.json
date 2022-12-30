@@ -2,19 +2,20 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
+    "rootDir": "src",
     "strict": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "types",
     "module": "CommonJS",
     "esModuleInterop": true,
     "moduleResolution": "node",
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "importHelpers": false,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["node"]
   },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    }
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["vitest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }

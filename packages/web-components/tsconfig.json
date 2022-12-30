@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "rootDir": "./src",
+    "outDir": "types",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": false,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

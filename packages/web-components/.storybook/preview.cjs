@@ -1,8 +1,4 @@
-import React from 'react';
-import { ToggleTheme } from '@mordech/web-components';
-import { addDecorator } from '@storybook/react';
-
-import { GlobalStyle } from '../src/lib/abstracts';
+import '@mordech/tokens/css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -39,13 +35,3 @@ export const parameters = {
     },
   },
 };
-
-const theme = new ToggleTheme();
-theme.initTheme();
-
-addDecorator((story) => (
-  <>
-    <GlobalStyle />
-    {story()}
-  </>
-));
