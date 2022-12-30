@@ -62,6 +62,7 @@
       "dependsOn": ["^build"],
       "outputs": [
         "{projectRoot}/dist",
+        "{projectRoot}/types",
         "{projectRoot}/build",
         "{projectRoot}/public",
         "{projectRoot}/storybook-static"
