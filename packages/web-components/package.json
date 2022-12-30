@@ -4,6 +4,8 @@
   "type": "module",
   "main": "dist/index.cjs",
   "license": "MIT",
+  "author": "Elad Mordechai Mizrahi",
+  "private": true,
   "module": "dist/index.js",
   "types": "types/index.d.ts",
   "files": [
