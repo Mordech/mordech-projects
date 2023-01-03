@@ -1,20 +1,34 @@
+import type { Theme } from '@mordech/tokens';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
+import { focusableBase } from '../../styles/focusable.styles';
 import { buttonBase } from '../button/button.styles';
 
 import { toggleThemeBase, toggleThemeIcon } from './toggle-theme.styles';
 
 @customElement('mrd-toggle-theme')
 export class ToggleTheme extends LitElement {
-  @property({ type: String }) theme = 'light';
+  @property({ type: String }) theme: Theme = 'light';
   @property({ type: Boolean }) saveToStorage = true;
+  @property({ type: String }) storageKey = 'theme';
 
-  static override styles = [buttonBase, toggleThemeBase, toggleThemeIcon];
+  static override styles = [
+    focusableBase,
+    buttonBase,
+    toggleThemeBase,
+    toggleThemeIcon,
+  ];
 
   override render() {
     return html`
-      <button class="btn" @click=${this.toggleTheme}>
+      <button
+        aria-label="Toggle to ${this.theme === 'light'
+          ? 'dark'
+          : 'light'} theme"
+        class="btn"
+        @click=${this.toggleTheme}
+      >
         <svg
           class=${this.theme}
           alt="toggle theme icon"
@@ -52,32 +66,22 @@ export class ToggleTheme extends LitElement {
   }
 
   override connectedCallback() {
-    this.setAttribute('role', 'button');
-    this.setAttribute('aria-label', 'Toggle theme');
-    this.setAttribute('tabindex', '0');
-
     super.connectedCallback();
-    this.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        this.toggleTheme();
-      }
-    });
 
-    this.addEventListener('toggle-theme', () => {
-      this.store();
-    });
+    this.addEventListener('toggle-theme', this.store);
 
     this.initTheme();
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener('click', this.toggleTheme);
+    this.removeEventListener('toggle-theme', this.store);
   }
 
-  toggleTheme() {
+  async toggleTheme() {
     this.theme = this.theme === 'light' ? 'dark' : 'light';
     document.body.setAttribute('data-theme', this.theme);
+    await this.updateComplete;
     this.dispatchEvent(
       new CustomEvent('toggle-theme', {
         detail: { theme: this.theme },
@@ -91,7 +95,7 @@ export class ToggleTheme extends LitElement {
   initTheme() {
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme) {
-      this.theme = storedTheme;
+      this.theme = storedTheme as Theme;
       document.body.setAttribute('data-theme', storedTheme);
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       if (!document.body.getAttribute('data-theme')) return;

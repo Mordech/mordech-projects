@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Eczar';
+  src: url('../../assets/fonts/Eczar-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'Eczar';
+  src: url('../../assets/fonts/Eczar-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'Eczar';
+  src: url('../../assets/fonts/Eczar-SemiBold.woff2') format('woff2');
+  font-weight: 700;
+  font-stretch: 100%;
+}

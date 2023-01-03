@@ -14,7 +14,7 @@ const path = (direction: 'outDir' | 'entryPoint', path: string) =>
   join(root, direction === 'outDir' ? 'dist' : 'src', path);
 
 scripts.forEach((script: string, index: string | number) => {
-  scripts[index] = path('entryPoint', script);
+  scripts[index] = script.replace('js', 'ts') && path('entryPoint', script);
 });
 
 const cssFiles = manifest.content_scripts[0].css;
@@ -40,10 +40,12 @@ async function bundleExtension() {
     bundle: true,
     minify: true,
     sourcemap: true,
+    treeShaking: true,
     format: 'cjs',
     outdir: join(root, 'dist'),
     loader: loaders,
     target: ['chrome58', 'firefox57'],
+    watch: process.argv.includes('--watch'),
   }).then(() => {
     console.log('    \x1b[32m✔\x1b[0m Scripts and CSS bundle complete');
   });
@@ -61,9 +63,11 @@ async function bundleExtension() {
     splitting: true,
     format: 'esm',
     sourcemap: true,
+    treeShaking: true,
     outdir: `${root}/dist/popup/`,
     loader: loaders,
     target: ['chrome58', 'firefox57'],
+    watch: process.argv.includes('--watch'),
   }).then(() => {
     console.log('    \x1b[32m✔\x1b[0m Popup bundle complete');
   });
@@ -77,9 +81,11 @@ async function bundleExtension() {
     bundle: true,
     minify: true,
     sourcemap: true,
+    treeShaking: true,
     outdir: path('outDir', 'options'),
     loader: loaders,
     target: ['chrome58', 'firefox57'],
+    watch: process.argv.includes('--watch'),
   }).then(() => {
     console.log('    \x1b[32m✔\x1b[0m Options bundle complete');
   });
