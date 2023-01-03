@@ -78,10 +78,9 @@ export class ToggleTheme extends LitElement {
     this.removeEventListener('toggle-theme', this.store);
   }
 
-  async toggleTheme() {
+  toggleTheme() {
     this.theme = this.theme === 'light' ? 'dark' : 'light';
     document.body.setAttribute('data-theme', this.theme);
-    await this.updateComplete;
     this.dispatchEvent(
       new CustomEvent('toggle-theme', {
         detail: { theme: this.theme },
