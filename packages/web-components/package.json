@@ -1,6 +1,6 @@
 {
   "name": "@mordech/web-components",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "type": "module",
   "main": "dist/index.cjs",
   "license": "MIT",
@@ -27,12 +27,12 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@mordech/tokens": "^0.22.0",
+    "@mordech/tokens": "^0.23.0",
     "lit": "^2.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
-    "@mordech/storybook-toggle-theme-addon": "^0.22.0",
+    "@mordech/storybook-toggle-theme-addon": "^0.23.0",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-links": "^6.5.15",
