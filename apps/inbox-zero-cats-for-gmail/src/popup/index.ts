@@ -1,9 +1,11 @@
 import { html, render } from 'lit-html';
 import browser from 'webextension-polyfill';
 
-import { footer, toggleThemeButton } from './components/index.js';
+import '@mordech/web-components';
+
+import { footer } from './components/index.js';
 import { customImageSection, customTitleSection } from './sections/index.js';
-import { initTheme, resetImages, resetTitles } from './utils/index.js';
+import { resetImages, resetTitles } from './utils/index.js';
 
 export const renderContent = async () => {
   const headerElem = document.querySelector('header');
@@ -19,14 +21,10 @@ export const renderContent = async () => {
   )
     return;
 
-  const { theme } = await browser.storage.local
-    .get('theme')
-    .catch((error) => error);
-  initTheme(theme);
   render(
     html`
       <h1>Customize your <strong>inbox zero</strong></h1>
-      ${toggleThemeButton(theme)}
+      <mrd-toggle-theme></mrd-toggle-theme>
     `,
     headerElem
   );

@@ -1,4 +1,6 @@
-@import url(@mordech/tokens/css);
+@import url(@mordech/tokens/css/tokens.css);
+@import url(@mordech/tokens/css/fonts/ui.css);
+@import url(@mordech/tokens/css/reset.css);
 
 :root {
   --mrd-border-radius: 0.5rem;

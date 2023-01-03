@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../../assets/fonts/DMSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../../assets/fonts/DMSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../../assets/fonts/DMSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-stretch: 100%;
+}

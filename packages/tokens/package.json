@@ -5,27 +5,26 @@
   "prepare": "yarn run build",
   "type": "commonjs",
   "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "types": "dist/index.d.ts",
   "module": "dist/index.mjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mordech/mordech-projects.git"
   },
   "files": [
-    "dist/**/*",
-    "types/**/*"
+    "dist/**/*"
   ],
   "license": "MIT",
   "typesVersions": {
     "*": {
       ".": [
-        "./types/index.d.ts"
+        "./dist/index.d.ts"
       ],
       "declarations": [
-        "./types/lib/declarations/index.d.ts"
+        "./dist/lib/declarations/index.d.ts"
       ],
       "utils": [
-        "./types/lib/utils/index.d.ts"
+        "./dist/lib/utils/index.d.ts"
       ]
     }
   },
@@ -33,17 +32,17 @@
     ".": {
       "require": "./dist/index.js",
       "import": "./dist/index.mjs",
-      "types": "./types/index.d.ts"
+      "types": "./dist/index.d.ts"
     },
     "./declarations": {
       "require": "./dist/declarations/index.js",
       "import": "./dist/declarations/index.mjs",
-      "types": "./types/lib/declarations/index.d.ts"
+      "types": "./dist/lib/declarations/index.d.ts"
     },
     "./utils": {
       "require": "./dist/utils/index.js",
       "import": "./dist/utils/index.mjs",
-      "types": "./types/lib/utils/index.d.ts"
+      "types": "./dist/lib/utils/index.d.ts"
     },
     "./css": "./dist/css/index.css",
     "./css/*": "./dist/css/*"
