@@ -1,1 +1,2 @@
 yarn nx affected:build --base=origin/main --head=HEAD && yarn nx affected:test --base=origin/main --head=HEAD
+yarn nx affected:build-storybook --base=origin/main --head=HEAD && yarn nx affected:test --base=origin/main --head=HEAD
