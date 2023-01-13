@@ -1,13 +1,13 @@
 {
   "name": "@mordech/storybook-toggle-theme-addon",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "module": "register.js",
   "author": "Elad Mordechai Mizrahi",
   "license": "MIT",
   "type": "module",
   "private": true,
   "dependencies": {
-    "@mordech/web-components": "^0.23.0",
+    "@mordech/web-components": "^0.24.0",
     "@storybook/addons": "^6.5.15",
     "@storybook/components": "^6.5.15",
     "@types/styled-components": "^5.1.26",

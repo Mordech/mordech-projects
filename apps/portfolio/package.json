@@ -1,6 +1,6 @@
 {
   "name": "@mordech/portfolio",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "private": true,
   "description": "My portfolio website",
   "author": "Elad Mordechai Mizrahi",
@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.4.7",
-    "@mordech/components": "^0.23.0",
-    "@mordech/tokens": "^0.23.0",
+    "@mordech/components": "^0.24.0",
+    "@mordech/tokens": "^0.24.0",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.15.0",
     "gatsby": "^4.22.1",

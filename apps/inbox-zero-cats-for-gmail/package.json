@@ -1,6 +1,6 @@
 {
   "name": "@mordech/zero-inbox-cats-for-gmail",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "description": "Adds a random cat to the empty state of Gmail inbox",
   "private": true,
   "main": "./src/manifest.json",
@@ -27,8 +27,8 @@
     "lint:extension": "web-ext lint -s dist/"
   },
   "dependencies": {
-    "@mordech/tokens": "^0.23.0",
-    "@mordech/web-components": "^0.23.0",
+    "@mordech/tokens": "^0.24.0",
+    "@mordech/web-components": "^0.24.0",
     "lit-html": "^2.5.0"
   }
 }
