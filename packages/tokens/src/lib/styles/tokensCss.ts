@@ -1,25 +1,25 @@
 import {
   colorTheme,
   defaultPaddingDeclaration,
-  elevation,
-  fontFamilies,
-  fontSizes,
-  fontWeights,
-  screenSizesRem,
+  elevationEnum,
+  fontFamiliesEnum,
+  fontSizesEnum,
+  fontWeightsEnum,
+  screenSizesRemEnum,
+  transitionsEnum,
 } from '../../';
-import { transitions } from '../transitions';
 import { css, Token, tokensToCssVars } from '../utils';
 
 export const tokensCss = css`
   [data-theme='light'],
   :root {
     ${tokensToCssVars(colorTheme.light, 'color')}
-    ${tokensToCssVars(fontFamilies, 'font-family')}
-    ${tokensToCssVars(fontSizes, 'font-size')}
-    ${tokensToCssVars(fontWeights, 'font-weight')}
-    ${tokensToCssVars(elevation, 'elevation')}
-    ${tokensToCssVars(screenSizesRem, 'screen-size')}
-    ${tokensToCssVars(transitions, 'transition')}
+    ${tokensToCssVars(fontFamiliesEnum, 'font-family')}
+    ${tokensToCssVars(fontSizesEnum, 'font-size')}
+    ${tokensToCssVars(fontWeightsEnum, 'font-weight')}
+    ${tokensToCssVars(elevationEnum, 'elevation')}
+    ${tokensToCssVars(screenSizesRemEnum, 'screen-size')}
+    ${tokensToCssVars(transitionsEnum, 'transition')}
   }
 
   ${defaultPaddingDeclaration}
