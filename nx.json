@@ -7,6 +7,7 @@
         "cacheableOperations": [
           "develop",
           "build",
+          "build-storybook",
           "build:assets",
           "build:css",
           "serve",
@@ -64,9 +65,12 @@
         "{projectRoot}/dist",
         "{projectRoot}/types",
         "{projectRoot}/build",
-        "{projectRoot}/public",
-        "{projectRoot}/storybook-static"
+        "{projectRoot}/public"
       ]
+    },
+    "build-storybook": {
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/public", "{projectRoot}/storybook-static"]
     },
     "visual": {
       "dependsOn": ["^build"]
