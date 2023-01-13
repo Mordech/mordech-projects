@@ -23,8 +23,8 @@
     "dev": "vite",
     "build": "vite build && tsc",
     "test": "vitest --coverage --run",
-    "storybook": "export NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
-    "build-storybook": "export NODE_OPTIONS=--openssl-legacy-provider && build-storybook"
+    "storybook": "export NODE_OPTIONS=--openssl-legacy-provider; start-storybook -p 6006",
+    "build-storybook": "export NODE_OPTIONS=--openssl-legacy-provider; build-storybook"
   },
   "dependencies": {
     "@mordech/tokens": "^0.23.0",

@@ -73,7 +73,7 @@
       "outputs": ["{projectRoot}/public", "{projectRoot}/storybook-static"]
     },
     "visual": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^build-storybook"]
     },
     "visual:ci": {
       "dependsOn": ["^build"]
