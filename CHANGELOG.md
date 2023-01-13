@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.1](https://github.com/Mordech/mordech-projects/compare/v0.24.0...v0.24.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* change tokens css to use enums instead of tokens ([#68](https://github.com/Mordech/mordech-projects/issues/68)) ([0603bb1](https://github.com/Mordech/mordech-projects/commit/0603bb113728a58e429aa7bb7f011ee686a06e9d))
+
+
+
+
+
 # [0.24.0](https://github.com/Mordech/mordech-projects/compare/v0.23.0...v0.24.0) (2023-01-13)
 
 
