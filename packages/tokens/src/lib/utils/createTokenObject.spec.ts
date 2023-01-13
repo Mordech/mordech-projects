@@ -1,6 +1,6 @@
 import { pxToRem } from '../utils';
 
-import { createTokenObject } from './createTokenObject';
+import { createTokenObject } from '.';
 
 describe('createTokenObject', () => {
   it('should create a token object', () => {

@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "yarn storybook",
-    "build": "build-storybook",
+    "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 4200",
     "test": "vitest --coverage --run",
     "test:watch": "vitest",

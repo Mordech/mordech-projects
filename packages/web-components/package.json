@@ -23,7 +23,7 @@
     "dev": "vite",
     "build": "vite build && tsc",
     "test": "vitest --coverage --run",
-    "storybook": "export NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
+    "storybook": "export NODE_OPTIONS=--openssl-legacy-provider; start-storybook -p 6006 ",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

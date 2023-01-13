@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 import '@mordech/tokens/css/reset.css';
 import '@mordech/tokens/css/fonts.css';
 import '../icons/style.css';
+
 // TODO: create a generic global style css file in @mordech/tokens
 export const GlobalStyle = createGlobalStyle`
   :root {
