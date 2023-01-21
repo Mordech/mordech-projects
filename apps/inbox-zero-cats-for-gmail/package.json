@@ -29,6 +29,6 @@
   "dependencies": {
     "@mordech/tokens": "^0.24.1",
     "@mordech/web-components": "^0.24.1",
-    "lit-html": "^2.5.0"
+    "lit-html": "^2.6.1"
   }
 }
