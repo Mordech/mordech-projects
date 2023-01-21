@@ -20,7 +20,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mordech/hct-color-picker/*": ["apps/hct-color-picker/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

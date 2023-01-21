@@ -2,8 +2,9 @@ import type { Theme } from '@mordech/tokens';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
+import '../button';
+
 import { focusableBase } from '../../styles/focusable.styles';
-import { buttonBase } from '../button/button.styles';
 
 import { toggleThemeBase, toggleThemeIcon } from './toggle-theme.styles';
 
@@ -13,16 +14,12 @@ export class ToggleTheme extends LitElement {
   @property({ type: Boolean }) saveToStorage = true;
   @property({ type: String }) storageKey = 'theme';
 
-  static override styles = [
-    focusableBase,
-    buttonBase,
-    toggleThemeBase,
-    toggleThemeIcon,
-  ];
+  static override styles = [focusableBase, toggleThemeBase, toggleThemeIcon];
 
   override render() {
     return html`
-      <button
+      <mrd-button
+        exportparts="button"
         aria-label="Toggle to ${this.theme === 'light'
           ? 'dark'
           : 'light'} theme"
@@ -31,6 +28,7 @@ export class ToggleTheme extends LitElement {
       >
         <svg
           class=${this.theme}
+          part="icon"
           alt="toggle theme icon"
           viewBox="0 0 24 24"
           fill="none"
@@ -61,7 +59,7 @@ export class ToggleTheme extends LitElement {
             fill="currentColor"
           />
         </svg>
-      </button>
+      </mrd-button>
     `;
   }
 

@@ -1,0 +1,81 @@
+@import url('@mordech/tokens/css/fonts/ui.css');
+@import url('@mordech/tokens/css/reset.css');
+@import url('@mordech/tokens/css/tokens.css');
+
+:root {
+  font-family: var(--mrd-font-family-ui);
+  font-size: var(--mrd-font-size-0);
+  background-color: var(--mrd-color-background-surface);
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  padding: 1.5rem;
+  background-color: var(--mrd-color-background-base);
+  color: var(--mrd-color-background-on);
+  margin: auto;
+  max-width: 450px;
+  height: max-content;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.color-input {
+  --mrd-swatch-size: 8rem;
+
+  @mixin color-swatch {
+    border-color: var(--mrd-color-background-surface);
+    border-width: 1px;
+    border-radius: 1rem;
+    height: var(--mrd-swatch-size);
+  }
+
+  appearance: none;
+
+  &::-webkit-color-swatch {
+    @include color-swatch();
+  }
+
+  &::-moz-color-swatch {
+    @include color-swatch();
+  }
+
+  &:focus-visible {
+    outline: var(--mrd-color-primary-base) solid 2px;
+    border-radius: 1rem;
+    outline-offset: 4px;
+    transition: all var(--mrd-transition-bounce);
+  }
+}
+
+.controller-container {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: var(--mrd-font-size-3);
+  font-weight: var(--mrd-font-weight-medium);
+}
+
+mrd-range::part(slot-container) {
+  border: 1px solid var(--mrd-color-background-surface);
+  height: 2rem;
+  background: var(
+    --mrd-range-preview-background,
+    var(--mrd-color-background-surface)
+  );
+}

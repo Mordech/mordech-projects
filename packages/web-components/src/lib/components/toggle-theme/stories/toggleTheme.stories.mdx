@@ -22,24 +22,22 @@ Toggle the theme between light and dark.
 <mrd-toggle-theme></mrd-toggle-theme>
 ```
 
-## API
+## Properties
 
-### Properties
+| Property        | Attribute         | Type      | Default | Description                                                                                                     |
+| --------------- | ----------------- | --------- | ------- | --------------------------------------------------------------------------------------------------------------- |
+| `saveToStorage` | `save-to-storage` | `boolean` | `true`  | If true, the theme will be stored in local storage. If false, it will be stored in a cookie.                    |
+| `theme`         | `theme`           | `string`  | `light` | The current theme. It can be either `light` or `dark`. This is used for the `data-theme` attribute on the body. |
 
-| Property        | Attribute         | Type      | Default | Description                                                                                                  |
-| --------------- | ----------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------ |
-| `saveToStorage` | `save-to-storage` | `boolean` | `true`  | If true, the theme will be stored in local storage. If false, it will be stored in a cookie.                 |
-| `theme`         | `theme`           | `string`  | `light` | The current theme. Can be either `light` or `dark`. This is used for the `data-theme` attribute on the body. |
+## Methods
 
-### Methods
+| Method        | Type       | Description                                                                                                                                               |
+| ------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `toggleTheme` | `() => {}` | Toggles the theme between light and dark. Dispatches a `toggle-theme` event with the new theme as `detail`.                                               |
+| `initTheme`   | `() => {}` | Initializes the theme. A theme will be set as the theme if it is stored in local storage. Otherwise, dark mode will be set if the user prefers dark mode. |
+| `store`       | `() => {}` | Stores the theme in local storage.                                                                                                                        |
 
-| Method        | Type       | Description                                                                                                                                                 |
-| ------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `toggleTheme` | `() => {}` | Toggles the theme between light and dark. Dispatches a `toggle-theme` event with the new theme as `detail`.                                                 |
-| `initTheme`   | `() => {}` | Initializes the theme. If a theme is stored in local storage, it will be set as the theme. Otherwise, if the user prefers dark mode, dark mode will be set. |
-| `store`       | `() => {}` | Stores the theme in local storage.                                                                                                                          |
-
-### Events
+## Events
 
 | Event          | Description                                                                                    |
 | -------------- | ---------------------------------------------------------------------------------------------- |

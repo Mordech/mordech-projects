@@ -36,12 +36,13 @@ export class Range extends LitElement {
   }
 
   private getValue() {
-    if (this.value === undefined) return (this.value = this.min + this.max / 2);
+    if (this.value === undefined)
+      return (this.value = (this.min + this.max) / 2);
     return this.value;
   }
 
   private percentage() {
-    return (this.value / this.max) * 100;
+    return ((this.value - this.min) / (this.max - this.min)) * 100;
   }
 }
 

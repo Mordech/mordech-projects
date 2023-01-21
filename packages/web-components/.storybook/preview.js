@@ -1,4 +1,8 @@
+import { ToggleTheme } from '../src/lib/components/toggle-theme';
+
 import '@mordech/tokens/css';
+
+new ToggleTheme().initTheme();
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -26,7 +30,14 @@ export const parameters = {
         ['Getting Started'],
         'Abstracts',
         'Atoms',
-        ['Typography', 'Markdown', 'Button', 'Icon', 'Link', 'List'],
+        [
+          'mrd-range',
+          'mrd-toggle-theme',
+          'mrd-typography',
+          'mrd-markdown',
+          'mrd-button',
+          'mrd-icon',
+        ],
         'Molecules',
         'Organisms',
         'Templates',

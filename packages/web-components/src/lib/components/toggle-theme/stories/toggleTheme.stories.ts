@@ -1,8 +1,8 @@
 import { html } from 'lit-html';
 
-import '../toggle-theme';
+import '..';
 
-import { ToggleTheme } from '../toggle-theme';
+import { ToggleTheme } from '..';
 
 export default {
   title: 'Atoms/mrd-toggle-theme',

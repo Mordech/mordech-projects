@@ -9,7 +9,9 @@
   "scripts": {
     "start": "yarn dev",
     "dev": "vite",
-    "build:ui": "vite build"
+    "build:ui": "vite build",
+    "lint": "eslint --ext .ts,.js .",
+    "lint:css": "stylelint './**/*.{css,scss,ts}'"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.57.1",

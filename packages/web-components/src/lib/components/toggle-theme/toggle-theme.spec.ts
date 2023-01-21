@@ -1,28 +1,11 @@
+import { axe } from 'jest-axe';
 import { html, render } from 'lit';
 
-import { ToggleTheme } from './toggle-theme';
+import { ToggleTheme } from '.';
 
 describe('ToggleTheme', () => {
-  function getToggleThemeButton(): HTMLElement | null | undefined {
-    return document.body
-      .querySelector('mrd-toggle-theme')
-      ?.shadowRoot?.querySelector('button');
-  }
-
-  beforeEach(async () => {
-    render(html`<mrd-toggle-theme></mrd-toggle-theme>`, document.body);
-    await new Promise<void>((resolve) => {
-      const interval = setInterval(() => {
-        if (getToggleThemeButton()) {
-          clearInterval(interval);
-          resolve();
-        }
-      });
-    });
-  });
-
   it('should be defined', () => {
-    expect(ToggleTheme).toBeDefined();
+    expect(new ToggleTheme()).toBeDefined();
   });
 
   it('should render', () => {
@@ -44,12 +27,15 @@ describe('ToggleTheme', () => {
   });
 
   it('should change class based on theme', async () => {
-    const svg = getToggleThemeButton()?.querySelector('svg');
+    const toggleTheme = new ToggleTheme();
+    const toggleThemeOnBody = await document.body.appendChild(toggleTheme);
+
+    const svg = await toggleThemeOnBody?.shadowRoot?.querySelector('svg');
 
     expect(await svg?.classList.contains('light')).toBe(true);
     expect(await svg?.classList.contains('dark')).toBe(false);
 
-    await getToggleThemeButton()?.click();
+    await toggleTheme.toggleTheme();
 
     expect(await svg?.classList.contains('light')).toBe(false);
   });
@@ -69,5 +55,11 @@ describe('ToggleTheme', () => {
 
     toggleTheme.saveToStorage = false;
     expect(toggleTheme.saveToStorage).toBe(false);
+  });
+
+  it('should have no violations', async () => {
+    const container = document.createElement('div');
+    render(html`<mrd-toggle-theme></mrd-toggle-theme>`, container);
+    expect(await axe(container)).toHaveNoViolations;
   });
 });
