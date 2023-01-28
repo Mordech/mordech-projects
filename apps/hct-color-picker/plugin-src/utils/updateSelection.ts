@@ -1,4 +1,4 @@
-import { postMessage } from './utils/postMessage';
+import { postMessage } from '../utils/postMessage';
 
 export function updateSelection() {
   if (!figma.currentPage.selection.length) {
