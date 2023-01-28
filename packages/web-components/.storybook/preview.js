@@ -1,8 +1,8 @@
-import { ToggleTheme } from '../src/lib/components/toggle-theme';
+import { MrdToggleThemeElement } from '../src/lib/components/toggle-theme';
 
 import '@mordech/tokens/css';
 
-new ToggleTheme().initTheme();
+new MrdToggleThemeElement().initTheme();
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

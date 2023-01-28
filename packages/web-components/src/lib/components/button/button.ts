@@ -6,7 +6,7 @@ import { focusableBase } from '../../styles/focusable.styles';
 import { buttonBase } from './button.styles';
 
 @customElement('mrd-button')
-export class Button extends LitElement {
+export class MrdButtonElement extends LitElement {
   static override styles = [focusableBase, buttonBase];
 
   override render() {
@@ -20,6 +20,6 @@ export class Button extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mrd-button': Button;
+    'mrd-button': MrdButtonElement;
   }
 }

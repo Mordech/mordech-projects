@@ -4,7 +4,7 @@ import { html } from 'lit-html';
 
 import '..';
 
-import { Range } from '..';
+import { MrdRangeElement } from '..';
 
 export default {
   title: 'Atoms/mrd-range',
@@ -51,13 +51,21 @@ export default {
   },
 };
 
-export const Default = ({ min = 0, max = 100, value = 50 }: Range) => html`
+export const Default = ({
+  min = 0,
+  max = 100,
+  value = 50,
+}: MrdRangeElement) => html`
   <range-container>
     <mrd-range .min=${min} .max=${max} .value=${value}></mrd-range>
   </range-container>
 `;
 
-export const ColoredRange = ({ min = 0, max = 100, value = 50 }: Range) => html`
+export const ColoredRange = ({
+  min = 0,
+  max = 100,
+  value = 50,
+}: MrdRangeElement) => html`
   <range-container>
     <mrd-range
       style=${`--mrd-range-color: ${colors.highlight.pink}; --mrd-thumb-color: ${colors.secondary.base};`}

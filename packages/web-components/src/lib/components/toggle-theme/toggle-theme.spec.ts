@@ -1,11 +1,11 @@
 import { axe } from 'jest-axe';
 import { html, render } from 'lit';
 
-import { ToggleTheme } from '.';
+import { MrdToggleThemeElement } from '.';
 
 describe('ToggleTheme', () => {
   it('should be defined', () => {
-    expect(new ToggleTheme()).toBeDefined();
+    expect(new MrdToggleThemeElement()).toBeDefined();
   });
 
   it('should render', () => {
@@ -15,7 +15,7 @@ describe('ToggleTheme', () => {
   });
 
   it('should have a theme', () => {
-    const toggleTheme = new ToggleTheme();
+    const toggleTheme = new MrdToggleThemeElement();
     expect(toggleTheme.theme).toBeDefined();
     expect(toggleTheme.theme).toBe('light');
 
@@ -27,7 +27,7 @@ describe('ToggleTheme', () => {
   });
 
   it('should change class based on theme', async () => {
-    const toggleTheme = new ToggleTheme();
+    const toggleTheme = new MrdToggleThemeElement();
     const toggleThemeOnBody = await document.body.appendChild(toggleTheme);
 
     const svg = await toggleThemeOnBody?.shadowRoot?.querySelector('svg');
@@ -41,14 +41,14 @@ describe('ToggleTheme', () => {
   });
 
   it('should toggle theme', () => {
-    const toggleTheme = new ToggleTheme();
+    const toggleTheme = new MrdToggleThemeElement();
     expect(toggleTheme).toBeDefined();
     expect(toggleTheme.toggleTheme()).toBe('dark');
     expect(toggleTheme.toggleTheme()).toBe('light');
   });
 
   it('should have a saveToStorage', () => {
-    const toggleTheme = new ToggleTheme();
+    const toggleTheme = new MrdToggleThemeElement();
 
     expect(toggleTheme.saveToStorage).toBeDefined();
     expect(toggleTheme.saveToStorage).toBe(true);

@@ -6,7 +6,7 @@ import { focusableBase } from '../../styles/focusable.styles';
 import { rangeBase, slotContainer } from './range.styles';
 
 @customElement('mrd-range')
-export class Range extends LitElement {
+export class MrdRangeElement extends LitElement {
   static override styles = [focusableBase, rangeBase, slotContainer];
   @property({ type: Number }) min = 0;
   @property({ type: Number }) max = 100;
@@ -48,6 +48,6 @@ export class Range extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mrd-range': Range;
+    'mrd-range': MrdRangeElement;
   }
 }

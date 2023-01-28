@@ -59,6 +59,9 @@
     "start": {
       "dependsOn": ["^build"]
     },
+    "prepare": {
+      "dependsOn": ["^build"]
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": [

@@ -1,11 +1,11 @@
 import { axe } from 'jest-axe';
 import { html, render } from 'lit';
 
-import { Button } from '.';
+import { MrdButtonElement } from '.';
 
 describe('Button', () => {
   it('should be defined', () => {
-    expect(Button).toBeDefined();
+    expect(MrdButtonElement).toBeDefined();
   });
 
   it('should render', () => {

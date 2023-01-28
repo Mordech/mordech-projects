@@ -5,8 +5,6 @@ export const buttonBase = css`
   :host {
     --mrd-button-color: ${unsafeCSS(colors.primary.on)};
     --mrd-button-background: ${unsafeCSS(colors.primary.base)};
-    --mrd-button-hover-background: ${unsafeCSS(colors.primary.base)};
-    --mrd-button-active-background: ${unsafeCSS(colors.primary.base)};
   }
 
   .btn {
@@ -28,12 +26,18 @@ export const buttonBase = css`
   }
 
   .btn:hover {
-    background-color: var(--mrd-button-hover-background);
+    background-color: var(
+      --mrd-button-hover-background,
+      var(--mrd-button-background)
+    );
     filter: brightness(1.5);
   }
 
   .btn:active {
-    background-color: var(--mrd-button-active-background);
+    background-color: var(
+      --mrd-button-active-background,
+      var(--mrd-button-background)
+    );
     filter: brightness(0.9);
   }
 `;

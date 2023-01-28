@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToggleTheme } from '@mordech/web-components';
+import { MrdToggleThemeElement } from '@mordech/web-components';
 import { addDecorator } from '@storybook/react';
 
 import { GlobalStyle } from '../src/lib/abstracts';
@@ -40,7 +40,7 @@ export const parameters = {
   },
 };
 
-const theme = new ToggleTheme();
+const theme = new MrdToggleThemeElement();
 theme.initTheme();
 
 addDecorator((story) => (

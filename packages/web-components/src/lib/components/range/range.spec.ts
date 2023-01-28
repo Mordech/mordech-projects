@@ -1,11 +1,11 @@
 import { axe } from 'jest-axe';
 import { html, render } from 'lit';
 
-import { Range } from '.';
+import { MrdRangeElement } from '.';
 
 describe('Range', () => {
   it('should be defined', () => {
-    expect(Range).toBeDefined();
+    expect(MrdRangeElement).toBeDefined();
   });
 
   it('should render', () => {
@@ -15,7 +15,7 @@ describe('Range', () => {
   });
 
   it('should have a value', () => {
-    const range = new Range();
+    const range = new MrdRangeElement();
     expect(range.value).toBeDefined();
     expect(range.value).toBe(50);
 
@@ -24,7 +24,7 @@ describe('Range', () => {
   });
 
   it('should have a min', () => {
-    const range = new Range();
+    const range = new MrdRangeElement();
     expect(range.min).toBeDefined();
     expect(range.min).toBe(0);
 
@@ -33,7 +33,7 @@ describe('Range', () => {
   });
 
   it('should have a max', () => {
-    const range = new Range();
+    const range = new MrdRangeElement();
     expect(range.max).toBeDefined();
     expect(range.max).toBe(100);
 
@@ -42,7 +42,7 @@ describe('Range', () => {
   });
 
   it('should have a handleInput', () => {
-    const range = new Range();
+    const range = new MrdRangeElement();
     expect(range.handleInput).toBeDefined();
   });
 
