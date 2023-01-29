@@ -57,12 +57,12 @@ export type Selection = {
 
 export type ColorFromStorage = {
   type: 'color-from-storage';
-  color: HctObject;
+  color: HctObject | undefined;
 };
 
 export type StoredTheme = {
   type: 'stored-theme';
-  theme: Theme;
+  theme: Theme | undefined;
 };
 
 export type UpdateStyle = {

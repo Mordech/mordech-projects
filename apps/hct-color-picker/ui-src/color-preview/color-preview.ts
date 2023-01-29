@@ -45,8 +45,11 @@ export class ColorPreview extends LitElement {
         <div class="info-container">
           ${this.selectedColor
             ? html`
-                <span>
-                  <strong>Selected style:</strong> ${this.selectedColor.name}
+                <span
+                  title=${`Selected style: ${this.selectedColor.name}`}
+                  class="selected-style-span"
+                >
+                  <strong> Selected style: </strong> ${this.selectedColor.name}
                 </span>
               `
             : html` <strong> Custom color </strong> `}

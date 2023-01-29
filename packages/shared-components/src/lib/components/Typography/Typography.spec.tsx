@@ -139,24 +139,32 @@ describe('Typography', () => {
       </main>
     );
     expect(await axe(baseElement)).toHaveNoViolations();
-    expect(await getByText(/.*preset sizes*./)).toHaveStyle(
-      'line-height: 1.15;'
+    expect(await getByText(/.*preset sizes*./)).toHaveStyleRule(
+      'line-height',
+      '1.15'
     );
-    expect(await getByText('different')).toHaveStyle('line-height: inherit;');
-    expect(await getByText(/.*Code is a variant*./)).toHaveStyle(
-      'line-height: 1.5;'
+    expect(await getByText('different')).toHaveStyleRule(
+      'line-height',
+      'inherit'
     );
-    expect(await getByText(/.*And subheadings*./)).toHaveStyle(
-      'line-height: 1.25;'
+    expect(await getByText(/.*Code is a variant*./)).toHaveStyleRule(
+      'line-height',
+      '1.5'
     );
-    expect(await getByText(/.*or inline code.*/)).toHaveStyle(
-      'line-height: inherit;'
+    expect(await getByText(/.*And subheadings*./)).toHaveStyleRule(
+      'line-height',
+      '1.25'
+    );
+    expect(await getByText(/.*or inline code.*/)).toHaveStyleRule(
+      'line-height',
+      'inherit'
     );
     expect(
       await getByText(/.*and I can be a paragraph too, and you*./)
     ).toHaveStyle('line-height: 1.5;');
-    expect(await getByText(/.*emphasize*./)).toHaveStyle(
-      'line-height: inherit;'
+    expect(await getByText(/.*emphasize*./)).toHaveStyleRule(
+      'line-height',
+      'inherit'
     );
   });
 });

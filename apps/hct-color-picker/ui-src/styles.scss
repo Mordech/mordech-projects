@@ -29,7 +29,7 @@ my-app {
   flex-direction: column;
   align-items: stretch;
   gap: 1rem;
-  padding-block: 1.5rem 2rem;
+  padding-block-start: 1.5rem;
   background-color: var(--mrd-color-background-base);
   color: var(--mrd-color-background-on);
   margin: auto;
@@ -41,6 +41,7 @@ my-app {
 }
 
 main {
+  padding-block: 0.5rem 2rem;
   padding-inline: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -48,13 +49,6 @@ main {
   align-items: stretch;
 
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
-  scroll-padding-top: 1rem;
-
-  & > * {
-    scroll-snap-align: start;
-  }
 }
 
 header {
@@ -82,10 +76,6 @@ mrd-range::part(slot-container) {
   grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
   gap: 0.75rem;
   align-items: center;
-
-  & > * {
-    scroll-snap-align: start;
-  }
 }
 
 hr {

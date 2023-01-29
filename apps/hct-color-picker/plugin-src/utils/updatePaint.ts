@@ -8,7 +8,7 @@ import { UiPaintStyle } from '../../types';
 
 import { applyPaint } from './applyPaint';
 
-export function updatePaint(
+export async function updatePaint(
   paintStyle: UiPaintStyle | undefined,
   argb: number
 ) {

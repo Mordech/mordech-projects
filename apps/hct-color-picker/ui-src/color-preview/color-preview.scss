@@ -17,7 +17,8 @@ mrd-button.add-style-button::part(button) {
   min-width: unset;
   min-height: unset;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     padding-block: 0.5rem;
     padding-inline: 0.75rem 1rem;
     &::after {
@@ -60,13 +61,19 @@ save-icon {
 
 .info-container {
   display: inline-flex;
-  gap: 0.5rem;
+  gap: 2rem;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .color-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.selected-style-span {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }

@@ -1,4 +1,4 @@
-import { UiPaintStyle } from '../types';
+import { UiPaintStyle } from '../../types';
 
 export function getPaints(paintStyles: PaintStyle[]) {
   paintStyles = paintStyles.filter((paintStyle) => {

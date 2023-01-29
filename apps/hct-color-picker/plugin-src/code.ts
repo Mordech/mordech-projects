@@ -1,34 +1,35 @@
-import {
-  blueFromArgb,
-  greenFromArgb,
-  Hct,
-  redFromArgb,
-} from '@material/material-color-utilities';
+import { Hct } from '@material/material-color-utilities';
 import { Theme } from '@mordech/tokens';
 
 import { PluginMessage } from '../types';
 
 import {
-  applyPaint,
+  createPaintStyle,
+  debounce,
   getPaints,
   postMessage,
   updatePaint,
   updateSelection,
 } from './utils';
 
-figma.showUI(__html__, { width: 450, height: 540 });
+figma.showUI(__html__, { width: 450, height: 548 });
 figma.currentPage.selection = [];
 
 const paintStyles = figma.getLocalPaintStyles();
+
+const uiSizes: Record<string, [number, number]> = {
+  small: [450, 548],
+  medium: [450, 648],
+};
 
 postMessage({
   type: 'paints',
   paints: getPaints(paintStyles),
 });
 
-if (paintStyles.length) {
-  figma.ui.resize(450, 670);
-}
+paintStyles.length
+  ? figma.ui.resize(...uiSizes.medium)
+  : figma.ui.resize(...uiSizes.small);
 
 figma.on('documentchange', (event) => {
   if (
@@ -41,11 +42,10 @@ figma.on('documentchange', (event) => {
   ) {
     const paintStyles = figma.getLocalPaintStyles();
     postMessage({ type: 'paints', paints: getPaints(paintStyles) });
-    if (paintStyles.length) {
-      figma.ui.resize(450, 670);
-    } else {
-      figma.ui.resize(450, 540);
-    }
+
+    paintStyles.length
+      ? figma.ui.resize(...uiSizes.medium)
+      : figma.ui.resize(...uiSizes.small);
   }
 
   if (event.documentChanges.some((change) => change.type === 'STYLE_CREATE')) {
@@ -62,7 +62,7 @@ figma.ui.onmessage = (msg: PluginMessage) => {
       break;
 
     case 'update-style':
-      updatePaint(msg.data.selectedColor, msg.data.argb);
+      debounce(updatePaint(msg.data.selectedColor, msg.data.argb), 100);
       break;
 
     case 'save-theme':
@@ -70,7 +70,7 @@ figma.ui.onmessage = (msg: PluginMessage) => {
       break;
 
     case 'get-color':
-      figma.clientStorage.getAsync('color').then((color: Hct) => {
+      figma.clientStorage.getAsync('color').then((color: Hct | undefined) => {
         postMessage({ type: 'color-from-storage', color });
       });
 
@@ -95,28 +95,3 @@ figma.ui.onmessage = (msg: PluginMessage) => {
       break;
   }
 };
-
-async function createPaintStyle(argb: number) {
-  const color: RGB = {
-    r: redFromArgb(argb) / 255,
-    g: greenFromArgb(argb) / 255,
-    b: blueFromArgb(argb) / 255,
-  };
-
-  const hct = Hct.fromInt(argb);
-
-  const name = `hct(${hct.hue.toFixed()}, ${hct.chroma.toFixed()}, ${hct.tone.toFixed()})`;
-
-  const paintStyle = figma.createPaintStyle();
-  paintStyle.name = name;
-  paintStyle.paints = [
-    {
-      type: 'SOLID',
-      color,
-    },
-  ];
-
-  applyPaint(paintStyle);
-
-  return paintStyle;
-}

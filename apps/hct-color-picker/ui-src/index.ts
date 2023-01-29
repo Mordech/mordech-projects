@@ -91,13 +91,14 @@ export class MyApp extends LitElement {
       ? html`
           <div class="controller-container">
             Color styles
-            <div class="paints-container">
+            <div class="paints-container" role="listbox">
               ${repeat(
                 this.paints,
                 ({ id, name, color }) =>
                   html`
                     <mrd-paint-swatch
-                      active="true"
+                      role="option"
+                      aria-selected=${id === this.selectedColor?.id}
                       @click=${() =>
                         id === this.selectedColor?.id
                           ? (this.selectedColor = undefined)
@@ -306,6 +307,7 @@ export class MyApp extends LitElement {
         case 'color-from-storage':
           {
             const { color } = msg;
+            if (!color) return;
             this.hue = color.hue;
             this.chroma = color.chroma;
             this.tone = color.tone;
@@ -316,6 +318,7 @@ export class MyApp extends LitElement {
           const { theme } = msg;
           const toggleTheme = document.querySelector('mrd-toggle-theme');
           if (!toggleTheme) return;
+          if (!theme) return;
           toggleTheme.theme = theme;
           break;
         }
