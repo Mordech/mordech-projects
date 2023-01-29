@@ -6,17 +6,19 @@
 </picture>
 
 ### Mordech Projects
+
 [![Build Status](https://github.com/Mordech/mordech-projects/actions/workflows/main.yml/badge.svg)](https://github.com/Mordech/mordech-projects/actions/workflows/main.yml)
 [![Published on npm](https://img.shields.io/npm/v/@mordech/tokens.svg?logo=npm&label=Tokens&logoColor=FFF)](https://www.npmjs.com/package/@mordech/tokens)
 [![React Storybook](https://img.shields.io/badge/React-Storybook-FF4785?logo=React&style=flat&logoColor=FFF)](https://mordech-shared-components.netlify.app/)
 ![Lit Storybook](https://img.shields.io/badge/Lit-Storybook-FF4785?logo=Lit&style=flat&logoColor=FFF)
+
 </div>
 
 # Hey! 👋 it seems you found yourself in my personal projects repo
 
 This repository is a hub for my projects and things I do in my free time. You can use it at your own risk 😅
 
-This project uses `yarn workspaces`, `Lerna`, and `NX` + `NX Cloud`
+This project uses `pnpm workspaces`, `Lerna`, and `NX` + `NX Cloud`
 
 ## What can I find here?
 
@@ -49,19 +51,19 @@ This is a web extension for Gmail that displays a cat image instead of the inbox
 Run
 
 ```bash
-yarn && yarn husky install
+pnpm && pnpm husky install
 ```
 
 Or running any command from the root folder using `NX`
 
 ```bash
-yarn nx run @mordech/[project][:target][:configuration]
+pnpm nx run @mordech/[project][:target][:configuration]
 ```
 
 e.g.
 
 ```bash
-yarn nx run @mordech/portfolio:start
+pnpm nx run @mordech/portfolio:start
 ```
 
 or use other NX commands (e.g., `run-many`, `affected`). For more, read [NX documentation](https://nx.dev/reference/commands#nx-cli-commands).

@@ -20,8 +20,8 @@
   },
   "scripts": {
     "bundle": "ts-node --esm ./scripts/bundle.ts",
-    "build": "yarn bundle && yarn ts-node --esm ./scripts/build.ts",
-    "start": "yarn bundle --watch",
+    "build": "pnpm bundle && pnpm ts-node --esm ./scripts/build.ts",
+    "start": "pnpm bundle --watch",
     "lint": "eslint src",
     "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'",
     "lint:extension": "web-ext lint -s dist/"

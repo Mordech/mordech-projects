@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "yarn storybook",
+    "start": "pnpm storybook",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 4200",
     "test": "vitest --coverage --run",
@@ -51,7 +51,6 @@
     "@babel/core": "^7.0.0-0",
     "@babel/plugin-syntax-flow": "^7.18.6",
     "@babel/plugin-transform-react-jsx": "^7.19.0",
-    "@nrwl/eslint-plugin-nx": "15.4.0",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",

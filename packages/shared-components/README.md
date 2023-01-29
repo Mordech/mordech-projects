@@ -4,37 +4,37 @@
 
 The component library I'm going to use in my projects.
 
-If you have any questions please contact me 😇
+If you have any questions, please contact me 😇
 
 workspace name `@mordech/components`
 
 ## Run
 
 ```bash
-yarn storybook
+pnpm storybook
 ```
 
 ## Build
 
 ```bash
-yarn nx build
+pnpm nx build
 ```
 
 ## Visual regression testing
 
 I use [Loki](https://loki.js.org/) for visual regression tests.
-Before creating a pull request please run visual tests on the project.
+Before creating a pull request, please run visual tests on the project.
 
 ```bash
-yarn nx visual
+pnpm nx visual
 ```
 
 and follow the steps required to pass.
 
-If changes have been made to existing components please approve them.
+If changes have been made to existing components, please approve them.
 
-After approving the changes run:
+After approving the changes, run the following:
 
 ```bash
-yarn loki approve
+pnpm loki approve
 ```

@@ -2,7 +2,7 @@
   "name": "@mordech/tokens",
   "author": "Elad Mordechai Mizrahi",
   "version": "0.24.1",
-  "prepare": "yarn run build",
+  "prepare": "pnpm run build",
   "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -52,13 +52,13 @@
     "build:css": "ts-node --esm scripts/bundleCss.ts",
     "build:ts": "ts-node --esm scripts/build.ts",
     "build:types": "tsc",
-    "build": "yarn run-s build:*",
-    "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
+    "build": "pnpm run-s build:*",
+    "watch:lib": "pnpm build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
     "test": "vitest --coverage --run",
     "test:watch": "vitest",
     "lint": "eslint src",
     "lint:css": "stylelint 'src/**/*.{ts,css}'",
-    "prepare": "yarn build"
+    "prepare": "pnpm build"
   },
   "devDependencies": {
     "add": "^2.0.6",

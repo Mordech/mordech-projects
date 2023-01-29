@@ -1,13 +1,10 @@
 {
   "name": "mordech-projects",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
   "scripts": {
-    "publish-packages": "yarn lerna publish --conventional-commits",
-    "postinstall": "yarn nx run-many --target=prepare --all --parallel --maxParallel=10"
+    "preinstall": "npx only-allow pnpm",
+    "publish-packages": "pnpm lerna publish --conventional-commits",
+    "postinstall": "pnpm nx run-many --target=prepare --all --parallel --maxParallel=10"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",

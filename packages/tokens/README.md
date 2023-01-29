@@ -17,7 +17,7 @@ I'm using [NX](https://nx.dev/) and [NX Cloud](https://nx.app/).
 ### Install
 
 ```bash
-yarn add @mordech/tokens
+pnpm add @mordech/tokens
 ```
 
 #### Javascript
@@ -51,21 +51,21 @@ const Component = () => <div style={{ backgroundColor: colors.primary }} />;
 ## How to develop
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ```bash
-yarn start
+pnpm start
 ```
 
 ## How to build
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ```bash
-yarn build
+pnpm build
 ```
 
 ## How to contribute
