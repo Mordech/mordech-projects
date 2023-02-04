@@ -11,6 +11,7 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     'gatsby-plugin-pnpm',
+    'gatsby-plugin-netlify',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-catch-links',
