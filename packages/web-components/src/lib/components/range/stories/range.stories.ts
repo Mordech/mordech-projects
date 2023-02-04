@@ -2,7 +2,7 @@ import { colors } from '@mordech/tokens';
 import { html as raw } from '@mordech/tokens/utils';
 import { html } from 'lit-html';
 
-import '..';
+import '@mordech/web-components';
 
 import { MrdRangeElement } from '..';
 

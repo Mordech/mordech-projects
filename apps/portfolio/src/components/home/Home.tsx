@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ArticleSpotlight, Main } from '@mordech/components';
+import { ArticleSpotlight, Main } from '@mordech/react-components';
 import styled from 'styled-components';
 
 import { articleData } from '../../data';

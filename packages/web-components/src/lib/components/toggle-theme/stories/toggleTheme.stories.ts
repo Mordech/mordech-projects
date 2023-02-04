@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 
-import '..';
+import '@mordech/web-components';
 
 import { MrdToggleThemeElement } from '..';
 

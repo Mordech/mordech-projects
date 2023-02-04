@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { GlobalStyle } from '@mordech/components';
+import { GlobalStyle } from '@mordech/react-components';
 
 import { Footer } from '../components/footer';
 import { Navigation } from '../components/navigation';

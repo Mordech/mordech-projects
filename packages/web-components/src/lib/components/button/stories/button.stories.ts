@@ -1,6 +1,6 @@
 import { html, TemplateResult } from 'lit-html';
 
-import '..';
+import '@mordech/web-components';
 
 export default {
   title: 'Atoms/mrd-button',

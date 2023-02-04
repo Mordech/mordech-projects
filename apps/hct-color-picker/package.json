@@ -20,15 +20,7 @@
     "@figma/plugin-typings": "^1.58.0",
     "@mordech/tokens": "*",
     "@mordech/web-components": "*",
-    "concurrently": "^7.6.0",
-    "esbuild": "^0.16.17",
-    "prettier": "^2.8.2",
-    "typescript": "4.9.4",
     "vite": "^4.0.4",
     "vite-plugin-singlefile": "^0.13.2"
-  },
-  "dependencies": {
-    "@material/material-color-utilities": "^0.2.0",
-    "lit": "^2.6.1"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Column, Headline, Markdown } from '@mordech/components';
+import { Column, Headline, Markdown } from '@mordech/react-components';
 
 import { ScrollDownButton } from '../ScrollDownButton';
 

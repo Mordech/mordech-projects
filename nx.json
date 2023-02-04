@@ -1,5 +1,4 @@
 {
-  "extends": "nx/presets/npm.json",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
@@ -28,6 +27,7 @@
       }
     }
   },
+  "extends": "nx/presets/npm.json",
   "generators": {
     "@nrwl/react:component": {
       "style": "styled-components",
@@ -48,13 +48,15 @@
       },
       "library": {
         "style": "styled-components",
-        "linter": "eslint"
+        "linter": "eslint",
+        "unitTestRunner": "vitest"
       }
     }
   },
   "targetDefaults": {
     "test": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     },
     "start": {
       "dependsOn": ["^build"]
@@ -76,7 +78,7 @@
       "outputs": ["{projectRoot}/public", "{projectRoot}/storybook-static"]
     },
     "visual": {
-      "dependsOn": ["^build", "^build-storybook"]
+      "dependsOn": ["^build", "build-storybook"]
     },
     "visual:ci": {
       "dependsOn": ["^build"]

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticleSpotlightProps } from '@mordech/components';
+import { ArticleSpotlightProps } from '@mordech/react-components';
 import { StaticImage } from 'gatsby-plugin-image';
 
 export const articleData: ArticleSpotlightProps[] = [

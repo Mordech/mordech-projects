@@ -1,4 +1,4 @@
-import { Column, Section } from '@mordech/components';
+import { Column, Section } from '@mordech/react-components';
 import { breakpoints, pagePadding } from '@mordech/tokens';
 import styled from 'styled-components';
 
