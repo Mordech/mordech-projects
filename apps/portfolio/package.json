@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.4.7",
-    "@mordech/tokens": "^0.24.1",
     "@mordech/react-components": "^0.24.1",
+    "@mordech/tokens": "^0.24.1",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.15.0",
     "gatsby": "^4.22.1",
@@ -56,6 +56,7 @@
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "gatsby-plugin-catch-links": "^4.24.0",
     "gatsby-plugin-layout": "^3.24.0",
+    "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-react-svg": "^3.1.0",
     "prettier": "^2.7.1",
     "stylelint": "^14.14.1",

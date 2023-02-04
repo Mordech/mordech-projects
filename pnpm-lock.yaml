@@ -73,7 +73,6 @@ importers:
       eslint-plugin-react-hooks: ^4.6.0
       eslint-plugin-simple-import-sort: ^8.0.0
       eslint-plugin-storybook: ^0.6.4
-      gatsby-plugin-netlify: ^5.1.0
       html-webpack-plugin: ^5.5.0
       husky: ^8.0.0
       jest-axe: ^7.0.0
@@ -187,7 +186,6 @@ importers:
       eslint-plugin-react-hooks: 4.6.0_eslint@8.15.0
       eslint-plugin-simple-import-sort: 8.0.0_eslint@8.15.0
       eslint-plugin-storybook: 0.6.10_7xejdone6kwdndpjp5nwx3ofcu
-      gatsby-plugin-netlify: 5.1.0_23mvgvdlyrxuiywba7tyio7d2q
       html-webpack-plugin: 5.5.0_webpack@5.75.0
       husky: 8.0.3
       jest-axe: 7.0.0
@@ -269,6 +267,7 @@ importers:
       gatsby-plugin-image: ^2.22.0
       gatsby-plugin-layout: ^3.24.0
       gatsby-plugin-manifest: ^4.22.0
+      gatsby-plugin-netlify: ^5.1.0
       gatsby-plugin-pnpm: ^1.2.10
       gatsby-plugin-react-svg: ^3.1.0
       gatsby-plugin-sharp: ^4.22.0
@@ -323,6 +322,7 @@ importers:
       eslint-plugin-simple-import-sort: 8.0.0_eslint@8.15.0
       gatsby-plugin-catch-links: 4.25.0_gatsby@4.25.4
       gatsby-plugin-layout: 3.25.0_gatsby@4.25.4
+      gatsby-plugin-netlify: 5.1.0_23mvgvdlyrxuiywba7tyio7d2q
       gatsby-plugin-react-svg: 3.3.0_gatsby@4.25.4
       prettier: 2.8.3
       stylelint: 14.16.1
@@ -3172,6 +3172,7 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-arm64/0.16.17:
@@ -3180,6 +3181,7 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-x64/0.16.17:
@@ -3188,6 +3190,7 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-arm64/0.16.17:
@@ -3196,6 +3199,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-x64/0.16.17:
@@ -3204,6 +3208,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-arm64/0.16.17:
@@ -3212,6 +3217,7 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-x64/0.16.17:
@@ -3220,6 +3226,7 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm/0.16.17:
@@ -3228,6 +3235,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm64/0.16.17:
@@ -3236,6 +3244,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ia32/0.16.17:
@@ -3244,6 +3253,7 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-loong64/0.16.17:
@@ -3252,6 +3262,7 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-mips64el/0.16.17:
@@ -3260,6 +3271,7 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ppc64/0.16.17:
@@ -3268,6 +3280,7 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-riscv64/0.16.17:
@@ -3276,6 +3289,7 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-s390x/0.16.17:
@@ -3284,6 +3298,7 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-x64/0.16.17:
@@ -3292,6 +3307,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/netbsd-x64/0.16.17:
@@ -3300,6 +3316,7 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/openbsd-x64/0.16.17:
@@ -3308,6 +3325,7 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/sunos-x64/0.16.17:
@@ -3316,6 +3334,7 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-arm64/0.16.17:
@@ -3324,6 +3343,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-ia32/0.16.17:
@@ -3332,6 +3352,7 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-x64/0.16.17:
@@ -3340,6 +3361,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@eslint/eslintrc/0.4.3:
@@ -6310,7 +6332,7 @@ packages:
       react-refresh: 0.14.0
       schema-utils: 3.1.1
       source-map: 0.7.4
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /@pnpm/network.ca-file/1.0.2:
     resolution: {integrity: sha512-YcPQ8a0jwYU9bTdJDpXjMi7Brhkr1mXsXrUJvjqM2mQDgkRiz8jFaQGOdaLxgjtUfQgZhKy/O3cG/YwmgKaxLA==}
@@ -8764,6 +8786,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core-darwin-x64/1.3.30:
@@ -8772,6 +8795,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core-linux-arm-gnueabihf/1.3.30:
@@ -8780,6 +8804,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core-linux-arm64-gnu/1.3.30:
@@ -8788,6 +8813,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core-linux-arm64-musl/1.3.30:
@@ -8796,6 +8822,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core-linux-x64-gnu/1.3.30:
@@ -8804,6 +8831,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core-linux-x64-musl/1.3.30:
@@ -8812,6 +8840,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core-win32-arm64-msvc/1.3.30:
@@ -8820,6 +8849,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core-win32-ia32-msvc/1.3.30:
@@ -8828,6 +8858,7 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core-win32-x64-msvc/1.3.30:
@@ -8836,6 +8867,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@swc/core/1.3.30:
@@ -8853,6 +8885,7 @@ packages:
       '@swc/core-win32-arm64-msvc': 1.3.30
       '@swc/core-win32-ia32-msvc': 1.3.30
       '@swc/core-win32-x64-msvc': 1.3.30
+    dev: true
 
   /@swc/helpers/0.4.14:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
@@ -10881,7 +10914,7 @@ packages:
       loader-utils: 2.0.4
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /babel-loader/8.3.0_nwtvwtk5tmh22l2urnqucz7kqu:
     resolution: {integrity: sha512-H8SvsMF+m9t15HNLMipppzkC+Y2Yq+v3SonZyU70RBL/h1gxPkH08Ot8pEE9Z4Kd+czyWJClmFS8qzIP9OZ04Q==}
@@ -11131,7 +11164,7 @@ packages:
       '@babel/core': 7.20.12
       '@babel/runtime': 7.20.13
       '@babel/types': 7.20.7
-      gatsby: 4.25.4_awk6orvglgvsb6243dw2sf73hu
+      gatsby: 4.25.4_qyabkb5h6b7mifciv426iu4uca
       gatsby-core-utils: 3.25.0
 
   /babel-plugin-styled-components/1.10.7_styled-components@5.3.6:
@@ -13138,7 +13171,7 @@ packages:
       postcss-value-parser: 4.2.0
       schema-utils: 3.1.1
       semver: 7.3.8
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /css-loader/6.7.3_webpack@5.75.0:
     resolution: {integrity: sha512-qhOH1KlBMnZP8FzRO6YCH9UHXQhVMcEGLyNdb7Hv2cpcmJbW0YrddO+tG1ab5nT41KpHIYGsbeHqxB9xPu1pKQ==}
@@ -13177,7 +13210,7 @@ packages:
       schema-utils: 3.1.1
       serialize-javascript: 5.0.1
       source-map: 0.6.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /css-minimizer-webpack-plugin/3.4.1_htvmhiqynazf46fjrszipnqp7a:
     resolution: {integrity: sha512-1u6D71zeIfgngN2XNRJefc/hY7Ybsxd74Jm4qngIXyUEk7fss3VUzuHxLAq/R8NAba4QU9OUSaMZlbpRc7bM4Q==}
@@ -14462,6 +14495,7 @@ packages:
       '@esbuild/win32-arm64': 0.16.17
       '@esbuild/win32-ia32': 0.16.17
       '@esbuild/win32-x64': 0.16.17
+    dev: true
 
   /escalade/3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
@@ -14943,7 +14977,7 @@ packages:
       micromatch: 4.0.5
       normalize-path: 3.0.0
       schema-utils: 3.1.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /eslint/7.32.0:
     resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
@@ -15688,7 +15722,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /file-system-cache/1.1.0:
     resolution: {integrity: sha512-IzF5MBq+5CR0jXx5RxPe4BICl/oEhBSXKaL9fLhAXrIfIUS77Hr4vzrYyqYMHN6uTt+BOqi3fDCTjjEBCjERKw==}
@@ -16016,7 +16050,7 @@ packages:
       semver: 7.3.8
       tapable: 1.1.3
       typescript: 4.9.4
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /fork-ts-checker-webpack-plugin/6.5.2_v6d6egaokf7rerrkhx2jxhyb2y:
     resolution: {integrity: sha512-m5cUmF30xkZ7h4tWUgTAcEaKmUW7tfyUyTqNNOz7OxWJ0v1VWKTcOvH8FWHUwSjlW/356Ijc9vi3XfcPstpQKA==}
@@ -16526,7 +16560,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.13
       fs-extra: 10.1.0
-      gatsby: 4.25.4_awk6orvglgvsb6243dw2sf73hu
+      gatsby: 4.25.4_qyabkb5h6b7mifciv426iu4uca
       gatsby-core-utils: 4.5.0
       kebab-hash: 0.1.2
       lodash.mergewith: 4.6.2
@@ -16547,7 +16581,7 @@ packages:
       chokidar: 3.5.3
       fs-exists-cached: 1.0.0
       fs-extra: 10.1.0
-      gatsby: 4.25.4_awk6orvglgvsb6243dw2sf73hu
+      gatsby: 4.25.4_qyabkb5h6b7mifciv426iu4uca
       gatsby-core-utils: 3.25.0
       gatsby-page-utils: 2.25.0
       gatsby-plugin-utils: 3.19.0_ikkr2w7n6b7ns22fowdw6fv24e
@@ -16633,7 +16667,7 @@ packages:
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.12
       '@babel/runtime': 7.20.13
       babel-plugin-remove-graphql-queries: 4.25.0_7b2zndudfh72txnvkexbyma2ty
-      gatsby: 4.25.4_awk6orvglgvsb6243dw2sf73hu
+      gatsby: 4.25.4_qyabkb5h6b7mifciv426iu4uca
     transitivePeerDependencies:
       - supports-color
 
@@ -16647,7 +16681,7 @@ packages:
       '@babel/runtime': 7.20.13
       fastq: 1.15.0
       fs-extra: 10.1.0
-      gatsby: 4.25.4_awk6orvglgvsb6243dw2sf73hu
+      gatsby: 4.25.4_qyabkb5h6b7mifciv426iu4uca
       gatsby-core-utils: 3.25.0
       gatsby-sharp: 0.19.0
       graphql: 15.8.0
@@ -16758,209 +16792,6 @@ packages:
       '@babel/runtime': 7.20.13
     transitivePeerDependencies:
       - supports-color
-
-  /gatsby/4.25.4_awk6orvglgvsb6243dw2sf73hu:
-    resolution: {integrity: sha512-4IGQ615FCJi/o9qTvyZeZ4Pr04y+zpmxr531/r8rcJK1fcPC3BFR8QGxCrPNxI4jST/Imu4oRYYhnja/VWBCNg==}
-    engines: {node: '>=14.15.0'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      react: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
-      react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
-    dependencies:
-      '@babel/code-frame': 7.18.6
-      '@babel/core': 7.20.12
-      '@babel/eslint-parser': 7.19.1_go3kp2l7mdrkdyt3xfyeu7ppfa
-      '@babel/helper-plugin-utils': 7.20.2
-      '@babel/parser': 7.20.13
-      '@babel/runtime': 7.20.13
-      '@babel/traverse': 7.20.13
-      '@babel/types': 7.20.7
-      '@builder.io/partytown': 0.5.4
-      '@gatsbyjs/reach-router': 1.3.9_biqbaboplfbrettd7655fr4n2y
-      '@gatsbyjs/webpack-hot-middleware': 2.25.3
-      '@graphql-codegen/add': 3.2.3_graphql@15.8.0
-      '@graphql-codegen/core': 2.6.8_graphql@15.8.0
-      '@graphql-codegen/plugin-helpers': 2.7.2_graphql@15.8.0
-      '@graphql-codegen/typescript': 2.8.7_graphql@15.8.0
-      '@graphql-codegen/typescript-operations': 2.5.12_graphql@15.8.0
-      '@graphql-tools/code-file-loader': 7.3.16_3jmxpucumjsnc7vqeqatsvlmke
-      '@graphql-tools/load': 7.8.10_graphql@15.8.0
-      '@jridgewell/trace-mapping': 0.3.17
-      '@nodelib/fs.walk': 1.2.8
-      '@parcel/cache': 2.6.2_@parcel+core@2.6.2
-      '@parcel/core': 2.6.2
-      '@pmmmwh/react-refresh-webpack-plugin': 0.5.10_xsftmjzvfioxqs4ify53ibh7ay
-      '@types/http-proxy': 1.17.9
-      '@typescript-eslint/eslint-plugin': 4.33.0_thyv6urrmcfyirt6hwk42bhgva
-      '@typescript-eslint/parser': 4.33.0_yfqovispp7u7jaktymfaqwl2py
-      '@vercel/webpack-asset-relocator-loader': 1.7.3
-      acorn-loose: 8.3.0
-      acorn-walk: 8.2.0
-      address: 1.1.2
-      anser: 2.1.1
-      autoprefixer: 10.4.13_postcss@8.4.21
-      axios: 0.21.4_debug@3.2.7
-      babel-loader: 8.3.0_la66t7xldg4uecmyawueag5wkm
-      babel-plugin-add-module-exports: 1.0.4
-      babel-plugin-dynamic-import-node: 2.3.3
-      babel-plugin-lodash: 3.3.4
-      babel-plugin-remove-graphql-queries: 4.25.0_7b2zndudfh72txnvkexbyma2ty
-      babel-preset-gatsby: 2.25.0_cmslh6tfftwpzuhidsdk3oqsoi
-      better-opn: 2.1.1
-      bluebird: 3.7.2
-      browserslist: 4.21.4
-      cache-manager: 2.11.1
-      chalk: 4.1.2
-      chokidar: 3.5.3
-      common-tags: 1.8.2
-      compression: 1.7.4
-      cookie: 0.4.2
-      core-js: 3.27.2
-      cors: 2.8.5
-      css-loader: 5.2.7_webpack@5.75.0
-      css-minimizer-webpack-plugin: 2.0.0_webpack@5.75.0
-      css.escape: 1.5.1
-      date-fns: 2.29.3
-      debug: 3.2.7
-      deepmerge: 4.2.2
-      detect-port: 1.5.1
-      devcert: 1.2.2
-      dotenv: 8.6.0
-      enhanced-resolve: 5.12.0
-      error-stack-parser: 2.1.4
-      eslint: 7.32.0
-      eslint-config-react-app: 6.0.0_2vgddgg7hi5hh6toh2d2jp32ke
-      eslint-plugin-flowtype: 5.10.0_eslint@8.15.0
-      eslint-plugin-import: 2.26.0_ffi3uiz42rv3jyhs6cr7p7qqry
-      eslint-plugin-jsx-a11y: 6.6.1_eslint@7.32.0
-      eslint-plugin-react: 7.32.2_eslint@7.32.0
-      eslint-plugin-react-hooks: 4.6.0_eslint@7.32.0
-      eslint-webpack-plugin: 2.7.0_u2ubl3shblmc7225ne6wflnyua
-      event-source-polyfill: 1.0.25
-      execa: 5.1.1
-      express: 4.18.2
-      express-graphql: 0.12.0_graphql@15.8.0
-      express-http-proxy: 1.6.3
-      fastest-levenshtein: 1.0.16
-      fastq: 1.15.0
-      file-loader: 6.2.0_webpack@5.75.0
-      find-cache-dir: 3.3.2
-      fs-exists-cached: 1.0.0
-      fs-extra: 10.1.0
-      gatsby-cli: 4.25.0
-      gatsby-core-utils: 3.25.0
-      gatsby-graphiql-explorer: 2.25.0
-      gatsby-legacy-polyfills: 2.25.0
-      gatsby-link: 4.25.0_jrmehtgkntpgvrzvp7eiismjfa
-      gatsby-page-utils: 2.25.0
-      gatsby-parcel-config: 0.16.0_@parcel+core@2.6.2
-      gatsby-plugin-page-creator: 4.25.0_ikkr2w7n6b7ns22fowdw6fv24e
-      gatsby-plugin-typescript: 4.25.0_gatsby@4.25.4
-      gatsby-plugin-utils: 3.19.0_ikkr2w7n6b7ns22fowdw6fv24e
-      gatsby-react-router-scroll: 5.25.0_jrmehtgkntpgvrzvp7eiismjfa
-      gatsby-script: 1.10.0_jrmehtgkntpgvrzvp7eiismjfa
-      gatsby-telemetry: 3.25.0
-      gatsby-worker: 1.25.0
-      glob: 7.2.3
-      globby: 11.1.0
-      got: 11.8.6
-      graphql: 15.8.0
-      graphql-compose: 9.0.10_graphql@15.8.0
-      graphql-playground-middleware-express: 1.7.23_express@4.18.2
-      graphql-tag: 2.12.6_graphql@15.8.0
-      hasha: 5.2.2
-      invariant: 2.2.4
-      is-relative: 1.0.0
-      is-relative-url: 3.0.0
-      joi: 17.7.0
-      json-loader: 0.5.7
-      latest-version: 5.1.0
-      lmdb: 2.5.3
-      lodash: 4.17.21
-      md5-file: 5.0.0
-      meant: 1.0.3
-      memoizee: 0.4.15
-      micromatch: 4.0.5
-      mime: 2.6.0
-      mini-css-extract-plugin: 1.6.2_webpack@5.75.0
-      mitt: 1.2.0
-      moment: 2.29.4
-      multer: 1.4.5-lts.1
-      node-fetch: 2.6.8
-      node-html-parser: 5.4.2
-      normalize-path: 3.0.0
-      null-loader: 4.0.1_webpack@5.75.0
-      opentracing: 0.14.7
-      p-defer: 3.0.0
-      parseurl: 1.3.3
-      physical-cpu-count: 2.0.0
-      platform: 1.3.6
-      postcss: 8.4.21
-      postcss-flexbugs-fixes: 5.0.2_postcss@8.4.21
-      postcss-loader: 5.3.0_6jdsrmfenkuhhw3gx4zvjlznce
-      prompts: 2.4.2
-      prop-types: 15.8.1
-      query-string: 6.14.1
-      raw-loader: 4.0.2_webpack@5.75.0
-      react: 18.2.0
-      react-dev-utils: 12.0.1_a6ujobsf6eh7xju4ksk76iudrq
-      react-dom: 18.2.0_react@18.2.0
-      react-refresh: 0.14.0
-      react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825_wxnjqhvau3kr4edcdlkxrbquiq
-      redux: 4.1.2
-      redux-thunk: 2.4.2_redux@4.1.2
-      resolve-from: 5.0.0
-      semver: 7.3.8
-      shallow-compare: 1.2.2
-      signal-exit: 3.0.7
-      slugify: 1.6.5
-      socket.io: 4.5.4
-      socket.io-client: 4.5.4
-      st: 2.0.0
-      stack-trace: 0.0.10
-      string-similarity: 1.2.2
-      strip-ansi: 6.0.1
-      style-loader: 2.0.0_webpack@5.75.0
-      terser-webpack-plugin: 5.3.6_imbbnqeprmabsyhfrsvwkzjf6e
-      tmp: 0.2.1
-      true-case-path: 2.2.1
-      type-of: 2.0.1
-      url-loader: 4.1.1_p5dl6emkcwslbw72e37w4ug7em
-      uuid: 8.3.2
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
-      webpack-dev-middleware: 4.3.0_webpack@5.75.0
-      webpack-merge: 5.8.0
-      webpack-stats-plugin: 1.1.1
-      webpack-virtual-modules: 0.3.2
-      xstate: 4.32.1
-      yaml-loader: 0.8.0
-    optionalDependencies:
-      gatsby-sharp: 0.19.0
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@types/webpack'
-      - babel-eslint
-      - bufferutil
-      - clean-css
-      - csso
-      - encoding
-      - esbuild
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - eslint-plugin-jest
-      - eslint-plugin-testing-library
-      - sockjs-client
-      - supports-color
-      - type-fest
-      - typescript
-      - uglify-js
-      - utf-8-validate
-      - vue-template-compiler
-      - webpack-cli
-      - webpack-dev-server
-      - webpack-hot-middleware
-      - webpack-plugin-serve
 
   /gatsby/4.25.4_qyabkb5h6b7mifciv426iu4uca:
     resolution: {integrity: sha512-4IGQ615FCJi/o9qTvyZeZ4Pr04y+zpmxr531/r8rcJK1fcPC3BFR8QGxCrPNxI4jST/Imu4oRYYhnja/VWBCNg==}
@@ -21334,7 +21165,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
       webpack-sources: 1.4.3
 
   /mini-css-extract-plugin/2.4.7_webpack@5.75.0:
@@ -22157,7 +21988,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /nullthrows/1.1.1:
     resolution: {integrity: sha512-2vPPEi+Z7WqML2jZYddDIfy5Dqb0r2fze2zTxNNknZaFpVHU3mFB3R+DWeJWGVx0ecvttSGlJTI+WG+8Z4cDWw==}
@@ -23307,7 +23138,7 @@ packages:
       klona: 2.0.6
       postcss: 8.4.21
       semver: 7.3.8
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /postcss-loader/6.2.1_6jdsrmfenkuhhw3gx4zvjlznce:
     resolution: {integrity: sha512-WbbYpmAaKcux/P66bZ40bpWsBucjx/TTgVVzRZ9yUO8yQfVBlameJ0ZGVaPfH64hNSBh63a+ICP5nqOpBA0w+Q==}
@@ -24099,7 +23930,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /rc/1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
@@ -24145,7 +23976,7 @@ packages:
       strip-ansi: 6.0.1
       text-table: 0.2.0
       typescript: 4.9.4
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
     transitivePeerDependencies:
       - eslint
       - supports-color
@@ -24354,7 +24185,7 @@ packages:
       loose-envify: 1.4.0
       neo-async: 2.6.2
       react: 18.2.0
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /react-shallow-renderer/16.15.0_react@18.2.0:
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
@@ -26382,7 +26213,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /style-loader/3.3.1_webpack@5.75.0:
     resolution: {integrity: sha512-GPcQ+LDJbrcxHORTRes6Jy2sfvK2kS6hpSfI/fXhPt+spVzxF6LJ1dHLN9zIGmVaaP044YKaIatFaufENRiDoQ==}
@@ -26849,6 +26680,7 @@ packages:
       serialize-javascript: 6.0.1
       terser: 5.16.1
       webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+    dev: true
 
   /terser-webpack-plugin/5.3.6_webpack@5.75.0:
     resolution: {integrity: sha512-kfLFk+PoLUQIbLmB1+PZDMRSZS99Mp+/MHqDNmMA6tOItzRt+Npe3E+fsMs5mfcM0wCtrrdU387UnV+vnSffXQ==}
@@ -27834,7 +27666,7 @@ packages:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.1.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /url-parse-lax/3.0.0:
     resolution: {integrity: sha512-NjFKA0DidqPa5ciFcSrXnAltTtzz84ogy+NebPvfEgAck0+TNg4UJ4IN+fB7zRZfbgUf0syOo9MDxFkDSMuFaQ==}
@@ -28469,7 +28301,7 @@ packages:
       lodash.has: 4.5.2
       schema-utils: 3.1.1
       tapable: 2.2.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
     dev: true
 
   /webpack-dev-middleware/3.7.3_webpack@4.46.0:
@@ -28498,7 +28330,7 @@ packages:
       mime-types: 2.1.35
       range-parser: 1.2.1
       schema-utils: 3.1.1
-      webpack: 5.75.0_gjg5juzgsrg45657qbblli657e
+      webpack: 5.75.0
 
   /webpack-dev-middleware/5.3.3_webpack@5.75.0:
     resolution: {integrity: sha512-hj5CYrY0bZLB+eTO+x/j67Pkrquiy7kWepMHmUMoPsmcUaeEnQJqFzHJOyxgWlq746/wUuA64p9ta34Kyb01pA==}
@@ -28763,6 +28595,7 @@ packages:
       - '@swc/core'
       - esbuild
       - uglify-js
+    dev: true
 
   /websocket-driver/0.7.4:
     resolution: {integrity: sha512-b17KeDIQVjvb0ssuSDF2cYXSg2iztliJ4B9WdsuB6J952qCPKmnVq4DyW5motImXHDC1cBT/1UezrJVsKw5zjg==}
