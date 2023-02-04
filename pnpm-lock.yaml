@@ -243,6 +243,7 @@ importers:
   apps/portfolio:
     specifiers:
       '@babel/core': ^7.19.0
+      '@gatsbyjs/reach-router': ^2.0.1
       '@lottiefiles/react-lottie-player': ^3.4.7
       '@mordech/react-components': ^0.24.1
       '@mordech/tokens': ^0.24.1
@@ -306,6 +307,7 @@ importers:
       svg-react-loader: 0.4.6
     devDependencies:
       '@babel/core': 7.20.12
+      '@gatsbyjs/reach-router': 2.0.1_biqbaboplfbrettd7655fr4n2y
       '@types/node': 17.0.45
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
@@ -3426,6 +3428,18 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-lifecycles-compat: 3.0.4
+
+  /@gatsbyjs/reach-router/2.0.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-gmSZniS9/phwgEgpFARMpNg21PkYDZEpfgEzvkgpE/iku4uvXqCrxr86fXbTpI9mkrhKS1SCTYmLGe60VdHcdQ==}
+    peerDependencies:
+      react: 18.x
+      react-dom: 18.x
+    dependencies:
+      invariant: 2.2.4
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: true
 
   /@gatsbyjs/webpack-hot-middleware/2.25.3:
     resolution: {integrity: sha512-ul17OZ8Dlw+ATRbnuU+kwxuAlq9lKbYz/2uBS1FLCdgoPTF1H2heP7HbUbgfMZbfRQNcCG2rMscMnr32ritCDw==}
