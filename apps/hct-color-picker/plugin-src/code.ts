@@ -18,8 +18,8 @@ figma.currentPage.selection = [];
 const paintStyles = figma.getLocalPaintStyles();
 
 const uiSizes: Record<string, [number, number]> = {
-  small: [450, 548],
-  medium: [450, 648],
+  small: [450, 600],
+  medium: [450, 652],
 };
 
 postMessage({

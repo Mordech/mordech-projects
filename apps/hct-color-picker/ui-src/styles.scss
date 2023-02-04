@@ -40,21 +40,31 @@ my-app {
   height: 100%;
 }
 
-main {
-  padding-block: 0.5rem 2rem;
+main,
+header {
   padding-inline: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: stretch;
-
-  overflow-y: scroll;
 }
 
 header {
+  box-sizing: border-box;
+  box-shadow: 0 2px 2rem 0.75rem var(--mrd-color-background-base);
+  overflow: visible;
+  z-index: 1;
+}
+
+main {
+  flex: 1;
+  overflow: auto;
+  padding-block: 0.5rem 2rem;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
-  padding-inline: 1.5rem;
 }
 
 h1 {
@@ -62,16 +72,8 @@ h1 {
   font-weight: var(--mrd-font-weight-medium);
 }
 
-mrd-range::part(slot-container) {
-  border: 1px solid var(--mrd-color-background-surface);
-  height: 2rem;
-  background: var(
-    --mrd-range-preview-background,
-    var(--mrd-color-background-surface)
-  );
-}
-
 .paints-container {
+  margin-block-start: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
   gap: 0.75rem;
@@ -81,14 +83,9 @@ mrd-range::part(slot-container) {
 hr {
   height: 1rem;
 }
+
 .controller-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-.slider-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }

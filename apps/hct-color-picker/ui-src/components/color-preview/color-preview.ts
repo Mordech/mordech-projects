@@ -2,11 +2,11 @@ import { argbFromHex } from '@material/material-color-utilities';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import '../icons/save-icon';
+import '../../icons/save-icon';
 import '@mordech/web-components';
 
-import { UiPaintStyle } from '../../types';
-import { postMessage } from '../utils/postMessage';
+import { UiPaintStyle } from '../../../types';
+import { postMessage } from '../../utils/postMessage';
 
 import { createButtonStyle } from './create-button.styles';
 

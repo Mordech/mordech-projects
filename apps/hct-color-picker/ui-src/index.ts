@@ -8,8 +8,11 @@ import { css as style, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 
-import './color-preview/color-preview';
+import './components/color-preview';
+import './components/expand-chevron';
+import './components/hct-controller';
 import '@mordech/web-components';
+import './components/details-section';
 
 import { PluginMessage, UiPaintStyle } from '../types';
 
@@ -28,96 +31,91 @@ export class MyApp extends LitElement {
   render() {
     return html`
       <header>
-        <h1>HCT Color Picker</h1>
-        <mrd-toggle-theme
-          @toggle-theme=${this.handleThemeChange}
-          theme="dark"
-          .saveToStorage=${false}
-        >
-        </mrd-toggle-theme>
-      </header>
-      <main>
-        <color-preview @input=${this.handleInput} 
-        .hex=${this.hex} 
-        .selectedColor=${this.selectedColor}
-        .chroma=${this.chroma} .hue=${this.hue} .tone=${this.tone}
-        >
-      </color-preview>
-      
-      <div class="controller-container">
-        <div class="slider-container">
-          <label>Hue</label>
-          <mrd-range
-          id="mrd-hue"
-          min="0"
-          max="360"
-          value=${this.hue}
-          @input=${this.handleInput}
-          .style=${this.hueGradient}
+        <div class="header-container">
+          <h1>HCT Color Picker</h1>
+          <mrd-toggle-theme
+            @toggle-theme=${this.handleThemeChange}
+            theme="dark"
+            .saveToStorage=${false}
           >
-        </mrd-range>
-      </div>
-      
-      <div class="slider-container">
-        <label>Chroma</label>
-        <mrd-range
-        id="mrd-chroma"
-        min="1"
-        max="150"
-        value=${this.chroma}
-        @input=${this.handleInput}
-        .style=${this.chromaGradient}
-        >
-      </mrd-range>
-    </div>
-    
-    <div class="slider-container">
-      <label>Tone</label>
-      <mrd-range
-      id="mrd-tone"
-      min="0"
-      max="100"
-      value=${this.tone}
-      @input=${this.handleInput}
-      .style=${this.toneGradient}
-      >
-    </mrd-range>
-  </div>
-  
+          </mrd-toggle-theme>
         </div>
-      </div>
-  ${
-    this.paints?.length
-      ? html`
-          <div class="controller-container">
-            Color styles
-            <div class="paints-container" role="listbox">
-              ${repeat(
-                this.paints,
-                ({ id, name, color }) =>
-                  html`
-                    <mrd-paint-swatch
-                      role="option"
-                      aria-selected=${id === this.selectedColor?.id}
-                      @click=${() =>
-                        id === this.selectedColor?.id
-                          ? (this.selectedColor = undefined)
-                          : (this.selectedColor = { id, name, color })}
-                      .id=${id}
-                      .name=${name}
-                      .color=${`rgb(${color.r}, ${color.g}, ${color.b})`}
-                      .active=${id === this.selectedColor?.id}
-                    >
-                    </mrd-paint-swatch>
-                  `
-              )}
-            </div>
-          </div>
-        `
-      : ''
-  }
-    </main>
-      `;
+        <color-preview
+          @input=${this.handleInput}
+          .hex=${this.hex}
+          .selectedColor=${this.selectedColor}
+          .chroma=${this.chroma}
+          .hue=${this.hue}
+          .tone=${this.tone}
+        >
+        </color-preview>
+      </header>
+
+      <main>
+        <div class="controller-container">
+          <hct-controller
+            id="mrd_controller-hue"
+            .name=${'Hue'}
+            .value=${this.hue}
+            .min=${0}
+            .max=${360}
+            .sliderGradient=${this.hueGradient}
+            @input=${this.handleInput}
+          >
+          </hct-controller>
+
+          <hct-controller
+            id="mrd_controller-chroma"
+            .name=${'Chroma'}
+            .value=${this.chroma}
+            .min=${0}
+            .max=${150}
+            .sliderGradient=${this.chromaGradient}
+            @input=${this.handleInput}
+          >
+          </hct-controller>
+
+          <hct-controller
+            id="mrd_controller-tone"
+            .name=${'Tone'}
+            .value=${this.tone}
+            .min=${0}
+            .max=${100}
+            .sliderGradient=${this.toneGradient}
+            @input=${this.handleInput}
+          >
+          </hct-controller>
+        </div>
+
+        ${this.paints?.length
+          ? html`
+              <details-section title="Color styles">
+                <div class="paints-container" role="listbox">
+                  ${repeat(
+                    this.paints,
+                    ({ id, name, color }) =>
+                      html`
+                        <mrd-paint-swatch
+                          role="option"
+                          aria-selected=${id === this.selectedColor?.id}
+                          @click=${() =>
+                            id === this.selectedColor?.id
+                              ? (this.selectedColor = undefined)
+                              : (this.selectedColor = { id, name, color })}
+                          .id=${id}
+                          .name=${name}
+                          .color=${`rgb(${color.r}, ${color.g}, ${color.b})`}
+                          .active=${id === this.selectedColor?.id}
+                        >
+                        </mrd-paint-swatch>
+                      `
+                  )}
+                </div>
+              </details-section>
+            `
+          : ''}
+      </main>
+    `;
   }
 
   get hex() {
@@ -187,7 +185,7 @@ export class MyApp extends LitElement {
       );
 
       --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.chroma).join(',')
+        gradient.splice(0, this.chroma + 1).join(',')
       )};
 
       --mrd-thumb-color: ${unsafeCSS(
@@ -229,22 +227,22 @@ export class MyApp extends LitElement {
 
   handleInput(e: Event) {
     const input = e.target as HTMLInputElement;
-    const value = parseInt(input.value);
+    const value = parseInt(input.value) || 0;
 
-    switch (input.id) {
-      case 'mrd-hue':
+    switch (input.id.split('-')[1]) {
+      case 'hue':
         this.hue = value;
         break;
 
-      case 'mrd-chroma':
+      case 'chroma':
         this.chroma = value;
         break;
 
-      case 'mrd-tone':
+      case 'tone':
         this.tone = value;
         break;
 
-      case 'mrd-selected-color': {
+      case 'selected_color': {
         const { hue, chroma, tone } = Hct.fromInt(argbFromHex(input.value));
         this.hue = hue;
         this.chroma = chroma;
@@ -290,7 +288,7 @@ export class MyApp extends LitElement {
           this.selectedColor = this.paints?.find(
             (paint) => paint.id === msg.selection?.id
           );
-          if (!msg.selection?.id && msg.selection?.color) {
+          if (!this.selectedColor && msg.selection?.color) {
             const { hue, chroma, tone } = Hct.fromInt(
               argbFromRgb(
                 msg.selection?.color?.r,
