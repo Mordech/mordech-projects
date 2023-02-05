@@ -23,8 +23,8 @@ export class ColorPreview extends LitElement {
         <div class="color-input">
           <input
             type="color"
-            id="mrd-selected-color"
-            name="selected-color"
+            id="mrd-selected_color"
+            name="Selected Color"
             class="mrd-color-input"
             .value=${this.hex}
           />

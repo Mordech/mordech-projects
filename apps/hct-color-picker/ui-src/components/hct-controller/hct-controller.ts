@@ -29,10 +29,13 @@ export class HctController extends LitElement {
     return html`
       <div class="slider-container">
         <div class="input-title-container">
-          <label>${this.name}</label>
+          <label for="mrd_range-${this.name.toLocaleLowerCase()}"
+            >${this.name}</label
+          >
           <input
             type="number"
             id="mrd_number-${this.name.toLocaleLowerCase()}"
+            name="mrd_number-${this.name.toLocaleLowerCase()}"
             min=${this.min}
             max=${this.max}
             .value=${this.value.toFixed().toString()}
@@ -40,6 +43,7 @@ export class HctController extends LitElement {
         </div>
         <mrd-range
           id="mrd_range-${this.name.toLocaleLowerCase()}"
+          name="mrd_range-${this.name.toLocaleLowerCase()}"
           min=${this.min}
           max=${this.max}
           .value=${this.value}

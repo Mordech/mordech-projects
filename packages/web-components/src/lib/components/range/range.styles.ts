@@ -3,7 +3,7 @@ import { css, unsafeCSS } from 'lit';
 
 const thumb = css`
   appearance: none;
-  cursor: pointer;
+  cursor: grab;
 
   width: var(--mrd-thumb-size, 1rem);
   height: var(--mrd-thumb-size, 1rem);
@@ -22,7 +22,12 @@ const thumbHover = css`
   box-shadow: ${unsafeCSS(elevation[0])};
 `;
 
+const thumbActive = css`
+  cursor: grabbing;
+`;
+
 const track = css`
+  cursor: pointer;
   margin-block: 0.5rem;
   appearance: none;
   border: var(--mrd-range-border, unset);
@@ -71,6 +76,26 @@ export const rangeBase = css`
 
   input[type='range']::-moz-range-thumb:hover {
     ${thumbHover}
+  }
+
+  input[type='range']::-ms-thumb {
+    ${thumb}
+  }
+
+  input[type='range']::-ms-thumb:hover {
+    ${thumbHover}
+  }
+
+  input[type='range']:active::-webkit-slider-thumb {
+    ${thumbActive}
+  }
+
+  input[type='range']:active::-moz-range-thumb {
+    ${thumbActive}
+  }
+
+  input[type='range']:active::-ms-thumb {
+    ${thumbActive}
   }
 `;
 
