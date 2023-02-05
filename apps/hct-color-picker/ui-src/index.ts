@@ -137,10 +137,8 @@ export class MyApp extends LitElement {
       this.chroma = hct.chroma;
       this.tone = hct.tone;
 
-      if (this.selectedColor) {
-        this.updateStyle();
-        this.saveColor();
-      }
+      this.updateStyle();
+      this.saveColor();
     }
   }
 
@@ -299,6 +297,7 @@ export class MyApp extends LitElement {
             this.hue = hue;
             this.chroma = chroma;
             this.tone = tone;
+            this.saveColor();
           }
           break;
 
