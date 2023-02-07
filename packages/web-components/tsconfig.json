@@ -5,7 +5,7 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "declaration": true,
     "emitDeclarationOnly": true,
-    "rootDir": "./src",
+    "rootDir": "./src/lib",
     "outDir": "dist",
     "strict": true,
     "noUnusedLocals": true,
@@ -21,7 +21,11 @@
     "useDefineForClassFields": false,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/lib/**/*.ts"],
   "exclude": ["node_modules", "dist", "src/**/*.spec.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

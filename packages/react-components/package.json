@@ -1,0 +1,30 @@
+{
+  "name": "@mordech/react-components",
+  "version": "0.24.1",
+  "private": true,
+  "dependencies": {
+    "@mordech/tokens": "*",
+    "@mordech/web-components": "*",
+    "@mordech/storybook-toggle-theme-addon": "*"
+  },
+  "scripts": {
+    "visual": "loki test --reactUri file:./storybook-static",
+    "visual:approve": "loki approve",
+    "visual:ci": "loki test --requireReference --reactUri file:./storybook-static"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@mordech/hct-color-picker",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Figma HCT color picker plugin",
+  "main": "dist/code.js",
+  "author": "Elad Mordechai Mizrahi",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "start": "pnpm dev",
+    "dev": "vite",
+    "build:ui": "vite build",
+    "build:plugin": "esbuild --bundle --minify --sourcemap --target=es2019 --format=esm --outfile=dist/code.js plugin-src/code.ts",
+    "build": "concurrently \"vite build\" \"pnpm build:plugin\"",
+    "watch": "concurrently \"vite build --watch\" \"pnpm build:plugin --watch\"",
+    "lint": "eslint --ext .ts,.js .",
+    "lint:css": "stylelint './**/*.{css,scss,ts}'"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.58.0",
+    "@mordech/tokens": "*",
+    "@mordech/web-components": "*",
+    "vite": "^4.0.4",
+    "vite-plugin-singlefile": "^0.13.2"
+  }
+}

@@ -8,7 +8,7 @@ import '@mordech/web-components';
 const ADDON_ID = 'toggleTheme';
 
 const ToggleThemeContainer = styled(IconButton)`
-  mrd-toggle-theme {
+  mrd-toggle-theme::part(button) {
     --mrd-icon-size: 1rem;
     --mrd-button-color: currentColor;
     --mrd-button-background: transparent;

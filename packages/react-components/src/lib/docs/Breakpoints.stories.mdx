@@ -1,0 +1,90 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import styled from 'styled-components';
+
+import { breakpoints, screenSizes } from '@mordech/tokens';
+
+<Meta
+  title={'Abstracts/Breakpoints'}
+  parameters={{ previewTabs: { canvas: { hidden: true } } }}
+/>
+
+# Breakpoints
+
+Breakpoints are used to define the layout of the page.
+They are used to define the width of the page and the width of the content.
+
+Breakpoints in this library are defined in the `breakpoints` object.
+They are in a mobile-first approach. Meaning that they use `min-width` to define the width of the page.
+
+## Tokens
+
+> ⚠️ _Note:_ These tokens moved to the `@mordech/tokens` package. You can import them from there.
+> Using the `@mordech/react-components` package for tokens is deprecated.
+
+| Name | Value              | Description         | Raw value                             |
+| ---- | ------------------ | ------------------- | ------------------------------------- |
+| sm   | Larger than 600px  | Small screens       | @media screen and (min-width: 600px)  |
+| md   | Larger than 905px  | Medium screens      | @media screen and (min-width: 905px)  |
+| lg   | Larger than 1240px | Large screens       | @media screen and (min-width: 1240px) |
+| xl   | Larger than 1440px | Extra large screens | @media screen and (min-width: 1440px) |
+
+## Usage
+
+```jsx
+import { breakpoints } from '@mordech/tokens';
+
+const StyledDiv = styled.div`
+  background-color: blue;
+  width: 100%;
+  height: 100px;
+
+  ${breakpoints.sm} {
+    background-color: red;
+  }
+`;
+```
+
+## Screen sizes tokens
+
+Another way to use the breakpoints is to use the screen sizes tokens.
+These tokens are only a number that represents the breakpoint screen size.
+
+These tokens are helpful when you want to use the breakpoints in
+JavaScript or use only the screen size.
+
+| Name | Value | Description         |
+| ---- | ----- | ------------------- |
+| sm   | 600   | Small screens       |
+| md   | 905   | Medium screens      |
+| lg   | 1240  | Large screens       |
+| xl   | 1440  | Extra large screens |
+
+### Usage
+
+```jsx
+import { screenSizes } from '@mordech/tokens';
+
+const StyledDiv = styled.div`
+  background-color: blue;
+  width: 100%;
+  height: 100px;
+
+  @media screen and (max-width: ${screenSizes.sm}px) {
+    background-color: red;
+  }
+`;
+```
+
+### Usage in JavaScript functions
+
+`screenSizes` can be used in JavaScript functions.
+
+```jsx
+import { screenSizes } from '@mordech/tokens';
+
+const windowWidth = window.innerWidth;
+
+if (windowWidth < screenSizes.sm) {
+  // Do something
+}
+```

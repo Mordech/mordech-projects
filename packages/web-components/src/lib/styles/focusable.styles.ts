@@ -1,4 +1,4 @@
-import { colors } from '@mordech/tokens';
+import { colors, transitions } from '@mordech/tokens';
 import { css, unsafeCSS } from 'lit';
 
 export const focusableBase = css`
@@ -25,6 +25,7 @@ export const focusableBase = css`
     outline-width: 2px;
     outline-style: solid;
     outline-color: ${unsafeCSS(colors.primary.base)};
+    transition: all ${unsafeCSS(transitions.bounce)};
   }
 
   button:focus-visible,

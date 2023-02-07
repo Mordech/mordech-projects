@@ -1,0 +1,10 @@
+{
+  "name": "@mordech/web-components-storybook",
+  "author": "Elad Mordechai Mizrahi",
+  "version": "0.24.1",
+  "dependencies": {
+    "@mordech/web-components": "*",
+    "@mordech/tokens": "*"
+  },
+  "nx": {}
+}

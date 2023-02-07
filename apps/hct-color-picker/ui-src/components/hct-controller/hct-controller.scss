@@ -1,0 +1,34 @@
+mrd-range::part(slot-container) {
+  border: 1px solid var(--mrd-color-background-surface);
+  height: 2rem;
+  background: var(
+    --mrd-range-preview-background,
+    var(--mrd-color-background-surface)
+  );
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type='number'] {
+  padding: 0.5rem;
+  width: 4.5rem;
+  border: 1px solid var(--mrd-color-background-surface);
+  border-radius: 0.25rem;
+  color: var(--mrd-color-background-onSurface);
+  &:hover,
+  &:focus {
+    transition: all var(--mrd-transition-default);
+    border-color: var(--mrd-color-background-onSurface);
+    background-color: var(--mrd-color-background-surface);
+  }
+}

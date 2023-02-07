@@ -1,0 +1,145 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import styled from 'styled-components';
+
+import { colors } from '@mordech/tokens';
+import { ColorGrid } from './components/ColorGrid';
+
+<Meta
+  title={'Abstracts/Colors'}
+  parameters={{ previewTabs: { canvas: { hidden: true } } }}
+/>
+
+# Colors
+
+Colors are used to add meaning to a user interface.
+They can be used to indicate a state, highlight an element,
+or just add some flair.
+
+## Set up
+
+To use the color tokens, you need to install the package.
+
+```bash
+pnpm install @mordech/tokens
+```
+
+Color tokens can be used in any CSS-in-JS library. And should work without any additional configuration.
+
+For theme support, you need to add the `data-theme` attribute to the root element of your application.
+And import a CSS file that sets the theme.
+
+### Minimal Import
+
+```tsx
+import '@mordech/tokens/css/tokens.css';
+```
+
+### Full Import
+
+(will import fonts as well)
+
+```tsx
+import '@mordech/tokens/css';
+```
+
+### Styled Components
+
+```tsx
+// styles.js
+import { createGlobalStyle } from 'styled-components';
+import { variables } from '@mordech/tokens/declarations';
+
+// Create a global style with styled-components
+const GlobalStyle = createGlobalStyle`
+  /* Include the CSS variables */
+  ${variables}
+`;
+
+export default GlobalStyle;
+
+// App.js
+import React from 'react';
+import GlobalStyle from './styles';
+
+const App = () => {
+  return (
+    <>
+      {/* Include the global style */}
+      <GlobalStyle />
+      <div>Hello World</div>
+    </>
+  );
+};
+```
+
+## Usage
+
+```tsx
+import { colors } from '@mordech/tokens';
+
+const Component = () => (
+  <div style={{ color: colors.primary.base }}>Hello World</div>
+);
+```
+
+The color tokens are available in the following variants:
+
+<ColorGrid />
+
+## Usage
+
+Using the color tokens is as simple as importing them from the package and using them in your styles.
+
+```tsx
+import { colors } from '@mordech/tokens';
+
+const Component = () => (
+  <div style={{ color: colors.primary.base }}>Hello World</div>
+);
+```
+
+## Dark and Light Themes
+
+The color tokens are available in two themes, light and dark.
+Using the `colors` object will work with themes if you add `data-theme` attribute to the root element of your application.
+
+```html
+<html data-theme="dark">
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+Also, you can set the `data-theme` attribute to `prefers` to use the user's preferred color scheme.
+
+```html
+<html data-theme="prefers">
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+This will use the user's preferred color scheme, if the user has not set a preferred color scheme, it will use the light theme.
+
+## CSS Variables
+
+The color tokens are also available as CSS variables.
+
+The pattern for the CSS variables is `--mrd-color-{color}-{variant}`.
+
+### Usage
+
+```css
+.my-component {
+  color: var(--mrd-color-primary-base);
+}
+```
+
+## Color Palette
+
+The color palette is loosly based on the [Material Design Color System](https://material.io/design/color/the-color-system.html#tools-for-picking-colors).
+This palette is used to create the color tokens.
+
+Do not use the colors from the palette directly, use the color tokens instead.

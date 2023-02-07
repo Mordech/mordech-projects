@@ -1,8 +1,8 @@
 import { html } from 'lit-html';
 
-import '../toggle-theme';
+import '@mordech/web-components';
 
-import { ToggleTheme } from '../toggle-theme';
+import { MrdToggleThemeElement } from '..';
 
 export default {
   title: 'Atoms/mrd-toggle-theme',
@@ -27,7 +27,7 @@ export default {
   },
 };
 
-const Template = ({ saveToStorage }: ToggleTheme) =>
+const Template = ({ saveToStorage }: MrdToggleThemeElement) =>
   html`<mrd-toggle-theme .saveToStorage=${saveToStorage} />`;
 export const Default = Template.bind({
   saveToStorage: false,

@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "exclude": ["**/*.stories.ts", "**/*.stories.js"],
+  "references": [
+    {
+      "path": "./.storybook/tsconfig.json"
+    }
+  ]
+}

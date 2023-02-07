@@ -1,0 +1,17 @@
+@import url('@mordech/tokens/css/reset.css');
+
+summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-weight: var(--mrd-font-weight-bold);
+
+  &:focus-visible {
+    outline: 2px solid var(--mrd-color-background-on);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+}

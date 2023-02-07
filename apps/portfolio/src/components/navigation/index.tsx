@@ -1,5 +1,8 @@
 import React, { FC } from 'react';
-import { Button, Navigation as NavigationComponent } from '@mordech/components';
+import {
+  Button,
+  Navigation as NavigationComponent,
+} from '@mordech/react-components';
 
 import Logo from '../../images/logo.svg';
 import resume from '../../images/resume/elad-mizrahi-cv-c.pdf';

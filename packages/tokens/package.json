@@ -2,7 +2,7 @@
   "name": "@mordech/tokens",
   "author": "Elad Mordechai Mizrahi",
   "version": "0.24.1",
-  "prepare": "yarn run build",
+  "prepare": "pnpm run build",
   "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -52,25 +52,19 @@
     "build:css": "ts-node --esm scripts/bundleCss.ts",
     "build:ts": "ts-node --esm scripts/build.ts",
     "build:types": "tsc",
-    "build": "yarn run-s build:*",
-    "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
+    "build": "pnpm run-s build:*",
+    "watch:lib": "pnpm build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
     "test": "vitest --coverage --run",
     "test:watch": "vitest",
     "lint": "eslint src",
     "lint:css": "stylelint 'src/**/*.{ts,css}'",
-    "prepare": "yarn build"
+    "prepare": "pnpm build"
   },
   "devDependencies": {
     "add": "^2.0.6",
     "eslint": "^8.29.0",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
-    "stylelint": "^14.16.0",
-    "stylelint-config-recommended": "^9.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0",
-    "ts-node": "^10.9.1",
-    "vitest": "^0.25.8",
     "yarn": "^1.22.19"
   },
   "publishConfig": {

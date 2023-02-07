@@ -1,0 +1,79 @@
+.color-input {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+
+  & mrd-button {
+    position: absolute;
+    inset-block-end: 0.8rem;
+    inset-inline-end: 0.75rem;
+    opacity: 0.9;
+  }
+}
+
+mrd-button.add-style-button::part(button) {
+  padding: 0.5rem;
+  line-height: 1;
+  min-width: unset;
+  min-height: unset;
+
+  &:hover,
+  &:focus-visible {
+    padding-block: 0.5rem;
+    padding-inline: 0.75rem 1rem;
+    &::after {
+      content: 'Create style';
+    }
+  }
+}
+
+save-icon {
+  height: 20px;
+}
+
+.mrd-color-input {
+  --mrd-swatch-size: 8rem;
+
+  @mixin color-swatch {
+    border-color: var(--mrd-color-background-surface);
+    border-width: 1px;
+    border-radius: 0.5rem;
+    height: var(--mrd-swatch-size);
+  }
+
+  appearance: none;
+
+  &::-webkit-color-swatch {
+    @include color-swatch();
+  }
+
+  &::-moz-color-swatch {
+    @include color-swatch();
+  }
+
+  &:focus-visible {
+    outline: var(--mrd-color-primary-base) solid 2px;
+    border-radius: 1rem;
+    outline-offset: 4px;
+    transition: all var(--mrd-transition-bounce);
+  }
+}
+
+.info-container {
+  display: inline-flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.color-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.selected-style-span {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

@@ -2,7 +2,7 @@ import { colors } from '@mordech/tokens';
 import { css, unsafeCSS } from 'lit';
 
 export const toggleThemeBase = css`
-  :host {
+  mrd-button {
     --mrd-border-radius: 99px;
     --mrd-button-color: ${unsafeCSS(colors.background.on)};
     --mrd-button-background: ${unsafeCSS(colors.background.base)};
@@ -10,15 +10,16 @@ export const toggleThemeBase = css`
     --mrd-button-active-background: ${unsafeCSS(colors.background.surface)};
     --mrd-button-padding: 0.5rem;
   }
-
-  .btn {
+  mrd-button::part(button) {
     min-width: unset;
+    min-height: unset;
   }
-  .btn:hover {
+
+  mrd-button::part(button):hover {
     filter: unset;
   }
 
-  .btn:active {
+  mrd-button::part(button):active {
     filter: unset;
   }
 `;

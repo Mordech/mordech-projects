@@ -1,0 +1,63 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import '@mordech/web-components';
+
+<Meta
+  title={'Atoms/mrd-range/Overview'}
+  parameters={{
+    previewTabs: { canvas: { hidden: true } },
+  }}
+/>
+
+# Range
+
+A simple range slider
+
+## Demo
+
+<Canvas>
+  <div
+    style={{
+      backgroundColor: 'var(--mrd-color-background-base)',
+      padding: '2rem',
+      borderRadius: '1rem',
+    }}
+  >
+    <mrd-range></mrd-range>
+  </div>
+</Canvas>
+
+```html
+<mrd-range min="0" max="100"></mrd-range>
+```
+
+## Properties
+
+| Name    | Type     | Default   | Description                     |
+| ------- | -------- | --------- | ------------------------------- |
+| `min`   | `number` | 0         | The minimum value of the range. |
+| `max`   | `number` | 100       | The maximum value of the range. |
+| `value` | `number` | undefined | The value of the range.         |
+
+## Slots
+
+| Name    | Description                         |
+| ------- | ----------------------------------- |
+| default | A slot for content below the range. |
+
+## Parts
+
+| Name           | Description                         |
+| -------------- | ----------------------------------- |
+| wrapper        | wrapper for the range input element |
+| range          | range input element                 |
+| slot-container | container for the slot element      |
+
+## CSS Custom Properties
+
+| Name               | Default             | Description                                              |
+| ------------------ | ------------------- | -------------------------------------------------------- |
+| --mrd-range        | 50%                 | The range of the slider (Automatically updates on input) |
+| --mrd-range-color  | colors.primary.base | The color of the range                                   |
+| --mrd-range-border | unset               | The border of the range                                  |
+| --mrd-thumb-color  | --mrd-range-color   | The color of the thumb                                   |
+| --mrd-thumb-size   | 1rem                | The size of the thumb                                    |

@@ -1,4 +1,4 @@
-import { IconLink } from '@mordech/components';
+import { IconLink } from '@mordech/react-components';
 
 export const links: IconLink[] = [
   {

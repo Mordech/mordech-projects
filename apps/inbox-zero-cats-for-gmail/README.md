@@ -1,6 +1,6 @@
 # Inbox Zero Cats for Gmail web extension
 
-This is a web extension for Gmail that displays a cat image instead of the inbox count. The cat image is from [Unsplash](https://unsplash.com/).
+Inbox Zero Cats is a web extension for Gmail that displays a cat image instead of the inbox count. The cat image is from [Unsplash](https://unsplash.com/).
 
 You can also add custom images and titles to the extension
 
@@ -12,14 +12,14 @@ You can also add custom images and titles to the extension
 ## How to build
 
 - Clone the repository
-- Run `yarn install`
-- Run `yarn build`
+- Run `pnpm install`
+- Run `pnpm build`
 - The web extension will be built in the `build` folder
 
 ## How to develop
 
-- Run `yarn install`
-- Run `yarn start`
+- Run `pnpm install`
+- Run `pnpm start`
 - The web extension will be built in the `dist` folder and will be rebuilt whenever you make changes to the source code
 
 ## How to contribute

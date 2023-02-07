@@ -1,0 +1,34 @@
+{
+  "name": "@mordech/web-components-storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "tags": [],
+  "targets": {
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/web-components",
+        "port": 4400,
+        "configDir": "apps/web-components-storybook/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "uiFramework": "@storybook/web-components",
+        "outputDir": "apps/web-components-storybook/storybook-static",
+        "configDir": "apps/web-components-storybook/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  }
+}
