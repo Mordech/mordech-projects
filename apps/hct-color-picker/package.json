@@ -5,7 +5,7 @@
   "description": "Figma HCT color picker plugin",
   "main": "dist/code.js",
   "author": "Elad Mordechai Mizrahi",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "start": "pnpm dev",
     "dev": "vite",

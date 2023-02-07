@@ -1,6 +1,6 @@
 # Component library
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/61471929-230b-44ef-bfa3-672d2aa4de64/deploy-status)](https://app.netlify.com/sites/mordech-shared-components/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/61471929-230b-44ef-bfa3-672d2aa4de64/deploy-status)](https://app.netlify.com/sites/mordech-react-components/deploys)
 
 The component library I'm going to use in my projects.
 
