@@ -2,6 +2,7 @@
   "name": "@mordech/web-components-storybook",
   "author": "Elad Mordechai Mizrahi",
   "version": "0.24.1",
+  "private": true,
   "dependencies": {
     "@mordech/web-components": "*",
     "@mordech/tokens": "*"
