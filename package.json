@@ -112,5 +112,9 @@
     "react-is": "18.2.0",
     "react-markdown": "^8.0.3",
     "styled-components": "^5.3.6"
-  }
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
 }
