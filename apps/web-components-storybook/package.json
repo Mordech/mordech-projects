@@ -1,11 +1,11 @@
 {
   "name": "@mordech/web-components-storybook",
   "author": "Elad Mordechai Mizrahi",
-  "version": "0.24.1",
+  "version": "0.25.0",
   "private": true,
   "dependencies": {
-    "@mordech/web-components": "*",
-    "@mordech/tokens": "*"
+    "@mordech/tokens": "^0.25.0",
+    "@mordech/web-components": "^0.25.0"
   },
   "nx": {}
 }
