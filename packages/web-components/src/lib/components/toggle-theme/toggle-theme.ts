@@ -66,21 +66,13 @@ export class MrdToggleThemeElement extends LitElement {
 
   override connectedCallback() {
     super.connectedCallback();
-
-    this.addEventListener('toggle-theme', this.store);
-
     this.initTheme();
-  }
-
-  override disconnectedCallback() {
-    super.disconnectedCallback();
-
-    this.removeEventListener('toggle-theme', this.store);
   }
 
   override updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('theme')) {
       this.target.setAttribute('data-theme', this.theme);
+      this.store();
     }
   }
 
@@ -101,7 +93,7 @@ export class MrdToggleThemeElement extends LitElement {
       ? localStorage.getItem('theme')
       : null;
 
-    const themeAttribute = document.body.getAttribute('data-theme') as
+    const themeAttribute = this.target.getAttribute('data-theme') as
       | Theme
       | 'prefers'
       | undefined;
