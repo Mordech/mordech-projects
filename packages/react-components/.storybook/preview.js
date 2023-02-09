@@ -40,6 +40,7 @@ export const parameters = {
 };
 
 const theme = new MrdToggleThemeElement();
+theme.saveToStorage = false;
 theme.initTheme();
 
 customElements.define(

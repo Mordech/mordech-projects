@@ -2,7 +2,9 @@ import { MrdToggleThemeElement } from '@mordech/web-components';
 
 import '@mordech/tokens/css';
 
-new MrdToggleThemeElement().initTheme();
+const theme = new MrdToggleThemeElement();
+theme.saveToStorage = false;
+theme.initTheme();
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
