@@ -10,7 +10,7 @@
 [![Build Status](https://github.com/Mordech/mordech-projects/actions/workflows/main.yml/badge.svg)](https://github.com/Mordech/mordech-projects/actions/workflows/main.yml)
 [![Published on npm](https://img.shields.io/npm/v/@mordech/tokens.svg?logo=npm&label=Tokens&logoColor=FFF)](https://www.npmjs.com/package/@mordech/tokens)
 [![React Storybook](https://img.shields.io/badge/React-Storybook-FF4785?logo=React&style=flat&logoColor=FFF)](https://mordech-react-components.netlify.app/)
-![Lit Storybook](https://img.shields.io/badge/Lit-Storybook-FF4785?logo=Lit&style=flat&logoColor=FFF)
+[![Lit Storybook](https://img.shields.io/badge/Lit-Storybook-FF4785?logo=Lit&style=flat&logoColor=FFF)](https://mordech-web-components.netlify.app/)
 
 </div>
 
