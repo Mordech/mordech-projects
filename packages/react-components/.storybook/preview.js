@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import { MrdToggleThemeElement } from '@mordech/web-components';
 
 import { GlobalStyle } from '../src/lib/abstracts';
@@ -42,11 +42,24 @@ export const parameters = {
 const theme = new MrdToggleThemeElement();
 theme.initTheme();
 
+customElements.define(
+  'preview-container',
+  class PreviewContainerElement extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+      const slot = createElement('slot');
+
+      this.shadowRoot.appendChild(slot);
+    }
+  }
+);
+
 export const decorators = [
   (Story) => (
-    <>
+    <preview-container>
       <GlobalStyle />
       <Story />
-    </>
+    </preview-container>
   ),
 ];
