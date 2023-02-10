@@ -5,9 +5,13 @@
   "main": "dist/index.cjs",
   "license": "MIT",
   "author": "Elad Mordechai Mizrahi",
-  "private": true,
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mordech/mordech-projects.git",
+    "directory": "packages/web-components"
+  },
   "exports": {
     "./*": {
       "default": "./dist/components/*.js",
@@ -25,5 +29,8 @@
     "build:watch": "nodemon --watch src --ext ts,css --exec yarn build",
     "test": "vitest --coverage --run",
     "prepare": "yarn build"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
