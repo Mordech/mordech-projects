@@ -228,10 +228,12 @@ importers:
   apps/hct-color-picker:
     specifiers:
       '@figma/plugin-typings': ^1.58.0
+      '@mordech/tokens': workspace:*
       '@mordech/web-components': workspace:*
       vite: ^4.0.4
       vite-plugin-singlefile: ^0.13.2
     dependencies:
+      '@mordech/tokens': link:../../packages/tokens
       '@mordech/web-components': link:../../packages/web-components
     devDependencies:
       '@figma/plugin-typings': 1.58.0
@@ -340,9 +342,9 @@ importers:
 
   packages/react-components:
     specifiers:
-      '@mordech/storybook-toggle-theme-addon': ^0.25.0
-      '@mordech/tokens': ^0.25.0
-      '@mordech/web-components': ^0.25.0
+      '@mordech/storybook-toggle-theme-addon': workspace:*
+      '@mordech/tokens': workspace:*
+      '@mordech/web-components': workspace:*
     dependencies:
       '@mordech/storybook-toggle-theme-addon': link:../storybook-toggle-theme-addon
       '@mordech/tokens': link:../tokens
@@ -365,7 +367,7 @@ importers:
 
   packages/web-components:
     specifiers:
-      '@mordech/tokens': ^0.25.0
+      '@mordech/tokens': workspace:*
       postcss-lit: ^1.0.1
     dependencies:
       '@mordech/tokens': link:../tokens
