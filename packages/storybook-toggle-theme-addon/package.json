@@ -6,8 +6,5 @@
   "author": "Elad Mordechai Mizrahi",
   "license": "MIT",
   "type": "module",
-  "private": true,
-  "dependencies": {
-    "@mordech/web-components": "^0.25.0"
-  }
+  "private": true
 }

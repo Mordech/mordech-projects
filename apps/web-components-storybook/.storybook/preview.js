@@ -1,4 +1,4 @@
-import { MrdToggleThemeElement } from '@mordech/web-components';
+import { MrdToggleThemeElement } from '../../../packages/web-components/src';
 
 import '@mordech/tokens/css';
 

@@ -1,7 +1,7 @@
 import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import '@mordech/web-components';
+import '@mordech/web-components/mrd-range';
 
 import './hct-controller.scss';
 

@@ -24,3 +24,9 @@ export class MrdPainSwatchElement extends LitElement {
     ></button>`;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mrd-paint-swatch': MrdPainSwatchElement;
+  }
+}

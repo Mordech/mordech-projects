@@ -1,6 +1,6 @@
-import { html, TemplateResult } from 'lit-html';
+import { html } from 'lit-html';
 
-import '@mordech/web-components';
+import { MrdButtonElement } from '..';
 
 export default {
   title: 'Atoms/mrd-button',
@@ -24,8 +24,5 @@ export default {
   },
 };
 
-export const Default = ({
-  slot = html`Hello World!`,
-}: {
-  slot: TemplateResult;
-}) => html`<mrd-button>${slot}</mrd-button>`;
+export const Default = ({ slot = `Hello World!` }: MrdButtonElement) =>
+  html`<mrd-button>${slot}</mrd-button>`;

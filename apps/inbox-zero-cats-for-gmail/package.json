@@ -6,6 +6,7 @@
   "main": "./src/manifest.json",
   "author": "Elad Mordechai Mizrahi",
   "license": "GPL-3.0-or-later",
+  "type": "module",
   "scripts": {
     "bundle": "ts-node --esm ./scripts/bundle.ts",
     "build": "pnpm bundle && pnpm ts-node --esm ./scripts/build.ts",
@@ -13,10 +14,6 @@
     "lint": "eslint src",
     "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'",
     "lint:extension": "web-ext lint -s dist/"
-  },
-  "dependencies": {
-    "@mordech/tokens": "^0.25.0",
-    "@mordech/web-components": "^0.25.0"
   },
   "devDependencies": {
     "web-ext": "^7.4.0",

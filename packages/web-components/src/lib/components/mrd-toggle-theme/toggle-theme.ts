@@ -2,7 +2,7 @@ import type { Theme } from '@mordech/tokens';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import '../button';
+import '../mrd-button';
 
 import { focusableBase } from '../../styles/focusable.styles';
 
