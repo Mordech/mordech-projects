@@ -1,5 +1,5 @@
 import React, { createElement } from 'react';
-import { MrdToggleThemeElement } from '@mordech/web-components';
+import { MrdToggleThemeElement } from '@mordech/web-components/mrd-toggle-theme';
 
 import { GlobalStyle } from '../src/lib/abstracts';
 

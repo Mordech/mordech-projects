@@ -9,7 +9,6 @@
     "outDir": "dist",
     "module": "CommonJS",
     "esModuleInterop": true,
-    "moduleResolution": "node",
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "importHelpers": false,

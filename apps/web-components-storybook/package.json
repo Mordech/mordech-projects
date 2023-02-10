@@ -3,9 +3,5 @@
   "author": "Elad Mordechai Mizrahi",
   "version": "0.25.0",
   "private": true,
-  "dependencies": {
-    "@mordech/tokens": "^0.25.0",
-    "@mordech/web-components": "^0.25.0"
-  },
   "nx": {}
 }

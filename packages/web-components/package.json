@@ -5,29 +5,36 @@
   "main": "dist/index.cjs",
   "license": "MIT",
   "author": "Elad Mordechai Mizrahi",
-  "private": true,
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mordech/mordech-projects.git",
+    "directory": "packages/web-components"
+  },
   "exports": {
+    "./*": {
+      "default": "./dist/components/*.js",
+      "types": "./dist/components/*/index.d.ts"
+    },
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
     "./package.json": "./package.json"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc",
-    "build:watch": "nodemon --watch src --ext ts,css --exec yarn build",
+    "build": "vite build",
+    "build:watch": "nodemon --watch src --ext ts,css --exec pnpm build",
     "test": "vitest --coverage --run",
-    "prepare": "yarn build"
+    "prepare": "pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
-    "@mordech/tokens": "^0.25.0"
+    "@mordech/tokens": "workspace:*"
   },
   "devDependencies": {
     "postcss-lit": "^1.0.1"

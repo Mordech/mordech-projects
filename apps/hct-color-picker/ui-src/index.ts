@@ -4,17 +4,18 @@ import {
   Hct,
   hexFromArgb,
 } from '@material/material-color-utilities';
-import { css as style, html, LitElement, unsafeCSS } from 'lit';
+import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 
 import './components/color-preview';
 import './components/expand-chevron';
 import './components/hct-controller';
-import '@mordech/web-components';
+import '@mordech/web-components/mrd-paint-swatch';
+import '@mordech/web-components/mrd-toggle-theme';
 import './components/details-section';
 
-import { PluginMessage, UiPaintStyle } from '../types';
+import type { PluginMessage, UiPaintStyle } from '../types';
 
 import { postMessage } from './utils/postMessage';
 
@@ -151,7 +152,7 @@ export class MyApp extends LitElement {
       gradient.push(hexFromArgb(color.toInt()));
     }
 
-    return style`
+    return css`
       --mrd-range-preview-background: linear-gradient(
         to right,
         ${unsafeCSS(gradient.join(','))}
@@ -176,7 +177,7 @@ export class MyApp extends LitElement {
       gradient.push(hexFromArgb(color.toInt()));
     }
 
-    return style`
+    return css`
       --mrd-range-preview-background: linear-gradient(
         to right,
         ${unsafeCSS(gradient.join(','))}
@@ -201,7 +202,7 @@ export class MyApp extends LitElement {
       gradient.push(hexFromArgb(color.toInt()));
     }
 
-    return style`
+    return css`
       --mrd-range-preview-background: linear-gradient(
         to right,
         ${unsafeCSS(gradient.join(','))}

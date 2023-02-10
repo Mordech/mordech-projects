@@ -1,11 +1,11 @@
 import { html, render } from 'lit-html';
 import browser from 'webextension-polyfill';
 
-import '@mordech/web-components';
+import '@mordech/web-components/mrd-toggle-theme';
 
-import { footer } from './components/index.js';
-import { customImageSection, customTitleSection } from './sections/index.js';
-import { resetImages, resetTitles } from './utils/index.js';
+import { footer } from './components';
+import { customImageSection, customTitleSection } from './sections';
+import { resetImages, resetTitles } from './utils';
 
 export const renderContent = async () => {
   const headerElem = document.querySelector('header');

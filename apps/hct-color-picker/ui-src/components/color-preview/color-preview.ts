@@ -3,9 +3,9 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import '../../icons/save-icon';
-import '@mordech/web-components';
+import '@mordech/web-components/mrd-button';
 
-import { UiPaintStyle } from '../../../types';
+import type { UiPaintStyle } from '../../../types';
 import { postMessage } from '../../utils/postMessage';
 
 import { createButtonStyle } from './create-button.styles';

@@ -6,6 +6,7 @@
     "stylelint.vscode-stylelint",
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
-    "phoenisx.cssvar"
+    "phoenisx.cssvar",
+    "nrwl.angular-console"
   ]
 }

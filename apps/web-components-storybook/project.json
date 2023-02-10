@@ -7,7 +7,7 @@
       "executor": "@nrwl/storybook:storybook",
       "options": {
         "uiFramework": "@storybook/web-components",
-        "port": 4400,
+        "port": 4600,
         "configDir": "apps/web-components-storybook/.storybook"
       },
       "configurations": {

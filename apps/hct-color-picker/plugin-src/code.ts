@@ -1,7 +1,7 @@
 import { Hct } from '@material/material-color-utilities';
-import { Theme } from '@mordech/tokens';
+import type { Theme } from '@mordech/tokens';
 
-import { PluginMessage } from '../types';
+import type { PluginMessage } from '../types';
 
 import {
   createPaintStyle,

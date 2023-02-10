@@ -1,0 +1,43 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+
+<Meta
+  title={'Atoms/mrd-paint-swatch/Overview'}
+  parameters={{
+    previewTabs: { canvas: { hidden: true } },
+  }}
+/>
+
+# Paint Swatch
+
+A component that renders a circular swatch with a background color. The component is interactive and can be set as active.
+
+## Demo
+
+<Canvas>
+  <mrd-paint-swatch color="pink"></mrd-paint-swatch>
+</Canvas>
+
+## Usage
+
+```javascript
+import '@mordech/web-components';
+```
+
+```html
+<mrd-paint-swatch color="rgba(0, 0, 0, 1)" name="color swatch" active>
+</mrd-paint-swatch>
+```
+
+## Properties
+
+| Property | Type      | Default            | Description                                    |
+| -------- | --------- | ------------------ | ---------------------------------------------- |
+| `active` | `boolean` | `false`            | If set, the swatch will be rendered as active. |
+| `color`  | `string`  | `rgba(0, 0, 0, 1)` | The background color of the swatch.            |
+| `name`   | `string`  | `color swatch`     | The name of the swatch.                        |
+
+## CSS Custom Properties
+
+| Name                    | Default | Description                                 |
+| ----------------------- | ------- | ------------------------------------------- |
+| --mrd-paint-swatch-size | 3rem    | The height and width of the swatch element. |
