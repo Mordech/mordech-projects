@@ -364,7 +364,13 @@ importers:
       npm-run-all: 4.1.5
 
   packages/web-components:
-    specifiers: {}
+    specifiers:
+      '@mordech/tokens': ^0.25.0
+      postcss-lit: ^1.0.1
+    dependencies:
+      '@mordech/tokens': link:../tokens
+    devDependencies:
+      postcss-lit: 1.0.1_postcss@8.4.21
 
 packages:
 
