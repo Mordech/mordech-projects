@@ -26,9 +26,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:watch": "nodemon --watch src --ext ts,css --exec yarn build",
+    "build:watch": "nodemon --watch src --ext ts,css --exec pnpm build",
     "test": "vitest --coverage --run",
-    "prepare": "yarn build"
+    "prepare": "pnpm build"
   },
   "publishConfig": {
     "access": "public"
