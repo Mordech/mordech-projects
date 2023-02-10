@@ -6,7 +6,6 @@
   "main": "./src/manifest.json",
   "author": "Elad Mordechai Mizrahi",
   "license": "GPL-3.0-or-later",
-  "type": "module",
   "scripts": {
     "bundle": "ts-node --esm ./scripts/bundle.ts",
     "build": "pnpm bundle && pnpm ts-node --esm ./scripts/build.ts",
