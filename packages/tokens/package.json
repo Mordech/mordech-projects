@@ -2,7 +2,6 @@
   "name": "@mordech/tokens",
   "author": "Elad Mordechai Mizrahi",
   "version": "0.26.0",
-  "prepare": "pnpm run build",
   "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
