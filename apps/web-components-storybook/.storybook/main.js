@@ -10,6 +10,7 @@ module.exports = {
     '../../../packages/web-components/src/lib/**/*.stories.mdx',
     '../../../packages/web-components/src/lib/**/*.stories.@(js|jsx|ts|tsx)',
   ],
+  staticDirs: ['../public'],
   addons: [
     ...rootMain.addons,
     '../../../packages/storybook-toggle-theme-addon/register.js',

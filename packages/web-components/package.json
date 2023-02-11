@@ -34,7 +34,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@mordech/tokens": "workspace:*"
+    "@mordech/tokens": "^0.26.0"
   },
   "devDependencies": {
     "postcss-lit": "^1.0.1"

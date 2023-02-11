@@ -3,9 +3,11 @@
   "version": "0.26.0",
   "private": true,
   "dependencies": {
-    "@mordech/storybook-toggle-theme-addon": "workspace:*",
-    "@mordech/tokens": "workspace:*",
-    "@mordech/web-components": "workspace:*"
+    "@mordech/tokens": "*",
+    "@mordech/web-components": "*"
+  },
+  "devDependencies": {
+    "@mordech/storybook-toggle-theme-addon": "workspace:*"
   },
   "scripts": {
     "visual": "loki test --reactUri file:./storybook-static",

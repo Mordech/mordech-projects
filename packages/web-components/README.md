@@ -5,12 +5,12 @@
 ## Install
 
 ```sh
-pnpm add @mordech/web-components @mordech/tokens
+pnpm add @mordech/web-components
 ```
 
 ## Usage
 
-All have the prefix `mrd-`.
+All components have the prefix `mrd-`.
 
 ```js
 import { html, render } from 'lit';

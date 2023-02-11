@@ -14,9 +14,9 @@
     "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'",
     "lint:extension": "web-ext lint -s dist/"
   },
-  "@mordech/web-components": "workspace:*",
-  "@mordech/tokens": "workspace:*",
   "devDependencies": {
+    "@mordech/web-components": "workspace:*",
+    "@mordech/tokens": "workspace:*",
     "web-ext": "^7.4.0",
     "webextension-polyfill": "^0.10.0"
   }
