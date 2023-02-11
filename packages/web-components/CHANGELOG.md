@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.1](https://github.com/Mordech/mordech-projects/compare/v0.26.0...v0.26.1) (2023-02-11)
+
+### Bug Fixes
+
+- Web components dependencies ([#77](https://github.com/Mordech/mordech-projects/issues/77)) ([20c2f74](https://github.com/Mordech/mordech-projects/commit/20c2f74bc688e3e326c18f11fe4573a9c5a890c4))
+
 # [0.26.0](https://github.com/Mordech/mordech-projects/compare/v0.25.0...v0.26.0) (2023-02-11)
 
 ### Bug Fixes

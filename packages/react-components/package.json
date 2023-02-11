@@ -1,10 +1,10 @@
 {
   "name": "@mordech/react-components",
-  "version": "0.26.0",
+  "version": "0.26.1",
   "private": true,
   "dependencies": {
-    "@mordech/tokens": "*",
-    "@mordech/web-components": "*"
+    "@mordech/tokens": "^0.26.1",
+    "@mordech/web-components": "^0.26.1"
   },
   "devDependencies": {
     "@mordech/storybook-toggle-theme-addon": "workspace:*"
