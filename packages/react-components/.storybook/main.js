@@ -1,25 +1,20 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const rootMain = require('../../../.storybook/main');
 
 module.exports = {
-  ...rootMain,
-  core: { ...rootMain.core, builder: 'webpack5' },
+  core: { builder: 'webpack5' },
   stories: [
-    ...rootMain.stories,
     '../src/lib/**/*.stories.mdx',
     '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
-    ...rootMain.addons,
+    '@storybook/addon-essentials',
+
     '@nrwl/react/plugins/storybook',
     '../../storybook-toggle-theme-addon/register.js',
   ],
   staticDirs: ['../public'],
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async (config) => {
     // apply any global webpack configs that might have been specified in .storybook/main.js
-    if (rootMain.webpackFinal) {
-      config = await rootMain.webpackFinal(config, { configType });
-    }
 
     // add your own webpack tweaks if needed
 

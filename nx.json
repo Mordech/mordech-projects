@@ -82,6 +82,9 @@
     },
     "visual:ci": {
       "dependsOn": ["^build"]
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     }
   },
   "affected": {
