@@ -6,7 +6,6 @@
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/web-components",
         "port": 4600,
         "configDir": "apps/web-components-storybook/.storybook"
       },
@@ -20,7 +19,6 @@
       "executor": "@nrwl/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/web-components",
         "outputDir": "apps/web-components-storybook/storybook-static",
         "configDir": "apps/web-components-storybook/.storybook"
       },

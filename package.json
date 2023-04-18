@@ -2,7 +2,6 @@
   "name": "mordech-projects",
   "private": true,
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "publish-packages": "pnpm lerna publish --conventional-commits",
     "postinstall": "pnpm nx run-many --target=prepare --all --parallel --maxParallel=10"
   },
@@ -34,17 +33,20 @@
     "@nrwl/vite": "15.9.2",
     "@nrwl/webpack": "15.9.2",
     "@nrwl/workspace": "15.9.2",
-    "@storybook/addon-docs": "^6.5.15",
-    "@storybook/addon-essentials": "^6.5.15",
-    "@storybook/addons": "^6.5.15",
-    "@storybook/builder-vite": "^0.2.6",
-    "@storybook/builder-webpack5": "^6.5.15",
-    "@storybook/core-common": "^6.5.15",
-    "@storybook/core-server": "^6.5.15",
-    "@storybook/manager-webpack5": "^6.5.15",
-    "@storybook/react": "^6.5.15",
-    "@storybook/theming": "^6.5.15",
-    "@storybook/web-components": "^6.5.15",
+    "@storybook/addon-docs": "^7.0.6",
+    "@storybook/addon-essentials": "^7.0.6",
+    "@storybook/addon-mdx-gfm": "^7.0.6",
+    "@storybook/addons": "^7.0.6",
+    "@storybook/builder-vite": "^7.0.6",
+    "@storybook/builder-webpack5": "^7.0.6",
+    "@storybook/core-common": "^7.0.6",
+    "@storybook/core-server": "^7.0.6",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^7.0.6",
+    "@storybook/react-vite": "^7.0.6",
+    "@storybook/theming": "^7.0.6",
+    "@storybook/web-components": "^7.0.6",
+    "@storybook/web-components-vite": "^7.0.6",
     "@svgr/webpack": "^5.4.0",
     "@swc-node/register": "^1.4.2",
     "@swc/cli": "~0.1.55",
@@ -77,7 +79,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
-    "eslint-plugin-storybook": "^0.6.4",
+    "eslint-plugin-storybook": "^0.6.11",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.0",
     "jest-axe": "^7.0.0",
@@ -124,4 +126,3 @@
     "apps/*"
   ]
 }
-

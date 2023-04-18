@@ -1,5 +1,5 @@
 import React, { createElement } from 'react';
-import { MrdToggleThemeElement } from '@mordech/web-components/mrd-toggle-theme';
+import { MrdToggleThemeElement } from '@mordech/web-components';
 
 import { GlobalStyle } from '../src/lib/abstracts';
 
@@ -51,7 +51,7 @@ customElements.define(
       this.attachShadow({ mode: 'open' });
       const slot = createElement('slot');
 
-      this.shadowRoot.appendChild(slot);
+      this.shadowRoot?.appendChild(slot);
     }
   }
 );
