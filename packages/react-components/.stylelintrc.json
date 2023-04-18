@@ -1,3 +1,4 @@
 {
-  "extends": "../../.stylelintrc.json"
+  "extends": "../../.stylelintrc.json",
+  "ignoreFiles": ["./storybook-static/**/*", "./dist/**/*"]
 }
