@@ -40,7 +40,7 @@ The plugin uses [my web component library](/packages/web-components/) to build t
 
 ## Build
 
-1. Run `pnpm nx run @mordech/hct-color-picker:build`
+1. Run `pnpm nx run @mordech/hct-color-picker:build` to build the plugin
 2. The plugin will be available in the `/apps/hct-color-picker/dist/` folder
 
 ## Contribution guidelines
