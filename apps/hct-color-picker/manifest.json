@@ -1,8 +1,8 @@
 {
   "name": "HCT Color Picker",
-  "id": "hct-color-picker",
+  "id": "1227923985322908257",
   "api": "1.0.0",
   "main": "dist/code.js",
   "ui": "dist/index.html",
-  "editorType": ["figma", "figjam"]
+  "editorType": ["figma"]
 }
