@@ -1,12 +1,13 @@
-.color-input {
+.color-input-container {
+  margin: -2px;
   display: flex;
   position: relative;
   flex-direction: column;
 
   & mrd-button {
     position: absolute;
-    inset-block-end: 0.8rem;
-    inset-inline-end: 0.75rem;
+    inset-block-end: 0.7rem;
+    inset-inline-end: 0.6rem;
     opacity: 0.9;
   }
 }
@@ -27,12 +28,12 @@ mrd-button.add-style-button::part(button) {
   }
 }
 
-save-icon {
+.save-icon {
   height: 20px;
 }
 
-.mrd-color-input {
-  --mrd-swatch-size: 8rem;
+.color-input {
+  --mrd-swatch-size: 7rem;
 
   @mixin color-swatch {
     border-color: var(--mrd-color-background-surface);
@@ -64,6 +65,7 @@ save-icon {
   gap: 2rem;
   justify-content: space-between;
   align-items: flex-start;
+  padding-block-end: 0.5rem;
 }
 
 .color-container {

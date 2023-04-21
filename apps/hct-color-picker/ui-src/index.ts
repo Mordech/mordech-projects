@@ -32,15 +32,6 @@ export class MyApp extends LitElement {
   render() {
     return html`
       <header>
-        <div class="header-container">
-          <h1>HCT Color Picker</h1>
-          <mrd-toggle-theme
-            @toggle-theme=${this.handleThemeChange}
-            theme="dark"
-            .saveToStorage=${false}
-          >
-          </mrd-toggle-theme>
-        </div>
         <color-preview
           @input=${this.handleInput}
           .hex=${this.hex}
@@ -115,6 +106,24 @@ export class MyApp extends LitElement {
               </details-section>
             `
           : ''}
+
+        <footer>
+          <a
+            href="https://github.com/Mordech/mordech-projects/tree/main/apps/hct-color-picker"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            This plugin open source ⚡️
+          </a>
+
+          <mrd-toggle-theme
+            title="Toggle theme"
+            @toggle-theme=${this.handleThemeChange}
+            theme="dark"
+            .saveToStorage=${false}
+          >
+          </mrd-toggle-theme>
+        </footer>
       </main>
     `;
   }

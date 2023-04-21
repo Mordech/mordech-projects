@@ -2,8 +2,8 @@ import { argbFromHex } from '@material/material-color-utilities';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import '../../icons/save-icon';
 import '@mordech/web-components/mrd-button';
+import '../../icons/save-icon';
 
 import type { UiPaintStyle } from '../../../types';
 import { postMessage } from '../../utils/postMessage';
@@ -20,12 +20,12 @@ export class ColorPreview extends LitElement {
   render() {
     return html`
       <div class="color-container">
-        <div class="color-input">
+        <div class="color-input-container">
           <input
             type="color"
             id="mrd-selected_color"
             name="Selected Color"
-            class="mrd-color-input"
+            class=${'color-input'}
             .value=${this.hex}
           />
 
@@ -36,7 +36,7 @@ export class ColorPreview extends LitElement {
                   @click=${this.createPaintStyle}
                   .style=${createButtonStyle}
                 >
-                  <save-icon></save-icon>
+                  <save-icon class=${'save-icon'}></save-icon>
                 </mrd-button>
               `
             : ''}
