@@ -12,14 +12,14 @@ import {
   updateSelection,
 } from './utils';
 
-figma.showUI(__html__, { width: 450, height: 548 });
+figma.showUI(__html__, { width: 340, height: 560 });
 figma.currentPage.selection = [];
 
 const paintStyles = figma.getLocalPaintStyles();
 
 const uiSizes: Record<string, [number, number]> = {
-  small: [450, 600],
-  medium: [450, 652],
+  small: [340, 560],
+  medium: [340, 610],
 };
 
 postMessage({
