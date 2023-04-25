@@ -8,12 +8,12 @@ import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 
-import './components/color-preview';
-import './components/expand-chevron';
-import './components/hct-controller';
 import '@mordech/web-components/mrd-paint-swatch';
 import '@mordech/web-components/mrd-toggle-theme';
+import './components/color-preview';
 import './components/details-section';
+import './components/expand-chevron';
+import './components/hct-controller';
 
 import type { PluginMessage, UiPaintStyle } from '../types';
 

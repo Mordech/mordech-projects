@@ -5,11 +5,11 @@ const thumb = css`
   appearance: none;
   cursor: grab;
 
-  width: var(--mrd-thumb-size, 1rem);
-  height: var(--mrd-thumb-size, 1rem);
+  width: var(--mrd-range-thumb-width, var(--mrd-thumb-size, 1rem));
+  height: var(--mrd-range-thumb-height, var(--mrd-thumb-size, 1rem));
 
-  border: var(--mrd-range-border, unset);
-  border-radius: 1rem;
+  border: var(--mrd-range-border, var(--mrd-range-thumb-border, unset));
+  border-radius: var(--mrd-range-thumb-border-radius, 1rem);
   background-color: var(
     --mrd-thumb-color,
     var(--mrd-range-color, ${unsafeCSS(colors.primary.base)})
@@ -18,7 +18,7 @@ const thumb = css`
 `;
 
 const thumbHover = css`
-  transform: scale(2);
+  transform: var(--mrd-range-thumb-hover-transform, scale(2));
   box-shadow: ${unsafeCSS(elevation[0])};
 `;
 
@@ -27,18 +27,23 @@ const thumbActive = css`
 `;
 
 const track = css`
+  background: var(
+    --mrd-track-background,
+    linear-gradient(
+      90deg,
+      var(--mrd-range-color, ${unsafeCSS(colors.primary.base)})
+        var(--mrd-range, 50%),
+      var(--mrd-range-remainder-color, ${unsafeCSS(colors.background.surface)})
+        var(--mrd-range, 50%)
+    )
+  );
+
   cursor: pointer;
   margin-block: 0.5rem;
   appearance: none;
   border: var(--mrd-range-border, unset);
-  background: linear-gradient(
-    90deg,
-    var(--mrd-range-color, ${unsafeCSS(colors.primary.base)})
-      var(--mrd-range, 50%),
-    ${unsafeCSS(colors.background.surface)} var(--mrd-range, 50%)
-  );
-  height: 0.5rem;
-  border-radius: 1rem;
+  height: var(--mrd-range-track-height, 0.5rem);
+  border-radius: var(--mrd-range-track-border-radius, 1rem);
 `;
 
 export const rangeBase = css`

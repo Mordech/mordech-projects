@@ -1,3 +1,10 @@
+@mixin thumb {
+  appearance: none;
+  width: 1rem;
+  background-color: unset;
+  border: none;
+}
+
 mrd-range::part(slot-container) {
   border: 1px solid var(--mrd-color-background-surface);
   height: 2rem;
@@ -5,6 +12,25 @@ mrd-range::part(slot-container) {
     --mrd-range-preview-background,
     var(--mrd-color-background-surface)
   );
+}
+
+.invisible-color-range {
+  appearance: none;
+  display: flex;
+  flex: 1;
+  height: 100%;
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+  }
+
+  &::-ms-thumb {
+    @include thumb;
+  }
 }
 
 .slider-container {
