@@ -16,6 +16,7 @@ build
 dist-ssr
 *.local
 .cache
+.env
 
 storybook-static/
 
