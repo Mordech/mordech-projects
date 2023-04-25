@@ -4,9 +4,11 @@ import {
   Hct,
   hexFromArgb,
 } from '@material/material-color-utilities';
+import { MrdRangeElement } from '@mordech/web-components/mrd-range';
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
+import * as mixpanel from 'mixpanel-figma';
 
 import '@mordech/web-components/mrd-paint-swatch';
 import '@mordech/web-components/mrd-toggle-theme';
@@ -20,6 +22,42 @@ import type { PluginMessage, UiPaintStyle } from '../types';
 import { postMessage } from './utils/postMessage';
 
 import './styles.scss';
+
+const MIXPANEL_KEY = import.meta.env.VITE_MIXPANEL_TOKEN || 'development';
+
+mixpanel.init(MIXPANEL_KEY, {
+  disable_cookie: true,
+  disable_persistence: true,
+});
+
+addEventListener('click', (event) => {
+  const target = event.target as HTMLElement;
+
+  if (target.hasAttribute('data-action')) {
+    const action = target.getAttribute('data-action') as string;
+
+    mixpanel.track('Click', { action });
+  }
+
+  if (target instanceof HTMLInputElement || target instanceof MrdRangeElement) {
+    const inputType = target.id.split('-')[0];
+    const colorProperty = target.id.split('-')[1];
+    const { value } = target;
+
+    mixpanel.track('Color changed', {
+      inputType,
+      colorProperty,
+      value,
+    });
+  }
+
+  if (target instanceof HTMLAnchorElement) {
+    mixpanel.track('Link clicked', {
+      href: target.href,
+      text: target.innerText,
+    });
+  }
+});
 
 @customElement('my-app')
 export class MyApp extends LitElement {
@@ -81,13 +119,17 @@ export class MyApp extends LitElement {
 
         ${this.paints?.length
           ? html`
-              <details-section title="Color styles">
+              <details-section
+                data-action="Show/hide styles"
+                title="Color styles"
+              >
                 <div class="paints-container" role="listbox">
                   ${repeat(
                     this.paints,
                     ({ id, name, color }) =>
                       html`
                         <mrd-paint-swatch
+                          data-action="Select style"
                           role="option"
                           aria-selected=${id === this.selectedColor?.id}
                           @click=${() =>
@@ -267,6 +309,8 @@ export class MyApp extends LitElement {
       type: 'save-theme',
       data: theme,
     });
+
+    mixpanel.track('Theme change', { theme });
   }
 
   connectedCallback(): void {
@@ -281,7 +325,8 @@ export class MyApp extends LitElement {
     postMessage({ type: 'get-theme' });
 
     onmessage = (event) => {
-      const msg = event.data.pluginMessage as PluginMessage;
+      const msg = event.data.pluginMessage as PluginMessage | undefined;
+      if (!msg) return;
       const { type } = msg;
 
       switch (type) {

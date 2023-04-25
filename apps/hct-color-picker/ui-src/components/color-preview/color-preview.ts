@@ -23,7 +23,7 @@ export class ColorPreview extends LitElement {
         <div class="color-input-container">
           <input
             type="color"
-            id="mrd-selected_color"
+            id="mrd_color-selected_color"
             name="Selected Color"
             class=${'color-input'}
             .value=${this.hex}
@@ -32,6 +32,7 @@ export class ColorPreview extends LitElement {
           ${!this.selectedColor
             ? html`
                 <mrd-button
+                  data-action="Create paint style"
                   class="add-style-button"
                   @click=${this.createPaintStyle}
                   .style=${createButtonStyle}
@@ -53,7 +54,7 @@ export class ColorPreview extends LitElement {
                 </span>
               `
             : html` <strong> Custom color </strong> `}
-          <span> ${this.hex.toUpperCase()} </span>
+          <span data-action="Color hex value"> ${this.hex.toUpperCase()} </span>
         </div>
       </div>
     `;
