@@ -33,10 +33,19 @@ mixpanel.init(MIXPANEL_KEY, {
 addEventListener('click', (event) => {
   const target = event.target as HTMLElement;
 
-  if (target.hasAttribute('data-action')) {
-    const action = target.getAttribute('data-action') as string;
+  if (target.hasAttribute('data-event')) {
+    const event = target.getAttribute('data-event') || 'Click';
+    const properties = Object.fromEntries(
+      Object.entries(target.attributes).map(([, attribute]) => {
+        if (attribute.name.startsWith('data-prop-')) {
+          return [attribute.name.replace('data-prop-', ''), attribute.value];
+        } else {
+          return [];
+        }
+      })
+    );
 
-    mixpanel.track('Click', { action });
+    mixpanel.track(event, { ...properties });
   }
 
   if (target instanceof HTMLInputElement || target instanceof MrdRangeElement) {
