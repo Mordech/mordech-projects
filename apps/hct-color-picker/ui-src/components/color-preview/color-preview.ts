@@ -8,8 +8,6 @@ import '../../icons/save-icon';
 import type { UiPaintStyle } from '../../../types';
 import { postMessage } from '../../utils/postMessage';
 
-import { createButtonStyle } from './create-button.styles';
-
 import './color-preview.scss';
 
 @customElement('color-preview')
@@ -32,10 +30,12 @@ export class ColorPreview extends LitElement {
           ${!this.selectedColor
             ? html`
                 <mrd-button
-                  data-action="Create paint style"
+                  title="Add to styles"
+                  data-event="Create paint style"
+                  data-prop-value=${this.hex}
                   class="add-style-button"
                   @click=${this.createPaintStyle}
-                  .style=${createButtonStyle}
+                  style="--mrd-button-title: 'Add to styles';"
                 >
                   <save-icon class=${'save-icon'}></save-icon>
                 </mrd-button>
@@ -54,7 +54,13 @@ export class ColorPreview extends LitElement {
                 </span>
               `
             : html` <strong> Custom color </strong> `}
-          <span data-action="Color hex value"> ${this.hex.toUpperCase()} </span>
+          <span
+            data-event="Click"
+            data-prop-action="Color hex value"
+            data-prop-value=${this.hex}
+          >
+            ${this.hex.toUpperCase()}
+          </span>
         </div>
       </div>
     `;
