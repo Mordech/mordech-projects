@@ -4,6 +4,7 @@ import { customElement, property } from 'lit/decorators.js';
 
 import '@mordech/web-components/mrd-button';
 import '../../icons/save-icon';
+import '../copy-button';
 
 import type { UiPaintStyle } from '../../../types';
 import { postMessage } from '../../utils/postMessage';
@@ -54,13 +55,9 @@ export class ColorPreview extends LitElement {
                 </span>
               `
             : html` <strong> Custom color </strong> `}
-          <span
-            data-event="Click"
-            data-prop-action="Color hex value"
-            data-prop-value=${this.hex}
-          >
+          <copy-button data-event="Copy hex" data-prop-value=${this.hex}>
             ${this.hex.toUpperCase()}
-          </span>
+          </copy-button>
         </div>
       </div>
     `;
