@@ -1,4 +1,5 @@
 .color-input-container {
+  z-index: 1;
   margin: -2px;
   display: flex;
   position: relative;
@@ -69,14 +70,14 @@ mrd-button.add-style-button {
   display: inline-flex;
   gap: 2rem;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding-block-end: 0.5rem;
 }
 
 .color-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .selected-style-span {
