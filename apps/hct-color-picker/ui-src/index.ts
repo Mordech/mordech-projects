@@ -319,6 +319,20 @@ export class MyApp extends LitElement {
             this.tone = tone;
             this.saveColor();
           }
+
+          mixpanel.track('Layer selected', {
+            hasStyle: !!msg.selection?.id,
+            color:
+              msg.selection?.color &&
+              hexFromArgb(
+                argbFromRgb(
+                  msg.selection?.color?.r,
+                  msg.selection?.color?.g,
+                  msg.selection?.color?.b
+                )
+              ),
+          });
+
           break;
 
         case 'color-from-storage':
