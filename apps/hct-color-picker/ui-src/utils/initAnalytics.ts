@@ -1,8 +1,6 @@
 import { MrdRangeElement } from '@mordech/web-components/mrd-range';
 import * as mixpanel from 'mixpanel-figma';
 
-import { postMessage } from './postMessage';
-
 export const initAnalytics = () => {
   const MIXPANEL_KEY = import.meta.env.VITE_MIXPANEL_TOKEN || 'development';
 
@@ -51,9 +49,5 @@ export const initAnalytics = () => {
         text: target.innerText,
       });
     }
-  });
-
-  postMessage({
-    type: 'get-uuid',
   });
 };

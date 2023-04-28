@@ -91,16 +91,6 @@ figma.ui.onmessage = (msg: PluginMessage) => {
       createPaintStyle(msg.data.argb);
       break;
 
-    case 'get-uuid':
-      figma.clientStorage.getAsync('uuid').then((uuid?: string) => {
-        postMessage({ type: 'uuid', uuid });
-      });
-      break;
-
-    case 'set-uuid':
-      figma.clientStorage.setAsync('uuid', msg.uuid);
-      break;
-
     default:
       break;
   }
