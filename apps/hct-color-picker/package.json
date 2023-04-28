@@ -13,7 +13,7 @@
     "build:ui": "vite build",
     "build:plugin": "esbuild --bundle --minify --sourcemap --target=es2019 --format=esm --outfile=dist/code.js plugin-src/code.ts",
     "build": "concurrently \"vite build\" \"pnpm build:plugin\"",
-    "watch": "concurrently \"vite build --watch\" \"pnpm build:plugin --watch\"",
+    "watch": "concurrently \"vite build --watch --mode development\" \"pnpm build:plugin --watch\"",
     "lint": "eslint --ext .ts,.js .",
     "lint:css": "stylelint './**/*.{css,scss,ts}'"
   },

@@ -8,6 +8,7 @@ import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import * as mixpanel from 'mixpanel-figma';
+import { v4 as uuidv4 } from 'uuid';
 
 import '@mordech/web-components/mrd-paint-swatch';
 import '@mordech/web-components/mrd-toggle-theme';
@@ -351,6 +352,19 @@ export class MyApp extends LitElement {
           if (!toggleTheme) return;
           if (!theme) return;
           toggleTheme.theme = theme;
+          break;
+        }
+
+        case 'uuid': {
+          const { uuid } = msg;
+
+          if (!uuid) {
+            const uuid = uuidv4();
+            postMessage({ type: 'set-uuid', uuid });
+            return mixpanel.identify(uuid);
+          }
+
+          mixpanel.identify(uuid);
           break;
         }
       }

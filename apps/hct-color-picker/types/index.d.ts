@@ -80,6 +80,20 @@ export type CreatePaintStyle = {
   };
 };
 
+export type GetUuid = {
+  type: 'get-uuid';
+};
+
+export type SetUuid = {
+  type: 'set-uuid';
+  uuid: string;
+};
+
+export type Uuid = {
+  type: 'uuid';
+  uuid?: string;
+};
+
 export type PluginMessage =
   | SaveColor
   | SaveTheme
@@ -91,4 +105,7 @@ export type PluginMessage =
   | ColorFromStorage
   | StoredTheme
   | UpdateStyle
-  | CreatePaintStyle;
+  | CreatePaintStyle
+  | GetUuid
+  | SetUuid
+  | Uuid;
