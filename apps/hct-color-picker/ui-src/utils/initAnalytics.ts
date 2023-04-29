@@ -4,11 +4,20 @@ import * as mixpanel from 'mixpanel-figma';
 export const initAnalytics = () => {
   const MIXPANEL_KEY = import.meta.env.VITE_MIXPANEL_TOKEN || 'development';
 
+  const isInEu = isInEuTimeZone();
+
   mixpanel.init(MIXPANEL_KEY, {
     disable_cookie: true,
     disable_persistence: true,
+    track_pageview: !isInEu,
+    opt_out_tracking_by_default: true,
     debug: import.meta.env.MODE === 'development',
   });
+
+  if (isInEu) {
+    mixpanel.opt_out_tracking();
+    mixpanel.disable();
+  }
 
   addEventListener('click', (event) => {
     const target = event.target as HTMLElement;
@@ -51,3 +60,52 @@ export const initAnalytics = () => {
     }
   });
 };
+
+function isInEuTimeZone() {
+  const euTimeZones = [
+    'Europe/Vienna',
+    'Europe/Brussels',
+    'Europe/Sofia',
+    'Europe/Zagreb',
+    'Europe/Belgrade',
+    'Asia/Nicosia',
+    'Europe/Nicosia',
+    'Asia/Famagusta',
+    'Europe/Prague',
+    'Europe/Berlin',
+    'Europe/Copenhagen',
+    'Europe/Tallinn',
+    'Europe/Helsinki',
+    'Europe/Paris',
+    'Europe/Busingen',
+    'Europe/Athens',
+    'Europe/Budapest',
+    'Europe/Dublin',
+    'Eire',
+    'Europe/Rome',
+    'Europe/Riga',
+    'Europe/Vilnius',
+    'Europe/Luxembourg',
+    'Europe/Malta',
+    'Europe/Amsterdam',
+    'Europe/Warsaw',
+    'Poland',
+    'Atlantic/Azores',
+    'Atlantic/Madeira',
+    'Europe/Lisbon',
+    'Portugal',
+    'Europe/Bucharest',
+    'Europe/Bratislava',
+    'Europe/Ljubljana',
+    'Africa/Ceuta',
+    'Atlantic/Canary',
+    'Europe/Madrid',
+    'Europe/Stockholm',
+    'GB',
+    'GB-Eire',
+    'Europe/Belfast',
+    'Europe/London',
+  ];
+
+  return euTimeZones.includes(Intl.DateTimeFormat().resolvedOptions().timeZone);
+}
