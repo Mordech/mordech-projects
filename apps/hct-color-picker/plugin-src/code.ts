@@ -78,7 +78,6 @@ figma.ui.onmessage = (msg: PluginMessage) => {
 
     case 'get-theme':
       figma.clientStorage.getAsync('theme').then((theme: Theme) => {
-        theme = theme || 'dark';
         postMessage({ type: 'stored-theme', theme });
       });
       break;
