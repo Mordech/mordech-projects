@@ -5,18 +5,23 @@ export const initAnalytics = () => {
   const MIXPANEL_KEY = import.meta.env.VITE_MIXPANEL_TOKEN || 'development';
 
   const isInEu = isInEuTimeZone();
+  const isDev = import.meta.env.MODE === 'development';
 
   mixpanel.init(MIXPANEL_KEY, {
     disable_cookie: true,
     disable_persistence: true,
     track_pageview: !isInEu,
     opt_out_tracking_by_default: true,
-    debug: import.meta.env.MODE === 'development',
+    debug: isDev,
   });
 
   if (isInEu) {
     mixpanel.opt_out_tracking();
     mixpanel.disable();
+  }
+
+  if (isDev) {
+    mixpanel.identify('development');
   }
 
   addEventListener('click', (event) => {
