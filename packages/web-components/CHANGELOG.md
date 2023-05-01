@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/Mordech/mordech-projects/compare/v0.26.1...v0.27.0) (2023-05-01)
+
+### Features
+
+- make color picker slimmer ([#82](https://github.com/Mordech/mordech-projects/issues/82)) ([a7d5b24](https://github.com/Mordech/mordech-projects/commit/a7d5b241a428b44b88a5dec554adaad016472ed9))
+- Make range color gradient clickable ([#83](https://github.com/Mordech/mordech-projects/issues/83)) ([b3090bf](https://github.com/Mordech/mordech-projects/commit/b3090bf7b46d196a9f7d5f54dd6135bf3df30260))
+
 ## [0.26.1](https://github.com/Mordech/mordech-projects/compare/v0.26.0...v0.26.1) (2023-02-11)
 
 ### Bug Fixes

@@ -1,7 +1,7 @@
 {
   "name": "@mordech/hct-color-picker",
   "private": true,
-  "version": "0.26.1",
+  "version": "0.27.0",
   "description": "Figma HCT color picker plugin",
   "main": "dist/code.js",
   "type": "module",

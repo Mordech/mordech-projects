@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/Mordech/mordech-projects/compare/v0.26.1...v0.27.0) (2023-05-01)
+
+### Features
+
+- analytics improvements ([#86](https://github.com/Mordech/mordech-projects/issues/86)) ([4b0a736](https://github.com/Mordech/mordech-projects/commit/4b0a73670123acf45377d1e1bd9da764012b0190))
+- change create style label ([#84](https://github.com/Mordech/mordech-projects/issues/84)) ([e7b16bb](https://github.com/Mordech/mordech-projects/commit/e7b16bb5bff9155bf488061f506051314eb20fb9))
+- copy-hex button ([#85](https://github.com/Mordech/mordech-projects/issues/85)) ([4a1a3be](https://github.com/Mordech/mordech-projects/commit/4a1a3bea039a0742069da6fa4d92d4e4397a9868))
+- **hct-color-picker:** change default theme to prefers ([#88](https://github.com/Mordech/mordech-projects/issues/88)) ([d1ce1b4](https://github.com/Mordech/mordech-projects/commit/d1ce1b4531b1450c786908e2226869edbbf59fee))
+- **hct-color-picker:** exclude eu countries from analytics ([#87](https://github.com/Mordech/mordech-projects/issues/87)) ([a1ab827](https://github.com/Mordech/mordech-projects/commit/a1ab8271025b4347d9ab556952bad518596736f0))
+- **hct-color-picker:** improve copy hex ([#89](https://github.com/Mordech/mordech-projects/issues/89)) ([bf0624c](https://github.com/Mordech/mordech-projects/commit/bf0624c07d5fe896c368487e418620928895b510))
+- make color picker slimmer ([#82](https://github.com/Mordech/mordech-projects/issues/82)) ([a7d5b24](https://github.com/Mordech/mordech-projects/commit/a7d5b241a428b44b88a5dec554adaad016472ed9))
+- Make range color gradient clickable ([#83](https://github.com/Mordech/mordech-projects/issues/83)) ([b3090bf](https://github.com/Mordech/mordech-projects/commit/b3090bf7b46d196a9f7d5f54dd6135bf3df30260))
+
 ## [0.26.1](https://github.com/Mordech/mordech-projects/compare/v0.26.0...v0.26.1) (2023-02-11)
 
 ### Bug Fixes
