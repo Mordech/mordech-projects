@@ -31,12 +31,12 @@ export class ColorPreview extends LitElement {
           ${!this.selectedColor
             ? html`
                 <mrd-button
-                  title="Add to styles"
+                  aria-label="Add to styles"
                   data-event="Create paint style"
                   data-prop-value=${this.hex}
                   class="add-style-button"
                   @click=${this.createPaintStyle}
-                  style="--mrd-button-title: 'Add to styles';"
+                  style="--mrd-button-title: 'Add to styles'"
                 >
                   <save-icon class=${'save-icon'}></save-icon>
                 </mrd-button>

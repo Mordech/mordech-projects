@@ -13,7 +13,7 @@ export class CopyButton extends LitElement {
   static styles = [unsafeCSS(styles)];
 
   render() {
-    return html`<button>
+    return html`<button title=${this.copied ? 'Copied!' : 'Copy hex'}>
       <slot></slot>
       ${this.copied ? checkMarkIcon : clipboardIcon}
     </button>`;
