@@ -25,7 +25,6 @@ button {
     inset: 0;
     background-color: var(--mrd-color-background-on);
     opacity: 0;
-    transition: opacity var(--mrd-transition-default);
   }
 
   &:hover {

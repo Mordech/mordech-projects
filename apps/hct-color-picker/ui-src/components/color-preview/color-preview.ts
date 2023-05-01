@@ -55,6 +55,7 @@ export class ColorPreview extends LitElement {
                 </span>
               `
             : html` <strong> Custom color </strong> `}
+
           <copy-button data-event="Copy hex" data-prop-value=${this.hex}>
             ${this.hex.toUpperCase()}
           </copy-button>
