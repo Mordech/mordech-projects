@@ -4,6 +4,7 @@ import {
   Hct,
   hexFromArgb,
 } from '@material/material-color-utilities';
+import Color from 'color';
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -86,7 +87,7 @@ export class MyApp extends LitElement {
         ${this.paints?.length
           ? html`
               <details-section
-                data-action="Show/hide styles"
+                data-event="Show/hide styles"
                 title="Color styles"
               >
                 <div class="paints-container" role="listbox">
@@ -95,7 +96,11 @@ export class MyApp extends LitElement {
                     ({ id, name, color }) =>
                       html`
                         <mrd-paint-swatch
-                          data-action="Select style"
+                          data-event="Click swatch"
+                          data-prop-type=${id === this.selectedColor?.id
+                            ? 'Select style'
+                            : 'Deselect style'}
+                          data-prop-color=${Color(color).hex()}
                           role="option"
                           aria-selected=${id === this.selectedColor?.id}
                           @click=${() =>
@@ -104,7 +109,7 @@ export class MyApp extends LitElement {
                               : (this.selectedColor = { id, name, color })}
                           .id=${id}
                           .name=${name}
-                          .color=${`rgb(${color.r}, ${color.g}, ${color.b})`}
+                          .color=${Color(color).hex()}
                           .active=${id === this.selectedColor?.id}
                         >
                         </mrd-paint-swatch>
@@ -308,11 +313,7 @@ export class MyApp extends LitElement {
           );
           if (!this.selectedColor && msg.selection?.color) {
             const { hue, chroma, tone } = Hct.fromInt(
-              argbFromRgb(
-                msg.selection?.color?.r,
-                msg.selection?.color?.g,
-                msg.selection?.color?.b
-              )
+              Color(msg.selection?.color).rgbNumber()
             );
             this.hue = hue;
             this.chroma = chroma;
@@ -322,15 +323,7 @@ export class MyApp extends LitElement {
 
           mixpanel.track('Layer selected', {
             hasStyle: !!msg.selection?.id,
-            color:
-              msg.selection?.color &&
-              hexFromArgb(
-                argbFromRgb(
-                  msg.selection?.color?.r,
-                  msg.selection?.color?.g,
-                  msg.selection?.color?.b
-                )
-              ),
+            color: msg.selection?.color && Color(msg.selection?.color).hex(),
           });
 
           break;
