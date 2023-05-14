@@ -139,12 +139,12 @@ export class MyApp extends LitElement {
     `;
   }
 
-  get hex() {
-    return hexFromArgb(Hct.from(this.hue, this.chroma, this.tone).toInt());
+  get argb() {
+    return Hct.from(this.hue, this.chroma, this.tone).toInt();
   }
 
-  get argb() {
-    return argbFromHex(this.hex);
+  get hex() {
+    return hexFromArgb(this.argb);
   }
 
   override updated(changedProperties: Map<string, unknown>) {
