@@ -1,9 +1,9 @@
-import { defineConfig, PluginOption } from 'vite';
+import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 
 export default defineConfig({
   root: './ui-src',
-  plugins: [viteSingleFile() as unknown as PluginOption],
+  plugins: [viteSingleFile()],
   build: {
     target: 'esnext',
     assetsInlineLimit: 100000000,

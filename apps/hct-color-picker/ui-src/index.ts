@@ -1,6 +1,5 @@
 import {
   argbFromHex,
-  argbFromRgb,
   Hct,
   hexFromArgb,
 } from '@material/material-color-utilities';
@@ -151,9 +150,9 @@ export class MyApp extends LitElement {
   override updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('selectedColor')) {
       if (!this.selectedColor) return;
-      const { r, g, b } = this.selectedColor.color;
 
-      const hct = Hct.fromInt(argbFromRgb(r, g, b));
+      const color = new Color(this.selectedColor.color);
+      const hct = Hct.fromInt(color.rgbNumber());
 
       this.hue = hct.hue;
       this.chroma = hct.chroma;
@@ -320,6 +319,8 @@ export class MyApp extends LitElement {
             this.tone = tone;
             this.saveColor();
           }
+
+          if (!msg.selection?.id && !msg.selection?.color) break;
 
           mixpanel.track('Layer selected', {
             hasStyle: !!msg.selection?.id,

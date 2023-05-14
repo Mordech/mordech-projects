@@ -109,7 +109,7 @@
     "vitest": "^0.26.2"
   },
   "dependencies": {
-    "@material/material-color-utilities": "^0.2.5",
+    "@material/material-color-utilities": "^0.2.6",
     "@nrwl/nx-cloud": "15.0.3",
     "@swc/helpers": "~0.4.11",
     "jsdom": "^20.0.3",
