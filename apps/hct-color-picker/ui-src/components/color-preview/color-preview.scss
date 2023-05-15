@@ -24,7 +24,7 @@ mrd-button.add-style-button::part(button) {
     padding-block: 0.5rem;
     padding-inline: 0.75rem 1rem;
     &::after {
-      content: var(--mrd-button-title);
+      content: var(--mrd-button-title, 'Add to styles');
     }
   }
 }
