@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/Mordech/mordech-projects/compare/v0.27.0...v0.28.0) (2023-05-16)
+
+### Features
+
+- **inbox-zero-cats:** save theme to browser local storage ([#94](https://github.com/Mordech/mordech-projects/issues/94)) ([b50abeb](https://github.com/Mordech/mordech-projects/commit/b50abeb9df988df9b9cacfcedd7215a7504efe85))
+
 # [0.27.0](https://github.com/Mordech/mordech-projects/compare/v0.26.1...v0.27.0) (2023-05-01)
 
 **Note:** Version bump only for package @mordech/zero-inbox-cats-for-gmail
