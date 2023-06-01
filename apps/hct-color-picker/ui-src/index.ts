@@ -1,5 +1,6 @@
 import {
   argbFromHex,
+  clampInt,
   Hct,
   hexFromArgb,
 } from '@material/material-color-utilities';
@@ -193,7 +194,7 @@ export class MyApp extends LitElement {
     const gradient = [];
 
     for (let i = 1; i < steps; i++) {
-      const color = Hct.from(this.hue, i, 52);
+      const color = Hct.from(this.hue, i, clampInt(50, 65, this.tone));
       gradient.push(hexFromArgb(color.toInt()));
     }
 
@@ -208,7 +209,9 @@ export class MyApp extends LitElement {
       )};
 
       --mrd-thumb-color: ${unsafeCSS(
-        hexFromArgb(Hct.from(this.hue, this.chroma, 52).toInt())
+        hexFromArgb(
+          Hct.from(this.hue, this.chroma, clampInt(50, 65, this.tone)).toInt()
+        )
       )};
     `;
   }
@@ -234,11 +237,7 @@ export class MyApp extends LitElement {
 
       --mrd-thumb-color: ${unsafeCSS(
         hexFromArgb(
-          Hct.from(
-            this.hue,
-            this.chroma,
-            Math.min(75, Math.max(this.tone, 25))
-          ).toInt()
+          Hct.from(this.hue, this.chroma, clampInt(25, 75, this.tone)).toInt()
         )
       )};
     `;
