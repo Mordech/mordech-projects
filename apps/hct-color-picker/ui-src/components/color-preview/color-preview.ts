@@ -3,10 +3,10 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import '@mordech/web-components/mrd-button';
-import '../../icons/save-icon';
 import '../copy-button';
 
 import type { UiPaintStyle } from '../../../types';
+import saveIcon from '../../icons/save-icon.svg?lit';
 import { postMessage } from '../../utils/postMessage';
 
 import './color-preview.scss';
@@ -38,7 +38,7 @@ export class ColorPreview extends LitElement {
                   @click=${this.createPaintStyle}
                   style="--mrd-button-title: 'Add to styles'"
                 >
-                  <save-icon class=${'save-icon'}></save-icon>
+                  ${saveIcon}
                 </mrd-button>
               `
             : ''}

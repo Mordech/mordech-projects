@@ -1,9 +1,10 @@
+import { viteLitLoader } from '@mordech/vite-lit-loader';
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 
 export default defineConfig({
   root: './ui-src',
-  plugins: [viteSingleFile()],
+  plugins: [viteSingleFile(), viteLitLoader()],
   build: {
     target: 'esnext',
     assetsInlineLimit: 100000000,

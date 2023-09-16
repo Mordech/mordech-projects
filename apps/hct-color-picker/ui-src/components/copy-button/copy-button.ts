@@ -1,16 +1,16 @@
-import { html, LitElement, unsafeCSS } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import { clipboardIcon } from '../../icons';
-import { checkMarkIcon } from '../../icons/check-mark-icon';
+import checkMarkIcon from '../../icons/check-mark-icon.svg?lit';
+import clipboardIcon from '../../icons/clipboard-icon.svg?lit';
 
-import styles from './copy-button.scss?inline';
+import styles from './copy-button.scss?lit';
 
 @customElement('copy-button')
 export class CopyButton extends LitElement {
   @property({ type: Boolean }) copied = false;
 
-  static styles = [unsafeCSS(styles)];
+  static styles = [styles];
 
   render() {
     return html`<button title=${this.copied ? 'Copied!' : 'Copy hex'}>

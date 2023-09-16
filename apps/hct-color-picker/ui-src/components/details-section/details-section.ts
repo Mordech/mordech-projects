@@ -1,15 +1,15 @@
-import { html, LitElement, unsafeCSS } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import '../expand-chevron';
 
-import detailsSectionStyles from './details-section.scss?inline';
+import detailsSectionStyles from './details-section.scss?lit';
 
 @customElement('details-section')
 export class DetailsSection extends LitElement {
   @property({ type: String }) title = '';
 
-  static styles = [unsafeCSS(detailsSectionStyles)];
+  static styles = [detailsSectionStyles];
 
   render() {
     return html`

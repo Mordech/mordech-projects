@@ -1,0 +1,40 @@
+{
+  "name": "vite-lit-loader",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/vite-lit-loader/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "tsc -p packages/vite-lit-loader/tsconfig.lib.json"
+          }
+        ],
+        "cwd": ".",
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/vite-lit-loader/**/*.ts"]
+      }
+    },
+    "prepare": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "nx build vite-lit-loader"
+          }
+        ],
+        "cwd": "packages/vite-lit-loader",
+        "parallel": false
+      }
+    }
+  },
+  "tags": []
+}

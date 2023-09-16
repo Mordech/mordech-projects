@@ -16,6 +16,7 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@lit-labs/react": "^1.1.1",
+    "@mordech/vite-lit-loader": "workspace:*",
     "@mordech/react-components": "workspace:*",
     "@mordech/storybook-toggle-theme-addon": "workspace:*",
     "@mordech/tokens": "workspace:*",
