@@ -544,7 +544,11 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5
 
-  packages/vite-lit-loader: {}
+  packages/vite-lit-loader:
+    dependencies:
+      tslib:
+        specifier: ^2.3.0
+        version: 2.4.1
 
   packages/web-components:
     dependencies:
