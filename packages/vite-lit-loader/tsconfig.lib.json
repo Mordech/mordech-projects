@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "rootDir": "./src/",
+    "declaration": true,
+    "types": ["node", "./types"]
+  },
+  "include": ["src/**/*.ts", "src/lib/vite-lit-loader.js"],
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

@@ -27,7 +27,9 @@
     "paths": {
       "@mordech/web-components/*": [
         "packages/web-components/src/lib/components/*"
-      ]
+      ],
+      "@mordech/vite-lit-loader": ["packages/vite-lit-loader/src/index.ts"],
+      "@mordech/vite-lit-loader/*": ["packages/vite-lit-loader/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

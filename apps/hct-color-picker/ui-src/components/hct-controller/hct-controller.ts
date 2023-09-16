@@ -11,7 +11,7 @@ export class HctController extends LitElement {
   @property({ type: Number }) min = 0;
   @property({ type: Number }) max = 360;
   @property({ type: String }) name = 'hue';
-  @property({ type: String })
+  @property({ type: Object })
   sliderGradient = css`
     background: linear-gradient(
       to right,
@@ -59,7 +59,7 @@ export class HctController extends LitElement {
             name="mrd_color-${this.name.toLocaleLowerCase()}"
             min=${this.min}
             max=${this.max}
-            .value=${this.value}
+            .value=${this.value.toFixed().toString()}
           />
         </mrd-range>
       </div>
