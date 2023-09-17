@@ -11,7 +11,7 @@
 [![Published on npm](https://img.shields.io/npm/v/@mordech/tokens.svg?logo=npm&label=Tokens&logoColor=FFF)](https://www.npmjs.com/package/@mordech/tokens)
 [![React Storybook](https://img.shields.io/badge/React-Storybook-FF4785?logo=React&style=flat&logoColor=FFF)](https://mordech-react-components.netlify.app/)
 [![Lit Storybook](https://img.shields.io/badge/Lit-Storybook-FF4785?logo=Lit&style=flat&logoColor=FFF)](https://mordech-web-components.netlify.app/)
-[![Published on npm](https://img.shields.io/npm/v/@mordech/vite-lit-loader.svg?logo=npm&label=Vite%20Lit%20Loader&logoColor=FFF)](https://www.npmjs.com/package/@mordech/tokens)
+[![Published on npm](https://img.shields.io/npm/v/@mordech/vite-lit-loader.svg?logo=npm&label=Vite%20Lit%20Loader&logoColor=FFF)](https://www.npmjs.com/package/@mordech/vite-lit-loader)
 
 </div>
 
@@ -23,11 +23,11 @@ This project uses `pnpm workspaces`, `Lerna`, and `NX` + `NX Cloud`
 
 ## What can I find here?
 
-### Vite lit loader
+### Vite Lit loader
 
 [link](/packages/vite-lit-loader/)
 
-This is a vite plugin that allows you to load `svg`, `css`, and `html` without wrapping them with `unsafeCSS`, `unsafeHTML` or `unsafeSVG` functions.
+This Vite plugin allows you to load `svg`, `css`, and `html` without wrapping them with `unsafeCSS`, `unsafeHTML` or `unsafeSVG` functions.
 
 ### My react component library
 
@@ -39,7 +39,7 @@ Creating a personal react component library frees me to work fast, make quick it
 
 [link](/packages/web-components/)
 
-I'm trying to create a web component library using `lit`. I want a library that is framework agnostic and can be used in any project.
+I'm trying to create a web component library using `lit`. I want a framework-agnostic library that can be used in any project.
 
 ### Inbox Zero Cats for Gmail
 
