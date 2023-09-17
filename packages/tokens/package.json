@@ -11,6 +11,7 @@
     "url": "git+https://github.com/Mordech/mordech-projects.git",
     "directory": "packages/tokens"
   },
+  "homepage": "https://github.com/Mordech/mordech-projects/tree/main/packages/tokens#readme",
   "files": [
     "dist/**/*"
   ],
