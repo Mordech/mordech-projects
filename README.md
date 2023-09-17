@@ -11,6 +11,7 @@
 [![Published on npm](https://img.shields.io/npm/v/@mordech/tokens.svg?logo=npm&label=Tokens&logoColor=FFF)](https://www.npmjs.com/package/@mordech/tokens)
 [![React Storybook](https://img.shields.io/badge/React-Storybook-FF4785?logo=React&style=flat&logoColor=FFF)](https://mordech-react-components.netlify.app/)
 [![Lit Storybook](https://img.shields.io/badge/Lit-Storybook-FF4785?logo=Lit&style=flat&logoColor=FFF)](https://mordech-web-components.netlify.app/)
+[![Published on npm](https://img.shields.io/npm/v/@mordech/vite-lit-loader.svg?logo=npm&label=Vite%20Lit%20Loader&logoColor=FFF)](https://www.npmjs.com/package/@mordech/tokens)
 
 </div>
 
@@ -21,6 +22,12 @@ This repository is a hub for my projects and things I do in my free time. You ca
 This project uses `pnpm workspaces`, `Lerna`, and `NX` + `NX Cloud`
 
 ## What can I find here?
+
+### Vite lit loader
+
+[link](/packages/vite-lit-loader/)
+
+This is a vite plugin that allows you to load `svg`, `css`, and `html` without wrapping them with `unsafeCSS`, `unsafeHTML` or `unsafeSVG` functions.
 
 ### My react component library
 
@@ -34,18 +41,6 @@ Creating a personal react component library frees me to work fast, make quick it
 
 I'm trying to create a web component library using `lit`. I want a library that is framework agnostic and can be used in any project.
 
-### My tokens library
-
-[link](/packages/tokens/)
-
-This library allows sharing Design-Tokens (`colors`, `typography`, `breakpoints`, etc.) between projects. It's a great way to keep your design system consistent across projects.
-
-### Portfolio
-
-[link](/apps/portfolio/) (working on a readme 😊)
-
-I'm trying to develop [my portfolio](https://elad.mizrahi.cc) and create my personal component library and style guide.
-
 ### Inbox Zero Cats for Gmail
 
 [link](/apps/inbox-zero-cats-for-gmail/)
@@ -57,6 +52,18 @@ This web extension for Gmail displays a cat image instead of an empty inbox. The
 [link](/apps/hct-color-picker/)
 
 This is a color picker for Figma. It allows you to pick a color using the HCT color model.
+
+### My tokens library
+
+[link](/packages/tokens/)
+
+This library allows sharing Design-Tokens (`colors`, `typography`, `breakpoints`, etc.) between projects. It's a great way to keep your design system consistent across projects.
+
+### Portfolio
+
+[link](/apps/portfolio/) (working on a readme 😊)
+
+I'm trying to develop [my portfolio](https://elad.mizrahi.cc) and create my personal component library and style guide.
 
 ## Getting started
 

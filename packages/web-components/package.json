@@ -10,7 +10,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mordech/mordech-projects.git",
-    "directory": "packages/web-components"
+    "directory": "packages/web-components",
+    "homepage": "https://github.com/Mordech/mordech-projects/tree/main/packages/web-components#readme"
   },
   "exports": {
     "./*": {
