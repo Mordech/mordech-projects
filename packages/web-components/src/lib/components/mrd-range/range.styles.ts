@@ -102,6 +102,12 @@ export const rangeBase = css`
   input[type='range']:active::-ms-thumb {
     ${thumbActive}
   }
+
+  input[type='range']:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    filter: grayscale(1);
+  }
 `;
 
 export const slotContainer = css`

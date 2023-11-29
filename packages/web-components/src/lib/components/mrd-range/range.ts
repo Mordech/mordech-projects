@@ -11,6 +11,8 @@ export class MrdRangeElement extends LitElement {
   @property({ type: Number }) min = 0;
   @property({ type: Number }) max = 100;
   @property({ type: Number }) value: number = this.getValue();
+  @property({ type: Boolean }) disabled?: boolean;
+  @property({ type: String }) name = 'range';
 
   override render() {
     return html`<div part="wrapper" class="wrapper">
@@ -19,7 +21,9 @@ export class MrdRangeElement extends LitElement {
         .min=${this.min.toString()}
         .max=${this.max.toString()}
         .value=${this.value.toString()}
+        .disabled=${!!this.disabled}
         type="range"
+        name=${this.name}
         @input=${this.handleInput}
         style="--mrd-range: ${this.percentage()}%"
       />

@@ -12,11 +12,13 @@ type HctObject = {
   tone: number;
 };
 
-export type UiPaintStyle = {
+export interface UiPaintStyle {
   id: string;
+  modeId?: string;
+  variableAlias?: boolean;
   name: string;
-  color: RGB;
-};
+  color?: RGB;
+}
 
 export type SaveColor = {
   type: 'save-color';
@@ -52,6 +54,8 @@ export type Selection = {
   selection?: {
     id?: string;
     color?: RGB;
+    modeId?: string;
+    variableAlias?: boolean;
   };
 };
 

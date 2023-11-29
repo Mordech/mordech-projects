@@ -18,7 +18,7 @@
     "lint:css": "stylelint './**/*.{css,scss,ts}'"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.58.0",
+    "@figma/plugin-typings": "^1.81.0",
     "@mordech/tokens": "workspace:*",
     "@mordech/web-components": "workspace:*",
     "vite": "^4.0.4",

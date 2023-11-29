@@ -6,7 +6,8 @@ import type { PluginMessage } from '../types';
 import {
   createPaintStyle,
   debounce,
-  getPaints,
+  extractValidStyles,
+  getAllStylesAndVariables,
   postMessage,
   updatePaint,
   updateSelection,
@@ -15,45 +16,40 @@ import {
 figma.showUI(__html__, { width: 340, height: 560 });
 figma.currentPage.selection = [];
 
-const paintStyles = figma.getLocalPaintStyles();
-
 const uiSizes: Record<string, [number, number]> = {
   small: [340, 568],
   medium: [340, 618],
 };
 
+const stylesAndVariables = getAllStylesAndVariables();
+
 postMessage({
   type: 'paints',
-  paints: getPaints(paintStyles),
+  paints: extractValidStyles(stylesAndVariables),
 });
 
-paintStyles.length
+stylesAndVariables.length
   ? figma.ui.resize(...uiSizes.medium)
   : figma.ui.resize(...uiSizes.small);
 
 figma.on('documentchange', (event) => {
-  if (
-    event.documentChanges.some(
-      (change) =>
-        change.type === 'STYLE_CREATE' ||
-        change.type === 'STYLE_DELETE' ||
-        change.type === 'STYLE_PROPERTY_CHANGE'
-    )
-  ) {
-    const paintStyles = figma.getLocalPaintStyles();
-    postMessage({ type: 'paints', paints: getPaints(paintStyles) });
+  const stylesAndVariables = getAllStylesAndVariables();
 
-    paintStyles.length
-      ? figma.ui.resize(...uiSizes.medium)
-      : figma.ui.resize(...uiSizes.small);
-  }
+  postMessage({
+    type: 'paints',
+    paints: extractValidStyles(stylesAndVariables),
+  });
+
+  stylesAndVariables.length
+    ? figma.ui.resize(...uiSizes.medium)
+    : figma.ui.resize(...uiSizes.small);
 
   if (event.documentChanges.some((change) => change.type === 'STYLE_CREATE')) {
-    updateSelection();
+    updateSelection({ silent: true });
   }
 });
 
-figma.on('selectionchange', () => updateSelection());
+figma.on('selectionchange', () => updateSelection({}));
 
 figma.ui.onmessage = (msg: PluginMessage) => {
   switch (msg.type) {
