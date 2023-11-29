@@ -21,6 +21,7 @@ import type { PluginMessage, UiPaintStyle } from '../types';
 
 import { initAnalytics } from './utils/initAnalytics';
 import { postMessage } from './utils/postMessage';
+import type { SelectedColor } from './types';
 
 import './styles.scss';
 
@@ -32,7 +33,7 @@ export class MyApp extends LitElement {
   @property({ type: Number }) chroma = 50;
   @property({ type: Number }) tone = 50;
   @property({ type: Array }) paints?: UiPaintStyle[];
-  @property({ type: Object }) selectedColor?: UiPaintStyle;
+  @property({ type: Object }) selectedColor?: SelectedColor;
 
   render() {
     return html`
@@ -90,7 +91,7 @@ export class MyApp extends LitElement {
                 <div class="paints-container" role="listbox">
                   ${repeat(
                     this.paints,
-                    ({ id, name, color, modeId, variableAlias }) =>
+                    ({ id, name, color, modeId }) =>
                       html`
                         <mrd-paint-swatch
                           data-event="Click swatch"
@@ -114,7 +115,6 @@ export class MyApp extends LitElement {
                           .color=${Color(color).hex()}
                           .active=${id === this.selectedColor?.id}
                           data-prop-is-Variable=${!!modeId || nothing}
-                          data-prop-is-variable-alias=${!!variableAlias ||
                           nothing}
                         >
                         </mrd-paint-swatch>

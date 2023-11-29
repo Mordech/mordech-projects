@@ -39,38 +39,6 @@ function extractColor(
   }
 }
 
-function findColorValue(value: VariableValue) {
-  if (typeof value === 'object' && 'type' in value) {
-    if (value.type === 'VARIABLE_ALIAS') {
-      const variable = figma.variables.getVariableById(value.id);
-
-      if (!variable) return;
-
-      const { valuesByMode } = variable;
-      const collectionId = variable?.variableCollectionId;
-      const selection =
-        !!figma.currentPage.selection.length && figma.currentPage.selection[0];
-      const modes = !!selection && selection.resolvedVariableModes;
-      const modeId = !!collectionId && !!modes && modes[collectionId];
-
-      if (!valuesByMode) return;
-
-      if (modeId) {
-        const variableSelection = valuesByMode[modeId];
-        return findColorValue(variableSelection);
-      }
-
-      const parentFirstValue = Object.values(valuesByMode)[0];
-
-      return findColorValue(parentFirstValue);
-    }
-  }
-
-  if (typeof value === 'object' && 'r' in value) {
-    return value;
-  }
-}
-
 export function extractValidStyles(
   paintStyles: (PaintStyle | Variable)[]
 ): UiPaintStyle[] | undefined {
@@ -91,13 +59,15 @@ export function extractValidStyles(
 
         return Object.entries(valuesByMode)
           .map(([modeId, paint]) => {
-            const variableAlias = typeof paint === 'object' && 'type' in paint;
-            const { r, g, b } = findColorValue(paint) as RGB;
+            if (!(typeof paint === 'object')) return;
+            if ('type' in paint) return;
+            if (!('r' in paint)) return;
+
+            const { r, g, b } = paint as RGB;
 
             return {
               id: id,
               modeId,
-              variableAlias,
               name: name,
               color: {
                 r: r * 255,

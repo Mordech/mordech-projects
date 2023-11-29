@@ -15,7 +15,6 @@ type HctObject = {
 export interface UiPaintStyle {
   id: string;
   modeId?: string;
-  variableAlias?: boolean;
   name: string;
   color?: RGB;
 }
