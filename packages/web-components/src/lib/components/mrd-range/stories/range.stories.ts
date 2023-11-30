@@ -46,6 +46,15 @@ export default {
         defaultValue: { summary: '(min + max) / 2' },
       },
     },
+    disabled: {
+      control: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: true,
+      },
+    },
   },
 };
 
@@ -53,9 +62,15 @@ export const Default = ({
   min = 0,
   max = 100,
   value = 50,
+  disabled,
 }: MrdRangeElement) => html`
   <range-container>
-    <mrd-range .min=${min} .max=${max} .value=${value}></mrd-range>
+    <mrd-range
+      .min=${min}
+      .max=${max}
+      .value=${value}
+      .disabled=${disabled}
+    ></mrd-range>
   </range-container>
 `;
 
@@ -63,6 +78,7 @@ export const ColoredRange = ({
   min = 0,
   max = 100,
   value = 50,
+  disabled,
 }: MrdRangeElement) => html`
   <range-container>
     <mrd-range
@@ -70,6 +86,7 @@ export const ColoredRange = ({
       .min=${min}
       .max=${max}
       .value=${value}
+      .disabled=${disabled}
     >
     </mrd-range>
   </range-container>
