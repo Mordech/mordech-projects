@@ -45,11 +45,11 @@ figma.on('documentchange', (event) => {
     : figma.ui.resize(...uiSizes.small);
 
   if (event.documentChanges.some((change) => change.type === 'STYLE_CREATE')) {
-    updateSelection({ silent: true });
+    updateSelection();
   }
 });
 
-figma.on('selectionchange', () => updateSelection({}));
+figma.on('selectionchange', () => updateSelection());
 
 figma.ui.onmessage = (msg: PluginMessage) => {
   switch (msg.type) {

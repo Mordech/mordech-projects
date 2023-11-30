@@ -38,11 +38,7 @@ function getRootVariableObject({
   }
 }
 
-interface UpdateSelectionProps {
-  silent?: boolean;
-}
-
-export function updateSelection({ silent }: UpdateSelectionProps) {
+export function updateSelection() {
   if (!figma.currentPage.selection.length) {
     return postMessage({ type: 'selection', selection: undefined });
   }
@@ -84,13 +80,11 @@ export function updateSelection({ silent }: UpdateSelectionProps) {
     const { modeId, variableAlias } = variableObject || {};
 
     if (variableAlias)
-      silent
-        ? null
-        : figma.notify(
-            `🎨 You are on a variable alias. Editing '${
-              figma.variables.getVariableById(id)?.name
-            }' instead.`
-          );
+      figma.notify(
+        `🎨 You are on a variable alias. Editing '${
+          figma.variables.getVariableById(id)?.name
+        }' instead.`
+      );
 
     return postMessage({
       type: 'selection',
