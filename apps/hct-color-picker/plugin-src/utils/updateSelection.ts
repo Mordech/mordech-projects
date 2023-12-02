@@ -81,7 +81,7 @@ export function updateSelection() {
 
     if (variableAlias)
       figma.notify(
-        `🎨 You are on a variable alias. Editing '${
+        `You are on a variable alias. Editing '${
           figma.variables.getVariableById(id)?.name
         }' instead.`
       );
