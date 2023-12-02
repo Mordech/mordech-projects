@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.30.0) (2023-12-02)
+
+### Bug Fixes
+
+- remove support for variable aliases in pain swatches ([3ca16f2](https://github.com/Mordech/mordech-projects/commit/3ca16f2f9b2865f8264ac169ceb1d425b523df6a))
+
+### Features
+
+- add disabled prop to storybook ([954080a](https://github.com/Mordech/mordech-projects/commit/954080a214dec78cf9e924296ae9853342694590))
+- change selected to editing and add style or variable ([0a5d3e9](https://github.com/Mordech/mordech-projects/commit/0a5d3e9e3c0ab6a9f7b1a22dd41d7c2c2655766e))
+- variable support ([1372085](https://github.com/Mordech/mordech-projects/commit/137208578e33864310049714b353898d8b4490d5))
+
 ## [0.29.1](https://github.com/Mordech/mordech-projects/compare/v0.29.0...v0.29.1) (2023-09-17)
 
 **Note:** Version bump only for package mordech-projects

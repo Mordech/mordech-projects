@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.30.0) (2023-12-02)
+
+**Note:** Version bump only for package @mordech/portfolio
+
 # [0.29.0](https://github.com/Mordech/mordech-projects/compare/v0.28.0...v0.29.0) (2023-09-16)
 
 ### Features

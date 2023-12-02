@@ -517,10 +517,10 @@ importers:
   packages/react-components:
     dependencies:
       '@mordech/tokens':
-        specifier: ^0.29.1
+        specifier: ^0.30.0
         version: link:../tokens
       '@mordech/web-components':
-        specifier: ^0.29.1
+        specifier: ^0.30.0
         version: link:../web-components
     devDependencies:
       '@mordech/storybook-toggle-theme-addon':
@@ -553,7 +553,7 @@ importers:
   packages/web-components:
     dependencies:
       '@mordech/tokens':
-        specifier: ^0.29.1
+        specifier: ^0.30.0
         version: link:../tokens
     devDependencies:
       postcss-lit:
