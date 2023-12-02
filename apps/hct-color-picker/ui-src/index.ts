@@ -5,7 +5,7 @@ import {
   hexFromArgb,
 } from '@material/material-color-utilities';
 import Color from 'color';
-import { css, html, LitElement, unsafeCSS } from 'lit';
+import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import * as mixpanel from 'mixpanel-figma';
@@ -21,6 +21,7 @@ import type { PluginMessage, UiPaintStyle } from '../types';
 
 import { initAnalytics } from './utils/initAnalytics';
 import { postMessage } from './utils/postMessage';
+import type { SelectedColor } from './types';
 
 import './styles.scss';
 
@@ -32,7 +33,7 @@ export class MyApp extends LitElement {
   @property({ type: Number }) chroma = 50;
   @property({ type: Number }) tone = 50;
   @property({ type: Array }) paints?: UiPaintStyle[];
-  @property({ type: String }) selectedColor?: UiPaintStyle;
+  @property({ type: Object }) selectedColor?: SelectedColor;
 
   render() {
     return html`
@@ -41,9 +42,6 @@ export class MyApp extends LitElement {
           @input=${this.handleInput}
           .hex=${this.hex}
           .selectedColor=${this.selectedColor}
-          .chroma=${this.chroma}
-          .hue=${this.hue}
-          .tone=${this.tone}
         >
         </color-preview>
       </header>
@@ -93,7 +91,7 @@ export class MyApp extends LitElement {
                 <div class="paints-container" role="listbox">
                   ${repeat(
                     this.paints,
-                    ({ id, name, color }) =>
+                    ({ id, name, color, modeId }) =>
                       html`
                         <mrd-paint-swatch
                           data-event="Click swatch"
@@ -106,11 +104,18 @@ export class MyApp extends LitElement {
                           @click=${() =>
                             id === this.selectedColor?.id
                               ? (this.selectedColor = undefined)
-                              : (this.selectedColor = { id, name, color })}
+                              : (this.selectedColor = {
+                                  id,
+                                  name,
+                                  color,
+                                  modeId,
+                                })}
                           .id=${id}
                           .name=${name}
                           .color=${Color(color).hex()}
                           .active=${id === this.selectedColor?.id}
+                          data-prop-is-Variable=${!!modeId || nothing}
+                          nothing}
                         >
                         </mrd-paint-swatch>
                       `
@@ -118,7 +123,7 @@ export class MyApp extends LitElement {
                 </div>
               </details-section>
             `
-          : ''}
+          : nothing}
 
         <footer>
           <a
@@ -306,9 +311,17 @@ export class MyApp extends LitElement {
           break;
 
         case 'selection':
-          this.selectedColor = this.paints?.find(
-            (paint) => paint.id === msg.selection?.id
+          this.selectedColor = this.paints?.find((paint) =>
+            paint.modeId
+              ? paint.id === msg.selection?.id &&
+                paint.modeId === msg.selection?.modeId
+              : paint.id === msg.selection?.id
           );
+
+          if (this.selectedColor) {
+            this.selectedColor.variableAlias = msg.selection?.variableAlias;
+          }
+
           if (!this.selectedColor && msg.selection?.color) {
             const { hue, chroma, tone } = Hct.fromInt(
               Color(msg.selection?.color).rgbNumber()
@@ -323,6 +336,8 @@ export class MyApp extends LitElement {
 
           mixpanel.track('Layer selected', {
             hasStyle: !!msg.selection?.id,
+            isVariableAlias: !!msg.selection?.variableAlias,
+            isVariable: !!msg.selection?.modeId,
             color: msg.selection?.color && Color(msg.selection?.color).hex(),
           });
 

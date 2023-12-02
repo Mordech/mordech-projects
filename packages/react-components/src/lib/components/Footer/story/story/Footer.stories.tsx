@@ -37,7 +37,11 @@ const TemplateWithoutPlaceholder: ComponentStory<typeof Footer> = (args) => (
   <Container>
     <Footer {...args}>
       <Typography color={colors.primary.on}>
-        Designed and developed with ❤️ by Elad Mizrahi
+        Designed and developed with{' '}
+        <span aria-label="heart emoji" role="img">
+          ❤️
+        </span>{' '}
+        by Elad Mizrahi
       </Typography>
     </Footer>
   </Container>

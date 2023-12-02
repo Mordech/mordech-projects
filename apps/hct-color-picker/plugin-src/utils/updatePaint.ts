@@ -23,12 +23,25 @@ export async function updatePaint(
 
   if (!paintStyle) return applyPaint(solidPaint);
 
-  const paint = figma
-    .getLocalPaintStyles()
-    .find((style) => style.id === paintStyle.id);
+  const paint =
+    figma.variables.getVariableById(paintStyle.id) ||
+    figma.getLocalPaintStyles().find((style) => style.id === paintStyle.id);
 
   if (!paint) return;
-  paint.paints = [solidPaint as SolidPaint];
+
+  if (paint && 'paints' in paint) {
+    paint.paints = [solidPaint as SolidPaint];
+  } else {
+    const { resolvedType } = paint;
+    if (resolvedType !== 'COLOR') return;
+
+    const mode = paintStyle.modeId;
+    if (!mode) return;
+
+    paint.setValueForMode(mode, solidPaint.color);
+  }
+
+  if (paintStyle.variableAlias) return;
 
   applyPaint(paint);
 }

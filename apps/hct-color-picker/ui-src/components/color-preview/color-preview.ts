@@ -1,5 +1,5 @@
 import { argbFromHex } from '@material/material-color-utilities';
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import '@mordech/web-components/mrd-button';
@@ -41,17 +41,20 @@ export class ColorPreview extends LitElement {
                   ${saveIcon}
                 </mrd-button>
               `
-            : ''}
+            : nothing}
         </div>
 
         <div class="info-container">
           ${this.selectedColor
             ? html`
                 <span
-                  title=${`Selected style: ${this.selectedColor.name}`}
+                  title=${`Editing: ${this.selectedColor.name}`}
                   class="selected-style-span"
                 >
-                  <strong> Selected style: </strong> ${this.selectedColor.name}
+                  <strong>
+                    Editing ${this.selectedColor.modeId ? 'variable' : 'style'}:
+                  </strong>
+                  ${this.selectedColor.name}
                 </span>
               `
             : html` <strong> Custom color </strong> `}

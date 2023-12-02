@@ -1,6 +1,11 @@
 import { MrdRangeElement } from '@mordech/web-components/mrd-range';
 import * as mixpanel from 'mixpanel-figma';
 
+function formatPropName(value: string) {
+  value = value.replace('prop', '');
+  return value[0].toLowerCase() + value.slice(1);
+}
+
 export const initAnalytics = () => {
   const MIXPANEL_KEY = import.meta.env.VITE_MIXPANEL_TOKEN || 'development';
 
@@ -26,13 +31,15 @@ export const initAnalytics = () => {
 
   addEventListener('click', (event) => {
     const target = event.target as HTMLElement;
+    const { dataset } = target;
 
-    if (target.hasAttribute('data-event')) {
-      const event = target.getAttribute('data-event') || 'Click';
+    if (dataset['event']) {
+      const event = dataset['event'] || 'Click';
+
       const properties = Object.fromEntries(
-        Object.entries(target.attributes).map(([, attribute]) => {
-          if (attribute.name.startsWith('data-prop-')) {
-            return [attribute.name.replace('data-prop-', ''), attribute.value];
+        Object.entries(dataset).map(([name, value]) => {
+          if (name.startsWith('prop')) {
+            return [formatPropName(name), value];
           } else {
             return [];
           }
