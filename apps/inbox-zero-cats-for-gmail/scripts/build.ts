@@ -17,8 +17,8 @@ config();
 
 const tree = new FsTree(process.cwd(), true);
 
-updateManifest('firefox');
 updateManifest('chrome');
+updateManifest('firefox');
 
 console.log(`\x1b[36m
     /\\_/\\
@@ -48,13 +48,14 @@ function replaceTsWithJs(manifest: WebExtensionManifest) {
 }
 
 function updateManifest(browser: Browser) {
-  // firefox to Firefox
   const { browserEmoji, browserName } = getBrowserDetails(browser);
   console.log(`${browserEmoji}  Building ${browserName} extension...`);
 
   updateJson(tree, 'src/manifest.json', (manifest: WebExtensionManifest) => {
     delete manifest.$schema;
     manifest = replaceTsWithJs(manifest);
+
+    manifest.manifest_version = browser === 'firefox' ? 2 : 3;
 
     if (browser === 'firefox') {
       const geckoId = process.env.GECKO_ID;
@@ -63,7 +64,6 @@ function updateManifest(browser: Browser) {
           'You must set the GECKO_ID environment variable to build the Firefox extension.'
         );
 
-      manifest.manifest_version = 2;
       manifest.browser_action = manifest.action;
       delete manifest.action;
       manifest.browser_specific_settings = {
@@ -74,8 +74,8 @@ function updateManifest(browser: Browser) {
     }
 
     console.log('\x1b[2m'); // dim
-    writeFileSync('dist/manifest.json', JSON.stringify(manifest, null, 2));
-    execSync(`npx web-ext build -s ./dist -a ./build/${browser}/ -o`, {
+    writeFileSync(`dist/manifest.json`, JSON.stringify(manifest, null, 2));
+    execSync(`npx web-ext build -s ./dist/ -a ./build/${browser}/ -o`, {
       stdio: 'inherit',
     });
     console.log('\x1b[0m'); // reset
