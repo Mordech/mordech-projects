@@ -555,7 +555,7 @@ importers:
   packages/web-components:
     dependencies:
       '@mordech/tokens':
-        specifier: ^0.31.0
+        specifier: ^0.31.1
         version: link:../tokens
     devDependencies:
       postcss-lit:
