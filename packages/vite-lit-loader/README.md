@@ -1,6 +1,6 @@
 # @mordech/vite-lit-loader
 
-A vite plugin for loading `svg`, `html`, `css`, `scss` and `sass` files as lit-html templates / styles.
+A vite plugin for loading `svg`, `html`, `css`, `scss`, and `sass` files as `lit-html` templates/styles.
 
 ## Install
 
@@ -20,9 +20,9 @@ export default defineConfig({
 });
 ```
 
-`litStyleLoader()` Used to load `css`, `scss` and `sass` files as lit-html styles.
+`litStyleLoader()` Used to load CSS, SCSS, and SASS files as lit-html styles.
 
-`litTemplateLoader()` Used to load `svg`, `html` files as lit-html templates.
+`litTemplateLoader()` Used to load SVG and HTML files as lit-html templates.
 
 They are optional and can be used separately.
 
@@ -64,13 +64,13 @@ export class ReadmeComponent extends LitElement {
 
 ⚠️ When using query parameters make sure you include `&lit` at the end of the query string.
 
-You can pass query parameters to `svg` or `html`. They will be embedded into the element as attributes.
+You can pass query parameters to SVG or HTML. They will be embedded into the element as attributes.
 
 #### `?use&lit`
 
-Makes a `<use>` element that refers to the `id` of the imported `svg`. This is useful to reuse icons.
+Creates a `<use>` element that refers to the `id` of the imported SVG. This is useful for reusing icons.
 
-Make sure to include an `id` attribute on the original `svg` element.
+Make sure to include an `id` attribute on the original SVG element.
 
 ```ts
 import svg from './icon.svg?as-use&lit';
