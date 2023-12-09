@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.31.0) (2023-12-09)
+
+### Features
+
+- **vite-lit-loader:** add attributes with query parameters ([#104](https://github.com/Mordech/mordech-projects/issues/104)) ([960e6a0](https://github.com/Mordech/mordech-projects/commit/960e6a01895c58dd45208fcb3fa7bb2d159bea3f))
+
 # [0.30.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.30.0) (2023-12-02)
 
 **Note:** Version bump only for package @mordech/vite-lit-loader

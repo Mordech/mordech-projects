@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.31.0) (2023-12-09)
+
+### Bug Fixes
+
+- **inbox-zero-cats:** fix manifest v3 issues on chrome ([#103](https://github.com/Mordech/mordech-projects/issues/103)) ([52a273b](https://github.com/Mordech/mordech-projects/commit/52a273bbbcd6ef9ffbc121e87acfbb21bbec42b7))
+
+### Features
+
+- **hct-color-picker:** variable support ([#101](https://github.com/Mordech/mordech-projects/issues/101)) ([342e054](https://github.com/Mordech/mordech-projects/commit/342e054851ad8634e6403968a207482150e13d21))
+- **vite-lit-loader:** add attributes with query parameters ([#104](https://github.com/Mordech/mordech-projects/issues/104)) ([960e6a0](https://github.com/Mordech/mordech-projects/commit/960e6a01895c58dd45208fcb3fa7bb2d159bea3f))
+
 # [0.30.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.30.0) (2023-12-02)
 
 ### Bug Fixes

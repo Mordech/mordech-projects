@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.31.0) (2023-12-09)
+
+### Bug Fixes
+
+- **inbox-zero-cats:** fix manifest v3 issues on chrome ([#103](https://github.com/Mordech/mordech-projects/issues/103)) ([52a273b](https://github.com/Mordech/mordech-projects/commit/52a273bbbcd6ef9ffbc121e87acfbb21bbec42b7))
+
 # [0.30.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.30.0) (2023-12-02)
 
 **Note:** Version bump only for package @mordech/inbox-zero-cats-for-gmail

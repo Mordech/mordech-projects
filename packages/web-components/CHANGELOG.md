@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.31.0) (2023-12-09)
+
+### Features
+
+- **hct-color-picker:** variable support ([#101](https://github.com/Mordech/mordech-projects/issues/101)) ([342e054](https://github.com/Mordech/mordech-projects/commit/342e054851ad8634e6403968a207482150e13d21))
+
 # [0.30.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.30.0) (2023-12-02)
 
 ### Features
