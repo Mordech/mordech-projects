@@ -1,4 +1,3 @@
-import { html } from '@mordech/tokens/utils';
 import * as cheerio from 'cheerio';
 import { readFileSync } from 'fs';
 import { Plugin } from 'vite';
@@ -49,7 +48,7 @@ export function litTemplateLoader(): Plugin {
       const path = split[0];
       const fileType = path.split('.').pop();
 
-      if (!fileType?.match(/html|svg|scss|sass|css/)) return;
+      if (!fileType?.match(/html|svg/)) return;
       const file = readFileSync(path, 'utf-8');
 
       if (fileType === 'svg') {
@@ -58,17 +57,14 @@ export function litTemplateLoader(): Plugin {
         if (queryParams.get('as-use') !== null) {
           const svgId = svgElement('svg').attr('id');
 
-          const useSvg = html`
-            <svg xmlns="http://www.w3.org/2000/svg">
-              <use href="#${svgId}"></use>
-            </svg>
-          `;
+          svgElement('svg')
+            .removeAttr('id')
+            .removeAttr('viewBox')
+            .html(`<use href="#${svgId}"></use>`);
 
-          const svgUseElement = cheerio.load(useSvg, { xmlMode: true });
+          addAttributesFromParams(queryParams, svgElement('svg'));
 
-          addAttributesFromParams(queryParams, svgUseElement('svg'));
-
-          const svgOutput = svgUseElement.html() || '';
+          const svgOutput = svgElement.html() || '';
 
           return `
           import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
@@ -164,7 +160,7 @@ function addAttributesFromParams(
   for (const [key, value] of querystring) {
     if (key === 'lit') continue;
 
-    if (key === 'use') continue;
+    if (key === 'as-use') continue;
 
     svgElement.attr(key, value);
   }
