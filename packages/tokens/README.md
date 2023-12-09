@@ -6,76 +6,54 @@
 
 This is a library for sharing design tokens (colors, typography, breakpoints, etc.) between projects.
 
-## Why
+## Why?
 
 I have a few projects going on, and I want to have one source of truth for design tokens.
 
-## How
-
-I'm using [NX](https://nx.dev/) and [NX Cloud](https://nx.app/).
-
-## How to use
-
-### Install
+## Getting started
 
 ```bash
 pnpm add @mordech/tokens
 ```
 
-#### Javascript
-
-```js
-import '@mordech/tokens/css';
-```
-
-#### CSS
+### CSS
 
 ```css
 @import '@mordech/tokens/css';
 ```
 
-All CSS var tokens have fallback values so the code should run without. except for fonts.
+This will load all the css files. If you want to load specific files, you can do the following:
 
-> ⚠️ Future version might have font as a separate import. Check docs if it changes
+```css
+@import '@mordech/tokens/css/tokens.css'; /* CSS vars */
+@import '@mordech/tokens/css/reset.css'; /* Reset */
+@import '@mordech/tokens/css/fonts.css'; /* Fonts */
+```
 
-### Importing tokens
+to reduce bundle size you can import only the fonts you need:
+
+```css
+@import '@mordech/tokens/css/fonts/mono.css';
+@import '@mordech/tokens/css/fonts/sans.css';
+@import '@mordech/tokens/css/fonts/serif.css';
+@import '@mordech/tokens/css/fonts/ui.css';
+```
+
+Fonts are included locally in the package.
+
+### CSS in JS (Emotion/Styled Components)
 
 ```js
+import '@mordech/tokens/css'; // CSS vars
+
 import { colors } from '@mordech/tokens';
 ```
 
-### Use
+#### Usage
 
 ```js
 const Component = () => <div style={{ backgroundColor: colors.primary }} />;
 ```
-
-## How to develop
-
-```bash
-pnpm install
-```
-
-```bash
-pnpm start
-```
-
-## How to build
-
-```bash
-pnpm install
-```
-
-```bash
-pnpm build
-```
-
-## How to contribute
-
-- Fork the repository
-- Create a new branch
-- Make your changes
-- Open a pull request
 
 ## License
 
