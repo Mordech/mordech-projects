@@ -5,24 +5,26 @@ A vite plugin for loading `svg`, `html`, `css`, `scss` and `sass` files as lit-h
 ## Install
 
 ```bash
-pnpm add @mordech/vite-lit-loader
-```
-
-or
-
-```bash
-yarn add @mordech/vite-lit-loader
+pnpm add --dev @mordech/vite-lit-loader
+yarn add --dev @mordech/vite-lit-loader
+npm install --dev @mordech/vite-lit-loader
 ```
 
 ```ts
 // vite.config.ts
 import { defineConfig } from 'vite';
-import { viteLitLoader } from '@mordech/vite-lit-loader';
+import { litStyleLoader, litTemplateLoader } from '@mordech/vite-lit-loader';
 
 export default defineConfig({
-  plugins: [viteLitLoader()],
+  plugins: [litStyleLoader(), litTemplateLoader()],
 });
 ```
+
+`litStyleLoader()` Used to load `css`, `scss` and `sass` files as lit-html styles.
+
+`litTemplateLoader()` Used to load `svg`, `html` files as lit-html templates.
+
+They are optional and can be used separately.
 
 ## Typescript
 
@@ -55,5 +57,36 @@ export class ReadmeComponent extends LitElement {
       </div>
     `;
   }
+}
+```
+
+### Query Parameters
+
+> When using query parameters make sure you include `&lit` at the end of the query string.
+
+When loading `svg` or `html` you can pass query parameters. They will be embedded into the SVG as attributes.
+
+#### `?use&lit`
+
+Makes a `<use>` element that refers to the `id` of the imported `svg`. This is useful to reuse icons.
+
+Make sure to include an `id` attribute on the original `svg` element.
+
+```ts
+import svg from './icon.svg?as-use&lit';
+
+render() {
+  return html`
+    <div class="readme-component">
+      <h1>Readme Component</h1>
+      ${svg}
+      <!--
+        Result:
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <use href="#icon"></use>
+        </svg>
+       -->
+    </div>
+  `;
 }
 ```
