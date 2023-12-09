@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.2](https://github.com/Mordech/mordech-projects/compare/v0.31.1...v0.31.2) (2023-12-09)
+
+### Bug Fixes
+
+- **vite-lit-loader:** add dependencies ([#105](https://github.com/Mordech/mordech-projects/issues/105)) ([c9d4bb7](https://github.com/Mordech/mordech-projects/commit/c9d4bb757396ba3850492d92a833fb09ab5144f8))
+
 # [0.31.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.31.0) (2023-12-09)
 
 ### Features

@@ -1,6 +1,6 @@
 {
   "name": "@mordech/vite-lit-loader",
-  "version": "0.31.1",
+  "version": "0.31.2",
   "type": "commonjs",
   "main": "dist/index.js",
   "license": "MIT",
@@ -16,8 +16,8 @@
   },
   "homepage": "https://github.com/Mordech/mordech-projects/tree/main/packages/vite-lit-loader#readme",
   "dependencies": {
-    "tslib": "^2.3.0",
-    "cheerio": "1.0.0-rc.12"
+    "cheerio": "1.0.0-rc.12",
+    "tslib": "^2.3.0"
   },
   "publishConfig": {
     "access": "public"
