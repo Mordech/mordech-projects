@@ -62,13 +62,19 @@ export class ReadmeComponent extends LitElement {
 
 ### Query Parameters
 
-⚠️ When using query parameters make sure you include `&lit` at the end of the query string.
+You can pass attributes to SVG or HTML using query parameters.
 
-You can pass query parameters to SVG or HTML. They will be embedded into the element as attributes.
+Example:
 
-#### `?use&lit`
+```ts
+import svg from './icon.svg?fill=red&stroke=blue&stroke-width=2&width=100&height=100&lit';
+```
 
-Creates a `<use>` element that refers to the `id` of the imported SVG. This is useful for reusing icons.
+⚠️ When using query parameters make sure you include `&lit` at the end of your query string.
+
+#### Import a SVG as a `<use>` element with `?as-use&lit`
+
+`?as-use&lit` creates a `<use>` element that refers to the `id` of the imported SVG. This is useful for reusing icons.
 
 Make sure to include an `id` attribute on the original SVG element.
 
