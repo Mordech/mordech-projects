@@ -62,9 +62,9 @@ export class ReadmeComponent extends LitElement {
 
 ### Query Parameters
 
-> When using query parameters make sure you include `&lit` at the end of the query string.
+⚠️ When using query parameters make sure you include `&lit` at the end of the query string.
 
-When loading `svg` or `html` you can pass query parameters. They will be embedded into the SVG as attributes.
+You can pass query parameters to `svg` or `html`. They will be embedded into the element as attributes.
 
 #### `?use&lit`
 
