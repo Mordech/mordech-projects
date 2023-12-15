@@ -89,37 +89,43 @@ export class MyApp extends LitElement {
                 title="Color styles"
               >
                 <div class="paints-container" role="listbox">
-                  ${repeat(
-                    this.paints,
-                    ({ id, name, color, modeId }) =>
-                      html`
-                        <mrd-paint-swatch
-                          data-event="Click swatch"
-                          data-prop-type=${id === this.selectedColor?.id
-                            ? 'Select style'
-                            : 'Deselect style'}
-                          data-prop-color=${Color(color).hex()}
-                          role="option"
-                          aria-selected=${id === this.selectedColor?.id}
-                          @click=${() =>
-                            id === this.selectedColor?.id
-                              ? (this.selectedColor = undefined)
-                              : (this.selectedColor = {
-                                  id,
-                                  name,
-                                  color,
-                                  modeId,
-                                })}
-                          .id=${id}
-                          .name=${name}
-                          .color=${Color(color).hex()}
-                          .active=${id === this.selectedColor?.id}
-                          data-prop-is-Variable=${!!modeId || nothing}
-                          nothing}
-                        >
-                        </mrd-paint-swatch>
-                      `
-                  )}
+                  ${repeat(this.paints, ({ id, name, color, modeId }) => {
+                    const swatchId = id + (modeId ? modeId : '');
+                    const selectionId =
+                      this.selectedColor?.id +
+                      (this.selectedColor?.modeId
+                        ? this.selectedColor?.modeId
+                        : '');
+                    const isSelected = swatchId === selectionId;
+
+                    return html`
+                      <mrd-paint-swatch
+                        data-event="Click swatch"
+                        data-prop-type=${id === this.selectedColor?.id
+                          ? 'Select style'
+                          : 'Deselect style'}
+                        data-prop-color=${Color(color).hex()}
+                        role="option"
+                        aria-selected=${isSelected}
+                        @click=${() =>
+                          isSelected
+                            ? (this.selectedColor = undefined)
+                            : (this.selectedColor = {
+                                id,
+                                name,
+                                color,
+                                modeId,
+                              })}
+                        .id=${swatchId}
+                        .name=${name}
+                        .color=${Color(color).hex()}
+                        .active=${isSelected}
+                        data-prop-is-Variable=${!!modeId || nothing}
+                        nothing}
+                      >
+                      </mrd-paint-swatch>
+                    `;
+                  })}
                 </div>
               </details-section>
             `
@@ -310,38 +316,44 @@ export class MyApp extends LitElement {
           }
           break;
 
-        case 'selection':
-          this.selectedColor = this.paints?.find((paint) =>
+        case 'selection': {
+          const { selection } = msg;
+
+          if (!selection) break;
+          if (!selection.color) break;
+
+          const selectedPaint = this.paints?.find((paint) =>
             paint.modeId
-              ? paint.id === msg.selection?.id &&
-                paint.modeId === msg.selection?.modeId
-              : paint.id === msg.selection?.id
+              ? paint.id === selection.id && paint.modeId === selection?.modeId
+              : paint.id === selection.id
           );
 
-          if (this.selectedColor) {
-            this.selectedColor.variableAlias = msg.selection?.variableAlias;
-          }
+          if (!selectedPaint) this.selectedColor = undefined;
 
-          if (!this.selectedColor && msg.selection?.color) {
+          if (selectedPaint) {
+            this.selectedColor = { ...selectedPaint, color: selection.color };
+
+            this.selectedColor.variableAlias = selection.variableAlias;
+          } else {
             const { hue, chroma, tone } = Hct.fromInt(
-              Color(msg.selection?.color).rgbNumber()
+              Color(selection.color).rgbNumber()
             );
+
             this.hue = hue;
             this.chroma = chroma;
             this.tone = tone;
             this.saveColor();
           }
 
-          if (!msg.selection?.id && !msg.selection?.color) break;
-
           mixpanel.track('Layer selected', {
-            hasStyle: !!msg.selection?.id,
-            isVariableAlias: !!msg.selection?.variableAlias,
-            isVariable: !!msg.selection?.modeId,
-            color: msg.selection?.color && Color(msg.selection?.color).hex(),
+            hasStyle: !!selection.id,
+            isVariableAlias: !!selection.variableAlias,
+            isVariable: !!selection.modeId,
+            color: selection.color && Color(selection.color).hex(),
           });
 
           break;
+        }
 
         case 'color-from-storage':
           {
