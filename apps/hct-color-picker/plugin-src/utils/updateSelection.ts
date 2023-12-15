@@ -79,13 +79,6 @@ export function updateSelection() {
 
     const { modeId, variableAlias } = variableObject || {};
 
-    if (variableAlias)
-      figma.notify(
-        `You are on a variable alias. Editing '${
-          figma.variables.getVariableById(id)?.name
-        }' instead.`
-      );
-
     return postMessage({
       type: 'selection',
       selection: {
