@@ -33,23 +33,27 @@ stylesAndVariables.length
   : figma.ui.resize(...uiSizes.small);
 
 figma.on('documentchange', (event) => {
-  const stylesAndVariables = getAllStylesAndVariables();
+  if (
+    event.documentChanges.some(
+      ({ type }) => type === 'STYLE_CREATE' || type === 'STYLE_DELETE'
+    )
+  ) {
+    const stylesAndVariables = getAllStylesAndVariables();
 
-  postMessage({
-    type: 'paints',
-    paints: extractValidStyles(stylesAndVariables),
-  });
+    postMessage({
+      type: 'paints',
+      paints: extractValidStyles(stylesAndVariables),
+    });
 
-  stylesAndVariables.length
-    ? figma.ui.resize(...uiSizes.medium)
-    : figma.ui.resize(...uiSizes.small);
+    stylesAndVariables.length
+      ? figma.ui.resize(...uiSizes.medium)
+      : figma.ui.resize(...uiSizes.small);
 
-  if (event.documentChanges.some((change) => change.type === 'STYLE_CREATE')) {
     updateSelection();
   }
 });
 
-figma.on('selectionchange', () => updateSelection());
+figma.on('selectionchange', updateSelection);
 
 figma.ui.onmessage = (msg: PluginMessage) => {
   switch (msg.type) {
@@ -90,3 +94,12 @@ figma.ui.onmessage = (msg: PluginMessage) => {
       break;
   }
 };
+
+setInterval(() => {
+  const stylesAndVariables = getAllStylesAndVariables();
+
+  postMessage({
+    type: 'paints',
+    paints: extractValidStyles(stylesAndVariables),
+  });
+}, 3000);
