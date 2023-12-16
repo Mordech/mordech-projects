@@ -8,7 +8,7 @@ button {
   margin-inline-end: -0.25rem;
 
   overflow: hidden;
-  color: var(--mrd-color-background-on);
+  color: var(--mrd-color-background-on-base);
   padding: 0.2rem 0.4rem;
   border-radius: 0.5rem;
   display: flex;
@@ -23,7 +23,7 @@ button {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: var(--mrd-color-background-on);
+    background-color: var(--mrd-color-background-on-base);
     opacity: 0;
   }
 

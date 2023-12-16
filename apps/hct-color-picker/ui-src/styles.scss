@@ -30,7 +30,7 @@ my-app {
   align-items: stretch;
   padding-block-start: 1rem;
   background-color: var(--mrd-color-background-base);
-  color: var(--mrd-color-background-on);
+  color: var(--mrd-color-background-on-base);
   margin: auto;
   max-width: 450px;
   box-shadow: 0 0 0 100vmax var(--mrd-color-background-base);
@@ -110,7 +110,7 @@ footer {
       height: 100%;
       width: 100%;
       opacity: 0;
-      background-color: var(--mrd-color-background-on);
+      background-color: var(--mrd-color-background-on-base);
       border-radius: 0.5rem;
 
       transition: opacity var(--mrd-transition-default);

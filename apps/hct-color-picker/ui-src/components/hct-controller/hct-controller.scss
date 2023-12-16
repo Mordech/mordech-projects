@@ -6,7 +6,7 @@
 }
 
 mrd-range::part(slot-container) {
-  border: 1px solid var(--mrd-color-background-surface);
+  border: 1px solid var(--mrd-color-outline);
   height: 2rem;
   background: var(
     --mrd-range-preview-background,
@@ -50,11 +50,11 @@ input[type='number'] {
   width: 4.5rem;
   border: 1px solid var(--mrd-color-background-surface);
   border-radius: 0.25rem;
-  color: var(--mrd-color-background-onSurface);
+  color: var(--mrd-color-background-on-surface);
   &:hover,
   &:focus {
     transition: all var(--mrd-transition-default);
-    border-color: var(--mrd-color-background-onSurface);
+    border-color: var(--mrd-color-background-on-surface);
     background-color: var(--mrd-color-background-surface);
   }
 }

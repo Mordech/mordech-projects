@@ -25,7 +25,7 @@ export type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> &
 const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   --mrd-btn-border-size: 1.5px;
   --mrd-btn-background-color: ${colors.primary.base};
-  --mrd-btn-color: ${colors.primary.on};
+  --mrd-btn-color: ${colors.primary.onBase};
   --mrd-btn-outline-offset: calc(var(--mrd-btn-border-size) * -1);
   --mrd-btn-border-color: var(--mrd-btn-background-color);
 
@@ -69,7 +69,7 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   }
 
   &:hover {
-    --mrd-btn-background-color: ${colors.background.on};
+    --mrd-btn-background-color: ${colors.background.onBase};
     --mrd-btn-border-color: var(--mrd-btn-background-color);
     --mrd-btn-color: ${colors.background.base};
 
@@ -84,7 +84,7 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
 
   &:active {
     --mrd-btn-background-color: ${colors.primary.base};
-    --mrd-btn-color: ${colors.primary.on};
+    --mrd-btn-color: ${colors.primary.onBase};
     --mrd-btn-border-color: var(--mrd-btn-background-color);
 
     outline-color: transparent;

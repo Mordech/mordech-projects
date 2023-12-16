@@ -52,7 +52,7 @@ describe('Button', () => {
     const { getByText } = render(<Button>Test Button</Button>);
     expect(getByText('Test Button')).toHaveStyle(`
       --mrd-btn-background-color: ${removeWhiteSpace(colors.primary.base)};
-      --mrd-btn-color: ${removeWhiteSpace(colors.primary.on)};
+      --mrd-btn-color: ${removeWhiteSpace(colors.primary.onBase)};
       --mrd-btn-border-color: var(--mrd-btn-background-color);
       
       background-color: ButtonFace;

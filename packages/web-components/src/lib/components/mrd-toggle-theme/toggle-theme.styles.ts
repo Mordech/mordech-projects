@@ -4,7 +4,7 @@ import { css, unsafeCSS } from 'lit';
 export const toggleThemeBase = css`
   mrd-button {
     --mrd-border-radius: 99px;
-    --mrd-button-color: ${unsafeCSS(colors.background.on)};
+    --mrd-button-color: ${unsafeCSS(colors.background.onBase)};
     --mrd-button-background: ${unsafeCSS(colors.background.base)};
     --mrd-button-hover-background: ${unsafeCSS(colors.background.surface)};
     --mrd-button-active-background: ${unsafeCSS(colors.background.surface)};

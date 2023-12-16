@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     width: 100%;
     background: ${colors.background.base};
-    color: ${colors.background.on};
+    color: ${colors.background.onBase};
     max-width: 128rem;
   }
 

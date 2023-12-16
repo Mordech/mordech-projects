@@ -7,7 +7,7 @@ export const variantStyles: Record<ButtonVariants, FlattenSimpleInterpolation> =
   {
     primary: css`
       --mrd-btn-background-color: ${colors.primary.base};
-      --mrd-btn-color: ${colors.primary.on};
+      --mrd-btn-color: ${colors.primary.onBase};
     `,
     outline: css`
       --mrd-btn-background-color: transparent;
