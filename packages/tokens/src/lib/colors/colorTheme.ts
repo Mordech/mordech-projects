@@ -111,7 +111,7 @@ export const colorTheme = {
       container: palette['neutral']['40'],
       onContainer: palette['neutral']['70'],
     },
-    outline: palette['neutral']['30'],
+    outline: palette['neutral']['20'],
     outlineVariant: palette['neutral']['40'],
   },
 };
