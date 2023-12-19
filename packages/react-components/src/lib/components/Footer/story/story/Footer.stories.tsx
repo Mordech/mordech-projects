@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof Footer> = (args) => (
     <PlaceholderContent />
 
     <Footer {...args}>
-      <Typography color={colors.primary.on}>
+      <Typography color={colors.primary.onBase}>
         Designed and developed with{' '}
         <span aria-label="heart emoji" role="img">
           ❤️
@@ -36,7 +36,7 @@ const Template: ComponentStory<typeof Footer> = (args) => (
 const TemplateWithoutPlaceholder: ComponentStory<typeof Footer> = (args) => (
   <Container>
     <Footer {...args}>
-      <Typography color={colors.primary.on}>
+      <Typography color={colors.primary.onBase}>
         Designed and developed with{' '}
         <span aria-label="heart emoji" role="img">
           ❤️

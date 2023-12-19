@@ -1,4 +1,5 @@
-import { Token } from '.';
+import { kebabize } from './kabebize';
+import { Token } from './types';
 
 export type ManipulateValueFunction = (
   // eslint-disable-next-line no-unused-vars
@@ -94,12 +95,14 @@ export const createTokenObject = (
         case 'declaration':
           return {
             ...acc,
-            [currentKey]: `--mrd-${prefix}-${key}: ${currentValue};`,
+            [currentKey]: `--mrd-${prefix}-${kebabize(key)}: ${currentValue};`,
           };
         default:
           return {
             ...acc,
-            [currentKey]: `var(--mrd-${prefix}-${key}, ${currentValue})`,
+            [currentKey]: `var(--mrd-${prefix}-${kebabize(
+              key
+            )}, ${currentValue})`,
           };
       }
     }

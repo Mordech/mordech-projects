@@ -7,7 +7,7 @@
   scroll-behavior: smooth;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--mrd-color-background-on);
+  color: var(--mrd-color-background-on-base);
   font-weight: var(--mrd-font-weight-regular);
   font-family: var(--mrd-font-family-ui);
 }
@@ -57,7 +57,7 @@ body {
   min-height: 38rem;
   padding: 1.5rem;
   background-color: var(--mrd-color-background-base);
-  color: var(--mrd-color-background-on);
+  color: var(--mrd-color-background-on-base);
   font-size: var(--mrd-font-size-1);
   overflow-y: scroll;
   overflow-x: hidden;
@@ -125,7 +125,7 @@ input {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   background-color: var(--mrd-color-background-base);
-  color: var(--mrd-color-background-on);
+  color: var(--mrd-color-background-on-base);
 }
 
 input:focus-visible {
@@ -170,8 +170,8 @@ button.primary,
   background-color: var(--mrd-color-primary-base);
   border: 2px solid;
   border-color: var(--mrd-color-primary-base);
-  color: var(--mrd-color-primary-on);
-  fill: var(--mrd-color-primary-on);
+  color: var(--mrd-color-primary-on-base);
+  fill: var(--mrd-color-primary-on-base);
 }
 
 button.small,
@@ -190,8 +190,8 @@ button:focus-visible,
 button:disabled,
 .btn:disabled {
   background-color: var(--mrd-color-disabled-container);
-  color: var(--mrd-color-disabled-onContainer);
-  fill: var(--mrd-color-disabled-onContainer);
+  color: var(--mrd-color-disabled-on-container);
+  fill: var(--mrd-color-disabled-on-container);
   cursor: not-allowed;
 }
 
@@ -209,8 +209,8 @@ button.destructive,
 button.destructive:hover,
 .btn.destructive:hover {
   background-color: var(--mrd-color-error-container);
-  color: var(--mrd-color-error-onContainer);
-  fill: var(--mrd-color-error-onContainer);
+  color: var(--mrd-color-error-on-container);
+  fill: var(--mrd-color-error-on-container);
   opacity: 1;
 }
 
@@ -228,7 +228,7 @@ link {
 
 a:hover,
 link:hover {
-  color: var(--mrd-color-secondary-onContainer);
+  color: var(--mrd-color-secondary-on-container);
   text-decoration: underline;
 }
 
@@ -341,7 +341,7 @@ li.random::after {
   align-items: center;
   justify-content: center;
   background-color: var(--mrd-color-secondary-container);
-  color: var(--mrd-color-secondary-onContainer);
+  color: var(--mrd-color-secondary-on-container);
   font-size: var(--mrd-font-size-0);
   border-radius: 4px;
   padding: 0.25rem;

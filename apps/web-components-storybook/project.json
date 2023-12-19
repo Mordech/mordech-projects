@@ -3,6 +3,18 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": [],
   "targets": {
+    "visual": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "loki test --reactUri file:./storybook-static"
+          }
+        ],
+        "cwd": "apps/web-components-storybook/",
+        "parallel": false
+      }
+    },
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {

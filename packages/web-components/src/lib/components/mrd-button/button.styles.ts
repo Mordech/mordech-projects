@@ -3,7 +3,7 @@ import { css, unsafeCSS } from 'lit';
 
 export const buttonBase = css`
   :host {
-    --mrd-button-color: ${unsafeCSS(colors.primary.on)};
+    --mrd-button-color: ${unsafeCSS(colors.primary.onBase)};
     --mrd-button-background: ${unsafeCSS(colors.primary.base)};
   }
 

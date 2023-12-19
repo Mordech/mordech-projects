@@ -61,14 +61,14 @@ export const LinksContainer = styled(Row).attrs({
   max-width: unset;
   align-items: center;
   justify-content: center;
-  background-color: ${colors.background.on};
+  background-color: ${colors.background.onBase};
 
   /* Creates a full bleed background */
-  box-shadow: 0 0 0 100vmax ${colors.background.on};
+  box-shadow: 0 0 0 100vmax ${colors.background.onBase};
   clip-path: inset(-1px -100vmax);
 
   & > * {
-    color: ${colors.primary.on};
+    color: ${colors.primary.onBase};
   }
 
   ${breakpoints.lg} {
@@ -99,12 +99,12 @@ export const StyledFooter = styled.footer`
   align-items: center;
   justify-content: center;
   padding-block: 1rem;
-  background-color: ${colors.background.on};
+  background-color: ${colors.background.onBase};
   min-height: var(--mrd-default-padding);
   text-align: center;
 
   ${pagePadding}
   /* Creates a full bleed background */
-  box-shadow: 0 0 0 100vmax ${colors.background.on};
+  box-shadow: 0 0 0 100vmax ${colors.background.onBase};
   clip-path: inset(-1px -100vmax -100vmax);
 `;
