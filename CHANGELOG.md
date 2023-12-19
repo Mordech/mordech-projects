@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/Mordech/mordech-projects/compare/v0.31.3...v0.32.0) (2023-12-19)
+
+### Bug Fixes
+
+- **hct-color-picker:** fixed variable modes refresh issues ([#108](https://github.com/Mordech/mordech-projects/issues/108)) ([4f360f9](https://github.com/Mordech/mordech-projects/commit/4f360f98abe3e63ebf72b64dcd933c3a6b93621a))
+
+### Features
+
+- **hct-color-picker:** remove variable alias notification ([#109](https://github.com/Mordech/mordech-projects/issues/109)) ([19a1395](https://github.com/Mordech/mordech-projects/commit/19a1395be7e74e46eab247bdeeb00e7afcf09091))
+- revamp tokens ([#110](https://github.com/Mordech/mordech-projects/issues/110)) ([b36c0e0](https://github.com/Mordech/mordech-projects/commit/b36c0e099c149b924ae325e4005a0afdb47e2290))
+
 ## [0.31.3](https://github.com/Mordech/mordech-projects/compare/v0.31.2...v0.31.3) (2023-12-09)
 
 **Note:** Version bump only for package mordech-projects

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/Mordech/mordech-projects/compare/v0.31.3...v0.32.0) (2023-12-19)
+
+### Features
+
+- revamp tokens ([#110](https://github.com/Mordech/mordech-projects/issues/110)) ([b36c0e0](https://github.com/Mordech/mordech-projects/commit/b36c0e099c149b924ae325e4005a0afdb47e2290))
+
 ## [0.31.3](https://github.com/Mordech/mordech-projects/compare/v0.31.2...v0.31.3) (2023-12-09)
 
 **Note:** Version bump only for package @mordech/web-components
