@@ -13,7 +13,7 @@ export class MrdToggleThemeElement extends LitElement {
   @property({ type: String }) theme: Theme = 'light';
   @property({ type: Boolean }) saveToStorage = true;
   @property({ type: String }) storageKey = 'theme';
-  @property({ type: HTMLElement }) target = document.body;
+  @property({ type: Object }) target = document.body;
 
   static override styles = [focusableBase, toggleThemeBase, toggleThemeIcon];
 
