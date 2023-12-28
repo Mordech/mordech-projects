@@ -35,6 +35,7 @@ export const renderContent = async () => {
       <mrd-toggle-theme
         .theme=${theme}
         .saveToStorage=${false}
+        size="compact"
         @toggle-theme=${(event: CustomEvent) => {
           browser.storage.local.set({ theme: event.detail.theme });
         }}
