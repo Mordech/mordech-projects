@@ -7,7 +7,12 @@ import { styleMap } from 'lit/directives/style-map.js';
 import { focusableBase } from '../../styles/focusable.styles';
 
 import { buttonBase } from './button.styles';
-import { type ButtonColors, type ButtonRadius, type ButtonSize } from './types';
+import {
+  type ButtonColors,
+  type ButtonRadius,
+  type ButtonSize,
+  type ButtonVariants,
+} from './types';
 
 @customElement('mrd-button')
 export class MrdButtonElement extends LitElement {
@@ -20,7 +25,7 @@ export class MrdButtonElement extends LitElement {
   @property({ type: String })
   color: ButtonColors = 'primary';
   @property({ type: String })
-  variant: 'fill' | 'tonal' | 'inverted' | 'text' = 'fill';
+  variant: ButtonVariants = 'fill';
   @property({ type: Boolean })
   disabled = false;
 

@@ -1,4 +1,4 @@
-import { html, nothing } from 'lit-html';
+import { html } from 'lit-html';
 
 import { MrdButtonElement } from '..';
 
@@ -70,37 +70,44 @@ export default {
         defaultValue: { summary: 'false' },
       },
     },
-    slot: {
-      control: 'text',
-      description: 'Slot content. Defaults to empty slot',
-      table: {
-        type: { summary: 'HTMLElement' },
-      },
-    },
+    slot: {},
   },
 };
 
 export const Default = ({
-  slot = `Hello World!`,
+  slot,
   size,
   radius,
   color,
   variant,
   disabled,
 }: MrdButtonElement) =>
-  html`<mrd-button
-    size=${size || nothing}
-    radius=${radius || nothing}
-    color=${color || nothing}
-    variant=${variant || nothing}
-    .disabled=${disabled}
-  >
+  html`
+    <mrd-button
+      .size=${size}
+      .radius=${radius}
+      .color=${color}
+      .variant=${variant}
+      .disabled=${disabled}
+    >
+      ${slot}
+    </mrd-button>
+  `;
+
+Default.args = {
+  slot: html`
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"
-      fill="currentColor"
+      fill="currentcolor"
     >
       <path d="M22.5 38V25.5H10v-3h12.5V10h3v12.5H38v3H25.5V38Z" />
     </svg>
-    ${slot}
-  </mrd-button> `;
+    Hello World
+  `,
+  size: 'default',
+  radius: 'default',
+  color: 'primary',
+  variant: 'fill',
+  disabled: false,
+};
