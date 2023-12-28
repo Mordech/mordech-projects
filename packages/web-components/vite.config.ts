@@ -9,6 +9,9 @@ const components = Object.fromEntries(
     .filter((name) => {
       return !name.endsWith('.ts');
     })
+    .filter((name) => {
+      return !name.startsWith('.');
+    })
     .map((name) => {
       return [
         `components/${name}`,
