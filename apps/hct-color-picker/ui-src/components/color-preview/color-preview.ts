@@ -31,6 +31,7 @@ export class ColorPreview extends LitElement {
           ${!this.selectedColor
             ? html`
                 <mrd-button
+                  variant="inverted"
                   aria-label="Add to styles"
                   data-event="Create paint style"
                   data-prop-value=${this.hex}
@@ -38,7 +39,7 @@ export class ColorPreview extends LitElement {
                   @click=${this.createPaintStyle}
                   style="--mrd-button-title: 'Add to styles'"
                 >
-                  ${saveIcon}
+                  ${saveIcon} Add to styles
                 </mrd-button>
               `
             : nothing}

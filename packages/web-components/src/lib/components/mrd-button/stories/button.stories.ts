@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { html, nothing } from 'lit-html';
 
 import { MrdButtonElement } from '..';
 
@@ -14,14 +14,40 @@ export default {
     },
   },
   argTypes: {
+    color: {
+      control: {
+        type: 'select',
+        options: ['primary', 'secondary', 'success', 'error'],
+      },
+      table: {
+        type: { summary: 'primary | secondary | success | error' },
+        defaultValue: { summary: 'primary' },
+      },
+      description: 'Button color',
+    },
+    variant: {
+      control: {
+        type: 'select',
+        options: ['fill', 'tonal', 'inverted', 'text'],
+      },
+      table: {
+        type: { summary: 'fill | tonal | inverted | text' },
+        defaultValue: { summary: 'fill' },
+      },
+      description: 'Button variant',
+    },
     size: {
       control: {
         type: 'select',
-        options: ['default', 'small', 'tiny'],
+        options: ['default', 'compact', 'tiny'],
+        table: {
+          type: { summary: 'default | round | pill' },
+          defaultValue: { summary: 'default' },
+        },
       },
       description: 'Button size',
       table: {
-        type: { summary: 'default | small | tiny' },
+        type: { summary: 'default | compact | tiny' },
         defaultValue: { summary: 'default' },
       },
     },
@@ -34,6 +60,14 @@ export default {
       table: {
         type: { summary: 'default | round | pill' },
         defaultValue: { summary: 'default' },
+      },
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Button disabled',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
       },
     },
     slot: {
@@ -50,8 +84,17 @@ export const Default = ({
   slot = `Hello World!`,
   size,
   radius,
+  color,
+  variant,
+  disabled,
 }: MrdButtonElement) =>
-  html`<mrd-button size=${size} radius=${radius}>
+  html`<mrd-button
+    size=${size || nothing}
+    radius=${radius || nothing}
+    color=${color || nothing}
+    variant=${variant || nothing}
+    .disabled=${disabled}
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"
