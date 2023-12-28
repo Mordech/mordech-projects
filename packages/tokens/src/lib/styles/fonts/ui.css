@@ -1,8 +1,20 @@
 @font-face {
   font-family: 'Mona Sans';
-  src: url('../../assets/fonts/Mona-Sans.woff2')
-      format('woff2 supports variations'),
-    url('../../assets/fonts/Mona-Sans.woff2') format('woff2-variations');
-  font-weight: 200 900;
-  font-stretch: 75% 125%;
+  src: url('../../assets/fonts/MonaSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('../../assets/fonts/MonaSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('../../assets/fonts/MonaSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-stretch: 100%;
 }

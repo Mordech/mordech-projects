@@ -1,8 +1,9 @@
 import { colors } from '@mordech/tokens';
-import { html, LitElement } from 'lit';
+import { LitElement } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
+import { html, unsafeStatic } from 'lit/static-html.js';
 
 import { focusableBase } from '../../styles/focusable.styles';
 
@@ -28,6 +29,12 @@ export class MrdButtonElement extends LitElement {
   variant: ButtonVariants = 'fill';
   @property({ type: Boolean })
   disabled = false;
+  @property({ type: String })
+  as: 'button' | 'a' = 'button';
+
+  get tag() {
+    return unsafeStatic(this.as);
+  }
 
   @state() private _hasText = false;
 
@@ -70,7 +77,7 @@ export class MrdButtonElement extends LitElement {
     });
 
     return html`
-      <button
+      <${this.tag}
         part="button"
         class="btn"
         style=${handleColors}
@@ -86,7 +93,7 @@ export class MrdButtonElement extends LitElement {
         >
         </slot>
         <slot name="icon-end" part="icon-end"></slot>
-      </button>
+      </${this.tag}>
     `;
   }
 

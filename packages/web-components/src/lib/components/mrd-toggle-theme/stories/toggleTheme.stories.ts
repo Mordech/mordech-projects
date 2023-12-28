@@ -50,6 +50,10 @@ const Template = ({ saveToStorage, disabled, size }: MrdToggleThemeElement) =>
     .disabled=${disabled}
     size=${size}
   />`;
-export const Default = Template.bind({
-  saveToStorage: false,
-});
+export const Default = Template.bind({});
+
+Default.args = {
+  saveToStorage: true,
+  disabled: false,
+  size: 'compact',
+};

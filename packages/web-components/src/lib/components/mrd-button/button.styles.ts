@@ -1,4 +1,5 @@
-import { css } from 'lit';
+import { fontFamilies } from '@mordech/tokens';
+import { css, unsafeCSS } from 'lit';
 
 export const buttonBase = css`
   .btn {
@@ -6,8 +7,16 @@ export const buttonBase = css`
     display: inline-flex;
     overflow: hidden;
     border: unset;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    line-height: 1;
+    font-family: var(
+      --mrd-u-button-font-family,
+      var(--mrd-button-font-family, ${unsafeCSS(fontFamilies.ui)})
+    );
     padding: var(--mrd-button-padding, 0.75rem);
-    line-height: 1.5;
     font-size: var(
       --mrd-u-button-font-size,
       var(--mrd-button-font-size, var(--mrd-font-size-1))
@@ -83,19 +92,28 @@ export const buttonBase = css`
   .slot {
     display: flex;
     align-items: center;
+    vertical-align: middle;
     padding-inline: 0.25rem;
+    min-height: var(
+      --mrd-u-button-text-min-height,
+      var(--mrd-u-button-icon-size, var(--mrd-button-icon-size, 1.5rem))
+    );
   }
 
   ::slotted(svg) {
     flex-shrink: 0;
-    width: var(--mrd-u-button-icon-size, var(--mrd-button-icon-size, 1.5rem));
-    height: var(--mrd-u-button-icon-size, var(--mrd-button-icon-size, 1.5rem));
+    width: var(
+      --mrd-u-button-text-min-height,
+      var(--mrd-u-button-icon-size, var(--mrd-button-icon-size, 1.5rem))
+    );
+    height: var(
+      --mrd-u-button-text-min-height,
+      var(--mrd-u-button-icon-size, var(--mrd-button-icon-size, 1.5rem))
+    );
   }
 
   [data-size='compact'],
   [data-size='tiny'] {
-    & ::slotted(svg) {
-      --mrd-button-icon-size: 1.25rem;
-    }
+    -mrd-u-button-text-min-height: 1.25rem;
   }
 `;
