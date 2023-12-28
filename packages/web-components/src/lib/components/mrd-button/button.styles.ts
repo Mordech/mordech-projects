@@ -1,5 +1,4 @@
-import { fontFamilies } from '@mordech/tokens';
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 
 export const buttonBase = css`
   .btn {
@@ -14,7 +13,7 @@ export const buttonBase = css`
     line-height: 1;
     font-family: var(
       --mrd-u-button-font-family,
-      var(--mrd-button-font-family, ${unsafeCSS(fontFamilies.ui)})
+      var(--mrd-button-font-family, inherit)
     );
     padding: var(--mrd-button-padding, 0.75rem);
     font-size: var(
