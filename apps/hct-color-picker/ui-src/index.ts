@@ -142,6 +142,7 @@ export class MyApp extends LitElement {
 
           <mrd-toggle-theme
             title="Toggle theme"
+            size="compact"
             @toggle-theme=${this.handleThemeChange}
             .saveToStorage=${false}
           >
