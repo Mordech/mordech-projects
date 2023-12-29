@@ -11,17 +11,14 @@
     "start": "yarn dev",
     "dev": "vite",
     "build:ui": "vite build",
-    "build:plugin": "esbuild --bundle --minify --sourcemap --target=es2019 --format=esm --outfile=dist/code.js plugin-src/code.ts",
+    "build:plugin": "esbuild --bundle --minify --sourcemap --target=es2015 --format=esm --legal-comments=none --outfile=dist/code.js plugin-src/code.ts",
     "build": "concurrently \"vite build\" \"yarn build:plugin\"",
     "watch": "concurrently \"vite build --watch --mode development\" \"yarn build:plugin --watch\"",
     "lint": "eslint --ext .ts,.js .",
     "lint:css": "stylelint './**/*.{css,scss,ts}'"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.81.0",
-    "@mordech/tokens": "workspace:*",
-    "@mordech/web-components": "workspace:*",
-    "vite": "^5.0.10",
-    "vite-plugin-singlefile": "^0.13.5"
+    "@figma/plugin-typings": "^1.82.0",
+    "vite": "^5.0.10"
   }
 }
