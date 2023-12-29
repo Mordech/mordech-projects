@@ -9,7 +9,7 @@
   "scripts": {
     "bundle": "ts-node ./scripts/bundle.ts",
     "build": "yarn bundle && ts-node ./scripts/build.ts",
-    "start": "yarn bundle --watch",
+    "start": "concurrently \"yarn bundle\" && nodemon --watch src/ --ext ts,css --exec \"yarn bundle\" &",
     "lint": "eslint src",
     "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'",
     "lint:extension": "web-ext lint -s dist/"

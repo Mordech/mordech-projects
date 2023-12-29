@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { updateJson } from '@nx/devkit';
 import { execSync } from 'child_process';
 import { config } from 'dotenv';
