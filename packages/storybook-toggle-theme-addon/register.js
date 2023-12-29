@@ -18,9 +18,12 @@ const ToggleThemeContainer = styled(IconButton)`
     --mrd-icon-size: 1rem;
     --mrd-button-color: currentColor;
     --mrd-button-background: transparent;
-    --mrd-button-hover-background: transparent;
-    --mrd-button-active-background: transparent;
     --mrd-button-padding: 0.5rem 0;
+
+    &:hover,
+    &:active {
+      --mrd-button-hover-opacity: 0;
+    }
   }
 `;
 

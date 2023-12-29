@@ -5,26 +5,32 @@ import { customElement, property } from 'lit/decorators.js';
 import '../mrd-button';
 
 import { focusableBase } from '../../styles/focusable.styles';
+import { type ButtonSize } from '../mrd-button';
 
-import { toggleThemeBase, toggleThemeIcon } from './toggle-theme.styles';
+import { toggleThemeIcon } from './toggle-theme.styles';
 
 @customElement('mrd-toggle-theme')
 export class MrdToggleThemeElement extends LitElement {
   @property({ type: String }) theme: Theme = 'light';
   @property({ type: Boolean }) saveToStorage = true;
   @property({ type: String }) storageKey = 'theme';
-  @property({ type: HTMLElement }) target = document.body;
+  @property({ type: Object }) target = document.body;
+  @property({ type: Boolean }) disabled = false;
+  @property({ type: String }) size: ButtonSize = 'default';
 
-  static override styles = [focusableBase, toggleThemeBase, toggleThemeIcon];
+  static override styles = [focusableBase, toggleThemeIcon];
 
   override render() {
     return html`
       <mrd-button
         exportparts="button"
+        radius="pill"
+        variant="text"
+        size=${this.size}
         aria-label="Toggle to ${this.theme === 'light'
           ? 'dark'
           : 'light'} theme"
-        class="btn"
+        .disabled=${this.disabled}
         @click=${this.toggleTheme}
       >
         <svg

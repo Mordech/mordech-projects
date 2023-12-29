@@ -87,7 +87,7 @@
     "jest-styled-components": "^7.1.1",
     "jsonc-eslint-parser": "^2.1.0",
     "lerna": "^6.4.1",
-    "loki": "^0.30.3",
+    "loki": "^0.33.1",
     "node": "^19.2.0",
     "nodemon": "^2.0.20",
     "nx": "15.6.3",

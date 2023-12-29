@@ -1,28 +1,4 @@
-import { colors } from '@mordech/tokens';
-import { css, unsafeCSS } from 'lit';
-
-export const toggleThemeBase = css`
-  mrd-button {
-    --mrd-border-radius: 99px;
-    --mrd-button-color: ${unsafeCSS(colors.background.onBase)};
-    --mrd-button-background: ${unsafeCSS(colors.background.base)};
-    --mrd-button-hover-background: ${unsafeCSS(colors.background.surface)};
-    --mrd-button-active-background: ${unsafeCSS(colors.background.surface)};
-    --mrd-button-padding: 0.5rem;
-  }
-  mrd-button::part(button) {
-    min-width: unset;
-    min-height: unset;
-  }
-
-  mrd-button::part(button):hover {
-    filter: unset;
-  }
-
-  mrd-button::part(button):active {
-    filter: unset;
-  }
-`;
+import { css } from 'lit';
 
 export const toggleThemeIcon = css`
   svg {

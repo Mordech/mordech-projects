@@ -13,44 +13,32 @@
   }
 }
 
-mrd-button.add-style-button::part(button) {
-  padding: 0.5rem;
-  line-height: 1;
-  min-width: unset;
-  min-height: unset;
-
-  &:hover,
-  &:focus-visible {
-    filter: unset;
-    padding-block: 0.5rem;
-    padding-inline: 0.75rem 1rem;
-    &::after {
-      content: var(--mrd-button-title, 'Add to styles');
-    }
-  }
-}
-
 mrd-button.add-style-button {
-  --mrd-button-background: var(--mrd-color-background-base);
-  --mrd-button-color: var(--mrd-color-background-on-base);
+  &::part(button) {
+    padding: 0.5rem;
+  }
 
-  &::after {
-    border-radius: 8px;
-    pointer-events: none;
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: currentColor;
-    opacity: var(--mrd-button-opacity, 0);
+  &::part(slot) {
+    visibility: hidden;
+    width: 0;
+    padding-inline: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: translateX(5%);
   }
 
   &:hover,
   &:focus-visible {
-    --mrd-button-opacity: 0.08;
-  }
-
-  &:active {
-    --mrd-button-opacity: 0.12;
+    &::part(slot) {
+      visibility: visible;
+      width: auto;
+      padding-inline: 0.25rem;
+      overflow: hidden;
+      white-space: nowrap;
+      transform: translate(0);
+      transition: transform var(--mrd-transition-fast),
+        padding-inline var(--mrd-transition-fast);
+    }
   }
 }
 

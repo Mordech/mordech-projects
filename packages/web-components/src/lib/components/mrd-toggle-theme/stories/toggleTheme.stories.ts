@@ -14,6 +14,25 @@ export default {
     },
   },
   argTypes: {
+    disabled: {
+      control: 'boolean',
+      description: 'Whether the toggle is disabled',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: ['default', 'compact', 'tiny'],
+      },
+      description: 'The size of the toggle button',
+      table: {
+        type: { summary: 'default | compact | tiny' },
+        defaultValue: { summary: 'default' },
+      },
+    },
     saveToStorage: {
       control: 'boolean',
       description: 'Save theme to local storage',
@@ -25,8 +44,16 @@ export default {
   },
 };
 
-const Template = ({ saveToStorage }: MrdToggleThemeElement) =>
-  html`<mrd-toggle-theme .saveToStorage=${saveToStorage} />`;
-export const Default = Template.bind({
-  saveToStorage: false,
-});
+const Template = ({ saveToStorage, disabled, size }: MrdToggleThemeElement) =>
+  html`<mrd-toggle-theme
+    .saveToStorage=${saveToStorage}
+    .disabled=${disabled}
+    size=${size}
+  />`;
+export const Default = Template.bind({});
+
+Default.args = {
+  saveToStorage: true,
+  disabled: false,
+  size: 'compact',
+};

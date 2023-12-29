@@ -15,6 +15,30 @@
         "parallel": false
       }
     },
+    "visual:ci": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "loki test --requireReference --reactUri file:./storybook-static"
+          }
+        ],
+        "cwd": "apps/web-components-storybook/",
+        "parallel": false
+      }
+    },
+    "visual:approve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "loki approve"
+          }
+        ],
+        "cwd": "apps/web-components-storybook/",
+        "parallel": false
+      }
+    },
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
