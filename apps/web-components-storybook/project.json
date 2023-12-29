@@ -1,5 +1,5 @@
 {
-  "name": "@mordech/web-components-storybook",
+  "name": "web-components-storybook",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": [],
   "targets": {
