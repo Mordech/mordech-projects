@@ -6457,7 +6457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/builder-vite@npm:7.6.6":
+"@storybook/builder-vite@npm:7.6.6, @storybook/builder-vite@npm:^7.6.6":
   version: 7.6.6
   resolution: "@storybook/builder-vite@npm:7.6.6"
   dependencies:
@@ -21986,6 +21986,7 @@ __metadata:
     "@storybook/addon-essentials": 7.6.6
     "@storybook/addon-mdx-gfm": 7.6.6
     "@storybook/addons": ^7.6.6
+    "@storybook/builder-vite": ^7.6.6
     "@storybook/core-common": ^7.6.6
     "@storybook/core-server": 7.6.6
     "@storybook/react": 7.6.6
