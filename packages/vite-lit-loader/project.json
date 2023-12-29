@@ -1,5 +1,5 @@
 {
-  "name": "vite-lit-loader",
+  "name": "@mordech/vite-lit-loader",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vite-lit-loader/src",
   "projectType": "library",
