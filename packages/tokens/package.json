@@ -53,7 +53,7 @@
     "build:css": "ts-node scripts/bundleCss.ts",
     "build:ts": "ts-node scripts/build.ts",
     "build:types": "tsc",
-    "build": "concurrently \"yarn:build:*\"",
+    "build": "run-s \"build:**\"",
     "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
     "test": "vitest --coverage --run",
     "test:watch": "vitest",
