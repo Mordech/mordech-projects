@@ -3,10 +3,6 @@
   "version": "0.31.0",
   "type": "module",
   "private": true,
-  "dependencies": {
-    "@mordech/tokens": "workspace:*",
-    "@mordech/web-components": "workspace:*"
-  },
   "devDependencies": {
     "@mordech/storybook-toggle-theme-addon": "workspace:*"
   },

@@ -3696,8 +3696,6 @@ __metadata:
   resolution: "@mordech/react-components@workspace:packages/react-components"
   dependencies:
     "@mordech/storybook-toggle-theme-addon": "workspace:*"
-    "@mordech/tokens": "workspace:*"
-    "@mordech/web-components": "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -3707,7 +3705,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mordech/tokens@*, @mordech/tokens@^0.32.0, @mordech/tokens@workspace:*, @mordech/tokens@workspace:packages/tokens":
+"@mordech/tokens@*, @mordech/tokens@^0.32.0, @mordech/tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
   resolution: "@mordech/tokens@workspace:packages/tokens"
   dependencies:
@@ -3727,7 +3725,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mordech/web-components@*, @mordech/web-components@workspace:*, @mordech/web-components@workspace:packages/web-components":
+"@mordech/web-components@*, @mordech/web-components@workspace:packages/web-components":
   version: 0.0.0-use.local
   resolution: "@mordech/web-components@workspace:packages/web-components"
   dependencies:
@@ -17959,8 +17957,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "inbox-zero-cats-for-gmail@workspace:apps/inbox-zero-cats-for-gmail"
   dependencies:
-    "@mordech/tokens": "workspace:*"
-    "@mordech/web-components": "workspace:*"
     web-ext: ^7.9.0
     webextension-polyfill: ^0.10.0
   languageName: unknown

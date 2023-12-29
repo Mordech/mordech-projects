@@ -14,8 +14,6 @@
     "lint:extension": "web-ext lint -s dist/"
   },
   "devDependencies": {
-    "@mordech/tokens": "workspace:*",
-    "@mordech/web-components": "workspace:*",
     "web-ext": "^7.9.0",
     "webextension-polyfill": "^0.10.0"
   }
