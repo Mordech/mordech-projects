@@ -1,6 +1,7 @@
 {
   "extends": ["stylelint-config-recommended"],
   "files": "**/*.css",
+  "ignoreFiles": ["dist/**/*", "node_modules/**/*", "tmp/**/*", "build/**/*"],
   "rules": {
     "no-descending-specificity": null,
     "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",

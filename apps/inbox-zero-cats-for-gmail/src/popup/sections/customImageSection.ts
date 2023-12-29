@@ -28,35 +28,34 @@ export const addImage = async () => {
   }
 };
 
-export const customImageSection = (
-  catImageUrls: Data['catImageUrls']
-) => html`<details open>
-  ${summary('Custom Images')}
-  <div class="custom-category-list">
-    <div class="custom-category-list content">
-      <div class="input-text-row">
-        ${browser.runtime.getURL('').startsWith('moz-extension://') &&
-        location.pathname === '/popup/index.html'
-          ? html`
-              <p>
-                <strong>Firefox users 🦊</strong> can only upload images from a
-                browser tab.
-                <a
-                  href=${browser.runtime.getURL('options/index.html')}
-                  target="_blank"
-                  >Go to the options tab</a
-                >
-                to upload a photo.
-              </p>
-            `
-          : uploadImageButton}
+export const customImageSection = (catImageUrls: Data['catImageUrls']) =>
+  html`<details open>
+    ${summary('Custom Images')}
+    <div class="custom-category-list">
+      <div class="custom-category-list content">
+        <div class="input-text-row">
+          ${browser.runtime.getURL('').startsWith('moz-extension://') &&
+          location.pathname === '/popup/index.html'
+            ? html`
+                <p>
+                  <strong>Firefox users 🦊</strong> can only upload images from
+                  a browser tab.
+                  <a
+                    href=${browser.runtime.getURL('options/index.html')}
+                    target="_blank"
+                    >Go to the options tab</a
+                  >
+                  to upload a photo.
+                </p>
+              `
+            : uploadImageButton}
+        </div>
+        <ul class="image-grid">
+          ${imageList('catImageUrls', catImageUrls || defaultCatImages)}
+        </ul>
       </div>
-      <ul class="image-grid">
-        ${imageList('catImageUrls', catImageUrls || defaultCatImages)}
-      </ul>
     </div>
-  </div>
-</details>`;
+  </details>`;
 
 const uploadImageButton = html`<input
     aria-label="Upload an image"

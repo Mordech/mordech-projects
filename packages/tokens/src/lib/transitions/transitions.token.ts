@@ -12,5 +12,5 @@ import { transitionsEnum } from './transitions';
  */
 export const transitions = createTokenObject(
   transitionsEnum,
-  'transition'
+  'transition',
 ) as typeof transitionsEnum;

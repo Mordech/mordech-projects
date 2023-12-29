@@ -16,5 +16,5 @@ import { fontFamiliesEnum } from './fontFamilies';
  */
 export const fontFamilies = createTokenObject(
   fontFamiliesEnum,
-  'font-family'
+  'font-family',
 ) as typeof fontFamiliesEnum;

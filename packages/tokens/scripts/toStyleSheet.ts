@@ -7,11 +7,11 @@ import { formatOutput } from './utils/formatOutput';
 const cssOutputDir = './src/lib/styles/';
 const cssOutputPath = path.join(cssOutputDir, 'tokens.css');
 
-export function toStyleSheet() {
+export async function toStyleSheet() {
   fs.mkdirSync(cssOutputDir, { recursive: true });
   fs.writeFileSync(
     cssOutputPath,
-    formatOutput({ input: tokensCss, parser: 'css' })
+    await formatOutput({ input: tokensCss, parser: 'css' })
   );
 }
 

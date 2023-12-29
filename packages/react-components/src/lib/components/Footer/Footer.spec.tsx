@@ -6,7 +6,9 @@ import Footer from './Footer';
 describe('Footer', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
-      <Footer>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</Footer>
+      <Footer>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </Footer>,
     );
     expect(baseElement).toBeTruthy();
   });
@@ -27,7 +29,7 @@ describe('Footer', () => {
         ]}
       >
         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-      </Footer>
+      </Footer>,
     );
     expect(getByTitle('github')).toBeTruthy();
     expect(getByTitle('linkedin')).toBeTruthy();
@@ -49,7 +51,7 @@ describe('Footer', () => {
         ]}
       >
         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-      </Footer>
+      </Footer>,
     );
     expect(await axe(baseElement)).toHaveNoViolations();
   });
@@ -70,7 +72,7 @@ describe('Footer', () => {
         ]}
       >
         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-      </Footer>
+      </Footer>,
     );
 
     // TODO: fix this test
@@ -80,7 +82,7 @@ describe('Footer', () => {
 
     expect(getByTestId('social-links')).not.toHaveStyleRule(
       'position',
-      'sticky'
+      'sticky',
     );
   });
 });

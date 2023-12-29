@@ -7,7 +7,7 @@ import { Breakpoint } from '.';
 export const screenSizesRemEnum: typeof screenSizes = createTokenObject(
   screenSizes,
   'screen-size',
-  { manipulateValue: screenSizesToRem, type: 'base' }
+  { manipulateValue: screenSizesToRem, type: 'base' },
 ) as typeof screenSizes;
 
 /**
@@ -15,5 +15,5 @@ export const screenSizesRemEnum: typeof screenSizes = createTokenObject(
  */
 export const screenSizesRem = createTokenObject(
   screenSizes,
-  'screen-size'
+  'screen-size',
 ) as Record<Breakpoint, string>;

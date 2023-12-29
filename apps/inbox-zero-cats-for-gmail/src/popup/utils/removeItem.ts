@@ -6,7 +6,7 @@ import { renderContent } from '../index';
 export const removeItem = (
   category: keyof Data,
   itemList: string[],
-  item: string
+  item: string,
 ) => {
   const values = itemList;
   if (values.length !== 1) {

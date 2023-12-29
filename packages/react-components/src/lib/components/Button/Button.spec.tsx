@@ -15,7 +15,7 @@ describe('Button', () => {
     const { baseElement, rerender } = render(
       <nav>
         <Button aria-label="test button">Test button</Button>
-      </nav>
+      </nav>,
     );
 
     rerender(
@@ -27,7 +27,7 @@ describe('Button', () => {
         >
           Go to google
         </Button>
-      </nav>
+      </nav>,
     );
 
     rerender(
@@ -41,7 +41,7 @@ describe('Button', () => {
         <Button variant="flat" title="flat button">
           I'm flat!
         </Button>
-      </nav>
+      </nav>,
     );
     expect(await axe(baseElement)).toHaveNoViolations();
   });
@@ -49,52 +49,52 @@ describe('Button', () => {
     const { getByText } = render(<Button>Test Button</Button>);
     expect(getByText('Test Button')).toHaveStyleRule(
       '--mrd-btn-background-color',
-      colors.primary.base
+      colors.primary.base,
     );
 
     expect(getByText('Test Button')).toHaveStyleRule(
       '--mrd-btn-color',
-      colors.primary.onBase
+      colors.primary.onBase,
     );
 
     expect(getByText('Test Button')).toHaveStyleRule(
       '--mrd-btn-border-color',
-      'var(--mrd-btn-background-color)'
+      'var(--mrd-btn-background-color)',
     );
   });
   it('should have a flat style', () => {
     const { getByText } = render(<Button variant="flat">Test Button</Button>);
     expect(getByText('Test Button')).toHaveStyleRule(
       '--mrd-btn-background-color',
-      colors.background.surface
+      colors.background.surface,
     );
     expect(getByText('Test Button')).toHaveStyleRule(
       '--mrd-btn-color',
-      colors.background.onSurface
+      colors.background.onSurface,
     );
     expect(getByText('Test Button')).toHaveStyleRule(
       '--mrd-btn-border-color',
-      'var(--mrd-btn-background-color)'
+      'var(--mrd-btn-background-color)',
     );
   });
 
   it('should have an outline style', () => {
     const { getByText } = render(
-      <Button variant="outline">Test Button</Button>
+      <Button variant="outline">Test Button</Button>,
     );
     expect(getByText('Test Button')).toHaveStyleRule(
       '--mrd-btn-background-color',
-      'transparent'
+      'transparent',
     );
 
     expect(getByText('Test Button')).toHaveStyleRule(
       '--mrd-btn-color',
-      colors.primary.base
+      colors.primary.base,
     );
 
     expect(getByText('Test Button')).toHaveStyleRule(
       '--mrd-btn-border-color',
-      'var(--mrd-btn-color)'
+      'var(--mrd-btn-color)',
     );
   });
 
@@ -103,12 +103,12 @@ describe('Button', () => {
     expect(await axe(baseElement)).toHaveNoViolations();
 
     const { baseElement: baseElement2 } = render(
-      <Button variant="flat">Test Button</Button>
+      <Button variant="flat">Test Button</Button>,
     );
     expect(await axe(baseElement2)).toHaveNoViolations();
 
     const { baseElement: baseElement3 } = render(
-      <Button variant="outline">Test Button</Button>
+      <Button variant="outline">Test Button</Button>,
     );
 
     expect(await axe(baseElement3)).toHaveNoViolations();
@@ -116,7 +116,7 @@ describe('Button', () => {
     const { baseElement: baseElement4 } = render(
       <Button variant="outline" disabled>
         Test Button
-      </Button>
+      </Button>,
     );
 
     expect(await axe(baseElement4)).toHaveNoViolations();

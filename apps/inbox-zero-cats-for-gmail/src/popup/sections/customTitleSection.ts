@@ -20,26 +20,25 @@ const addTitleKeyupCallback = () => (e: KeyboardEvent) => {
   }
 };
 
-export const customTitleSection = (
-  catTitles: Data['catTitles']
-) => html`<details open>
-  ${summary('Customize titles')}
-  <div class="custom-category-list">
-    <div class="custom-category-list content">
-      <div class="input-text-row">
-        <input
-          dir="auto"
-          type="text"
-          id="custom-title"
-          placeholder="Add your titles"
-          name="custom-title"
-          @keyup=${addTitleKeyupCallback()}
-        />
-        <button class="primary" @click=${addTitle}>Add</button>
+export const customTitleSection = (catTitles: Data['catTitles']) =>
+  html`<details open>
+    ${summary('Customize titles')}
+    <div class="custom-category-list">
+      <div class="custom-category-list content">
+        <div class="input-text-row">
+          <input
+            dir="auto"
+            type="text"
+            id="custom-title"
+            placeholder="Add your titles"
+            name="custom-title"
+            @keyup=${addTitleKeyupCallback()}
+          />
+          <button class="primary" @click=${addTitle}>Add</button>
+        </div>
+        <ul>
+          ${itemList('catTitles', catTitles || defaultCatTitles)}
+        </ul>
       </div>
-      <ul>
-        ${itemList('catTitles', catTitles || defaultCatTitles)}
-      </ul>
     </div>
-  </div>
-</details>`;
+  </details>`;

@@ -33,3 +33,5 @@ storybook-static/
 
 # Test coverage
 coverage
+
+.nx/cache

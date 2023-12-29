@@ -12,5 +12,5 @@ import { FontWeights, fontWeightsEnum } from './fontWeights';
  */
 export const fontWeights = createTokenObject(
   fontWeightsEnum,
-  'font-weight'
+  'font-weight',
 ) as Record<FontWeights, string>;

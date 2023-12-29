@@ -1,14 +1,17 @@
 import prettier, {
-  BuiltInParserName,
-  CustomParser,
-  LiteralUnion,
+  type BuiltInParserName,
+  type LiteralUnion,
+  type Parser,
 } from 'prettier';
 
 interface FormatOptions {
   input: string;
-  parser: LiteralUnion<BuiltInParserName> | CustomParser;
+  parser: LiteralUnion<BuiltInParserName> | Parser;
 }
-export function formatOutput({ input, parser }: FormatOptions): string {
-  const prettierConfig = prettier.resolveConfig.sync(process.cwd()) || {};
-  return prettier.format(input, { parser: parser, ...prettierConfig });
+export async function formatOutput({
+  input,
+  parser,
+}: FormatOptions): Promise<string> {
+  const prettierConfig = (await prettier.resolveConfig(process.cwd())) || {};
+  return await prettier.format(input, { parser: parser, ...prettierConfig });
 }

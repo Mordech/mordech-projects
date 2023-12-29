@@ -192,11 +192,11 @@ export class MyApp extends LitElement {
       );
 
       --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.hue + 1).join(',')
+        gradient.splice(0, this.hue + 1).join(','),
       )};
 
       --mrd-thumb-color: ${unsafeCSS(
-        hexFromArgb(Hct.from(this.hue, 150, 55).toInt())
+        hexFromArgb(Hct.from(this.hue, 150, 55).toInt()),
       )};
     `;
   }
@@ -217,13 +217,13 @@ export class MyApp extends LitElement {
       );
 
       --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.chroma + 1).join(',')
+        gradient.splice(0, this.chroma + 1).join(','),
       )};
 
       --mrd-thumb-color: ${unsafeCSS(
         hexFromArgb(
-          Hct.from(this.hue, this.chroma, clampInt(50, 65, this.tone)).toInt()
-        )
+          Hct.from(this.hue, this.chroma, clampInt(50, 65, this.tone)).toInt(),
+        ),
       )};
     `;
   }
@@ -244,13 +244,13 @@ export class MyApp extends LitElement {
       );
 
       --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.tone + 1).join(',')
+        gradient.splice(0, this.tone + 1).join(','),
       )};
 
       --mrd-thumb-color: ${unsafeCSS(
         hexFromArgb(
-          Hct.from(this.hue, this.chroma, clampInt(25, 75, this.tone)).toInt()
-        )
+          Hct.from(this.hue, this.chroma, clampInt(25, 75, this.tone)).toInt(),
+        ),
       )};
     `;
   }
@@ -326,7 +326,7 @@ export class MyApp extends LitElement {
           const selectedPaint = this.paints?.find((paint) =>
             paint.modeId
               ? paint.id === selection.id && paint.modeId === selection?.modeId
-              : paint.id === selection.id
+              : paint.id === selection.id,
           );
 
           if (!selectedPaint) this.selectedColor = undefined;
@@ -337,7 +337,7 @@ export class MyApp extends LitElement {
             this.selectedColor.variableAlias = selection.variableAlias;
           } else {
             const { hue, chroma, tone } = Hct.fromInt(
-              Color(selection.color).rgbNumber()
+              Color(selection.color).rgbNumber(),
             );
 
             this.hue = hue;

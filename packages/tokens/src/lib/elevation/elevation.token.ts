@@ -13,5 +13,5 @@ import { elevationEnum } from './elevation';
 
 export const elevation = createTokenObject(
   elevationEnum,
-  'elevation'
+  'elevation',
 ) as typeof elevationEnum;

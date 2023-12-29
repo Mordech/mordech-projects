@@ -22,7 +22,7 @@ function isColorVariable(paintStyle: PaintStyle | Variable) {
 }
 
 function extractColor(
-  paintStyle: PaintStyle | Variable
+  paintStyle: PaintStyle | Variable,
 ): Variable | RGB | undefined {
   if ('paints' in paintStyle) {
     const { paints } = paintStyle;
@@ -40,7 +40,7 @@ function extractColor(
 }
 
 export function extractValidStyles(
-  paintStyles: (PaintStyle | Variable)[]
+  paintStyles: (PaintStyle | Variable)[],
 ): UiPaintStyle[] | undefined {
   paintStyles.filter((paintStyle) => {
     isPaintStyle(paintStyle) || isColorVariable(paintStyle);
