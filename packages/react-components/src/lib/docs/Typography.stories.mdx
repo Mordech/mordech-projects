@@ -1,8 +1,8 @@
-import { Canvas, Meta, Story } from '@storybook/blocks';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import { Paper } from '../components/Paper';
 import { Column } from '../abstracts/layoutFoundation.styles';
-import { Typography } from '../components/typography';
+import { Typography } from '../components/Typography';
 import { fontSizes, fontWeights, fontFamilies } from '@mordech/tokens';
 
 <Meta
@@ -90,6 +90,7 @@ const Content = () => (
 #### Available font families:
 
 {' '}
+
 <Paper style={{ padding: '1rem', gap: '0.5rem' }}>
   <Typography asElement="p" fontFamily="sans" size={2}>
     DM Sans font family

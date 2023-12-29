@@ -36,8 +36,5 @@
   },
   "dependencies": {
     "@mordech/tokens": "^0.32.0"
-  },
-  "devDependencies": {
-    "postcss-lit": "^1.1.1"
   }
 }
