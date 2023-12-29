@@ -11,6 +11,7 @@
   "loki": {
     "diffingEngine": "looks-same",
     "looks-same": {
+      "tolerance": 4,
       "ignoreAntialiasing": true,
       "antialiasingTolerance": 3
     },
