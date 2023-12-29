@@ -9,6 +9,11 @@
     "visual:ci": "loki test --requireReference --reactUri file:./storybook-static"
   },
   "loki": {
+    "diffingEngine": "looks-same",
+    "looks-same": {
+      "ignoreAntialiasing": true,
+      "antialiasingTolerance": 3
+    },
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
