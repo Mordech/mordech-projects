@@ -3706,11 +3706,6 @@ __metadata:
 "@mordech/tokens@*, @mordech/tokens@^0.32.0, @mordech/tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
   resolution: "@mordech/tokens@workspace:packages/tokens"
-  dependencies:
-    add: ^2.0.6
-    eslint: ^8.56.0
-    nodemon: ^2.0.22
-    npm-run-all: ^4.1.5
   languageName: unknown
   linkType: soft
 
@@ -9157,13 +9152,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"add@npm:^2.0.6":
-  version: 2.0.6
-  resolution: "add@npm:2.0.6"
-  checksum: e2d23d40494565dfed4acd65e478570c444db5ac6c053551ed429c39ea0f2c99d83df63e7befec936df601827d2254d06a2fb6f7dcfd2022e810b25eab818b8c
-  languageName: node
-  linkType: hard
-
 "addons-linter@npm:6.19.0":
   version: 6.19.0
   resolution: "addons-linter@npm:6.19.0"
@@ -14560,7 +14548,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.56.0, eslint@npm:^8.56.0":
+"eslint@npm:8.56.0":
   version: 8.56.0
   resolution: "eslint@npm:8.56.0"
   dependencies:
@@ -17954,9 +17942,6 @@ __metadata:
 "inbox-zero-cats-for-gmail@workspace:apps/inbox-zero-cats-for-gmail":
   version: 0.0.0-use.local
   resolution: "inbox-zero-cats-for-gmail@workspace:apps/inbox-zero-cats-for-gmail"
-  dependencies:
-    web-ext: ^7.9.0
-    webextension-polyfill: ^0.10.0
   languageName: unknown
   linkType: soft
 
@@ -22077,6 +22062,7 @@ __metadata:
     "@babel/preset-typescript": 7.12.13
     "@commitlint/cli": ^18.4.3
     "@commitlint/config-conventional": ^18.4.3
+    "@figma/plugin-typings": ^1.82.0
     "@lit-labs/react": ^1.1.1
     "@material/material-color-utilities": ^0.2.6
     "@mordech/react-components": "*"
@@ -22183,6 +22169,8 @@ __metadata:
     vite-plugin-singlefile: ^0.13.5
     vite-tsconfig-paths: 4.2.3
     vitest: 1.1.0
+    web-ext: ^7.9.0
+    webextension-polyfill: ^0.10.0
   languageName: unknown
   linkType: soft
 

@@ -12,9 +12,5 @@
     "lint": "eslint src",
     "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'",
     "lint:extension": "web-ext lint -s dist/"
-  },
-  "devDependencies": {
-    "web-ext": "^7.9.0",
-    "webextension-polyfill": "^0.10.0"
   }
 }
