@@ -3694,12 +3694,10 @@ __metadata:
 "@mordech/react-components@*, @mordech/react-components@workspace:packages/react-components":
   version: 0.0.0-use.local
   resolution: "@mordech/react-components@workspace:packages/react-components"
-  dependencies:
-    "@mordech/storybook-toggle-theme-addon": "workspace:*"
   languageName: unknown
   linkType: soft
 
-"@mordech/storybook-toggle-theme-addon@*, @mordech/storybook-toggle-theme-addon@workspace:*, @mordech/storybook-toggle-theme-addon@workspace:packages/storybook-toggle-theme-addon":
+"@mordech/storybook-toggle-theme-addon@*, @mordech/storybook-toggle-theme-addon@workspace:packages/storybook-toggle-theme-addon":
   version: 0.0.0-use.local
   resolution: "@mordech/storybook-toggle-theme-addon@workspace:packages/storybook-toggle-theme-addon"
   languageName: unknown

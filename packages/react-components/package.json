@@ -3,9 +3,6 @@
   "version": "0.31.0",
   "type": "module",
   "private": true,
-  "devDependencies": {
-    "@mordech/storybook-toggle-theme-addon": "workspace:*"
-  },
   "scripts": {
     "visual": "loki test --reactUri file:./storybook-static",
     "visual:approve": "loki approve",

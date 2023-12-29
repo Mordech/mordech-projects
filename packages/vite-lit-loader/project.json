@@ -24,7 +24,7 @@
       "options": {
         "commands": [
           {
-            "command": "nx build vite-lit-loader"
+            "command": "nx build @mordech/vite-lit-loader"
           }
         ],
         "cwd": "packages/vite-lit-loader",
