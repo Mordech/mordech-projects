@@ -1,4 +1,3 @@
-import React from 'react';
 import { breakpoints } from '@mordech/tokens';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -77,7 +76,7 @@ export const ScrollDownContainer = styled.div`
   }
 `;
 
-export const ScrollDownButton = () => (
+export const ScrollDownButton = (): JSX.Element => (
   <ScrollDownContainer>
     <Link aria-label="Scroll down to the main content" to="#main-content">
       <Arrow />

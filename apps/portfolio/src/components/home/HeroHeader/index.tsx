@@ -1,4 +1,3 @@
-import React from 'react';
 import { Column, Headline, Markdown } from '@mordech/react-components';
 
 import { ScrollDownButton } from '../ScrollDownButton';
@@ -16,7 +15,7 @@ and developers work better together.
 I'm part of the **open-source guild**, **UX research** initiatives, 
 and the **growth team** at Soluto.`;
 
-export const HeroHeader = () => (
+export const HeroHeader = (): JSX.Element => (
   <HeroContainer>
     <ParagraphContainer>
       <Headline size={5} asElement="h1">

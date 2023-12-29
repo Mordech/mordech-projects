@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { ArticleSpotlight, Main } from '@mordech/react-components';
 import styled from 'styled-components';
 

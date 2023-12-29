@@ -1,10 +1,8 @@
-import React from 'react';
 import { colors, fontFamilies, fontSizes, fontWeights } from '@mordech/tokens';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { GlobalStyle } from '../../abstracts';
-import { removeCommaWhiteSpace, removeWhiteSpace } from '../../utils';
 
 import {
   Code,
@@ -58,23 +56,25 @@ describe('Typography', () => {
     expect(await axe(baseElement)).toHaveNoViolations();
     expect(
       await getByText(/.*I have different preset sizes*./)
-    ).toHaveStyleRule('font-size', 'var(--mrd-font-size-3,2.25rem)');
+    ).toHaveStyleRule('font-size', 'var(--mrd-font-size-3, 2.25rem)');
     expect(await getByText(/.*Code is a variant*./)).toHaveStyleRule(
       'font-family',
-      removeCommaWhiteSpace(fontFamilies['code'])
+      fontFamilies['code']
     );
-    expect(await getByText(/.*And subheadings*./)).toHaveStyle(
-      'line-height: 1.25;'
+    expect(await getByText(/.*And subheadings*./)).toHaveStyleRule(
+      'line-height',
+      '1.25'
     );
-    expect(await getByText(/.*or inline code.*/)).toHaveStyle(
-      `background-color: ${colors.background.base};`
+    expect(await getByText(/.*or inline code.*/)).toHaveStyleRule(
+      'background-color',
+      colors.highlight.neutral
     );
     expect(
       await getByText(/.*and I can be a paragraph too, and you*./)
-    ).toHaveStyleRule('font-size', removeWhiteSpace(fontSizes[1]));
+    ).toHaveStyleRule('font-size', fontSizes[1]);
     expect(await getByText(/.*emphasize*./)).toHaveStyleRule(
       'font-weight',
-      removeWhiteSpace(fontWeights.bold)
+      fontWeights.bold
     );
   });
 
@@ -105,19 +105,19 @@ describe('Typography', () => {
     expect(await axe(baseElement)).toHaveNoViolations();
     expect(getByLabelText('Hello World')).toHaveStyleRule(
       'font-size',
-      'var(--mrd-font-size-4,3rem)'
+      'var(--mrd-font-size-4, 3rem)'
     );
     expect(getByLabelText('Secondary Headline')).toHaveStyleRule(
       'font-size',
-      'var(--mrd-font-size-4,3rem)'
+      'var(--mrd-font-size-4, 3rem)'
     );
     expect(getByLabelText('Sub Headline')).toHaveStyleRule(
       'font-size',
-      'var(--mrd-font-size-2,1.5rem)'
+      'var(--mrd-font-size-2, 1.5rem)'
     );
     expect(getByLabelText('Sub Headline')).toHaveStyleRule(
       'font-weight',
-      'var(--mrd-font-weight-bold,700)'
+      'var(--mrd-font-weight-bold, 700)'
     );
   });
   it('should inherit line-height from parent', async () => {

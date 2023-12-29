@@ -11,13 +11,13 @@ workspace name `@mordech/react-components`
 ## Run Storybook
 
 ```bash
-pnpm storybook
+yarn storybook
 ```
 
 ## Build Storybook
 
 ```bash
-pnpm nx build-storybook
+yarn nx build-storybook
 ```
 
 ## Visual regression testing
@@ -26,7 +26,7 @@ I use [Loki](https://loki.js.org/) for visual regression tests.
 Before creating a pull request, please run visual tests on the project.
 
 ```bash
-pnpm nx visual
+yarn nx visual
 ```
 
 and follow the steps required to pass.
@@ -36,5 +36,5 @@ If changes have been made to existing components, please approve them.
 After approving the changes, run the following:
 
 ```bash
-pnpm loki approve
+yarn loki approve
 ```

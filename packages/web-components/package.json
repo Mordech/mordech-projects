@@ -27,9 +27,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:watch": "nodemon --watch src --ext ts,css --exec pnpm build",
+    "build:watch": "nodemon --watch src --ext ts,css --exec yarn build",
     "test": "vitest --coverage --run",
-    "prepare": "pnpm build"
+    "prepare": "yarn build"
   },
   "publishConfig": {
     "access": "public"
@@ -38,6 +38,6 @@
     "@mordech/tokens": "^0.32.0"
   },
   "devDependencies": {
-    "postcss-lit": "^1.0.1"
+    "postcss-lit": "^1.1.1"
   }
 }

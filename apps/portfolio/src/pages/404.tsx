@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { HeadFC, Link } from 'gatsby';
 
 // TODO create a custom 404 page
@@ -25,7 +24,7 @@ const codeStyles = {
   borderRadius: 4,
 };
 
-const NotFoundPage = () => {
+const NotFoundPage = (): JSX.Element => {
   return (
     <main style={pageStyles}>
       <h1 style={headingStyles}>Page not found</h1>

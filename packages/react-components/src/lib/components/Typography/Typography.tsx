@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { fontFamilies, fontSizes, fontWeights } from '@mordech/tokens';
 import styled, { css } from 'styled-components';
 
@@ -41,11 +40,11 @@ export const StyledTypography = styled.span<Required<TypographyProps>>`
     `}
 `;
 
-export const Typography: FC<TypographyType> = ({
+export const Typography = ({
   variant = 'body',
   asElement,
   ...rest
-}) => (
+}: TypographyType) => (
   <StyledTypography
     as={asElement ?? variantDefaults[variant].asElement}
     {...defaultTypographyProps}

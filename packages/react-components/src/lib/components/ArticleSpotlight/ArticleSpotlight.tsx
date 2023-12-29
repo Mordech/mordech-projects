@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-import { ReactElement } from 'react-markdown/lib/react-markdown';
+import { ReactNode } from 'react';
 
 import { Button } from '../Button';
 import { Markdown } from '../Markdown';
@@ -14,20 +13,20 @@ import {
 } from './ArticleSpotlight.styles';
 
 export interface ArticleSpotlightProps {
-  thumbnailSrc: string | ReactElement;
+  thumbnailSrc: string | ReactNode;
   headline: string;
   description: string;
   callToAction?: string;
   href: string;
 }
 
-export const ArticleSpotlight: FC<ArticleSpotlightProps> = ({
+export const ArticleSpotlight = ({
   callToAction = 'view project',
   href,
   headline,
   description,
   thumbnailSrc,
-}) => (
+}: ArticleSpotlightProps) => (
   <Container as="article">
     <ThumbnailAnchor aria-label={`read more about ${headline}`} href={href}>
       <ThumbnailContainer variant="outlined">

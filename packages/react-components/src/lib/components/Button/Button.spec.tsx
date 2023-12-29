@@ -1,9 +1,6 @@
-import React from 'react';
 import { colors } from '@mordech/tokens';
 import { cleanup, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
-
-import { removeWhiteSpace } from '../../utils';
 
 import { Button } from './Button';
 
@@ -50,43 +47,57 @@ describe('Button', () => {
   });
   it('should have a default style', () => {
     const { getByText } = render(<Button>Test Button</Button>);
-    expect(getByText('Test Button')).toHaveStyle(`
-      --mrd-btn-background-color: ${removeWhiteSpace(colors.primary.base)};
-      --mrd-btn-color: ${removeWhiteSpace(colors.primary.onBase)};
-      --mrd-btn-border-color: var(--mrd-btn-background-color);
-      
-      background-color: ButtonFace;
-      border: 2px outset buttonface;
-      color: ButtonText;
-    `);
+    expect(getByText('Test Button')).toHaveStyleRule(
+      '--mrd-btn-background-color',
+      colors.primary.base
+    );
+
+    expect(getByText('Test Button')).toHaveStyleRule(
+      '--mrd-btn-color',
+      colors.primary.onBase
+    );
+
+    expect(getByText('Test Button')).toHaveStyleRule(
+      '--mrd-btn-border-color',
+      'var(--mrd-btn-background-color)'
+    );
   });
   it('should have a flat style', () => {
     const { getByText } = render(<Button variant="flat">Test Button</Button>);
-    expect(getByText('Test Button')).toHaveStyle(`
-      --mrd-btn-background-color: ${removeWhiteSpace(
-        colors.background.surface
-      )};
-      --mrd-btn-color: ${removeWhiteSpace(colors.background.onSurface)};
-      --mrd-btn-border-color: var(--mrd-btn-background-color);
-
-      background-color: ButtonFace;
-      border: 2px outset buttonface;
-      color: ButtonText;
-    `);
+    expect(getByText('Test Button')).toHaveStyleRule(
+      '--mrd-btn-background-color',
+      colors.background.surface
+    );
+    expect(getByText('Test Button')).toHaveStyleRule(
+      '--mrd-btn-color',
+      colors.background.onSurface
+    );
+    expect(getByText('Test Button')).toHaveStyleRule(
+      '--mrd-btn-border-color',
+      'var(--mrd-btn-background-color)'
+    );
   });
+
   it('should have an outline style', () => {
     const { getByText } = render(
       <Button variant="outline">Test Button</Button>
     );
-    expect(getByText('Test Button')).toHaveStyle(`
-      --mrd-btn-background-color: transparent;
-      --mrd-btn-color: ${removeWhiteSpace(colors.primary.base)};
-      --mrd-btn-border-color: var(--mrd-btn-color);
+    expect(getByText('Test Button')).toHaveStyleRule(
+      '--mrd-btn-background-color',
+      'transparent'
+    );
 
-      background-color: ButtonFace;
-      border: 2px outset buttonface;
-    `);
+    expect(getByText('Test Button')).toHaveStyleRule(
+      '--mrd-btn-color',
+      colors.primary.base
+    );
+
+    expect(getByText('Test Button')).toHaveStyleRule(
+      '--mrd-btn-border-color',
+      'var(--mrd-btn-color)'
+    );
   });
+
   it('should have no violations', async () => {
     const { baseElement } = render(<Button>Test Button</Button>);
     expect(await axe(baseElement)).toHaveNoViolations();

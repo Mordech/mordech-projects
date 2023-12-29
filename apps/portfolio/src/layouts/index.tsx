@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { GlobalStyle } from '@mordech/react-components';
 
 import { Footer } from '../components/footer';
 import { Navigation } from '../components/navigation';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => (

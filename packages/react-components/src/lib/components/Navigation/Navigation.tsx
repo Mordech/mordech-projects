@@ -1,4 +1,4 @@
-import React, { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
+import { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
 import { colors } from '@mordech/tokens';
 
 import { Icon } from '../Icon';
