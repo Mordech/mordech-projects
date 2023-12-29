@@ -3691,47 +3691,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mordech/hct-color-picker@workspace:apps/hct-color-picker":
-  version: 0.0.0-use.local
-  resolution: "@mordech/hct-color-picker@workspace:apps/hct-color-picker"
-  dependencies:
-    "@figma/plugin-typings": ^1.82.0
-    vite: ^5.0.10
-  languageName: unknown
-  linkType: soft
-
-"@mordech/inbox-zero-cats-for-gmail@workspace:apps/inbox-zero-cats-for-gmail":
-  version: 0.0.0-use.local
-  resolution: "@mordech/inbox-zero-cats-for-gmail@workspace:apps/inbox-zero-cats-for-gmail"
-  dependencies:
-    "@mordech/tokens": "workspace:*"
-    "@mordech/web-components": "workspace:*"
-    web-ext: ^7.9.0
-    webextension-polyfill: ^0.10.0
-  languageName: unknown
-  linkType: soft
-
-"@mordech/portfolio@workspace:apps/portfolio":
-  version: 0.0.0-use.local
-  resolution: "@mordech/portfolio@workspace:apps/portfolio"
-  dependencies:
-    "@babel/core": ^7.19.0
-    "@gatsbyjs/reach-router": ^2.0.1
-    "@lottiefiles/react-lottie-player": ^3.4.7
-    babel-eslint: ^10.0.0
-    babel-plugin-styled-components: ^2.0.7
-    gatsby: ^4.22.1
-    gatsby-plugin-image: ^2.22.0
-    gatsby-plugin-manifest: ^4.22.0
-    gatsby-plugin-pnpm: ^1.2.10
-    gatsby-plugin-sharp: ^4.22.0
-    gatsby-plugin-styled-components: ^5.22.0
-    gatsby-source-filesystem: ^4.22.0
-    gatsby-transformer-sharp: ^4.22.0
-    svg-react-loader: ^0.4.6
-  languageName: unknown
-  linkType: soft
-
 "@mordech/react-components@workspace:*, @mordech/react-components@workspace:packages/react-components":
   version: 0.0.0-use.local
   resolution: "@mordech/react-components@workspace:packages/react-components"
@@ -3765,12 +3724,6 @@ __metadata:
   dependencies:
     cheerio: 1.0.0-rc.12
     tslib: ^2.6.2
-  languageName: unknown
-  linkType: soft
-
-"@mordech/web-components-storybook@workspace:apps/web-components-storybook":
-  version: 0.0.0-use.local
-  resolution: "@mordech/web-components-storybook@workspace:apps/web-components-storybook"
   languageName: unknown
   linkType: soft
 
@@ -17360,6 +17313,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hct-color-picker@workspace:apps/hct-color-picker":
+  version: 0.0.0-use.local
+  resolution: "hct-color-picker@workspace:apps/hct-color-picker"
+  dependencies:
+    "@figma/plugin-typings": ^1.82.0
+    vite: ^5.0.10
+  languageName: unknown
+  linkType: soft
+
 "he@npm:1.2.0, he@npm:^1.2.0":
   version: 1.2.0
   resolution: "he@npm:1.2.0"
@@ -17992,6 +17954,17 @@ __metadata:
   checksum: 7cae75c8cd9a50f57dadd77482359f659eaebac0319dd9368bcd1714f55e65badd6929ca58569da2b6494ef13fdd5598cd700b1eba23f8b79c5f19d195a3ecf7
   languageName: node
   linkType: hard
+
+"inbox-zero-cats-for-gmail@workspace:apps/inbox-zero-cats-for-gmail":
+  version: 0.0.0-use.local
+  resolution: "inbox-zero-cats-for-gmail@workspace:apps/inbox-zero-cats-for-gmail"
+  dependencies:
+    "@mordech/tokens": "workspace:*"
+    "@mordech/web-components": "workspace:*"
+    web-ext: ^7.9.0
+    webextension-polyfill: ^0.10.0
+  languageName: unknown
+  linkType: soft
 
 "indent-string@npm:^4.0.0":
   version: 4.0.0
@@ -24266,6 +24239,27 @@ __metadata:
   checksum: 116b4aed1b9e16f6d5503823d966d9ffd41b1c2339e27f54c06cd2f3015a9d8ef53e2a53b57bc0a25af0885977b692007353aa28f9a0a98a44335cb50487240d
   languageName: node
   linkType: hard
+
+"portfolio@workspace:apps/portfolio":
+  version: 0.0.0-use.local
+  resolution: "portfolio@workspace:apps/portfolio"
+  dependencies:
+    "@babel/core": ^7.19.0
+    "@gatsbyjs/reach-router": ^2.0.1
+    "@lottiefiles/react-lottie-player": ^3.4.7
+    babel-eslint: ^10.0.0
+    babel-plugin-styled-components: ^2.0.7
+    gatsby: ^4.22.1
+    gatsby-plugin-image: ^2.22.0
+    gatsby-plugin-manifest: ^4.22.0
+    gatsby-plugin-pnpm: ^1.2.10
+    gatsby-plugin-sharp: ^4.22.0
+    gatsby-plugin-styled-components: ^5.22.0
+    gatsby-source-filesystem: ^4.22.0
+    gatsby-transformer-sharp: ^4.22.0
+    svg-react-loader: ^0.4.6
+  languageName: unknown
+  linkType: soft
 
 "postcss-calc@npm:^8.2.3":
   version: 8.2.4
@@ -30956,6 +30950,12 @@ __metadata:
   checksum: 0249bfe4c724ef15afe5ab7916b2c5c81aa1688a313870beda56ff8dcb87ca004c141ad781ab1b6b1c0fd00f432cefd5c76541bc09e8c4eb4b0dae152436adb7
   languageName: node
   linkType: hard
+
+"web-components-storybook@workspace:apps/web-components-storybook":
+  version: 0.0.0-use.local
+  resolution: "web-components-storybook@workspace:apps/web-components-storybook"
+  languageName: unknown
+  linkType: soft
 
 "web-ext@npm:^7.9.0":
   version: 7.9.0
