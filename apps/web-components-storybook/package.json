@@ -1,6 +1,5 @@
 {
   "name": "web-components-storybook",
   "author": "Elad Mordechai Mizrahi",
-  "private": true,
-  "nx": {}
+  "private": true
 }

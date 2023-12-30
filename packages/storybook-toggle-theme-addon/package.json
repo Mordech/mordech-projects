@@ -6,5 +6,11 @@
   "author": "Elad Mordechai Mizrahi",
   "license": "MIT",
   "type": "module",
-  "private": true
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@mordech/tokens",
+      "@mordech/web-components"
+    ]
+  }
 }

@@ -28,5 +28,11 @@
         "preset": "iPhone 7"
       }
     }
+  },
+  "nx": {
+    "implicitDependencies": [
+      "@mordech/tokens",
+      "@mordech/web-components"
+    ]
   }
 }

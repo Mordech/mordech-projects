@@ -2,6 +2,11 @@
   "name": "web-components-storybook",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": [],
+  "implicitDependencies": [
+    "@mordech/tokens",
+    "@mordech/web-components",
+    "@mordech/storybook-toggle-theme-addon"
+  ],
   "targets": {
     "visual": {
       "executor": "nx:run-commands",
