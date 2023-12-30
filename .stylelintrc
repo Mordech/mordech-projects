@@ -3,7 +3,6 @@
   "files": "**/*.css",
   "ignoreFiles": ["dist/**/*", "node_modules/**/*", "tmp/**/*", "build/**/*"],
   "rules": {
-    "no-descending-specificity": null,
     "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
     "custom-property-pattern": "mrd-.+"
   },
@@ -12,12 +11,11 @@
     {
       "extends": ["stylelint-config-standard"],
       "customSyntax": "postcss-styled-syntax",
-      "files": ["**/*.{ts,tsx,js,jsx}"],
-      "rules": {
-        "no-descending-specificity": null,
-        "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
-        "custom-property-pattern": "mrd-.+"
-      }
+      "files": ["**/*.{ts,tsx,js,jsx}"]
+    },
+    {
+      "files": ["*.{scss,sass}"],
+      "extends": ["stylelint-config-standard-scss"]
     }
   ]
 }

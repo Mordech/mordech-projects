@@ -6,9 +6,6 @@ export const buttonBase = css`
     display: inline-flex;
     overflow: hidden;
     border: unset;
-
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
     line-height: 1;
     font-family: var(
@@ -24,7 +21,6 @@ export const buttonBase = css`
     transition: all 200ms ease-in-out;
     align-items: center;
     justify-content: center;
-
     border-radius: var(--mrd-border-radius, 0.5rem);
     color: var(--mrd-button-color);
     background-color: var(--mrd-button-background);
@@ -84,6 +80,7 @@ export const buttonBase = css`
 
     &:disabled {
       cursor: not-allowed;
+
       --mrd-button-hover-overlay-color: transparent;
     }
   }

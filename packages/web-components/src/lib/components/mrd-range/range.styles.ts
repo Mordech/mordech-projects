@@ -4,10 +4,8 @@ import { css, unsafeCSS } from 'lit';
 const thumb = css`
   appearance: none;
   cursor: grab;
-
   width: var(--mrd-range-thumb-width, var(--mrd-thumb-size, 1rem));
   height: var(--mrd-range-thumb-height, var(--mrd-thumb-size, 1rem));
-
   border: var(--mrd-range-border, var(--mrd-range-thumb-border, unset));
   border-radius: var(--mrd-range-thumb-border-radius, 1rem);
   background-color: var(
@@ -37,7 +35,6 @@ const track = css`
         var(--mrd-range, 50%)
     )
   );
-
   cursor: pointer;
   margin-block: 0.5rem;
   appearance: none;
