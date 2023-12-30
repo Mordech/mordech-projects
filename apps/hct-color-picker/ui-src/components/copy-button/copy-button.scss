@@ -22,20 +22,16 @@ button {
     position: absolute;
     inset: 0;
     background-color: var(--mrd-color-background-on-base);
-    opacity: 0;
+    opacity: var(--mrd-copy-button-hover-opacity, 0);
   }
 
   &:hover {
-    &::after {
-      opacity: 0.8;
-    }
+    --mrd-copy-button-hover-opacity: 0.08;
   }
 
   &:focus-visible,
   &:active {
-    &::after {
-      opacity: 0.16;
-    }
+    --mrd-copy-button-hover-opacity: 0.12;
   }
 
   &:focus-visible {
