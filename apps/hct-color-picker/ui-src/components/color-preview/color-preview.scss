@@ -36,7 +36,8 @@ mrd-button.add-style-button {
       overflow: hidden;
       white-space: nowrap;
       transform: translate(0);
-      transition: transform var(--mrd-transition-fast),
+      transition:
+        transform var(--mrd-transition-fast),
         padding-inline var(--mrd-transition-fast);
     }
   }
@@ -59,11 +60,11 @@ mrd-button.add-style-button {
   appearance: none;
 
   &::-webkit-color-swatch {
-    @include color-swatch();
+    @include color-swatch;
   }
 
   &::-moz-color-swatch {
-    @include color-swatch();
+    @include color-swatch;
   }
 
   &:focus-visible {

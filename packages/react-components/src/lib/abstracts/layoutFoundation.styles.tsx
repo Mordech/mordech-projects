@@ -11,7 +11,6 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: clamp(2rem, 18vw, 18rem);
-
   margin-inline: auto;
 
   ${pagePadding}

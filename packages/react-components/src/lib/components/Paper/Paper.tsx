@@ -9,13 +9,11 @@ const StyledPaper = styled.div<StyledPaperProps>`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
   border-style: solid;
   border-width: 1px;
   box-shadow: ${({ boxShadow }) => boxShadow};
   border-color: ${({ borderColor }) => borderColor};
   background-color: ${({ backgroundColor }) => backgroundColor};
-
   border-radius: 0.75rem;
 `;
 

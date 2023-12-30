@@ -1,6 +1,9 @@
 {
-  "extends": "../../.stylelintrc.json",
-  "rules": {
-    "at-rule-no-unknown": null
-  }
+  "extends": ["../../.stylelintrc"],
+  "overrides": [
+    {
+      "files": ["*.{scss,sass}"],
+      "extends": ["stylelint-config-standard-scss"]
+    }
+  ]
 }

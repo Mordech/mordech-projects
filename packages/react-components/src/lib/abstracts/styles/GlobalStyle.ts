@@ -39,10 +39,7 @@ export const GlobalStyle = createGlobalStyle`
   link,
   button {
     &:focus-visible {
-      outline-style: solid;
-      outline-color: ${colors.primary.base};
-      outline-width: 2px;
-
+      outline: solid 2px ${colors.primary.base};
       outline-offset: 4px;
     }
   }
