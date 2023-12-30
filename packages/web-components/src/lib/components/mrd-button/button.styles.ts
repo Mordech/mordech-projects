@@ -110,6 +110,6 @@ export const buttonBase = css`
 
   [data-size='compact'],
   [data-size='tiny'] {
-    -mrd-u-button-text-min-height: 1.25rem;
+    --mrd-u-button-text-min-height: 1.25rem;
   }
 `;
