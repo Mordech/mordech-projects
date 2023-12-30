@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/Mordech/mordech-projects/compare/v0.32.0...v0.33.0) (2023-12-30)
+
+### Features
+
+- **web-components:** update button props ([#111](https://github.com/Mordech/mordech-projects/issues/111)) ([a45630f](https://github.com/Mordech/mordech-projects/commit/a45630f7606c93b7682981f6cfa4b2e293883b46))
+
 # [0.32.0](https://github.com/Mordech/mordech-projects/compare/v0.31.3...v0.32.0) (2023-12-19)
 
 ### Features

@@ -1,7 +1,7 @@
 {
   "name": "@mordech/tokens",
   "author": "Elad Mordechai Mizrahi",
-  "version": "0.32.0",
+  "version": "0.33.0",
   "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@mordech/web-components",
-  "version": "0.32.0",
+  "version": "0.33.0",
   "type": "module",
   "main": "dist/index.cjs",
   "license": "MIT",
@@ -35,6 +35,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@mordech/tokens": "^0.32.0"
+    "@mordech/tokens": "^0.33.0"
   }
 }

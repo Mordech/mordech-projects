@@ -1,6 +1,6 @@
 {
   "name": "@mordech/vite-lit-loader",
-  "version": "0.32.0",
+  "version": "0.33.0",
   "type": "commonjs",
   "main": "dist/index.js",
   "license": "MIT",
