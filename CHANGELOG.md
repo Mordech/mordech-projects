@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.1](https://github.com/Mordech/mordech-projects/compare/v0.33.0...v0.33.1) (2023-12-30)
+
+### Bug Fixes
+
+- **web-components:** fix button color type ([#114](https://github.com/Mordech/mordech-projects/issues/114)) ([47b0456](https://github.com/Mordech/mordech-projects/commit/47b04565dae0aaa1a9c02463c3d18ae4e2bca6cb))
+
 # [0.33.0](https://github.com/Mordech/mordech-projects/compare/v0.32.0...v0.33.0) (2023-12-30)
 
 ### Features
