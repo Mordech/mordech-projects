@@ -1,7 +1,5 @@
 {
-  "name": "@mordech/web-components-storybook",
+  "name": "web-components-storybook",
   "author": "Elad Mordechai Mizrahi",
-  "version": "0.31.0",
-  "private": true,
-  "nx": {}
+  "private": true
 }

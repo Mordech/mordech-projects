@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 
 import welcomeVideoPoster from '../../../images/welcomeVideo.png';
@@ -6,8 +6,7 @@ import welcomeVideoMp4 from '../../../videos/welcomeVideo.mp4';
 import welcomeVideoWebM from '../../../videos/welcomeVideo.webm';
 
 export const Video = styled.video`
-  align-self: center;
-  justify-self: center;
+  place-self: center;
   max-width: 530px;
   width: 100%;
 `;

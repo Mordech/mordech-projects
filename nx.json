@@ -1,41 +1,13 @@
 {
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/nx-cloud",
-      "options": {
-        "cacheableOperations": [
-          "develop",
-          "build",
-          "build-storybook",
-          "build:assets",
-          "build:css",
-          "serve",
-          "start",
-          "test:watch",
-          "watch:lib",
-          "clean",
-          "generate:component",
-          "typecheck",
-          "storybook",
-          "test",
-          "lint",
-          "lint:css",
-          "visual",
-          "visual:ci"
-        ],
-        "accessToken": "ZWJiZTdjOGEtZmFkYS00YjNhLWIwNTYtOTdkOGRjNTRhMTg4fHJlYWQtd3JpdGU="
-      }
-    }
-  },
   "extends": "nx/presets/npm.json",
   "generators": {
-    "@nrwl/react:component": {
+    "@nx/react:component": {
       "style": "styled-components",
       "export": true,
       "pascalCaseDirectory": true,
       "pascalCaseFiles": true
     },
-    "@nrwl/react": {
+    "@nx/react": {
       "application": {
         "style": "styled-components",
         "linter": "eslint",
@@ -56,10 +28,12 @@
   "targetDefaults": {
     "test": {
       "dependsOn": ["^build"],
-      "inputs": ["default", "^default"]
+      "inputs": ["default", "^default"],
+      "cache": true
     },
     "start": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "cache": true
     },
     "prepare": {
       "dependsOn": ["^build"]
@@ -71,17 +45,60 @@
         "{projectRoot}/types",
         "{projectRoot}/build",
         "{projectRoot}/public"
-      ]
+      ],
+      "cache": true
     },
     "build-storybook": {
       "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/public", "{projectRoot}/storybook-static"]
+      "outputs": ["{projectRoot}/public", "{projectRoot}/storybook-static"],
+      "cache": true
     },
     "visual": {
-      "dependsOn": ["^build", "build-storybook"]
+      "dependsOn": ["^build", "build-storybook"],
+      "cache": true
     },
     "visual:ci": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "develop": {
+      "cache": true
+    },
+    "build:assets": {
+      "cache": true
+    },
+    "build:css": {
+      "cache": true
+    },
+    "serve": {
+      "cache": true
+    },
+    "test:watch": {
+      "cache": true
+    },
+    "watch:lib": {
+      "cache": true
+    },
+    "clean": {
+      "cache": true
+    },
+    "typecheck": {
+      "cache": true
+    },
+    "storybook": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "lint:css": {
+      "cache": true
+    },
+    "@nx/vite:test": {
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"],
+      "cache": true
     }
   },
   "affected": {
@@ -91,5 +108,6 @@
     "appsDir": "apps",
     "libsDir": "packages"
   },
-  "defaultProject": "@mordech/portfolio"
+  "defaultProject": "@mordech/portfolio",
+  "nxCloudAccessToken": "ZWJiZTdjOGEtZmFkYS00YjNhLWIwNTYtOTdkOGRjNTRhMTg4fHJlYWQtd3JpdGU="
 }

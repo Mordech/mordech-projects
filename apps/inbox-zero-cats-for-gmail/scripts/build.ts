@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-var-requires */
-import { updateJson } from '@nrwl/devkit';
+import { updateJson } from '@nx/devkit';
 import { execSync } from 'child_process';
 import { config } from 'dotenv';
 import { readdir, writeFileSync } from 'fs';
@@ -61,7 +60,7 @@ function updateManifest(browser: Browser) {
       const geckoId = process.env.GECKO_ID;
       if (!geckoId)
         throw new Error(
-          'You must set the GECKO_ID environment variable to build the Firefox extension.'
+          'You must set the GECKO_ID environment variable to build the Firefox extension.',
         );
 
       manifest.browser_action = manifest.action;
@@ -106,8 +105,8 @@ function getExtensionFolder(browser: Browser) {
       console.log(
         `${browserEmoji}  ${browserName} extension: /build/${browser}/${
           files[files.length - 1].name
-        }`
+        }`,
       );
-    }
+    },
   );
 }

@@ -3,10 +3,9 @@ button {
   border: none;
   font: inherit;
   cursor: pointer;
+
   /* end button reset */
-
   margin-inline-end: -0.25rem;
-
   overflow: hidden;
   color: var(--mrd-color-background-on-base);
   padding: 0.2rem 0.4rem;
@@ -16,7 +15,6 @@ button {
   align-items: center;
   gap: 0.5rem;
   background-color: var(--mrd-color-background-base);
-
   transition: outline-offset var(--mrd-transition-bounce);
 
   &::after {
@@ -24,20 +22,16 @@ button {
     position: absolute;
     inset: 0;
     background-color: var(--mrd-color-background-on-base);
-    opacity: 0;
+    opacity: var(--mrd-copy-button-hover-opacity, 0);
   }
 
   &:hover {
-    &::after {
-      opacity: 8%;
-    }
+    --mrd-copy-button-hover-opacity: 0.08;
   }
 
   &:focus-visible,
   &:active {
-    &::after {
-      opacity: 16%;
-    }
+    --mrd-copy-button-hover-opacity: 0.12;
   }
 
   &:focus-visible {

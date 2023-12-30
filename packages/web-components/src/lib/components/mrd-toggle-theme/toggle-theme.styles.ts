@@ -5,6 +5,7 @@ export const toggleThemeIcon = css`
     width: var(--mrd-icon-size, 24px);
     height: var(--mrd-icon-size, 24px);
   }
+
   #mrd-mask,
   #mrd-sun {
     transform-origin: center;

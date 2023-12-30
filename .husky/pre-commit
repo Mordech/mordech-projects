@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm nx affected --target=lint --uncommitted 
-pnpm nx affected --target=lint:css --uncommitted 
-pnpm nx affected --target=test --uncommitted
+yarn nx affected --target=lint --uncommitted 
+yarn nx affected --target=lint:css --uncommitted 
+yarn nx affected --target=test --uncommitted

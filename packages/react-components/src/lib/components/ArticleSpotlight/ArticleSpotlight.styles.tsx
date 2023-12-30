@@ -55,6 +55,7 @@ export const Content = styled.div`
 
   ${breakpoints.lg} {
     --mrd-padding-inline: 3rem;
+
     min-width: var(--mrd-total-width);
   }
 `;

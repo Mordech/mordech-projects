@@ -1,0 +1,21 @@
+{
+  "extends": ["stylelint-config-recommended"],
+  "files": "**/*.css",
+  "ignoreFiles": ["dist/**/*", "node_modules/**/*", "tmp/**/*", "build/**/*"],
+  "rules": {
+    "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+    "custom-property-pattern": "mrd-.+"
+  },
+  "exclude": ["node_modules", "tmp"],
+  "overrides": [
+    {
+      "extends": ["stylelint-config-standard"],
+      "customSyntax": "postcss-styled-syntax",
+      "files": ["**/*.{ts,tsx,js,jsx}"]
+    },
+    {
+      "files": ["*.{scss,sass}"],
+      "extends": ["stylelint-config-standard-scss"]
+    }
+  ]
+}

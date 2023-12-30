@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-pnpm add @mordech/web-components
+yarn add @mordech/web-components
 ```
 
 ## Usage

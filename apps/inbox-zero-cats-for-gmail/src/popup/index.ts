@@ -41,7 +41,7 @@ export const renderContent = async () => {
         }}
       ></mrd-toggle-theme>
     `,
-    headerElem
+    headerElem,
   );
   const { catTitles } = await browser.storage.local
     .get('catTitles')

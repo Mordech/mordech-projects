@@ -1,0 +1,6 @@
+{
+  "name": "@mordech/storybook-toggle-theme-addon",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "tags": [],
+  "targets": {}
+}

@@ -7,6 +7,7 @@ export const StickyNav = styled.nav.attrs({ 'aria-label': 'Social links' })`
   &:empty {
     display: none;
   }
+
   pointer-events: none;
 
   ${breakpoints.lg} {
@@ -18,7 +19,6 @@ export const StickyNav = styled.nav.attrs({ 'aria-label': 'Social links' })`
 
 export const IconLink = styled.a`
   pointer-events: auto;
-  outline-width: 2px;
   opacity: 0.5;
 
   &:hover {
@@ -29,20 +29,17 @@ export const IconLink = styled.a`
     opacity: 0.8;
   }
 
-  outline-color: transparent;
-  outline-style: solid;
+  outline: solid 2px transparent;
   border-radius: 2px;
-
-  transition: all 250ms ease, outline-offset ${transitions.bounce};
+  transition:
+    all 250ms ease,
+    outline-offset ${transitions.bounce};
   transition-delay: outline-color 10ms;
 
   &:focus-visible {
     opacity: 1;
-
-    outline-style: solid;
-    outline-color: ${colors.primary.base};
+    outline: solid 2px ${colors.primary.base};
     outline-offset: 4px;
-    outline-width: 2px;
   }
 `;
 
@@ -103,8 +100,9 @@ export const StyledFooter = styled.footer`
   min-height: var(--mrd-default-padding);
   text-align: center;
 
-  ${pagePadding}
   /* Creates a full bleed background */
   box-shadow: 0 0 0 100vmax ${colors.background.onBase};
   clip-path: inset(-1px -100vmax -100vmax);
+
+  ${pagePadding}
 `;

@@ -13,7 +13,7 @@ I have a few projects going on, and I want to have one source of truth for desig
 ## Getting started
 
 ```bash
-pnpm add @mordech/tokens
+yarn add @mordech/tokens
 ```
 
 ### CSS

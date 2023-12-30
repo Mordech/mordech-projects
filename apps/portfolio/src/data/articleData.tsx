@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArticleSpotlightProps } from '@mordech/react-components';
 import { StaticImage } from 'gatsby-plugin-image';
 

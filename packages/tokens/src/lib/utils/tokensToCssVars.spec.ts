@@ -17,7 +17,7 @@ describe('tokensToCssVars', () => {
     const result = tokensToCssVars(obj, 'test');
 
     expect(result).toBe(
-      '--mrd-test-color-primary: red;--mrd-test-color-secondary: blue;--mrd-test-size-small: 1rem;--mrd-test-size-medium: 2rem;--mrd-test-size-large: 3rem;'
+      '--mrd-test-color-primary: red;--mrd-test-color-secondary: blue;--mrd-test-size-small: 1rem;--mrd-test-size-medium: 2rem;--mrd-test-size-large: 3rem;',
     );
   });
 });

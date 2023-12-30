@@ -10,7 +10,7 @@ import { applyPaint } from './applyPaint';
 
 export async function updatePaint(
   paintStyle: UiPaintStyle | undefined,
-  argb: number
+  argb: number,
 ) {
   const solidPaint: SolidPaint = {
     type: 'SOLID',

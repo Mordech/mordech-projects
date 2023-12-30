@@ -1,5 +1,5 @@
 {
-  "name": "vite-lit-loader",
+  "name": "@mordech/vite-lit-loader",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vite-lit-loader/src",
   "projectType": "library",
@@ -17,18 +17,14 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["packages/vite-lit-loader/**/*.ts"]
-      }
+      "command": "eslint packages/vite-lit-loader/src"
     },
     "prepare": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           {
-            "command": "nx build vite-lit-loader"
+            "command": "nx build @mordech/vite-lit-loader"
           }
         ],
         "cwd": "packages/vite-lit-loader",

@@ -5,6 +5,9 @@ import { viteSingleFile } from 'vite-plugin-singlefile';
 export default defineConfig({
   root: './ui-src',
   plugins: [litStyleLoader(), litTemplateLoader(), viteSingleFile()],
+  esbuild: {
+    legalComments: 'none',
+  },
   build: {
     target: 'esnext',
     assetsInlineLimit: 100000000,

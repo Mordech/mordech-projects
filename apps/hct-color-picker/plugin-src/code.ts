@@ -35,7 +35,7 @@ stylesAndVariables.length
 figma.on('documentchange', (event) => {
   if (
     event.documentChanges.some(
-      ({ type }) => type === 'STYLE_CREATE' || type === 'STYLE_DELETE'
+      ({ type }) => type === 'STYLE_CREATE' || type === 'STYLE_DELETE',
     )
   ) {
     const stylesAndVariables = getAllStylesAndVariables();

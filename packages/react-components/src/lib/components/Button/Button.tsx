@@ -1,4 +1,4 @@
-import React, {
+import {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   FC,
@@ -30,7 +30,6 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   --mrd-btn-border-color: var(--mrd-btn-background-color);
 
   user-select: none;
-
   display: inline-flex;
   font-family: ${fontFamilies.sans};
   justify-content: center;
@@ -39,33 +38,25 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
   gap: 0.5rem;
   background-color: var(--mrd-btn-background-color);
   color: var(--mrd-btn-color);
-
   cursor: pointer;
-
   padding: 0.65rem 1rem;
   min-width: 7rem;
-
   border-color: var(--mrd-btn-border-color);
   border-width: var(--mrd-btn-border-size);
   border-radius: 99rem;
   border-style: solid;
-
   font-size: ${fontSizes[1]};
   font-weight: inherit;
-
+  outline: solid var(--mrd-btn-border-size) transparent;
   outline-offset: var(--mrd-btn-outline-offset);
-  outline-width: var(--mrd-btn-border-size);
-  outline-color: transparent;
-  outline-style: solid;
-
-  transition: all 250ms ease, outline-offset ${transitions.bounce};
+  transition:
+    all 250ms ease,
+    outline-offset ${transitions.bounce};
   transition-delay: outline-color 10ms;
 
   &:focus-visible {
-    outline-style: solid;
-    outline-color: ${colors.primary.base};
+    outline: solid 2px ${colors.primary.base};
     outline-offset: 4px;
-    outline-width: 2px;
   }
 
   &:hover {
@@ -90,7 +81,6 @@ const StyledButton = styled.button<{ $variant: ButtonVariants }>`
     outline-color: transparent;
     outline-width: var(--mrd-btn-border-size);
     outline-offset: var(--mrd-btn-outline-offset);
-
     filter: brightness(1);
   }
 

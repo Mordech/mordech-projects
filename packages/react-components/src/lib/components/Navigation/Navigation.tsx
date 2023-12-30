@@ -1,4 +1,4 @@
-import React, { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
+import { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
 import { colors } from '@mordech/tokens';
 
 import { Icon } from '../Icon';
@@ -13,7 +13,7 @@ export interface NavigationProps {
 export const Navigation: FC<NavigationProps> = ({ logo, children }) => {
   const navigationLinks = useMemo(
     () => Children.map(children, (child) => <li>{child}</li>),
-    [children]
+    [children],
   );
 
   return (

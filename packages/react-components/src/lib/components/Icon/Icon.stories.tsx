@@ -1,4 +1,3 @@
-import React from 'react';
 import { colors } from '@mordech/tokens';
 import { Meta, Story } from '@storybook/react';
 

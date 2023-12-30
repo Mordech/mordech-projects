@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
@@ -14,12 +13,12 @@ describe('Markdown', () => {
   it('should render a paragraph', async () => {
     const { getByText } = render(<Markdown>{explanationText}</Markdown>);
     expect(getByText("Hey! I'm a markdown component")).toBeInstanceOf(
-      HTMLHeadingElement
+      HTMLHeadingElement,
     );
     expect(getByText('you')).toBeInstanceOf(HTMLAnchorElement);
     expect(getByText('// code block example')).toBeInstanceOf(HTMLElement);
     expect(getByText(/My purpose is to help/)).toBeInstanceOf(
-      HTMLParagraphElement
+      HTMLParagraphElement,
     );
     expect(getByText("I'm a list item")).toBeInstanceOf(HTMLLIElement);
   });
@@ -28,7 +27,7 @@ describe('Markdown', () => {
     const { baseElement } = render(
       <main>
         <Markdown>{explanationText}</Markdown>
-      </main>
+      </main>,
     );
     expect(await axe(baseElement)).toHaveNoViolations();
   });

@@ -34,8 +34,48 @@ li {
   border-radius: var(--mrd-border-radius);
 }
 
+button,
+.btn {
+  display: inline-flex;
+  border: unset;
+  border-radius: var(--mrd-border-radius);
+  padding: 0.5rem 1rem;
+  min-width: 5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
 li button {
   opacity: 0;
+}
+
+.btn {
+  white-space: nowrap;
+  margin-inline-start: auto;
+}
+
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--mrd-color-primary-base);
+  opacity: 1;
+  outline-offset: 0.25rem;
+}
+
+button:disabled,
+.btn:disabled {
+  background-color: var(--mrd-color-disabled-container);
+  color: var(--mrd-color-disabled-on-container);
+  fill: var(--mrd-color-disabled-on-container);
+  cursor: not-allowed;
+}
+
+button:hover,
+.btn:hover {
+  opacity: 0.8;
 }
 
 li:hover button {
@@ -150,21 +190,6 @@ input[type='file']:focus-visible + label {
   outline-offset: 0.25rem;
 }
 
-button,
-.btn {
-  display: inline-flex;
-  border: unset;
-  border-radius: var(--mrd-border-radius);
-  padding: 0.5rem 1rem;
-  min-width: 5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-}
-
 button.primary,
 .btn.primary {
   background-color: var(--mrd-color-primary-base);
@@ -178,21 +203,6 @@ button.small,
 .btn.small {
   padding: 0.5rem 0.75rem;
   font-size: var(--mrd-font-size-0);
-}
-
-button:focus-visible,
-.btn:focus-visible {
-  outline: 2px solid var(--mrd-color-primary-base);
-  opacity: 1;
-  outline-offset: 0.25rem;
-}
-
-button:disabled,
-.btn:disabled {
-  background-color: var(--mrd-color-disabled-container);
-  color: var(--mrd-color-disabled-on-container);
-  fill: var(--mrd-color-disabled-on-container);
-  cursor: not-allowed;
 }
 
 .revert-btn {
@@ -212,11 +222,6 @@ button.destructive:hover,
   color: var(--mrd-color-error-on-container);
   fill: var(--mrd-color-error-on-container);
   opacity: 1;
-}
-
-.btn {
-  white-space: nowrap;
-  margin-inline-start: auto;
 }
 
 a,
@@ -291,11 +296,6 @@ button.icon:focus-visible {
   outline-offset: 0.25rem;
 }
 
-button:hover,
-.btn:hover {
-  opacity: 0.8;
-}
-
 ul.image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
@@ -348,5 +348,7 @@ li.random::after {
 }
 
 strong {
-  font-variation-settings: 'wght' var(--mrd-font-weight-bold), 'wdth' 100;
+  font-variation-settings:
+    'wght' var(--mrd-font-weight-bold),
+    'wdth' 100;
 }

@@ -66,7 +66,7 @@ export class HctController extends LitElement {
     `;
   }
 
-  protected createRenderRoot(): Element | ShadowRoot {
+  protected createRenderRoot() {
     return this;
   }
 }

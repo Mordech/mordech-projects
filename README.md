@@ -11,7 +11,8 @@
 [![Published on npm](https://img.shields.io/npm/v/@mordech/tokens.svg?logo=npm&label=Tokens&logoColor=FFF)](https://www.npmjs.com/package/@mordech/tokens)
 [![React Storybook](https://img.shields.io/badge/React-Storybook-FF4785?logo=React&style=flat&logoColor=FFF)](https://mordech-react-components.netlify.app/)
 [![Lit Storybook](https://img.shields.io/badge/Lit-Storybook-FF4785?logo=Lit&style=flat&logoColor=FFF)](https://mordech-web-components.netlify.app/)
-[![Published on npm](https://img.shields.io/npm/v/@mordech/vite-lit-loader.svg?logo=npm&label=Vite%20Lit%20Loader&logoColor=FFF)](https://www.npmjs.com/package/@mordech/vite-lit-loader)
+[![Published on npm](https://img.shields.io/npm/v/@mordech/vite-lit-loader.svg?logo=npm&label=Vite%20Lit%20Loader&logoColor=FFF)](https://www.npmjs.com/package/@mordech/vite-lit-loader) [![Static Badge](https://img.shields.io/badge/HCT_Color_Picker-black?style=flat&logo=figma&logoColor=white&labelColor=black)
+](https://www.figma.com/community/plugin/1227923985322908257/hct-color-picker)
 
 </div>
 
@@ -19,70 +20,64 @@
 
 This repository is a hub for my projects and things I do in my free time. You can use it at your own risk 😅
 
-This project uses `pnpm workspaces`, `Lerna`, and `NX` + `NX Cloud`
+This project uses `yarn workspaces`, `Lerna`, and `NX` + `NX Cloud`
 
 ## What can I find here?
 
 ### Vite Lit loader
 
-[link](/packages/vite-lit-loader/)
+[project link](/packages/vite-lit-loader/)
 
 This Vite plugin allows you to load `svg`, `css`, and `html` without wrapping them with `unsafeCSS`, `unsafeHTML` or `unsafeSVG` functions.
 
-### My react component library
-
-[link](/packages/react-components/)
-
-Creating a personal react component library frees me to work fast, make quick iterations, and experiment with ideas I usually can't do at work.
-
-### My web component library
-
-[link](/packages/web-components/)
-
-I'm trying to create a web component library using `lit`. I want a framework-agnostic library that can be used in any project.
-
-### Inbox Zero Cats for Gmail
-
-[link](/apps/inbox-zero-cats-for-gmail/)
-
-This web extension for Gmail displays a cat image instead of an empty inbox. The cat image is from [Unsplash](https://unsplash.com/).
-
 ### HCT (Hue, Chroma, Tone) Color Picker for Figma
 
-[link](/apps/hct-color-picker/)
+[project link](/apps/hct-color-picker/)
 
 This is a color picker for Figma. It allows you to pick a color using the HCT color model.
 
+### Inbox Zero Cats for Gmail
+
+[project link](/apps/inbox-zero-cats-for-gmail/)
+
+This web extension for Gmail displays a cat image instead of an empty inbox. The cat image is from [Unsplash](https://unsplash.com/).
+
 ### My tokens library
 
-[link](/packages/tokens/)
+[project link](/packages/tokens/)
 
 This library allows sharing Design-Tokens (`colors`, `typography`, `breakpoints`, etc.) between projects. It's a great way to keep your design system consistent across projects.
 
-### Portfolio
+### My web component library
 
-[link](/apps/portfolio/) (working on a readme 😊)
+[project link](/packages/web-components/)
 
-I'm trying to develop [my portfolio](https://elad.mizrahi.cc) and create my personal component library and style guide.
+I'm trying to create a web component library using `lit`. I want a framework-agnostic library that can be used in any project.
+
+### My react component library
+
+[liproject linknk](/packages/react-components/)
+
+Creating a personal react component library frees me to work fast, make quick iterations, and experiment with ideas I usually can't do at work.
 
 ## Getting started
 
 Run
 
 ```bash
-pnpm && pnpm husky install
+yarn && pnpm husky install
 ```
 
 Or running any command from the root folder using `NX`
 
 ```bash
-pnpm nx run @mordech/[project][:target][:configuration]
+yarn nx run @mordech/[project][:target][:configuration]
 ```
 
 e.g.
 
 ```bash
-pnpm nx run @mordech/portfolio:start
+yarn nx run @mordech/portfolio:start
 ```
 
 or use other NX commands (e.g., `run-many`, `affected`). For more, read [NX documentation](https://nx.dev/reference/commands#nx-cli-commands).

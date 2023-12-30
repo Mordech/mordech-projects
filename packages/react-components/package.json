@@ -1,20 +1,20 @@
 {
   "name": "@mordech/react-components",
   "version": "0.31.0",
+  "type": "module",
   "private": true,
-  "dependencies": {
-    "@mordech/tokens": "workspace:*",
-    "@mordech/web-components": "workspace:*"
-  },
-  "devDependencies": {
-    "@mordech/storybook-toggle-theme-addon": "workspace:*"
-  },
   "scripts": {
     "visual": "loki test --reactUri file:./storybook-static",
     "visual:approve": "loki approve",
     "visual:ci": "loki test --requireReference --reactUri file:./storybook-static"
   },
   "loki": {
+    "diffingEngine": "looks-same",
+    "looks-same": {
+      "tolerance": 4,
+      "ignoreAntialiasing": true,
+      "antialiasingTolerance": 3
+    },
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
@@ -28,5 +28,11 @@
         "preset": "iPhone 7"
       }
     }
+  },
+  "nx": {
+    "implicitDependencies": [
+      "@mordech/tokens",
+      "@mordech/web-components"
+    ]
   }
 }

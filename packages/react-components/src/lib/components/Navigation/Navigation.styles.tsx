@@ -28,8 +28,6 @@ export const LinksList = styled.ul`
 `;
 
 export const LogoLink = styled.a`
-  outline-width: 2px;
-
   &:hover {
     filter: brightness(1.45);
 
@@ -42,19 +40,16 @@ export const LogoLink = styled.a`
     filter: brightness(1);
   }
 
-  outline-color: transparent;
-  outline-style: solid;
+  outline: solid 2px transparent;
   border-radius: 2px;
-
-  transition: all 250ms ease, outline-offset ${transitions.bounce};
+  transition:
+    all 250ms ease,
+    outline-offset ${transitions.bounce};
   transition-delay: outline-color 10ms;
 
   &:focus-visible {
     opacity: 1;
-
-    outline-style: solid;
-    outline-color: ${colors.primary.base};
+    outline: solid 2px ${colors.primary.base};
     outline-offset: 4px;
-    outline-width: 2px;
   }
 `;

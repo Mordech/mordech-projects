@@ -12,5 +12,5 @@ import { fontSizesEnum } from './fontSizes';
  */
 export const fontSizes = createTokenObject(
   fontSizesEnum,
-  'font-size'
+  'font-size',
 ) as typeof fontSizesEnum;

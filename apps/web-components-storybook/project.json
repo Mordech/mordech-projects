@@ -1,7 +1,12 @@
 {
-  "name": "@mordech/web-components-storybook",
+  "name": "web-components-storybook",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": [],
+  "implicitDependencies": [
+    "@mordech/tokens",
+    "@mordech/web-components",
+    "@mordech/storybook-toggle-theme-addon"
+  ],
   "targets": {
     "visual": {
       "executor": "nx:run-commands",
@@ -40,9 +45,8 @@
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/web-components",
         "port": 4600,
         "configDir": "apps/web-components-storybook/.storybook"
       },
@@ -53,10 +57,9 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
+      "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/web-components",
         "outputDir": "apps/web-components-storybook/storybook-static",
         "configDir": "apps/web-components-storybook/.storybook"
       },

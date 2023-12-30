@@ -3,7 +3,7 @@ import { Token } from './types';
 
 export type ManipulateValueFunction = (
   // eslint-disable-next-line no-unused-vars
-  value: string | number
+  value: string | number,
 ) => string | number;
 
 export interface CreateCssVarObjectOptions {
@@ -67,7 +67,7 @@ export interface CreateCssVarObjectOptions {
 export const createTokenObject = (
   obj: Token,
   prefix: string,
-  options?: CreateCssVarObjectOptions
+  options?: CreateCssVarObjectOptions,
 ): Token => {
   return Object.keys(obj).reduce((acc, key) => {
     const currentKey = key;
@@ -78,7 +78,7 @@ export const createTokenObject = (
         [currentKey]: createTokenObject(
           currentValue,
           `${prefix}-${key}`,
-          options
+          options,
         ),
       };
     } else {
@@ -101,7 +101,7 @@ export const createTokenObject = (
           return {
             ...acc,
             [currentKey]: `var(--mrd-${prefix}-${kebabize(
-              key
+              key,
             )}, ${currentValue})`,
           };
       }

@@ -15,14 +15,14 @@ You can also add custom images and titles to the extension
 ## How to build
 
 - Clone the repository
-- Run `pnpm install`
-- Run `pnpm build`
+- Run `yarn install`
+- Run `yarn build`
 - The web extension will be built in the `build` folder
 
 ## How to develop
 
-- Run `pnpm install`
-- Run `pnpm start`
+- Run `yarn install`
+- Run `yarn start`
 - The web extension will be built in the `dist` folder and will be rebuilt whenever you make changes to the source code
 
 ## How to contribute

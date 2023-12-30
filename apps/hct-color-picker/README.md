@@ -1,5 +1,8 @@
 # HCT (Hue, Chroma, Tone) color picker for Figma
 
+[![Static Badge](https://img.shields.io/badge/HCT_Color_Picker-black?style=flat&logo=figma&logoColor=white&labelColor=black)
+](https://www.figma.com/community/plugin/1227923985322908257/hct-color-picker)
+
 This color picker uses Google's HCT logic to pick, change, and add colors and styles.
 
 Select elements in the document and change their colors in real time.
@@ -28,8 +31,8 @@ Please follow the [Conventional Commits](https://www.conventionalcommits.org/en/
 ## Development
 
 1. Clone the repo
-2. Run `pnpm install`
-3. Run `pnpm nx run @mordech/hct-color-picker:watch`
+2. Run `yarn install`
+3. Run `yarn nx run @mordech/hct-color-picker:watch`
 4. Open Figma and go to Plugins > Development > Import plugin from manifest
 5. Select the `manifest.json` file in the `/apps/hct-color-picker/dist/` folder
 6. The plugin should now be available in the Plugins menu
@@ -40,7 +43,7 @@ The plugin uses [my web component library](/packages/web-components/) to build t
 
 ## Build
 
-1. Run `pnpm nx run @mordech/hct-color-picker:build` to build the plugin
+1. Run `yarn nx run @mordech/hct-color-picker:build` to build the plugin
 2. The plugin will be available in the `/apps/hct-color-picker/dist/` folder
 
 ## Contribution guidelines

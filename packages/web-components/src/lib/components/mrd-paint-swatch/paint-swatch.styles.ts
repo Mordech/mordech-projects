@@ -5,7 +5,7 @@ export const paintSwatchBase = css`
   .swatch {
     height: var(--mrd-paint-swatch-size, 3rem);
     width: var(--mrd-paint-swatch-size, 3rem);
-    background-color: currentColor;
+    background-color: currentcolor;
     border-width: 1px;
     border-style: solid;
     border-color: ${unsafeCSS(colors.background.surface)};

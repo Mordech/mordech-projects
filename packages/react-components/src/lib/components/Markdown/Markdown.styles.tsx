@@ -11,6 +11,7 @@ export const Pre = styled.pre`
 
 export const MarkdownParagraph = styled(Paragraph).attrs({ size: 'inherit' })`
   margin-block-start: 0.5rem;
+
   &:first-child {
     margin-block-start: unset;
   }
@@ -21,6 +22,7 @@ export const MarkdownH1 = styled(Headline).attrs({
   size: 4,
 })`
   margin-block-start: 2.5rem;
+
   &:first-child {
     margin-block-start: unset;
   }
@@ -31,6 +33,7 @@ export const MarkdownH2 = styled(Headline).attrs({
   size: 4,
 })`
   margin-block-start: 2.5rem;
+
   &:first-child {
     margin-block-start: unset;
   }
@@ -41,6 +44,7 @@ export const MarkdownH3 = styled(Headline).attrs({
   size: 3,
 })`
   margin-block-start: 1rem;
+
   &:first-child {
     margin-block-start: unset;
   }
@@ -51,6 +55,7 @@ export const MarkdownH4 = styled(Headline).attrs({
   size: 2,
 })`
   margin-block-start: 0.5rem;
+
   &:first-child {
     margin-block-start: unset;
   }

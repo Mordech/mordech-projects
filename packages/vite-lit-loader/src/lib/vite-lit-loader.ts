@@ -155,7 +155,7 @@ export function viteLitLoader(): Plugin {
 
 function addAttributesFromParams(
   querystring: URLSearchParams,
-  svgElement: cheerio.Cheerio<cheerio.Element>
+  svgElement: cheerio.Cheerio<cheerio.Element>,
 ) {
   for (const [key, value] of querystring) {
     if (key === 'lit') continue;

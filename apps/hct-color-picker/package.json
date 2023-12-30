@@ -1,27 +1,24 @@
 {
-  "name": "@mordech/hct-color-picker",
+  "name": "hct-color-picker",
   "private": true,
-  "version": "0.31.0",
   "description": "Figma HCT color picker plugin",
   "main": "dist/code.js",
   "type": "module",
   "author": "Elad Mordechai Mizrahi",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "start": "pnpm dev",
+    "start": "yarn dev",
     "dev": "vite",
+    "analyze": "lit-analyzer \"ui-src/**/*.{js,ts}\" --rules.no-invalid-css off",
     "build:ui": "vite build",
-    "build:plugin": "esbuild --bundle --minify --sourcemap --target=es2019 --format=esm --outfile=dist/code.js plugin-src/code.ts",
-    "build": "concurrently \"vite build\" \"pnpm build:plugin\"",
-    "watch": "concurrently \"vite build --watch --mode development\" \"pnpm build:plugin --watch\"",
+    "build:plugin": "esbuild --bundle --minify --sourcemap --target=es2015 --format=esm --legal-comments=none --outfile=dist/code.js plugin-src/code.ts",
+    "build": "concurrently \"vite build\" \"yarn build:plugin\"",
+    "watch": "concurrently \"vite build --watch --mode development\" \"yarn build:plugin --watch\"",
     "lint": "eslint --ext .ts,.js .",
     "lint:css": "stylelint './**/*.{css,scss,ts}'"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.81.0",
-    "@mordech/tokens": "workspace:*",
-    "@mordech/web-components": "workspace:*",
-    "vite": "^4.0.4",
-    "vite-plugin-singlefile": "^0.13.2"
+    "@figma/plugin-typings": "^1.82.0",
+    "vite": "^5.0.10"
   }
 }

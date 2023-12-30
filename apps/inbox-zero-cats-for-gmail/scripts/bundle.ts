@@ -45,7 +45,6 @@ async function bundleExtension() {
     outdir: join(root, 'dist'),
     loader: loaders,
     target: ['chrome58', 'firefox57'],
-    watch: process.argv.includes('--watch'),
   }).then(() => {
     console.log('    \x1b[32m✔\x1b[0m Scripts and CSS bundle complete');
   });
@@ -67,7 +66,6 @@ async function bundleExtension() {
     outdir: `${root}/dist/popup/`,
     loader: loaders,
     target: ['chrome58', 'firefox57'],
-    watch: process.argv.includes('--watch'),
   }).then(() => {
     console.log('    \x1b[32m✔\x1b[0m Popup bundle complete');
   });
@@ -85,7 +83,6 @@ async function bundleExtension() {
     outdir: path('outDir', 'options'),
     loader: loaders,
     target: ['chrome58', 'firefox57'],
-    watch: process.argv.includes('--watch'),
   }).then(() => {
     console.log('    \x1b[32m✔\x1b[0m Options bundle complete');
   });
@@ -98,7 +95,7 @@ async function bundleExtension() {
     images.forEach((image: unknown) => {
       copyFileSync(
         path('entryPoint', image as string),
-        path('outDir', image as string)
+        path('outDir', image as string),
       );
     });
     copyFileSync(manifestPath, path('outDir', 'manifest.json'));

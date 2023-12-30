@@ -6,7 +6,7 @@ import {
 } from '@material/material-color-utilities';
 import Color from 'color';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import * as mixpanel from 'mixpanel-figma';
 
@@ -29,11 +29,11 @@ initAnalytics();
 
 @customElement('my-app')
 export class MyApp extends LitElement {
-  @property({ type: Number }) hue = 156;
-  @property({ type: Number }) chroma = 50;
-  @property({ type: Number }) tone = 50;
-  @property({ type: Array }) paints?: UiPaintStyle[];
-  @property({ type: Object }) selectedColor?: SelectedColor;
+  @state() hue = 156;
+  @state() chroma = 50;
+  @state() tone = 50;
+  @state() paints?: UiPaintStyle[];
+  @state() selectedColor?: SelectedColor;
 
   render() {
     return html`
@@ -121,7 +121,6 @@ export class MyApp extends LitElement {
                         .color=${Color(color).hex()}
                         .active=${isSelected}
                         data-prop-is-Variable=${!!modeId || nothing}
-                        nothing}
                       >
                       </mrd-paint-swatch>
                     `;
@@ -190,13 +189,11 @@ export class MyApp extends LitElement {
         to right,
         ${unsafeCSS(gradient.join(','))}
       );
-
       --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.hue + 1).join(',')
+        gradient.splice(0, this.hue + 1).join(','),
       )};
-
       --mrd-thumb-color: ${unsafeCSS(
-        hexFromArgb(Hct.from(this.hue, 150, 55).toInt())
+        hexFromArgb(Hct.from(this.hue, 150, 55).toInt()),
       )};
     `;
   }
@@ -215,15 +212,13 @@ export class MyApp extends LitElement {
         to right,
         ${unsafeCSS(gradient.join(','))}
       );
-
       --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.chroma + 1).join(',')
+        gradient.splice(0, this.chroma + 1).join(','),
       )};
-
       --mrd-thumb-color: ${unsafeCSS(
         hexFromArgb(
-          Hct.from(this.hue, this.chroma, clampInt(50, 65, this.tone)).toInt()
-        )
+          Hct.from(this.hue, this.chroma, clampInt(50, 65, this.tone)).toInt(),
+        ),
       )};
     `;
   }
@@ -242,15 +237,13 @@ export class MyApp extends LitElement {
         to right,
         ${unsafeCSS(gradient.join(','))}
       );
-
       --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.tone + 1).join(',')
+        gradient.splice(0, this.tone + 1).join(','),
       )};
-
       --mrd-thumb-color: ${unsafeCSS(
         hexFromArgb(
-          Hct.from(this.hue, this.chroma, clampInt(25, 75, this.tone)).toInt()
-        )
+          Hct.from(this.hue, this.chroma, clampInt(25, 75, this.tone)).toInt(),
+        ),
       )};
     `;
   }
@@ -326,7 +319,7 @@ export class MyApp extends LitElement {
           const selectedPaint = this.paints?.find((paint) =>
             paint.modeId
               ? paint.id === selection.id && paint.modeId === selection?.modeId
-              : paint.id === selection.id
+              : paint.id === selection.id,
           );
 
           if (!selectedPaint) this.selectedColor = undefined;
@@ -337,7 +330,7 @@ export class MyApp extends LitElement {
             this.selectedColor.variableAlias = selection.variableAlias;
           } else {
             const { hue, chroma, tone } = Hct.fromInt(
-              Color(selection.color).rgbNumber()
+              Color(selection.color).rgbNumber(),
             );
 
             this.hue = hue;

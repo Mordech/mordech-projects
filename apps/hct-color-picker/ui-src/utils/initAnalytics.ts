@@ -43,7 +43,7 @@ export const initAnalytics = () => {
           } else {
             return [];
           }
-        })
+        }),
       );
 
       mixpanel.track(event, { ...properties });

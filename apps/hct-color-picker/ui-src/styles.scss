@@ -35,7 +35,6 @@ my-app {
   max-width: 450px;
   box-shadow: 0 0 0 100vmax var(--mrd-color-background-base);
   clip-path: inset(-100vmax);
-
   height: 100%;
 }
 
@@ -112,7 +111,6 @@ footer {
       opacity: 0;
       background-color: var(--mrd-color-background-on-base);
       border-radius: 0.5rem;
-
       transition: opacity var(--mrd-transition-default);
     }
 
@@ -125,13 +123,13 @@ footer {
 
     &:focus-visible::after,
     &:active::after {
-      opacity: 12%;
+      opacity: 0.12;
     }
 
     @media (pointer: fine) {
       &:hover {
         &::after {
-          opacity: 8%;
+          opacity: 0.08;
         }
       }
     }
