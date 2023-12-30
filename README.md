@@ -32,31 +32,31 @@ This Vite plugin allows you to load `svg`, `css`, and `html` without wrapping th
 
 ### HCT (Hue, Chroma, Tone) Color Picker for Figma
 
-[link](/apps/hct-color-picker/)
+[project link](/apps/hct-color-picker/)
 
 This is a color picker for Figma. It allows you to pick a color using the HCT color model.
 
 ### Inbox Zero Cats for Gmail
 
-[link](/apps/inbox-zero-cats-for-gmail/)
+[project link](/apps/inbox-zero-cats-for-gmail/)
 
 This web extension for Gmail displays a cat image instead of an empty inbox. The cat image is from [Unsplash](https://unsplash.com/).
 
 ### My tokens library
 
-[link](/packages/tokens/)
+[project link](/packages/tokens/)
 
 This library allows sharing Design-Tokens (`colors`, `typography`, `breakpoints`, etc.) between projects. It's a great way to keep your design system consistent across projects.
 
 ### My web component library
 
-[link](/packages/web-components/)
+[project link](/packages/web-components/)
 
 I'm trying to create a web component library using `lit`. I want a framework-agnostic library that can be used in any project.
 
 ### My react component library
 
-[link](/packages/react-components/)
+[liproject linknk](/packages/react-components/)
 
 Creating a personal react component library frees me to work fast, make quick iterations, and experiment with ideas I usually can't do at work.
 
@@ -65,19 +65,19 @@ Creating a personal react component library frees me to work fast, make quick it
 Run
 
 ```bash
-pnpm && pnpm husky install
+yarn && pnpm husky install
 ```
 
 Or running any command from the root folder using `NX`
 
 ```bash
-pnpm nx run @mordech/[project][:target][:configuration]
+yarn nx run @mordech/[project][:target][:configuration]
 ```
 
 e.g.
 
 ```bash
-pnpm nx run @mordech/portfolio:start
+yarn nx run @mordech/portfolio:start
 ```
 
 or use other NX commands (e.g., `run-many`, `affected`). For more, read [NX documentation](https://nx.dev/reference/commands#nx-cli-commands).
