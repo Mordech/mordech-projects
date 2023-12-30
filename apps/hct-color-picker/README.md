@@ -1,5 +1,8 @@
 # HCT (Hue, Chroma, Tone) color picker for Figma
 
+[![Static Badge](https://img.shields.io/badge/HCT_Color_Picker-black?style=flat&logo=figma&logoColor=white&labelColor=black)
+](https://www.figma.com/community/plugin/1227923985322908257/hct-color-picker)
+
 This color picker uses Google's HCT logic to pick, change, and add colors and styles.
 
 Select elements in the document and change their colors in real time.
