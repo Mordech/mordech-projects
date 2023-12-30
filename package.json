@@ -145,5 +145,6 @@
         "preset": "iPhone 7"
       }
     }
-  }
+  },
+  "packageManager": "yarn@3.5.1"
 }
