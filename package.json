@@ -1,6 +1,7 @@
 {
   "name": "mordech-projects",
   "private": true,
+  "packageManager": "yarn@3.5.1",
   "scripts": {
     "publish-packages": "lerna publish --conventional-commits",
     "postinstall": "nx run-many --target=prepare --all --parallel --maxParallel=10"
