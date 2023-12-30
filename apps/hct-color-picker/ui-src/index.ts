@@ -6,7 +6,7 @@ import {
 } from '@material/material-color-utilities';
 import Color from 'color';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import * as mixpanel from 'mixpanel-figma';
 
@@ -29,11 +29,11 @@ initAnalytics();
 
 @customElement('my-app')
 export class MyApp extends LitElement {
-  @property({ type: Number }) hue = 156;
-  @property({ type: Number }) chroma = 50;
-  @property({ type: Number }) tone = 50;
-  @property({ type: Array }) paints?: UiPaintStyle[];
-  @property({ type: Object }) selectedColor?: SelectedColor;
+  @state() hue = 156;
+  @state() chroma = 50;
+  @state() tone = 50;
+  @state() paints?: UiPaintStyle[];
+  @state() selectedColor?: SelectedColor;
 
   render() {
     return html`
@@ -121,7 +121,6 @@ export class MyApp extends LitElement {
                         .color=${Color(color).hex()}
                         .active=${isSelected}
                         data-prop-is-Variable=${!!modeId || nothing}
-                        nothing}
                       >
                       </mrd-paint-swatch>
                     `;

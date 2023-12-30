@@ -105,7 +105,7 @@ export class MrdButtonElement extends LitElement {
     const icons = nodes.filter((node) => node.nodeName === 'svg');
 
     const texts = nodes.filter(
-      (node) => node.nodeName === '#text' || node.nodeName === 'SPAN'
+      (node) => node.nodeName === '#text' || node.nodeName === 'SPAN',
     );
     const validText = texts.filter((node) => node.textContent?.trim() !== '');
 

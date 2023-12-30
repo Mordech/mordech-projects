@@ -19990,7 +19990,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit-analyzer@npm:^2.0.1":
+"lit-analyzer@npm:^2.0.1, lit-analyzer@npm:^2.0.2":
   version: 2.0.2
   resolution: "lit-analyzer@npm:2.0.2"
   dependencies:
@@ -22221,6 +22221,7 @@ __metadata:
     jsonc-eslint-parser: ^2.4.0
     lerna: ^8.0.1
     lit: ^3.1.0
+    lit-analyzer: ^2.0.2
     lit-html: ^3.1.0
     loki: ^0.33.1
     mixpanel-figma: ^2.0.4

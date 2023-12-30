@@ -9,6 +9,7 @@
   "scripts": {
     "start": "yarn dev",
     "dev": "vite",
+    "analyze": "lit-analyzer \"ui-src/**/*.{js,ts}\" --rules.no-invalid-css off",
     "build:ui": "vite build",
     "build:plugin": "esbuild --bundle --minify --sourcemap --target=es2015 --format=esm --legal-comments=none --outfile=dist/code.js plugin-src/code.ts",
     "build": "concurrently \"vite build\" \"yarn build:plugin\"",
