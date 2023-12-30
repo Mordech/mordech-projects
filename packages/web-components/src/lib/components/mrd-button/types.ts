@@ -1,9 +1,4 @@
-import { type Color } from '@mordech/tokens/dist';
-
-export type ButtonColors = Exclude<
-  Color,
-  'outline' | 'outlineVariant' | 'disabled' | 'highlight' | 'background'
->;
+export type ButtonColors = 'primary' | 'secondary' | 'success' | 'error';
 
 export type ButtonSize = 'default' | 'compact' | 'tiny';
 

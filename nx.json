@@ -108,6 +108,5 @@
     "appsDir": "apps",
     "libsDir": "packages"
   },
-  "defaultProject": "@mordech/portfolio",
   "nxCloudAccessToken": "ZWJiZTdjOGEtZmFkYS00YjNhLWIwNTYtOTdkOGRjNTRhMTg4fHJlYWQtd3JpdGU="
 }
