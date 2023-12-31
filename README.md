@@ -56,7 +56,7 @@ I'm trying to create a web component library using `lit`. I want a framework-agn
 
 ### My react component library
 
-[liproject linknk](/packages/react-components/)
+[project link](/packages/react-components/)
 
 Creating a personal react component library frees me to work fast, make quick iterations, and experiment with ideas I usually can't do at work.
 
@@ -65,7 +65,7 @@ Creating a personal react component library frees me to work fast, make quick it
 Run
 
 ```bash
-yarn && pnpm husky install
+yarn && yarn husky install
 ```
 
 Or running any command from the root folder using `NX`
