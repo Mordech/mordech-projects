@@ -1,5 +1,6 @@
-import { css, html, LitElement } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { styleMap } from 'lit/directives/style-map.js';
 
 import '@mordech/web-components/mrd-range';
 
@@ -11,19 +12,9 @@ export class HctController extends LitElement {
   @property({ type: Number }) min = 0;
   @property({ type: Number }) max = 360;
   @property({ type: String }) name = 'hue';
-  @property({ type: Object })
-  sliderGradient = css`
-    background: linear-gradient(
-      to right,
-      red,
-      yellow,
-      lime,
-      cyan,
-      blue,
-      magenta,
-      red
-    );
-  `;
+  @property({ type: Object }) sliderGradient: Record<string, string> = {
+    '--mrd-range-background': '',
+  };
 
   render() {
     return html`
@@ -48,8 +39,8 @@ export class HctController extends LitElement {
           name="mrd_range-${this.name.toLocaleLowerCase()}"
           min=${this.min}
           max=${this.max}
+          style=${styleMap(this.sliderGradient)}
           .value=${this.value}
-          .style=${this.sliderGradient}
         >
           <input
             tabindex="-1"

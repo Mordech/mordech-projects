@@ -5,7 +5,7 @@
   "main": "dist/code.js",
   "ui": "dist/index.html",
   "networkAccess": {
-    "allowedDomains": ["https://api-js.mixpanel.com"],
+    "allowedDomains": ["https://*.mixpanel.com"],
     "reasoning": "I use mixpanel for anonymous usage analytics to improve user experience."
   },
   "editorType": ["figma"]
