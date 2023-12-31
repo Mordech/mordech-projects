@@ -15,9 +15,9 @@ export default {
   },
   argTypes: {
     color: {
+      options: ['primary', 'secondary', 'success', 'error'],
       control: {
         type: 'select',
-        options: ['primary', 'secondary', 'success', 'error'],
       },
       table: {
         type: { summary: 'primary | secondary | success | error' },
@@ -26,9 +26,9 @@ export default {
       description: 'Button color',
     },
     variant: {
+      options: ['fill', 'tonal', 'inverted', 'text'],
       control: {
         type: 'select',
-        options: ['fill', 'tonal', 'inverted', 'text'],
       },
       table: {
         type: { summary: 'fill | tonal | inverted | text' },
@@ -37,9 +37,9 @@ export default {
       description: 'Button variant',
     },
     size: {
+      options: ['default', 'compact', 'tiny'],
       control: {
         type: 'select',
-        options: ['default', 'compact', 'tiny'],
         table: {
           type: { summary: 'default | round | pill' },
           defaultValue: { summary: 'default' },
@@ -52,9 +52,9 @@ export default {
       },
     },
     radius: {
+      options: ['default', 'round', 'pill'],
       control: {
         type: 'select',
-        options: ['default', 'round', 'pill'],
       },
       description: 'Button radius',
       table: {
@@ -71,9 +71,9 @@ export default {
       },
     },
     as: {
+      options: ['button', 'a'],
       control: {
         type: 'select',
-        options: ['button', 'a'],
       },
       description: 'Button element',
       table: {
@@ -93,19 +93,18 @@ const Template = ({
   variant,
   disabled,
   as,
-}: MrdButtonElement) =>
-  html`
-    <mrd-button
-      .size=${size}
-      .radius=${radius}
-      .color=${color}
-      .variant=${variant}
-      .disabled=${disabled}
-      .as=${as}
-    >
-      ${slot}
-    </mrd-button>
-  `;
+}: MrdButtonElement) => html`
+  <mrd-button
+    .size=${size}
+    .radius=${radius}
+    .color=${color}
+    .variant=${variant}
+    .disabled=${disabled}
+    .as=${as}
+  >
+    ${slot}
+  </mrd-button>
+`;
 
 export const Default = Template.bind({});
 
