@@ -65,7 +65,7 @@ Creating a personal react component library frees me to work fast, make quick it
 Run
 
 ```bash
-yarn && pnpm husky install
+yarn && yarn husky install
 ```
 
 Or running any command from the root folder using `NX`
