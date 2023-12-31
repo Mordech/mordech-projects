@@ -5,10 +5,10 @@ import {
   hexFromArgb,
 } from '@material/material-color-utilities';
 import Color from 'color';
-import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
-import * as mixpanel from 'mixpanel-figma';
+import mixpanel from 'mixpanel-browser';
 
 import '@mordech/web-components/mrd-paint-swatch';
 import '@mordech/web-components/mrd-toggle-theme';
@@ -184,18 +184,13 @@ export class MyApp extends LitElement {
       gradient.push(hexFromArgb(color.toInt()));
     }
 
-    return css`
-      --mrd-range-preview-background: linear-gradient(
-        to right,
-        ${unsafeCSS(gradient.join(','))}
-      );
-      --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.hue + 1).join(','),
-      )};
-      --mrd-thumb-color: ${unsafeCSS(
-        hexFromArgb(Hct.from(this.hue, 150, 55).toInt()),
-      )};
-    `;
+    return {
+      '--mrd-range-preview-background': `linear-gradient(to right, ${gradient.join(
+        ',',
+      )})`,
+      '--mrd-range-color': gradient.splice(0, this.hue + 1).join(','),
+      '--mrd-thumb-color': hexFromArgb(Hct.from(this.hue, 150, 55).toInt()),
+    };
   }
 
   get chromaGradient() {
@@ -207,20 +202,15 @@ export class MyApp extends LitElement {
       gradient.push(hexFromArgb(color.toInt()));
     }
 
-    return css`
-      --mrd-range-preview-background: linear-gradient(
-        to right,
-        ${unsafeCSS(gradient.join(','))}
-      );
-      --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.chroma + 1).join(','),
-      )};
-      --mrd-thumb-color: ${unsafeCSS(
-        hexFromArgb(
-          Hct.from(this.hue, this.chroma, clampInt(50, 65, this.tone)).toInt(),
-        ),
-      )};
-    `;
+    return {
+      '--mrd-range-preview-background': `linear-gradient(to right, ${gradient.join(
+        ',',
+      )})`,
+      '--mrd-range-color': gradient.splice(0, this.chroma + 1).join(','),
+      '--mrd-thumb-color': hexFromArgb(
+        Hct.from(this.hue, this.chroma, clampInt(50, 65, this.tone)).toInt(),
+      ),
+    };
   }
 
   get toneGradient() {
@@ -232,20 +222,15 @@ export class MyApp extends LitElement {
       gradient.push(hexFromArgb(color.toInt()));
     }
 
-    return css`
-      --mrd-range-preview-background: linear-gradient(
-        to right,
-        ${unsafeCSS(gradient.join(','))}
-      );
-      --mrd-range-color: ${unsafeCSS(
-        gradient.splice(0, this.tone + 1).join(','),
-      )};
-      --mrd-thumb-color: ${unsafeCSS(
-        hexFromArgb(
-          Hct.from(this.hue, this.chroma, clampInt(25, 75, this.tone)).toInt(),
-        ),
-      )};
-    `;
+    return {
+      '--mrd-range-preview-background': `linear-gradient(to right, ${gradient.join(
+        ',',
+      )})`,
+      '--mrd-range-color': gradient.splice(0, this.tone + 1).join(','),
+      '--mrd-thumb-color': hexFromArgb(
+        Hct.from(this.hue, this.chroma, clampInt(25, 75, this.tone)).toInt(),
+      ),
+    };
   }
 
   handleInput(e: Event) {

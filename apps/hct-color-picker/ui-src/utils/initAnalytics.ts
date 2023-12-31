@@ -1,29 +1,36 @@
 import { MrdRangeElement } from '@mordech/web-components/mrd-range';
-import * as mixpanel from 'mixpanel-figma';
+import * as mixpanel from 'mixpanel-browser';
 
 function formatPropName(value: string) {
   value = value.replace('prop', '');
   return value[0].toLowerCase() + value.slice(1);
 }
 
+const localStorage: Record<string, string> = {};
+let cookie: string = '';
+
+Object.defineProperty(window, 'localStorage', {
+  value: {
+    getItem: (key: string) => localStorage[key],
+    setItem: (key: string) => (localStorage[key] = key),
+    removeItem: (key: string) => delete localStorage[key],
+  },
+});
+
+Object.defineProperty(document, 'cookie', {
+  get: () => cookie,
+  set: (value: string) => (cookie = value),
+});
+
 export const initAnalytics = () => {
   const MIXPANEL_KEY = import.meta.env.VITE_MIXPANEL_TOKEN || 'development';
 
-  const isInEu = isInEuTimeZone();
   const isDev = import.meta.env.MODE === 'development';
 
   mixpanel.init(MIXPANEL_KEY, {
-    disable_cookie: true,
     disable_persistence: true,
-    track_pageview: !isInEu,
-    opt_out_tracking_by_default: true,
     debug: isDev,
   });
-
-  if (isInEu) {
-    mixpanel.opt_out_tracking();
-    mixpanel.disable();
-  }
 
   if (isDev) {
     mixpanel.identify('development');
@@ -72,52 +79,3 @@ export const initAnalytics = () => {
     }
   });
 };
-
-function isInEuTimeZone() {
-  const euTimeZones = [
-    'Europe/Vienna',
-    'Europe/Brussels',
-    'Europe/Sofia',
-    'Europe/Zagreb',
-    'Europe/Belgrade',
-    'Asia/Nicosia',
-    'Europe/Nicosia',
-    'Asia/Famagusta',
-    'Europe/Prague',
-    'Europe/Berlin',
-    'Europe/Copenhagen',
-    'Europe/Tallinn',
-    'Europe/Helsinki',
-    'Europe/Paris',
-    'Europe/Busingen',
-    'Europe/Athens',
-    'Europe/Budapest',
-    'Europe/Dublin',
-    'Eire',
-    'Europe/Rome',
-    'Europe/Riga',
-    'Europe/Vilnius',
-    'Europe/Luxembourg',
-    'Europe/Malta',
-    'Europe/Amsterdam',
-    'Europe/Warsaw',
-    'Poland',
-    'Atlantic/Azores',
-    'Atlantic/Madeira',
-    'Europe/Lisbon',
-    'Portugal',
-    'Europe/Bucharest',
-    'Europe/Bratislava',
-    'Europe/Ljubljana',
-    'Africa/Ceuta',
-    'Atlantic/Canary',
-    'Europe/Madrid',
-    'Europe/Stockholm',
-    'GB',
-    'GB-Eire',
-    'Europe/Belfast',
-    'Europe/London',
-  ];
-
-  return euTimeZones.includes(Intl.DateTimeFormat().resolvedOptions().timeZone);
-}
