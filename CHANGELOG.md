@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.3](https://github.com/Mordech/mordech-projects/compare/v0.33.2...v0.33.3) (2024-01-01)
+
+### Bug Fixes
+
+- **vite-lit-loader:** prevent loading traspiled css files to bundle ([#118](https://github.com/Mordech/mordech-projects/issues/118)) ([a2d1ad2](https://github.com/Mordech/mordech-projects/commit/a2d1ad26a70aa323dfe2b5fea0cffd04d056ecbb))
+
+### Features
+
+- **hct-color-picker:** analytics improvements ([#117](https://github.com/Mordech/mordech-projects/issues/117)) ([da7af6f](https://github.com/Mordech/mordech-projects/commit/da7af6f423086faa6d676efe2e41cb2d1ab32302))
+
 ## [0.33.2](https://github.com/Mordech/mordech-projects/compare/v0.33.1...v0.33.2) (2023-12-31)
 
 ### Bug Fixes
