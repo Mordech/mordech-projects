@@ -10,6 +10,20 @@ export function litStyleLoader(): Plugin {
     name: 'vite-styles-loader',
     enforce: 'post',
 
+    load(id) {
+      const split = id.split('?');
+      const queryParams = new URLSearchParams(split[1]);
+
+      if (queryParams.get('lit') === null) return;
+
+      const path = split[0];
+      const fileType = path.split('.').pop();
+
+      if (!fileType?.match(/scss|sass|css/)) return;
+
+      return '';
+    },
+
     transform(_, id) {
       const split = id.split('?');
       const queryParams = new URLSearchParams(split[1]);
