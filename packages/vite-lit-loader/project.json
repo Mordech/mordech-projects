@@ -30,6 +30,13 @@
         "cwd": "packages/vite-lit-loader",
         "parallel": false
       }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "/packages/vite-lit-loader/coverage"
+      }
     }
   },
   "tags": []
