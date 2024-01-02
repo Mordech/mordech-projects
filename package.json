@@ -2,7 +2,7 @@
   "name": "mordech-projects",
   "private": true,
   "scripts": {
-    "publish-packages": "lerna publish --conventional-commits",
+    "publish-packages": "lerna publish --conventional-commits --no-private",
     "postinstall": "nx run-many --target=prepare --all --parallel --maxParallel=10"
   },
   "devDependencies": {

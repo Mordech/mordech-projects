@@ -10,38 +10,8 @@ export function litStyleLoader(): Plugin {
     name: 'vite-styles-loader',
     enforce: 'post',
 
-    load(id) {
-      const split = id.split('?');
-      const queryParams = new URLSearchParams(split[1]);
-
-      if (queryParams.get('lit') === null) return;
-
-      const path = split[0];
-      const fileType = path.split('.').pop();
-
-      if (!fileType?.match(/scss|sass|css/)) return;
-
-      return '';
-    },
-
-    transform(_, id) {
-      const split = id.split('?');
-      const queryParams = new URLSearchParams(split[1]);
-
-      if (queryParams.get('lit') === null) return;
-
-      const path = split[0];
-      const fileType = path.split('.').pop();
-
-      if (!fileType?.match(/scss|sass|css/)) return;
-
-      return `
-          import { unsafeCSS } from 'lit';
-          import styles from '${path}?inline';
-
-          export default unsafeCSS(styles);
-          `;
-    },
+    load: loadStyle,
+    transform: transformStyle,
   };
 }
 
@@ -53,67 +23,7 @@ export function litTemplateLoader(): Plugin {
     name: 'vite-lit-loader',
     enforce: 'pre',
 
-    async load(id) {
-      const split = id.split('?');
-      const queryParams = new URLSearchParams(split[1]);
-
-      if (queryParams.get('lit') === null) return;
-
-      const path = split[0];
-      const fileType = path.split('.').pop();
-
-      if (!fileType?.match(/html|svg/)) return;
-      const file = readFileSync(path, 'utf-8');
-
-      if (fileType === 'svg') {
-        const svgElement = cheerio.load(file, { xmlMode: true });
-
-        if (queryParams.get('as-use') !== null) {
-          const svgId = svgElement('svg').attr('id');
-
-          svgElement('svg')
-            .removeAttr('id')
-            .removeAttr('viewBox')
-            .html(`<use href="#${svgId}"></use>`);
-
-          addAttributesFromParams(queryParams, svgElement('svg'));
-
-          const svgOutput = svgElement.html() || '';
-
-          return `
-          import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-          
-          export default unsafeSVG(\`${svgOutput}\`)
-          `;
-        }
-
-        addAttributesFromParams(queryParams, svgElement('svg'));
-
-        const svgOutput = svgElement.html() || '';
-
-        return `
-          import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-
-          export default unsafeSVG(\`${svgOutput}\`)
-          `;
-      }
-
-      if (fileType === 'html') {
-        const htmlElement = cheerio.load(file, { xmlMode: true });
-
-        addAttributesFromParams(queryParams, htmlElement('html'));
-
-        const htmlOutput = htmlElement.html() || '';
-
-        return `
-          import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-
-          export default unsafeHTML(\`${htmlOutput}\`);
-          `;
-      }
-
-      return;
-    },
+    load: loadTemplate,
   };
 }
 
@@ -178,4 +88,106 @@ function addAttributesFromParams(
 
     svgElement.attr(key, value);
   }
+}
+
+function getLitImportData(id: string) {
+  const splitUrl = id.split('?');
+  const queryParams = new URLSearchParams(splitUrl[1]);
+
+  if (queryParams.get('lit') === null) return;
+
+  const path = splitUrl[0];
+  const fileType = path.split('.').pop();
+
+  return { path, fileType, queryParams };
+}
+
+export function loadStyle(id: string) {
+  const importData = getLitImportData(id);
+
+  if (!importData) return;
+
+  const { fileType } = importData;
+
+  if (!fileType?.match(/scss|sass|css/)) return;
+
+  return '';
+}
+
+export function transformStyle(_: string, id: string) {
+  const importData = getLitImportData(id);
+
+  if (!importData) return;
+
+  const { path, fileType } = importData;
+
+  if (!fileType?.match(/scss|sass|css/)) return;
+
+  return `
+      import { unsafeCSS } from 'lit';
+      import styles from '${path}?inline';
+
+      export default unsafeCSS(styles);
+      `;
+}
+
+export async function loadTemplate(id: string) {
+  const importData = getLitImportData(id);
+
+  if (!importData) return;
+
+  const { path, fileType, queryParams } = importData;
+
+  if (!fileType?.match(/html|svg/)) return;
+
+  const file = readFileSync(path, 'utf-8');
+
+  if (fileType === 'svg') {
+    const svgElement = cheerio.load(file, { xmlMode: true });
+
+    if (queryParams.get('as-use') !== null) {
+      const svgId = svgElement('svg').attr('id');
+
+      svgElement('svg')
+        .removeAttr('id')
+        .removeAttr('viewBox')
+        .html(`<use href="#${svgId}"></use>`);
+
+      addAttributesFromParams(queryParams, svgElement('svg'));
+
+      const svgOutput = svgElement.html() || '';
+
+      return `
+      import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
+      
+      export default unsafeSVG(\`${svgOutput}\`)
+      `;
+    }
+
+    addAttributesFromParams(queryParams, svgElement('svg'));
+
+    const svgOutput = svgElement.html() || '';
+
+    return `
+      import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
+
+      export default unsafeSVG(\`${svgOutput}\`)
+      `;
+  }
+
+  if (fileType === 'html') {
+    const htmlElement = cheerio.load(file, { xmlMode: true });
+
+    addAttributesFromParams(queryParams, htmlElement('html'));
+
+    const htmlOutput = htmlElement.html() || '';
+
+    return `
+      import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+
+      export default unsafeHTML(\`${htmlOutput}\`);
+      `;
+  }
+
+  return;
 }
