@@ -1,7 +1,7 @@
 {
   "name": "@mordech/vite-lit-loader",
   "author": "Elad Mordechai Mizrahi",
-  "version": "0.33.3",
+  "version": "0.33.4",
   "type": "commonjs",
   "main": "dist/index.js",
   "license": "MIT",
