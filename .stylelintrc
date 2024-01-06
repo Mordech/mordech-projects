@@ -1,7 +1,13 @@
 {
   "extends": ["stylelint-config-recommended"],
   "files": "**/*.css",
-  "ignoreFiles": ["dist/**/*", "node_modules/**/*", "tmp/**/*", "build/**/*"],
+  "ignoreFiles": [
+    "dist/**/*",
+    "node_modules/**/*",
+    "tmp/**/*",
+    "build/**/*",
+    "coverage/**/*"
+  ],
   "rules": {
     "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
     "custom-property-pattern": "mrd-.+"

@@ -30509,12 +30509,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"web-components-storybook@workspace:apps/web-components-storybook":
-  version: 0.0.0-use.local
-  resolution: "web-components-storybook@workspace:apps/web-components-storybook"
-  languageName: unknown
-  linkType: soft
-
 "web-ext@npm:^7.9.0":
   version: 7.9.0
   resolution: "web-ext@npm:7.9.0"
