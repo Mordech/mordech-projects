@@ -1,10 +1,13 @@
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { readdirSync } from 'fs';
 import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
+const cwd = process.cwd();
+
 const components = Object.fromEntries(
-  readdirSync('src/lib/components')
+  readdirSync(path.join(cwd, 'packages/web-components/src/lib/components'))
     .filter((name) => {
       return !name.endsWith('.ts');
     })
@@ -20,7 +23,12 @@ const components = Object.fromEntries(
 );
 
 export default defineConfig({
-  plugins: [dts()],
+  plugins: [
+    dts({
+      entryRoot: './src/lib',
+    }),
+    nxViteTsPaths(),
+  ],
   build: {
     outDir: 'dist',
     lib: {

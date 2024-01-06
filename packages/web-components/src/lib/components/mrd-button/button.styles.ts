@@ -78,8 +78,10 @@ export const buttonBase = css`
       transition: opacity 200ms ease-in-out;
     }
 
-    &:disabled {
+    &:disabled,
+    &[aria-disabled='true'] {
       cursor: not-allowed;
+      opacity: 0.38;
 
       --mrd-button-hover-overlay-color: transparent;
     }

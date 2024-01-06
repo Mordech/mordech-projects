@@ -20,12 +20,16 @@ export class HctController extends LitElement {
     return html`
       <div class="slider-container">
         <div class="input-title-container">
-          <label for="mrd_range-${this.name.toLocaleLowerCase()}">
+          <label
+            for="mrd_range-${this.name.toLocaleLowerCase()}"
+            id="mrd_label-${this.name.toLocaleLowerCase()}"
+          >
             ${this.name}
           </label>
 
           <input
             type="number"
+            aria-labelledby="mrd_label-${this.name.toLocaleLowerCase()}"
             id="mrd_number-${this.name.toLocaleLowerCase()}"
             name="mrd_number-${this.name.toLocaleLowerCase()}"
             min=${this.min}
@@ -35,6 +39,7 @@ export class HctController extends LitElement {
         </div>
 
         <mrd-range
+          aria-labelledby="mrd_label-${this.name.toLocaleLowerCase()}"
           id="mrd_range-${this.name.toLocaleLowerCase()}"
           name="mrd_range-${this.name.toLocaleLowerCase()}"
           min=${this.min}
@@ -43,6 +48,7 @@ export class HctController extends LitElement {
           .value=${this.value}
         >
           <input
+            aria-labelledby="mrd_label-${this.name.toLocaleLowerCase()}"
             tabindex="-1"
             class="invisible-color-range"
             type="range"

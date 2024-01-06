@@ -6,16 +6,25 @@ function formatPropName(value: string) {
   return value[0].toLowerCase() + value.slice(1);
 }
 
-const localStorage: Record<string, string> = {};
-let cookie: string = '';
+const localStorage = (() => {
+  const store: { [key: string]: string } = {};
+
+  return {
+    getItem: (key: string) => store[key] || null,
+    setItem: (key: string, value: string) => {
+      store[key] = value.toString();
+    },
+    removeItem: (key: string) => {
+      delete store[key];
+    },
+  };
+})();
 
 Object.defineProperty(window, 'localStorage', {
-  value: {
-    getItem: (key: string) => localStorage[key],
-    setItem: (key: string) => (localStorage[key] = key),
-    removeItem: (key: string) => delete localStorage[key],
-  },
+  value: localStorage,
 });
+
+let cookie: string = '';
 
 Object.defineProperty(document, 'cookie', {
   get: () => cookie,

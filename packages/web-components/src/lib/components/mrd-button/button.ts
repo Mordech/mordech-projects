@@ -41,11 +41,9 @@ export class MrdButtonElement extends LitElement {
   get backgroundColor() {
     switch (this.variant) {
       case 'fill':
-        return !this.disabled ? colors[this.color].base : colors.disabled.base;
+        return colors[this.color].base;
       case 'tonal':
-        return !this.disabled
-          ? colors[this.color].container
-          : colors.disabled.container;
+        return colors[this.color].container;
       case 'inverted':
         return colors.background.base;
       case 'text':
@@ -56,17 +54,14 @@ export class MrdButtonElement extends LitElement {
   get textColor() {
     switch (this.variant) {
       case 'fill':
-        return !this.disabled
-          ? colors[this.color].onBase
-          : colors.disabled.onBase;
+        return colors[this.color].onBase;
+
       case 'tonal':
-        return !this.disabled
-          ? colors[this.color].onContainer
-          : colors.disabled.onContainer;
+        return colors[this.color].onContainer;
       case 'inverted':
-        return !this.disabled ? colors[this.color].base : colors.disabled.base;
+        return colors[this.color].base;
       case 'text':
-        return !this.disabled ? colors[this.color].base : colors.disabled.base;
+        return colors[this.color].base;
     }
   }
 
@@ -78,6 +73,8 @@ export class MrdButtonElement extends LitElement {
 
     return html`
       <${this.tag}
+        aria-label=${this.ariaLabel}
+        aria-disabled=${this.disabled}
         part="button"
         class="btn"
         style=${handleColors}

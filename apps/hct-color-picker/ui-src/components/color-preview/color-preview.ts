@@ -21,6 +21,7 @@ export class ColorPreview extends LitElement {
       <div class="color-container">
         <div class="color-input-container">
           <input
+            aria-label="Selected Color"
             type="color"
             id="mrd_color-selected_color"
             name="Selected Color"
