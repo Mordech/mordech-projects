@@ -48,6 +48,8 @@ export const colorTheme = {
       onSurface: palette['primary']['10'],
       surfaceVariant: palette['primary']['80'],
       onSurfaceVariant: palette['primary']['10'],
+      overlay: palette['neutral']['99'] + '80',
+      backdrop: palette['neutral']['10'] + '80',
     },
     highlight: {
       yellow: palette['highlight']['yellowLight'],
@@ -55,6 +57,10 @@ export const colorTheme = {
       green: palette['highlight']['greenLight'],
       neutral: palette['neutral']['90'],
     },
+    /**
+     * @deprecated
+     * Make element disabled by using `opacity: 0.38` instead of `color: disabled`
+     */
     disabled: {
       base: palette['primary']['60'],
       onBase: palette['primary']['90'],
@@ -98,6 +104,8 @@ export const colorTheme = {
       onSurface: palette['primary']['95'],
       surfaceVariant: palette['primary']['30'],
       onSurfaceVariant: palette['primary']['95'],
+      overlay: palette['neutral']['10'] + '73',
+      backdrop: palette['neutral']['95'] + '80',
     },
     highlight: {
       yellow: palette['highlight']['yellowDark'],
@@ -105,6 +113,10 @@ export const colorTheme = {
       green: palette['highlight']['greenDark'],
       neutral: palette['neutral']['20'],
     },
+    /**
+     * @deprecated
+     * Make element disabled by using `opacity: 0.38` instead of `color: disabled`
+     */
     disabled: {
       base: palette['neutral']['60'],
       onBase: palette['neutral']['30'],
