@@ -89,7 +89,7 @@ export class MrdToggleThemeElement extends LitElement {
         detail: { theme: this.theme },
         bubbles: true,
         composed: true,
-      })
+      }),
     );
     return this.theme;
   }

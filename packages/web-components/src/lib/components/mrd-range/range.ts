@@ -18,6 +18,7 @@ export class MrdRangeElement extends LitElement {
     return html`<div part="wrapper" class="wrapper">
       <input
         part="range"
+        aria-label=${this.ariaLabel || this.name}
         .min=${this.min.toString()}
         .max=${this.max.toString()}
         .value=${this.value.toString()}

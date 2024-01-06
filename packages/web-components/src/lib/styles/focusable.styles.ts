@@ -22,9 +22,7 @@ export const focusableBase = css`
   [role='menuitem']:focus-visible,
   [role='menuitemcheckbox']:focus-visible,
   [role='menuitemradio']:focus-visible {
-    outline-width: 2px;
-    outline-style: solid;
-    outline-color: ${unsafeCSS(colors.primary.base)};
+    outline: ${unsafeCSS(colors.primary.base)} solid 2px;
     transition: all ${unsafeCSS(transitions.bounce)};
   }
 
