@@ -4,8 +4,7 @@
     "module": "ESNext",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "declaration": true,
-    "emitDeclarationOnly": true,
-    "rootDir": "./src/lib",
+    "rootDir": ".",
     "outDir": "dist",
     "strict": true,
     "noUnusedLocals": true,
@@ -31,6 +30,9 @@
   "references": [
     {
       "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.storybook.json"
     }
   ]
 }

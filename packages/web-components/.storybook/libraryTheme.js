@@ -1,7 +1,7 @@
 import { colorTheme, fontFamilies } from '@mordech/tokens';
 import { create } from '@storybook/theming';
 
-import logo from '../public/logo.png';
+import logo from './public/logo.png';
 
 export default create({
   base: 'light',

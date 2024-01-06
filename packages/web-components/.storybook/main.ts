@@ -19,7 +19,7 @@ const config: StorybookConfig = {
     autodocs: true,
   },
 
-  staticDirs: ['../public'],
+  staticDirs: ['./public'],
 
   core: {
     builder: '@storybook/builder-vite',
@@ -28,6 +28,6 @@ const config: StorybookConfig = {
 
 export default config;
 
-function getAbsolutePath(value) {
+function getAbsolutePath(value: string) {
   return dirname(require.resolve(join(value, 'package.json')));
 }

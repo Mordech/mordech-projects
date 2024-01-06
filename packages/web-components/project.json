@@ -2,5 +2,92 @@
   "name": "@mordech/web-components",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": [],
-  "targets": {}
+  "implicitDependencies": [
+    "@mordech/tokens",
+    "@mordech/storybook-toggle-theme-addon"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "options": {
+        "outputPath": "{projectRoot}/dist"
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{projectRoot}"],
+      "options": {
+        "coverage": true,
+        "passWithNoTests": true,
+        "reportsDirectory": "{projectRoot}/coverage"
+      }
+    },
+    "visual": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "loki test --reactUri file:./storybook-static"
+          }
+        ],
+        "cwd": "{projectRoot}/",
+        "parallel": false
+      }
+    },
+    "visual:ci": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "loki test --requireReference --reactUri file:./storybook-static"
+          }
+        ],
+        "cwd": "{projectRoot}/",
+        "parallel": false
+      }
+    },
+    "visual:approve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "loki approve"
+          }
+        ],
+        "cwd": "{projectRoot}/",
+        "parallel": false
+      }
+    },
+    "storybook": {
+      "executor": "@nx/storybook:storybook",
+      "options": {
+        "port": 4600,
+        "configDir": "{projectRoot}/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "{projectRoot}/storybook-static",
+        "configDir": "{projectRoot}/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "prepare": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx run @mordech/web-components:build"
+      }
+    }
+  }
 }
