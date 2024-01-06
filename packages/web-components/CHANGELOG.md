@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/Mordech/mordech-projects/compare/v0.33.4...v0.34.0) (2024-01-06)
+
+### Features
+
+- tokens updates and components accesibility ([#120](https://github.com/Mordech/mordech-projects/issues/120)) ([d211a0f](https://github.com/Mordech/mordech-projects/commit/d211a0f11e8366f29f1501d58cda754621326119))
+
 ## [0.33.2](https://github.com/Mordech/mordech-projects/compare/v0.33.1...v0.33.2) (2023-12-31)
 
 ### Bug Fixes
