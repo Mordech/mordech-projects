@@ -395,6 +395,8 @@ export class MyApp extends LitElement {
         argb: this.argb,
       },
     });
+
+    this.shiftKey = false;
   }
 
   createRenderRoot() {
