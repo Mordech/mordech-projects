@@ -12,5 +12,9 @@
     "lint": "eslint src",
     "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'",
     "lint:extension": "web-ext lint -s dist/"
+  },
+  "devDependencies": {
+    "@mordech/tokens": "*",
+    "@mordech/web-components": "*"
   }
 }

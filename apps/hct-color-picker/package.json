@@ -18,7 +18,10 @@
     "lint:css": "stylelint './**/*.{css,scss,ts}'"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.82.0",
+    "@figma/plugin-typings": "^1.84.0",
+    "@mordech/tokens": "*",
+    "@mordech/vite-lit-loader": "*",
+    "@mordech/web-components": "*",
     "vite": "^5.0.10"
   }
 }

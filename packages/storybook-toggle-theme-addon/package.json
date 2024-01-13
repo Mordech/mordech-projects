@@ -7,10 +7,8 @@
   "license": "MIT",
   "type": "module",
   "private": true,
-  "nx": {
-    "implicitDependencies": [
-      "@mordech/tokens",
-      "@mordech/web-components"
-    ]
+  "devDependencies": {
+    "@mordech/tokens": "*",
+    "@mordech/web-components": "*"
   }
 }

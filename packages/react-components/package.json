@@ -29,10 +29,8 @@
       }
     }
   },
-  "nx": {
-    "implicitDependencies": [
-      "@mordech/tokens",
-      "@mordech/web-components"
-    ]
+  "devDependencies": {
+    "@mordech/tokens": "*",
+    "@mordech/web-components": "*"
   }
 }

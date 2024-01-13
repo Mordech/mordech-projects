@@ -34,6 +34,7 @@ export class MyApp extends LitElement {
   @state() tone = 50;
   @state() paints?: UiPaintStyle[];
   @state() selectedColor?: SelectedColor;
+  @state() shiftKey = false;
 
   render() {
     return html`
@@ -279,6 +280,25 @@ export class MyApp extends LitElement {
       this.saveColor();
     });
 
+    this.addEventListener('detach-style', () => {
+      this.selectedColor = undefined;
+      this.updateStyle();
+      this.saveColor();
+    });
+
+    const handleKeydown = (e: MouseEvent | KeyboardEvent) => {
+      if (e.shiftKey) {
+        this.shiftKey = true;
+      }
+    };
+
+    const clearKeydown = () => (this.shiftKey = false);
+
+    this.addEventListener('mousedown', handleKeydown);
+    this.addEventListener('keydown', handleKeydown);
+
+    this.addEventListener('keyup', clearKeydown);
+
     postMessage({ type: 'get-color' });
     postMessage({ type: 'get-theme' });
 
@@ -364,6 +384,10 @@ export class MyApp extends LitElement {
   }
 
   private updateStyle() {
+    if (this.shiftKey) {
+      this.selectedColor = undefined;
+    }
+
     postMessage({
       type: 'update-style',
       data: {

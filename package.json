@@ -9,7 +9,7 @@
     "@babel/core": "^7.19.0",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
-    "@figma/plugin-typings": "^1.82.0",
+    "@figma/plugin-typings": "^1.84.0",
     "@lit-labs/react": "^2.1.2",
     "@mordech/react-components": "*",
     "@mordech/storybook-toggle-theme-addon": "*",
