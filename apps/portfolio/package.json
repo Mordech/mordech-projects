@@ -31,16 +31,12 @@
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@gatsbyjs/reach-router": "^2.0.1",
+    "@mordech/react-components": "*",
+    "@mordech/tokens": "*",
     "babel-eslint": "^10.0.0",
     "eslint": "8.56.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^6.1.6"
-  },
-  "nx": {
-    "implicitDependencies": [
-      "@mordech/tokens",
-      "@mordech/react-components"
-    ]
   }
 }

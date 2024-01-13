@@ -34,6 +34,7 @@ export class MyApp extends LitElement {
   @state() tone = 50;
   @state() paints?: UiPaintStyle[];
   @state() selectedColor?: SelectedColor;
+  @state() shiftKey = false;
 
   render() {
     return html`
@@ -274,7 +275,33 @@ export class MyApp extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
 
+    this.onkeydown = (e) => {
+      if (e.shiftKey) {
+        this.shiftKey = true;
+      }
+    };
+
+    this.onkeyup = (e) => {
+      if (!e.shiftKey) {
+        this.shiftKey = false;
+      }
+    };
+
+    this.onmousedown = (e) => {
+      if (e.shiftKey) {
+        this.shiftKey = true;
+      } else {
+        this.shiftKey = false;
+      }
+    };
+
     this.addEventListener('input', () => {
+      this.updateStyle();
+      this.saveColor();
+    });
+
+    this.addEventListener('detach-style', () => {
+      this.selectedColor = undefined;
       this.updateStyle();
       this.saveColor();
     });
@@ -364,6 +391,8 @@ export class MyApp extends LitElement {
   }
 
   private updateStyle() {
+    if (this.shiftKey) this.selectedColor = undefined;
+
     postMessage({
       type: 'update-style',
       data: {

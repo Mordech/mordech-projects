@@ -2,10 +2,5 @@
   "name": "hct-color-picker",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": [],
-  "targets": {},
-  "implicitDependencies": [
-    "@mordech/tokens",
-    "@mordech/web-components",
-    "@mordech/vite-lit-loader"
-  ]
+  "targets": {}
 }

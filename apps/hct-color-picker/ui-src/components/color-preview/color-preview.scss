@@ -13,7 +13,11 @@
   }
 }
 
-mrd-button.add-style-button {
+mrd-button.save-detach-button {
+  &.add-mode.detaching {
+    opacity: 0;
+  }
+
   &::part(button) {
     padding: 0.5rem;
   }

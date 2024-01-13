@@ -2,10 +2,6 @@
   "name": "@mordech/web-components",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": [],
-  "implicitDependencies": [
-    "@mordech/tokens",
-    "@mordech/storybook-toggle-theme-addon"
-  ],
   "targets": {
     "build": {
       "executor": "@nx/vite:build",

@@ -2598,10 +2598,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@figma/plugin-typings@npm:^1.82.0":
-  version: 1.82.0
-  resolution: "@figma/plugin-typings@npm:1.82.0"
-  checksum: e30b65a1f9dcd989365dc6d2fdec56ac857a6c39b985e99d640b2a9289460fe548097ac8ddbc7a500a645007bb4dd0eba5acfbdb05677fbb0a35aae09be8dcdf
+"@figma/plugin-typings@npm:^1.84.0":
+  version: 1.84.0
+  resolution: "@figma/plugin-typings@npm:1.84.0"
+  checksum: 1c73f3740a56973430f8cb5cccf19b70e824b5830369e5b8808df0b7e256810f87564531880b64051d83b460a8462968be449372596d5f77705054841a8a4cda
   languageName: node
   linkType: hard
 
@@ -3872,12 +3872,18 @@ __metadata:
 "@mordech/react-components@*, @mordech/react-components@workspace:packages/react-components":
   version: 0.0.0-use.local
   resolution: "@mordech/react-components@workspace:packages/react-components"
+  dependencies:
+    "@mordech/tokens": "*"
+    "@mordech/web-components": "*"
   languageName: unknown
   linkType: soft
 
 "@mordech/storybook-toggle-theme-addon@*, @mordech/storybook-toggle-theme-addon@workspace:packages/storybook-toggle-theme-addon":
   version: 0.0.0-use.local
   resolution: "@mordech/storybook-toggle-theme-addon@workspace:packages/storybook-toggle-theme-addon"
+  dependencies:
+    "@mordech/tokens": "*"
+    "@mordech/web-components": "*"
   languageName: unknown
   linkType: soft
 
@@ -17249,7 +17255,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hct-color-picker@workspace:apps/hct-color-picker"
   dependencies:
-    "@figma/plugin-typings": ^1.82.0
+    "@figma/plugin-typings": ^1.84.0
+    "@mordech/tokens": "*"
+    "@mordech/vite-lit-loader": "*"
+    "@mordech/web-components": "*"
     vite: ^5.0.10
   languageName: unknown
   linkType: soft
@@ -17841,6 +17850,9 @@ __metadata:
 "inbox-zero-cats-for-gmail@workspace:apps/inbox-zero-cats-for-gmail":
   version: 0.0.0-use.local
   resolution: "inbox-zero-cats-for-gmail@workspace:apps/inbox-zero-cats-for-gmail"
+  dependencies:
+    "@mordech/tokens": "*"
+    "@mordech/web-components": "*"
   languageName: unknown
   linkType: soft
 
@@ -22152,7 +22164,7 @@ __metadata:
     "@babel/core": ^7.19.0
     "@commitlint/cli": ^18.4.3
     "@commitlint/config-conventional": ^18.4.3
-    "@figma/plugin-typings": ^1.82.0
+    "@figma/plugin-typings": ^1.84.0
     "@lit-labs/react": ^2.1.2
     "@material/material-color-utilities": ^0.2.7
     "@mordech/react-components": "*"
@@ -24226,6 +24238,8 @@ __metadata:
     "@babel/core": ^7.19.0
     "@gatsbyjs/reach-router": ^2.0.1
     "@lottiefiles/react-lottie-player": ^3.5.3
+    "@mordech/react-components": "*"
+    "@mordech/tokens": "*"
     babel-eslint: ^10.0.0
     babel-plugin-styled-components: ^2.0.7
     eslint: 8.56.0
