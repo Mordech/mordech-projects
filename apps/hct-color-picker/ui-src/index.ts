@@ -275,6 +275,26 @@ export class MyApp extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
 
+    this.onkeydown = (e) => {
+      if (e.shiftKey) {
+        this.shiftKey = true;
+      }
+    };
+
+    this.onkeyup = (e) => {
+      if (!e.shiftKey) {
+        this.shiftKey = false;
+      }
+    };
+
+    this.onmousedown = (e) => {
+      if (e.shiftKey) {
+        this.shiftKey = true;
+      } else {
+        this.shiftKey = false;
+      }
+    };
+
     this.addEventListener('input', () => {
       this.updateStyle();
       this.saveColor();
@@ -285,19 +305,6 @@ export class MyApp extends LitElement {
       this.updateStyle();
       this.saveColor();
     });
-
-    const handleKeydown = (e: MouseEvent | KeyboardEvent) => {
-      if (e.shiftKey) {
-        this.shiftKey = true;
-      }
-    };
-
-    const clearKeydown = () => (this.shiftKey = false);
-
-    this.addEventListener('mousedown', handleKeydown);
-    this.addEventListener('keydown', handleKeydown);
-
-    this.addEventListener('keyup', clearKeydown);
 
     postMessage({ type: 'get-color' });
     postMessage({ type: 'get-theme' });
@@ -384,9 +391,7 @@ export class MyApp extends LitElement {
   }
 
   private updateStyle() {
-    if (this.shiftKey) {
-      this.selectedColor = undefined;
-    }
+    if (this.shiftKey) this.selectedColor = undefined;
 
     postMessage({
       type: 'update-style',
@@ -395,8 +400,6 @@ export class MyApp extends LitElement {
         argb: this.argb,
       },
     });
-
-    this.shiftKey = false;
   }
 
   createRenderRoot() {
