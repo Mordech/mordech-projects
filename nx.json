@@ -108,5 +108,12 @@
     "appsDir": "apps",
     "libsDir": "packages"
   },
-  "nxCloudAccessToken": "NWIwY2I1NjUtY2E1NS00OTliLThlM2MtMzAwNTAyZGQ4MGFifHJlYWQ="
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx-cloud",
+      "options": {
+        "accessToken": "${NX_CLOUD_ACCESS_TOKEN}"
+      }
+    }
+  }
 }
