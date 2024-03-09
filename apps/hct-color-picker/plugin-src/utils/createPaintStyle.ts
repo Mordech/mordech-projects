@@ -5,7 +5,7 @@ import {
   redFromArgb,
 } from '@material/material-color-utilities';
 
-import { applyPaint } from '.';
+import { applyPaint } from './applyPaint';
 
 export function createPaintStyle(argb: number) {
   const color: RGB = {
