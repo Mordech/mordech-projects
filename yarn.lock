@@ -3530,68 +3530,68 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@loki/browser@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/browser@npm:0.33.0"
+"@loki/browser@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/browser@npm:0.35.0"
   dependencies:
-    "@loki/integration-core": "npm:^0.33.0"
-  checksum: 10/316f1e0da2cafcc99199c14912fa2defa20e2c90609d4ce3f1e97665f1811b2c43e8cc1d66471bb03f2a10fce7abbd61b34141de1e4aecbf0dd081a35d325697
+    "@loki/integration-core": "npm:^0.35.0"
+  checksum: 10/4aee45ebace2ea617c7253a68c12ea22604452b195832d7b0304aab365975c2a50c006ff1ffcdd4aeaee10467e5ef82c1b2db8a148434bca1a0babb4c0f013f3
   languageName: node
   linkType: hard
 
-"@loki/core@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/core@npm:0.33.0"
+"@loki/core@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/core@npm:0.35.0"
   dependencies:
     mime-types: "npm:^2.1.35"
     shelljs: "npm:^0.8.3"
-  checksum: 10/bbe3a39a719e54464ad19e7f74d8d68279b3c50f8f6273b8f29fb1bf0ca27bf819b1f55c19fdaa6bfdf41bfbfba4e42b94a55cafbbc29a4b075ff3b1730a534a
+  checksum: 10/4891bff9ac1c145e1f59fe04bbc521df41e739ed39f13e86a2218f5dc61fd41542a3606130182912d8848fad93b18813f55228cf450c2c1e002baa00c3d6257e
   languageName: node
   linkType: hard
 
-"@loki/diff-graphics-magick@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/diff-graphics-magick@npm:0.33.0"
+"@loki/diff-graphics-magick@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/diff-graphics-magick@npm:0.35.0"
   dependencies:
     fs-extra: "npm:^9.1.0"
     gm: "npm:^1.23.1"
-  checksum: 10/46aa9593723db80d2909729f2a0564a1b151e611486db32ad1288c2919dd8688af1c05964569d6a68fa8c942f5daee332475cace2cdc5ae9517d55f71e006a8c
+  checksum: 10/fcd8c37e181e132e10d0dfb7bc9f80556f0de0d03d06b8e1c890ed94dc26dd026cdc26798505c327aed548a38d381bd890665bc128524a15736d1b760aee7004
   languageName: node
   linkType: hard
 
-"@loki/diff-looks-same@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/diff-looks-same@npm:0.33.0"
+"@loki/diff-looks-same@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/diff-looks-same@npm:0.35.0"
   dependencies:
     fs-extra: "npm:^9.1.0"
     looks-same: "npm:^4.0.0"
-  checksum: 10/ba4d07ae4328fd2b0f7018634372ff894768a3f11598063637f80f7df2f04421340722b568cb5f5337e318310212ed470e851c311ad1be77535f9d9a37d62938
+  checksum: 10/6eb719ce6d69bad6235a47438030c8295b13ad2058ae204ca01802459d8911133220d0745a5a208036a531378d0583eb1c01670917bd03695e50ab632a0ad656
   languageName: node
   linkType: hard
 
-"@loki/diff-pixelmatch@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/diff-pixelmatch@npm:0.33.0"
+"@loki/diff-pixelmatch@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/diff-pixelmatch@npm:0.35.0"
   dependencies:
     fs-extra: "npm:^9.1.0"
     pixelmatch: "npm:^5.2.0"
     pngjs: "npm:^4.0.1"
-  checksum: 10/08fd5a94f9ce2419fe47b04c4670f58bc6a474b38395a582acb176f11a03bb2cd9a09765a5819d924b3b446fdab9dffc78934ca4d1016308a3f2e0d003581601
+  checksum: 10/600696850971f405949c42cad1ba937d3d34b7e51ad76b3ec53c73762a32b59e41c5915000b5087bf9cdcc089cec638be14e102901eb06945a624fec212f71c8
   languageName: node
   linkType: hard
 
-"@loki/integration-core@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/integration-core@npm:0.33.0"
-  checksum: 10/260876e1e12e55303c4241d25f3ad9ddbc8ebde0653391f74adb2161cb8715581917de88fc0489c5d6d4cc91b1fcfbd4ab22578b8f53df9fc452007cca866586
+"@loki/integration-core@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/integration-core@npm:0.35.0"
+  checksum: 10/1900732d7b7c8118bed368866d623fbe6bb388b6aab099e9cd7aad97aea5402904d2627d001150a6afadbeb6a6c331f76a39a98eca00fa29d2d179c545dc12a6
   languageName: node
   linkType: hard
 
-"@loki/integration-react-native@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/integration-react-native@npm:0.33.0"
+"@loki/integration-react-native@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/integration-react-native@npm:0.35.0"
   dependencies:
-    "@loki/integration-core": "npm:^0.33.0"
+    "@loki/integration-core": "npm:^0.35.0"
     hoist-non-react-statics: "npm:*"
   peerDependencies:
     "@storybook/addons": ^5 || ^6
@@ -3601,57 +3601,57 @@ __metadata:
       optional: true
     "@storybook/react-native":
       optional: true
-  checksum: 10/2e68c03afced419b56599b1790dc388784afcf2d608c14e2fbe6fcc548f0a0da9f29154bd163ed061dc74ae21248099f7d99196ed05c3ffbd33345f2f6fadd2a
+  checksum: 10/70e7977a33cf400192327c230f8abac433f51e6ae6994766339be53c14bc188f638fd8d8b37a31448223f0639ab091e97fb79174dba821a680864ffd6be915b7
   languageName: node
   linkType: hard
 
-"@loki/integration-react@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/integration-react@npm:0.33.0"
+"@loki/integration-react@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/integration-react@npm:0.35.0"
   dependencies:
-    "@loki/browser": "npm:^0.33.0"
+    "@loki/browser": "npm:^0.35.0"
   peerDependencies:
-    "@storybook/react": ^5 || ^6
+    "@storybook/react": ^5 || ^6 || ^7
   peerDependenciesMeta:
     "@storybook/react":
       optional: true
-  checksum: 10/ed3d76197f4f5b62c03e1a07d475e34c6235c09ab95b84e67fa869ee34d76500243654b7749b21760c3b4b24ce1272871d1cbdb005ba3d8d95f690e541e9cb88
+  checksum: 10/1ee15dffbc6f4f4e5b9623bc041f338c4b100193b42488fc2df2d3735da97a625cb506626421d8b28afadb32fe85e887aaa483d69ac6b5637807b6a8a1ddefd9
   languageName: node
   linkType: hard
 
-"@loki/integration-vue@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/integration-vue@npm:0.33.0"
+"@loki/integration-vue@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/integration-vue@npm:0.35.0"
   dependencies:
-    "@loki/browser": "npm:^0.33.0"
+    "@loki/browser": "npm:^0.35.0"
   peerDependencies:
     "@storybook/vue": ^5 || ^6
   peerDependenciesMeta:
     "@storybook/vue":
       optional: true
-  checksum: 10/c46e0d32a432f5f4b003d9006075bf1dd840e6dc0a9de2dbac638857d684848af3b3441cfdd65049e3d25e4766185d00c040b1519eb15e5117896d3d9afda246
+  checksum: 10/227f12f06dab08d3fe62294eaf1b28183397f996de1a215875a47587d75175989e9c72e30fefc026d7a4fa3993aa8a81b5d3e275ebaa5d2baf63cc6e716960eb
   languageName: node
   linkType: hard
 
-"@loki/runner@npm:^0.33.1":
-  version: 0.33.1
-  resolution: "@loki/runner@npm:0.33.1"
+"@loki/runner@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/runner@npm:0.35.0"
   dependencies:
-    "@loki/core": "npm:^0.33.0"
-    "@loki/diff-graphics-magick": "npm:^0.33.0"
-    "@loki/diff-looks-same": "npm:^0.33.0"
-    "@loki/diff-pixelmatch": "npm:^0.33.0"
-    "@loki/target-chrome-app": "npm:^0.33.1"
-    "@loki/target-chrome-aws-lambda": "npm:^0.33.0"
-    "@loki/target-chrome-docker": "npm:^0.33.1"
-    "@loki/target-native-android-emulator": "npm:^0.33.0"
-    "@loki/target-native-ios-simulator": "npm:^0.33.0"
+    "@loki/core": "npm:^0.35.0"
+    "@loki/diff-graphics-magick": "npm:^0.35.0"
+    "@loki/diff-looks-same": "npm:^0.35.0"
+    "@loki/diff-pixelmatch": "npm:^0.35.0"
+    "@loki/target-chrome-app": "npm:^0.35.0"
+    "@loki/target-chrome-aws-lambda": "npm:^0.35.0"
+    "@loki/target-chrome-docker": "npm:^0.35.0"
+    "@loki/target-native-android-emulator": "npm:^0.35.0"
+    "@loki/target-native-ios-simulator": "npm:^0.35.0"
     async: "npm:^3.2.0"
     chalk: "npm:^4.1.0"
     ci-info: "npm:^2.0.0"
     cosmiconfig: "npm:^7.0.0"
     fs-extra: "npm:^9.1.0"
-    import-jsx: "npm:^4.0.0"
+    import-jsx: "npm:^4.0.1"
     ink: "npm:^3.2.0"
     minimist: "npm:^1.2.0"
     ramda: "npm:^0.27.1"
@@ -3659,97 +3659,97 @@ __metadata:
     transliteration: "npm:^2.2.0"
   bin:
     loki: bin/loki
-  checksum: 10/879d7095b89c7124ba2e5bae2744fa48a748a129c95150c55cadbb14eb685319d7e9b978996f85fc588b915d48d570c4ae56b8c2de9c13ac315308998778804f
+  checksum: 10/7c69cb046745bcfb7b4633c76b4cc2014e968c4f73b0adb4bdd05818b90b5b0b4c25c2ff3ff3dc0b2108290a389ee2fa323f241e677954aa2f035fc11947db7d
   languageName: node
   linkType: hard
 
-"@loki/target-chrome-app@npm:^0.33.1":
-  version: 0.33.1
-  resolution: "@loki/target-chrome-app@npm:0.33.1"
+"@loki/target-chrome-app@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/target-chrome-app@npm:0.35.0"
   dependencies:
-    "@loki/core": "npm:^0.33.0"
-    "@loki/target-chrome-core": "npm:^0.33.0"
-    chrome-launcher: "npm:^0.14.1"
+    "@loki/core": "npm:^0.35.0"
+    "@loki/target-chrome-core": "npm:^0.35.0"
+    chrome-launcher: "npm:0.15.2"
     chrome-remote-interface: "npm:^0.32.1"
     debug: "npm:^4.1.1"
     find-free-port-sync: "npm:^1.0.0"
-  checksum: 10/7d7f59945a34cab288b1a28dceadf37475dfccddeefbbf33e3a608cd06f50228bf7fcca71503ff10e79024f870f96b3ea89367afa16620d1f3823af2d870f1d5
+  checksum: 10/119f86d751410eae97e1f66f6936b87bbfa7bf851c3f90db5bcac3100771411cbddb1b8515c7ab54c0edb91f44168cfef4e4cc36341f77153f6ae1b7b0cf54f3
   languageName: node
   linkType: hard
 
-"@loki/target-chrome-aws-lambda@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/target-chrome-aws-lambda@npm:0.33.0"
+"@loki/target-chrome-aws-lambda@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/target-chrome-aws-lambda@npm:0.35.0"
   dependencies:
-    "@loki/core": "npm:^0.33.0"
+    "@loki/core": "npm:^0.35.0"
     aws-sdk: "npm:^2.840.0"
     debug: "npm:^4.1.1"
-  checksum: 10/cf9cb3746bdbd18efd7ec63ca2647bb8916c0d7d10eb6c394bc44f62d10f4c3a4b76ab3b375e7d02fe9ccc80713f169bb3cdee9530f00b7d8106cd7dbd21809e
+  checksum: 10/ffa9240e7c18b778c6686693d5938ff0f0a6cdb1757f2e4992af09d7783319add3f7d83b91d34a90c0ce7707e01beaf3c9485f9e64eb10f90df3d97230ff1640
   languageName: node
   linkType: hard
 
-"@loki/target-chrome-core@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/target-chrome-core@npm:0.33.0"
+"@loki/target-chrome-core@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/target-chrome-core@npm:0.35.0"
   dependencies:
-    "@loki/browser": "npm:^0.33.0"
-    "@loki/core": "npm:^0.33.0"
-    "@loki/integration-core": "npm:^0.33.0"
+    "@loki/browser": "npm:^0.35.0"
+    "@loki/core": "npm:^0.35.0"
+    "@loki/integration-core": "npm:^0.35.0"
     debug: "npm:^4.1.1"
-  checksum: 10/08887fe987010ba2e8eea25184b63fafa89f3cf09ac98e1b18ac0da5d8e9dfd35a80f307669fe2c3772a8411234c6c2f37ab17b58528df21c8a3d4f971f8bbde
+  checksum: 10/d5ead9a4456f9f8153e5f704ea3f1a3ff6381c61c76bd836c9accf2c858dd1199b9db44a3fceac2e778604f8e6e9d98af6acd597380e9da321c9a23d83cc4d56
   languageName: node
   linkType: hard
 
-"@loki/target-chrome-docker@npm:^0.33.1":
-  version: 0.33.1
-  resolution: "@loki/target-chrome-docker@npm:0.33.1"
+"@loki/target-chrome-docker@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/target-chrome-docker@npm:0.35.0"
   dependencies:
-    "@loki/core": "npm:^0.33.0"
-    "@loki/target-chrome-core": "npm:^0.33.0"
+    "@loki/core": "npm:^0.35.0"
+    "@loki/target-chrome-core": "npm:^0.35.0"
     chrome-remote-interface: "npm:^0.32.1"
     debug: "npm:^4.1.1"
     execa: "npm:^5.0.0"
     find-free-port-sync: "npm:^1.0.0"
     fs-extra: "npm:^9.1.0"
-    wait-on: "npm:^5.2.1"
-  checksum: 10/ee8213ddc04803442fee71515f3d232ed9b130d7138bdfe5a6e572d9ea2c8272a806900f07f0dac222742ca497fcfdfe828a39b889a792d0a1de2b6882cb299a
+    wait-port: "npm:^1.1.0"
+  checksum: 10/9fa586257ed4e4060cdb298476bb11fb3cd3b955615be3a13ca9904ce6e3cd497d2d486fb19419c61af70457989a8aa5e056e2c70fb30c1e2c672c44aff0e9e7
   languageName: node
   linkType: hard
 
-"@loki/target-native-android-emulator@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/target-native-android-emulator@npm:0.33.0"
+"@loki/target-native-android-emulator@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/target-native-android-emulator@npm:0.35.0"
   dependencies:
     "@ferocia-oss/osnap": "npm:^1.3.5"
-    "@loki/core": "npm:^0.33.0"
-    "@loki/target-native-core": "npm:^0.33.0"
+    "@loki/core": "npm:^0.35.0"
+    "@loki/target-native-core": "npm:^0.35.0"
     fs-extra: "npm:^9.1.0"
     tempy: "npm:^1.0.0"
-  checksum: 10/3db8212d1b7a703fd5118ee4294f8ab32e94ac01fb3734c01bce59545918364e43ff121833673b517bf5d28d1ea76003b50a03ae809ac9dda6297cf7281ec481
+  checksum: 10/51505e323b8fcd067656939d432baa71891d21968d16e726c65aa8cf35add3325052bb203f6102fa6bb8968b3b55fbb4d39e1608d949cebd51f5a170898e8ecb
   languageName: node
   linkType: hard
 
-"@loki/target-native-core@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/target-native-core@npm:0.33.0"
+"@loki/target-native-core@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/target-native-core@npm:0.35.0"
   dependencies:
-    "@loki/core": "npm:^0.33.0"
+    "@loki/core": "npm:^0.35.0"
     debug: "npm:^4.1.1"
     ws: "npm:^7.2.0"
-  checksum: 10/ddd748c498121d3b9723133061f682f8efe2777878c04276a1bdfaa730794deaae158ef660c58821e5e077907568ac9121824be2f9ea384eae0ece04fe7f51b8
+  checksum: 10/68d05451a49d1afaf031194513d5b33d4ea4ed60f5bc2632e8090e1cab028b44aca9edc7755acd856f415f919db6f81e1ffe2106b22ace6dd39ec003deaa9872
   languageName: node
   linkType: hard
 
-"@loki/target-native-ios-simulator@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@loki/target-native-ios-simulator@npm:0.33.0"
+"@loki/target-native-ios-simulator@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "@loki/target-native-ios-simulator@npm:0.35.0"
   dependencies:
     "@ferocia-oss/osnap": "npm:^1.3.5"
-    "@loki/core": "npm:^0.33.0"
-    "@loki/target-native-core": "npm:^0.33.0"
+    "@loki/core": "npm:^0.35.0"
+    "@loki/target-native-core": "npm:^0.35.0"
     fs-extra: "npm:^9.1.0"
     tempy: "npm:^1.0.0"
-  checksum: 10/4ac10fc8d4688f3c72407bc04e51b67b1d53b153b17f8eceadfd6cd1d5c3495a9bbbcb4194018a2af7748b44c2e643c74008fe0c233a956b658224980989735a
+  checksum: 10/86646371b94dcc1062aad6f381dced0c458f73552aa6a1b7b84b72c73d33d1e52f2febd4a95ccf3217e638415c05523e31a65a95fe199961c1e1cf214f12f213
   languageName: node
   linkType: hard
 
@@ -11401,15 +11401,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chrome-launcher@npm:^0.14.1":
-  version: 0.14.2
-  resolution: "chrome-launcher@npm:0.14.2"
+"chrome-launcher@npm:0.15.2":
+  version: 0.15.2
+  resolution: "chrome-launcher@npm:0.15.2"
   dependencies:
     "@types/node": "npm:*"
     escape-string-regexp: "npm:^4.0.0"
     is-wsl: "npm:^2.2.0"
     lighthouse-logger: "npm:^1.0.0"
-  checksum: 10/1f637702fe7cb47008962cdc8fee773e362612fa589870eba58c4d8eff3652b6b8146024a12cbdc7e62613c863ce285eb901ad78cde03a9ad1dd7bf923349938
+  bin:
+    print-chrome-path: bin/print-chrome-path.js
+  checksum: 10/6faa189950790e63356113a08c4dbb25d9ef7d1ffc778f9fcf5967895ea8968aa3e711f6e7a55dadb42aa7a329d77721abf929a589b87e9e19e6e8c084b87e0d
   languageName: node
   linkType: hard
 
@@ -11817,7 +11819,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^9.1.0, commander@npm:^9.4.1":
+"commander@npm:^9.1.0, commander@npm:^9.3.0, commander@npm:^9.4.1":
   version: 9.5.0
   resolution: "commander@npm:9.5.0"
   checksum: 10/41c49b3d0f94a1fbeb0463c85b13f15aa15a9e0b4d5e10a49c0a1d58d4489b549d62262b052ae0aa6cfda53299bee487bfe337825df15e342114dde543f82906
@@ -17797,7 +17799,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-jsx@npm:^4.0.0":
+"import-jsx@npm:^4.0.1":
   version: 4.0.1
   resolution: "import-jsx@npm:4.0.1"
   dependencies:
@@ -19375,7 +19377,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:^17.3.0, joi@npm:^17.4.2":
+"joi@npm:^17.4.2":
   version: 17.11.0
   resolution: "joi@npm:17.11.0"
   dependencies:
@@ -20418,18 +20420,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loki@npm:^0.33.1":
-  version: 0.33.1
-  resolution: "loki@npm:0.33.1"
+"loki@npm:^0.35.0":
+  version: 0.35.0
+  resolution: "loki@npm:0.35.0"
   dependencies:
-    "@loki/integration-react": "npm:^0.33.0"
-    "@loki/integration-react-native": "npm:^0.33.0"
-    "@loki/integration-vue": "npm:^0.33.0"
-    "@loki/runner": "npm:^0.33.1"
-    "@loki/target-chrome-app": "npm:^0.33.1"
-    "@loki/target-chrome-docker": "npm:^0.33.1"
-    "@loki/target-native-android-emulator": "npm:^0.33.0"
-    "@loki/target-native-ios-simulator": "npm:^0.33.0"
+    "@loki/integration-react": "npm:^0.35.0"
+    "@loki/integration-react-native": "npm:^0.35.0"
+    "@loki/integration-vue": "npm:^0.35.0"
+    "@loki/runner": "npm:^0.35.0"
+    "@loki/target-chrome-app": "npm:^0.35.0"
+    "@loki/target-chrome-docker": "npm:^0.35.0"
+    "@loki/target-native-android-emulator": "npm:^0.35.0"
+    "@loki/target-native-ios-simulator": "npm:^0.35.0"
   peerDependencies:
     "@storybook/react": ^5 || ^6 || ^7
   peerDependenciesMeta:
@@ -20437,7 +20439,7 @@ __metadata:
       optional: true
   bin:
     loki: bin/loki
-  checksum: 10/be096b4bd238956ddb83298960998126d502a67b62273a7f15a6c7c4c5f6293636c9d0739c9610f3ed47ca7be99998fac72c62f2ba952189eaaecfc6c1df1413
+  checksum: 10/a86ae2cb0829f44773dd2e9e35a29d754621ff367b0d3f76d0b1fa654d2777e608c0366ae7e4c377881ec9ddda1effb400004ab1c2e07a9380d5c0aa333414b0
   languageName: node
   linkType: hard
 
@@ -22243,7 +22245,7 @@ __metadata:
     lit: "npm:^3.1.0"
     lit-analyzer: "npm:^2.0.2"
     lit-html: "npm:^3.1.0"
-    loki: "npm:^0.33.1"
+    loki: "npm:^0.35.0"
     mixpanel-browser: "npm:^2.48.1"
     nodemon: "npm:^3.0.2"
     npm-run-all: "npm:^4.1.5"
@@ -26598,7 +26600,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^6.6.0, rxjs@npm:^6.6.3":
+"rxjs@npm:^6.6.0":
   version: 6.6.7
   resolution: "rxjs@npm:6.6.7"
   dependencies:
@@ -30458,18 +30460,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wait-on@npm:^5.2.1":
-  version: 5.3.0
-  resolution: "wait-on@npm:5.3.0"
+"wait-port@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "wait-port@npm:1.1.0"
   dependencies:
-    axios: "npm:^0.21.1"
-    joi: "npm:^17.3.0"
-    lodash: "npm:^4.17.21"
-    minimist: "npm:^1.2.5"
-    rxjs: "npm:^6.6.3"
+    chalk: "npm:^4.1.2"
+    commander: "npm:^9.3.0"
+    debug: "npm:^4.3.4"
   bin:
-    wait-on: bin/wait-on
-  checksum: 10/ba5614aefb07c2b28e2625df2bc74b448c163c75ab86d5c8e9efd5d247d7af8f84822717e5f50460d582ed474ecf92a677e7a1fb0880dd7a74a45243095efef2
+    wait-port: bin/wait-port.js
+  checksum: 10/c73aeaba7f60804885ac1185c6a0d3a250ddd9af6270c7f01a71a09eba2ad435cbfea16ab450fcc54c271d8cf3c6e1d78e03c93ce6c3ebc5ff8b0daa46c2d546
   languageName: node
   linkType: hard
 
