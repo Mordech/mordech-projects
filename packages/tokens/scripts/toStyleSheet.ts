@@ -11,7 +11,7 @@ export async function toStyleSheet() {
   fs.mkdirSync(cssOutputDir, { recursive: true });
   fs.writeFileSync(
     cssOutputPath,
-    await formatOutput({ input: tokensCss, parser: 'css' })
+    await formatOutput({ input: tokensCss, parser: 'css' }),
   );
 }
 
