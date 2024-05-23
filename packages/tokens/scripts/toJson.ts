@@ -12,7 +12,7 @@ export async function toJson() {
   fs.mkdirSync(jsonOutputDir, { recursive: true });
   fs.writeFileSync(
     jsonOutputPath,
-    await formatOutput({ input: output, parser: 'json' })
+    await formatOutput({ input: output, parser: 'json' }),
   );
 }
 

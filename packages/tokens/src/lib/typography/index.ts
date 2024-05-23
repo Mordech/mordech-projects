@@ -5,3 +5,5 @@ export * from './fontSizes';
 export * from './fontSizes.token';
 export * from './fontsWeights.token';
 export * from './fontWeights';
+export * from './lineHeights';
+export * from './lineHeights.token';

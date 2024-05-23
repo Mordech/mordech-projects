@@ -5,6 +5,7 @@ import {
   fontFamiliesEnum,
   fontSizesEnum,
   fontWeightsEnum,
+  lineHeightsEnum,
   screenSizesRemEnum,
   transitionsEnum,
 } from '../../';
@@ -16,6 +17,7 @@ export const tokensCss = css`
     ${tokensToCssVars(colorTheme.light, 'color')}
     ${tokensToCssVars(fontFamiliesEnum, 'font-family')}
     ${tokensToCssVars(fontSizesEnum, 'font-size')}
+    ${tokensToCssVars(lineHeightsEnum, 'line-height')}
     ${tokensToCssVars(fontWeightsEnum, 'font-weight')}
     ${tokensToCssVars(elevationEnum, 'elevation')}
     ${tokensToCssVars(screenSizesRemEnum, 'screen-size')}
