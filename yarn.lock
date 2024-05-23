@@ -3887,7 +3887,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mordech/tokens@npm:*, @mordech/tokens@npm:^0.34.0, @mordech/tokens@workspace:packages/tokens":
+"@mordech/tokens@npm:*, @mordech/tokens@npm:^0.35.0, @mordech/tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
   resolution: "@mordech/tokens@workspace:packages/tokens"
   languageName: unknown
@@ -3906,7 +3906,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mordech/web-components@workspace:packages/web-components"
   dependencies:
-    "@mordech/tokens": "npm:^0.34.0"
+    "@mordech/tokens": "npm:^0.35.0"
   languageName: unknown
   linkType: soft
 

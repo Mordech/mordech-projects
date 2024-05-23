@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/Mordech/mordech-projects/compare/v0.34.0...v0.35.0) (2024-05-23)
+
+### Features
+
+- add line-heights tokens and font size 6 ([#123](https://github.com/Mordech/mordech-projects/issues/123)) ([153f4c5](https://github.com/Mordech/mordech-projects/commit/153f4c543b69d2768aaae1d2c054fe510f9c33a0))
+
 # [0.34.0](https://github.com/Mordech/mordech-projects/compare/v0.33.4...v0.34.0) (2024-01-06)
 
 ### Features
