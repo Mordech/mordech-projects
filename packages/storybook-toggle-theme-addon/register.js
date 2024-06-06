@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { createComponent } from '@lit-labs/react';
+import { createComponent } from '@lit/react';
 import { MrdToggleThemeElement } from '@mordech/web-components';
 import { addons, types } from '@storybook/addons';
 import { IconButton } from '@storybook/components';

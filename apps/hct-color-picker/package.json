@@ -14,11 +14,10 @@
     "build:plugin": "esbuild --bundle --minify --sourcemap --target=es2015 --format=esm --legal-comments=none --outfile=dist/code.js plugin-src/code.ts",
     "build": "concurrently \"vite build\" \"yarn build:plugin\"",
     "watch": "concurrently \"vite build --watch --mode development\" \"yarn build:plugin --watch\"",
-    "lint": "eslint --ext .ts,.js .",
     "lint:css": "stylelint './**/*.{css,scss,ts}'"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.84.0",
+    "@figma/plugin-typings": "^1.95.0",
     "@mordech/tokens": "*",
     "@mordech/vite-lit-loader": "*",
     "@mordech/web-components": "*",

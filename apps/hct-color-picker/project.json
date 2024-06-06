@@ -2,5 +2,9 @@
   "name": "hct-color-picker",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "lint": {
+      "command": "eslint apps/hct-color-picker --ext .ts,.js"
+    }
+  }
 }

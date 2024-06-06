@@ -1,6 +1,6 @@
 node_modules
 !.storybook
 *.lottie.json
-scripts/**/*
-dist/**/*
-build/**/*
+scripts
+dist
+build

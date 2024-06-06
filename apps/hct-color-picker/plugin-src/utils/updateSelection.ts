@@ -6,7 +6,7 @@ interface GetRootVariableObjectProps {
   variableAlias?: boolean;
 }
 
-function getRootVariableObject({
+async function getRootVariableObject({
   selection,
   variable,
   variableAlias,
@@ -25,7 +25,9 @@ function getRootVariableObject({
     if (variableValue.type === 'VARIABLE_ALIAS') {
       variableAlias = true;
 
-      const variable = figma.variables.getVariableById(variableValue.id);
+      const variable = await figma.variables.getVariableByIdAsync(
+        variableValue.id,
+      );
 
       if (!variable) return;
 
@@ -38,7 +40,7 @@ function getRootVariableObject({
   }
 }
 
-export function updateSelection() {
+export async function updateSelection() {
   if (!figma.currentPage.selection.length) {
     return postMessage({ type: 'selection', selection: undefined });
   }
@@ -62,10 +64,10 @@ export function updateSelection() {
 
     const variable =
       selectionVariableId &&
-      figma.variables.getVariableById(selectionVariableId);
+      (await figma.variables.getVariableByIdAsync(selectionVariableId));
 
     const variableObject =
-      variable && getRootVariableObject({ selection, variable });
+      variable && (await getRootVariableObject({ selection, variable }));
 
     const color = {
       r: r * 255,

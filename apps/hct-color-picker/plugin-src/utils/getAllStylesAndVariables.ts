@@ -1,6 +1,6 @@
-export function getAllStylesAndVariables() {
+export async function getAllStylesAndVariables() {
   return [
-    ...figma.getLocalPaintStyles(),
-    ...figma.variables.getLocalVariables('COLOR'),
+    ...(await figma.getLocalPaintStylesAsync()),
+    ...(await figma.variables.getLocalVariablesAsync('COLOR')),
   ];
 }

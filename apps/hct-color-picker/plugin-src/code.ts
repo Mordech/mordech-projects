@@ -21,24 +21,15 @@ const uiSizes: Record<string, [number, number]> = {
   medium: [340, 618],
 };
 
-const stylesAndVariables = getAllStylesAndVariables();
+initPaints();
 
-postMessage({
-  type: 'paints',
-  paints: extractValidStyles(stylesAndVariables),
-});
-
-stylesAndVariables.length
-  ? figma.ui.resize(...uiSizes.medium)
-  : figma.ui.resize(...uiSizes.small);
-
-figma.on('documentchange', (event) => {
+figma.on('stylechange', async (event) => {
   if (
-    event.documentChanges.some(
+    event.styleChanges.some(
       ({ type }) => type === 'STYLE_CREATE' || type === 'STYLE_DELETE',
     )
   ) {
-    const stylesAndVariables = getAllStylesAndVariables();
+    const stylesAndVariables = await getAllStylesAndVariables();
 
     postMessage({
       type: 'paints',
@@ -96,10 +87,18 @@ figma.ui.onmessage = (msg: PluginMessage) => {
 };
 
 setInterval(() => {
-  const stylesAndVariables = getAllStylesAndVariables();
+  initPaints();
+}, 500);
+
+async function initPaints() {
+  const stylesAndVariables = await getAllStylesAndVariables();
 
   postMessage({
     type: 'paints',
     paints: extractValidStyles(stylesAndVariables),
   });
-}, 3000);
+
+  stylesAndVariables.length
+    ? figma.ui.resize(...uiSizes.medium)
+    : figma.ui.resize(...uiSizes.small);
+}

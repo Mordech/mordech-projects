@@ -24,8 +24,10 @@ export async function updatePaint(
   if (!paintStyle) return applyPaint(solidPaint);
 
   const paint =
-    figma.variables.getVariableById(paintStyle.id) ||
-    figma.getLocalPaintStyles().find((style) => style.id === paintStyle.id);
+    (await figma.variables.getVariableByIdAsync(paintStyle.id)) ||
+    (await figma
+      .getLocalPaintStylesAsync()
+      .then((res) => res.find((style) => style.id === paintStyle.id)));
 
   if (!paint) return;
 

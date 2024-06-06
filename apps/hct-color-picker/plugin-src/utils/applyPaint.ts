@@ -1,5 +1,5 @@
 export function applyPaint(paintStyle: PaintStyle | SolidPaint | Variable) {
-  figma.currentPage.selection.forEach((node) => {
+  figma.currentPage.selection.forEach(async (node) => {
     if ('fills' in node) {
       if ('resolvedType' in paintStyle) {
         const variable = paintStyle;
@@ -18,7 +18,7 @@ export function applyPaint(paintStyle: PaintStyle | SolidPaint | Variable) {
       }
 
       if ('id' in paintStyle) {
-        node.fillStyleId = paintStyle.id;
+        await node.setFillStyleIdAsync(paintStyle.id);
       }
 
       if ('type' in paintStyle && paintStyle.type === 'SOLID') {

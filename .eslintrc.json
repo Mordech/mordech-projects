@@ -10,7 +10,8 @@
     "plugin:react/jsx-runtime",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:@figma/figma-plugins/recommended"
   ],
   "overrides": [
     {
