@@ -8,5 +8,6 @@
     "allowedDomains": ["https://*.mixpanel.com"],
     "reasoning": "I use mixpanel for anonymous usage analytics to improve user experience."
   },
+  "documentAccess": "dynamic-page",
   "editorType": ["figma"]
 }
