@@ -27,19 +27,30 @@
   },
   "targetDefaults": {
     "test": {
-      "dependsOn": ["^build"],
-      "inputs": ["default", "^default"],
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "default",
+        "^default"
+      ],
       "cache": true
     },
     "start": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": true
     },
     "prepare": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "outputs": [
         "{projectRoot}/dist",
         "{projectRoot}/types",
@@ -49,16 +60,26 @@
       "cache": true
     },
     "build-storybook": {
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/public", "{projectRoot}/storybook-static"],
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/public",
+        "{projectRoot}/storybook-static"
+      ],
       "cache": true
     },
     "visual": {
-      "dependsOn": ["^build", "build-storybook"],
+      "dependsOn": [
+        "^build",
+        "build-storybook"
+      ],
       "cache": true
     },
     "visual:ci": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": true
     },
     "develop": {
@@ -90,19 +111,24 @@
     },
     "lint": {
       "cache": true,
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json"
+      ]
     },
     "lint:css": {
       "cache": true
     },
     "@nx/vite:test": {
-      "dependsOn": ["^build"],
-      "inputs": ["default", "^default"],
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "default",
+        "^default"
+      ],
       "cache": true
     }
-  },
-  "affected": {
-    "defaultBase": "main"
   },
   "workspaceLayout": {
     "appsDir": "apps",
@@ -115,5 +141,7 @@
         "accessToken": "${NX_CLOUD_ACCESS_TOKEN}"
       }
     }
-  }
+  },
+  "useInferencePlugins": false,
+  "defaultBase": "main"
 }
