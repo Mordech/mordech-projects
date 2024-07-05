@@ -32,7 +32,7 @@ Object.defineProperty(document, 'cookie', {
 });
 
 export const initAnalytics = () => {
-  const MIXPANEL_KEY = import.meta.env.VITE_MIXPANEL_TOKEN || 'development';
+  const MIXPANEL_KEY: string = import.meta.env.VITE_MIXPANEL_TOKEN;
 
   const isDev = import.meta.env.MODE === 'development';
 
