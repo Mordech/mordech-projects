@@ -1,9 +1,10 @@
 import { setCatImage } from '../utils/setCatImage';
 import { setCatTitle } from '../utils/setCatTitle';
 
+export const MOUNTED_INDICATION = 'ibxzc-mounted';
+
 export const createCatEmptyState = (emptyState: Element) => {
   emptyState.textContent = '';
-
   const catContainer = document.createElement('div');
   catContainer.className = 'cat-container';
   emptyState.appendChild(catContainer);
@@ -30,7 +31,15 @@ export const createCatEmptyState = (emptyState: Element) => {
 
   const catText = document.createElement('span');
   catText.className = 'cat-text l6';
+  catText.textContent = 'Go outside and play with a cat!';
   catContainer.appendChild(catText);
 
-  catText.textContent = 'Go outside and play with a cat!';
+  const mountIndication = document.createElement('span');
+  mountIndication.ariaHidden = 'true';
+  mountIndication.style.setProperty('visibility', 'hidden');
+  mountIndication.style.setProperty('position', 'absolute');
+  mountIndication.style.setProperty('top', '-99999px');
+  mountIndication.style.setProperty('left', '-99999px');
+  mountIndication.textContent = MOUNTED_INDICATION;
+  catContainer.appendChild(mountIndication);
 };

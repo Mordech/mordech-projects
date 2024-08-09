@@ -1,14 +1,15 @@
-import { createCatEmptyState } from '../components/createCatEmptyState';
+import {
+  createCatEmptyState,
+  MOUNTED_INDICATION,
+} from '../components/createCatEmptyState';
 
-export const findAndReplaceEmptyState = (selector: string, text: string) => {
+export const findAndReplaceEmptyState = (selector: string) => {
   document.querySelectorAll(selector).forEach((element) => {
-    if (
-      (element.firstElementChild?.textContent?.includes(text) &&
-        !element.parentElement?.querySelector('.cat-container')) ||
-      (element.textContent?.includes(text) &&
-        !element.querySelector('.cat-container'))
-    ) {
-      return createCatEmptyState(element.firstElementChild || element);
-    }
+    if (element.textContent?.includes(MOUNTED_INDICATION)) return;
+    if (!(window.location.hash === '#inbox')) return;
+
+    return window.requestAnimationFrame(() => {
+      createCatEmptyState(element.firstElementChild || element);
+    });
   });
 };
