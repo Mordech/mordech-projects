@@ -4,8 +4,10 @@ import { findAndReplaceEmptyState } from './utils/findAndReplaceEmptyState';
   'use strict';
 
   const observer = new MutationObserver(() => {
-    findAndReplaceEmptyState('.aRu', ' tab is empty');
-    findAndReplaceEmptyState('td', 'No new mail!');
+    findAndReplaceEmptyState('.aRu');
+    findAndReplaceEmptyState(
+      'td.TC[colspan="3"][style="text-align:center"]:only-child',
+    );
   });
 
   const body = document.body;
