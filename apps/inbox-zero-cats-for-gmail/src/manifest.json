@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/chrome-manifest",
   "manifest_version": 3,
   "name": "Inbox Zero Cats for Gmail",
-  "version": "1.0.2",
+  "version": "2.0.2",
   "description": "Adds a random cat to the empty state of Gmail inbox",
   "icons": {
     "16": "images/icon_16.png",
