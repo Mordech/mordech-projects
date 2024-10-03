@@ -59,7 +59,7 @@ export const colorTheme = {
     },
     /**
      * @deprecated
-     * Make element disabled by using `opacity: 0.38` instead of `color: disabled`
+     * Make element disabled by using `opacity: 0.38` instead of colors. Or use the opacity token for disabled elements.
      */
     disabled: {
       base: palette['primary']['60'],
