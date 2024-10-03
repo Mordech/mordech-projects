@@ -1,4 +1,5 @@
 import {
+  borderRadiusEnum,
   colorTheme,
   defaultPaddingDeclaration,
   elevationEnum,
@@ -6,7 +7,9 @@ import {
   fontSizesEnum,
   fontWeightsEnum,
   lineHeightsEnum,
+  opacityEnum,
   screenSizesRemEnum,
+  spaceEnum,
   transitionsEnum,
 } from '../../';
 import { css, Token, tokensToCssVars } from '../utils';
@@ -22,6 +25,9 @@ export const tokensCss = css`
     ${tokensToCssVars(elevationEnum, 'elevation')}
     ${tokensToCssVars(screenSizesRemEnum, 'screen-size')}
     ${tokensToCssVars(transitionsEnum, 'transition')}
+    ${tokensToCssVars(opacityEnum, 'opacity')}
+    ${tokensToCssVars(borderRadiusEnum, 'border-radius')}
+    ${tokensToCssVars(spaceEnum, 'space')}
   }
 
   ${defaultPaddingDeclaration}

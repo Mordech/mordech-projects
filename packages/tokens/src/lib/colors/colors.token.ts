@@ -13,7 +13,8 @@ import { colorTheme } from './colorTheme';
  *
  * @example
  * import { colors } from '@mrd/tokens';
- * colors.color.primary.base;
+ *
+ * colors.primary.base;
  * // 'var(--mrd-color-primary-base, #272931)'
  */
 export const colors: typeof colorTheme.light = createTokenObject(
