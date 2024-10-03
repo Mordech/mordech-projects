@@ -9,6 +9,6 @@ import { spaceEnum } from './space';
  * .card {
  *  gap: ${space[200]};
  * }
- * // font-size: 0.5rem;
+ * // gap: 0.5rem;
  */
 export const space = createTokenObject(spaceEnum, 'space') as typeof spaceEnum;

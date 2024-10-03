@@ -9,7 +9,7 @@ import { borderRadiusEnum } from './radius';
  * .card {
  *  border-radius: ${radius[100]};
  * }
- * // font-size: 0.25rem;
+ * // border-radius: 0.25rem;
  */
 export const borderRadius = createTokenObject(
   borderRadiusEnum,
