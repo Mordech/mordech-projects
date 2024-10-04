@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/Mordech/mordech-projects/compare/v0.35.0...v0.36.0) (2024-10-04)
+
+### Bug Fixes
+
+- **inbox-zero-cats:** add multilingual inbox support ([#128](https://github.com/Mordech/mordech-projects/issues/128)) ([52faf31](https://github.com/Mordech/mordech-projects/commit/52faf319c7e654039a2582a39372e47d849f49fd))
+
+### Features
+
+- **hct-color-picker:** migrate to dynamically load pages ([#124](https://github.com/Mordech/mordech-projects/issues/124)) ([440e711](https://github.com/Mordech/mordech-projects/commit/440e711270d93b0af8a9bd2c6dcb2869e5b321da))
+- Spacing, Radius, and Opacity tokens ([#129](https://github.com/Mordech/mordech-projects/issues/129)) ([a932e84](https://github.com/Mordech/mordech-projects/commit/a932e84b9c09457ff3f43fcea1ea354876cc78d8))
+
 # [0.35.0](https://github.com/Mordech/mordech-projects/compare/v0.34.0...v0.35.0) (2024-05-23)
 
 ### Features
