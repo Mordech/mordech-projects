@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 
-import { MrdPainSwatchElement } from '..';
+import { MrdPainSwatchElement } from '../paint-swatch';
 
 export default {
   title: 'Atoms/mrd-paint-swatch',
