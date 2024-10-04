@@ -19,13 +19,13 @@ export default create({
   fontCode: fontFamilies['code'],
 
   // Text colors
-  textColor: colorTheme.light.background.on,
+  textColor: colorTheme.light.background.onBase,
   textInverseColor: colorTheme.light.background.onSurface,
   textMutedColor: colorTheme.light.disabled.base,
 
   // Toolbar default and active colors
-  barTextColor: colorTheme.light.background.on,
-  barSelectedColor: colorTheme.light.background.on,
+  barTextColor: colorTheme.light.background.onBase,
+  barSelectedColor: colorTheme.light.background.onBase,
   barBg: colorTheme.light.background.base,
 
   brandTitle: 'My custom storybook',

@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 
-import { MrdButtonElement } from '..';
+import { MrdButtonElement } from '../button';
 
 export default {
   title: 'Atoms/mrd-button',

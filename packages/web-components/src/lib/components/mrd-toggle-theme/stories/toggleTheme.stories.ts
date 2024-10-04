@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 
-import { MrdToggleThemeElement } from '..';
+import { MrdToggleThemeElement } from '../toggle-theme';
 
 export default {
   title: 'Atoms/mrd-toggle-theme',
