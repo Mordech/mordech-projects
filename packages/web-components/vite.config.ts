@@ -1,3 +1,4 @@
+import { litStyleLoader } from '@mordech/vite-lit-loader';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { readdirSync } from 'fs';
 import path from 'path';
@@ -24,6 +25,7 @@ const components = Object.fromEntries(
 
 export default defineConfig({
   plugins: [
+    litStyleLoader(),
     dts({
       entryRoot: './src/lib',
     }),

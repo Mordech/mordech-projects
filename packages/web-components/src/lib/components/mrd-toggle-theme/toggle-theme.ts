@@ -5,9 +5,9 @@ import { customElement, property } from 'lit/decorators.js';
 import '../mrd-button';
 
 import { focusableBase } from '../../styles/focusable.styles';
-import { type ButtonSize } from '../mrd-button';
+import type { Sizes } from '../../types';
 
-import { toggleThemeIcon } from './toggle-theme.styles';
+import styles from './toggle-theme.styles.scss?lit';
 
 @customElement('mrd-toggle-theme')
 export class MrdToggleThemeElement extends LitElement {
@@ -16,9 +16,9 @@ export class MrdToggleThemeElement extends LitElement {
   @property({ type: String }) storageKey = 'theme';
   @property({ type: Object }) target = document.body;
   @property({ type: Boolean }) disabled = false;
-  @property({ type: String }) size: ButtonSize = 'default';
+  @property({ type: String }) size: Sizes = 'default';
 
-  static override styles = [focusableBase, toggleThemeIcon];
+  static override styles = [focusableBase, styles];
 
   override render() {
     return html`
