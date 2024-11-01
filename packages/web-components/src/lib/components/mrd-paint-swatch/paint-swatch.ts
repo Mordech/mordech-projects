@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 
 import { focusableBase } from '../../styles/focusable.styles';
 
-import { paintSwatchBase } from './paint-swatch.styles';
+import styles from './paint-swatch.styles.scss?lit';
 import type { Color } from './types';
 
 @customElement('mrd-paint-swatch')
@@ -12,7 +12,7 @@ export class MrdPainSwatchElement extends LitElement {
   @property({ type: String }) name = 'color swatch';
   @property({ type: String }) color: Color = 'rgba(0, 0, 0, 1)';
 
-  static override styles = [focusableBase, paintSwatchBase];
+  static override styles = [focusableBase, styles];
 
   override render() {
     return html` <button

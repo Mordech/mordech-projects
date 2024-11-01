@@ -3,11 +3,11 @@ import { customElement, property } from 'lit/decorators.js';
 
 import { focusableBase } from '../../styles/focusable.styles';
 
-import { rangeBase, slotContainer } from './range.styles';
+import styles from './range.styles.scss?lit';
 
 @customElement('mrd-range')
 export class MrdRangeElement extends LitElement {
-  static override styles = [focusableBase, rangeBase, slotContainer];
+  static override styles = [focusableBase, styles];
   @property({ type: Number }) min = 0;
   @property({ type: Number }) max = 100;
   @property({ type: Number }) value: number = this.getValue();
