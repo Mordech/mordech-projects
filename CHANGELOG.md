@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.37.0](https://github.com/Mordech/mordech-projects/compare/v0.36.1...v0.37.0) (2024-11-02)
+
+### Features
+
+- **web components:** text field ([#132](https://github.com/Mordech/mordech-projects/issues/132)) ([05fcaec](https://github.com/Mordech/mordech-projects/commit/05fcaec5150b82b5323e47b24da5e6dc1e67bdd7))
+
 ## [0.36.1](https://github.com/Mordech/mordech-projects/compare/v0.36.0...v0.36.1) (2024-11-01)
 
 **Note:** Version bump only for package mordech-projects

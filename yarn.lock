@@ -5116,13 +5116,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mordech/tokens@npm:*, @mordech/tokens@workspace:packages/tokens":
+"@mordech/tokens@npm:*, @mordech/tokens@npm:^0.37.0, @mordech/tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
   resolution: "@mordech/tokens@workspace:packages/tokens"
   languageName: unknown
   linkType: soft
 
-"@mordech/vite-lit-loader@npm:*, @mordech/vite-lit-loader@workspace:packages/vite-lit-loader":
+"@mordech/vite-lit-loader@npm:*, @mordech/vite-lit-loader@npm:^0.37.0, @mordech/vite-lit-loader@workspace:packages/vite-lit-loader":
   version: 0.0.0-use.local
   resolution: "@mordech/vite-lit-loader@workspace:packages/vite-lit-loader"
   dependencies:
@@ -5135,8 +5135,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mordech/web-components@workspace:packages/web-components"
   dependencies:
-    "@mordech/tokens": "npm:*"
-    "@mordech/vite-lit-loader": "npm:*"
+    "@mordech/tokens": "npm:^0.37.0"
+    "@mordech/vite-lit-loader": "npm:^0.37.0"
   languageName: unknown
   linkType: soft
 
