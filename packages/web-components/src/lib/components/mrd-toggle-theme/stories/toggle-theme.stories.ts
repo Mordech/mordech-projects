@@ -44,13 +44,16 @@ export default {
   },
 };
 
-const Template = ({ saveToStorage, disabled, size }: MrdToggleThemeElement) =>
+export const Default = ({
+  saveToStorage,
+  disabled,
+  size,
+}: MrdToggleThemeElement) =>
   html`<mrd-toggle-theme
     .saveToStorage=${saveToStorage}
     .disabled=${disabled}
     size=${size}
   />`;
-export const Default = Template.bind({});
 
 Default.args = {
   saveToStorage: true,

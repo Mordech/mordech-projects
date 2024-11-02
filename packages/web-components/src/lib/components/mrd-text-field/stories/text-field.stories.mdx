@@ -1,0 +1,263 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import '../text-field';
+
+<Meta
+  title={'Atoms/mrd-text-field/Overview'}
+  parameters={{
+    previewTabs: { canvas: { hidden: true } },
+  }}
+/>
+
+# Text Field
+
+The `mrd-text-field` is a web component providing a customizable input field for various use cases. This component supports different sizes, border radii, placeholder text, error messages, and other helpful properties for a polished user experience.
+
+> note: this component uses the `has()` [psudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) of you intend to support older browsers concider using a polyfill.
+
+## Installation
+
+To use the `mrd-text-field` component, import it as part of your Lit project or any HTML/JavaScript setup.
+
+```javascript
+import './mrd-text-field';
+```
+
+## Demo
+
+<Canvas>
+  <mrd-text-field
+    label="Username"
+    placeholder="Enter your username"
+    required
+    supporting-text="This will be visible on your profile"
+  ></mrd-text-field>
+</Canvas>
+
+## Basic Usage
+
+Add the component to your HTML or JSX file:
+
+```html
+<mrd-text-field
+  label="Username"
+  placeholder="Enter your username"
+  required
+  supporting-text="This will be visible on your profile"
+></mrd-text-field>
+```
+
+## Properties
+
+The component accepts a range of properties to adjust its behavior and appearance:
+
+| Property         | Type            | Default     | Description                                                                   |
+| ---------------- | --------------- | ----------- | ----------------------------------------------------------------------------- |
+| `size`           | `Sizes`         | `'default'` | Controls the overall size of the input.                                       |
+| `radius`         | `Radii`         | `'default'` | Sets the border radius for rounded corners.                                   |
+| `error`          | `boolean`       | `false`     | Displays the input in an error state if set to `true`.                        |
+| `label`          | `string`        | `undefined` | Label text displayed above the input.                                         |
+| `name`           | `string`        | `undefined` | Name attribute for the input, used for form submission.                       |
+| `required`       | `boolean`       | `false`     | Displays an asterisk beside the label to indicate that the field is required. |
+| `supportingText` | `string`        | `''`        | Additional text below the input, providing helpful guidance.                  |
+| `errorText`      | `string`        | `''`        | Error message text displayed below the input when `error` is `true`.          |
+| `value`          | `string`        | `''`        | The current value of the input.                                               |
+| `placeholder`    | `string`        | `''`        | Placeholder text shown inside the input when it’s empty.                      |
+| `autocomplete`   | `string`        | `undefined` | Configures autocomplete behavior (e.g., `'off'`, `'name'`, `'email'`).        |
+| `type`           | `TextFieldType` | `'text'`    | Defines the input type (e.g., `'text'`, `'password'`).                        |
+| `disabled`       | `boolean`       | `false`     | Disables the input if set to `true`, making it uneditable.                    |
+
+## Slots
+
+- `placeholder-icon`: For including a custom icon inside the placeholder.
+
+Icons can be added by placing SVG elements into the component’s `placeholder-icon` slot.
+
+```html
+<mrd-text-field label="Search" placeholder="Search">
+  <svg
+    slot="placeholder-icon"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    ...
+  </svg>
+</mrd-text-field>
+```
+
+<Canvas>
+  <mrd-text-field label="Search" placeholder="Search">
+    <svg
+      slot="placeholder-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M11.9758 2.81818L7.71278 7.0915L11.9758 11.3648L16.2389 7.0915L11.9758 2.81818Z" />
+      <path d="M16.6696 7.52313L12.4065 11.7964L16.6696 16.0698L20.9326 11.7964L16.6696 7.52313Z" />
+      <path d="M2.93262 11.7964L7.19567 7.52313L11.4587 11.7964L7.19567 16.0698L2.93262 11.7964Z" />
+      <path d="M11.9326 12.2715L7.66957 16.5449L11.9326 20.8182L16.1957 16.5449L11.9326 12.2715Z" />
+    </svg>
+  </mrd-text-field>
+</Canvas>
+
+## Custom CSS Parts
+
+The component exposes several parts to customize styling:
+
+| Part               | Description                                    |
+| ------------------ | ---------------------------------------------- |
+| `input`            | Styles the input element.                      |
+| `placeholder-icon` | Styles the slot for a custom placeholder icon. |
+
+## Events
+
+### `@change`
+
+The `mrd-text-field` component emits a `change` event whenever the input value changes.
+
+### Usage Example
+
+```html
+<mrd-text-field
+  label="Email Address"
+  placeholder="you@example.com"
+  type="email"
+  error
+  error-text="Please enter a valid email address"
+></mrd-text-field>
+```
+
+### Styling Example
+
+You can apply custom styles using the component’s `input` and `placeholder-icon` parts. Here’s an example of how to style the component in your CSS:
+
+```css
+mrd-text-field::part(input) {
+  border-color: #333;
+}
+
+mrd-text-field::part(placeholder-icon) {
+  color: #999;
+}
+```
+
+## Methods
+
+| Method    | Description                                    |
+| --------- | ---------------------------------------------- |
+| `focus()` | Programmatically focuses the input.            |
+| `blur()`  | Programmatically removes focus from the input. |
+
+### Method Example
+
+```javascript
+const textField = document.querySelector('mrd-text-field');
+textField.focus();
+```
+
+This component is a versatile input field solution for various types of web applications, designed with accessibility and flexibility in mind.
+
+### Required Field with Supporting Text
+
+<Canvas>
+  <mrd-text-field
+    label="Email"
+    placeholder="Enter your email"
+    supporting-text="We'll never share your email."
+    required
+  ></mrd-text-field>
+</Canvas>
+
+In this example, the field is marked as required, with additional supporting text to inform the user.
+
+### Error State with Custom Error Message
+
+<Canvas>
+  <mrd-text-field
+    label="Username"
+    placeholder="Enter your username"
+    error
+    error-text="This username is already taken."
+  ></mrd-text-field>
+</Canvas>
+
+When the `error` property is set, the field appears in an error state, and `error-text` provides feedback to the user.
+
+## Size Variants
+
+### Compact Size
+
+<Canvas>
+  <mrd-text-field
+    label="Username"
+    placeholder="Compact input"
+    size="compact"
+  ></mrd-text-field>
+</Canvas>
+
+The `size="compact"` property reduces the padding and font size, making it suitable for denser layouts.
+
+### Tiny Size
+
+<Canvas>
+  <mrd-text-field
+    label="Initials"
+    placeholder="Tiny input"
+    size="tiny"
+  ></mrd-text-field>
+</Canvas>
+
+The `size="tiny"` variant is even smaller, perfect for limited space.
+
+## Radius Variants
+
+### Rounded Corners
+
+<Canvas>
+  <mrd-text-field
+    label="Search"
+    placeholder="Search here"
+    radius="round"
+  ></mrd-text-field>
+</Canvas>
+
+The `radius="round"` property rounds the corners for a softer appearance.
+
+### Pill-Shaped
+
+<Canvas>
+  <mrd-text-field
+    label="Username"
+    placeholder="Enter username"
+    radius="pill"
+  ></mrd-text-field>
+</Canvas>
+
+The `radius="pill"` property gives the field fully rounded corners, creating a "pill" shape.
+
+## Disabled State
+
+### Disabled Input
+
+<Canvas>
+  <mrd-text-field
+    label="Phone Number"
+    placeholder="Enter your phone number"
+    disabled
+  ></mrd-text-field>
+</Canvas>
+
+The `disabled` property disables the input, making it non-interactive and changing its appearance.
+
+### Label with Asterisk for Required Field
+
+For required fields, an asterisk will automatically appear next to the label if `required` is set to true.
+
+<Canvas>
+  <mrd-text-field
+    label="Full Name"
+    placeholder="Enter your full name"
+    required
+  ></mrd-text-field>
+</Canvas>

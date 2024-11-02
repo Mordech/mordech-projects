@@ -1,6 +1,5 @@
 import { html, svg, SVGTemplateResult } from 'lit-html';
 
-import '../../mrd-button';
 import '../text-field';
 
 import { MrdTextFieldElement } from '../text-field';
