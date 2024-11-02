@@ -28,7 +28,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@mordech/tokens": "^0.36.0",
+    "@mordech/tokens": "*",
     "@mordech/vite-lit-loader": "*"
   }
 }

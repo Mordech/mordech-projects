@@ -5,7 +5,9 @@ import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { html, unsafeStatic } from 'lit/static-html.js';
 
-import { focusableBase } from '../../styles/focusable.styles';
+import '../mrd-interaction-layer';
+
+import focusableBase from '../../styles/focusable.styles.scss?lit';
 import type { Radii, SemanticColors, Sizes } from '../../types';
 
 import styles from './button.styles.scss?lit';
@@ -78,8 +80,8 @@ export class MrdButtonElement extends LitElement {
         data-radius=${this.radius}
         .disabled=${this.disabled}
       >
-
         <slot name="icon-start" part="icon-start"></slot>
+
         <slot
           part="slot"
           class=${classMap({ slot: this._hasText })}
@@ -88,6 +90,9 @@ export class MrdButtonElement extends LitElement {
         </slot>
 
         <slot name="icon-end" part="icon-end"></slot>
+
+        <mrd-interaction-layer ?disabled=${this.disabled}>
+        </mrd-interaction-layer>
       </${this.tag}>
     `;
   }

@@ -48,39 +48,10 @@
     --mrd-border-radius: 99px;
   }
 
-  &:hover {
-    background-color: var(
-      --mrd-button-hover-background,
-      var(--mrd-button-background)
-    );
-
-    --mrd-button-hover-opacity: 0.08;
-  }
-
-  &:active {
-    background-color: var(
-      --mrd-button-active-background,
-      var(--mrd-button-background)
-    );
-
-    --mrd-button-hover-opacity: 0.12;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: var(--mrd-button-hover-overlay-color, currentColor);
-    opacity: var(--mrd-button-hover-opacity, 0);
-    transition: opacity 200ms ease-in-out;
-  }
-
   &:disabled,
   &[aria-disabled='true'] {
     cursor: not-allowed;
     opacity: 0.38;
-
-    --mrd-button-hover-overlay-color: transparent;
   }
 }
 

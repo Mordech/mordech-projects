@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { html } from 'lit-html';
 
 import { MrdButtonElement } from '../button';
@@ -85,7 +86,7 @@ export default {
   },
 };
 
-const Template = ({
+export const Default = ({
   slot,
   size,
   radius,
@@ -106,8 +107,6 @@ const Template = ({
   </mrd-button>
 `;
 
-export const Default = Template.bind({});
-
 Default.args = {
   slot: 'Hello World',
   size: 'default',
@@ -118,10 +117,11 @@ Default.args = {
   as: 'button',
 };
 
-export const Compact = Template.bind({});
+export const Compact = Default.bind({});
 
 Compact.args = {
   ...Default.args,
+  // @ts-expect-error
   slot: html`
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -135,66 +135,67 @@ Compact.args = {
   size: 'compact',
 };
 
-export const Tiny = Template.bind({});
+export const Tiny = Default.bind({});
 
 Tiny.args = {
   ...Compact.args,
   size: 'tiny',
 };
 
-export const Round = Template.bind({});
+export const Round = Default.bind({});
 
 Round.args = {
   ...Compact.args,
   radius: 'round',
 };
 
-export const Pill = Template.bind({});
+export const Pill = Default.bind({});
 
 Pill.args = {
   ...Compact.args,
   radius: 'pill',
 };
 
-export const Secondary = Template.bind({});
+export const Secondary = Default.bind({});
 
 Secondary.args = {
   ...Compact.args,
   color: 'secondary',
 };
 
-export const Success = Template.bind({});
+export const Success = Default.bind({});
 
 Success.args = {
   ...Compact.args,
   color: 'success',
 };
 
-export const Error = Template.bind({});
+export const Error = Default.bind({});
 
 Error.args = {
   ...Compact.args,
   color: 'error',
 };
 
-export const Disabled = Template.bind({});
+export const Disabled = Default.bind({});
 
 Disabled.args = {
   ...Compact.args,
   disabled: true,
 };
 
-export const AsAnchor = Template.bind({});
+export const AsAnchor = Default.bind({});
 
 AsAnchor.args = {
   ...Compact.args,
   as: 'a',
 };
 
-export const IconEnd = Template.bind({});
+export const IconEnd = Default.bind({});
 
 IconEnd.args = {
   ...Default.args,
+  // @ts-expect-error
   slot: html`
     Hello World
     <svg
@@ -208,10 +209,11 @@ IconEnd.args = {
   `,
 };
 
-export const NoText = Template.bind({});
+export const NoText = Default.bind({});
 
 NoText.args = {
   ...Default.args,
+  // @ts-expect-error
   slot: html`
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -224,21 +226,21 @@ NoText.args = {
   `,
 };
 
-export const Tonal = Template.bind({});
+export const Tonal = Default.bind({});
 
 Tonal.args = {
   ...Default.args,
   variant: 'tonal',
 };
 
-export const Text = Template.bind({});
+export const Text = Default.bind({});
 
 Text.args = {
   ...Default.args,
   variant: 'text',
 };
 
-export const InvertedSecondary = Template.bind({});
+export const InvertedSecondary = Default.bind({});
 
 InvertedSecondary.args = {
   ...Default.args,

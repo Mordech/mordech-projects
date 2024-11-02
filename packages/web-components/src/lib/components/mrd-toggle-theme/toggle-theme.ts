@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js';
 
 import '../mrd-button';
 
-import { focusableBase } from '../../styles/focusable.styles';
+import focusableBase from '../../styles/focusable.styles.scss?lit';
 import type { Sizes } from '../../types';
 
 import styles from './toggle-theme.styles.scss?lit';

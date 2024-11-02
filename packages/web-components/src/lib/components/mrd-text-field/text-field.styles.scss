@@ -1,0 +1,137 @@
+@use '@mordech/tokens/css/reset.css';
+@use '../../styles/utils' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--mrd-space-50);
+}
+
+.placeholder-container {
+  @include overridable(input, padding, var(--mrd-space-300));
+
+  display: inline-flex;
+  justify-content: start;
+  opacity: 0.38;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  gap: var(--mrd-space-50);
+
+  .placeholder {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.label {
+  @include overridable(input, font-size, var(--mrd-font-size-1));
+
+  display: inline-flex;
+  color: var(--mrd-color-background-on-base);
+  gap: var(--mrd-space-50);
+  line-height: var(--mrd-line-height-1);
+
+  .asterisk {
+    @include overridable(input-asterisk, color, var(--mrd-color-error-base));
+  }
+}
+
+.supporting-text {
+  @include overridable(input-supporting, font-size, var(--mrd-font-size-0));
+
+  display: flex;
+  gap: var(--mrd-space-100);
+  align-items: center;
+  color: var(--mrd-color-background-on-base-variant);
+
+  &[data-error='true'] {
+    color: var(--mrd-color-error-base);
+  }
+}
+
+.input-container {
+  @include interaction-layer;
+  @include overridable(input, border-radius, var(--mrd-border-radius-200));
+  @include overridable(input, font-size, var(--mrd-font-size-1));
+  @include overridable(input, padding, var(--mrd-space-300));
+
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  justify-content: stretch;
+  align-items: center;
+  background-color: var(--mrd-color-background);
+  color: var(--mrd-color-background-on-base);
+  line-height: var(--mrd-line-height-1);
+  transition: var(--mrd-transition-default);
+  box-shadow: 0 0 0 1px var(--mrd-input-border-color, var(--mrd-color-outline))
+    inset;
+
+  &:focus-within {
+    --mrd-input-border-color: var(--mrd-color-primary-base);
+    --mrd-interaction-opacity: 0;
+  }
+
+  &:has(input:disabled) {
+    --mrd-interaction-opacity: 0;
+
+    opacity: var(--mrd-opacity-disabled);
+    cursor: not-allowed;
+  }
+
+  &:has(input:not(:placeholder-shown)) {
+    .placeholder-container {
+      display: none;
+    }
+  }
+
+  &[data-error='true'] {
+    --mrd-input-border-color: var(--mrd-color-error-base);
+  }
+
+  input {
+    display: flex;
+    flex: 1;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
+[data-size='compact'] {
+  --mrd-input-padding: var(--mrd-space-200);
+  --mrd-input-font-size: var(--mrd-font-size-0);
+}
+
+[data-size='tiny'] {
+  --mrd-input-padding: var(--mrd-space-100) var(--mrd-space-200);
+  --mrd-input-font-size: var(--mrd-font-size-0);
+}
+
+[data-radius='round'] {
+  --mrd-input-border-radius: var(--mrd-border-radius-400);
+}
+
+[data-radius='round'][data-size='compact'] {
+  --mrd-input-border-radius: var(--mrd-border-radius-300);
+}
+
+[data-radius='round'][data-size='tiny'] {
+  --mrd-input-border-radius: var(--mrd-border-radius-200);
+}
+
+[data-radius='pill'] {
+  --mrd-input-border-radius: var(--mrd-border-radius-round);
+}
+
+::slotted(svg) {
+  height: 1lh;
+  fill: currentcolor;
+}

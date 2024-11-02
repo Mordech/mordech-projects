@@ -1,0 +1,35 @@
+@mixin focusable($offset: 0) {
+  outline: var(--mrd-color-primary-base) solid 2px;
+  transition: all var(--mrd-transition-bounce);
+  outline-offset: $offset;
+}
+
+@mixin interaction-layer {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--mrd-interaction-background-color, currentColor);
+    opacity: var(--mrd-interaction-opacity, 0);
+    transition: opacity var(--mrd-transition-fast);
+    pointer-events: none;
+  }
+
+  &:hover {
+    --mrd-interaction-opacity: 0.08;
+  }
+
+  &:active {
+    --mrd-interaction-opacity: 0.16;
+  }
+
+  &:disabled {
+    --mrd-interaction-opacity: 0;
+  }
+}
+
+@mixin overridable($prefix, $css-property, $default-value) {
+  #{$css-property}: var(--mrd-#{$prefix}-#{$css-property}, #{$default-value});
+}
