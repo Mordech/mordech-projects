@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import { focusableBase } from '../../styles/focusable.styles';
+import focusableBase from '../../styles/focusable.styles.scss?lit';
 
 import styles from './paint-swatch.styles.scss?lit';
 import type { Color } from './types';

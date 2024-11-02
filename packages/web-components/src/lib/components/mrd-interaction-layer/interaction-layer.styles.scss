@@ -1,0 +1,15 @@
+.interaction-layer {
+  background-color: var(--mrd-interaction-background-color, currentColor);
+  position: absolute;
+  inset: 0;
+  opacity: var(--mrd-interaction-opacity, 0);
+  transition: opacity var(--mrd-transition-fast);
+
+  &:hover {
+    --mrd-interaction-opacity: 0.08;
+  }
+
+  &:active {
+    --mrd-interaction-opacity: 0.16;
+  }
+}
