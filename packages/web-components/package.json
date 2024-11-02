@@ -26,5 +26,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@mordech/tokens": "*",
+    "@mordech/vite-lit-loader": "*"
   }
 }

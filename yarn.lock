@@ -5134,6 +5134,9 @@ __metadata:
 "@mordech/web-components@npm:*, @mordech/web-components@workspace:packages/web-components":
   version: 0.0.0-use.local
   resolution: "@mordech/web-components@workspace:packages/web-components"
+  dependencies:
+    "@mordech/tokens": "npm:*"
+    "@mordech/vite-lit-loader": "npm:*"
   languageName: unknown
   linkType: soft
 
