@@ -8,7 +8,6 @@ import Color from 'color';
 import { html, LitElement, nothing } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
-import mixpanel from 'mixpanel-browser';
 
 import '@mordech/web-components/mrd-paint-swatch';
 import '@mordech/web-components/mrd-toggle-theme';
@@ -19,13 +18,10 @@ import './components/hct-controller';
 
 import type { PluginMessage, UiPaintStyle } from '../types';
 
-import { initAnalytics } from './utils/initAnalytics';
 import { postMessage } from './utils/postMessage';
 import type { SelectedColor } from './types';
 
 import './styles.scss';
-
-initAnalytics();
 
 @customElement('my-app')
 export class MyApp extends LitElement {
@@ -268,8 +264,6 @@ export class MyApp extends LitElement {
       type: 'save-theme',
       data: theme,
     });
-
-    mixpanel.track('Theme change', { theme });
   }
 
   connectedCallback(): void {
@@ -350,13 +344,6 @@ export class MyApp extends LitElement {
             this.tone = tone;
             this.saveColor();
           }
-
-          mixpanel.track('Layer selected', {
-            hasStyle: !!selection.id,
-            isVariableAlias: !!selection.variableAlias,
-            isVariable: !!selection.modeId,
-            color: selection.color && Color(selection.color).hex(),
-          });
 
           break;
         }
