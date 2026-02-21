@@ -2,7 +2,6 @@ import { argbFromHex } from '@material/material-color-utilities';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import mixpanel from 'mixpanel-browser';
 
 import '@mordech/web-components/mrd-button';
 import '../copy-button';
@@ -87,10 +86,6 @@ export class ColorPreview extends LitElement {
         argb: argbFromHex(this.hex),
       },
     });
-
-    mixpanel.track('Create paint style', {
-      value: this.hex,
-    });
   }
 
   updated(changedProperties: Map<string, unknown>) {
@@ -106,11 +101,6 @@ export class ColorPreview extends LitElement {
       const { classList } = event.target;
 
       classList.add('detaching');
-
-      mixpanel.track('Detach style', {
-        value: this.hex,
-        type: this.selectedColorType,
-      });
 
       setTimeout(() => {
         classList.remove('detaching');
