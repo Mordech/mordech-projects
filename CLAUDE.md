@@ -17,19 +17,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   ```
 - **Start a local development server for an app**: `yarn nx serve @mordech/<app-name>`
 - **Build a single project** (e.g., the color picker): `yarn nx run hct-color-picker:build`
-- **Run a single test file or pattern**:
-  ```bash
-  yarn nx test @mordech/<project> --testPathPattern="<path-or-regex>"
-  ```
+- **Run specific tests**: Use `yarn nx test <project> --testPathPattern=<pattern>` to run a specific test file or regex pattern matching test files.
 - **Publish packages (maintainer only)**: `yarn publish-packages`
+
 - **Build affected projects**:
   ```bash
   yarn nx affected:build
   ```
+
 - **Lint affected projects**:
   ```bash
   yarn nx affected:lint
   ```
+
+## Run visual regression tests
+
+- **Run all visual tests for the current branch**: `yarn nx affected:visual` (includes visual targets).
+- **Run visual tests for a specific package**: `yarn nx visual @mordech/<package-name>`.
+- **Check visual test results**: after running, the output shows which snapshots passed or failed and points to the NX run page for detailed logs.
 
 ## High‑Level Architecture Overview
 
@@ -54,17 +59,15 @@ All projects expose NX targets (`build`, `serve`, `test`, `lint`) defined in the
 ## Environment & Tooling
 
 - Node.js 22 (as defined in `.nvmrc`).
-- Yarn Berry 4.x with Plug‑and‑Play disabled (`node_modules` is present).
+- Yarn Berry 4.x with Plug‑and‑Play disabled (`node_modules` is present). Use `yarn install` to ensure dependencies are installed before development.
 - NX v19.8.x, Lerna for versioning packages.
 - Vite 5.0.x as the bundler.
 - TypeScript strict mode across all projects.
 
+## Git Workflow
+
+Use `git checkout -b <branch-name>` or `gco -b <branch-name>` to create and switch to new branches. Review recent commits with `git log` before starting work.
+
 ---
 
-This file should be updated whenever new top‑level scripts or architectural changes are introduced.
-
-## Run visual regression tests
-
-- **Run all visual tests for the current branch**: `yarn nx affected:visual` (includes visual targets).
-- **Run visual tests for a specific package**: `yarn nx visual @mordech/<package-name>"`.
-- **Check visual test results**: after running, the output shows which snapshots passed or failed and points to the NX run page for detailed logs. Future Claude Code instances will use these instructions to run commands, navigate the repo, and understand how components interrelate.
+This file should be updated whenever new top-level scripts or architectural changes are introduced.
