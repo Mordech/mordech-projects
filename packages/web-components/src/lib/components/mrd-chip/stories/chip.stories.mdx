@@ -1,0 +1,164 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+
+<Meta
+  title={'Atoms/mrd-chip/Overview'}
+  parameters={{
+    previewTabs: { canvas: { hidden: true } },
+  }}
+/>
+
+# Chip
+
+A pill-shaped label used to represent metadata, filters, or tags. Supports three
+behavior variants: a static label, a clickable chip, or a chip with a remove button.
+
+## Installation
+
+```javascript
+import '@mordech/web-components';
+```
+
+## Demo
+
+<Canvas>
+  <mrd-chip>Label</mrd-chip>
+  <mrd-chip color="secondary">Secondary</mrd-chip>
+  <mrd-chip color="success">Success</mrd-chip>
+  <mrd-chip color="error">Error</mrd-chip>
+</Canvas>
+
+```html
+<mrd-chip>Label</mrd-chip>
+<mrd-chip color="secondary">Secondary</mrd-chip>
+<mrd-chip color="success">Success</mrd-chip>
+<mrd-chip color="error">Error</mrd-chip>
+```
+
+## Properties
+
+| Property  | Type                                               | Default     | Description                                                                  |
+| --------- | -------------------------------------------------- | ----------- | ---------------------------------------------------------------------------- |
+| `color`   | `'primary' \| 'secondary' \| 'success' \| 'error'` | `'primary'` | Semantic color variant — maps to the tonal container/onContainer token pair. |
+| `variant` | `'default' \| 'interactive' \| 'clearable'`        | `'default'` | Controls chip behavior (see Variants below).                                 |
+
+## Variants
+
+### Default
+
+A static label. No interaction affordances.
+
+<Canvas>
+  <mrd-chip>Label</mrd-chip>
+</Canvas>
+
+```html
+<mrd-chip>Label</mrd-chip>
+```
+
+### Interactive
+
+Adds `role="button"`, `tabindex="0"`, keyboard activation (Enter / Space), and a
+hover/active interaction layer. Use when the whole chip should be clickable.
+
+<Canvas>
+  <mrd-chip variant="interactive">Clickable</mrd-chip>
+</Canvas>
+
+```html
+<mrd-chip variant="interactive">Clickable</mrd-chip>
+```
+
+### Clearable
+
+Shows a remove (✕) button with its own hover/active interaction layer. Dispatches
+`mrd-chip-clear` when clicked. Use for filter tags or dismissible labels.
+
+<Canvas>
+  <mrd-chip variant="clearable">Remove me</mrd-chip>
+</Canvas>
+
+```html
+<mrd-chip variant="clearable">Remove me</mrd-chip>
+```
+
+## Events
+
+| Event            | Detail | Description                                                                                                           |
+| ---------------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
+| `mrd-chip-clear` | —      | Fired when the clear button is clicked (`variant="clearable"`). Does not bubble through the chip's own click handler. |
+
+## Slots
+
+| Name         | Description                                                 |
+| ------------ | ----------------------------------------------------------- |
+| default      | The chip label text.                                        |
+| `icon-start` | An icon placed before the label text. Sized to 1rem × 1rem. |
+
+## Parts
+
+| Part         | Description                   |
+| ------------ | ----------------------------- |
+| `chip`       | The inner chip container div. |
+| `label`      | The label `<span>`.           |
+| `clear`      | The clear `<button>` element. |
+| `icon-start` | The icon-start slot wrapper.  |
+
+## Clearable — Implementation Example
+
+Listen for `mrd-chip-clear` to remove chips from a list:
+
+```html
+<div id="chips">
+  <mrd-chip variant="clearable">React</mrd-chip>
+  <mrd-chip variant="clearable">TypeScript</mrd-chip>
+  <mrd-chip variant="clearable">Lit</mrd-chip>
+</div>
+
+<script>
+  document.getElementById('chips').addEventListener('mrd-chip-clear', (e) => {
+    e.target.remove();
+  });
+</script>
+```
+
+<Canvas>
+  <div
+    id="clearable-demo"
+    style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}
+    onClick={(e) => {
+      if (e.target.closest('mrd-chip')) {
+        e.target.closest('mrd-chip').remove();
+      }
+    }}
+  >
+    <mrd-chip variant="clearable">React</mrd-chip>
+    <mrd-chip variant="clearable">TypeScript</mrd-chip>
+    <mrd-chip variant="clearable">Lit</mrd-chip>
+    <mrd-chip variant="clearable">Web Components</mrd-chip>
+  </div>
+</Canvas>
+
+## With Icon
+
+Place an SVG in the `icon-start` slot:
+
+<Canvas>
+  <mrd-chip>
+    <svg
+      slot="icon-start"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+    </svg>
+    <span>Verified</span>
+  </mrd-chip>
+</Canvas>
+
+```html
+<mrd-chip>
+  <svg slot="icon-start" ...>...</svg>
+  Verified
+</mrd-chip>
+```
