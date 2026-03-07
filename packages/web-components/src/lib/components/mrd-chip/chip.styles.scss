@@ -1,0 +1,69 @@
+@use '@mordech/tokens/css/reset.css';
+@use '../../styles/utils';
+
+:host {
+  display: inline-flex;
+}
+
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.5rem;
+  padding: var(--mrd-space-100);
+  border-radius: var(--mrd-border-radius-round);
+  overflow: hidden;
+  background-color: var(--mrd-chip-background);
+  color: var(--mrd-chip-color);
+  font-family: var(--mrd-font-family-ui, inherit);
+  font-size: var(--mrd-font-size-0);
+  line-height: 1;
+  user-select: none;
+
+  &[role='button'] {
+    cursor: pointer;
+
+    &:focus-visible {
+      @include utils.focusable(2px);
+    }
+  }
+}
+
+.label {
+  padding-inline: 4px;
+}
+
+::slotted([slot='icon-start']) {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.clear {
+  @include utils.interaction-layer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 2px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+
+  &:focus-visible {
+    @include utils.focusable(1px);
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+    position: relative;
+    z-index: 1; /* above mrd-interaction-layer overlay */
+  }
+}
