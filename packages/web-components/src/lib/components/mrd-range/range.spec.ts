@@ -50,7 +50,7 @@ describe('Range', () => {
     const container = document.createElement('div');
     render(
       html`<mrd-range min="0" max="10" .value=${1 + 1}>Hello world</mrd-range>`,
-      container
+      container,
     );
     await expect(await axe(container)).toHaveNoViolations();
   });

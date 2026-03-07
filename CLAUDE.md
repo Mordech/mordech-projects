@@ -5,69 +5,69 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Common Development Commands
 
 - **Install dependencies**: `yarn && yarn husky install`
-- **Build all packages**: `yarn nx run-many --target=build --all`
-- **Lint all projects**: `yarn nx run-many --target=lint --all`
-- **Run tests for a specific package or app**:
-  ```bash
-  yarn nx test @mordech/<package-or-app-name>
-  ```
-- **Run affected tests after changes**:
-  ```bash
-  yarn nx affected:test
-  ```
-- **Start a local development server for an app**: `yarn nx serve @mordech/<app-name>`
-- **Build a single project** (e.g., the color picker): `yarn nx run hct-color-picker:build`
-- **Run specific tests**: Use `yarn nx test <project> --testPathPattern=<pattern>` to run a specific test file or regex pattern matching test files.
+- **Build all packages**: `yarn build`
+- **Test all packages**: `yarn test`
+- **Lint all projects**: `yarn lint`
+- **Build only changed packages** (vs `origin/main`): `yarn build:affected`
+- **Test only changed packages** (vs `origin/main`): `yarn test:affected`
+- **Test a single package**: `yarn lerna run test --scope=@mordech/<package-name>`
+- **Run a package dev server**: `yarn workspace <package-name> dev` (or `start`/`develop` depending on the app)
 - **Publish packages (maintainer only)**: `yarn publish-packages`
 
-- **Build affected projects**:
-  ```bash
-  yarn nx affected:build
-  ```
+## Storybook & Visual Regression
 
-- **Lint affected projects**:
-  ```bash
-  yarn nx affected:lint
-  ```
+- **Start Storybook for web-components** (port 4600): `yarn workspace @mordech/web-components storybook`
+- **Start Storybook for react-components** (port 4400): `yarn workspace @mordech/react-components storybook`
+- **Build Storybook**: `yarn lerna run build-storybook --scope=@mordech/<package-name>`
+- **Run visual regression tests** (requires built Storybook): `yarn lerna run visual --scope=@mordech/<package-name>`
+- **Approve visual snapshots**: `yarn lerna run visual:approve --scope=@mordech/<package-name>`
 
-## Run visual regression tests
+Visual tests use [Loki](https://loki.js.org/) with `looks-same` diffing against Chrome Docker. The `visual:ci` script adds `--requireReference` for CI enforcement.
 
-- **Run all visual tests for the current branch**: `yarn nx affected:visual` (includes visual targets).
-- **Run visual tests for a specific package**: `yarn nx visual @mordech/<package-name>`.
-- **Check visual test results**: after running, the output shows which snapshots passed or failed and points to the NX run page for detailed logs.
+## Architecture Overview
 
-## High‑Level Architecture Overview
+Monorepo managed with **Lerna** (`useNx: false`) and Yarn Berry 4.x workspaces. All versioned packages use Lerna's `--conventional-commits` for automated versioning.
 
-The repository is a monorepo managed with **NX** and **Lerna**, using Yarn Berry 4.x as the package manager. It contains two main directories:
+### Packages (`packages/`)
 
-1. `packages/` – reusable libraries that provide core functionality across the workspace.
-   - `@mordech/vite-lit-loader`: custom Vite plugin for loading Lit components, SVGs, CSS, and HTML directly into Lit component files.
-   - `@mordech/web-components`: collection of standalone web‑component implementations (e.g., color picker layers, interaction overlays). These are published as npm packages that other projects import.
-   - `@mordech/tokens`: design tokens (colors, spacing, typography) used by both React and Lit components.
-2. `apps/` – full‑stack or browser extension applications built from the shared libraries.
-   - `hct-color-picker`: web app demonstrating color selection functionality using the Lit component library.
-   - `inbox-zero-cats-for-gmail`: Chrome/Firefox extension adding UI overlays to Gmail, leveraging the same token and component packages.
+| Package | Description |
+|---|---|
+| `@mordech/tokens` | Design tokens (colors, spacing, typography) — ships CSS, CJS, and ESM. Build pipeline: `build:assets` → `build:css` → `build:ts` → `build:types` via `npm-run-all`. |
+| `@mordech/vite-lit-loader` | Vite plugin that transforms `.scss`, `.css`, `.html`, and `.svg` imports inside Lit `css\`\`` tagged templates and component files. Used by `@mordech/web-components`. |
+| `@mordech/web-components` | Lit-based web components (`mrd-*`). Each component lives in `src/lib/components/<name>/` with a `<name>.ts`, `<name>.styles.scss`, `index.ts`, optional `*.spec.ts`, and a `stories/` folder. Vite builds each component as a separate entry point plus a top-level `index.ts`. Lit is externalized from the bundle. |
+| `@mordech/react-components` | React wrappers around the web components. Private (not published). Has Storybook and Loki visual tests. |
+| `@mordech/storybook-toggle-theme-addon` | Custom Storybook addon for toggling light/dark theme. Private. |
 
-All projects expose NX targets (`build`, `serve`, `test`, `lint`) defined in their individual `project.json` files. Shared build tooling (Vite, Jest/Vitest, Loki for visual regression) is configured centrally via NX’s workspace configuration, so developers can run any target with a single `yarn nx <target> …` command.
+### Apps (`apps/`)
 
-## Development Workflow Highlights
+| App | Description |
+|---|---|
+| `hct-color-picker` | Figma plugin. Two build targets: `build:ui` (Vite) and `build:plugin` (esbuild → `dist/code.js`). Entry points: `ui-src/` (UI iframe) and `plugin-src/code.ts` (Figma sandbox). |
+| `inbox-zero-cats-for-gmail` | Chrome/Firefox extension. Uses `ts-node` scripts for bundling; `web-ext lint` for extension validation. No test suite. |
+| `portfolio` | Gatsby site using `@mordech/react-components` and `@mordech/tokens`. No Lerna-managed build (Gatsby CLI). |
 
-- **Code generation** – The repo ships with a custom Vite loader (`vite-lit-loader`) that allows importing SVGs, CSS, and HTML directly into Lit component source files. This keeps component code concise and eliminates the need for separate build steps for these assets.
-- **Testing** – Projects use Vitest (or Jest for legacy tests) combined with Loki for visual regression. Tests can be run individually via the `--testPathPattern` flag or by specifying a test file path directly to `yarn nx test …`.
-- **Monorepo tooling** – NX Cloud is enabled, so builds and lint runs are cached across CI runs. Use `yarn nx affected:*` commands to target only changed projects.
+### Key Conventions
+
+- **Web component file layout**: every `mrd-*` component is a folder under `src/lib/components/` — `<name>.ts` (class), `<name>.styles.scss` (imported via `vite-lit-loader`), `index.ts` (re-export), `stories/` (Storybook).
+- **TypeScript strict mode** across all packages.
+- **ESLint + Stylelint**: `lint` runs ESLint on `src/`; `lint:css` runs Stylelint on `src/**/*.{ts,css,scss}`.
+- **Testing**: Vitest with `--coverage` (`@vitest/coverage-v8`). Tests are co-located as `*.spec.ts` next to the source file.
+- **Commit messages**: enforced by `commitlint` with `@commitlint/config-conventional` (conventional commits). Validated in the `commit-msg` husky hook.
+- **Pre-commit hook**: runs `lint`, `lint:css`, and `test` via `lerna --since HEAD`.
+- **Pre-push hook**: runs `build:affected`, `test:affected`, and `build-storybook` for changed packages.
 
 ## Environment & Tooling
 
-- Node.js 22 (as defined in `.nvmrc`).
-- Yarn Berry 4.x with Plug‑and‑Play disabled (`node_modules` is present). Use `yarn install` to ensure dependencies are installed before development.
-- NX v19.8.x, Lerna for versioning packages.
-- Vite 5.0.x as the bundler.
-- TypeScript strict mode across all projects.
+- Node.js 22 (`.nvmrc`).
+- Yarn Berry 4.x, PnP disabled (`node_modules` present).
+- Lerna 8.x with `useNx: false`.
+- Vite 5.x as the bundler for packages and apps.
+- Vitest 1.x for unit tests.
 
 ## Git Workflow
 
-Use `git checkout -b <branch-name>` or `gco -b <branch-name>` to create and switch to new branches. Review recent commits with `git log` before starting work.
+Use `git checkout -b <branch-name>` to create branches. Review recent commits with `git log` before starting work. Versioning is managed by Lerna — do not manually edit `version` fields in `package.json`.
 
 ---
 
-This file should be updated whenever new top-level scripts or architectural changes are introduced.
+Update this file when new packages, apps, or top-level scripts are added.

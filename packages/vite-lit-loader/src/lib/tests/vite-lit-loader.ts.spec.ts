@@ -2,12 +2,7 @@ import { join } from 'path';
 
 import { loadStyle, loadTemplate, transformStyle } from '../vite-lit-loader';
 
-const path = (...args: string[]) =>
-  join(
-    process.cwd(),
-    '/packages/vite-lit-loader/src/lib/tests/assets/',
-    ...args,
-  );
+const path = (...args: string[]) => join(__dirname, 'assets', ...args);
 
 describe('vite-lit-loader', () => {
   describe('loadTemplate', () => {

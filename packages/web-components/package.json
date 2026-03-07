@@ -7,6 +7,18 @@
   "author": "Elad Mordechai Mizrahi",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run --coverage --passWithNoTests",
+    "storybook": "storybook dev -p 4600 -c .storybook",
+    "build-storybook": "storybook build -o storybook-static -c .storybook",
+    "visual": "loki test --reactUri file:./storybook-static",
+    "visual:ci": "loki test --requireReference --reactUri file:./storybook-static",
+    "visual:approve": "loki approve",
+    "lint": "eslint src",
+    "lint:css": "stylelint 'src/**/*.{ts,css}'",
+    "prepare": "yarn build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mordech/mordech-projects.git",
@@ -29,6 +41,27 @@
   },
   "dependencies": {
     "@mordech/tokens": "^0.37.0",
-    "@mordech/vite-lit-loader": "^0.37.0"
+    "@mordech/vite-lit-loader": "^0.37.0",
+    "@mordech/web-components": "*",
+    "@storybook/addons": "^7.6.6",
+    "@storybook/theming": "^7.6.6",
+    "@storybook/web-components-vite": "^7.6.6",
+    "@testing-library/jest-dom": "^6.1.6",
+    "jest-axe": "^8.0.0",
+    "lit": "^3.1.0",
+    "lit-html": "^3.1.0",
+    "react": "18.3.1",
+    "vite": "5.0.10",
+    "vite-plugin-dts": "3.7.0",
+    "vite-tsconfig-paths": "4.2.3",
+    "vitest": "1.6.0"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "loki": "^0.35.0",
+    "storybook": "7.6.6",
+    "stylelint": "^16.1.0",
+    "vite": "5.0.10",
+    "vitest": "1.6.0"
   }
 }

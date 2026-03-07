@@ -1,14 +1,15 @@
 import { litStyleLoader } from '@mordech/vite-lit-loader';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { readdirSync } from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-const cwd = process.cwd();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const components = Object.fromEntries(
-  readdirSync(path.join(cwd, 'packages/web-components/src/lib/components'))
+  readdirSync(path.join(__dirname, 'src/lib/components'))
     .filter((name) => {
       return !name.endsWith('.ts');
     })
@@ -29,7 +30,7 @@ export default defineConfig({
     dts({
       entryRoot: './src/lib',
     }),
-    nxViteTsPaths(),
+    tsconfigPaths(),
   ],
   build: {
     outDir: 'dist',

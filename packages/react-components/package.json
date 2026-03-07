@@ -4,6 +4,11 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "lint": "eslint src",
+    "lint:css": "stylelint 'src/**/*.{ts,tsx}'",
+    "test": "vitest run --passWithNoTests",
+    "storybook": "storybook dev -p 4400 -c .storybook",
+    "build-storybook": "storybook build -o storybook-static -c .storybook",
     "visual": "loki test --reactUri file:./storybook-static",
     "visual:approve": "loki approve",
     "visual:ci": "loki test --requireReference --reactUri file:./storybook-static"
@@ -31,6 +36,27 @@
   },
   "devDependencies": {
     "@mordech/tokens": "*",
-    "@mordech/web-components": "*"
+    "@mordech/web-components": "*",
+    "eslint": "8.57.0",
+    "loki": "^0.35.0",
+    "storybook": "7.6.6",
+    "stylelint": "^16.1.0",
+    "vitest": "1.6.0"
+  },
+  "dependencies": {
+    "@storybook/addons": "^7.6.6",
+    "@storybook/react": "7.6.6",
+    "@storybook/react-vite": "7.6.6",
+    "@storybook/theming": "^7.6.6",
+    "@testing-library/jest-dom": "^6.1.6",
+    "@testing-library/react": "15.0.6",
+    "@vitejs/plugin-react": "4.2.1",
+    "jest-axe": "^8.0.0",
+    "jest-styled-components": "^7.2.0",
+    "react": "18.3.1",
+    "react-markdown": "^9.0.1",
+    "styled-components": "^6.1.6",
+    "vite-tsconfig-paths": "4.2.3",
+    "vitest": "1.6.0"
   }
 }

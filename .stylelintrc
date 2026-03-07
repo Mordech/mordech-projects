@@ -2,6 +2,7 @@
   "extends": ["stylelint-config-recommended"],
   "files": "**/*.css",
   "ignoreFiles": [
+    "**/tsconfig*.json",
     "dist/**/*",
     "node_modules/**/*",
     "tmp/**/*",

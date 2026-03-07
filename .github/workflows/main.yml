@@ -11,7 +11,6 @@ on:
 
 env:
   GECKO_ID: '{test}'
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
 jobs:
   status-checks:
@@ -30,13 +29,11 @@ jobs:
 
       - name: Lint
         run: |
-          yarn nx affected --target=lint --base=origin/main --head=HEAD
-          yarn nx affected --target=lint:css --base=origin/main --head=HEAD
+          yarn lerna run lint --since origin/main --parallel
+          yarn lerna run lint:css --since origin/main --parallel
       - name: Test
-        run: yarn nx affected --target=test --base=origin/main --head=HEAD
+        run: yarn test:affected
       - name: Build
-        run: yarn nx affected --target=build --base=origin/main --head=HEAD
+        run: yarn build:affected
       - name: Build Storybook
-        run: yarn nx affected --target=build-storybook --base=origin/main --head=HEAD
-      - name: Visual Tests
-        run: yarn nx affected --target=visual:ci --base=origin/main --head=HEAD
+        run: yarn lerna run build-storybook --since origin/main
