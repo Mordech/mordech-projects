@@ -1,6 +1,7 @@
 import { colors } from '@mordech/tokens';
 import { html, LitElement, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { styleMap } from 'lit/directives/style-map.js';
 
 import '../mrd-interaction-layer';
@@ -39,7 +40,7 @@ export class MrdChipElement extends LitElement {
         part="chip"
         style=${this.chipColors}
         .role=${isInteractive ? 'button' : null}
-        tabindex=${isInteractive ? 0 : -1}
+        tabindex=${ifDefined(isInteractive ? 0 : undefined)}
         @keydown=${isInteractive ? this._handleKeydown : nothing}
       >
         <slot name="icon-start" part="icon-start"></slot>

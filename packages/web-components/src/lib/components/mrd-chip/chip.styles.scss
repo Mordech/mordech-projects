@@ -31,7 +31,7 @@
 }
 
 .label {
-  padding-inline: 4px;
+  padding-inline: var(--mrd-space-100);
 }
 
 ::slotted([slot='icon-start']) {

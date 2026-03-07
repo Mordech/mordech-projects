@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { html } from 'lit-html';
 
 import { MrdChipElement } from '../chip';
