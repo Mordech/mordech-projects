@@ -54,7 +54,7 @@
     "build:ts": "ts-node scripts/build.ts",
     "build:types": "tsc",
     "build": "run-s \"build:**\"",
-    "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"nx run @mordech/tokens:build\" &",
+    "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"yarn build\" &",
     "test": "vitest --coverage --run",
     "test:watch": "vitest",
     "lint": "eslint src",

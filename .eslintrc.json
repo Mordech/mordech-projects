@@ -25,7 +25,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@nx", "react", "@typescript-eslint", "simple-import-sort"],
+  "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
   "rules": {
     "no-console": "warn",
     "storybook/no-uninstalled-addons": "off",

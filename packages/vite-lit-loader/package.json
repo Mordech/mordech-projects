@@ -6,6 +6,12 @@
   "main": "dist/index.js",
   "license": "MIT",
   "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.json",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "prepare": "yarn build"
+  },
   "files": [
     "dist",
     "types"

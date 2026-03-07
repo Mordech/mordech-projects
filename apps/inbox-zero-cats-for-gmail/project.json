@@ -1,6 +1,0 @@
-{
-  "name": "inbox-zero-cats-for-gmail",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "tags": [],
-  "targets": {}
-}
