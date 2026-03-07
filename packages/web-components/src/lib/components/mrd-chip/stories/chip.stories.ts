@@ -108,3 +108,29 @@ Error.args = {
   ...Default.args,
   color: 'error',
 };
+
+export const ClearableImplementation = () => {
+  const chips = ['React', 'TypeScript', 'Lit', 'Web Components'];
+
+  const container = document.createElement('div');
+  container.style.display = 'flex';
+  container.style.gap = '0.5rem';
+  container.style.flexWrap = 'wrap';
+
+  const render = (items: string[]) => {
+    container.innerHTML = '';
+    items.forEach((label) => {
+      const chip = document.createElement('mrd-chip') as MrdChipElement;
+      chip.variant = 'clearable';
+      chip.textContent = label;
+      chip.addEventListener('mrd-chip-clear', () => {
+        const updated = items.filter((i) => i !== label);
+        render(updated);
+      });
+      container.appendChild(chip);
+    });
+  };
+
+  render(chips);
+  return container;
+};
