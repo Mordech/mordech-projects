@@ -39,6 +39,7 @@ coverage
 .nx/
 
 # yarn
+.pnp.*
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -46,8 +47,4 @@ coverage
 !.yarn/sdks
 !.yarn/versions
 
-# Swap the comments on the following lines if you don't wish to use zero-installs
-# Documentation here: https://yarnpkg.com/features/zero-installs
-# !.yarn/cache
-.pnp.*
 .cocoindex_code

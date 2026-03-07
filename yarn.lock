@@ -5083,17 +5083,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@loki/integration-react@npm:^0.35.0":
-  version: 0.35.0
-  resolution: "@loki/integration-react@npm:0.35.0"
+"@loki/integration-react@npm:^0.35.1":
+  version: 0.35.1
+  resolution: "@loki/integration-react@npm:0.35.1"
   dependencies:
     "@loki/browser": "npm:^0.35.0"
   peerDependencies:
-    "@storybook/react": ^5 || ^6 || ^7
+    "@storybook/react": ^5 || ^6 || ^7 || ^8
   peerDependenciesMeta:
     "@storybook/react":
       optional: true
-  checksum: 10/1ee15dffbc6f4f4e5b9623bc041f338c4b100193b42488fc2df2d3735da97a625cb506626421d8b28afadb32fe85e887aaa483d69ac6b5637807b6a8a1ddefd9
+  checksum: 10/854d12aef3ce45f9920ecfd0646f0ca2f082cddd059d67fac6b59df9602acae9fb2b3a681e55ac231c1b7e5b815907176b5cb9110898e7ac37a024442d4580a7
   languageName: node
   linkType: hard
 
@@ -5363,7 +5363,7 @@ __metadata:
     eslint: "npm:8.57.0"
     jest-axe: "npm:^8.0.0"
     jest-styled-components: "npm:^7.2.0"
-    loki: "npm:^0.35.0"
+    loki: "npm:^0.35.1"
     react: "npm:18.3.1"
     react-markdown: "npm:^9.0.1"
     storybook: "npm:7.6.6"
@@ -5429,7 +5429,7 @@ __metadata:
     jest-axe: "npm:^8.0.0"
     lit: "npm:^3.1.0"
     lit-html: "npm:^3.1.0"
-    loki: "npm:^0.35.0"
+    loki: "npm:^0.35.1"
     react: "npm:18.3.1"
     storybook: "npm:7.6.6"
     stylelint: "npm:^16.1.0"
@@ -21501,11 +21501,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loki@npm:^0.35.0":
-  version: 0.35.0
-  resolution: "loki@npm:0.35.0"
+"loki@npm:^0.35.1":
+  version: 0.35.1
+  resolution: "loki@npm:0.35.1"
   dependencies:
-    "@loki/integration-react": "npm:^0.35.0"
+    "@loki/integration-react": "npm:^0.35.1"
     "@loki/integration-react-native": "npm:^0.35.0"
     "@loki/integration-vue": "npm:^0.35.0"
     "@loki/runner": "npm:^0.35.0"
@@ -21514,13 +21514,13 @@ __metadata:
     "@loki/target-native-android-emulator": "npm:^0.35.0"
     "@loki/target-native-ios-simulator": "npm:^0.35.0"
   peerDependencies:
-    "@storybook/react": ^5 || ^6 || ^7
+    "@storybook/react": ^5 || ^6 || ^7 || ^8
   peerDependenciesMeta:
     "@storybook/react":
       optional: true
   bin:
     loki: bin/loki
-  checksum: 10/a86ae2cb0829f44773dd2e9e35a29d754621ff367b0d3f76d0b1fa654d2777e608c0366ae7e4c377881ec9ddda1effb400004ab1c2e07a9380d5c0aa333414b0
+  checksum: 10/2656447b22971ddda6066a1ca55681e58e81ca186d01539e09ce476d3cb8703688d0fde8c8c7cda89a7e2ed3e439a79b867643732f5181837fc8c92baa85653d
   languageName: node
   linkType: hard
 
@@ -23297,7 +23297,7 @@ __metadata:
     lit: "npm:^3.1.0"
     lit-analyzer: "npm:^2.0.2"
     lit-html: "npm:^3.1.0"
-    loki: "npm:^0.35.0"
+    loki: "npm:^0.35.1"
     nodemon: "npm:^3.0.2"
     npm-run-all: "npm:^4.1.5"
     postcss: "npm:8.4.38"
