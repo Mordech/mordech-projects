@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           corepack enable
-          yarn install --immutable --immutable-cache --check-cache
+          yarn install --immutable
 
       - name: Lint
         run: |
