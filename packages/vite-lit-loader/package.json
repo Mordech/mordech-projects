@@ -24,9 +24,15 @@
   "homepage": "https://github.com/Mordech/mordech-projects/tree/main/packages/vite-lit-loader#readme",
   "dependencies": {
     "cheerio": "1.0.0-rc.12",
-    "tslib": "^2.6.2"
+    "lit": "^3.1.0",
+    "tslib": "^2.6.2",
+    "vite": "5.0.10"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "vitest": "1.6.0"
   }
 }

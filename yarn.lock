@@ -5353,6 +5353,24 @@ __metadata:
   dependencies:
     "@mordech/tokens": "npm:*"
     "@mordech/web-components": "npm:*"
+    "@storybook/addons": "npm:^7.6.6"
+    "@storybook/react": "npm:7.6.6"
+    "@storybook/react-vite": "npm:7.6.6"
+    "@storybook/theming": "npm:^7.6.6"
+    "@testing-library/jest-dom": "npm:^6.1.6"
+    "@testing-library/react": "npm:15.0.6"
+    "@vitejs/plugin-react": "npm:4.2.1"
+    eslint: "npm:8.57.0"
+    jest-axe: "npm:^8.0.0"
+    jest-styled-components: "npm:^7.2.0"
+    loki: "npm:^0.35.0"
+    react: "npm:18.3.1"
+    react-markdown: "npm:^9.0.1"
+    storybook: "npm:7.6.6"
+    styled-components: "npm:^6.1.6"
+    stylelint: "npm:^16.1.0"
+    vite-tsconfig-paths: "npm:4.2.3"
+    vitest: "npm:1.6.0"
   languageName: unknown
   linkType: soft
 
@@ -5360,14 +5378,26 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mordech/storybook-toggle-theme-addon@workspace:packages/storybook-toggle-theme-addon"
   dependencies:
+    "@lit/react": "npm:^1.0.5"
     "@mordech/tokens": "npm:*"
     "@mordech/web-components": "npm:*"
+    "@storybook/addons": "npm:^7.6.6"
+    react: "npm:18.3.1"
+    styled-components: "npm:^6.1.6"
   languageName: unknown
   linkType: soft
 
 "@mordech/tokens@npm:*, @mordech/tokens@npm:^0.37.0, @mordech/tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
   resolution: "@mordech/tokens@workspace:packages/tokens"
+  dependencies:
+    esbuild: "npm:0.19.11"
+    eslint: "npm:8.57.0"
+    react: "npm:18.3.1"
+    styled-components: "npm:^6.1.6"
+    stylelint: "npm:^16.1.0"
+    ts-node: "npm:^10.9.2"
+    vitest: "npm:1.6.0"
   languageName: unknown
   linkType: soft
 
@@ -5376,7 +5406,11 @@ __metadata:
   resolution: "@mordech/vite-lit-loader@workspace:packages/vite-lit-loader"
   dependencies:
     cheerio: "npm:1.0.0-rc.12"
+    eslint: "npm:8.57.0"
+    lit: "npm:^3.1.0"
     tslib: "npm:^2.6.2"
+    vite: "npm:5.0.10"
+    vitest: "npm:1.6.0"
   languageName: unknown
   linkType: soft
 
@@ -5386,21 +5420,21 @@ __metadata:
   dependencies:
     "@mordech/tokens": "npm:^0.37.0"
     "@mordech/vite-lit-loader": "npm:^0.37.0"
-    "@storybook/addon-docs": "npm:7.6.6"
-    "@storybook/addon-essentials": "npm:7.6.6"
-    "@storybook/addon-mdx-gfm": "npm:7.6.6"
+    "@mordech/web-components": "npm:*"
     "@storybook/addons": "npm:^7.6.6"
-    "@storybook/builder-vite": "npm:^7.6.6"
-    "@storybook/core-common": "npm:^7.6.6"
-    "@storybook/core-server": "npm:7.6.6"
     "@storybook/theming": "npm:^7.6.6"
-    "@storybook/web-components": "npm:^7.6.6"
     "@storybook/web-components-vite": "npm:^7.6.6"
+    "@testing-library/jest-dom": "npm:^6.1.6"
+    eslint: "npm:8.57.0"
+    jest-axe: "npm:^8.0.0"
+    lit: "npm:^3.1.0"
+    lit-html: "npm:^3.1.0"
+    loki: "npm:^0.35.0"
+    react: "npm:18.3.1"
     storybook: "npm:7.6.6"
+    stylelint: "npm:^16.1.0"
     vite: "npm:5.0.10"
     vite-plugin-dts: "npm:3.7.0"
-    vite-plugin-eslint: "npm:^1.8.1"
-    vite-plugin-singlefile: "npm:^0.13.5"
     vite-tsconfig-paths: "npm:4.2.3"
     vitest: "npm:1.6.0"
   languageName: unknown
@@ -18601,10 +18635,18 @@ __metadata:
   resolution: "hct-color-picker@workspace:apps/hct-color-picker"
   dependencies:
     "@figma/plugin-typings": "npm:^1.95.0"
+    "@material/material-color-utilities": "npm:^0.2.7"
     "@mordech/tokens": "npm:*"
     "@mordech/vite-lit-loader": "npm:*"
     "@mordech/web-components": "npm:*"
+    color: "npm:^4.2.3"
+    concurrently: "npm:^8.2.2"
+    esbuild: "npm:0.19.11"
+    lit: "npm:^3.1.0"
+    lit-analyzer: "npm:^2.0.2"
+    stylelint: "npm:^16.1.0"
     vite: "npm:^5.0.10"
+    vite-plugin-singlefile: "npm:^0.13.5"
   languageName: unknown
   linkType: soft
 
@@ -19099,6 +19141,15 @@ __metadata:
   dependencies:
     "@mordech/tokens": "npm:*"
     "@mordech/web-components": "npm:*"
+    concurrently: "npm:^8.2.2"
+    dotenv: "npm:^16.3.1"
+    esbuild: "npm:0.19.11"
+    eslint: "npm:8.57.0"
+    lit-html: "npm:^3.1.0"
+    stylelint: "npm:^16.1.0"
+    ts-node: "npm:^10.9.2"
+    web-ext: "npm:^7.9.0"
+    webextension-polyfill: "npm:^0.10.0"
   languageName: unknown
   linkType: soft
 
@@ -25351,6 +25402,7 @@ __metadata:
     "@mordech/tokens": "npm:*"
     babel-eslint: "npm:^10.0.0"
     babel-plugin-styled-components: "npm:^2.0.7"
+    dotenv: "npm:^16.3.1"
     eslint: "npm:8.56.0"
     gatsby: "npm:^4.22.1"
     gatsby-plugin-image: "npm:^2.22.0"
@@ -25360,10 +25412,14 @@ __metadata:
     gatsby-plugin-styled-components: "npm:^5.22.0"
     gatsby-source-filesystem: "npm:^4.22.0"
     gatsby-transformer-sharp: "npm:^4.22.0"
+    postcss: "npm:8.4.38"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     styled-components: "npm:^6.1.6"
+    stylelint: "npm:^16.1.0"
     svg-react-loader: "npm:^0.4.6"
+    tslib: "npm:^2.6.2"
+    typescript: "npm:5.4.5"
   languageName: unknown
   linkType: soft
 

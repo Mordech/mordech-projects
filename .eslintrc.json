@@ -26,6 +26,11 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "no-console": "warn",
     "storybook/no-uninstalled-addons": "off",
