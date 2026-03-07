@@ -50,3 +50,4 @@ coverage
 # Documentation here: https://yarnpkg.com/features/zero-installs
 # !.yarn/cache
 .pnp.*
+.cocoindex_code
