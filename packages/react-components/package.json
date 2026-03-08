@@ -1,6 +1,6 @@
 {
   "name": "@mordech/react-components",
-  "version": "0.31.0",
+  "version": "0.32.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -35,8 +35,8 @@
     }
   },
   "devDependencies": {
-    "@mordech/tokens": "*",
-    "@mordech/web-components": "*",
+    "@mordech/tokens": "^0.38.0",
+    "@mordech/web-components": "^0.38.0",
     "eslint": "8.57.0",
     "loki": "^0.35.1",
     "storybook": "7.6.6",

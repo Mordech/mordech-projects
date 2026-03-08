@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.32.0 (2026-03-08)
+
+### Features
+
+- **hct-color-picker:** detach style ([#121](https://github.com/Mordech/mordech-projects/issues/121)) ([5d890ec](https://github.com/Mordech/mordech-projects/commit/5d890ec63616efe070215adf1b17c399e0a228dc))
+- **hct-color-picker:** migrate to dynamically load pages ([#124](https://github.com/Mordech/mordech-projects/issues/124)) ([440e711](https://github.com/Mordech/mordech-projects/commit/440e711270d93b0af8a9bd2c6dcb2869e5b321da))
+- **web-components:** update button props ([#111](https://github.com/Mordech/mordech-projects/issues/111)) ([a45630f](https://github.com/Mordech/mordech-projects/commit/a45630f7606c93b7682981f6cfa4b2e293883b46))
+
+# 0.31.0 (2023-12-09)
+
+# 0.29.0 (2023-09-16)
+
+# 0.28.0 (2023-05-16)
+
+# 0.27.0 (2023-05-01)
+
+# 0.26.0 (2023-02-11)
+
+### Bug Fixes
+
+- Fix toggle theme store and target issues ([#75](https://github.com/Mordech/mordech-projects/issues/75)) ([3ebfa07](https://github.com/Mordech/mordech-projects/commit/3ebfa07e9b5be9d9057949aa98e89ef79c11bc95))
+
+### Features
+
+- web components individual imports ([#76](https://github.com/Mordech/mordech-projects/issues/76)) ([16e06ca](https://github.com/Mordech/mordech-projects/commit/16e06ca35612c2de85be762bd74af8fc3e399feb))
+
+# 0.25.0 (2023-02-07)
+
+### Features
+
+- hct color picker figma ([#69](https://github.com/Mordech/mordech-projects/issues/69)) ([0a8d4db](https://github.com/Mordech/mordech-projects/commit/0a8d4dbc461792f4dc9100301aae6da09ad3cb35))
+
+## 0.24.1 (2023-01-13)
+
+# 0.24.0 (2023-01-13)
+
+# 0.23.0 (2023-01-03)
+
+# 0.22.0 (2022-12-30)
+
+### Features
+
+- Web components library ([#64](https://github.com/Mordech/mordech-projects/issues/64)) ([809c33d](https://github.com/Mordech/mordech-projects/commit/809c33d1c059d04f4cebfeede731641a1cad79db))
+
 # [0.31.0](https://github.com/Mordech/mordech-projects/compare/v0.29.1...v0.31.0) (2023-12-09)
 
 **Note:** Version bump only for package @mordech/storybook-toggle-theme-addon
