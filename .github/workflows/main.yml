@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           corepack enable
-          yarn install --immutable --immutable-cache --check-cache
+          yarn install --immutable
 
       - name: Lint
         run: |
@@ -37,3 +37,5 @@ jobs:
         run: yarn build:affected
       - name: Build Storybook
         run: yarn lerna run build-storybook --since origin/main
+      - name: Visual regression tests
+        run: yarn lerna run visual:ci --since origin/main

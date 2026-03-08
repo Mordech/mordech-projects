@@ -64,7 +64,7 @@ export class MrdTextFieldElement extends LitElement {
           part="input"
           .value=${live(this.value)}
           .type=${this.type}
-          .autocomplete=${this.autocomplete || nothing}
+          .autocomplete=${this.autocomplete || undefined}
           .autocapitalize=${this.autocapitalize}
           ?disabled=${this.disabled}
           name=${name}
