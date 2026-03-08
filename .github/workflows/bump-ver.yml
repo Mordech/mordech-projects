@@ -1,27 +1,39 @@
-name: Bump version
+name: Publish packages
 
 on:
   workflow_dispatch:
 
 jobs:
-  status-checks:
-    name: Bump version
+  publish:
+    name: Publish packages
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: |
           corepack enable
           yarn install --immutable
 
-      - name: Bump version
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Configure git user
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          yarn lerna version --conventional-commits --yes
+
+      - name: Build packages
+        run: yarn build
+
+      - name: Publish packages
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn lerna publish --conventional-commits --yes --no-private
