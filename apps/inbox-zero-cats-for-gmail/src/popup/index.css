@@ -81,7 +81,7 @@ ul {
 
 ul.image-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
   gap: var(--mrd-space-200);
   padding: var(--mrd-space-100);
 }
@@ -91,8 +91,6 @@ li.image {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-self: start;
-  width: 68px;
 }
 
 li.image > img {
@@ -139,13 +137,14 @@ li.random > img {
 .title-list ul {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 li.title-row {
   display: flex;
   align-items: center;
   gap: var(--mrd-space-200);
-  padding: var(--mrd-space-100);
+  padding: var(--mrd-space-100) var(--mrd-space-200);
   background: var(--mrd-color-background-base);
 }
 
@@ -163,7 +162,9 @@ li.title-row:only-child {
 
 .title-text {
   flex: 1;
-  white-space: pre-line;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 li.title-row .delete-btn {
@@ -190,6 +191,7 @@ li.title-row:focus-within .delete-btn {
 
 /* Full-width buttons */
 .full-width {
+  display: block;
   width: 100%;
 }
 
