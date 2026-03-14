@@ -91,7 +91,7 @@ li.image {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-self: center;
+  justify-self: start;
   width: 68px;
 }
 
