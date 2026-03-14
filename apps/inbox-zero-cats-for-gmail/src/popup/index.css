@@ -91,6 +91,8 @@ li.image {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-self: center;
+  width: 68px;
 }
 
 li.image > img {
