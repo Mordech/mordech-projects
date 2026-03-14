@@ -48,3 +48,4 @@ coverage
 !.yarn/versions
 
 .cocoindex_code
+.worktrees
