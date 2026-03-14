@@ -192,10 +192,6 @@ mrd-button.full-width {
   display: block;
 }
 
-mrd-button.full-width::part(button) {
-  width: 100%;
-}
-
 /* File upload hidden input */
 input[type='file'] {
   display: block;
