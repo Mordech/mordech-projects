@@ -106,7 +106,16 @@ li.image > img {
 li.image > mrd-button {
   position: absolute;
   inset-block-end: -0.25rem;
-  inset-inline-end: -0.25rem;
+  inset-inline: 0;
+  margin-inline: auto;
+  width: fit-content;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+li.image:hover > mrd-button,
+li.image:focus-within > mrd-button {
+  opacity: 1;
 }
 
 li.random > img {
