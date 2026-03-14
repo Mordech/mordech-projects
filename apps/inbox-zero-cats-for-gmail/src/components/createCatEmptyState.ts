@@ -1,9 +1,12 @@
+import browser from 'webextension-polyfill';
+
+import { defaultCatSubtitle } from '../data';
 import { setCatImage } from '../utils/setCatImage';
 import { setCatTitle } from '../utils/setCatTitle';
 
 export const MOUNTED_INDICATION = 'ibxzc-mounted';
 
-export const createCatEmptyState = (emptyState: Element) => {
+export const createCatEmptyState = async (emptyState: Element) => {
   emptyState.textContent = '';
   const catContainer = document.createElement('div');
   catContainer.className = 'cat-container';
@@ -29,9 +32,13 @@ export const createCatEmptyState = (emptyState: Element) => {
   imageContainer.appendChild(catBackdrop);
   imageContainer.appendChild(catImage);
 
+  const { catSubtitle } = await browser.storage.local
+    .get('catSubtitle')
+    .catch(() => ({}));
+
   const catText = document.createElement('span');
   catText.className = 'cat-text l6';
-  catText.textContent = 'Go outside and play with a cat!';
+  catText.textContent = catSubtitle || defaultCatSubtitle;
   catContainer.appendChild(catText);
 
   const mountIndication = document.createElement('span');

@@ -1,6 +1,7 @@
 export interface Data {
   catTitles?: string[];
   catImageUrls?: string[];
+  catSubtitle?: string;
   theme?: 'light' | 'dark';
 }
 

@@ -3,15 +3,27 @@ import browser from 'webextension-polyfill';
 
 import '@mordech/web-components';
 
-import { footer } from './components';
+import { topBar } from './components';
 import { customImageSection, customTitleSection } from './sections';
 import { resetImages, resetTitles } from './utils';
 
+let activeTab: 'photos' | 'titles' = 'photos';
+let titlesSubTab: 'main' | 'subtitle' = 'main';
+
+const setActiveTab = (tab: 'photos' | 'titles') => {
+  activeTab = tab;
+  renderContent();
+};
+
+export const setTitlesSubTab = (sub: 'main' | 'subtitle') => {
+  titlesSubTab = sub;
+  renderContent();
+};
+
 export const renderContent = async () => {
-  const headerElem = document.querySelector('header');
-  const footerElem = document.querySelector('footer');
-  const customTitlesElem = document.querySelector('#custom-titles');
-  const customImagesElem = document.querySelector('#custom-images');
+  const appElem = document.querySelector<HTMLElement>('#app');
+  if (!appElem) return;
+
   const { theme } = await browser.storage.local
     .get('theme')
     .then((theme) => theme)
@@ -21,44 +33,34 @@ export const renderContent = async () => {
     document.body.setAttribute('data-theme', theme);
   }
 
-  if (
-    !headerElem ||
-    !footerElem ||
-    !(customTitlesElem instanceof HTMLElement) ||
-    !(customImagesElem instanceof HTMLElement)
-  )
-    return;
-
-  render(
-    html`
-      <h1>Customize your <strong>inbox zero</strong></h1>
-      <mrd-toggle-theme
-        .theme=${theme}
-        .saveToStorage=${false}
-        size="compact"
-        @toggle-theme=${(event: CustomEvent) => {
-          browser.storage.local.set({ theme: event.detail.theme });
-        }}
-      ></mrd-toggle-theme>
-    `,
-    headerElem,
-  );
   const { catTitles } = await browser.storage.local
     .get('catTitles')
     .catch((error) => error);
 
-  catTitles
-    ? render(customTitleSection(catTitles), customTitlesElem)
-    : resetTitles();
+  if (!catTitles) {
+    await resetTitles();
+    return;
+  }
 
   const { catImageUrls } = await browser.storage.local
     .get('catImageUrls')
     .catch((error) => error);
 
-  catImageUrls
-    ? render(customImageSection(catImageUrls), customImagesElem)
-    : resetImages();
-  render(footer, footerElem);
+  if (!catImageUrls) {
+    await resetImages();
+    return;
+  }
+
+  const { catSubtitle } = await browser.storage.local
+    .get('catSubtitle')
+    .catch(() => ({}));
+
+  const content =
+    activeTab === 'photos'
+      ? customImageSection(catImageUrls)
+      : customTitleSection(catTitles, titlesSubTab, catSubtitle);
+
+  render(html`${topBar(activeTab, setActiveTab, theme)}${content}`, appElem);
 };
 
 renderContent();

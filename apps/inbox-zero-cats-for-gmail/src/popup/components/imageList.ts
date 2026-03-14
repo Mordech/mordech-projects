@@ -20,18 +20,25 @@ export const imageList = (category: DataKeys, items: string[]) => {
           ? 'Random cat image'
           : `Image no. ${imageNumber}. User uploaded`}
       />
+      ${isRandom
+        ? html`<mrd-chip color="secondary" class="random-chip"
+            >Random</mrd-chip
+          >`
+        : ''}
       ${filteredItems.length >= 2
-        ? html`<button
+        ? html`<mrd-button
+            size="tiny"
+            color="error"
+            variant="tonal"
             @click=${() => {
               removeItem(category, items, item);
             }}
-            class="destructive icon"
             aria-label=${isRandom
               ? 'Delete all random cat images'
               : `Delete user uploaded image number ${imageNumber}.`}
           >
             ${deleteForeverIcon}
-          </button>`
+          </mrd-button>`
         : ''}
     </li>`;
   });

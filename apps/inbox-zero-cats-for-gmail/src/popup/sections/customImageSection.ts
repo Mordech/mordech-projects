@@ -1,12 +1,9 @@
-// TODO Manage uploading large images
 import { html } from 'lit-html';
 import browser from 'webextension-polyfill';
 
 import { defaultCatImages } from '../../data/index';
 import { Data } from '../@types/index';
-import { uploadIcon } from '../assets/uploadIcon';
 import { imageList } from '../components/index';
-import { summary } from '../components/summary';
 import { getAndAddValue } from '../utils/index';
 
 export const addImage = async () => {
@@ -28,48 +25,52 @@ export const addImage = async () => {
   }
 };
 
-export const customImageSection = (catImageUrls: Data['catImageUrls']) =>
-  html`<details open>
-    ${summary('Custom Images')}
-    <div class="custom-category-list">
-      <div class="custom-category-list content">
-        <div class="input-text-row">
-          ${browser.runtime.getURL('').startsWith('moz-extension://') &&
-          location.pathname === '/popup/index.html'
-            ? html`
-                <p>
-                  <strong>Firefox users 🦊</strong> can only upload images from
-                  a browser tab.
-                  <a
-                    href=${browser.runtime.getURL('options/index.html')}
-                    target="_blank"
-                    >Go to the options tab</a
-                  >
-                  to upload a photo.
-                </p>
-              `
-            : uploadImageButton}
-        </div>
-        <ul class="image-grid">
-          ${imageList('catImageUrls', catImageUrls || defaultCatImages)}
-        </ul>
-      </div>
-    </div>
-  </details>`;
+const triggerUpload = () => {
+  const input = document.getElementById('upload-image');
+  if (input) input.click();
+};
 
-const uploadImageButton = html`<input
-    aria-label="Upload an image"
-    type="file"
-    accept="image/jpeg, image/png, image/jpg"
-    id="upload-image"
-    name="upload-image"
-    @change=${addImage}
-  />
-  <label
-    id="upload-image-button"
-    class="btn primary"
-    role="button"
-    for="upload-image"
-  >
-    ${uploadIcon} Upload image
-  </label>`;
+export const customImageSection = (catImageUrls: Data['catImageUrls']) => {
+  const isFirefoxPopup =
+    browser.runtime.getURL('').startsWith('moz-extension://') &&
+    location.pathname === '/popup/index.html';
+
+  return html`
+    <div class="content-container">
+      <ul class="image-grid">
+        ${imageList('catImageUrls', catImageUrls || defaultCatImages)}
+      </ul>
+    </div>
+    ${isFirefoxPopup
+      ? html`
+          <p class="firefox-notice">
+            <strong>Firefox users 🦊</strong> can only upload images from a
+            browser tab.
+            <a
+              href=${browser.runtime.getURL('options/index.html')}
+              target="_blank"
+              >Go to the options tab</a
+            >
+            to upload a photo.
+          </p>
+        `
+      : html`
+          <input
+            aria-label="Upload an image"
+            type="file"
+            accept="image/jpeg, image/png, image/jpg"
+            id="upload-image"
+            name="upload-image"
+            @change=${addImage}
+          />
+          <mrd-button
+            size="tiny"
+            variant="fill"
+            class="full-width"
+            @click=${triggerUpload}
+          >
+            Upload image
+          </mrd-button>
+        `}
+  `;
+};
