@@ -1,7 +1,8 @@
 import { html } from 'lit-html';
+import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
 
 import { DataKeys } from '../@types';
-import { deleteForeverIcon } from '../assets/deleteForeverIcon';
+import deleteForeverSvg from '../assets/deleteForeverIcon.svg';
 import { removeItem } from '../utils/removeItem';
 
 export const itemList = (category: DataKeys, items: string[]) =>
@@ -20,7 +21,7 @@ export const itemList = (category: DataKeys, items: string[]) =>
               }}
               aria-label=${`Delete title ${item}`}
             >
-              ${deleteForeverIcon}
+              ${unsafeSVG(deleteForeverSvg)}
             </mrd-button>`
           : ''}
       </li>`,

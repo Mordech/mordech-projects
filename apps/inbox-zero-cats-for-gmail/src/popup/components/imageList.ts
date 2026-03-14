@@ -1,7 +1,8 @@
 import { html } from 'lit-html';
+import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
 
 import { DataKeys } from '../@types';
-import { deleteForeverIcon } from '../assets/deleteForeverIcon';
+import deleteForeverSvg from '../assets/deleteForeverIcon.svg';
 import { removeItem } from '../utils/removeItem';
 
 export const imageList = (category: DataKeys, items: string[]) => {
@@ -37,7 +38,7 @@ export const imageList = (category: DataKeys, items: string[]) => {
               ? 'Delete all random cat images'
               : `Delete user uploaded image number ${imageNumber}.`}
           >
-            ${deleteForeverIcon}
+            ${unsafeSVG(deleteForeverSvg)}
           </mrd-button>`
         : ''}
     </li>`;

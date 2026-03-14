@@ -1,8 +1,9 @@
 import { html } from 'lit-html';
+import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
 import browser from 'webextension-polyfill';
 
-import { brandFamilyIcon } from '../assets/brandFamilyIcon';
-import { photoLibraryIcon } from '../assets/photoLibraryIcon';
+import brandFamilySvg from '../assets/brandFamilyIcon.svg';
+import photoLibrarySvg from '../assets/photoLibraryIcon.svg';
 import { renderContent } from '../index';
 
 export const topBar = (
@@ -18,14 +19,14 @@ export const topBar = (
         variant=${activeTab === 'photos' ? 'fill' : 'text'}
         @click=${() => onTabChange('photos')}
       >
-        ${photoLibraryIcon} Photos
+        ${unsafeSVG(photoLibrarySvg)} Photos
       </mrd-button>
       <mrd-button
         size="tiny"
         variant=${activeTab === 'titles' ? 'fill' : 'text'}
         @click=${() => onTabChange('titles')}
       >
-        ${brandFamilyIcon} Titles
+        ${unsafeSVG(brandFamilySvg)} Titles
       </mrd-button>
     </div>
     <mrd-toggle-theme
