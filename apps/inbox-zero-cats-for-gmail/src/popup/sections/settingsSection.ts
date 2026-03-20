@@ -12,7 +12,6 @@ const PACKS: { key: PackKey; label: string; emoji: string }[] = [
   { key: 'cats', label: 'Cats', emoji: '🐱' },
   { key: 'dogs', label: 'Dogs', emoji: '🐶' },
   { key: 'nature', label: 'Nature', emoji: '🌿' },
-  { key: 'art', label: 'Art', emoji: '🎨' },
 ];
 
 const selectPack = async (key: PackKey) => {
@@ -24,15 +23,18 @@ const selectPack = async (key: PackKey) => {
     url.startsWith('data:'),
   );
 
-  const pack = PACKS.find((p) => p.key === key);
+  const packMeta = PACKS.find((p) => p.key === key);
+  const { images, titles, subtitle } = getPack(key);
 
   await browser.storage.local.set({
     activePack: key,
-    catImageUrls: [...getPack(key), ...uploads],
+    catImageUrls: [...images, ...uploads],
+    catTitles: titles,
+    catSubtitle: subtitle,
   });
   renderContent();
   showToast({
-    message: `${pack?.emoji ?? ''} ${pack?.label ?? key} pack applied`,
+    message: `${packMeta?.emoji ?? ''} ${packMeta?.label ?? key} pack applied`,
     type: 'success',
   });
 };
@@ -170,7 +172,7 @@ export const settingsSection = (activePack: PackKey) => html`
       <div class="button-row">
         <mrd-button
           size="tiny"
-          variant="tonal"
+          variant="inverted"
           class="full-width"
           @click=${handleExport}
         >
@@ -178,7 +180,7 @@ export const settingsSection = (activePack: PackKey) => html`
         </mrd-button>
         <mrd-button
           size="tiny"
-          variant="tonal"
+          variant="inverted"
           class="full-width"
           @click=${handleImport}
         >
