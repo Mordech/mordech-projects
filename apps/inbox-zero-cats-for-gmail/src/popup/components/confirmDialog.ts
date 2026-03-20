@@ -2,25 +2,25 @@ import { html, render } from 'lit-html';
 
 type SemanticColors = 'primary' | 'secondary' | 'success' | 'error';
 
-interface ConfirmToastOptions {
+interface ConfirmDialogOptions {
   message?: string;
   confirmLabel?: string;
   confirmColor?: SemanticColors;
 }
 
-export const showConfirmToast = (
+export const showConfirmDialog = (
   onConfirm: () => void,
   {
     message = 'Reset all settings? This cannot be undone.',
     confirmLabel = 'Reset',
     confirmColor = 'error',
-  }: ConfirmToastOptions = {},
+  }: ConfirmDialogOptions = {},
 ) => {
-  const existing = document.querySelector('.toast-container');
+  const existing = document.querySelector('.dialog-container');
   if (existing) return;
 
   const container = document.createElement('div');
-  container.className = 'toast-container';
+  container.className = 'dialog-container';
   document.body.appendChild(container);
 
   const dismiss = () => {
