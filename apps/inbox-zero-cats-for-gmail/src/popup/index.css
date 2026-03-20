@@ -343,7 +343,7 @@ strong {
   left: 0;
   height: 3px;
   border-radius: 0;
-  animation: timer-drain var(--toast-duration, 3000ms) linear forwards;
+  animation: timer-drain var(--mrd-toast-duration, 3000ms) linear forwards;
 }
 
 .toast-timer.toast-timer-success { background: var(--mrd-color-success-base); }
