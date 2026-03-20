@@ -17,4 +17,5 @@ export const defaultNatureImages = [
   'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?fit=crop&w=320&h=320&q=100&mrd-random',
   'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?fit=crop&w=320&h=320&q=100&mrd-random',
   'https://images.unsplash.com/photo-1439853949212-36089c01f81e?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?fit=crop&w=320&h=320&q=100&mrd-random',
 ];

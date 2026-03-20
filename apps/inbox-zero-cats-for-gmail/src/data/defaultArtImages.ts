@@ -18,4 +18,5 @@ export const defaultArtImages = [
   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?fit=crop&w=320&h=320&q=100&mrd-random',
   'https://images.unsplash.com/photo-1561059488-916d4944f928?fit=crop&w=320&h=320&q=100&mrd-random',
   'https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=320&h=320&q=100&mrd-random',
 ];

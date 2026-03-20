@@ -14,14 +14,13 @@ export type PackKey = 'cats' | 'dogs' | 'nature' | 'art';
 
 export const getPack = (key: PackKey): string[] => {
   switch (key) {
+    case 'cats':
+      return defaultCatImages;
     case 'dogs':
       return defaultDogImages;
     case 'nature':
       return defaultNatureImages;
     case 'art':
       return defaultArtImages;
-    case 'cats':
-    default:
-      return defaultCatImages;
   }
 };
