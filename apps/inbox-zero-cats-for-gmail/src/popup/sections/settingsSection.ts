@@ -69,7 +69,23 @@ const handleExport = async () => {
   showToast({ message: 'Backup saved', type: 'success' });
 };
 
+const needsOptionsPage = () => {
+  const isPopup = location.pathname === '/popup/index.html';
+  const isFirefox = browser.runtime.getURL('').startsWith('moz-extension://');
+  const isLinux = navigator.userAgent.includes('Linux');
+  return isPopup && (isFirefox || isLinux);
+};
+
 const handleImport = () => {
+  if (needsOptionsPage()) {
+    showToast({
+      message:
+        'Import is not supported in the popup on Firefox / Linux. Use the options page.',
+      type: 'error',
+    });
+    return;
+  }
+
   const input = document.createElement('input');
   input.type = 'file';
   input.accept = '.json';
@@ -118,9 +134,9 @@ const handleImport = () => {
               typeof data.catSubtitle === 'string'
                 ? data.catSubtitle
                 : defaultCatSubtitle,
-            activePack: (
-              ['cats', 'dogs', 'nature', 'art'] as PackKey[]
-            ).includes(data.activePack as PackKey)
+            activePack: (['cats', 'dogs', 'nature'] as PackKey[]).includes(
+              data.activePack as PackKey,
+            )
               ? (data.activePack as PackKey)
               : 'cats',
           });
@@ -155,7 +171,7 @@ export const settingsSection = (activePack: PackKey) => html`
           ({ key, label, emoji }) => html`
             <mrd-button
               size="tiny"
-              variant=${activePack === key ? 'fill' : 'outline'}
+              variant=${activePack === key ? 'fill' : 'inverted'}
               @click=${() => selectPack(key)}
             >
               ${emoji} ${label}
@@ -191,7 +207,7 @@ export const settingsSection = (activePack: PackKey) => html`
         <mrd-button
           size="tiny"
           color="error"
-          variant="text"
+          variant="inverted"
           class="full-width"
           @click=${() =>
             showConfirmDialog(
@@ -211,7 +227,7 @@ export const settingsSection = (activePack: PackKey) => html`
         <mrd-button
           size="tiny"
           color="error"
-          variant="text"
+          variant="inverted"
           class="full-width"
           @click=${() =>
             showConfirmDialog(
