@@ -363,8 +363,15 @@ strong {
 
 .dialog-container > .toast {
   width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
   animation: toast-in 200ms ease-out forwards;
   box-shadow: var(--mrd-elevation-1);
+}
+
+.dialog-container > .toast > span {
+  width: 100%;
+  text-wrap: pretty;
 }
 
 .dialog-container.toast-exit > .toast {
