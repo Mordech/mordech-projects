@@ -1,12 +1,11 @@
 import browser from 'webextension-polyfill';
 
-import { defaultCatTitles } from '../../data/defaultCatTitles';
-import { renderContent } from '../index';
+import { defaultCatSubtitle, defaultCatTitles } from '../../data';
 
-export const resetTitles = async () =>
-  browser.storage.local
-    .set({ catTitles: defaultCatTitles })
-    .then(() => renderContent())
+export const resetTitles = async (): Promise<void> => {
+  await browser.storage.local
+    .set({ catTitles: defaultCatTitles, catSubtitle: defaultCatSubtitle })
     .catch((error) => {
-      error;
+      console.error('[resetTitles] Storage error:', error);
     });
+};

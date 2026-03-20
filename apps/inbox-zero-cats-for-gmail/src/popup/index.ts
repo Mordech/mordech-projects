@@ -4,14 +4,18 @@ import browser from 'webextension-polyfill';
 import '@mordech/web-components';
 
 import { topBar } from './components';
-import { customImageSection, customTitleSection } from './sections';
+import {
+  customImageSection,
+  customTitleSection,
+  settingsSection,
+} from './sections';
 import { resetImages, resetTitles } from './utils';
 
-let activeTab: 'photos' | 'titles' = 'photos';
+let activeTab: 'photos' | 'titles' | 'settings' = 'photos';
 let titlesSubTab: 'main' | 'subtitle' = 'main';
 let maxBodyHeight = 0;
 
-const setActiveTab = (tab: 'photos' | 'titles') => {
+const setActiveTab = (tab: 'photos' | 'titles' | 'settings') => {
   activeTab = tab;
   renderContent();
 };
@@ -40,6 +44,7 @@ export const renderContent = async () => {
 
   if (!catTitles) {
     await resetTitles();
+    await renderContent();
     return;
   }
 
@@ -49,17 +54,20 @@ export const renderContent = async () => {
 
   if (!catImageUrls) {
     await resetImages();
+    await renderContent();
     return;
   }
 
   const { catSubtitle } = await browser.storage.local
     .get('catSubtitle')
-    .catch(() => ({}));
+    .catch(() => ({ catSubtitle: undefined }));
 
   const content =
     activeTab === 'photos'
       ? customImageSection(catImageUrls)
-      : customTitleSection(catTitles, titlesSubTab, catSubtitle);
+      : activeTab === 'titles'
+        ? customTitleSection(catTitles, titlesSubTab, catSubtitle)
+        : settingsSection();
 
   render(html`${topBar(activeTab, setActiveTab, theme)}${content}`, appElem);
 

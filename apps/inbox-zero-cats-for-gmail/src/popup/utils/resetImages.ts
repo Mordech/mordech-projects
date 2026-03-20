@@ -1,12 +1,21 @@
 import browser from 'webextension-polyfill';
 
-import { defaultCatImages } from '../../data/defaultCatImages';
-import { renderContent } from '../index';
+import { getPack, PackKey } from '../../data';
 
-export const resetImages = async () =>
-  browser.storage.local
-    .set({ catImageUrls: defaultCatImages })
-    .then(() => renderContent())
+export const resetImages = async (): Promise<void> => {
+  const { activePack } = await browser.storage.local
+    .get('activePack')
+    .catch(() => ({ activePack: undefined }));
+
+  const validPacks: PackKey[] = ['cats', 'dogs', 'nature', 'art'];
+  const resolvedPack: PackKey = validPacks.includes(activePack as PackKey)
+    ? (activePack as PackKey)
+    : 'cats';
+  const pack = getPack(resolvedPack);
+
+  await browser.storage.local
+    .set({ catImageUrls: pack })
     .catch((error) => {
-      error;
+      console.error('[resetImages] Storage error:', error);
     });
+};
