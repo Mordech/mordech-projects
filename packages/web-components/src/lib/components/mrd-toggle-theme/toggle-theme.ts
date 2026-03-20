@@ -36,6 +36,7 @@ export class MrdToggleThemeElement extends LitElement {
         <svg
           class=${this.theme}
           part="icon"
+          slot="icon-start"
           alt="toggle theme icon"
           viewBox="0 0 24 24"
           fill="none"

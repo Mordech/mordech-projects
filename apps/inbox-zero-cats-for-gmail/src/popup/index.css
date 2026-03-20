@@ -53,7 +53,7 @@ body {
 
 /* Content container */
 .content-container {
-  flex: 1;
+  height: 14.5rem;
   background: var(--mrd-color-background-surface);
   border: 2px solid var(--mrd-color-background-surface);
   border-radius: var(--mrd-border-radius-300);
@@ -82,7 +82,9 @@ ul {
 
 ul.image-grid {
   display: grid;
-  height: 160px;
+  flex: 1;
+  overflow-y: auto;
+  align-content: start;
   grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
   gap: var(--mrd-space-200);
   padding: var(--mrd-space-100);
@@ -131,7 +133,7 @@ li.random > img {
 
 /* Title list */
 .title-list {
-  max-height: 160px;
+  flex: 1;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--mrd-color-background-surface) transparent;
@@ -182,6 +184,7 @@ li.title-row:only-child {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: var(--mrd-font-size-0);
 }
 
 li.title-row .delete-btn {
@@ -206,9 +209,32 @@ li.title-row:focus-within .delete-btn {
   flex: 1;
 }
 
+mrd-text-field {
+  --mrd-color-background: var(--mrd-color-background-base);
+}
+
 /* Full-width buttons */
 mrd-button.full-width {
   display: block;
+}
+
+/* Upload label styled as a fill button */
+.upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.25rem;
+  font-size: var(--mrd-font-size-0);
+  line-height: 1.25rem;
+  font-family: inherit;
+  border-radius: var(--mrd-border-radius, 0.5rem);
+  background-color: var(--mrd-color-primary-base);
+  color: var(--mrd-color-primary-on-base);
+  cursor: pointer;
+  user-select: none;
+  transition: all 200ms ease-in-out;
+  box-sizing: border-box;
 }
 
 /* File upload hidden input */

@@ -15698,15 +15698,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-plugin-svg@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "esbuild-plugin-svg@npm:0.1.0"
-  dependencies:
-    svgo: "npm:^2.2.2"
-  checksum: 10/7efff6e7edfe696af9879c64fe99f867ef76940069e03e6e756a73eb9231b50c00b0badfbb8b5ac2568299c8bde91a3ed475a28b9da11ee66fa869bb8e67690a
-  languageName: node
-  linkType: hard
-
 "esbuild-register@npm:^3.5.0":
   version: 3.5.0
   resolution: "esbuild-register@npm:3.5.0"
@@ -19772,9 +19763,9 @@ __metadata:
     concurrently: "npm:^8.2.2"
     dotenv: "npm:^16.3.1"
     esbuild: "npm:0.19.11"
-    esbuild-plugin-svg: "npm:^0.1.0"
     eslint: "npm:8.57.0"
     lit-html: "npm:^3.1.0"
+    nodemon: "npm:^3.1.14"
     stylelint: "npm:^16.1.0"
     ts-node: "npm:^10.9.2"
     web-ext: "npm:^7.9.0"
@@ -24589,7 +24580,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemon@npm:^3.0.2":
+"nodemon@npm:^3.0.2, nodemon@npm:^3.1.14":
   version: 3.1.14
   resolution: "nodemon@npm:3.1.14"
   dependencies:
@@ -28764,13 +28755,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sax@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "sax@npm:1.5.0"
-  checksum: 10/9012ff37dda7a7ac5da45db2143b04036103e8bef8d586c3023afd5df6caf0ebd7f38017eee344ad2e2247eded7d38e9c42cf291d8dd91781352900ac0fd2d9f
-  languageName: node
-  linkType: hard
-
 "saxes@npm:^6.0.0":
   version: 6.0.0
   resolution: "saxes@npm:6.0.0"
@@ -30427,23 +30411,6 @@ __metadata:
   version: 1.0.0
   resolution: "svg-tags@npm:1.0.0"
   checksum: 10/407e5ef87cfa2fb81c61d738081c2decd022ce13b922d035b214b49810630bf5d1409255a4beb3a940b77b32f6957806deff16f1bf0ce1ab11c7a184115a0b7f
-  languageName: node
-  linkType: hard
-
-"svgo@npm:^2.2.2":
-  version: 2.8.2
-  resolution: "svgo@npm:2.8.2"
-  dependencies:
-    commander: "npm:^7.2.0"
-    css-select: "npm:^4.1.3"
-    css-tree: "npm:^1.1.3"
-    csso: "npm:^4.2.0"
-    picocolors: "npm:^1.0.0"
-    sax: "npm:^1.5.0"
-    stable: "npm:^0.1.8"
-  bin:
-    svgo: ./bin/svgo
-  checksum: 10/a0922a2cbbbc51c0162ea7a7d6c5b660fb4fb65e0f05e226ba571cfe8b651fd870072aed2722ef96715fb77829562b351eb72f2b7bf09038ffc88969acaffd0f
   languageName: node
   linkType: hard
 

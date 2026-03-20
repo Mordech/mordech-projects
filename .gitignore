@@ -49,3 +49,5 @@ coverage
 
 .cocoindex_code
 .worktrees
+# CocoIndex Code (ccc)
+/.cocoindex_code/

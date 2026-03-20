@@ -9,6 +9,7 @@ import { resetImages, resetTitles } from './utils';
 
 let activeTab: 'photos' | 'titles' = 'photos';
 let titlesSubTab: 'main' | 'subtitle' = 'main';
+let maxBodyHeight = 0;
 
 const setActiveTab = (tab: 'photos' | 'titles') => {
   activeTab = tab;
@@ -61,6 +62,14 @@ export const renderContent = async () => {
       : customTitleSection(catTitles, titlesSubTab, catSubtitle);
 
   render(html`${topBar(activeTab, setActiveTab, theme)}${content}`, appElem);
+
+  requestAnimationFrame(() => {
+    const currentHeight = document.body.scrollHeight;
+    if (currentHeight > maxBodyHeight) {
+      maxBodyHeight = currentHeight;
+    }
+    document.body.style.minHeight = `${maxBodyHeight}px`;
+  });
 };
 
 renderContent();
