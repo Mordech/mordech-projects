@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   margin: unset;
   margin-inline: auto;
-  width: 22rem;
+  width: 20rem;
   min-height: 100%;
   padding: var(--mrd-space-200);
   background-color: var(--mrd-color-background-base);
@@ -36,7 +36,7 @@ body {
 #app {
   display: flex;
   flex-direction: column;
-  gap: var(--mrd-space-300);
+  gap: var(--mrd-space-200);
 }
 
 /* Top bar */
@@ -205,12 +205,12 @@ li.title-row:focus-within .delete-btn {
   align-items: center;
 }
 
-.input-text-row mrd-text-field {
-  flex: 1;
-}
-
 mrd-text-field {
   --mrd-color-background: var(--mrd-color-background-base);
+}
+
+.input-text-row mrd-text-field {
+  flex: 1;
 }
 
 /* Full-width buttons */
@@ -276,4 +276,101 @@ strong {
   font-variation-settings:
     'wght' var(--mrd-font-weight-bold),
     'wdth' 100;
+}
+
+/* Confirm toast */
+@keyframes toast-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.toast-container {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  animation: toast-in 200ms ease-out forwards;
+}
+
+.toast-container.toast-exit {
+  animation: toast-out 200ms ease-in forwards;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mrd-space-200);
+  padding: var(--mrd-space-200);
+  background: var(--mrd-color-background-base);
+  font-size: var(--mrd-font-size-0);
+  box-shadow: var(--mrd-elevation-1);
+}
+
+.toast-actions {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+/* Logo lockup */
+.lockup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--mrd-space-200);
+  margin-block-start: auto;
+}
+
+.lockup-content p {
+  font-size: var(--mrd-font-size-0);
+  margin: 0;
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings-label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+}
+
+.settings-hint {
+  margin: 0;
+  font-size: 0.6875rem;
+  opacity: 0.5;
+}
+
+.pack-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.375rem;
 }

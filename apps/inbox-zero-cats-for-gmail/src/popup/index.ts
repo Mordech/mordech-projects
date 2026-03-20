@@ -67,7 +67,7 @@ export const renderContent = async () => {
       ? customImageSection(catImageUrls)
       : activeTab === 'titles'
         ? customTitleSection(catTitles, titlesSubTab, catSubtitle)
-        : settingsSection();
+        : settingsSection('cats');
 
   render(html`${topBar(activeTab, setActiveTab, theme)}${content}`, appElem);
 
