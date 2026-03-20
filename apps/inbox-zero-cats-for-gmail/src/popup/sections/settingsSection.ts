@@ -127,6 +127,10 @@ const handleImport = () => {
       );
     };
 
+    reader.onerror = () => {
+      showToast({ message: 'Could not read file', type: 'error' });
+    };
+
     reader.readAsText(file);
   };
 

@@ -52,7 +52,13 @@ export const showToast = ({ message, type, duration }: ToastOptions): void => {
           ? html`<div class="toast-timer toast-timer-${type}"></div>`
           : null}
         <span>${message}</span>
-        <mrd-button size="tiny" variant="text" @click=${dismiss}>✕</mrd-button>
+        <mrd-button
+          size="tiny"
+          variant="text"
+          aria-label="Dismiss"
+          @click=${dismiss}
+          >✕</mrd-button
+        >
       </div>
     `,
     container,

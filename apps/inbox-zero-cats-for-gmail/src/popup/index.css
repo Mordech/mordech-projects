@@ -278,7 +278,7 @@ strong {
     'wdth' 100;
 }
 
-/* Confirm toast */
+/* Notifications (confirm dialog + status toast) */
 @keyframes toast-in {
   from {
     transform: translateY(100%);
