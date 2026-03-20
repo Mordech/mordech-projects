@@ -1,0 +1,15 @@
+export const defaultDogImages = [
+  'https://images.unsplash.com/photo-1587300003388-59208cc962cb?fit=crop&w=320&h=320&q=100&mrd-spotlight',
+  'https://images.unsplash.com/photo-1534361960057-19f4434a9516?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1611003228941-98852ba62227?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1568572933382-74d440642117?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1560807707-8cc77767d783?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1552053831-71594a27632d?fit=crop&w=320&h=320&q=100&mrd-random',
+  'https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?fit=crop&w=320&h=320&q=100&mrd-random',
+];
