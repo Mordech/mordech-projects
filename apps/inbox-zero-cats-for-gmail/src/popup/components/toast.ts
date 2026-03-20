@@ -1,4 +1,7 @@
 import { html, render } from 'lit-html';
+import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
+
+import closeSvg from '../assets/close.svg';
 
 type ToastType = 'success' | 'error' | 'info';
 
@@ -57,7 +60,7 @@ export const showToast = ({ message, type, duration }: ToastOptions): void => {
           variant="text"
           aria-label="Dismiss"
           @click=${dismiss}
-          >✕</mrd-button
+          >${unsafeSVG(closeSvg)}</mrd-button
         >
       </div>
     `,

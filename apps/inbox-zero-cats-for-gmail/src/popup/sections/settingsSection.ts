@@ -24,11 +24,17 @@ const selectPack = async (key: PackKey) => {
     url.startsWith('data:'),
   );
 
+  const pack = PACKS.find((p) => p.key === key);
+
   await browser.storage.local.set({
     activePack: key,
     catImageUrls: [...getPack(key), ...uploads],
   });
   renderContent();
+  showToast({
+    message: `${pack?.emoji ?? ''} ${pack?.label ?? key} pack applied`,
+    type: 'success',
+  });
 };
 
 const handleExport = async () => {
