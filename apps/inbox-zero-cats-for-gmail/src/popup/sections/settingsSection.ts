@@ -55,6 +55,13 @@ const handleImport = () => {
   input.accept = '.json';
   document.body.appendChild(input);
 
+  // Override the CSS rule that hides file inputs
+  input.style.position = 'fixed';
+  input.style.top = '-100px';
+  input.style.width = '1px';
+  input.style.height = '1px';
+  input.style.opacity = '0';
+
   input.onchange = () => {
     document.body.removeChild(input);
     const file = input.files?.[0];
@@ -130,7 +137,7 @@ export const settingsSection = (activePack: PackKey) => html`
         )}
       </div>
       <p class="settings-hint">
-        Sets the default image pool. Your uploads are always included.
+        Applies when you reset images to defaults. Your uploads are always included.
       </p>
     </div>
 
