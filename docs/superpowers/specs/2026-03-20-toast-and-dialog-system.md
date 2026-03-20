@@ -19,12 +19,12 @@ Introduce a two-component notification system:
 ### Rename
 
 | Before | After |
-|---|---|
+| --- | --- |
 | `popup/components/confirmToast.ts` | `popup/components/confirmDialog.ts` |
 | `showConfirmToast(onConfirm, options?)` | `showConfirmDialog(onConfirm, options?)` |
 | `.toast-container` (dialog's DOM class) | `.dialog-container` |
 
-API and behaviour are unchanged. The container class is changed to `.dialog-container` so the dialog and the status toast have distinct DOM selectors and can coexist.
+API and behavior are unchanged. The container class is changed to `.dialog-container` so the dialog and the status toast have distinct DOM selectors and can coexist.
 
 **CSS:** The existing `.toast-container` and `.toast-container.toast-exit` rules in `index.css` are renamed to `.dialog-container` and `.dialog-container.toast-exit`. New `.toast-container` / `.toast-container.toast-exit` rules (identical) are added to serve the status toast.
 
@@ -52,8 +52,8 @@ showToast(options: ToastOptions): void
 
 ### Duration defaults
 
-| Type | Default behaviour |
-|---|---|
+| Type | Default behavior |
+| --- | --- |
 | `success` | Auto-dismiss after 3000 ms |
 | `info` | Auto-dismiss after 3000 ms |
 | `error` | No auto-dismiss (persists until ✕ clicked) |
@@ -103,7 +103,7 @@ New keyframe and classes alongside the existing toast styles:
 
 The `--toast-duration` custom property is set inline by `showToast` so the CSS animation matches the JS timer exactly.
 
-### Behaviour
+### Behavior
 
 - Only one toast visible at a time. If `showToast` is called while a toast is already showing, the existing toast is immediately replaced.
 - The toast does **not** block interaction (unlike the confirm dialog).
@@ -118,7 +118,7 @@ The `--toast-duration` custom property is set inline by `showToast` so the CSS a
 All three existing `showConfirmToast` calls become `showConfirmDialog` calls (same arguments, new name). In addition, the following `showToast` calls are added:
 
 | Action | Call |
-|---|---|
+| --- | --- |
 | Export button clicked | `showToast({ message: 'Backup saved', type: 'success' })` |
 | Import: invalid JSON | `showToast({ message: 'Invalid backup file', type: 'error' })` |
 | Import: missing required fields | `showToast({ message: 'Invalid backup file', type: 'error' })` |
@@ -131,6 +131,7 @@ All three existing `showConfirmToast` calls become `showConfirmDialog` calls (sa
 ## 4. Exports
 
 `popup/components/index.ts` exports:
+
 - `showConfirmDialog` (from `confirmDialog.ts`)
 - `showToast` (from `toast.ts`)
 
