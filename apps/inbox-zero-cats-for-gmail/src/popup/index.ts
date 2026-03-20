@@ -3,6 +3,7 @@ import browser from 'webextension-polyfill';
 
 import '@mordech/web-components';
 
+import { PackKey } from '../data';
 import { topBar } from './components';
 import {
   customImageSection,
@@ -31,8 +32,7 @@ export const renderContent = async () => {
 
   const { theme } = await browser.storage.local
     .get('theme')
-    .then((theme) => theme)
-    .catch((error) => error);
+    .catch(() => ({ theme: undefined }));
 
   if (theme) {
     document.body.setAttribute('data-theme', theme);
@@ -58,16 +58,23 @@ export const renderContent = async () => {
     return;
   }
 
-  const { catSubtitle } = await browser.storage.local
-    .get('catSubtitle')
-    .catch(() => ({ catSubtitle: undefined }));
+  const { catSubtitle, activePack } = await browser.storage.local
+    .get(['catSubtitle', 'activePack'])
+    .catch(() => ({ catSubtitle: undefined, activePack: undefined }));
+
+  const resolvedPack: PackKey =
+    (['cats', 'dogs', 'nature', 'art'] as PackKey[]).includes(
+      activePack as PackKey,
+    )
+      ? (activePack as PackKey)
+      : 'cats';
 
   const content =
     activeTab === 'photos'
       ? customImageSection(catImageUrls)
       : activeTab === 'titles'
         ? customTitleSection(catTitles, titlesSubTab, catSubtitle)
-        : settingsSection('cats');
+        : settingsSection(resolvedPack);
 
   render(html`${topBar(activeTab, setActiveTab, theme)}${content}`, appElem);
 
