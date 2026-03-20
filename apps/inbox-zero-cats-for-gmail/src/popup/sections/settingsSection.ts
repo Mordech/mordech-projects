@@ -43,29 +43,33 @@ const selectPack = async (key: PackKey) => {
   const customTitles = currentTitles.filter((t) => t.custom);
   const newPackTitles = titles.map((text) => ({ text }));
 
-  await browser.storage.local.set({
-    activePack: key,
-    catImageUrls: [...images, ...uploads],
-    catSubtitle: subtitle,
-    catTitles: [...customTitles, ...newPackTitles],
-  });
-  renderContent();
-
   const packLabel = packMeta?.label ?? key;
   const packEmoji = packMeta?.emoji ?? '';
 
-  if (hadOldFormatTitles) {
-    showToast({
-      message:
-        `${packEmoji} ${packLabel} pack applied. ` +
-        `Previous titles were replaced — add titles to keep them across pack switches.`,
-      type: 'info',
+  const applyPack = async () => {
+    await browser.storage.local.set({
+      activePack: key,
+      catImageUrls: [...images, ...uploads],
+      catSubtitle: subtitle,
+      catTitles: [...customTitles, ...newPackTitles],
     });
-  } else {
+    renderContent();
     showToast({
       message: `${packEmoji} ${packLabel} pack applied`,
       type: 'success',
     });
+  };
+
+  if (hadOldFormatTitles) {
+    showConfirmDialog(applyPack, {
+      message:
+        `Switching to ${packLabel} will replace your current titles. ` +
+        `In the future, titles you add manually will be kept across pack switches.`,
+      confirmLabel: 'Switch',
+      confirmColor: 'primary',
+    });
+  } else {
+    applyPack();
   }
 };
 
