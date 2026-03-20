@@ -1,5 +1,10 @@
+export interface CatTitle {
+  text: string;
+  custom?: boolean;
+}
+
 export interface Data {
-  catTitles?: string[];
+  catTitles?: CatTitle[];
   catImageUrls?: string[];
   catSubtitle?: string;
   theme?: 'light' | 'dark';

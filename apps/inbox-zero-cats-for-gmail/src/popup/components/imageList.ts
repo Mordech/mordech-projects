@@ -1,6 +1,8 @@
 import { html } from 'lit-html';
 import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
 
+import '@mordech/web-components';
+
 import { DataKeys } from '../@types';
 import deleteForeverSvg from '../assets/deleteForeverIcon.svg';
 import { removeItem } from '../utils/removeItem';

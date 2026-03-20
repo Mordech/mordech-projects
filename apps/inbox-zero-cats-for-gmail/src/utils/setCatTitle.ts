@@ -8,7 +8,12 @@ export async function setCatTitle(catTitle: HTMLHeadingElement) {
   return browser.storage.local
     .get('catTitles')
     .then(({ catTitles }) => {
-      catTitle.textContent = randomItem(catTitles || defaultCatTitles);
+      const titles = (
+        catTitles || defaultCatTitles.map((text) => ({ text }))
+      ).map((item: unknown) =>
+        typeof item === 'string' ? item : (item as { text: string }).text,
+      );
+      catTitle.textContent = randomItem(titles);
     })
     .catch((error) => {
       error;

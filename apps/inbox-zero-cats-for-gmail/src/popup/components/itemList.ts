@@ -1,15 +1,17 @@
 import { html } from 'lit-html';
 import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
 
-import { DataKeys } from '../@types';
+import '@mordech/web-components';
+
+import { CatTitle, DataKeys } from '../@types';
 import deleteForeverSvg from '../assets/deleteForeverIcon.svg';
 import { removeItem } from '../utils/removeItem';
 
-export const itemList = (category: DataKeys, items: string[]) =>
+export const itemList = (category: DataKeys, items: CatTitle[]) =>
   items.map(
     (item) =>
       html`<li dir="auto" class="title-row">
-        <span class="title-text">${item}</span>
+        <span class="title-text" title=${item.text}>${item.text}</span>
         ${items.length >= 2
           ? html`<mrd-button
               size="tiny"
@@ -19,7 +21,7 @@ export const itemList = (category: DataKeys, items: string[]) =>
               @click=${() => {
                 removeItem(category, items, item);
               }}
-              aria-label=${`Delete title ${item}`}
+              aria-label=${`Delete title ${item.text}`}
             >
               ${unsafeSVG(deleteForeverSvg)}
             </mrd-button>`

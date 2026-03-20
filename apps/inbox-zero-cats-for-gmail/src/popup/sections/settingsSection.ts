@@ -2,7 +2,10 @@ import { html } from 'lit-html';
 import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
 import browser from 'webextension-polyfill';
 
+import '@mordech/web-components';
+
 import { defaultCatSubtitle, getPack, PackKey } from '../../data';
+import { CatTitle } from '../@types/index';
 import logo from '../assets/logo.svg';
 import { showConfirmDialog, showToast } from '../components';
 import { renderContent } from '../index';
@@ -14,10 +17,15 @@ const PACKS: { key: PackKey; label: string; emoji: string }[] = [
   { key: 'nature', label: 'Nature', emoji: '🌿' },
 ];
 
+const normalizeTitles = (raw: unknown[]): CatTitle[] =>
+  raw.map((item) =>
+    typeof item === 'string' ? { text: item } : (item as CatTitle),
+  );
+
 const selectPack = async (key: PackKey) => {
-  const { catImageUrls } = await browser.storage.local
-    .get('catImageUrls')
-    .catch(() => ({ catImageUrls: [] }));
+  const { catImageUrls, catTitles: rawTitles } = await browser.storage.local
+    .get(['catImageUrls', 'catTitles'])
+    .catch(() => ({ catImageUrls: [], catTitles: [] }));
 
   const uploads = ((catImageUrls as string[]) ?? []).filter((url) =>
     url.startsWith('data:'),
@@ -26,17 +34,39 @@ const selectPack = async (key: PackKey) => {
   const packMeta = PACKS.find((p) => p.key === key);
   const { images, titles, subtitle } = getPack(key);
 
+  const rawTitlesArray = (rawTitles as unknown[]) ?? [];
+  const hadOldFormatTitles = rawTitlesArray.some(
+    (item) => typeof item === 'string',
+  );
+
+  const currentTitles = normalizeTitles(rawTitlesArray);
+  const customTitles = currentTitles.filter((t) => t.custom);
+  const newPackTitles = titles.map((text) => ({ text }));
+
   await browser.storage.local.set({
     activePack: key,
     catImageUrls: [...images, ...uploads],
-    catTitles: titles,
     catSubtitle: subtitle,
+    catTitles: [...customTitles, ...newPackTitles],
   });
   renderContent();
-  showToast({
-    message: `${packMeta?.emoji ?? ''} ${packMeta?.label ?? key} pack applied`,
-    type: 'success',
-  });
+
+  const packLabel = packMeta?.label ?? key;
+  const packEmoji = packMeta?.emoji ?? '';
+
+  if (hadOldFormatTitles) {
+    showToast({
+      message:
+        `${packEmoji} ${packLabel} pack applied. ` +
+        `Previous titles were replaced — add titles to keep them across pack switches.`,
+      type: 'info',
+    });
+  } else {
+    showToast({
+      message: `${packEmoji} ${packLabel} pack applied`,
+      type: 'success',
+    });
+  }
 };
 
 const handleExport = async () => {
@@ -124,12 +154,13 @@ const handleImport = () => {
       }
 
       const data = parsed as Record<string, unknown>;
+      const catTitles = normalizeTitles(data.catTitles as unknown[]);
 
       showConfirmDialog(
         async () => {
           await browser.storage.local.set({
             catImageUrls: data.catImageUrls,
-            catTitles: data.catTitles,
+            catTitles,
             catSubtitle:
               typeof data.catSubtitle === 'string'
                 ? data.catSubtitle

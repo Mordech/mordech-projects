@@ -1,6 +1,8 @@
 import { html, render } from 'lit-html';
 import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
 
+import '@mordech/web-components';
+
 import closeSvg from '../assets/close.svg';
 
 type ToastType = 'success' | 'error' | 'info';

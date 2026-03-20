@@ -5,6 +5,7 @@ import '@mordech/web-components';
 
 import { PackKey } from '../data';
 
+import { CatTitle } from './@types/index';
 import { topBar } from './components';
 import {
   customImageSection,
@@ -27,6 +28,11 @@ export const setTitlesSubTab = (sub: 'main' | 'subtitle') => {
   renderContent();
 };
 
+const normalizeTitles = (raw: unknown[]): CatTitle[] =>
+  raw.map((item) =>
+    typeof item === 'string' ? { text: item } : (item as CatTitle),
+  );
+
 export const renderContent = async () => {
   const appElem = document.querySelector<HTMLElement>('#app');
   if (!appElem) return;
@@ -39,15 +45,17 @@ export const renderContent = async () => {
     document.body.setAttribute('data-theme', theme);
   }
 
-  const { catTitles } = await browser.storage.local
+  const { catTitles: rawTitles } = await browser.storage.local
     .get('catTitles')
     .catch((error) => error);
 
-  if (!catTitles) {
+  if (!rawTitles) {
     await resetTitles();
     await renderContent();
     return;
   }
+
+  const catTitles = normalizeTitles(rawTitles as unknown[]);
 
   const { catImageUrls } = await browser.storage.local
     .get('catImageUrls')

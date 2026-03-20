@@ -1,7 +1,8 @@
 import { html } from 'lit-html';
 
-import { defaultCatSubtitle } from '../../data/index';
-import { defaultCatTitles } from '../../data/index';
+import '@mordech/web-components';
+
+import { defaultCatSubtitle, defaultCatTitles } from '../../data/index';
 import { Data } from '../@types/index';
 import { itemList } from '../components/index';
 import { setTitlesSubTab } from '../index';
@@ -35,7 +36,10 @@ const handleSaveSubtitle = () => {
 const mainSubTab = (catTitles: Data['catTitles']) => html`
   <div class="title-list">
     <ul>
-      ${itemList('catTitles', catTitles || defaultCatTitles)}
+      ${itemList(
+        'catTitles',
+        catTitles || defaultCatTitles.map((text) => ({ text })),
+      )}
     </ul>
   </div>
   <div class="input-text-row">

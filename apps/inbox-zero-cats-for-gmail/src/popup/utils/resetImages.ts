@@ -7,15 +7,13 @@ export const resetImages = async (): Promise<void> => {
     .get('activePack')
     .catch(() => ({ activePack: undefined }));
 
-  const validPacks: PackKey[] = ['cats', 'dogs', 'nature', 'art'];
+  const validPacks: PackKey[] = ['cats', 'dogs', 'nature'];
   const resolvedPack: PackKey = validPacks.includes(activePack as PackKey)
     ? (activePack as PackKey)
     : 'cats';
-  const pack = getPack(resolvedPack);
+  const { images } = getPack(resolvedPack);
 
-  await browser.storage.local
-    .set({ catImageUrls: pack })
-    .catch((error) => {
-      console.error('[resetImages] Storage error:', error);
-    });
+  await browser.storage.local.set({ catImageUrls: images }).catch((error) => {
+    console.error('[resetImages] Storage error:', error);
+  });
 };
