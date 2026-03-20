@@ -4,7 +4,7 @@ import browser from 'webextension-polyfill';
 
 import { defaultCatSubtitle, getPack, PackKey } from '../../data';
 import logo from '../assets/logo.svg';
-import { showConfirmToast } from '../components/confirmToast';
+import { showConfirmDialog, showToast } from '../components';
 import { renderContent } from '../index';
 import { resetImages, resetTitles } from '../utils/index';
 
@@ -58,6 +58,7 @@ const handleExport = async () => {
   a.download = 'inbox-zero-cats-backup.json';
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 100);
+  showToast({ message: 'Backup saved', type: 'success' });
 };
 
 const handleImport = () => {
@@ -84,7 +85,8 @@ const handleImport = () => {
       try {
         parsed = JSON.parse(reader.result as string);
       } catch {
-        return; // silently bail on invalid JSON
+        showToast({ message: 'Invalid backup file', type: 'error' });
+        return;
       }
 
       if (
@@ -93,12 +95,13 @@ const handleImport = () => {
         !Array.isArray((parsed as Record<string, unknown>).catImageUrls) ||
         !Array.isArray((parsed as Record<string, unknown>).catTitles)
       ) {
-        return; // silently bail on missing required fields
+        showToast({ message: 'Invalid backup file', type: 'error' });
+        return;
       }
 
       const data = parsed as Record<string, unknown>;
 
-      showConfirmToast(
+      showConfirmDialog(
         async () => {
           await browser.storage.local.set({
             catImageUrls: data.catImageUrls,
@@ -107,13 +110,14 @@ const handleImport = () => {
               typeof data.catSubtitle === 'string'
                 ? data.catSubtitle
                 : defaultCatSubtitle,
-            activePack: (['cats', 'dogs', 'nature', 'art'] as PackKey[]).includes(
-              data.activePack as PackKey,
-            )
+            activePack: (
+              ['cats', 'dogs', 'nature', 'art'] as PackKey[]
+            ).includes(data.activePack as PackKey)
               ? (data.activePack as PackKey)
               : 'cats',
           });
           renderContent();
+          showToast({ message: 'Settings imported', type: 'success' });
         },
         {
           message: 'Import will replace all your current settings.',
@@ -178,10 +182,14 @@ export const settingsSection = (activePack: PackKey) => html`
           variant="text"
           class="full-width"
           @click=${() =>
-            showConfirmToast(
+            showConfirmDialog(
               async () => {
                 await resetImages();
                 renderContent();
+                showToast({
+                  message: 'Images reset to defaults',
+                  type: 'success',
+                });
               },
               { message: 'Reset images to defaults? This cannot be undone.' },
             )}
@@ -194,10 +202,14 @@ export const settingsSection = (activePack: PackKey) => html`
           variant="text"
           class="full-width"
           @click=${() =>
-            showConfirmToast(
+            showConfirmDialog(
               async () => {
                 await resetTitles();
                 renderContent();
+                showToast({
+                  message: 'Titles reset to defaults',
+                  type: 'success',
+                });
               },
               { message: 'Reset titles to defaults? This cannot be undone.' },
             )}
