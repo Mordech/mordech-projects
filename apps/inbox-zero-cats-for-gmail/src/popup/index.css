@@ -301,6 +301,7 @@ strong {
   }
 }
 
+.dialog-container,
 .toast-container {
   position: fixed;
   inset-inline: 0;
@@ -308,6 +309,7 @@ strong {
   animation: toast-in 200ms ease-out forwards;
 }
 
+.dialog-container.toast-exit,
 .toast-container.toast-exit {
   animation: toast-out 200ms ease-in forwards;
 }
@@ -321,6 +323,7 @@ strong {
   background: var(--mrd-color-background-base);
   font-size: var(--mrd-font-size-0);
   box-shadow: var(--mrd-elevation-1);
+  position: relative;
 }
 
 .toast-actions {
@@ -328,6 +331,24 @@ strong {
   gap: 2px;
   flex-shrink: 0;
 }
+
+@keyframes timer-drain {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+.toast-timer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 0;
+  animation: timer-drain var(--toast-duration, 3000ms) linear forwards;
+}
+
+.toast-timer.toast-timer-success { background: var(--mrd-color-success-base); }
+.toast-timer.toast-timer-error   { background: var(--mrd-color-error-base); }
+.toast-timer.toast-timer-info    { background: var(--mrd-color-primary-base); }
 
 /* Logo lockup */
 .lockup {
