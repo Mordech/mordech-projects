@@ -40,7 +40,9 @@ export const customImageSection = (catImageUrls: Data['catImageUrls']) => {
       ${needsOptionsPage
         ? html`
             <p class="firefox-notice">
-              <strong>${isFirefox ? 'Firefox users 🦊' : 'Linux users 🐧'}</strong>
+              <strong
+                >${isFirefox ? 'Firefox users 🦊' : 'Linux users 🐧'}</strong
+              >
               can only upload images from a browser tab.
               <a
                 href=${browser.runtime.getURL('options/index.html')}

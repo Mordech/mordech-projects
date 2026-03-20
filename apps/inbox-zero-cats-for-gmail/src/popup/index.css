@@ -336,6 +336,7 @@ strong {
   align-items: center;
   gap: var(--mrd-space-200);
   margin-block-start: auto;
+  padding-block-start: var(--mrd-space-200);
 }
 
 .lockup-content p {
@@ -353,8 +354,6 @@ strong {
   margin: 0;
   font-size: 0.6875rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
   opacity: 0.5;
 }
 

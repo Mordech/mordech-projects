@@ -4,12 +4,13 @@ import browser from 'webextension-polyfill';
 
 import brandFamilySvg from '../assets/brandFamilyIcon.svg';
 import photoLibrarySvg from '../assets/photoLibraryIcon.svg';
+import settingsSvg from '../assets/settingsIcon.svg';
 import { renderContent } from '../index';
 
 export const topBar = (
-  activeTab: 'photos' | 'titles',
+  activeTab: 'photos' | 'titles' | 'settings',
   // eslint-disable-next-line no-unused-vars
-  onTabChange: (tab: 'photos' | 'titles') => void,
+  onTabChange: (tab: 'photos' | 'titles' | 'settings') => void,
   theme?: string,
 ) => html`
   <div class="top-bar">
@@ -27,6 +28,13 @@ export const topBar = (
         @click=${() => onTabChange('titles')}
       >
         ${unsafeSVG(brandFamilySvg)} Titles
+      </mrd-button>
+      <mrd-button
+        size="tiny"
+        variant=${activeTab === 'settings' ? 'fill' : 'text'}
+        @click=${() => onTabChange('settings')}
+      >
+        ${unsafeSVG(settingsSvg)} Settings
       </mrd-button>
     </div>
     <mrd-toggle-theme

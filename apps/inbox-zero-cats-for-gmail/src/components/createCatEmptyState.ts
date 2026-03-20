@@ -34,7 +34,7 @@ export const createCatEmptyState = async (emptyState: Element) => {
 
   const { catSubtitle } = await browser.storage.local
     .get('catSubtitle')
-    .catch(() => ({}));
+    .catch(() => ({ catSubtitle: undefined }));
 
   const catText = document.createElement('span');
   catText.className = 'cat-text l6';

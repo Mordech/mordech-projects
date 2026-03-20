@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
 import browser from 'webextension-polyfill';
 
-import { defaultCatSubtitle, PackKey } from '../../data';
+import { defaultCatSubtitle, getPack, PackKey } from '../../data';
 import logo from '../assets/logo.svg';
 import { showConfirmToast } from '../components/confirmToast';
 import { renderContent } from '../index';
@@ -16,7 +16,18 @@ const PACKS: { key: PackKey; label: string; emoji: string }[] = [
 ];
 
 const selectPack = async (key: PackKey) => {
-  await browser.storage.local.set({ activePack: key });
+  const { catImageUrls } = await browser.storage.local
+    .get('catImageUrls')
+    .catch(() => ({ catImageUrls: [] }));
+
+  const uploads = ((catImageUrls as string[]) ?? []).filter((url) =>
+    url.startsWith('data:'),
+  );
+
+  await browser.storage.local.set({
+    activePack: key,
+    catImageUrls: [...getPack(key), ...uploads],
+  });
   renderContent();
 };
 
@@ -136,9 +147,7 @@ export const settingsSection = (activePack: PackKey) => html`
           `,
         )}
       </div>
-      <p class="settings-hint">
-        Applies when you reset images to defaults. Your uploads are always included.
-      </p>
+      <p class="settings-hint">Your uploads are always included.</p>
     </div>
 
     <!-- Data & Backup -->
@@ -147,7 +156,7 @@ export const settingsSection = (activePack: PackKey) => html`
       <div class="button-row">
         <mrd-button
           size="tiny"
-          variant="outline"
+          variant="tonal"
           class="full-width"
           @click=${handleExport}
         >
@@ -155,7 +164,7 @@ export const settingsSection = (activePack: PackKey) => html`
         </mrd-button>
         <mrd-button
           size="tiny"
-          variant="outline"
+          variant="tonal"
           class="full-width"
           @click=${handleImport}
         >
