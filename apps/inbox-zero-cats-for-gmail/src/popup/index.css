@@ -53,6 +53,7 @@ body {
 
 /* Content container */
 .content-container {
+  flex: 1;
   background: var(--mrd-color-background-surface);
   border: 2px solid var(--mrd-color-background-surface);
   border-radius: var(--mrd-border-radius-300);
@@ -81,6 +82,7 @@ ul {
 
 ul.image-grid {
   display: grid;
+  height: 160px;
   grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
   gap: var(--mrd-space-200);
   padding: var(--mrd-space-100);
@@ -91,6 +93,7 @@ li.image {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: min-content;
 }
 
 li.image > img {
@@ -130,6 +133,22 @@ li.random > img {
 .title-list {
   max-height: 160px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--mrd-color-background-surface) transparent;
+}
+
+/* Chrome/Edge scrollbar */
+.title-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.title-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.title-list::-webkit-scrollbar-thumb {
+  background-color: var(--mrd-color-background-surface);
+  border-radius: 3px;
 }
 
 .title-list ul {
