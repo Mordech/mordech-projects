@@ -4,6 +4,7 @@ import browser from 'webextension-polyfill';
 import '@mordech/web-components';
 
 import { PackKey } from '../data';
+
 import { topBar } from './components';
 import {
   customImageSection,
@@ -62,12 +63,11 @@ export const renderContent = async () => {
     .get(['catSubtitle', 'activePack'])
     .catch(() => ({ catSubtitle: undefined, activePack: undefined }));
 
-  const resolvedPack: PackKey =
-    (['cats', 'dogs', 'nature', 'art'] as PackKey[]).includes(
-      activePack as PackKey,
-    )
-      ? (activePack as PackKey)
-      : 'cats';
+  const resolvedPack: PackKey = (
+    ['cats', 'dogs', 'nature'] as PackKey[]
+  ).includes(activePack as PackKey)
+    ? (activePack as PackKey)
+    : 'cats';
 
   const content =
     activeTab === 'photos'
