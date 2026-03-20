@@ -325,7 +325,8 @@ strong {
   justify-content: space-between;
   gap: var(--mrd-space-200);
   padding: var(--mrd-space-200);
-  background: var(--mrd-color-background-base);
+  background: var(--mrd-color-background-on-base);
+  color: var(--mrd-color-background-base);
   font-size: var(--mrd-font-size-0);
   box-shadow: var(--mrd-elevation-1);
   position: relative;
@@ -340,8 +341,12 @@ strong {
 }
 
 @keyframes timer-drain {
-  from { width: 100%; }
-  to   { width: 0%; }
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
 
 .toast-timer {
@@ -353,9 +358,15 @@ strong {
   animation: timer-drain var(--mrd-toast-duration, 3000ms) linear forwards;
 }
 
-.toast-timer.toast-timer-success { background: var(--mrd-color-success-base); }
-.toast-timer.toast-timer-error   { background: var(--mrd-color-error-base); }
-.toast-timer.toast-timer-info    { background: var(--mrd-color-primary-base); }
+.toast-timer.toast-timer-success {
+  background: var(--mrd-color-success-base);
+}
+.toast-timer.toast-timer-error {
+  background: var(--mrd-color-error-base);
+}
+.toast-timer.toast-timer-info {
+  background: var(--mrd-color-primary-base);
+}
 
 /* Logo lockup */
 .lockup {
