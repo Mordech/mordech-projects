@@ -309,6 +309,11 @@ strong {
   animation: toast-in 200ms ease-out forwards;
 }
 
+.toast-container {
+  margin: var(--mrd-space-200);
+  inset-inline: 0;
+}
+
 .dialog-container.toast-exit,
 .toast-container.toast-exit {
   animation: toast-out 200ms ease-in forwards;
