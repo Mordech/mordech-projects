@@ -43,7 +43,7 @@ Monorepo managed with **Lerna** (`useNx: false`) and Yarn Berry 4.x workspaces. 
 | App | Description |
 |---|---|
 | `hct-color-picker` | Figma plugin. Two build targets: `build:ui` (Vite) and `build:plugin` (esbuild → `dist/code.js`). Entry points: `ui-src/` (UI iframe) and `plugin-src/code.ts` (Figma sandbox). |
-| `inbox-zero-cats-for-gmail` | Chrome/Firefox extension. Uses `ts-node` scripts for bundling; `web-ext lint` for extension validation. No test suite. |
+| `inbox-zero-cats-for-gmail` | Chrome/Firefox extension. Uses `ts-node` scripts for bundling; `web-ext lint` for extension validation. No test suite. Popup UI uses a tabs layout; all tab content panels share the same fixed height (`14.5rem` via `.content-container`) for visual consistency. Tab buttons always include both an icon (`slot="icon-start"` on the SVG) and a text label. |
 | `portfolio` | Gatsby site using `@mordech/react-components` and `@mordech/tokens`. No Lerna-managed build (Gatsby CLI). |
 
 ### Key Conventions
