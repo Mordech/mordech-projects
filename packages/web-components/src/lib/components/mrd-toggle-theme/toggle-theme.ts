@@ -24,6 +24,7 @@ export class MrdToggleThemeElement extends LitElement {
     return html`
       <mrd-button
         exportparts="button"
+        title="Toggle theme"
         radius="pill"
         variant="text"
         size=${this.size}
