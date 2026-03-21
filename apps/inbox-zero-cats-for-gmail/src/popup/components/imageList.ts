@@ -17,16 +17,16 @@ export const imageList = (category: DataKeys, items: string[]) => {
       <img
         src=${item}
         title=${isRandom
-          ? 'Random image of a cat'
+          ? 'Random image will change on each load'
           : `Image no. ${imageNumber}. User uploaded`}
         alt=${isRandom
-          ? 'Random cat image'
+          ? 'Random image'
           : `Image no. ${imageNumber}. User uploaded`}
       />
       ${isRandom
-        ? html`<mrd-chip color="secondary" class="random-chip"
-            >Random</mrd-chip
-          >`
+        ? html`<mrd-chip color="secondary" class="random-chip">
+            Random
+          </mrd-chip>`
         : ''}
       ${filteredItems.length >= 2
         ? html`<mrd-button

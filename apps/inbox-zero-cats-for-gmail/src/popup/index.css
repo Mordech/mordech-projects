@@ -320,7 +320,8 @@ strong {
   inset-inline: 0;
   inset-block-end: 0;
   max-width: 20rem;
-  margin: var(--mrd-space-200);
+  margin: var(--mrd-space-300);
+  border: 1px solid var(--mrd-color-outline);
   border-radius: var(--mrd-border-radius-200);
   overflow: hidden;
   animation: toast-in 200ms ease-out forwards;
