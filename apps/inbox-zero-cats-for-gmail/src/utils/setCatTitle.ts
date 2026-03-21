@@ -4,7 +4,7 @@ import { defaultCatTitles } from '../data';
 
 import { randomItem } from './randomItem';
 
-export async function setCatTitle(catTitle: HTMLHeadingElement) {
+export async function getCatTitle(): Promise<string> {
   return browser.storage.local
     .get('catTitles')
     .then(({ catTitles }) => {
@@ -13,9 +13,11 @@ export async function setCatTitle(catTitle: HTMLHeadingElement) {
       ).map((item: unknown) =>
         typeof item === 'string' ? item : (item as { text: string }).text,
       );
-      catTitle.textContent = randomItem(titles);
+      const catTitle = randomItem(titles);
+      return catTitle;
     })
     .catch((error) => {
       error;
+      return defaultCatTitles[0];
     });
 }

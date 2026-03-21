@@ -1,52 +1,37 @@
 import browser from 'webextension-polyfill';
 
 import { defaultCatSubtitle } from '../data';
-import { setCatImage } from '../utils/setCatImage';
-import { setCatTitle } from '../utils/setCatTitle';
+import { getCatImage } from '../utils/setCatImage';
+import { getCatTitle } from '../utils/setCatTitle';
+
+const html = String.raw;
 
 export const MOUNTED_INDICATION = 'ibxzc-mounted';
 
 export const createCatEmptyState = async (emptyState: Element) => {
-  emptyState.textContent = '';
-  const catContainer = document.createElement('div');
-  catContainer.className = 'cat-container';
-  emptyState.appendChild(catContainer);
+  if (emptyState.textContent?.includes(MOUNTED_INDICATION)) return;
 
-  const catTitle = document.createElement('h1');
-  setCatTitle(catTitle);
-  catTitle.className = 'cat-title TB';
-  catTitle.dir = 'auto';
-  catContainer.appendChild(catTitle);
-
-  const imageContainer = document.createElement('div');
-  imageContainer.className = 'cat-image-container';
-  catContainer.appendChild(imageContainer);
-
-  const catBackdrop = document.createElement('img');
-  const catImage = document.createElement('img');
-  setCatImage([catBackdrop, catImage]);
-  catBackdrop.className = 'cat-backdrop';
-  catImage.className = 'cat-image';
-  catImage.loading = 'eager';
-
-  imageContainer.appendChild(catBackdrop);
-  imageContainer.appendChild(catImage);
-
-  const { catSubtitle } = await browser.storage.local
+  const catImage = await getCatImage();
+  const catTitle = await getCatTitle();
+  const subtitle = await browser.storage.local
     .get('catSubtitle')
-    .catch(() => ({ catSubtitle: undefined }));
+    .then(({ catSubtitle }) => catSubtitle || defaultCatSubtitle)
+    .catch(() => defaultCatSubtitle);
 
-  const catText = document.createElement('span');
-  catText.className = 'cat-text l6';
-  catText.textContent = catSubtitle || defaultCatSubtitle;
-  catContainer.appendChild(catText);
-
-  const mountIndication = document.createElement('span');
-  mountIndication.ariaHidden = 'true';
-  mountIndication.style.setProperty('visibility', 'hidden');
-  mountIndication.style.setProperty('position', 'absolute');
-  mountIndication.style.setProperty('top', '-99999px');
-  mountIndication.style.setProperty('left', '-99999px');
-  mountIndication.textContent = MOUNTED_INDICATION;
-  catContainer.appendChild(mountIndication);
+  emptyState.innerHTML = html`
+    <div class="cat-container">
+      <span
+        aria-hidden="true"
+        style="visibility: hidden; position: absolute; top: -99999px; left: -99999px;"
+      >
+        ${MOUNTED_INDICATION}
+      </span>
+      <h1 id="cat-title" class="cat-title TB" dir="auto">${catTitle}</h1>
+      <div id="cat-image-container" class="cat-image-container" role="img">
+        <img class="cat-backdrop" id="cat-backdrop" src=${catImage} />
+        <img class="cat-image" id="cat-image" src=${catImage} loading="eager" />
+      </div>
+      <span class="cat-text l6">${subtitle}</span>
+    </div>
+  `;
 };
