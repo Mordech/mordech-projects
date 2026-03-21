@@ -52,3 +52,5 @@ coverage
 /.cocoindex_code/
 
 .superpowers
+.playwright-mcp
+superpowers/
