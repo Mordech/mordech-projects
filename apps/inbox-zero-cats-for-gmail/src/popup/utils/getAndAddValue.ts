@@ -8,7 +8,9 @@ export const getAndAddValue = (category: DataKeys, value: string) =>
     .get(category)
     .then((result) => {
       const values = result[category] || [];
-      values.unshift(value);
+      const item =
+        category === 'catTitles' ? { text: value, custom: true } : value;
+      values.unshift(item);
       browser.storage.local
         .set({ [category]: values })
         .then(() => renderContent())

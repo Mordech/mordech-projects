@@ -5,15 +5,17 @@ import { renderContent } from '../index';
 
 export const removeItem = (
   category: keyof Data,
-  itemList: string[],
-  item: string,
+  itemList: unknown[],
+  item: unknown,
 ) => {
   const values = itemList;
   if (values.length !== 1) {
     // remove all instances of random image
-    if (item.endsWith('mrd-spotlight')) {
+    if (typeof item === 'string' && item.endsWith('mrd-spotlight')) {
       values
-        .filter((image) => image.endsWith('mrd-random'))
+        .filter(
+          (image) => typeof image === 'string' && image.endsWith('mrd-random'),
+        )
         .forEach((image) => {
           removeFromArray(image);
         });
@@ -27,7 +29,7 @@ export const removeItem = (
       });
   }
 
-  function removeFromArray(currentItem: string) {
+  function removeFromArray(currentItem: unknown) {
     const index = values.indexOf(currentItem);
     if (index > -1) {
       values.splice(index, 1);

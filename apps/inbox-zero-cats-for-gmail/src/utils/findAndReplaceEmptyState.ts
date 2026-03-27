@@ -9,6 +9,7 @@ export const findAndReplaceEmptyState = (selector: string) => {
     if (!(window.location.hash === '#inbox')) return;
 
     return window.requestAnimationFrame(() => {
+      if (element.textContent?.includes(MOUNTED_INDICATION)) return;
       createCatEmptyState(element.firstElementChild || element);
     });
   });

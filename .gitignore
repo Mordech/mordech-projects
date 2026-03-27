@@ -47,4 +47,10 @@ coverage
 !.yarn/sdks
 !.yarn/versions
 
-.cocoindex_code
+.worktrees
+# CocoIndex Code (ccc)
+/.cocoindex_code/
+
+.superpowers
+.playwright-mcp
+superpowers/

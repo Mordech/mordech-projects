@@ -1,6 +1,11 @@
+:host {
+  display: inline-flex;
+}
+
 .btn {
   position: relative;
   display: inline-flex;
+  width: 100%;
   overflow: hidden;
   border: unset;
   user-select: none; /* Standard syntax */

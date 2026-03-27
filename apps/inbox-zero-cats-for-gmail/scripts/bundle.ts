@@ -27,7 +27,7 @@ const loaders: BuildOptions['loader'] = {
   '.css': 'css',
   '.html': 'copy',
   '.png': 'file',
-  '.svg': 'file',
+  '.svg': 'text',
   '.json': 'json',
 };
 

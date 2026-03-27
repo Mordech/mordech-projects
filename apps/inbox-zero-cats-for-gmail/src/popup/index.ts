@@ -3,62 +3,96 @@ import browser from 'webextension-polyfill';
 
 import '@mordech/web-components';
 
-import { footer } from './components';
-import { customImageSection, customTitleSection } from './sections';
+import { PackKey } from '../data';
+
+import { CatTitle } from './@types/index';
+import { topBar } from './components';
+import {
+  customImageSection,
+  customTitleSection,
+  settingsSection,
+} from './sections';
 import { resetImages, resetTitles } from './utils';
 
+let activeTab: 'photos' | 'titles' | 'settings' = 'photos';
+let titlesSubTab: 'main' | 'subtitle' = 'main';
+let maxBodyHeight = 0;
+
+const setActiveTab = (tab: 'photos' | 'titles' | 'settings') => {
+  activeTab = tab;
+  renderContent();
+};
+
+export const setTitlesSubTab = (sub: 'main' | 'subtitle') => {
+  titlesSubTab = sub;
+  renderContent();
+};
+
+const normalizeTitles = (raw: unknown[]): CatTitle[] =>
+  raw.map((item) =>
+    typeof item === 'string' ? { text: item } : (item as CatTitle),
+  );
+
 export const renderContent = async () => {
-  const headerElem = document.querySelector('header');
-  const footerElem = document.querySelector('footer');
-  const customTitlesElem = document.querySelector('#custom-titles');
-  const customImagesElem = document.querySelector('#custom-images');
+  const appElem = document.querySelector<HTMLElement>('#app');
+  if (!appElem) return;
+
   const { theme } = await browser.storage.local
     .get('theme')
-    .then((theme) => theme)
-    .catch((error) => error);
+    .catch(() => ({ theme: undefined }));
 
   if (theme) {
     document.body.setAttribute('data-theme', theme);
   }
 
-  if (
-    !headerElem ||
-    !footerElem ||
-    !(customTitlesElem instanceof HTMLElement) ||
-    !(customImagesElem instanceof HTMLElement)
-  )
-    return;
-
-  render(
-    html`
-      <h1>Customize your <strong>inbox zero</strong></h1>
-      <mrd-toggle-theme
-        .theme=${theme}
-        .saveToStorage=${false}
-        size="compact"
-        @toggle-theme=${(event: CustomEvent) => {
-          browser.storage.local.set({ theme: event.detail.theme });
-        }}
-      ></mrd-toggle-theme>
-    `,
-    headerElem,
-  );
-  const { catTitles } = await browser.storage.local
+  const { catTitles: rawTitles } = await browser.storage.local
     .get('catTitles')
     .catch((error) => error);
 
-  catTitles
-    ? render(customTitleSection(catTitles), customTitlesElem)
-    : resetTitles();
+  if (!rawTitles) {
+    await resetTitles();
+    await renderContent();
+    return;
+  }
+
+  const catTitles = normalizeTitles(rawTitles as unknown[]);
 
   const { catImageUrls } = await browser.storage.local
     .get('catImageUrls')
     .catch((error) => error);
 
-  catImageUrls
-    ? render(customImageSection(catImageUrls), customImagesElem)
-    : resetImages();
-  render(footer, footerElem);
+  if (!catImageUrls) {
+    await resetImages();
+    await renderContent();
+    return;
+  }
+
+  const { catSubtitle, activePack } = await browser.storage.local
+    .get(['catSubtitle', 'activePack'])
+    .catch(() => ({ catSubtitle: undefined, activePack: undefined }));
+
+  const resolvedPack: PackKey = (
+    ['cats', 'dogs', 'nature'] as PackKey[]
+  ).includes(activePack as PackKey)
+    ? (activePack as PackKey)
+    : 'cats';
+
+  const content =
+    activeTab === 'photos'
+      ? customImageSection(catImageUrls)
+      : activeTab === 'titles'
+        ? customTitleSection(catTitles, titlesSubTab, catSubtitle)
+        : settingsSection(resolvedPack);
+
+  render(html`${topBar(activeTab, setActiveTab, theme)}${content}`, appElem);
+
+  requestAnimationFrame(() => {
+    const currentHeight = document.body.scrollHeight;
+    if (currentHeight > maxBodyHeight) {
+      maxBodyHeight = currentHeight;
+    }
+    document.body.style.minHeight = `${maxBodyHeight}px`;
+  });
 };
 
 renderContent();

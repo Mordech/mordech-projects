@@ -1,0 +1,301 @@
+import { html } from 'lit-html';
+import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
+import browser from 'webextension-polyfill';
+
+import '@mordech/web-components';
+
+import { defaultCatSubtitle, getPack, PackKey } from '../../data';
+import { CatTitle } from '../@types/index';
+import logo from '../assets/logo.svg';
+import { showConfirmDialog, showToast } from '../components';
+import { renderContent } from '../index';
+import { resetImages, resetTitles } from '../utils/index';
+
+const PACKS: { key: PackKey; label: string; emoji: string }[] = [
+  { key: 'cats', label: 'Cats', emoji: '🐱' },
+  { key: 'dogs', label: 'Dogs', emoji: '🐶' },
+  { key: 'nature', label: 'Nature', emoji: '🌿' },
+];
+
+const normalizeTitles = (raw: unknown[]): CatTitle[] =>
+  raw.map((item) =>
+    typeof item === 'string' ? { text: item } : (item as CatTitle),
+  );
+
+const selectPack = async (key: PackKey) => {
+  const { catImageUrls, catTitles: rawTitles } = await browser.storage.local
+    .get(['catImageUrls', 'catTitles'])
+    .catch(() => ({ catImageUrls: [], catTitles: [] }));
+
+  const uploads = ((catImageUrls as string[]) ?? []).filter((url) =>
+    url.startsWith('data:'),
+  );
+
+  const packMeta = PACKS.find((p) => p.key === key);
+  const { images, titles, subtitle } = getPack(key);
+
+  const rawTitlesArray = (rawTitles as unknown[]) ?? [];
+  const hadOldFormatTitles = rawTitlesArray.some(
+    (item) => typeof item === 'string',
+  );
+
+  const currentTitles = normalizeTitles(rawTitlesArray);
+  const customTitles = currentTitles.filter((t) => t.custom);
+  const newPackTitles = titles.map((text) => ({ text }));
+
+  const packLabel = packMeta?.label ?? key;
+  const packEmoji = packMeta?.emoji ?? '';
+
+  const applyPack = async () => {
+    await browser.storage.local.set({
+      activePack: key,
+      catImageUrls: [...images, ...uploads],
+      catSubtitle: subtitle,
+      catTitles: [...customTitles, ...newPackTitles],
+    });
+    renderContent();
+    showToast({
+      message: `${packEmoji} ${packLabel} pack applied`,
+      type: 'success',
+    });
+  };
+
+  if (hadOldFormatTitles) {
+    showConfirmDialog(applyPack, {
+      message:
+        `Switching to ${packLabel} will replace your current titles. ` +
+        `In the future, titles you add manually will be kept across pack switches.`,
+      confirmLabel: 'Switch',
+      confirmColor: 'primary',
+    });
+  } else {
+    applyPack();
+  }
+};
+
+const handleExport = async () => {
+  const data = await browser.storage.local.get([
+    'catImageUrls',
+    'catTitles',
+    'catSubtitle',
+    'activePack',
+  ]);
+
+  const payload = JSON.stringify(
+    {
+      version: 1,
+      catImageUrls: data.catImageUrls ?? [],
+      catTitles: data.catTitles ?? [],
+      catSubtitle: data.catSubtitle ?? defaultCatSubtitle,
+      activePack: data.activePack ?? 'cats',
+    },
+    null,
+    2,
+  );
+
+  const blob = new Blob([payload], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'inbox-zero-cats-backup.json';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 100);
+  showToast({ message: 'Backup saved', type: 'success' });
+};
+
+const needsOptionsPage = () => {
+  const isPopup = location.pathname === '/popup/index.html';
+  const isFirefox = browser.runtime.getURL('').startsWith('moz-extension://');
+  const isLinux = navigator.userAgent.includes('Linux');
+  return isPopup && (isFirefox || isLinux);
+};
+
+const handleImport = () => {
+  if (needsOptionsPage()) {
+    showToast({
+      message:
+        'Import is not supported in the popup on Firefox / Linux. Use the options page.',
+      type: 'error',
+    });
+    return;
+  }
+
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json';
+  document.body.appendChild(input);
+
+  // Override the CSS rule that hides file inputs
+  input.style.position = 'fixed';
+  input.style.top = '-100px';
+  input.style.width = '1px';
+  input.style.height = '1px';
+  input.style.opacity = '0';
+
+  input.onchange = () => {
+    document.body.removeChild(input);
+    const file = input.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(reader.result as string);
+      } catch {
+        showToast({ message: 'Invalid backup file', type: 'error' });
+        return;
+      }
+
+      if (
+        typeof parsed !== 'object' ||
+        parsed === null ||
+        !Array.isArray((parsed as Record<string, unknown>).catImageUrls) ||
+        !Array.isArray((parsed as Record<string, unknown>).catTitles)
+      ) {
+        showToast({ message: 'Invalid backup file', type: 'error' });
+        return;
+      }
+
+      const data = parsed as Record<string, unknown>;
+      const catTitles = normalizeTitles(data.catTitles as unknown[]);
+
+      showConfirmDialog(
+        async () => {
+          await browser.storage.local.set({
+            catImageUrls: data.catImageUrls,
+            catTitles,
+            catSubtitle:
+              typeof data.catSubtitle === 'string'
+                ? data.catSubtitle
+                : defaultCatSubtitle,
+            activePack: (['cats', 'dogs', 'nature'] as PackKey[]).includes(
+              data.activePack as PackKey,
+            )
+              ? (data.activePack as PackKey)
+              : 'cats',
+          });
+          renderContent();
+          showToast({ message: 'Settings imported', type: 'success' });
+        },
+        {
+          message: 'Import will replace all your current settings.',
+          confirmLabel: 'Import',
+          confirmColor: 'primary',
+        },
+      );
+    };
+
+    reader.onerror = () => {
+      showToast({ message: 'Could not read file', type: 'error' });
+    };
+
+    reader.readAsText(file);
+  };
+
+  input.click();
+};
+
+export const settingsSection = (activePack: PackKey) => html`
+  <div class="content-container">
+    <!-- Content Packs -->
+    <div class="settings-section">
+      <p class="settings-label">Content Pack</p>
+      <div class="pack-group">
+        ${PACKS.map(
+          ({ key, label, emoji }) => html`
+            <mrd-button
+              size="tiny"
+              variant=${activePack === key ? 'fill' : 'inverted'}
+              @click=${() => selectPack(key)}
+            >
+              ${emoji} ${label}
+            </mrd-button>
+          `,
+        )}
+      </div>
+      <p class="settings-hint">Your uploads are always included.</p>
+    </div>
+
+    <!-- Data & Backup -->
+    <div class="settings-section">
+      <p class="settings-label">Data &amp; Backup</p>
+      <div class="button-row">
+        <mrd-button
+          size="tiny"
+          variant="inverted"
+          class="full-width"
+          @click=${handleExport}
+        >
+          Export
+        </mrd-button>
+        <mrd-button
+          size="tiny"
+          variant="inverted"
+          class="full-width"
+          @click=${handleImport}
+        >
+          Import
+        </mrd-button>
+      </div>
+      <div class="button-row">
+        <mrd-button
+          size="tiny"
+          color="error"
+          variant="inverted"
+          class="full-width"
+          @click=${() =>
+            showConfirmDialog(
+              async () => {
+                await resetImages();
+                renderContent();
+                showToast({
+                  message: 'Images reset to defaults',
+                  type: 'success',
+                });
+              },
+              { message: 'Reset images to defaults? This cannot be undone.' },
+            )}
+        >
+          Reset images
+        </mrd-button>
+        <mrd-button
+          size="tiny"
+          color="error"
+          variant="inverted"
+          class="full-width"
+          @click=${() =>
+            showConfirmDialog(
+              async () => {
+                await resetTitles();
+                renderContent();
+                showToast({
+                  message: 'Titles reset to defaults',
+                  type: 'success',
+                });
+              },
+              { message: 'Reset titles to defaults? This cannot be undone.' },
+            )}
+        >
+          Reset titles
+        </mrd-button>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="lockup">
+      ${unsafeSVG(logo)}
+      <div class="lockup-content">
+        <p>
+          Made with 😻 by
+          <a
+            href="https://elad.mizrahi.cc"
+            target="_blank"
+            aria-label="Go to Elad Mizrahi's portfolio"
+            >Elad Mizrahi</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+`;

@@ -1,7 +1,10 @@
 import { html } from 'lit-html';
+import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js';
+
+import '@mordech/web-components';
 
 import { DataKeys } from '../@types';
-import { deleteForeverIcon } from '../assets/deleteForeverIcon';
+import deleteForeverSvg from '../assets/deleteForeverIcon.svg';
 import { removeItem } from '../utils/removeItem';
 
 export const imageList = (category: DataKeys, items: string[]) => {
@@ -14,24 +17,31 @@ export const imageList = (category: DataKeys, items: string[]) => {
       <img
         src=${item}
         title=${isRandom
-          ? 'Random image of a cat'
+          ? 'Random image will change on each load'
           : `Image no. ${imageNumber}. User uploaded`}
         alt=${isRandom
-          ? 'Random cat image'
+          ? 'Random image'
           : `Image no. ${imageNumber}. User uploaded`}
       />
+      ${isRandom
+        ? html`<mrd-chip color="secondary" class="random-chip">
+            Random
+          </mrd-chip>`
+        : ''}
       ${filteredItems.length >= 2
-        ? html`<button
+        ? html`<mrd-button
+            size="tiny"
+            color="error"
+            variant="tonal"
             @click=${() => {
               removeItem(category, items, item);
             }}
-            class="destructive icon"
             aria-label=${isRandom
               ? 'Delete all random cat images'
               : `Delete user uploaded image number ${imageNumber}.`}
           >
-            ${deleteForeverIcon}
-          </button>`
+            ${unsafeSVG(deleteForeverSvg)}
+          </mrd-button>`
         : ''}
     </li>`;
   });
