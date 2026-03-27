@@ -1,6 +1,6 @@
 {
   "name": "@mordech/web-components",
-  "version": "0.38.0",
+  "version": "0.39.0",
   "type": "module",
   "main": "dist/index.cjs",
   "license": "MIT",
@@ -40,8 +40,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@mordech/tokens": "^0.38.0",
-    "@mordech/vite-lit-loader": "^0.38.0",
+    "@mordech/tokens": "^0.39.0",
+    "@mordech/vite-lit-loader": "^0.39.0",
     "@mordech/web-components": "*",
     "@storybook/addons": "^7.6.6",
     "@storybook/theming": "^7.6.6",
