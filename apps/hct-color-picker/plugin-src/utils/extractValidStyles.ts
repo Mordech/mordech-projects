@@ -58,12 +58,14 @@ export function extractValidStyles(
         const { id, name } = paintStyle;
 
         return Object.entries(valuesByMode)
-          .map(([modeId, paint]) => {
-            if (!(typeof paint === 'object')) return;
-            if ('type' in paint) return;
-            if (!('r' in paint)) return;
+          .map(([modeId, value]) => {
+            if (!(typeof value === 'object')) return;
+            if ('type' in value) return;
+            if (!('r' in value)) return;
 
-            const { r, g, b } = paint as RGB;
+            const { r, g, b } = value as RGB;
+            const alpha =
+              'a' in value ? Math.round((value as RGBA).a * 100) : 100;
 
             return {
               id: id,
@@ -74,14 +76,19 @@ export function extractValidStyles(
                 g: g * 255,
                 b: b * 255,
               },
+              alpha,
             } satisfies UiPaintStyle;
           })
           .filter((paintStyle) => paintStyle !== undefined) as UiPaintStyle[];
       }
 
       const { id, name } = paintStyle;
-
       const { r, g, b } = paint;
+      const paintOpacity =
+        'paints' in paintStyle
+          ? (paintStyle.paints[0] as SolidPaint).opacity ?? 1
+          : 1;
+      const alpha = Math.round(paintOpacity * 100);
 
       return {
         id,
@@ -91,6 +98,7 @@ export function extractValidStyles(
           g: g * 255,
           b: b * 255,
         },
+        alpha,
       } satisfies UiPaintStyle;
     })
     .flat()
