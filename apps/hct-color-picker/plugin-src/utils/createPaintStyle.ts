@@ -1,4 +1,5 @@
 import {
+  alphaFromArgb,
   blueFromArgb,
   greenFromArgb,
   Hct,
@@ -8,6 +9,8 @@ import {
 import { applyPaint } from './applyPaint';
 
 export function createPaintStyle(argb: number) {
+  const opacity = alphaFromArgb(argb) / 255;
+
   const color: RGB = {
     r: redFromArgb(argb) / 255,
     g: greenFromArgb(argb) / 255,
@@ -15,8 +18,12 @@ export function createPaintStyle(argb: number) {
   };
 
   const hct = Hct.fromInt(argb);
+  const alphaPercent = Math.round(opacity * 100);
 
-  const name = `hct(${hct.hue.toFixed()}, ${hct.chroma.toFixed()}, ${hct.tone.toFixed()})`;
+  const name =
+    alphaPercent < 100
+      ? `hct(${hct.hue.toFixed()}, ${hct.chroma.toFixed()}, ${hct.tone.toFixed()}, ${alphaPercent}%)`
+      : `hct(${hct.hue.toFixed()}, ${hct.chroma.toFixed()}, ${hct.tone.toFixed()})`;
 
   const paintStyle = figma.createPaintStyle();
   paintStyle.name = name;
@@ -24,6 +31,7 @@ export function createPaintStyle(argb: number) {
     {
       type: 'SOLID',
       color,
+      opacity,
     },
   ];
 
