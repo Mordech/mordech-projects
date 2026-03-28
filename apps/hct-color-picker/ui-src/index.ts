@@ -30,6 +30,7 @@ export class MyApp extends LitElement {
   @state() tone = 50;
   @state() paints?: UiPaintStyle[];
   @state() selectedColor?: SelectedColor;
+  @state() alpha = 100;
   @state() shiftKey = false;
 
   render() {
@@ -149,7 +150,9 @@ export class MyApp extends LitElement {
   }
 
   get argb() {
-    return Hct.from(this.hue, this.chroma, this.tone).toInt();
+    const base = Hct.from(this.hue, this.chroma, this.tone).toInt();
+    const a = Math.round(this.alpha * 2.55); // 0–100 → 0–255
+    return (a << 24) | (base & 0x00ffffff);
   }
 
   get hex() {
@@ -166,6 +169,7 @@ export class MyApp extends LitElement {
       this.hue = hct.hue;
       this.chroma = hct.chroma;
       this.tone = hct.tone;
+      this.alpha = this.selectedColor.alpha ?? 100;
 
       this.updateStyle();
       this.saveColor();
@@ -245,6 +249,10 @@ export class MyApp extends LitElement {
 
       case 'tone':
         this.tone = value;
+        break;
+
+      case 'alpha':
+        this.alpha = value;
         break;
 
       case 'selected_color': {
@@ -342,6 +350,7 @@ export class MyApp extends LitElement {
             this.hue = hue;
             this.chroma = chroma;
             this.tone = tone;
+            this.alpha = selection.alpha ?? 100;
             this.saveColor();
           }
 
@@ -355,6 +364,7 @@ export class MyApp extends LitElement {
             this.hue = color.hue;
             this.chroma = color.chroma;
             this.tone = color.tone;
+            this.alpha = color.alpha ?? 100;
           }
           break;
 
@@ -373,7 +383,7 @@ export class MyApp extends LitElement {
   private saveColor() {
     postMessage({
       type: 'save-color',
-      data: { hue: this.hue, chroma: this.chroma, tone: this.tone },
+      data: { hue: this.hue, chroma: this.chroma, tone: this.tone, alpha: this.alpha },
     });
   }
 
