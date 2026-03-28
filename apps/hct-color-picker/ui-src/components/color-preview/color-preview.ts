@@ -1,4 +1,3 @@
-import { argbFromHex } from '@material/material-color-utilities';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
@@ -16,6 +15,7 @@ import './color-preview.scss';
 @customElement('color-preview')
 export class ColorPreview extends LitElement {
   @property({ type: String }) hex = '#000000';
+  @property({ type: Number }) argb = 0;
   @property({ type: Object }) selectedColor?: UiPaintStyle;
 
   get selectedColorType() {
@@ -83,7 +83,7 @@ export class ColorPreview extends LitElement {
     postMessage({
       type: 'create-paint-style',
       data: {
-        argb: argbFromHex(this.hex),
+        argb: this.argb,
       },
     });
   }

@@ -39,6 +39,7 @@ export class MyApp extends LitElement {
         <color-preview
           @input=${this.handleInput}
           .hex=${this.hex}
+          .argb=${this.argb}
           .selectedColor=${this.selectedColor}
         >
         </color-preview>
@@ -98,7 +99,7 @@ export class MyApp extends LitElement {
                 title="Color styles"
               >
                 <div class="paints-container" role="listbox">
-                  ${repeat(this.paints, ({ id, name, color, modeId }) => {
+                  ${repeat(this.paints, ({ id, name, color, modeId, alpha }) => {
                     const swatchId = id + (modeId ? modeId : '');
                     const selectionId =
                       this.selectedColor?.id +
@@ -124,6 +125,7 @@ export class MyApp extends LitElement {
                                 name,
                                 color,
                                 modeId,
+                                alpha,
                               })}
                         .id=${swatchId}
                         .name=${name}
