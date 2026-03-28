@@ -2,6 +2,6 @@
   "extends": ["../.eslintrc.json"],
   "parserOptions": {
     "project": "./tsconfig.json",
-    "tsconfigRootDir": "./apps/hct-color-picker/plugin-src"
+    "tsconfigRootDir": "./plugin-src"
   }
 }

@@ -20,7 +20,7 @@ export class MrdPainSwatchElement extends LitElement {
       class="swatch"
       @click=${() => (this.active = !this.active)}
       data-active=${this.active}
-      style="color: ${this.color}; --mrd-swatch-color: ${this.color}"
+      style="color: ${this.color}"
     ></button>`;
   }
 }

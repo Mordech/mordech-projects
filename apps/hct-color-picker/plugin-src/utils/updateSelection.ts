@@ -83,9 +83,7 @@ export async function updateSelection() {
     // For variable fills: read alpha from the variable's RGBA value
     // For paint style / direct fills: read alpha from the paint's opacity field
     const alpha =
-      variableValue &&
-      typeof variableValue === 'object' &&
-      'a' in variableValue
+      variableValue && typeof variableValue === 'object' && 'a' in variableValue
         ? Math.round((variableValue as RGBA).a * 100)
         : Math.round((fills[0].opacity ?? 1) * 100);
 

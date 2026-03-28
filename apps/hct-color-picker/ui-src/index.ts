@@ -99,45 +99,48 @@ export class MyApp extends LitElement {
                 title="Color styles"
               >
                 <div class="paints-container" role="listbox">
-                  ${repeat(this.paints, ({ id, name, color, modeId, alpha }) => {
-                    const swatchId = id + (modeId ? modeId : '');
-                    const selectionId =
-                      this.selectedColor?.id +
-                      (this.selectedColor?.modeId
-                        ? this.selectedColor?.modeId
-                        : '');
-                    const isSelected = swatchId === selectionId;
+                  ${repeat(
+                    this.paints,
+                    ({ id, name, color, modeId, alpha }) => {
+                      const swatchId = id + (modeId ? modeId : '');
+                      const selectionId =
+                        this.selectedColor?.id +
+                        (this.selectedColor?.modeId
+                          ? this.selectedColor?.modeId
+                          : '');
+                      const isSelected = swatchId === selectionId;
 
-                    return html`
-                      <mrd-paint-swatch
-                        data-event="Click swatch"
-                        data-prop-type=${id === this.selectedColor?.id
-                          ? 'Select style'
-                          : 'Deselect style'}
-                        data-prop-color=${Color(color).hex()}
-                        role="option"
-                        aria-selected=${isSelected}
-                        @click=${() =>
-                          isSelected
-                            ? (this.selectedColor = undefined)
-                            : (this.selectedColor = {
-                                id,
-                                name,
-                                color,
-                                modeId,
-                                alpha,
-                              })}
-                        .id=${swatchId}
-                        .name=${name}
-                        .color=${`rgba(${color.r}, ${color.g}, ${color.b}, ${
-                          (alpha ?? 100) / 100
-                        })`}
-                        .active=${isSelected}
-                        data-prop-is-Variable=${!!modeId || nothing}
-                      >
-                      </mrd-paint-swatch>
-                    `;
-                  })}
+                      return html`
+                        <mrd-paint-swatch
+                          data-event="Click swatch"
+                          data-prop-type=${id === this.selectedColor?.id
+                            ? 'Select style'
+                            : 'Deselect style'}
+                          data-prop-color=${Color(color).hex()}
+                          role="option"
+                          aria-selected=${isSelected}
+                          style="--mrd-swatch-color: rgba(${color.r}, ${color.g}, ${color.b}, ${(alpha ??
+                            100) / 100})"
+                          @click=${() =>
+                            isSelected
+                              ? (this.selectedColor = undefined)
+                              : (this.selectedColor = {
+                                  id,
+                                  name,
+                                  color,
+                                  modeId,
+                                  alpha,
+                                })}
+                          .id=${swatchId}
+                          .name=${name}
+                          .color=${Color(color).hex()}
+                          .active=${isSelected}
+                          data-prop-is-Variable=${!!modeId || nothing}
+                        >
+                        </mrd-paint-swatch>
+                      `;
+                    },
+                  )}
                 </div>
               </details-section>
             `
@@ -251,7 +254,9 @@ export class MyApp extends LitElement {
 
   get alphaGradient() {
     const stops = Array.from({ length: this.alpha + 1 }, (_, i) => {
-      const a = Math.round(i * 2.55).toString(16).padStart(2, '0');
+      const a = Math.round(i * 2.55)
+        .toString(16)
+        .padStart(2, '0');
       return `${this.hex}${a}`;
     });
 
@@ -414,7 +419,12 @@ export class MyApp extends LitElement {
   private saveColor() {
     postMessage({
       type: 'save-color',
-      data: { hue: this.hue, chroma: this.chroma, tone: this.tone, alpha: this.alpha },
+      data: {
+        hue: this.hue,
+        chroma: this.chroma,
+        tone: this.tone,
+        alpha: this.alpha,
+      },
     });
   }
 

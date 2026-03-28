@@ -14,6 +14,7 @@
     "build:plugin": "esbuild --bundle --minify --sourcemap --target=es2015 --format=esm --legal-comments=none --outfile=dist/code.js plugin-src/code.ts",
     "build": "concurrently \"vite build\" \"yarn build:plugin\"",
     "watch": "concurrently \"vite build --watch --mode development\" \"yarn build:plugin --watch\"",
+    "lint": "eslint ui-src plugin-src",
     "lint:css": "stylelint './**/*.{css,scss,ts}'"
   },
   "devDependencies": {
@@ -23,6 +24,7 @@
     "@mordech/web-components": "*",
     "concurrently": "^8.2.2",
     "esbuild": "0.19.11",
+    "eslint": "8.57.0",
     "lit-analyzer": "^2.0.2",
     "stylelint": "^16.1.0",
     "vite": "^5.0.10"

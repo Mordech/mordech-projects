@@ -19245,6 +19245,7 @@ __metadata:
     color: "npm:^4.2.3"
     concurrently: "npm:^8.2.2"
     esbuild: "npm:0.19.11"
+    eslint: "npm:8.57.0"
     lit: "npm:^3.1.0"
     lit-analyzer: "npm:^2.0.2"
     stylelint: "npm:^16.1.0"
