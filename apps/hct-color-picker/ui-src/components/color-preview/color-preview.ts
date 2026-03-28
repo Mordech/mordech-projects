@@ -1,3 +1,4 @@
+import { alphaFromArgb } from '@material/material-color-utilities';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
@@ -17,6 +18,12 @@ export class ColorPreview extends LitElement {
   @property({ type: String }) hex = '#000000';
   @property({ type: Number }) argb = 0;
   @property({ type: Object }) selectedColor?: UiPaintStyle;
+
+  get displayHex() {
+    const alpha = alphaFromArgb(this.argb);
+    if (alpha === 255) return this.hex;
+    return this.hex + alpha.toString(16).padStart(2, '0');
+  }
 
   get selectedColorType() {
     return this.selectedColor && this.selectedColor?.modeId
@@ -71,8 +78,8 @@ export class ColorPreview extends LitElement {
               `
             : html` <strong> Custom color </strong> `}
 
-          <copy-button data-event="Copy hex" data-prop-value=${this.hex}>
-            ${this.hex.toUpperCase()}
+          <copy-button data-event="Copy hex" data-prop-value=${this.displayHex}>
+            ${this.displayHex.toUpperCase()}
           </copy-button>
         </div>
       </div>
