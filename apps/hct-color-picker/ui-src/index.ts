@@ -78,6 +78,17 @@ export class MyApp extends LitElement {
             @input=${this.handleInput}
           >
           </hct-controller>
+
+          <hct-controller
+            id="mrd_controller-alpha"
+            .name=${'Alpha'}
+            .value=${this.alpha}
+            .min=${0}
+            .max=${100}
+            .sliderGradient=${this.alphaGradient}
+            @input=${this.handleInput}
+          >
+          </hct-controller>
         </div>
 
         ${this.paints?.length
@@ -231,6 +242,22 @@ export class MyApp extends LitElement {
       '--mrd-thumb-color': hexFromArgb(
         Hct.from(this.hue, this.chroma, clampInt(25, 75, this.tone)).toInt(),
       ),
+    };
+  }
+
+  get alphaGradient() {
+    const stops = Array.from({ length: this.alpha + 1 }, (_, i) => {
+      const a = Math.round(i * 2.55).toString(16).padStart(2, '0');
+      return `${this.hex}${a}`;
+    });
+
+    return {
+      '--mrd-range-preview-background': [
+        `linear-gradient(to right, transparent, ${this.hex})`,
+        'repeating-conic-gradient(#888 0% 25%, #bbb 0% 50%) 0 0 / 10px 10px',
+      ].join(', '),
+      '--mrd-range-color': stops.join(','),
+      '--mrd-thumb-color': this.hex,
     };
   }
 
