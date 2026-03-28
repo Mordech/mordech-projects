@@ -1,4 +1,5 @@
 import {
+  alphaFromArgb,
   blueFromArgb,
   greenFromArgb,
   redFromArgb,
@@ -12,6 +13,8 @@ export async function updatePaint(
   paintStyle: UiPaintStyle | undefined,
   argb: number,
 ) {
+  const opacity = alphaFromArgb(argb) / 255;
+
   const solidPaint: SolidPaint = {
     type: 'SOLID',
     color: {
@@ -19,6 +22,7 @@ export async function updatePaint(
       g: greenFromArgb(argb) / 255,
       b: blueFromArgb(argb) / 255,
     },
+    opacity,
   };
 
   if (!paintStyle) return applyPaint(solidPaint);
@@ -40,7 +44,10 @@ export async function updatePaint(
     const mode = paintStyle.modeId;
     if (!mode) return;
 
-    paint.setValueForMode(mode, solidPaint.color);
+    paint.setValueForMode(mode, {
+      ...solidPaint.color,
+      a: opacity,
+    });
   }
 
   if (paintStyle.variableAlias) return;
