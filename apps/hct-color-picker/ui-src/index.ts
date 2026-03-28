@@ -129,7 +129,9 @@ export class MyApp extends LitElement {
                               })}
                         .id=${swatchId}
                         .name=${name}
-                        .color=${Color(color).hex()}
+                        .color=${`rgba(${color.r}, ${color.g}, ${color.b}, ${
+                          (alpha ?? 100) / 100
+                        })`}
                         .active=${isSelected}
                         data-prop-is-Variable=${!!modeId || nothing}
                       >

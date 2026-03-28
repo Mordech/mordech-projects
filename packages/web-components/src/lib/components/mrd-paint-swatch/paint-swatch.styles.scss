@@ -1,7 +1,9 @@
 .swatch {
   height: var(--mrd-paint-swatch-size, 3rem);
   width: var(--mrd-paint-swatch-size, 3rem);
-  background-color: currentcolor;
+  background-image:
+    linear-gradient(currentcolor, currentcolor),
+    repeating-conic-gradient(#888 0% 25%, #bbb 0% 50%) 0 0 / 10px 10px;
   border-width: 1px;
   border-style: solid;
   border-color: var(--mrd-color-background-surface);

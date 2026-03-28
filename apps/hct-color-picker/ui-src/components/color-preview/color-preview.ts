@@ -39,7 +39,10 @@ export class ColorPreview extends LitElement {
 
     return html`
       <div class="color-container">
-        <div class="color-input-container">
+        <div
+          class="color-input-container"
+          style="--mrd-preview-color: ${this.displayHex}"
+        >
           <input
             aria-label="Selected Color"
             type="color"
@@ -48,6 +51,7 @@ export class ColorPreview extends LitElement {
             class=${'color-input'}
             .value=${this.hex}
           />
+          <div class="mrd-alpha-overlay" aria-hidden="true"></div>
 
           <mrd-button
             variant="inverted"

@@ -10,7 +10,19 @@
     inset-block-end: 0.7rem;
     inset-inline-end: 0.6rem;
     opacity: 0.9;
+    z-index: 2;
   }
+}
+
+.mrd-alpha-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 0.5rem;
+  z-index: 1;
+  background-image:
+    linear-gradient(var(--mrd-preview-color), var(--mrd-preview-color)),
+    repeating-conic-gradient(#888 0% 25%, #bbb 0% 50%) 0 0 / 10px 10px;
 }
 
 mrd-button.save-detach-button {
