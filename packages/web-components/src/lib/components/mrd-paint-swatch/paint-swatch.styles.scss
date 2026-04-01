@@ -4,7 +4,7 @@
   background:
     linear-gradient(
       135deg,
-      rgb(from var(--mrd-swatch-color) r g b / 1) 50%,
+      rgb(from var(--mrd-swatch-color) r g b / 100%) 50%,
       var(--mrd-swatch-color) 50%
     ),
     repeating-conic-gradient(#888 0% 25%, #bbb 0% 50%) 0 0 / 10px 10px;
