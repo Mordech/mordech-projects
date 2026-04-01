@@ -50,6 +50,7 @@ coverage
 .worktrees
 # CocoIndex Code (ccc)
 /.cocoindex_code/
+/.continue/
 
 .superpowers
 .playwright-mcp
