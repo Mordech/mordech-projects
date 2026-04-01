@@ -1,5 +1,6 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { styleMap } from 'lit/directives/style-map.js';
 
 import focusableBase from '../../styles/focusable.styles.scss?lit';
 
@@ -20,7 +21,7 @@ export class MrdPainSwatchElement extends LitElement {
       class="swatch"
       @click=${() => (this.active = !this.active)}
       data-active=${this.active}
-      style="color: ${this.color}"
+      style=${styleMap({ '--mrd-swatch-color': this.color })}
     ></button>`;
   }
 }
