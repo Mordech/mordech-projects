@@ -119,8 +119,6 @@ export class MyApp extends LitElement {
                           data-prop-color=${Color(color).hex()}
                           role="option"
                           aria-selected=${isSelected}
-                          style="--mrd-swatch-color: rgba(${color.r}, ${color.g}, ${color.b}, ${(alpha ??
-                            100) / 100})"
                           @click=${() =>
                             isSelected
                               ? (this.selectedColor = undefined)
@@ -133,7 +131,9 @@ export class MyApp extends LitElement {
                                 })}
                           .id=${swatchId}
                           .name=${name}
-                          .color=${Color(color).hex()}
+                          .color=${`rgba(${color.r}, ${color.g}, ${color.b}, ${
+                            (alpha ?? 100) / 100
+                          })`}
                           .active=${isSelected}
                           data-prop-is-Variable=${!!modeId || nothing}
                         >

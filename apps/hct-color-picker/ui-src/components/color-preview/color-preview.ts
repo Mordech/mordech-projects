@@ -39,24 +39,21 @@ export class ColorPreview extends LitElement {
 
     return html`
       <div class="color-container">
-        <div
-          class="color-input-container"
-          style="--mrd-preview-color: ${this.displayHex}"
-        >
+        <div class="color-input-container">
           <input
             aria-label="Selected Color"
             type="color"
             id="mrd_color-selected_color"
             name="Selected Color"
-            class=${'color-input'}
+            class="color-input"
+            style="opacity: ${alphaFromArgb(this.argb) / 255}"
             .value=${this.hex}
           />
-          <div class="mrd-alpha-overlay" aria-hidden="true"></div>
 
           <mrd-button
             variant="inverted"
             aria-label=${this.selectedColor
-              ? 'Detach ${this.selectedColorType}'
+              ? `Detach ${this.selectedColorType}`
               : 'Add to styles'}
             class=${classMap(addStyleButtonClasses)}
             @click=${this.selectedColor
@@ -65,7 +62,7 @@ export class ColorPreview extends LitElement {
           >
             ${this.selectedColor
               ? html`${detachIcon} Detach ${this.selectedColorType}`
-              : html`${saveIcon} Save style`}
+              : html`${saveIcon} ${'Save style'}`}
           </mrd-button>
         </div>
 

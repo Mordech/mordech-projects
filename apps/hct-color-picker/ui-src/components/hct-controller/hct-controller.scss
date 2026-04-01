@@ -1,13 +1,13 @@
 @mixin thumb {
   appearance: none;
-  width: 1rem;
+  width: var(--mrd-space-400);
   background-color: unset;
   border: none;
 }
 
 mrd-range::part(slot-container) {
   border: 1px solid var(--mrd-color-outline);
-  height: 2rem;
+  height: var(--mrd-space-600);
   background: var(
     --mrd-range-preview-background,
     var(--mrd-color-background-surface)
@@ -36,7 +36,7 @@ mrd-range::part(slot-container) {
 .slider-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--mrd-space-200);
 }
 
 .input-title-container {
@@ -47,10 +47,10 @@ mrd-range::part(slot-container) {
 
 input[type='number'] {
   overflow: hidden;
-  padding: 0.5rem;
-  width: 4.5rem;
+  padding: var(--mrd-space-100) var(--mrd-space-200);
+  width: 3.5rem;
   border: 1px solid var(--mrd-color-outline);
-  border-radius: 0.25rem;
+  border-radius: var(--mrd-border-radius-100);
   color: var(--mrd-color-background-on-base);
 
   &:hover,

@@ -1,28 +1,25 @@
 .color-input-container {
+  --mrd-swatch-size: 5rem;
+
+  height: var(--mrd-swatch-size);
   z-index: 1;
-  margin: -2px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   display: flex;
   position: relative;
   flex-direction: column;
+  border-radius: var(--mrd-border-radius-100);
+  border: 1px solid var(--mrd-color-outline);
+  background: repeating-conic-gradient(#888 0% 25%, #bbb 0% 50%) 0 0 / 10px 10px;
 
   & mrd-button {
     position: absolute;
-    inset-block-end: 0.7rem;
-    inset-inline-end: 0.6rem;
+    inset-block-end: calc(var(--mrd-space-200) + var(--mrd-space-50));
+    inset-inline-end: var(--mrd-space-200);
     opacity: 0.9;
     z-index: 2;
   }
-}
-
-.mrd-alpha-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: 0.5rem;
-  z-index: 1;
-  background-image:
-    linear-gradient(var(--mrd-preview-color), var(--mrd-preview-color)),
-    repeating-conic-gradient(#888 0% 25%, #bbb 0% 50%) 0 0 / 10px 10px;
 }
 
 mrd-button.save-detach-button {
@@ -31,8 +28,10 @@ mrd-button.save-detach-button {
   }
 
   &::part(button) {
-    padding: 0.5rem;
+    padding: 0.35rem;
   }
+
+  --mrd-icon-size: 1rem;
 
   &::part(slot) {
     visibility: hidden;
@@ -48,7 +47,7 @@ mrd-button.save-detach-button {
     &::part(slot) {
       visibility: visible;
       width: auto;
-      padding-inline: 0.25rem;
+      padding-inline: var(--mrd-space-100);
       overflow: hidden;
       white-space: nowrap;
       transform: translate(0);
@@ -64,16 +63,15 @@ mrd-button.save-detach-button {
 }
 
 .color-input {
-  --mrd-swatch-size: 7rem;
+  appearance: none;
+  width: 102%;
 
   @mixin color-swatch {
     border-color: var(--mrd-color-outline);
     border-width: 1px;
-    border-radius: 0.5rem;
+    border-radius: var(--mrd-border-radius-200);
     height: var(--mrd-swatch-size);
   }
-
-  appearance: none;
 
   &::-webkit-color-swatch {
     @include color-swatch;
@@ -93,16 +91,16 @@ mrd-button.save-detach-button {
 
 .info-container {
   display: inline-flex;
-  gap: 2rem;
+  gap: var(--mrd-space-400);
   justify-content: space-between;
   align-items: center;
-  padding-block-end: 0.5rem;
+  padding-block-end: var(--mrd-space-200);
 }
 
 .color-container {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--mrd-space-100);
 }
 
 .selected-style-span {

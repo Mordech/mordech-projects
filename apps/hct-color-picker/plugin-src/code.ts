@@ -13,12 +13,12 @@ import {
   updateSelection,
 } from './utils';
 
-figma.showUI(__html__, { width: 340, height: 560 });
+figma.showUI(__html__, { width: 300, height: 564 });
 figma.currentPage.selection = [];
 
 const uiSizes: Record<string, [number, number]> = {
-  small: [340, 568],
-  medium: [340, 618],
+  small: [300, 564],
+  medium: [300, 600],
 };
 
 initPaints();
