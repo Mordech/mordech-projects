@@ -11,7 +11,7 @@
   flex-direction: column;
   border-radius: var(--mrd-border-radius-100);
   border: 1px solid var(--mrd-color-outline);
-  background: repeating-conic-gradient(#888 0% 25%, #bbb 0% 50%) 0 0 / 10px 10px;
+  background: var(--mrd-alpha-background);
 
   & mrd-button {
     position: absolute;

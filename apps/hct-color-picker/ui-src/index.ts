@@ -260,7 +260,7 @@ export class MyApp extends LitElement {
     return {
       '--mrd-range-preview-background': [
         `linear-gradient(to right, ${stops.join(',')})`,
-        'repeating-conic-gradient(#888 0% 25%, #bbb 0% 50%) 0 0 / 10px 10px',
+        'var(--mrd-alpha-background)',
       ].join(', '),
       '--mrd-range-color': stops.slice(0, this.alpha + 1).join(','),
       '--mrd-thumb-color': this.hex,

@@ -25,6 +25,12 @@ strong {
 }
 
 my-app {
+  --mrd-alpha-background: repeating-conic-gradient(
+      var(--mrd-color-background-surface) 0% 25%,
+      var(--mrd-color-background-surface-variant) 0% 50%
+    )
+    0 0 / 10px 10px;
+
   display: flex;
   flex-direction: column;
   align-items: stretch;
