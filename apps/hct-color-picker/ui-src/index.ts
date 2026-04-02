@@ -19,7 +19,6 @@ import './components/hct-controller';
 import type { PluginMessage, UiPaintStyle } from '../types';
 
 import { postMessage } from './utils/postMessage';
-import type { SelectedColor } from './types';
 
 import './styles.scss';
 
@@ -29,7 +28,7 @@ export class MyApp extends LitElement {
   @state() chroma = 50;
   @state() tone = 50;
   @state() paints?: UiPaintStyle[];
-  @state() selectedColor?: SelectedColor;
+  @state() selectedColor?: UiPaintStyle;
   @state() alpha = 100;
   @state() shiftKey = false;
 
@@ -102,12 +101,10 @@ export class MyApp extends LitElement {
                   ${repeat(
                     this.paints,
                     ({ id, name, color, modeId, alpha }) => {
-                      const swatchId = id + (modeId ? modeId : '');
+                      const swatchId = id + (modeId ?? '');
                       const selectionId =
-                        this.selectedColor?.id +
-                        (this.selectedColor?.modeId
-                          ? this.selectedColor?.modeId
-                          : '');
+                        (this.selectedColor?.id ?? '') +
+                        (this.selectedColor?.modeId ?? '');
                       const isSelected = swatchId === selectionId;
 
                       return html`
@@ -132,7 +129,7 @@ export class MyApp extends LitElement {
                           .id=${swatchId}
                           .name=${name}
                           .color=${`rgba(${color.r}, ${color.g}, ${color.b}, ${
-                            (alpha ?? 100) / 100
+                            alpha / 100
                           })`}
                           .active=${isSelected}
                           data-prop-is-Variable=${!!modeId || nothing}
@@ -170,7 +167,7 @@ export class MyApp extends LitElement {
   get argb() {
     const base = Hct.from(this.hue, this.chroma, this.tone).toInt();
     const a = Math.round(this.alpha * 2.55); // 0–100 → 0–255
-    return (a << 24) | (base & 0x00ffffff);
+    return ((a << 24) | (base & 0x00ffffff)) >>> 0;
   }
 
   get hex() {
@@ -187,7 +184,7 @@ export class MyApp extends LitElement {
       this.hue = hct.hue;
       this.chroma = hct.chroma;
       this.tone = hct.tone;
-      this.alpha = this.selectedColor.alpha ?? 100;
+      this.alpha = this.selectedColor.alpha;
 
       this.updateStyle();
       this.saveColor();
@@ -253,7 +250,7 @@ export class MyApp extends LitElement {
   }
 
   get alphaGradient() {
-    const stops = Array.from({ length: this.alpha + 1 }, (_, i) => {
+    const stops = Array.from({ length: 101 }, (_, i) => {
       const a = Math.round(i * 2.55)
         .toString(16)
         .padStart(2, '0');
@@ -262,10 +259,10 @@ export class MyApp extends LitElement {
 
     return {
       '--mrd-range-preview-background': [
-        `linear-gradient(to right, transparent, ${this.hex})`,
+        `linear-gradient(to right, ${stops.join(',')})`,
         'repeating-conic-gradient(#888 0% 25%, #bbb 0% 50%) 0 0 / 10px 10px',
       ].join(', '),
-      '--mrd-range-color': stops.join(','),
+      '--mrd-range-color': stops.slice(0, this.alpha + 1).join(','),
       '--mrd-thumb-color': this.hex,
     };
   }
@@ -326,11 +323,7 @@ export class MyApp extends LitElement {
     };
 
     this.onmousedown = (e) => {
-      if (e.shiftKey) {
-        this.shiftKey = true;
-      } else {
-        this.shiftKey = false;
-      }
+      this.shiftKey = e.shiftKey;
     };
 
     this.addEventListener('input', () => {
@@ -363,8 +356,7 @@ export class MyApp extends LitElement {
         case 'selection': {
           const { selection } = msg;
 
-          if (!selection) break;
-          if (!selection.color) break;
+          if (!selection?.color) break;
 
           const selectedPaint = this.paints?.find((paint) =>
             paint.modeId
@@ -386,7 +378,7 @@ export class MyApp extends LitElement {
             this.hue = hue;
             this.chroma = chroma;
             this.tone = tone;
-            this.alpha = selection.alpha ?? 100;
+            this.alpha = selection.alpha;
             this.saveColor();
           }
 

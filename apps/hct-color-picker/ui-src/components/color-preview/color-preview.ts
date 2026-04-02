@@ -26,9 +26,7 @@ export class ColorPreview extends LitElement {
   }
 
   get selectedColorType() {
-    return this.selectedColor && this.selectedColor?.modeId
-      ? 'variable'
-      : 'style';
+    return this.selectedColor?.modeId ? 'variable' : 'style';
   }
 
   render() {

@@ -10,7 +10,7 @@ type HctObject = {
   hue: number;
   chroma: number;
   tone: number;
-  alpha?: number;
+  alpha: number;
 };
 
 export interface UiPaintStyle {
@@ -19,7 +19,7 @@ export interface UiPaintStyle {
   variableAlias?: boolean;
   name: string;
   color: RGB;
-  alpha?: number;
+  alpha: number;
 }
 
 export type SaveColor = {
@@ -58,7 +58,7 @@ export type Selection = {
     color?: RGB;
     modeId?: string;
     variableAlias?: boolean;
-    alpha?: number;
+    alpha: number;
   };
 };
 
