@@ -1,5 +1,3 @@
-import { UiPaintStyle } from '../types';
-
 export type HctKeys = 'hue' | 'chroma' | 'tone';
 
 export interface Color {
@@ -8,5 +6,3 @@ export interface Color {
 }
 
 export type Paints = Record<string, Color>;
-
-export type SelectedColor = UiPaintStyle & { variableAlias?: boolean };

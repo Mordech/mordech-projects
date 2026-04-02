@@ -1,4 +1,4 @@
-import { argbFromHex } from '@material/material-color-utilities';
+import { alphaFromArgb } from '@material/material-color-utilities';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
@@ -16,12 +16,17 @@ import './color-preview.scss';
 @customElement('color-preview')
 export class ColorPreview extends LitElement {
   @property({ type: String }) hex = '#000000';
+  @property({ type: Number }) argb = 0;
   @property({ type: Object }) selectedColor?: UiPaintStyle;
 
+  get displayHex() {
+    const alpha = alphaFromArgb(this.argb);
+    if (alpha === 255) return this.hex;
+    return this.hex + alpha.toString(16).padStart(2, '0');
+  }
+
   get selectedColorType() {
-    return this.selectedColor && this.selectedColor?.modeId
-      ? 'variable'
-      : 'style';
+    return this.selectedColor?.modeId ? 'variable' : 'style';
   }
 
   render() {
@@ -38,14 +43,15 @@ export class ColorPreview extends LitElement {
             type="color"
             id="mrd_color-selected_color"
             name="Selected Color"
-            class=${'color-input'}
+            class="color-input"
+            style="opacity: ${alphaFromArgb(this.argb) / 255}"
             .value=${this.hex}
           />
 
           <mrd-button
             variant="inverted"
             aria-label=${this.selectedColor
-              ? 'Detach ${this.selectedColorType}'
+              ? `Detach ${this.selectedColorType}`
               : 'Add to styles'}
             class=${classMap(addStyleButtonClasses)}
             @click=${this.selectedColor
@@ -54,7 +60,7 @@ export class ColorPreview extends LitElement {
           >
             ${this.selectedColor
               ? html`${detachIcon} Detach ${this.selectedColorType}`
-              : html`${saveIcon} Save style`}
+              : html`${saveIcon} ${'Save style'}`}
           </mrd-button>
         </div>
 
@@ -71,8 +77,8 @@ export class ColorPreview extends LitElement {
               `
             : html` <strong> Custom color </strong> `}
 
-          <copy-button data-event="Copy hex" data-prop-value=${this.hex}>
-            ${this.hex.toUpperCase()}
+          <copy-button data-event="Copy hex" data-prop-value=${this.displayHex}>
+            ${this.displayHex.toUpperCase()}
           </copy-button>
         </div>
       </div>
@@ -83,7 +89,7 @@ export class ColorPreview extends LitElement {
     postMessage({
       type: 'create-paint-style',
       data: {
-        argb: argbFromHex(this.hex),
+        argb: this.argb,
       },
     });
   }

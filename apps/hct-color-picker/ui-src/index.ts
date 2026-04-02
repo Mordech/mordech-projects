@@ -19,7 +19,6 @@ import './components/hct-controller';
 import type { PluginMessage, UiPaintStyle } from '../types';
 
 import { postMessage } from './utils/postMessage';
-import type { SelectedColor } from './types';
 
 import './styles.scss';
 
@@ -29,7 +28,8 @@ export class MyApp extends LitElement {
   @state() chroma = 50;
   @state() tone = 50;
   @state() paints?: UiPaintStyle[];
-  @state() selectedColor?: SelectedColor;
+  @state() selectedColor?: UiPaintStyle;
+  @state() alpha = 100;
   @state() shiftKey = false;
 
   render() {
@@ -38,6 +38,7 @@ export class MyApp extends LitElement {
         <color-preview
           @input=${this.handleInput}
           .hex=${this.hex}
+          .argb=${this.argb}
           .selectedColor=${this.selectedColor}
         >
         </color-preview>
@@ -77,6 +78,17 @@ export class MyApp extends LitElement {
             @input=${this.handleInput}
           >
           </hct-controller>
+
+          <hct-controller
+            id="mrd_controller-alpha"
+            .name=${'Alpha'}
+            .value=${this.alpha}
+            .min=${0}
+            .max=${100}
+            .sliderGradient=${this.alphaGradient}
+            @input=${this.handleInput}
+          >
+          </hct-controller>
         </div>
 
         ${this.paints?.length
@@ -86,42 +98,46 @@ export class MyApp extends LitElement {
                 title="Color styles"
               >
                 <div class="paints-container" role="listbox">
-                  ${repeat(this.paints, ({ id, name, color, modeId }) => {
-                    const swatchId = id + (modeId ? modeId : '');
-                    const selectionId =
-                      this.selectedColor?.id +
-                      (this.selectedColor?.modeId
-                        ? this.selectedColor?.modeId
-                        : '');
-                    const isSelected = swatchId === selectionId;
+                  ${repeat(
+                    this.paints,
+                    ({ id, name, color, modeId, alpha }) => {
+                      const swatchId = id + (modeId ?? '');
+                      const selectionId =
+                        (this.selectedColor?.id ?? '') +
+                        (this.selectedColor?.modeId ?? '');
+                      const isSelected = swatchId === selectionId;
 
-                    return html`
-                      <mrd-paint-swatch
-                        data-event="Click swatch"
-                        data-prop-type=${id === this.selectedColor?.id
-                          ? 'Select style'
-                          : 'Deselect style'}
-                        data-prop-color=${Color(color).hex()}
-                        role="option"
-                        aria-selected=${isSelected}
-                        @click=${() =>
-                          isSelected
-                            ? (this.selectedColor = undefined)
-                            : (this.selectedColor = {
-                                id,
-                                name,
-                                color,
-                                modeId,
-                              })}
-                        .id=${swatchId}
-                        .name=${name}
-                        .color=${Color(color).hex()}
-                        .active=${isSelected}
-                        data-prop-is-Variable=${!!modeId || nothing}
-                      >
-                      </mrd-paint-swatch>
-                    `;
-                  })}
+                      return html`
+                        <mrd-paint-swatch
+                          data-event="Click swatch"
+                          data-prop-type=${id === this.selectedColor?.id
+                            ? 'Select style'
+                            : 'Deselect style'}
+                          data-prop-color=${Color(color).hex()}
+                          role="option"
+                          aria-selected=${isSelected}
+                          @click=${() =>
+                            isSelected
+                              ? (this.selectedColor = undefined)
+                              : (this.selectedColor = {
+                                  id,
+                                  name,
+                                  color,
+                                  modeId,
+                                  alpha,
+                                })}
+                          .id=${swatchId}
+                          .name=${name}
+                          .color=${`rgba(${color.r}, ${color.g}, ${color.b}, ${
+                            alpha / 100
+                          })`}
+                          .active=${isSelected}
+                          data-prop-is-Variable=${!!modeId || nothing}
+                        >
+                        </mrd-paint-swatch>
+                      `;
+                    },
+                  )}
                 </div>
               </details-section>
             `
@@ -149,7 +165,9 @@ export class MyApp extends LitElement {
   }
 
   get argb() {
-    return Hct.from(this.hue, this.chroma, this.tone).toInt();
+    const base = Hct.from(this.hue, this.chroma, this.tone).toInt();
+    const a = Math.round(this.alpha * 2.55); // 0–100 → 0–255
+    return ((a << 24) | (base & 0x00ffffff)) >>> 0;
   }
 
   get hex() {
@@ -166,6 +184,7 @@ export class MyApp extends LitElement {
       this.hue = hct.hue;
       this.chroma = hct.chroma;
       this.tone = hct.tone;
+      this.alpha = this.selectedColor.alpha;
 
       this.updateStyle();
       this.saveColor();
@@ -230,6 +249,24 @@ export class MyApp extends LitElement {
     };
   }
 
+  get alphaGradient() {
+    const stops = Array.from({ length: 101 }, (_, i) => {
+      const a = Math.round(i * 2.55)
+        .toString(16)
+        .padStart(2, '0');
+      return `${this.hex}${a}`;
+    });
+
+    return {
+      '--mrd-range-preview-background': [
+        `linear-gradient(to right, ${stops.join(',')})`,
+        'var(--mrd-alpha-background)',
+      ].join(', '),
+      '--mrd-range-color': stops.slice(0, this.alpha + 1).join(','),
+      '--mrd-thumb-color': this.hex,
+    };
+  }
+
   handleInput(e: Event) {
     const input = e.target as HTMLInputElement;
     const value = parseInt(input.value) || 0;
@@ -245,6 +282,10 @@ export class MyApp extends LitElement {
 
       case 'tone':
         this.tone = value;
+        break;
+
+      case 'alpha':
+        this.alpha = value;
         break;
 
       case 'selected_color': {
@@ -282,11 +323,7 @@ export class MyApp extends LitElement {
     };
 
     this.onmousedown = (e) => {
-      if (e.shiftKey) {
-        this.shiftKey = true;
-      } else {
-        this.shiftKey = false;
-      }
+      this.shiftKey = e.shiftKey;
     };
 
     this.addEventListener('input', () => {
@@ -319,8 +356,7 @@ export class MyApp extends LitElement {
         case 'selection': {
           const { selection } = msg;
 
-          if (!selection) break;
-          if (!selection.color) break;
+          if (!selection?.color) break;
 
           const selectedPaint = this.paints?.find((paint) =>
             paint.modeId
@@ -342,6 +378,7 @@ export class MyApp extends LitElement {
             this.hue = hue;
             this.chroma = chroma;
             this.tone = tone;
+            this.alpha = selection.alpha;
             this.saveColor();
           }
 
@@ -355,6 +392,7 @@ export class MyApp extends LitElement {
             this.hue = color.hue;
             this.chroma = color.chroma;
             this.tone = color.tone;
+            this.alpha = color.alpha ?? 100;
           }
           break;
 
@@ -373,7 +411,12 @@ export class MyApp extends LitElement {
   private saveColor() {
     postMessage({
       type: 'save-color',
-      data: { hue: this.hue, chroma: this.chroma, tone: this.tone },
+      data: {
+        hue: this.hue,
+        chroma: this.chroma,
+        tone: this.tone,
+        alpha: this.alpha,
+      },
     });
   }
 
