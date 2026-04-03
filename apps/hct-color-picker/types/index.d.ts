@@ -6,7 +6,7 @@ export type RGB = {
   b: number;
 };
 
-type HctObject = {
+export type HctObject = {
   hue: number;
   chroma: number;
   tone: number;

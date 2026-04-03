@@ -30,16 +30,16 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./declarations": {
-      "import": "./dist/declarations/index.js",
-      "types": "./dist/lib/declarations/index.d.ts"
+      "types": "./dist/lib/declarations/index.d.ts",
+      "import": "./dist/declarations/index.js"
     },
     "./utils": {
-      "import": "./dist/utils/index.js",
-      "types": "./dist/lib/utils/index.d.ts"
+      "types": "./dist/lib/utils/index.d.ts",
+      "import": "./dist/utils/index.js"
     },
     "./css": "./dist/css/index.css",
     "./css/*": "./dist/css/*"
