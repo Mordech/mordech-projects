@@ -1,6 +1,6 @@
 import { join } from 'path';
 
-import { loadStyle, loadTemplate, transformStyle } from '../vite-lit-loader';
+import { loadStyle, loadTemplate, transformStyle } from '../vite-lit-loader.js';
 
 const path = (...args: string[]) => join(__dirname, 'assets', ...args);
 

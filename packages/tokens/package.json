@@ -2,10 +2,9 @@
   "name": "@mordech/tokens",
   "author": "Elad Mordechai Mizrahi",
   "version": "0.39.0",
-  "type": "commonjs",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "dist/index.mjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mordech/mordech-projects.git",
@@ -31,27 +30,24 @@
   },
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./declarations": {
-      "require": "./dist/declarations/index.js",
-      "import": "./dist/declarations/index.mjs",
-      "types": "./dist/lib/declarations/index.d.ts"
+      "types": "./dist/lib/declarations/index.d.ts",
+      "import": "./dist/declarations/index.js"
     },
     "./utils": {
-      "require": "./dist/utils/index.js",
-      "import": "./dist/utils/index.mjs",
-      "types": "./dist/lib/utils/index.d.ts"
+      "types": "./dist/lib/utils/index.d.ts",
+      "import": "./dist/utils/index.js"
     },
     "./css": "./dist/css/index.css",
     "./css/*": "./dist/css/*"
   },
   "scripts": {
-    "build:assets": "ts-node scripts/index.ts",
-    "build:css": "ts-node scripts/bundleCss.ts",
-    "build:ts": "ts-node scripts/build.ts",
+    "build:assets": "tsx scripts/index.ts",
+    "build:css": "tsx scripts/bundleCss.ts",
+    "build:ts": "tsx scripts/build.ts",
     "build:types": "tsc",
     "build": "run-s \"build:**\"",
     "watch:lib": "yarn build && nodemon --watch src/lib -i src/lib/styles/tokens.css --ext ts,css --exec \"yarn build\" &",
@@ -65,15 +61,14 @@
     "access": "public"
   },
   "dependencies": {
-    "esbuild": "0.19.11",
     "react": "18.3.1",
-    "styled-components": "^6.1.6",
-    "vitest": "1.6.0"
+    "styled-components": "^6.1.6"
   },
   "devDependencies": {
+    "esbuild": "0.19.11",
     "eslint": "8.57.0",
     "stylelint": "^16.1.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.0.0",
     "vitest": "1.6.0"
   }
 }

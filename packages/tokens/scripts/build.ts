@@ -8,7 +8,7 @@ const entryPoints = [
   `${root}/src/lib/utils/index.ts`,
 ];
 
-const baseConfig: BuildOptions = {
+build({
   entryPoints: entryPoints,
   bundle: true,
   platform: 'browser',
@@ -17,16 +17,6 @@ const baseConfig: BuildOptions = {
   sourcemap: true,
   target: ['es2019'],
   treeShaking: true,
-};
-
-build({
-  ...baseConfig,
   format: 'esm',
   splitting: true,
-  outExtension: { '.js': '.mjs' },
-}).catch(() => process.exit(1));
-
-build({
-  ...baseConfig,
-  format: 'cjs',
 }).catch(() => process.exit(1));
