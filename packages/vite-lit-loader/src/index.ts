@@ -2,4 +2,4 @@ export {
   litStyleLoader,
   litTemplateLoader,
   viteLitLoader,
-} from './lib/vite-lit-loader';
+} from './lib/vite-lit-loader.js';

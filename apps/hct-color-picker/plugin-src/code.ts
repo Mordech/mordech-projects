@@ -1,7 +1,6 @@
-import { Hct } from '@material/material-color-utilities';
 import type { Theme } from '@mordech/tokens';
 
-import type { PluginMessage } from '../types';
+import type { HctObject, PluginMessage } from '../types';
 
 import {
   createPaintStyle,
@@ -61,9 +60,11 @@ figma.ui.onmessage = (msg: PluginMessage) => {
       break;
 
     case 'get-color':
-      figma.clientStorage.getAsync('color').then((color: Hct | undefined) => {
-        postMessage({ type: 'color-from-storage', color });
-      });
+      figma.clientStorage
+        .getAsync('color')
+        .then((color: HctObject | undefined) => {
+          postMessage({ type: 'color-from-storage', color });
+        });
 
       break;
 

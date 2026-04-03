@@ -5,7 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "types": ["vitest"],
-    "moduleResolution": "node"
+    "moduleResolution": "bundler"
   },
   "files": [],
   "references": [
