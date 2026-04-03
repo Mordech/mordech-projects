@@ -5860,7 +5860,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mordech/tokens@npm:*, @mordech/tokens@npm:^0.39.0, @mordech/tokens@workspace:packages/tokens":
+"@mordech/tokens@npm:*, @mordech/tokens@npm:^0.40.0, @mordech/tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
   resolution: "@mordech/tokens@workspace:packages/tokens"
   dependencies:
@@ -5874,7 +5874,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mordech/vite-lit-loader@npm:*, @mordech/vite-lit-loader@npm:^0.39.0, @mordech/vite-lit-loader@workspace:packages/vite-lit-loader":
+"@mordech/vite-lit-loader@npm:*, @mordech/vite-lit-loader@npm:^0.40.0, @mordech/vite-lit-loader@workspace:packages/vite-lit-loader":
   version: 0.0.0-use.local
   resolution: "@mordech/vite-lit-loader@workspace:packages/vite-lit-loader"
   dependencies:
@@ -5891,8 +5891,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mordech/web-components@workspace:packages/web-components"
   dependencies:
-    "@mordech/tokens": "npm:^0.39.0"
-    "@mordech/vite-lit-loader": "npm:^0.39.0"
+    "@mordech/tokens": "npm:^0.40.0"
+    "@mordech/vite-lit-loader": "npm:^0.40.0"
     "@storybook/addons": "npm:^7.6.6"
     "@storybook/theming": "npm:^7.6.6"
     "@storybook/web-components-vite": "npm:^7.6.6"

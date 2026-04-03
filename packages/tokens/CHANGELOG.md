@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.40.0](https://github.com/Mordech/mordech-projects/compare/@mordech/tokens@0.39.0...@mordech/tokens@0.40.0) (2026-04-03)
+
+### Features
+
+- modernize TypeScript config and migrate packages to ESM ([#143](https://github.com/Mordech/mordech-projects/issues/143)) ([b73ea3b](https://github.com/Mordech/mordech-projects/commit/b73ea3b51e8c7c1be7bb85bcda683a0aa974b258))
+
 # 0.39.0 (2026-03-27)
 
 # 0.37.0 (2024-11-02)
