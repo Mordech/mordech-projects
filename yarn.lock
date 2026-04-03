@@ -5893,7 +5893,6 @@ __metadata:
   dependencies:
     "@mordech/tokens": "npm:^0.39.0"
     "@mordech/vite-lit-loader": "npm:^0.39.0"
-    "@mordech/web-components": "npm:*"
     "@storybook/addons": "npm:^7.6.6"
     "@storybook/theming": "npm:^7.6.6"
     "@storybook/web-components-vite": "npm:^7.6.6"
@@ -5910,6 +5909,8 @@ __metadata:
     vite-plugin-dts: "npm:3.7.0"
     vite-tsconfig-paths: "npm:4.2.3"
     vitest: "npm:1.6.0"
+  peerDependencies:
+    lit: ^3.1.0
   languageName: unknown
   linkType: soft
 
