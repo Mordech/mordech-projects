@@ -2,8 +2,6 @@
 
 [![Published on npm](https://img.shields.io/npm/v/@mordech/tokens.svg?logo=npm)](https://www.npmjs.com/package/@mordech/tokens)
 
-> ⚠️ This is a work in progress. Please don't use this package until this message is removed.
-
 This is a library for sharing design tokens (colors, typography, breakpoints, etc.) between projects.
 
 ## Why?
@@ -52,7 +50,7 @@ import { colors } from '@mordech/tokens';
 #### Usage
 
 ```js
-const Component = () => <div style={{ backgroundColor: colors.primary }} />;
+const Component = () => <div style={{ backgroundColor: colors.primary.base }} />;
 ```
 
 ## License

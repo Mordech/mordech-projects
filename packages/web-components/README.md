@@ -1,5 +1,8 @@
 # @mordech/web-components
 
+[![Published on npm](https://img.shields.io/npm/v/@mordech/web-components.svg?logo=npm)](https://www.npmjs.com/package/@mordech/web-components)
+[![Storybook](https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=white&style=flat)](https://mordech-web-components.netlify.app/)
+
 [@mordech/web-components](https://www.npmjs.com/package/@mordech/web-components) is a collection of reusable web components.
 
 ## Install
@@ -14,10 +17,10 @@ All components have the prefix `mrd-`.
 
 ```js
 import { html, render } from 'lit';
-import '@mordech/web-components/mrd-component';
+import '@mordech/web-components/mrd-button';
 
 const root = document.querySelector('#root');
-render(html`<mrd-component>Hello world</mrd-component>`, root);
+render(html`<mrd-button>Click me</mrd-button>`, root);
 ```
 
 ## Roadmap
@@ -39,10 +42,12 @@ changes.
 
 | Component           | Alpha | Beta | Stable |
 | ------------------- | :---: | :--: | :----: |
-| Button              |  🟡   |  🔴  |   🔴   |
-| Paint Swatch        |  🟢   |  🔴  |   🔴   |
+| Button              |  🟢   |  🟢  |   🔴   |
+| Chip                |  🟡   |  🔴  |   🔴   |
+| Paint Swatch        |  🟢   |  🟢  |   🔴   |
 | Range               |  🟢   |  🟢  |   🔴   |
-| Toggle Theme Button |  🟢   |  🟡  |   🔴   |
+| Text Field          |  🟡   |  🔴  |   🔴   |
+| Toggle Theme Button |  🟢   |  🟢  |   🔴   |
 
 ## License
 

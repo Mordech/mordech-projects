@@ -20,7 +20,7 @@
 
 This repository is a hub for my projects and things I do in my free time. You can use it at your own risk 😅
 
-This project uses `yarn workspaces`, `Lerna`, and `NX` + `NX Cloud`
+This project uses `yarn workspaces` and `Lerna`
 
 ## What can I find here?
 
@@ -68,21 +68,19 @@ Run
 yarn && yarn husky install
 ```
 
-Or running any command from the root folder using `NX`
+Or run a specific package script from the root using `yarn workspace`:
 
 ```bash
-yarn nx run @mordech/[project][:target][:configuration]
+yarn workspace <package-name> <script>
 ```
 
 e.g.
 
 ```bash
-yarn nx run @mordech/portfolio:start
+yarn workspace hct-color-picker dev
 ```
 
-or use other NX commands (e.g., `run-many`, `affected`). For more, read [NX documentation](https://nx.dev/reference/commands#nx-cli-commands).
-
-I recommend using the [NX plugin](https://nx.dev/core-features/integrate-with-editors) as well.
+or use Lerna to run scripts across packages (e.g., `run`, `run --scope`). For more, read the [Lerna documentation](https://lerna.js.org/docs/api-reference/commands).
 
 ## Contributing
 
