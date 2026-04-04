@@ -17,6 +17,8 @@ Select elements in the document and change their colors in real time.
 
 - Change the color of the selected element.
 
+- Control the alpha (opacity) of colors with the dedicated alpha slider.
+
 ## Installation
 
 1. Go to the [plugin page](https://www.figma.com/community/plugin/1227923985322908257/HCT-Color-Picker)
@@ -32,7 +34,7 @@ Please follow the [Conventional Commits](https://www.conventionalcommits.org/en/
 
 1. Clone the repo
 2. Run `yarn install`
-3. Run `yarn nx run @mordech/hct-color-picker:watch`
+3. Run `yarn workspace hct-color-picker watch`
 4. Open Figma and go to Plugins > Development > Import plugin from manifest
 5. Select the `manifest.json` file in the `/apps/hct-color-picker/dist/` folder
 6. The plugin should now be available in the Plugins menu
@@ -43,10 +45,20 @@ The plugin uses [my web component library](/packages/web-components/) to build t
 
 ## Build
 
-1. Run `yarn nx run @mordech/hct-color-picker:build` to build the plugin
-2. The plugin will be available in the `/apps/hct-color-picker/dist/` folder
+The build has two targets that run concurrently:
+
+- **UI** (`build:ui`) — Vite bundles the iframe UI from `ui-src/`
+- **Plugin** (`build:plugin`) — esbuild bundles the Figma sandbox code from `plugin-src/` to `dist/code.js`
+
+Run both together:
+
+```bash
+yarn workspace hct-color-picker build
+```
 
 ## Contribution guidelines
+
+Please follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standard and open an issue before submitting large changes.
 
 ## License
 
