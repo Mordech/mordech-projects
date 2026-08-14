@@ -385,12 +385,12 @@ strong {
   flex-shrink: 0;
 }
 
-@keyframes timer-drain {
+@keyframes timer-fill {
   from {
-    width: 100%;
+    width: 0%;
   }
   to {
-    width: 0%;
+    width: 100%;
   }
 }
 
@@ -400,7 +400,7 @@ strong {
   left: 0;
   height: 3px;
   border-radius: 0;
-  animation: timer-drain var(--mrd-toast-duration, 3000ms) linear forwards;
+  animation: timer-fill var(--mrd-toast-duration, 3000ms) linear forwards;
 }
 
 .toast-timer.toast-timer-success {
